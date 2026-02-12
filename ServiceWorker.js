@@ -1,9 +1,9 @@
 const cacheName = "UFO Studios-NOS-1.0";
 const contentToCache = [
-    "Build/NOS.loader.js",
-    "Build/NOS.framework.js.unityweb",
-    "Build/NOS.data.unityweb",
-    "Build/NOS.wasm.unityweb",
+    "Build/XMLEditor.loader.js",
+    "Build/XMLEditor.framework.js.unityweb",
+    "Build/XMLEditor.data.unityweb",
+    "Build/XMLEditor.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
