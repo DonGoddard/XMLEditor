@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Planets>
+  <Planet name="Mercury" type="Inner" size="Small" />
+  <Planet name="Venus" type="Inner" size="Medium" />
+  <Planet name="Earth" type="Inner" size="Medium">
+    <Moon name="Luna" />
+  </Planet>
+  <Planet name="Mars" type="Inner" size="Small">
+    <Moon name="Phobos" />
+    <Moon name="Deimos" />
+  </Planet>
+  <Planet name="Jupiter" type="Outer" size="Large" />
+  <Planet name="Saturn" type="Outer" size="Large" />
+</Planets>
