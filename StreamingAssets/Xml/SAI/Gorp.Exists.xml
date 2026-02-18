@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gorp>
+  <algorithms>
+    <algorithm namespace="Torture">
+      <input model="orp" />
+      <output model="escape" />
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Exists with="orp" result="escape.result">
+              <parameters>
+                <parameter position="0" with="symbol(x) as series[variables:pathvariables:arrays]; symbol(y) as constant(1);">
+                  <variables type="int" />
+                  <pathvariables type="int" namespace="orp.timbucktu.sunrise"/>
+                  <arrays type="[int]"/>
+                </parameter>
+                <parameter position="1">
+                  <And with="orp" as="result">
+                    <parameters>
+                      <parameter position="0">
+                        <Algorithm namespace="floop" input="orp" output="floop" as="result"/>
+                      </parameter>
+                      <parameter position="1">
+                        <Algorithm namespace="joey" input="orp" output="joey" as="result"/>
+                      </parameter>
+                      <parameter position="1">
+                        <Or with="orp">
+                          <parameters>
+                            <parameter position="0">
+                              <Or with="orp">
+                                <parameters>
+                                  <parameter position="0">
+                                    <Less with="orp">
+                                      <parameters>
+                                        <parameter position="0">
+                                          <uses symbol="x"/>
+                                        </parameter>
+                                        <parameter position="1">-1</parameter>
+                                      </parameters>
+                                    </Less>
+                                  </parameter>
+                                  <parameter position="1">
+                                    <Equal with="orp">
+                                      <parameters>
+                                        <parameter position="0">
+                                          <uses symbol="x"/>
+                                        </parameter>
+                                        <parameter position="1">3</parameter>
+                                      </parameters>
+                                    </Equal>
+                                  </parameter>
+                                </parameters>
+                              </Or>
+                            </parameter>
+                            <parameter position="1">
+                              <Greater with="orp" result="out.GreaterResult">
+                                <parameters>
+                                  <parameter position="0">
+                                    <uses symbol="x"/>
+                                  </parameter>
+                                  <parameter position="1">5</parameter>
+                                </parameters>
+                              </Greater>
+                            </parameter>
+                          </parameters>
+                        </Or>
+                      </parameter>
+                    </parameters>
+                  </And>
+                </parameter>
+              </parameters>
+            </Exists>
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+    <algorithm namespace="shinynewalgorithm">
+      <input model="orp"/>
+      <output name="result"/>
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Algorithm namespace="uri.delegate" input="model" output="model" />
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+  </algorithms>
+  <models>
+    <model namespace="orp">
+      <variables>
+        <variable name="limitofcheese" type="int" isimmutable="true">500</variable>
+        <variable name="harvey" type="int">17</variable>
+        <variable name="irrelevant" type="string">"More Than Five"</variable>
+      </variables>
+      <pathvariables>
+        <pathvariable path="timbucktu" name="sunrise" type="int">89</pathvariable>
+        <pathvariable path="timbucktu" name="sunset" type="int">-22</pathvariable>
+        <pathvariable path="timbucktu" name="tanzania" type="key">9</pathvariable>
+      </pathvariables>
+      <arrays>
+        <array path="local" name="hillgiant" type="[int]">11, 17, 4</array>
+      </arrays>
+    </model>
+    <model namespace="escape">
+      <variables>
+        <variable name="result" type="bool">false</variable>
+      </variables>
+    </model>
+  </models>
+</gorp>

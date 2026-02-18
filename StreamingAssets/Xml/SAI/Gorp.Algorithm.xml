@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gorp>
+  <algorithm namespace="floop">
+    <input name="orp">
+      <understands>
+        <models />
+        <Delegate namespace="Mathy">
+          <Forall input="orp" output="Mathy.Escape">
+            <parameters with="x[series]:0;y:1">
+              <parameter position="0">
+                <Filter with="orp">
+                  <parameters>
+                    <parameter position ="0" name="orp">
+                      <variables type="int" />
+                      <pathvariables type="int" namespace="orp.timbucktu.sunset"/>
+                      <arrays type="[int]"/>
+                    </parameter>
+                    <parameter position="1">
+                      <Range>
+                        <parameters>
+                          <parameter position="0">0</parameter>
+                          <parameter position="1">2</parameter>
+                        </parameters>
+                      </Range>
+                    </parameter>
+                  </parameters>
+                </Filter>
+              </parameter>
+              <parameter position="1">
+                <Math>
+                  <!-- MathML syntax for (x/3) + 1 -->
+                  <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <divide/>
+                        <ci>x</ci>
+                        <cn>3</cn>
+                      </apply>
+                      <cn>1</cn>
+                    </apply>
+                  </math>
+                </Math>
+              </parameter>
+            </parameters>
+          </Forall>
+        </Delegate>
+      </understands>
+      <variables>
+        <variable name="harvey" type="int">17</variable>
+        <variable name="irrelevant" type="string">"More Than Five"</variable>
+      </variables>
+      <pathvariables>
+        <pathvariable path="timbucktu" name="sunrise" type="int">89</pathvariable>
+        <pathvariable path="timbucktu" name="sunset" type="int">-22</pathvariable>
+        <pathvariable path="timbucktu" name="tanzania" type="key">9</pathvariable>
+      </pathvariables>
+      <arrays>
+        <array path="local" name="hillgiant" type="[int]">11, 17, 4</array>
+      </arrays>
+    </input>
+    <output name="result"></output>
+    <expressions>
+      <expression sequence="0" model="orp" delgate="Mathy"/>
+    </expressions>
+  </algorithm>
+</gorp>

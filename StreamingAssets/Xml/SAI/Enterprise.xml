@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<enterprise namespace="Proto.AI.Testing">
+  <gestalts>
+    <gestalt namespace="Testing">
+      <applications>
+        <application namespace="Seraphim.Commerce">
+          <requires>
+            <template namespace="Seraphim" />
+            <template namespace="Seraphim.Universe" />
+            <template namespace="Seraphim.Internet" />
+            <template namespace="Seraphim.Symbolic" />
+            <template namespace="Seraphim.Geometric" />
+            <template namespace="Seraphim.Patterns" />
+            <template namespace="Seraphim.Measureable" />
+          </requires>
+        </application>
+      </applications>      
+      <subscriptions>
+        <subscription namespace="Test.Subscription">
+          <delegate behavior="api" namespace="Proto.AI.Testing.Subscription">
+            <algorithm namespace="Proto.AI.Testing.Subscription.Client" />
+          </delegate>
+        </subscription>
+      </subscriptions>
+      <clouds>
+        <cloud host="EastUS2">
+          <services>
+            <service namespace="Seraphim.Api">
+              <delegate behavior="api" namespace="Seraphim.Api.Listener">
+                <algorithms>
+                  <algorithm namespace="Seraphim.Api.Listener">
+                    <messages namespace="Seraphim.Api">
+                      <alias as="sera-api" />
+                      <queue namespace="Journal" />
+                    </messages>
+                  </algorithm>
+                </algorithms>
+              </delegate>
+            </service>
+            <service namespace="Seraphim.Journal">
+              <delegate behavior="listener" namespace="Seraphim.Journal.Listeners">
+                <algorithms>
+                  <algorithm namespace="Seraphim.Commerce.Journal.Listener">
+                    <messages namespace="Seraphim.Commerce.Queues">
+                      <alias as="sera-commerce" />
+                      <queue namespace="Journal" />
+                    </messages>
+                  </algorithm>
+                </algorithms>
+              </delegate>
+            </service>
+            <service namespace="Seraphim.Tabulate" />
+            <service namespace="Seraphim.Think" />
+            <service namespace="Seraphim.Learn" />
+            <service namespace="Seraphim.Integrate" />
+            <service namespace="Seraphim.Decision" />
+          </services>
+          <databases>
+            <database namespace="pai-test-gdb1">
+            </database>
+          </databases>
+        </cloud>
+      </clouds>
+    </gestalt>
+  </gestalts>
+</enterprise>
