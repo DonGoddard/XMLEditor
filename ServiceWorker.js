@@ -1,4 +1,4 @@
-const cacheName = "UFO Studios-NOS-0.7.260218.0749";
+const cacheName = "UFO Studios-NOS-0.7.260218.1256";
 const contentToCache = [
     "Build/XMLEditor.loader.js",
     "Build/XMLEditor.framework.js.unityweb",
