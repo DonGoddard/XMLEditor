@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Gestalt.Scalars"
+    xmlns:b="http://design.proto.ai/Gestalt.Scalars"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="scalars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="scalar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="scale">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="conversions">
+                      <xs:complexType mixed="true">
+                        <xs:sequence minOccurs="0">
+                          <xs:element maxOccurs="unbounded" name="convert">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="expression" type="xs:string" />
+                              </xs:sequence>
+                              <xs:attribute name="from" type="xs:string" use="required" />
+                              <xs:attribute name="to" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

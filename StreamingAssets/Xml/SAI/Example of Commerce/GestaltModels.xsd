@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Gestalt.Models"
+    xmlns:gm="http://design.proto.ai/Gestalt.Models"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="models">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="model">
+          <xs:complexType mixed="true">
+            <xs:sequence minOccurs="0">
+              <xs:choice maxOccurs="unbounded">
+                <xs:element name="array">
+                  <xs:complexType>
+                    <xs:sequence minOccurs="0">
+                      <xs:element name="validation">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="xor">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element maxOccurs="unbounded" name="variable">
+                                    <xs:complexType>
+                                      <xs:attribute name="name" type="xs:string" use="required" />
+                                      <xs:attribute name="namespace" type="xs:string" use="required" />
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="limit">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="expression">
+                                    <xs:complexType>
+                                      <xs:sequence>
+                                        <xs:element name="mathml" />
+                                      </xs:sequence>
+                                      <xs:attribute name="sequence" type="xs:unsignedByte" use="required" />
+                                      <xs:attribute name="is" type="xs:string" use="required" />
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="name" type="xs:string" use="required" />
+                                <xs:attribute name="namespace" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="basis">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="expression">
+                                    <xs:complexType>
+                                      <xs:sequence>
+                                        <xs:element name="mathml" />
+                                      </xs:sequence>
+                                      <xs:attribute name="sequence" type="xs:unsignedByte" use="required" />
+                                      <xs:attribute name="is" type="xs:string" use="required" />
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="name" type="xs:string" use="required" />
+                                <xs:attribute name="namespace" type="xs:string" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="name" type="xs:string" use="optional" />
+                    <xs:attribute name="type" type="xs:string" use="required" />
+                    <xs:attribute name="of" type="xs:string" use="required" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="variables">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element maxOccurs="unbounded" name="variable">
+                        <xs:complexType>
+                          <xs:attribute name="name" type="xs:string" use="required" />
+                          <xs:attribute name="type" type="xs:string" use="required" />
+                          <xs:attribute name="schema" type="xs:string" use="optional" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="variable">
+                  <xs:complexType mixed="true">
+                    <xs:attribute name="model" type="xs:string" use="optional" />
+                    <xs:attribute name="name" type="xs:string" use="optional" />
+                    <xs:attribute name="type" type="xs:string" use="optional" />
+                    <xs:attribute name="default" type="xs:string" use="optional" />
+                    <xs:attribute name="of" type="xs:string" use="optional" />
+                    <xs:attribute name="schema" type="xs:string" use="optional" />
+                    <xs:attribute name="isimmutable" type="xs:boolean" use="optional" />
+                    <xs:attribute name="as" type="xs:string" use="optional" />
+                    <xs:attribute name="basis" type="xs:string" use="optional" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="delegate">
+                  <xs:complexType>
+                    <xs:attribute name="method" type="xs:string" use="required" />
+                    <xs:attribute name="namespace" type="xs:string" use="required" />
+                    <xs:attribute name="of" type="xs:string" use="required" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="any">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="variable">
+                        <xs:complexType>
+                          <xs:attribute name="label" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="pathvariable">
+                        <xs:complexType>
+                          <xs:attribute name="label" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="array">
+                        <xs:complexType>
+                          <xs:attribute name="label" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="namespace" type="xs:string" use="optional" />
+            <xs:attribute name="with" type="xs:string" use="optional" />
+            <xs:attribute name="isimmutable" type="xs:boolean" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
