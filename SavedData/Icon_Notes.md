@@ -1,4 +1,4 @@
-# Zippy Cheat Sheet
+# Zippy Cheat Fajitas
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
