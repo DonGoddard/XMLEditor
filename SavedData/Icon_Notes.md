@@ -1,4 +1,4 @@
-# Zimbabwe Cheat Sheet
+# Zimbabwe Cheat Googly
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
