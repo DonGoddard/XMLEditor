@@ -1,4 +1,4 @@
-# Spooky Weird WTH
+# skibidi
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
