@@ -1,4 +1,4 @@
-# Don's Supercool WebGL Markdown Cheat Sheet
+# Don's WebGL Markdown Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
