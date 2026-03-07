@@ -1,4 +1,4 @@
-# Don's coolio zippy Cheat Sheet
+# Don's coolio hooligan Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
