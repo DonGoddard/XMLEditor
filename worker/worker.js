@@ -1,28 +1,22 @@
+const RATE_LIMIT = 20; // requests
+const WINDOW = 60;     // seconds
+
 export default {
   async fetch(request, env) {
 
-    if (request.method !== "POST") {
-      return new Response("POST only", { status: 405 });
+    const ip = request.headers.get("CF-Connecting-IP");
+    const key = `rate:${ip}`;
+
+    let count = await env.RATE_LIMIT_KV.get(key);
+
+    count = count ? parseInt(count) : 0;
+
+    if (count > RATE_LIMIT) {
+      return new Response("Rate limit exceeded", { status: 429 });
     }
 
-    const body = await request.json();
+    await env.RATE_LIMIT_KV.put(key, count + 1, { expirationTtl: WINDOW });
 
-    const response = await fetch(
-      "https://api.openai.com/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${env.OPENAI_KEY}`
-        },
-        body: JSON.stringify(body)
-      }
-    );
-
-    const data = await response.text();
-
-    return new Response(data, {
-      headers: { "Content-Type": "application/json" }
-    });
+    // continue processing request
   }
-}
+};
