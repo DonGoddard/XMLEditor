@@ -1,4 +1,4 @@
- Don's supercoolest Cheat Sheet
+ Don's yippee Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
