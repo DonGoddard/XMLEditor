@@ -1,4 +1,4 @@
-#  Don's coolio hooligan Cheat Sheet
+#  Don's  hooligan Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
