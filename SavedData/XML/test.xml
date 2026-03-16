@@ -1,0 +1,35 @@
+
+<?xml version="1.0" encoding="UTF-8"?><Algorithm with="orp">
+<Algorithm>
+	<parameters>
+		<parameter namespace="Algorithm.P0" with="MyPolynomial" of="double">
+			<algorithm>
+				<Math>
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+						<apply>
+							<minus />
+							<expr namespace="MyPolynomial">
+								<apply>
+									<plus />
+									<ci>x</ci>
+									<ci>eps</ci>
+								</apply>
+							</expr>
+							<expr namespace="MyPolynomial">
+								<apply>
+									<minus />
+									<ci>x</ci>
+									<ci>eps</ci>
+								</apply>
+							</expr>
+						</apply>
+					</math>
+				</Math>
+			</algorithm>
+		</parameter>
+		<parameter with="orp" namespace="Algorithm.P1">
+			<variable type="double" namespace="orp.timbucktu" as="x" />
+			<variable type="double" namespace="constant" as="eps">0.0001</variable>
+		</parameter>
+	</parameters>
+</Algorithm>
