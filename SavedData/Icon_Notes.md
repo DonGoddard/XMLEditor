@@ -1,4 +1,4 @@
- Don's yippee Cheat Sheet
+ Don's d Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
