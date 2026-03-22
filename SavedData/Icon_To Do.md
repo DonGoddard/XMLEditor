@@ -9,5 +9,8 @@
 	* Read XAML
 	* Read eCommerce
 	* Read GORP
+	* Export Diagram as PNG
 	* Try text edit hack for macos webgl only
+	* Receive background image
 * Desktop save layout specific times
+* Color gradient background
