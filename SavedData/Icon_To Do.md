@@ -15,3 +15,4 @@
 * Desktop save layout specific times
 * Color gradient background
 * Remove window from snap should center on mouse, not upper left corner
+* Minimize/Restore from icon position
