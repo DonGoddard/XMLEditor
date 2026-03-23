@@ -8,6 +8,7 @@
                 <Attribute visibility="private" name="Nick" type="bool" />
                 <Attribute visibility="protected" name="passwordHash" type="string" />
                 <Attribute visibility="protected" name="Nick2" type="float" />
+                <Attribute visibility="public" name="total" type="Dictionary&lt;string, string&gt;" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="Login" returnType="bool" />
@@ -15,7 +16,7 @@
                 <Method visibility="public" name="Logout" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="300" y="50">
+        <Class id="Admin" x="343" y="24">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="float" />
@@ -25,7 +26,7 @@
                 <Method visibility="public" name="BanUser" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Product" x="538" y="56">
+        <Class id="Product" x="566" y="73">
             <Name>Product</Name>
             <Attributes>
                 <Attribute visibility="public" name="sku" type="string" />
@@ -40,7 +41,6 @@
             <Name>Order</Name>
             <Attributes>
                 <Attribute visibility="public" name="orderId" type="int" />
-                <Attribute visibility="public" name="total" type="Product" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="Process" returnType="bool" />
@@ -48,7 +48,7 @@
         </Class>
     </Classes>
     <Relationships>
-        <Relationship from="User" to="Admin" type="Inheritance" name="new_relation" sourceMulti="1" targetMulti="0..1" />
+        <Relationship from="User" to="Admin" type="Inheritance" name="zippy" sourceMulti="1" targetMulti="0..1" />
         <Relationship from="User" to="Order" type="Association" />
         <Relationship from="Order" to="Product" type="Aggregation" targetMulti="0..1" />
         <Relationship from="Order" to="Product" type="Dependency" />
