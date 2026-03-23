@@ -17,8 +17,9 @@ X UMLWindow
 	* Export Diagram as PNG
 	* Try text edit hack for macos webgl only
 	* Receive background image
-	* New_relation editable text
+	X New_relation editable text
 * Desktop save layout specific times
+X NotesWindow - doubleclick to quickly go into edit mode
 * Color gradient background
 * Remove window from snap should center on mouse, not upper left corner
 * Minimize/Restore from icon position
