@@ -1,9 +1,9 @@
 **NOS**
 
 
-* Save and Reload from GitHub all files
+X Save and Reload from GitHub all files
 * UMLWindow
-	* Menu with right click menu options
+	X Menu with right click menu options
 	* Remove background right click menu
 	* Left click background to drag diagram around scene horizontally and vertically
 	* Resize window to diagram extents option
