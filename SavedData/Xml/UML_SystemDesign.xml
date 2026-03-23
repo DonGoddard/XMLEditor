@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="24" y="117">
+        <Class id="User" x="176" y="113">
             <Name>JefftheKiller</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
