@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="49" y="73">
+        <Class id="User" x="137" y="22">
             <Name>JefftheKiller</Name>
             <Attributes>
                 <Attribute visibility="private" name="Nick" type="bool" />
@@ -36,7 +36,7 @@
                 <Method visibility="public" name="UpdateStock" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Order" x="477" y="319">
+        <Class id="Order" x="519" y="311">
             <Name>Order</Name>
             <Attributes>
                 <Attribute visibility="public" name="orderId" type="int" />
@@ -50,7 +50,7 @@
     <Relationships>
         <Relationship from="User" to="Admin" type="Inheritance" name="new_relation" sourceMulti="1" targetMulti="0..1" />
         <Relationship from="User" to="Order" type="Association" />
-        <Relationship from="Order" to="Product" type="Aggregation" />
+        <Relationship from="Order" to="Product" type="Aggregation" targetMulti="0..1" />
         <Relationship from="Order" to="Product" type="Dependency" />
         <Relationship from="Admin" to="Order" type="Aggregation" />
         <Relationship from="Admin" to="User" type="Association" />
@@ -58,5 +58,7 @@
         <Relationship from="User" to="Admin" type="Association" />
         <Relationship from="User" to="Admin" type="Association" />
         <Relationship from="User" to="Admin" type="Association" />
+        <Relationship from="Order" to="Admin" type="Association" sourceMulti="1" />
+        <Relationship from="Order" to="Product" type="Realization" sourceMulti="1..*" targetMulti="1" />
     </Relationships>
 </UMLDiagram>
