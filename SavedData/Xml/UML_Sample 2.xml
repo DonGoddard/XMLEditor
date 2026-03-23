@@ -19,7 +19,7 @@
             </Attributes>
             <Methods />
         </Class>
-        <Class id="Simple.Escape" x="50" y="300">
+        <Class id="Simple.Escape" x="63" y="190">
             <Name>Model: Simple.Escape</Name>
             <Attributes>
                 <Attribute visibility="public" name="result (bool)" type="string" />
