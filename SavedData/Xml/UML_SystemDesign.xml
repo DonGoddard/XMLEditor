@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="137" y="22">
+        <Class id="User" x="46" y="113">
             <Name>JefftheKiller</Name>
             <Attributes>
-                <Attribute visibility="private" name="Nick" type="bool" />
                 <Attribute visibility="public" name="email" type="string" />
+                <Attribute visibility="private" name="Nick" type="bool" />
                 <Attribute visibility="protected" name="passwordHash" type="string" />
                 <Attribute visibility="protected" name="Nick2" type="float" />
-                <Attribute visibility="public" name="newAttr" type="string" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="Login" returnType="bool" />
                 <Method visibility="public" name="Logout" returnType="void" />
-                <Method visibility="public" name="NewMethod" returnType="void" />
                 <Method visibility="public" name="Logout" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="559" y="11">
+        <Class id="Admin" x="300" y="50">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="float" />
             </Attributes>
             <Methods>
+                <Method visibility="public" name="NewMethod" returnType="void" />
                 <Method visibility="public" name="BanUser" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Product" x="110" y="346">
+        <Class id="Product" x="538" y="56">
             <Name>Product</Name>
             <Attributes>
                 <Attribute visibility="public" name="sku" type="string" />
                 <Attribute visibility="public" name="price" type="decimal" />
+                <Attribute visibility="public" name="newAttr" type="string" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="UpdateStock" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Order" x="519" y="311">
+        <Class id="Order" x="357" y="294">
             <Name>Order</Name>
             <Attributes>
                 <Attribute visibility="public" name="orderId" type="int" />
