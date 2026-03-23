@@ -2,11 +2,14 @@
 
 
 X Save and Reload from GitHub all files
-* UMLWindow
+X UMLWindow
 	X Menu with right click menu options
-	* Remove background right click menu
-	* Left click background to drag diagram around scene horizontally and vertically
-	* Resize window to diagram extents option
+	* Make right click menu optimized for fast use (circle menu? Abbreviated buttons?)
+	X Left click background to drag diagram around scene horizontally and vertically
+	X Add horizontal scroll bar
+	X Resize window to diagram extents option
+	X Drag and Drop attributes
+	X Drag and Drop methods
 	* Read XAML
 	* Read eCommerce
 	* Read GORP
