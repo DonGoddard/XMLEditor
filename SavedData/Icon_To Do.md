@@ -10,6 +10,7 @@ X UMLWindow
 	X Resize window to diagram extents option
 	X Drag and Drop attributes
 	X Drag and Drop methods
+	X Hide GitHub PAT in cloudflare
 	* Read XAML
 	* Read eCommerce
 	* Read GORP
