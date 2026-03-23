@@ -21,5 +21,5 @@ X UMLWindow
 * Desktop save layout specific times
 X NotesWindow - doubleclick to quickly go into edit mode
 * Color gradient background
-* Remove window from snap should center on mouse, not upper left corner
-* Minimize/Restore from icon position
+X Remove window from snap should center on mouse, not upper left corner
+X Minimize/Restore from icon position
