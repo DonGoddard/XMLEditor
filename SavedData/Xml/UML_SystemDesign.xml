@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="144" y="117">
+        <Class id="User" x="-72" y="113">
             <Name>JefftheKiller</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
@@ -16,7 +16,7 @@
                 <Method visibility="public" name="Logout" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="358" y="24">
+        <Class id="Admin" x="354" y="-88">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="float" />
