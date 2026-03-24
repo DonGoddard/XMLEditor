@@ -16,7 +16,7 @@
                 <Method visibility="public" name="Logout" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="300" y="50">
+        <Class id="Admin" x="470" y="27">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="float" />
@@ -26,7 +26,7 @@
                 <Method visibility="public" name="BanUser" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Product" x="550" y="50">
+        <Class id="Product" x="564" y="228">
             <Name>Product</Name>
             <Attributes>
                 <Attribute visibility="public" name="sku" type="string" />
@@ -37,7 +37,7 @@
                 <Method visibility="public" name="UpdateStock" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Order" x="50" y="300">
+        <Class id="Order" x="156" y="421">
             <Name>Order</Name>
             <Attributes>
                 <Attribute visibility="public" name="orderId" type="int" />
