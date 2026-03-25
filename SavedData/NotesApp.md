@@ -1,4 +1,56 @@
- Don's Cheat Sheet you
+color=lime[Warning] [AppRegistry] Default-handler conflict for '.md': 'ToDoApp' vs 'NotesApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.md': 'ToDoApp' vs 'FeaturesApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.rtf': 'ToDoApp' vs 'FeaturesApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'BookApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'UMLApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'UMLGorpApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'polynomial_simpleApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'finite_diffApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XmlUrlHttpsApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XmlUrlHttpApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XMLFileApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.png': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.jpg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
+[Warning] [AppRegistry] Default-handler conflict for '.jpeg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
+[Log] Loading GameSettings...
+
+[Log]   GameSettings Loaded
+
+[Log] -=- Running NOS (ver Recompiled since last build) built on 3/25/2026 9:43 AM-=-
+
+[Log] [UIManager] Loading Desktop Layout from GitHub...
+
+[Log] [UIManager] Instant restore from local cache.
+
+[Log] [Uploader] Starting fetch for DesktopLayout.nos (ID: 1)
+
+[Log] [NOS] Boot sequence finalized.
+
+[Log] [BackgroundDisplay] OnEnable started.
+
+[Log] [BackgroundDisplay] Label created and added to WindowLayer.
+
+[Log] [BackgroundDisplay] No currentWallpaperUrl to restore.
+
+[Log] [UIManager] Restoring Layout. Background: digital-transformation-corporate-wallpaper.jpg, Windows: 2
+
+[Log] [UIManager] Found BackgroundDisplay, calling SetWallpaper directly.
+
+[Log] [BackgroundDisplay] Loading wallpaper: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Backgrounds/digital-transformation-corporate-wallpaper.jpg
+
+[Log] <color=lime>[Uploader] ProcessRequest #1 success.</color>
+
+[Log] [Uploader] Data received: 1893 chars
+
+[Log] <color=lime>[Uploader] Fetch #1 success!</color>
+
+[Log] [UIManager] Layout Data Received (1891 bytes).
+
+[Log] [WindowBase] Scroll Restored for Debug Log(Clone): 795.2381
+
+[Log] <color=lime>[BACKGROUND SUCCESS]</color> digital-transformation-corporate-wallpaper.jpg loaded.
+
+
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
