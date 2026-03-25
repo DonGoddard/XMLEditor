@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="Gorp Logic">
     <Classes>
-        <Class id="Simple.Add" x="2" y="37">
+        <Class id="Simple.Add" x="11" y="146">
             <Name>Algo: Simple.Add</Name>
             <Attributes />
             <Methods />
