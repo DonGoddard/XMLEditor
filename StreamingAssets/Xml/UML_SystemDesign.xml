@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="50" y="50">
-            <Name>Jeff</Name>
+        <Class id="User" x="24" y="50">
+            <Name>Fred</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
-                <Attribute visibility="private" name="Nick" type="bool" />
+                <Attribute visibility="private" name="Nicholas" type="bool" />
                 <Attribute visibility="protected" name="passwordHash" type="string" />
                 <Attribute visibility="protected" name="Nick2" type="float" />
                 <Attribute visibility="public" name="total" type="Dictionary&lt;string, string&gt;" />
@@ -13,10 +13,10 @@
             <Methods>
                 <Method visibility="public" name="Login" returnType="bool" />
                 <Method visibility="public" name="Logout" returnType="void" />
-                <Method visibility="public" name="Logout" returnType="void" />
+                <Method visibility="public" name="Logout2" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="470" y="27">
+        <Class id="Admin" x="488" y="27">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="float" />
@@ -26,7 +26,7 @@
                 <Method visibility="public" name="BanUser" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Product" x="564" y="228">
+        <Class id="Product" x="582" y="228">
             <Name>Product</Name>
             <Attributes>
                 <Attribute visibility="public" name="sku" type="string" />
@@ -37,7 +37,7 @@
                 <Method visibility="public" name="UpdateStock" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Order" x="156" y="421">
+        <Class id="Order" x="174" y="421">
             <Name>Order</Name>
             <Attributes>
                 <Attribute visibility="public" name="orderId" type="int" />
@@ -48,14 +48,13 @@
         </Class>
     </Classes>
     <Relationships>
-        <Relationship from="User" to="Admin" type="Inheritance" name="zippy" sourceMulti="1" targetMulti="0..1" />
+        <Relationship from="User" to="Admin" type="Inheritance" name="zippy the pickle" sourceMulti="1" targetMulti="0..1" />
         <Relationship from="User" to="Order" type="Association" />
-        <Relationship from="Order" to="Product" type="Aggregation" targetMulti="0..1" />
+        <Relationship from="Order" to="Product" type="Aggregation" name="Fred the Dead" targetMulti="0..1" />
         <Relationship from="Order" to="Product" type="Dependency" />
         <Relationship from="Admin" to="Order" type="Aggregation" />
         <Relationship from="Admin" to="User" type="Association" />
         <Relationship from="User" to="Admin" type="Aggregation" />
-        <Relationship from="User" to="Admin" type="Association" />
         <Relationship from="User" to="Admin" type="Association" />
         <Relationship from="User" to="Admin" type="Association" />
         <Relationship from="Order" to="Admin" type="Association" sourceMulti="1" />
