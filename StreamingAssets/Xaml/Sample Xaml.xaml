@@ -1,0 +1,131 @@
+< Window x: Class = "ComplexXamlTest.MainWindow"
+        xmlns = "http://schemas.microsoft.com/winfx/2000/xaml/presentation"
+        xmlns: x = "http://schemas.microsoft.com/winfx/2000/xaml"
+        xmlns: d = "http://schemas.microsoft.com"
+        xmlns: mc = "http://schemas.openxmlformats.org"
+        mc: Ignorable = "d"
+        Title = "Kitchen Sink XAML Stress Test" Height = "800" Width = "1000" >
+
+
+    < Window.Resources >
+        < !--ISSUE 1: MASSIVE INLINE RESOURCES -->
+        <!-- These should be in a separate ResourceDictionary file -->
+        <LinearGradientBrush x:Key = "HeaderBrush" StartPoint = "0,0" EndPoint = "1,1" >
+            < GradientStop Color = "SteelBlue" Offset = "0" />
+            < GradientStop Color = "LightSkyBlue" Offset = "1" />
+        </ LinearGradientBrush >
+
+        < !--Complex inline ControlTemplates bloat the file rapidly -->
+        <Style x:Key = "CustomButtonStyle" TargetType = "Button" >
+            < Setter Property = "Background" Value = "#FFC8C8C8" />
+            < Setter Property = "FontSize" Value = "14" />
+            < Setter Property = "Margin" Value = "5" />
+            < Setter Property = "Template" >
+                < Setter.Value >
+                    < ControlTemplate TargetType = "Button" >
+                        < Border Background = "{TemplateBinding Background}" CornerRadius = "8" BorderBrush = "DimGray" BorderThickness = "1" >
+                            < ContentPresenter HorizontalAlignment = "Center" VerticalAlignment = "Center" />
+                        </ Border >
+                    </ ControlTemplate >
+                </ Setter.Value >
+            </ Setter >
+        </ Style >
+
+
+        < !--ISSUE 2: DUPLICATED STYLES -->
+        <!-- Instead of using BasedOn, many large files just copy-paste similar styles -->
+        <Style x:Key = "DangerButtonStyle" TargetType = "Button" >
+            < Setter Property = "Background" Value = "Crimson" />
+            < Setter Property = "Foreground" Value = "White" />
+            < Setter Property = "Template" >
+                < Setter.Value >
+                    < ControlTemplate TargetType = "Button" >
+                        < Border Background = "{TemplateBinding Background}" CornerRadius = "8" >
+                            < ContentPresenter HorizontalAlignment = "Center" VerticalAlignment = "Center" />
+                        </ Border >
+                    </ ControlTemplate >
+                </ Setter.Value >
+            </ Setter >
+        </ Style >
+    </ Window.Resources >
+
+    < !--ISSUE 3: DEEP LAYOUT NESTING -->
+    <!-- Using nested StackPanels instead of a single flattened Grid -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="{StaticResource HeaderBrush}" Padding="20">
+            <TextBlock Text="Unmaintainable XAML Example" Foreground="White" FontSize="24" FontWeight="Bold"/>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Margin="10">
+                
+                <!-- REPETITIVE UI GROUPS -->
+                <!-- These 15+ sections would be much cleaner as a single UserControl -->
+                <GroupBox Header="Settings Group 1" Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="5">
+                            <Label Content="Configuration Key:"/>
+                            <TextBox Text="Value_001"/>
+                            <CheckBox Content="Enable Advanced Logging" IsChecked="True"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5">
+                            <Label Content="Priority Level:"/>
+                            <ComboBox SelectedIndex="0">
+                                <ComboBoxItem>Low</ComboBoxItem>
+                                <ComboBoxItem>Medium</ComboBoxItem>
+                                <ComboBoxItem>High</ComboBoxItem>
+                            </ComboBox>
+                            <Slider Minimum="0" Maximum="100" Value="45"/>
+                        </StackPanel>
+                        <Button Grid.Column="2" Content="Reset" Style="{StaticResource CustomButtonStyle}" Width="80"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Imagine 50 more of these GroupBoxes below... -->
+                <GroupBox Header="Data Metrics 2" Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="5">
+                            <Label Content="Sensor ID:"/>
+                            <TextBox Text="S-9920"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5">
+                            <Label Content="Status:"/>
+                            <Ellipse Width="20" Height="20" Fill="Green" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <Button Grid.Column="2" Content="Delete" Style="{StaticResource DangerButtonStyle}" Width="80"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- ISSUE 4: INLINE DATATEMPLATES -->
+                <ItemsControl Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="LightGray" BorderThickness="1" Margin="2" Padding="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Width="100"/>
+                                    <TextBlock Text="{Binding Timestamp}" Foreground="Gray"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
