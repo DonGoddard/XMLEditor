@@ -1,0 +1,9 @@
+FPS   299
+Managed Heap       524.6 MB
+Total Allocated    3275.5 MB
+Total Reserved     3735.6 MB
+Texture Memory     511.6 MB
+GFX Unused Res.    460.1 MB
+
+Platform: OSXEditor  |  Unity 6000.4.0f1
+Captured: 2026-03-28 10:25:05
