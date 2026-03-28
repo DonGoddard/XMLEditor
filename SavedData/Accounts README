@@ -1,0 +1,11 @@
+Here is where accounts are located
+
+It's just a folder per person/account with their own saved data:
+  Desktop Layout - Icons, Dock, Fragments, Windows, Apps
+  Image Files - Image Window, Gallery Window (Backgrounds)
+  Text Files - Notes / To Do / Features Windows
+  Uml Files - Uml Window: UML data (.uml or .xml)
+  Xml Files - Xml Window: XML standard files (.xml)
+  Xaml Files - Xaml Window: XAML data (.xaml or .xml)
+
+These are all files and data the have created or personalize including imported ones dragged into the OS
