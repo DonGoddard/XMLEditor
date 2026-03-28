@@ -1,0 +1,305 @@
+[Warning] [AppRegistry] Default-handler conflict for '.md': 'ToDoApp' vs 'NotesApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.md': 'ToDoApp' vs 'FeaturesApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.rtf': 'ToDoApp' vs 'FeaturesApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'BookApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'UMLApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'UMLGorpApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'polynomial_simpleApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'finite_diffApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XmlUrlHttpsApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XmlUrlHttpApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XMLFileApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.png': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.jpg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.jpeg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
+
+[Log] Loading GameSettings...
+
+[Log]   GameSettings Loaded
+
+[Log] -=- Running NOS (ver Recompiled since last build) built on 3/28/2026 11:20 AM-=-
+
+[Log] [UIManager] Loading Desktop Layout from GitHub...
+
+[Log] [UIManager] Instant restore from local cache.
+
+[Log] [Uploader] Starting fetch for Global/DesktopLayout.nos (ID: 1)
+
+[Log] [NOS] Boot sequence finalized.
+
+[Log] [Desktop] OnEnable started.
+
+[Log] [Desktop] Background and copyright label created and added to DesktopLayer.
+
+[Log] [Desktop] No currentWallpaperUrl to restore.
+
+[Log] [UIManager] Restoring Layout. User: Global, Background: StockCake-Luminous_Brain_Art-1010329-standard.jpg, Windows: 2
+
+[Log] [UIManager] Found Desktop, calling SetWallpaper directly.
+
+[Log] [Desktop] Loading wallpaper: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Backgrounds/StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[Uploader] ProcessRequest #1 success.</color>
+
+[Log] [Uploader] Data received: 2657 chars
+
+[Log] <color=lime>[Uploader] Fetch #1 success!</color>
+
+[Log] [UIManager] Layout Data Received from 'Global/DesktopLayout.nos' (2655 bytes).
+
+[Log] <color=lime>[BACKGROUND SUCCESS]</color> StockCake-Luminous_Brain_Art-1010329-standard.jpg loaded.
+
+[Log] [WindowBase] Scroll Restored for Debug Log(Clone): 967.6952
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Global/Files/Text/Features.md'
+[Log] [Uploader] Starting fetch for Global/Files/Text/Features.md (ID: 2)
+
+[Log] [Dockbar] Spawned 'NotesApp' (Features).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=lime>[Uploader] ProcessRequest #2 success.</color>
+
+[Log] [Uploader] Data received: 4538 chars
+
+[Log] <color=lime>[Uploader] Fetch #2 success!</color>
+
+[Log] [UIManager] Unregistered and Cleaned: NotesApp
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [XmlWindow] Loading XML from local path: 'StreamingAssets/Xml/finite_diff.xml'
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/finite_diff.xml
+
+[Log] [Dockbar] Spawned 'finite_diffApp' (finite_diff).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [UIManager] Unregistered and Cleaned: finite_diffApp
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 3)
+
+[Log] [Dockbar] Spawned 'UMLGorpApp' (finite_diff).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Warning] [Uploader] ProcessRequest #3 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 3 — ERROR. Retry 1/5...
+[Log] [Uploader] Retrying request 3...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 3)
+
+[Warning] [Uploader] ProcessRequest #3 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 3 — ERROR. Retry 2/5...
+[Log] [Uploader] Retrying request 3...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 3)
+
+[Warning] [Uploader] ProcessRequest #3 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 3 — ERROR. Retry 3/5...
+[Log] [Uploader] Retrying request 3...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 3)
+
+[Warning] [Uploader] ProcessRequest #3 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 3 — ERROR. Retry 4/5...
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] [UIManager] Unregistered and Cleaned: UMLGorpApp
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [Uploader] Retrying request 3...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 3)
+
+[Warning] [Uploader] ProcessRequest #3 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Error] [Uploader] Giving up on request 3 after 5 failed retries.
+[Warning] [UmlWindow] GitHub load failed, falling back to StreamingAssets.
+
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/UML_Sample%202.xml
+
+[Log] [UmlWindow] Found 4 classes in XML.
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [XmlWindow] Loading XML from local path: 'StreamingAssets/XAMLFileApp.xml'
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/XAMLFileApp.xml
+
+[Log] [Dockbar] Spawned 'XAMLFileApp' (XAML File).
+
+[Error] [file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/XAMLFileApp.xml] Network Error: HTTP/1.1 404 Not Found
+
+[Error] [XmlWindow] Failed to load XML.
+  Attempted path : 'StreamingAssets/XAMLFileApp.xml'
+  iconId         : 'XAMLFileApp'
+  resourceFileName: ''
+  isLocalFile    : True | isResourceUrl: False
+[Log] [UIManager] Unregistered and Cleaned: XAMLFileApp
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [UIManager] MinimizeToIcon 'DebugLogApp' → icon=DebugLogApp iconCenter=(420.20, 932.26) windowCenter=(750.00, 488.91) delta=(-329.80, 443.35)
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [UIManager] MinimizeToIcon 'AppRegistry' → icon=AppRegistry iconCenter=(174.30, 932.26) windowCenter=(590.89, 517.12) delta=(-416.59, 415.14)
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [UIManager] Animating Restore: DebugLogApp from delta (-329.80, 443.35)
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [UIManager] Animating Restore: AppRegistry from delta (-416.59, 415.14)
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [Dockbar] Spawned 'ImageApp' (UFOS QR Code).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Exception] ArgumentException: Texture 'Icon_Image' is not readable. For this reason, scripts cannot access the memory allocated to it. You can make this texture readable in the Texture Import Settings.
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [UIManager] Unregistered and Cleaned: ImageApp
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [Dockbar] Spawned 'ImageApp' (UFOS QR Code).
+
+[Log] [UIManager] Unregistered and Cleaned: ImageApp
+
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 4)
+
+[Log] [Dockbar] Spawned 'UMLGorpApp' (Gorp Logic).
+
+[Warning] [Uploader] ProcessRequest #4 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 4 — ERROR. Retry 1/5...
+[Log] [Uploader] Retrying request 4...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 4)
+
+[Warning] [Uploader] ProcessRequest #4 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 4 — ERROR. Retry 2/5...
+[Log] [Uploader] Retrying request 4...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 4)
+
+[Warning] [Uploader] ProcessRequest #4 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 4 — ERROR. Retry 3/5...
+[Log] [Uploader] Retrying request 4...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 4)
+
+[Warning] [Uploader] ProcessRequest #4 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 4 — ERROR. Retry 4/5...
+[Log] [Uploader] Retrying request 4...
+[Log] [Uploader] Starting fetch for Xml/UML_Sample 2.xml (ID: 4)
+
+[Warning] [Uploader] ProcessRequest #4 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Error] [Uploader] Giving up on request 4 after 5 failed retries.
+[Warning] [UmlWindow] GitHub load failed, falling back to StreamingAssets.
+
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/UML_Sample%202.xml
+
+[Log] [UmlWindow] Found 4 classes in XML.
+
+[Log] [UIManager] Unregistered and Cleaned: UMLGorpApp
+
+[Log] [UIManager] Unregistered and Cleaned: DebugLogApp
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [Dockbar] Spawned 'DebugLogApp' (System Debug Log).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: StockCake-Luminous_Brain_Art-1010329-standard.jpg
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Deleted Global/Files/Debug/DebugLog_20260328_0912.log!</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Debug/Debug Log [date] [time].log!</color>
+
