@@ -20,17 +20,23 @@
 
 [Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XMLFileApp'. Set defaultForExtensions on one to resolve.
 
+[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XAMLFileApp'. Set defaultForExtensions on one to resolve.
+
 [Warning] [AppRegistry] Default-handler conflict for '.png': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
 
 [Warning] [AppRegistry] Default-handler conflict for '.jpg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
 
 [Warning] [AppRegistry] Default-handler conflict for '.jpeg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
 
+[Warning] [AppRegistry] Default-handler conflict for '.xaml': 'XAMLFileApp' vs 'XAML'. Set defaultForExtensions on one to resolve.
+
+[Warning] [AppRegistry] Default-handler conflict for '.xaml': 'XAMLFileApp' vs 'XAMLCanvasLayout'. Set defaultForExtensions on one to resolve.
+
 [Log] Loading GameSettings...
 
 [Log]   GameSettings Loaded
 
-[Log] -=- Running NOS (ver Recompiled since last build) built on 3/28/2026 11:34 AM-=-
+[Log] -=- Running NOS (ver Recompiled since last build) built on 3/30/2026 12:02 PM-=-
 
 [Log] [UIManager] Loading Desktop Layout from GitHub...
 
@@ -46,23 +52,71 @@
 
 [Log] [Desktop] No currentWallpaperUrl to restore.
 
-[Log] [UIManager] Restoring Layout. User: Global, Background: StockCake-Luminous_Brain_Art-1010329-standard.jpg, Windows: 2
+[Log] [UIManager] Restoring Layout. User: Global, Background: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0, Windows: 4
 
 [Log] [UIManager] Found Desktop, calling SetWallpaper directly.
 
-[Log] [Desktop] Loading wallpaper: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Backgrounds/StockCake-Luminous_Brain_Art-1010329-standard.jpg
-
-[Log] <color=lime>[Uploader] ProcessRequest #1 success.</color>
-
-[Log] [Uploader] Data received: 2469 chars
+[Log] [XamlWindow] Loading local XAML: https://dongoddard.github.io/XMLEditor/StreamingAssets/Xaml/CanvasLayout.xaml
+[Log] [Uploader] Data received: 3840 chars
 
 [Log] <color=lime>[Uploader] Fetch #1 success!</color>
 
-[Log] [UIManager] Layout Data Received from 'Global/DesktopLayout.nos' (2467 bytes).
+[Log] [UIManager] Layout Data Received from 'Global/DesktopLayout.nos' (3838 bytes).
 
-[Log] <color=lime>[BACKGROUND SUCCESS]</color> StockCake-Luminous_Brain_Art-1010329-standard.jpg loaded.
+[Log] [XamlWindow] Parsed <Window> — 27 nodes total.
+[Log] [WindowBase] Scroll Restored for Debug Log(Clone): 1155.898
 
-[Log] [WindowBase] Scroll Restored for Debug Log(Clone): 967.6952
+[Log] [WindowBase] Scroll Restored for XAML Sample(Clone): 50.73718
+
+[Log] [Gallery] Loading Manifest: https://dongoddard.github.io/XMLEditor/StreamingAssets/Backgrounds/background_manifest.json
 
 [Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [WindowBase] Content dirty: XAML Editor
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [WindowBase] Content dirty: XAML Editor
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] [WindowBase] Content dirty: XAML Editor
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+
+[Log] [WindowBase] Content dirty: XAML Editor
+
+[Log] [WindowBase] Content dirty: XAML Editor
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
 
