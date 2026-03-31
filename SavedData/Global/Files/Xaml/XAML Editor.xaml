@@ -14,17 +14,17 @@
         <!-- Card 1 -->
         <Border Canvas.Left="20" Canvas.Top="110" Width="195" Height="38" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6">
             <StackPanel Margin="12" Width="175" Height="40">
-                <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Full="Full  =  [First] + ' ' + [Last]" />
-                <TextBlock Text="{Binding Path=Subtitle}" TextWrapping="Wrap" Foreground="#555555" />
-                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Total, Mode=OneWay}" Width="170" Height="47" Total="[Price] * [Qty]" />
-                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Full, Mode=OneWay}" Width="196" Height="34" Full="[First] + ' ' + [Last] " />
+                <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" />
+                <TextBlock Text="{Binding Path=Receipt}" TextWrapping="Wrap" Foreground="#555555" Width="169" Height="32" />
+                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Total, Mode=OneWay}" Width="169" Height="36" Total="[Price] * [Qty]" />
+                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=All}" Width="194" Height="41" Receipt="[First] + [Total]" />
             </StackPanel>
         </Border>
         <!-- Card 2 -->
         <Border Canvas.Left="240" Canvas.Top="110" Width="200" Height="120" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6">
             <StackPanel Margin="12">
                 <TextBlock Text="Another Card" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" />
-                <TextBlock Text="Canvas.Left and Canvas.Top control exact position." TextWrapping="Wrap" Foreground="#555555" />
+                <TextBlock Text="{Binding All}" TextWrapping="Wrap" Foreground="#555555" />
             </StackPanel>
         </Border>
         <!-- Card 3 -->
