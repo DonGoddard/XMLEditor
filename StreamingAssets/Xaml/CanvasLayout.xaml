@@ -5,7 +5,10 @@
 
     <!-- Demonstrates: Canvas with absolute positioning, Rectangle, Ellipse,
          TextBlock, Border, Button — the core Phase 2 rendering targets -->
-
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="Blue"/>
+        <SolidColorBrush x:Key="MyBrush" Color="Red"/>
+    </Window.Resources>
     <Canvas Background="#F0F0F0">
 
         <!-- Background rectangle -->
