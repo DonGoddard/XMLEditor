@@ -120,8 +120,8 @@
         <Button Canvas.Left="132" Canvas.Top="380" Content="Save" Width="100" Height="32" Background="#27AE60" Foreground="White" />
         <Button Canvas.Left="244" Canvas.Top="380" Content="Submit" Width="100" Height="32" Background="#2B579A" Foreground="White" />
         <!-- Overlapping z-order demo -->
-        <Ellipse Canvas.Left="482" Canvas.Top="268" Width="100" Height="100" Fill="#3498DB" Opacity="0.8" />
-        <Ellipse Canvas.Left="527" Canvas.Top="310" Width="100" Height="100" Fill="#9B59B6" Opacity="0.8" />
+        <Ellipse Canvas.Left="423" Canvas.Top="258" Width="100" Height="100" Fill="#3498DB" Opacity="0.8" />
+        <Ellipse Canvas.Left="542" Canvas.Top="333" Width="100" Height="100" Fill="#9B59B6" Opacity="0.8" />
         <TextBlock Canvas.Left="585" Canvas.Top="410" Text="Z-order overlap" Foreground="#333333" FontSize="11" />
     </Canvas>
 </Window>
