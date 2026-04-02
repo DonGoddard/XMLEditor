@@ -4,7 +4,9 @@
     <nos:Json><![CDATA[{
   "Title": "Receipt",
   "First": "Don",
-  "Last": "Goddard"
+  "Last": "Goddard",
+  "price": 9.99,
+  "qty": 3
 }]]></nos:Json>
     <nos:Gorp><![CDATA[<gorp>
   <models>
@@ -20,6 +22,7 @@
       <nos:Expr name="Full"><![CDATA[[First] + ' ' + [Last]]]></nos:Expr>
     </nos:Computed>
   </nos:DataContext>
+  
     <!-- Demonstrates: Canvas with absolute positioning, Rectangle, Ellipse,
          TextBlock, Border, Button — the core Phase 2 rendering targets -->
     <Window.Resources>
