@@ -22,10 +22,9 @@
       <nos:Expr name="Full"><![CDATA[[First] + ' ' + [Last]]]></nos:Expr>
       <nos:Expr name="Total"><![CDATA[[price] * [qty]]]></nos:Expr>
       <nos:Expr name="Receipt"><![CDATA[[qty] + ' items for ' + [price]]]></nos:Expr>
+      <nos:Expr name="All"><![CDATA[[Full] + ' purchased ' + [Receipt] + ' = ' + [Total]]]></nos:Expr>
     </nos:Computed>
   </nos:DataContext>
-  
-  
     <!-- Demonstrates: Canvas with absolute positioning, Rectangle, Ellipse,
          TextBlock, Border, Button — the core Phase 2 rendering targets -->
     <Window.Resources>
@@ -53,7 +52,7 @@
                 <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Canvas.Left="27" Canvas.Top="83" Width="120" Height="25" />
                 <TextBlock Text="{Binding Path=Receipt}" TextWrapping="Wrap" Foreground="#555555" Width="214" Height="28" />
                 <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Total, Mode=OneWay}" Width="188" Height="25" Total="[Price] * [Qty]" />
-                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=All}" Width="195" Height="31" Receipt="[First] + [Total]" />
+                <TextBlock FontWeight="Bold" FontSize="6" Margin="0,0,0,6" Text="{Binding Path=All}" Width="182" Height="31" Receipt="[First] + [Total]" />
             </StackPanel>
         </Border>
         <!-- Card 2 -->
