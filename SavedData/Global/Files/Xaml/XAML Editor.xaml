@@ -10,17 +10,8 @@
         <!-- Background rectangle -->
         <Rectangle Canvas.Left="0" Canvas.Top="0" Width="700" Height="80" Fill="#2B579A" />
         <!-- Header text -->
-        <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" />
         <TextBlock Canvas.Left="20" Canvas.Top="24" Text="Canvas Layout Demo" Foreground="White" FontSize="24" FontWeight="Bold" />
         <!-- Card 1 -->
-        <Border Canvas.Left="20" Canvas.Top="110" Width="195" Height="38" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6">
-            <StackPanel Margin="12" Width="175" Height="40">
-                <TextBlock Text="{Binding Path=Receipt}" TextWrapping="Wrap" Foreground="#555555" Width="214" Height="28" />
-                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Total, Mode=OneWay}" Width="188" Height="31" Total="[Price] * [Qty]" />
-                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=All}" Width="195" Height="36" Receipt="[First] + [Total]" />
-            </StackPanel>
-        </Border>
-        <!-- Card 2 -->
         <Border Canvas.Left="240" Canvas.Top="110" Width="200" Height="120" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6">
             <StackPanel Margin="12">
                 <TextBlock Text="{Binding harvey}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" />
@@ -31,6 +22,15 @@
                 <TextBlock Text="{Binding timbucktu.sunrise}" TextWrapping="Wrap" Foreground="#555555" />
             </StackPanel>
         </Border>
+        <Border Canvas.Left="20" Canvas.Top="110" Width="195" Height="145" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6">
+            <StackPanel Margin="12" Width="175" Height="40">
+                <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Canvas.Left="27" Canvas.Top="83" Width="120" Height="25" />
+                <TextBlock Text="{Binding Path=Receipt}" TextWrapping="Wrap" Foreground="#555555" Width="214" Height="28" />
+                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Total, Mode=OneWay}" Width="188" Height="25" Total="[Price] * [Qty]" />
+                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=All}" Width="195" Height="31" Receipt="[First] + [Total]" />
+            </StackPanel>
+        </Border>
+        <!-- Card 2 -->
         <!-- Card 3 -->
         <Border Canvas.Left="460" Canvas.Top="110" Width="200" Height="120" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"></Border>
         <!-- Shapes section label -->
