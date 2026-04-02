@@ -24,7 +24,7 @@
         </Border>
         <Border Canvas.Left="20" Canvas.Top="110" Width="195" Height="145" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6">
             <StackPanel Margin="12" Width="175" Height="40">
-                <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Canvas.Left="27" Canvas.Top="83" Width="120" Height="25" />
+                <TextBlock Text="{Binding Path=Full}" FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Canvas.Left="27" Canvas.Top="83" Width="120" Height="34" />
                 <TextBlock Text="{Binding Path=Receipt}" TextWrapping="Wrap" Foreground="#555555" Width="214" Height="28" />
                 <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=Total, Mode=OneWay}" Width="188" Height="25" Total="[Price] * [Qty]" />
                 <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,6" Text="{Binding Path=All}" Width="195" Height="31" Receipt="[First] + [Total]" />
@@ -45,8 +45,8 @@
         <Button Canvas.Left="132" Canvas.Top="380" Content="Save" Width="100" Height="32" Background="#27AE60" Foreground="White" />
         <Button Canvas.Left="244" Canvas.Top="380" Content="Submit" Width="100" Height="32" Background="#2B579A" Foreground="White" />
         <!-- Overlapping z-order demo -->
-        <Ellipse Canvas.Left="580" Canvas.Top="280" Width="100" Height="100" Fill="#3498DB" Opacity="0.8" />
-        <Ellipse Canvas.Left="610" Canvas.Top="310" Width="100" Height="100" Fill="#9B59B6" Opacity="0.8" />
+        <Ellipse Canvas.Left="556" Canvas.Top="302" Width="100" Height="100" Fill="#3498DB" Opacity="0.8" />
+        <Ellipse Canvas.Left="427" Canvas.Top="304" Width="100" Height="100" Fill="#9B59B6" Opacity="0.8" />
         <TextBlock Canvas.Left="585" Canvas.Top="410" Text="Z-order overlap" Foreground="#333333" FontSize="11" />
     </Canvas>
 </Window>
