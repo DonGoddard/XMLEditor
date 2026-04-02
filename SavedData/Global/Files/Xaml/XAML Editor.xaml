@@ -20,8 +20,11 @@
 </gorp>]]></nos:Gorp>
     <nos:Computed>
       <nos:Expr name="Full"><![CDATA[[First] + ' ' + [Last]]]></nos:Expr>
+      <nos:Expr name="Total"><![CDATA[[price] * [qty]]]></nos:Expr>
+      <nos:Expr name="Receipt"><![CDATA[[qty] + ' items for ' + [price]]]></nos:Expr>
     </nos:Computed>
   </nos:DataContext>
+  
   
     <!-- Demonstrates: Canvas with absolute positioning, Rectangle, Ellipse,
          TextBlock, Border, Button — the core Phase 2 rendering targets -->
