@@ -74,6 +74,7 @@
       <nos:Expr name="All"><![CDATA[[Full] + ' purchased ' + [Receipt] + ' = ' + [Total]]]></nos:Expr>
     </nos:Computed>
   </nos:DataContext>
+  
     <!-- Demonstrates: Canvas with absolute positioning, Rectangle, Ellipse,
          TextBlock, Border, Button — the core Phase 2 rendering targets -->
     <Window.Resources>
