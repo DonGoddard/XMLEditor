@@ -1,1 +1,1 @@
-{"t":"B","op":"2","l":{"t":"V","n":"x"},"r":{"t":"V","n":"y"}}
+<Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><cn>3</cn></apply></math><inputs><x>7</x></inputs></Math>
