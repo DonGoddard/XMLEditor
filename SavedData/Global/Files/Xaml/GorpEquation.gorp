@@ -1,1 +1,1 @@
-<!-- gorpEndpoint: http://10.0.0.10:17257/gorpIT --><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><cn>3</cn></apply></math><inputs><x>7</x></inputs></Math>
+<!-- gorpEndpoint: http://localhost:17257/gorpIT --><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><cn>3</cn></apply></math><inputs><x>7</x></inputs></Math>
