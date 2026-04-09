@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="24" y="50">
+        <Class id="User" x="-10" y="43">
             <Name>Freeman</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
-                <Attribute visibility="private" name="Nicholas" type="bool" />
+                <Attribute visibility="public" name="working" type="bool" />
                 <Attribute visibility="protected" name="passwordHash" type="string" />
-                <Attribute visibility="protected" name="Nick2" type="float" />
+                <Attribute visibility="public" name="employee" type="string" />
                 <Attribute visibility="public" name="total" type="Dictionary&lt;string, string&gt;" />
             </Attributes>
             <Methods>
@@ -48,9 +48,9 @@
         </Class>
     </Classes>
     <Relationships>
-        <Relationship from="User" to="Admin" type="Inheritance" name="zippy the pickle" sourceMulti="1" targetMulti="0..1" />
+        <Relationship from="User" to="Admin" type="Inheritance" name="C-level" sourceMulti="1" targetMulti="0..1" />
         <Relationship from="User" to="Order" type="Association" />
-        <Relationship from="Order" to="Product" type="Aggregation" name="Fred the Dead" targetMulti="0..1" />
+        <Relationship from="Order" to="Product" type="Aggregation" name="Receipt" targetMulti="0..1" />
         <Relationship from="Order" to="Product" type="Dependency" />
         <Relationship from="Admin" to="Order" type="Aggregation" />
         <Relationship from="Admin" to="User" type="Association" />
