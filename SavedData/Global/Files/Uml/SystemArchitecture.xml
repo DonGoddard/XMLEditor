@@ -2,7 +2,7 @@
 <UMLDiagram name="SystemArchitecture">
     <Classes>
         <Class id="User" x="24" y="50">
-            <Name>Fred</Name>
+            <Name>Freeman</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
                 <Attribute visibility="private" name="Nicholas" type="bool" />
