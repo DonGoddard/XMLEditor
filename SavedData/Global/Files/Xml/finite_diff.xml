@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Algorithm with="gorpo">
+<Algorithm with="orp">
   <parameters>
     <parameter namespace="Algorithm.P0" with="MyPolynomial" of="double">
       <algorithm>
