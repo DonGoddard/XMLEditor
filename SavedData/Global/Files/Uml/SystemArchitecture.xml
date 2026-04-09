@@ -19,7 +19,7 @@
         <Class id="Admin" x="438" y="18">
             <Name>Admin</Name>
             <Attributes>
-                <Attribute visibility="public" name="permissions" type="int" />
+                <Attribute visibility="public" name="permissions" type="string" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="NewMethod" returnType="void" />
