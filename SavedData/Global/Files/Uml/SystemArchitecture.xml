@@ -16,10 +16,10 @@
                 <Method visibility="public" name="Logout2" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="488" y="27">
+        <Class id="Admin" x="438" y="18">
             <Name>Admin</Name>
             <Attributes>
-                <Attribute visibility="public" name="permissions" type="float" />
+                <Attribute visibility="public" name="permissions" type="int" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="NewMethod" returnType="void" />
