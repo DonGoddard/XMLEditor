@@ -1,46 +1,10 @@
-[Warning] [AppRegistry] Default-handler conflict for '.md': 'ToDoApp' vs 'NotesApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.md': 'ToDoApp' vs 'FeaturesApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.rtf': 'ToDoApp' vs 'FeaturesApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'BookApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'UMLApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'UMLGorpApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'polynomial_simpleApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'finite_diffApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XmlUrlHttpsApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XmlUrlHttpApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XMLFileApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xml': 'PlanetsApp' vs 'XAMLFileApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.png': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.jpg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.jpeg': 'GalleryApp' vs 'ImageApp'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xaml': 'XAMLFileApp' vs 'XAML'. Set defaultForExtensions on one to resolve.
-
-[Warning] [AppRegistry] Default-handler conflict for '.xaml': 'XAMLFileApp' vs 'XAMLCanvasLayout'. Set defaultForExtensions on one to resolve.
-
 [Log] Loading GameSettings...
 
 [Log]   GameSettings Loaded
 
-[Log] -=- Running NOS (ver Recompiled since last build) built on 3/30/2026 12:02 PM-=-
+[Log] -=- Running NOS (ver Recompiled since last build) built on 4/9/2026 9:50 AM-=-
 
 [Log] [UIManager] Loading Desktop Layout from GitHub...
-
-[Log] [UIManager] Instant restore from local cache.
 
 [Log] [Uploader] Starting fetch for Global/DesktopLayout.nos (ID: 1)
 
@@ -52,71 +16,666 @@
 
 [Log] [Desktop] No currentWallpaperUrl to restore.
 
-[Log] [UIManager] Restoring Layout. User: Global, Background: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0, Windows: 4
+[Log] <color=lime>[Uploader] ProcessRequest #1 success.</color>
 
-[Log] [UIManager] Found Desktop, calling SetWallpaper directly.
-
-[Log] [XamlWindow] Loading local XAML: https://dongoddard.github.io/XMLEditor/StreamingAssets/Xaml/CanvasLayout.xaml
-[Log] [Uploader] Data received: 3840 chars
+[Log] [Uploader] Data received: 5234 chars
 
 [Log] <color=lime>[Uploader] Fetch #1 success!</color>
 
-[Log] [UIManager] Layout Data Received from 'Global/DesktopLayout.nos' (3838 bytes).
+[Log] [UIManager] Layout Data Received from 'Global/DesktopLayout.nos' (5232 bytes).
 
-[Log] [XamlWindow] Parsed <Window> — 27 nodes total.
-[Log] [WindowBase] Scroll Restored for Debug Log(Clone): 1155.898
+[Log] [UIManager] Restoring Layout. User: Global, Background: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2, Windows: 3
 
-[Log] [WindowBase] Scroll Restored for XAML Sample(Clone): 50.73718
+[Log] [UIManager] Found Desktop, calling SetWallpaper directly.
 
-[Log] [Gallery] Loading Manifest: https://dongoddard.github.io/XMLEditor/StreamingAssets/Backgrounds/background_manifest.json
+[Log] [Uploader] Starting fetch for Global/Files/Xaml/GorpEquation.gorp (ID: 2)
 
-[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+[Log] [Uploader] Starting fetch for Global/Files/Xaml/GorpEquation.gorp (ID: 3)
 
-[Log] [WindowBase] Content dirty: XAML Editor
+[Log] [Uploader] Starting fetch for Global/Files/Uml/SystemArchitecture.xml (ID: 4)
 
-[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+[Log] <color=lime>[Uploader] ProcessRequest #2 success.</color>
 
-[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+[Log] [Uploader] Data received: 377 chars
 
-[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+[Log] <color=lime>[Uploader] Fetch #2 success!</color>
 
-[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+[Log] [GorpEquationWindow] Loaded from GitHub: Global/Files/Xaml/GorpEquation.gorp
 
-[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+[Log] <color=lime>[Uploader] ProcessRequest #3 success.</color>
 
-[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+[Log] [Uploader] Data received: 377 chars
 
-[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+[Log] <color=lime>[Uploader] Fetch #3 success!</color>
 
-[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+[Log] [GorpEquationWindow] Loaded from GitHub: Global/Files/Xaml/GorpEquation.gorp
 
-[Log] [WindowBase] Content dirty: XAML Editor
+[Log] <color=lime>[Uploader] ProcessRequest #4 success.</color>
 
-[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+[Log] [Uploader] Data received: 3237 chars
 
-[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+[Log] <color=lime>[Uploader] Fetch #4 success!</color>
 
-[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+[Log] [UmlWindow] Found 4 classes in XML.
 
-[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+[Log] [UmlWindow] Loaded from GitHub: Global/Files/Uml/SystemArchitecture.xml
 
-[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+[Log] [WindowBase] Scroll Restored for App Gallery(Clone): 212.1625
 
-[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+[Log] [XmlWindow] Loading XML from local path: 'StreamingAssets/Xml/finite_diff.xml'
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/finite_diff.xml
 
-[Log] [WindowBase] Content dirty: XAML Editor
-
-[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
-
-[Log] [WindowBase] Content dirty: XAML Editor
-
-[Log] [WindowBase] Content dirty: XAML Editor
+[Log] [Dockbar] Spawned 'finite_diffApp' (finite_diff).
 
 [Log] <color=orange>[UIManager] Desktop marked dirty.</color>
 
-[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0
+[Log] <color=cyan>[Uploader] Saved Global/Files/Xml/finite_diff.xml!</color> HTTP 200
+Worker response: {"content":{"name":"finite_diff.xml","path":"SavedData/Global/Files/Xml/finite_diff.xml","sha":"1eac04a5753b1cab28ec8a8472f20f0458782c0f","size":1029,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/finite_diff.xml?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/finite_diff.xml","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/1eac04a5753b1cab28ec8a8472f20f0458782c0f","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Xml/finite_diff.xml","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/finite_diff.xml?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/1eac04a5753b1cab28ec8a8472f20f0458782c0f","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/finite_diff.xml"}},"commit":{"sha":"b43d86b077d9ce14e9cd14f4277dccbdd54f4e14","node_id":"C_kwDOROdx39oAKGI0M2Q4NmIwNzdkOWNlMTRlOWNkMTRmNDI3N2RjY2JkZDU0ZjRlMTQ","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/b43d86b077d9ce14e9cd14f4277dccbdd54f4e14","html_url":"https://github.com/DonGoddard/XMLEditor/commit/b43d86b077d9ce14e9cd14f4277dccbdd54f4e14","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:24:57Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:24:57Z"},"tree":{"sha":"cb2eb2dc488b0c418b9ce0768c7098a01eb3a8b4","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/cb2eb2dc488b0c418b9ce0768c7098a01eb3a8b4"},"message":"Sync Global/Files/Xml/finite_diff.xml","parents":[{"sha":"5597891dbc4e18020b03ca41d2b65a2d17506877","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/5597891dbc4e18020b03ca41d2b65a2d17506877","html_url":"https://github.com/DonGoddard/XMLEditor/commit/5597891dbc4e18020b03ca41d2b65a2d17506877"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
 
 [Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
 
-[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color>
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"819d27a8cecd3f4453140e4c9f725ed68dd11300","size":5444,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/819d27a8cecd3f4453140e4c9f725ed68dd11300","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/819d27a8cecd3f4453140e4c9f725ed68dd11300","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"71614ae49a95e0f7cbc6ec7cd6bd21a47e7c027e","node_id":"C_kwDOROdx39oAKDcxNjE0YWU0OWE5NWUwZjdjYmM2ZWM3Y2Q2YmQyMWE0N2U3YzAyN2U","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/71614ae49a95e0f7cbc6ec7cd6bd21a47e7c027e","html_url":"https://github.com/DonGoddard/XMLEditor/commit/71614ae49a95e0f7cbc6ec7cd6bd21a47e7c027e","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:24:59Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:24:59Z"},"tree":{"sha":"2fdbd65589244bcbd9150d3a7d82730bb86b6127","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/2fdbd65589244bcbd9150d3a7d82730bb86b6127"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"b43d86b077d9ce14e9cd14f4277dccbdd54f4e14","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/b43d86b077d9ce14e9cd14f4277dccbdd54f4e14","html_url":"https://github.com/DonGoddard/XMLEditor/commit/b43d86b077d9ce14e9cd14f4277dccbdd54f4e14"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"c87eade67c0af4bd767f7e884da897a98bede10c","size":5433,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/c87eade67c0af4bd767f7e884da897a98bede10c","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/c87eade67c0af4bd767f7e884da897a98bede10c","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"511f3b4f10a2d9217a29358480e61f7d2089cab6","node_id":"C_kwDOROdx39oAKDUxMWYzYjRmMTBhMmQ5MjE3YTI5MzU4NDgwZTYxZjdkMjA4OWNhYjY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/511f3b4f10a2d9217a29358480e61f7d2089cab6","html_url":"https://github.com/DonGoddard/XMLEditor/commit/511f3b4f10a2d9217a29358480e61f7d2089cab6","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:25:35Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:25:35Z"},"tree":{"sha":"084eb81ce6b6c14b01948b0348c1f72d0e05ecca","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/084eb81ce6b6c14b01948b0348c1f72d0e05ecca"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"71614ae49a95e0f7cbc6ec7cd6bd21a47e7c027e","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/71614ae49a95e0f7cbc6ec7cd6bd21a47e7c027e","html_url":"https://github.com/DonGoddard/XMLEditor/commit/71614ae49a95e0f7cbc6ec7cd6bd21a47e7c027e"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [XmlWindow] Loading XML from local path: 'StreamingAssets/XMLFileApp.xml'
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/XMLFileApp.xml
+
+[Error] [file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/XMLFileApp.xml] Network Error: HTTP/1.1 404 Not Found
+
+[Error] [XmlWindow] Failed to load XML.
+  Attempted path : 'StreamingAssets/XMLFileApp.xml'
+  iconId         : 'XMLFileApp'
+  resourceFileName: ''
+  isLocalFile    : True | isResourceUrl: False
+[Log] [Dockbar] Spawned 'XMLFileApp' (XML File).
+
+[Log] [UIManager] Unregistered and Cleaned: XMLFileApp
+
+[Log] [Uploader] Starting fetch for Global/Files/Uml/UML_SystemDesign.xml (ID: 5)
+
+[Log] [Dockbar] Spawned 'UMLFileApp' (XML File).
+
+[Warning] [Uploader] ProcessRequest #5 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 5 — ERROR. Retry 1/5...
+[Log] [Uploader] Retrying request 5...
+[Log] [Uploader] Starting fetch for Global/Files/Uml/UML_SystemDesign.xml (ID: 5)
+
+[Warning] [Uploader] ProcessRequest #5 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 5 — ERROR. Retry 2/5...
+[Log] [UIManager] Unregistered and Cleaned: UMLFileApp
+
+[Log] [Uploader] Retrying request 5...
+[Log] [Uploader] Starting fetch for Global/Files/Uml/UML_SystemDesign.xml (ID: 5)
+
+[Warning] [Uploader] ProcessRequest #5 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 5 — ERROR. Retry 3/5...
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] [Uploader] Retrying request 5...
+[Log] [Uploader] Starting fetch for Global/Files/Uml/UML_SystemDesign.xml (ID: 5)
+
+[Warning] [Uploader] ProcessRequest #5 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 5 — ERROR. Retry 4/5...
+[Log] [XmlWindow] Loading XML from URL: 'https://example-files.online-convert.com/document/xml/example.xml'
+[Log] [Dockbar] Spawned 'XmlUrlHttpsApp' (XML Https).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"d03c0cab84ce292c715e6700cb7506bcaf4d3ac4","size":5435,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/d03c0cab84ce292c715e6700cb7506bcaf4d3ac4","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/d03c0cab84ce292c715e6700cb7506bcaf4d3ac4","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"9c5c9170099474685c7cc9967caffe7fab3be266","node_id":"C_kwDOROdx39oAKDljNWM5MTcwMDk5NDc0Njg1YzdjYzk5NjdjYWZmZTdmYWIzYmUyNjY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/9c5c9170099474685c7cc9967caffe7fab3be266","html_url":"https://github.com/DonGoddard/XMLEditor/commit/9c5c9170099474685c7cc9967caffe7fab3be266","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:25:49Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:25:49Z"},"tree":{"sha":"f4b4e35d5318abce1a871280a87c874aa6793be8","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/f4b4e35d5318abce1a871280a87c874aa6793be8"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"511f3b4f10a2d9217a29358480e61f7d2089cab6","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/511f3b4f10a2d9217a29358480e61f7d2089cab6","html_url":"https://github.com/DonGoddard/XMLEditor/commit/511f3b4f10a2d9217a29358480e61f7d2089cab6"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [Uploader] Retrying request 5...
+[Log] [Uploader] Starting fetch for Global/Files/Uml/UML_SystemDesign.xml (ID: 5)
+
+[Warning] [Uploader] ProcessRequest #5 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Error] [Uploader] Giving up on request 5 after 5 failed retries.
+[Warning] [UmlWindow] GitHub load failed, falling back to StreamingAssets.
+
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/UML_SystemDesign.xml
+
+[Log] [UmlWindow] Found 4 classes in XML.
+
+[Error] [Assets/StreamingAssets/.xml] An error occurred: Could not find file "/Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/.xml"
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] [UIManager] Unregistered and Cleaned: XmlUrlHttpsApp
+
+[Log] [XmlWindow] Loading XML from URL: 'http://www.dealerhub.net/workspace/zaexports/autoslmcustomstockfeed/autoslmcustomstockfeedTesfeed2.xml'
+[Log] [Dockbar] Spawned 'XmlUrlHttpApp' (XML Http).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"5ed3c939ff33f35c22f799c60649085361f3ae40","size":5623,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/5ed3c939ff33f35c22f799c60649085361f3ae40","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/5ed3c939ff33f35c22f799c60649085361f3ae40","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"74a4b367fff347740006a552175fb8598cc0c7f7","node_id":"C_kwDOROdx39oAKDc0YTRiMzY3ZmZmMzQ3NzQwMDA2YTU1MjE3NWZiODU5OGNjMGM3Zjc","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/74a4b367fff347740006a552175fb8598cc0c7f7","html_url":"https://github.com/DonGoddard/XMLEditor/commit/74a4b367fff347740006a552175fb8598cc0c7f7","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:25:55Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:25:55Z"},"tree":{"sha":"5cb3b58db5ef2d2d953306a669778d47976c13dd","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/5cb3b58db5ef2d2d953306a669778d47976c13dd"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"9c5c9170099474685c7cc9967caffe7fab3be266","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/9c5c9170099474685c7cc9967caffe7fab3be266","html_url":"https://github.com/DonGoddard/XMLEditor/commit/9c5c9170099474685c7cc9967caffe7fab3be266"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Error] [Assets/StreamingAssets/.xml] An error occurred: Could not find file "/Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/.xml"
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"fd49265a8e3601b4e1bcd17ebcc4c70f3163eae2","size":6119,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/fd49265a8e3601b4e1bcd17ebcc4c70f3163eae2","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/fd49265a8e3601b4e1bcd17ebcc4c70f3163eae2","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"fe0358b018143f6f757107a747b0f17c53908fa9","node_id":"C_kwDOROdx39oAKGZlMDM1OGIwMTgxNDNmNmY3NTcxMDdhNzQ3YjBmMTdjNTM5MDhmYTk","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/fe0358b018143f6f757107a747b0f17c53908fa9","html_url":"https://github.com/DonGoddard/XMLEditor/commit/fe0358b018143f6f757107a747b0f17c53908fa9","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:01Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:01Z"},"tree":{"sha":"d996724a8b1cb993e128bfffb2e8dd35d29cb5a5","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/d996724a8b1cb993e128bfffb2e8dd35d29cb5a5"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"74a4b367fff347740006a552175fb8598cc0c7f7","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/74a4b367fff347740006a552175fb8598cc0c7f7","html_url":"https://github.com/DonGoddard/XMLEditor/commit/74a4b367fff347740006a552175fb8598cc0c7f7"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [UIManager] Unregistered and Cleaned: XmlUrlHttpApp
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Xml/.xml!</color> HTTP 200
+Worker response: {"content":{"name":".xml","path":"SavedData/Global/Files/Xml/.xml","sha":"0c357981d50003946e77352fb2222a9dec72e6c6","size":18582,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/.xml?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/.xml","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/0c357981d50003946e77352fb2222a9dec72e6c6","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Xml/.xml","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/.xml?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/0c357981d50003946e77352fb2222a9dec72e6c6","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/.xml"}},"commit":{"sha":"fe86ee4472b25985c8e4bf2fb6dceb71cc64d277","node_id":"C_kwDOROdx39oAKGZlODZlZTQ0NzJiMjU5ODVjOGU0YmYyZmI2ZGNlYjcxY2M2NGQyNzc","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/fe86ee4472b25985c8e4bf2fb6dceb71cc64d277","html_url":"https://github.com/DonGoddard/XMLEditor/commit/fe86ee4472b25985c8e4bf2fb6dceb71cc64d277","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:03Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:03Z"},"tree":{"sha":"a06962371d9cbb96f0f8f5ea82148f339e16d78b","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/a06962371d9cbb96f0f8f5ea82148f339e16d78b"},"message":"Sync Global/Files/Xml/.xml","parents":[{"sha":"fe0358b018143f6f757107a747b0f17c53908fa9","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/fe0358b018143f6f757107a747b0f17c53908fa9","html_url":"https://github.com/DonGoddard/XMLEditor/commit/fe0358b018143f6f757107a747b0f17c53908fa9"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [XmlWindow] Loading XML from local path: 'StreamingAssets/Xml/Books Sample XML.xml'
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/Books%20Sample%20XML.xml
+
+[Log] [Dockbar] Spawned 'BookApp' (Books).
+
+[Log] [UIManager] Unregistered and Cleaned: BookApp
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Xml/Books Sample XML.xml!</color> HTTP 200
+Worker response: {"content":{"name":"Books Sample XML.xml","path":"SavedData/Global/Files/Xml/Books Sample XML.xml","sha":"1a91992b1f4ead524cc984db9e3c941336eeb5d3","size":4279,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/Books%20Sample%20XML.xml?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/Books%20Sample%20XML.xml","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/1a91992b1f4ead524cc984db9e3c941336eeb5d3","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Xml/Books%20Sample%20XML.xml","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/Books%20Sample%20XML.xml?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/1a91992b1f4ead524cc984db9e3c941336eeb5d3","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/Books%20Sample%20XML.xml"}},"commit":{"sha":"1ae2a9c74009709666067e15be12c53c0540187c","node_id":"C_kwDOROdx39oAKDFhZTJhOWM3NDAwOTcwOTY2NjA2N2UxNWJlMTJjNTNjMDU0MDE4N2M","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/1ae2a9c74009709666067e15be12c53c0540187c","html_url":"https://github.com/DonGoddard/XMLEditor/commit/1ae2a9c74009709666067e15be12c53c0540187c","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:10Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:10Z"},"tree":{"sha":"6bde695978eeefb186d78b8d87ddd051dbcab397","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/6bde695978eeefb186d78b8d87ddd051dbcab397"},"message":"Sync Global/Files/Xml/Books Sample XML.xml","parents":[{"sha":"fe86ee4472b25985c8e4bf2fb6dceb71cc64d277","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/fe86ee4472b25985c8e4bf2fb6dceb71cc64d277","html_url":"https://github.com/DonGoddard/XMLEditor/commit/fe86ee4472b25985c8e4bf2fb6dceb71cc64d277"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [XmlWindow] Loading XML from local path: 'StreamingAssets/Xml/Planets Sample XML.xml'
+[Log] XML Full Path to load: file:///Users/dongoddard/Unity/Projects/NOS/Assets/StreamingAssets/Xml/Planets%20Sample%20XML.xml
+
+[Log] [Dockbar] Spawned 'PlanetsApp' (Planets).
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Xml/Planets Sample XML.xml!</color> HTTP 200
+Worker response: {"content":{"name":"Planets Sample XML.xml","path":"SavedData/Global/Files/Xml/Planets Sample XML.xml","sha":"e95e1527737296e56c87e93bbfa53b8de7052c71","size":477,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/Planets%20Sample%20XML.xml?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/Planets%20Sample%20XML.xml","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/e95e1527737296e56c87e93bbfa53b8de7052c71","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Xml/Planets%20Sample%20XML.xml","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Xml/Planets%20Sample%20XML.xml?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/e95e1527737296e56c87e93bbfa53b8de7052c71","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Xml/Planets%20Sample%20XML.xml"}},"commit":{"sha":"d0ac0e6fde926df5d30ff07e099f0bfafd647b9f","node_id":"C_kwDOROdx39oAKGQwYWMwZTZmZGU5MjZkZjVkMzBmZjA3ZTA5OWYwYmZhZmQ2NDdiOWY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/d0ac0e6fde926df5d30ff07e099f0bfafd647b9f","html_url":"https://github.com/DonGoddard/XMLEditor/commit/d0ac0e6fde926df5d30ff07e099f0bfafd647b9f","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:14Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:14Z"},"tree":{"sha":"37f098846b582d04dc0fb591814947be46a9e04a","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/37f098846b582d04dc0fb591814947be46a9e04a"},"message":"Sync Global/Files/Xml/Planets Sample XML.xml","parents":[{"sha":"1ae2a9c74009709666067e15be12c53c0540187c","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/1ae2a9c74009709666067e15be12c53c0540187c","html_url":"https://github.com/DonGoddard/XMLEditor/commit/1ae2a9c74009709666067e15be12c53c0540187c"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: PlanetsApp
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"c5184561541cfebc5994381de9258edfd9fa4652","size":6260,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/c5184561541cfebc5994381de9258edfd9fa4652","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/c5184561541cfebc5994381de9258edfd9fa4652","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"0ab0cc9f7fcc2e86177df0a7aafea6825f255ba2","node_id":"C_kwDOROdx39oAKDBhYjBjYzlmN2ZjYzJlODYxNzdkZjBhN2FhZmVhNjgyNWYyNTViYTI","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/0ab0cc9f7fcc2e86177df0a7aafea6825f255ba2","html_url":"https://github.com/DonGoddard/XMLEditor/commit/0ab0cc9f7fcc2e86177df0a7aafea6825f255ba2","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:18Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:26:18Z"},"tree":{"sha":"861985a20e7e9327b0615af892384f578f7e6c79","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/861985a20e7e9327b0615af892384f578f7e6c79"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"d0ac0e6fde926df5d30ff07e099f0bfafd647b9f","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/d0ac0e6fde926df5d30ff07e099f0bfafd647b9f","html_url":"https://github.com/DonGoddard/XMLEditor/commit/d0ac0e6fde926df5d30ff07e099f0bfafd647b9f"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Apps/Features.md'
+[Log] [Uploader] Starting fetch for Apps/Features.md (ID: 6)
+
+[Log] [Dockbar] Spawned 'FeaturesApp' (Features).
+
+[Warning] [Uploader] ProcessRequest #6 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 6 — ERROR. Retry 1/5...
+[Log] [Uploader] Retrying request 6...
+[Log] [Uploader] Starting fetch for Apps/Features.md (ID: 6)
+
+[Warning] [Uploader] ProcessRequest #6 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 6 — ERROR. Retry 2/5...
+[Log] [Uploader] Retrying request 6...
+[Log] [Uploader] Starting fetch for Apps/Features.md (ID: 6)
+
+[Warning] [Uploader] ProcessRequest #6 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 6 — ERROR. Retry 3/5...
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] [Uploader] Retrying request 6...
+[Log] [Uploader] Starting fetch for Apps/Features.md (ID: 6)
+
+[Warning] [Uploader] ProcessRequest #6 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Warning] [Uploader] ID 6 — ERROR. Retry 4/5...
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"da7a91df2fe4aa8c40e14453181e5d2e19645333","size":6708,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/da7a91df2fe4aa8c40e14453181e5d2e19645333","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/da7a91df2fe4aa8c40e14453181e5d2e19645333","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"a492e409bd271faefe96515b4bb065dbf02e89a7","node_id":"C_kwDOROdx39oAKGE0OTJlNDA5YmQyNzFmYWVmZTk2NTE1YjRiYjA2NWRiZjAyZTg5YTc","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/a492e409bd271faefe96515b4bb065dbf02e89a7","html_url":"https://github.com/DonGoddard/XMLEditor/commit/a492e409bd271faefe96515b4bb065dbf02e89a7","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:16Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:16Z"},"tree":{"sha":"8599e32a10f188560923c8d1efc3f137b7d0ee03","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/8599e32a10f188560923c8d1efc3f137b7d0ee03"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"bceb51ea3a25fbc3075928131d391835edbbf984","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/bceb51ea3a25fbc3075928131d391835edbbf984","html_url":"https://github.com/DonGoddard/XMLEditor/commit/bceb51ea3a25fbc3075928131d391835edbbf984"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [Uploader] Retrying request 6...
+[Log] [Uploader] Starting fetch for Apps/Features.md (ID: 6)
+
+[Warning] [Uploader] ProcessRequest #6 failed: no content in response
+
+[Log] [Uploader] Data received: 7 chars
+
+[Error] [Uploader] Giving up on request 6 after 5 failed retries.
+[Warning] [NotesWindow] GitHub load FAILED — attempted path: 'SavedData/Apps/Features.md'
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Text/Features.md!</color> HTTP 200
+Worker response: {"content":{"name":"Features.md","path":"SavedData/Global/Files/Text/Features.md","sha":"cd273c54dde797de7cd8cd7d4d69e090d5a264df","size":4548,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/Features.md?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/Features.md","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/cd273c54dde797de7cd8cd7d4d69e090d5a264df","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Text/Features.md","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/Features.md?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/cd273c54dde797de7cd8cd7d4d69e090d5a264df","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/Features.md"}},"commit":{"sha":"0533078be0a5b1993bae7010c6f5bfb7f6a2a327","node_id":"C_kwDOROdx39oAKDA1MzMwNzhiZTBhNWIxOTkzYmFlNzAxMGM2ZjViZmI3ZjZhMmEzMjc","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/0533078be0a5b1993bae7010c6f5bfb7f6a2a327","html_url":"https://github.com/DonGoddard/XMLEditor/commit/0533078be0a5b1993bae7010c6f5bfb7f6a2a327","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:35Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:35Z"},"tree":{"sha":"e64cb670cea6c932f9f062b4138627fade44330c","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/e64cb670cea6c932f9f062b4138627fade44330c"},"message":"Sync Global/Files/Text/Features.md","parents":[{"sha":"a492e409bd271faefe96515b4bb065dbf02e89a7","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/a492e409bd271faefe96515b4bb065dbf02e89a7","html_url":"https://github.com/DonGoddard/XMLEditor/commit/a492e409bd271faefe96515b4bb065dbf02e89a7"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"0a4fcc3ccfc74121335b36df7e8238d76ac875e9","size":6737,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/0a4fcc3ccfc74121335b36df7e8238d76ac875e9","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/0a4fcc3ccfc74121335b36df7e8238d76ac875e9","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"3e365619225690d389b7e1bb7373af15aab7515f","node_id":"C_kwDOROdx39oAKDNlMzY1NjE5MjI1NjkwZDM4OWI3ZTFiYjczNzNhZjE1YWFiNzUxNWY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/3e365619225690d389b7e1bb7373af15aab7515f","html_url":"https://github.com/DonGoddard/XMLEditor/commit/3e365619225690d389b7e1bb7373af15aab7515f","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:36Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:36Z"},"tree":{"sha":"2f4344956eecbcfa8efbef48ef3d549ba3b7f127","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/2f4344956eecbcfa8efbef48ef3d549ba3b7f127"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"0533078be0a5b1993bae7010c6f5bfb7f6a2a327","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/0533078be0a5b1993bae7010c6f5bfb7f6a2a327","html_url":"https://github.com/DonGoddard/XMLEditor/commit/0533078be0a5b1993bae7010c6f5bfb7f6a2a327"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: FeaturesApp
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Global/Files/Text/Features.md'
+[Log] [Uploader] Starting fetch for Global/Files/Text/Features.md (ID: 7)
+
+[Log] [Dockbar] Spawned 'FeaturesApp' (Features).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=lime>[Uploader] ProcessRequest #7 success.</color>
+
+[Log] [Uploader] Data received: 4537 chars
+
+[Log] <color=lime>[Uploader] Fetch #7 success!</color>
+
+[Log] [UIManager] Unregistered and Cleaned: FeaturesApp
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Global/Files/Text/Notes Test.md'
+[Log] [Uploader] Starting fetch for Global/Files/Text/Notes Test.md (ID: 8)
+
+[Log] [Dockbar] Spawned 'NotesApp' (Notes).
+
+[Log] <color=lime>[Uploader] ProcessRequest #8 success.</color>
+
+[Log] [Uploader] Data received: 1928 chars
+
+[Log] <color=lime>[Uploader] Fetch #8 success!</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Text/Notes Test.md!</color> HTTP 200
+Worker response: {"content":{"name":"Notes Test.md","path":"SavedData/Global/Files/Text/Notes Test.md","sha":"5ff14368c3a051851df49646e1969eaa670c5d4e","size":1930,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/Notes%20Test.md?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/Notes%20Test.md","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/5ff14368c3a051851df49646e1969eaa670c5d4e","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Text/Notes%20Test.md","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/Notes%20Test.md?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/5ff14368c3a051851df49646e1969eaa670c5d4e","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/Notes%20Test.md"}},"commit":{"sha":"cb5535c9ef3235a1a1573f892b5f571dedd0278f","node_id":"C_kwDOROdx39oAKGNiNTUzNWM5ZWYzMjM1YTFhMTU3M2Y4OTJiNWY1NzFkZWRkMDI3OGY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/cb5535c9ef3235a1a1573f892b5f571dedd0278f","html_url":"https://github.com/DonGoddard/XMLEditor/commit/cb5535c9ef3235a1a1573f892b5f571dedd0278f","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:56Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:27:56Z"},"tree":{"sha":"2f4344956eecbcfa8efbef48ef3d549ba3b7f127","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/2f4344956eecbcfa8efbef48ef3d549ba3b7f127"},"message":"Sync Global/Files/Text/Notes Test.md","parents":[{"sha":"3e365619225690d389b7e1bb7373af15aab7515f","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/3e365619225690d389b7e1bb7373af15aab7515f","html_url":"https://github.com/DonGoddard/XMLEditor/commit/3e365619225690d389b7e1bb7373af15aab7515f"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: NotesApp
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Global/Files/Text/Notes Test.md'
+[Log] [Uploader] Starting fetch for Global/Files/Text/Notes Test.md (ID: 9)
+
+[Log] [Dockbar] Spawned 'NotesApp' (Notes).
+
+[Log] <color=lime>[Uploader] ProcessRequest #9 success.</color>
+
+[Log] [Uploader] Data received: 1928 chars
+
+[Log] <color=lime>[Uploader] Fetch #9 success!</color>
+
+[Log] [UIManager] Unregistered and Cleaned: NotesApp
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Apps/To Do.md'
+[Log] [Uploader] Starting fetch for Apps/To Do.md (ID: 10)
+
+[Log] [Dockbar] Spawned 'ToDoApp' (To Do).
+
+[Warning] [Uploader] ProcessRequest #10 failed: no content in response
+
+[Log] [Uploader] Data received: 8 chars
+
+[Warning] [Uploader] ID 10 — ERROR. Retry 1/5...
+[Log] [Uploader] Retrying request 10...
+[Log] [Uploader] Starting fetch for Apps/To Do.md (ID: 10)
+
+[Warning] [Uploader] ProcessRequest #10 failed: no content in response
+
+[Log] [Uploader] Data received: 8 chars
+
+[Warning] [Uploader] ID 10 — ERROR. Retry 2/5...
+[Log] [Uploader] Retrying request 10...
+[Log] [Uploader] Starting fetch for Apps/To Do.md (ID: 10)
+
+[Warning] [Uploader] ProcessRequest #10 failed: no content in response
+
+[Log] [Uploader] Data received: 8 chars
+
+[Warning] [Uploader] ID 10 — ERROR. Retry 3/5...
+[Log] [Uploader] Retrying request 10...
+[Log] [Uploader] Starting fetch for Apps/To Do.md (ID: 10)
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Warning] [Uploader] ProcessRequest #10 failed: no content in response
+
+[Log] [Uploader] Data received: 8 chars
+
+[Warning] [Uploader] ID 10 — ERROR. Retry 4/5...
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"93fafd8ec02309a13b22cdc65a5c5ddfaea6ae56","size":6904,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/93fafd8ec02309a13b22cdc65a5c5ddfaea6ae56","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/93fafd8ec02309a13b22cdc65a5c5ddfaea6ae56","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"bc7c2d159cf2767bd29a04ec4fa45448bae807bb","node_id":"C_kwDOROdx39oAKGJjN2MyZDE1OWNmMjc2N2JkMjlhMDRlYzRmYTQ1NDQ4YmFlODA3YmI","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/bc7c2d159cf2767bd29a04ec4fa45448bae807bb","html_url":"https://github.com/DonGoddard/XMLEditor/commit/bc7c2d159cf2767bd29a04ec4fa45448bae807bb","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:08Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:08Z"},"tree":{"sha":"95b4fa049354335428e6e7634929534ed378a889","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/95b4fa049354335428e6e7634929534ed378a889"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"cb5535c9ef3235a1a1573f892b5f571dedd0278f","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/cb5535c9ef3235a1a1573f892b5f571dedd0278f","html_url":"https://github.com/DonGoddard/XMLEditor/commit/cb5535c9ef3235a1a1573f892b5f571dedd0278f"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [Uploader] Retrying request 10...
+[Log] [Uploader] Starting fetch for Apps/To Do.md (ID: 10)
+
+[Warning] [Uploader] ProcessRequest #10 failed: no content in response
+
+[Log] [Uploader] Data received: 8 chars
+
+[Error] [Uploader] Giving up on request 10 after 5 failed retries.
+[Warning] [NotesWindow] GitHub load FAILED — attempted path: 'SavedData/Apps/To Do.md'
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Text/To Do.md!</color> HTTP 200
+Worker response: {"content":{"name":"To Do.md","path":"SavedData/Global/Files/Text/To Do.md","sha":"cd273c54dde797de7cd8cd7d4d69e090d5a264df","size":4548,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/To%20Do.md?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/To%20Do.md","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/cd273c54dde797de7cd8cd7d4d69e090d5a264df","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Text/To%20Do.md","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/To%20Do.md?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/cd273c54dde797de7cd8cd7d4d69e090d5a264df","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/To%20Do.md"}},"commit":{"sha":"d9573946c378657d9412fa85789c1a31f44ccab0","node_id":"C_kwDOROdx39oAKGQ5NTczOTQ2YzM3ODY1N2Q5NDEyZmE4NTc4OWMxYTMxZjQ0Y2NhYjA","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/d9573946c378657d9412fa85789c1a31f44ccab0","html_url":"https://github.com/DonGoddard/XMLEditor/commit/d9573946c378657d9412fa85789c1a31f44ccab0","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:12Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:12Z"},"tree":{"sha":"9d01085aeea4f411cd4506f16ee630a08c62db6b","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/9d01085aeea4f411cd4506f16ee630a08c62db6b"},"message":"Sync Global/Files/Text/To Do.md","parents":[{"sha":"bc7c2d159cf2767bd29a04ec4fa45448bae807bb","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/bc7c2d159cf2767bd29a04ec4fa45448bae807bb","html_url":"https://github.com/DonGoddard/XMLEditor/commit/bc7c2d159cf2767bd29a04ec4fa45448bae807bb"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: ToDoApp
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Global/Files/Text/To Do.md'
+[Log] [Uploader] Starting fetch for Global/Files/Text/To Do.md (ID: 11)
+
+[Log] [Dockbar] Spawned 'ToDoApp' (To Do).
+
+[Log] <color=lime>[Uploader] ProcessRequest #11 success.</color>
+
+[Log] [Uploader] Data received: 4538 chars
+
+[Log] <color=lime>[Uploader] Fetch #11 success!</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"a39a445b29c7e24284457bcc421f7a715f3fb311","size":6930,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/a39a445b29c7e24284457bcc421f7a715f3fb311","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/a39a445b29c7e24284457bcc421f7a715f3fb311","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"a080c66fd1503e1c947b443ca7f84d9950be5e4a","node_id":"C_kwDOROdx39oAKGEwODBjNjZmZDE1MDNlMWM5NDdiNDQzY2E3Zjg0ZDk5NTBiZTVlNGE","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/a080c66fd1503e1c947b443ca7f84d9950be5e4a","html_url":"https://github.com/DonGoddard/XMLEditor/commit/a080c66fd1503e1c947b443ca7f84d9950be5e4a","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:17Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:17Z"},"tree":{"sha":"92639d75ac9fd75d7897f839f551f9e154d23661","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/92639d75ac9fd75d7897f839f551f9e154d23661"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"d9573946c378657d9412fa85789c1a31f44ccab0","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/d9573946c378657d9412fa85789c1a31f44ccab0","html_url":"https://github.com/DonGoddard/XMLEditor/commit/d9573946c378657d9412fa85789c1a31f44ccab0"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: ToDoApp
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"858bd9e6c6130b034f49e1794c27a1812b6aa854","size":6669,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/858bd9e6c6130b034f49e1794c27a1812b6aa854","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/858bd9e6c6130b034f49e1794c27a1812b6aa854","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"acf3aa3a5c5eb7dbd36ac1069bef52108256ac59","node_id":"C_kwDOROdx39oAKGFjZjNhYTNhNWM1ZWI3ZGJkMzZhYzEwNjliZWY1MjEwODI1NmFjNTk","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/acf3aa3a5c5eb7dbd36ac1069bef52108256ac59","html_url":"https://github.com/DonGoddard/XMLEditor/commit/acf3aa3a5c5eb7dbd36ac1069bef52108256ac59","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:37Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:28:37Z"},"tree":{"sha":"e627ef292cd9909936c33e7f9732b9a985231326","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/e627ef292cd9909936c33e7f9732b9a985231326"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"a080c66fd1503e1c947b443ca7f84d9950be5e4a","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/a080c66fd1503e1c947b443ca7f84d9950be5e4a","html_url":"https://github.com/DonGoddard/XMLEditor/commit/a080c66fd1503e1c947b443ca7f84d9950be5e4a"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"53386fa7da71a77bf10bd63d4921cd0e960865c6","size":6669,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/53386fa7da71a77bf10bd63d4921cd0e960865c6","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/53386fa7da71a77bf10bd63d4921cd0e960865c6","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"e8931315be46998ed26263b5f4a859c9681f9e5e","node_id":"C_kwDOROdx39oAKGU4OTMxMzE1YmU0Njk5OGVkMjYyNjNiNWY0YTg1OWM5NjgxZjllNWU","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/e8931315be46998ed26263b5f4a859c9681f9e5e","html_url":"https://github.com/DonGoddard/XMLEditor/commit/e8931315be46998ed26263b5f4a859c9681f9e5e","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:21Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:21Z"},"tree":{"sha":"67ba172172cd8f00e338b6b8f8670c9766c1b7d4","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/67ba172172cd8f00e338b6b8f8670c9766c1b7d4"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"acf3aa3a5c5eb7dbd36ac1069bef52108256ac59","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/acf3aa3a5c5eb7dbd36ac1069bef52108256ac59","html_url":"https://github.com/DonGoddard/XMLEditor/commit/acf3aa3a5c5eb7dbd36ac1069bef52108256ac59"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [NotesWindow] Loading from GitHub path: 'SavedData/Global/Files/Text/Notes Test.md'
+[Log] [Uploader] Starting fetch for Global/Files/Text/Notes Test.md (ID: 12)
+
+[Log] [Dockbar] Spawned 'NotesApp' (Notes).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=lime>[Uploader] ProcessRequest #12 success.</color>
+
+[Log] [Uploader] Data received: 1929 chars
+
+[Log] <color=lime>[Uploader] Fetch #12 success!</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"c3729c739214b77de0e619c9fdb599f6fda8daf5","size":6930,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/c3729c739214b77de0e619c9fdb599f6fda8daf5","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/c3729c739214b77de0e619c9fdb599f6fda8daf5","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"ed51fcc17efb9d05ac1f779896d5457a1d308bff","node_id":"C_kwDOROdx39oAKGVkNTFmY2MxN2VmYjlkMDVhYzFmNzc5ODk2ZDU0NTdhMWQzMDhiZmY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/ed51fcc17efb9d05ac1f779896d5457a1d308bff","html_url":"https://github.com/DonGoddard/XMLEditor/commit/ed51fcc17efb9d05ac1f779896d5457a1d308bff","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:38Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:38Z"},"tree":{"sha":"a59f32720ffb6d683028955dbafc7ee9ff8137e7","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/a59f32720ffb6d683028955dbafc7ee9ff8137e7"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"e8931315be46998ed26263b5f4a859c9681f9e5e","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/e8931315be46998ed26263b5f4a859c9681f9e5e","html_url":"https://github.com/DonGoddard/XMLEditor/commit/e8931315be46998ed26263b5f4a859c9681f9e5e"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] [WindowBase] Content dirty: Notes
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Text/Notes Test.md!</color> HTTP 200
+Worker response: {"content":{"name":"Notes Test.md","path":"SavedData/Global/Files/Text/Notes Test.md","sha":"4c5788cd735635e572a8b11c6ecf278f6c23b0b9","size":1933,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/Notes%20Test.md?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/Notes%20Test.md","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/4c5788cd735635e572a8b11c6ecf278f6c23b0b9","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Text/Notes%20Test.md","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Text/Notes%20Test.md?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/4c5788cd735635e572a8b11c6ecf278f6c23b0b9","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Text/Notes%20Test.md"}},"commit":{"sha":"955b54877da3a55b074ef2902f0918b5bd0f6ab0","node_id":"C_kwDOROdx39oAKDk1NWI1NDg3N2RhM2E1NWIwNzRlZjI5MDJmMDkxOGI1YmQwZjZhYjA","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/955b54877da3a55b074ef2902f0918b5bd0f6ab0","html_url":"https://github.com/DonGoddard/XMLEditor/commit/955b54877da3a55b074ef2902f0918b5bd0f6ab0","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:52Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:52Z"},"tree":{"sha":"58444df1e40c81029c6cc3d0ece73b5c53b2bc15","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/58444df1e40c81029c6cc3d0ece73b5c53b2bc15"},"message":"Sync Global/Files/Text/Notes Test.md","parents":[{"sha":"ed51fcc17efb9d05ac1f779896d5457a1d308bff","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/ed51fcc17efb9d05ac1f779896d5457a1d308bff","html_url":"https://github.com/DonGoddard/XMLEditor/commit/ed51fcc17efb9d05ac1f779896d5457a1d308bff"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"85e70b5fd7ce5b08a691dd072f06a26bdef2da65","size":6930,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/85e70b5fd7ce5b08a691dd072f06a26bdef2da65","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/85e70b5fd7ce5b08a691dd072f06a26bdef2da65","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"7dd3b75684ff0213f9498f9fe7759b56d33e3f1a","node_id":"C_kwDOROdx39oAKDdkZDNiNzU2ODRmZjAyMTNmOTQ5OGY5ZmU3NzU5YjU2ZDMzZTNmMWE","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/7dd3b75684ff0213f9498f9fe7759b56d33e3f1a","html_url":"https://github.com/DonGoddard/XMLEditor/commit/7dd3b75684ff0213f9498f9fe7759b56d33e3f1a","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:57Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:29:57Z"},"tree":{"sha":"e3440ffe42af677ec98d6f4a937902886a54608c","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/e3440ffe42af677ec98d6f4a937902886a54608c"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"955b54877da3a55b074ef2902f0918b5bd0f6ab0","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/955b54877da3a55b074ef2902f0918b5bd0f6ab0","html_url":"https://github.com/DonGoddard/XMLEditor/commit/955b54877da3a55b074ef2902f0918b5bd0f6ab0"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: NotesApp
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [Dockbar] Spawned 'ChatApp' (Chat AI).
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] [ChatWindow] Sending request. Provider=Gemini Model=gemini-2.5-flash
+[Log] [ChatWindow] Debug enabled. WorkerUrl=https://xml-editor-ai.idongoddard.workers.dev GameObject=Chat(Clone)
+[Log] [ChatWindow] Gemini url: https://xml-editor-ai.idongoddard.workers.dev
+[Log] [ChatWindow] Gemini payload: {"provider":"gemini","model":"gemini-2.5-flash","prompt":"hi"}
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"6cbea2d9981b99c8e92fd664b2c1cffc2c6f23df","size":6932,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/6cbea2d9981b99c8e92fd664b2c1cffc2c6f23df","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/6cbea2d9981b99c8e92fd664b2c1cffc2c6f23df","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"ad4f7d6820aeb3899a9bac13e881a8df4c60acb0","node_id":"C_kwDOROdx39oAKGFkNGY3ZDY4MjBhZWIzODk5YTliYWMxM2U4ODFhOGRmNGM2MGFjYjA","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/ad4f7d6820aeb3899a9bac13e881a8df4c60acb0","html_url":"https://github.com/DonGoddard/XMLEditor/commit/ad4f7d6820aeb3899a9bac13e881a8df4c60acb0","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:30:28Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:30:28Z"},"tree":{"sha":"55d90ea984bc48bd756699162d1f47c7772abfed","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/55d90ea984bc48bd756699162d1f47c7772abfed"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"7dd3b75684ff0213f9498f9fe7759b56d33e3f1a","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/7dd3b75684ff0213f9498f9fe7759b56d33e3f1a","html_url":"https://github.com/DonGoddard/XMLEditor/commit/7dd3b75684ff0213f9498f9fe7759b56d33e3f1a"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [ChatWindow] Gemini response headers: [date, Thu, 09 Apr 2026 14:30:30 GMT], [content-type, application/json], [access-control-allow-origin, *], [access-control-allow-headers, Content-Type, User-Agent, X-NOS-Client], [access-control-allow-methods, POST, GET, OPTIONS], [x-worker-provider, gemini], [x-worker-version, nos-ai-2026-04-08-03], [report-to, {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=aOVwjjfV3WgeTIb2Q7LFlcN79ylKXvj8sU6xm4vtAvjbBTNU%2FFSXuK%2FtCOkCrlzBAdQ2N3uBA8jcKDzuZC0VHD71wi%2F85N2qlyhxJ2aqHQansdzxPFZ7ovtMvJyyucXjlcXZja4%2F2ZTv1VkcSxGDfX82qFzA5Cbv"}]}], [nel, {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}], [content-encoding, gzip], [server, cloudflare], [cf-ray, 9e9a35bb6d5ccc9b-BOS], [alt-svc, h3=":443"; ma=86400]
+[Log] [ChatWindow] Gemini response code: 200
+[Log] [ChatWindow] Gemini response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello! How can I help you today?"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1,
+    "candidatesTokenCount": 9,
+    "totalTokenCount": 373,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1
+      }
+    ],
+    "thoughtsTokenCount": 363
+  },
+  "modelVersion": "gemini-2.5-flash",
+  "responseId": "BLjXaeiHH5Tc_uMPk_rKiAM"
+}
+
+[Log] [ChatWindow] Sending request. Provider=Gemini Model=gemini-2.5-flash
+[Log] [ChatWindow] Debug enabled. WorkerUrl=https://xml-editor-ai.idongoddard.workers.dev GameObject=Chat(Clone)
+[Log] [ChatWindow] Gemini url: https://xml-editor-ai.idongoddard.workers.dev
+[Log] [ChatWindow] Gemini payload: {"provider":"gemini","model":"gemini-2.5-flash","prompt":"do you like tacos"}
+[Log] [ChatWindow] Gemini response headers: [date, Thu, 09 Apr 2026 14:30:42 GMT], [content-type, application/json], [access-control-allow-origin, *], [access-control-allow-headers, Content-Type, User-Agent, X-NOS-Client], [access-control-allow-methods, POST, GET, OPTIONS], [x-worker-provider, gemini], [x-worker-version, nos-ai-2026-04-08-03], [report-to, {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=rNQci6YeFbaCRwBr0xVgXs35jl8h96Fy2S6mh6ac96qxR8SCrJG4QFkslB13L%2FXfLsj4T0wfxgCKrGVerXFZld%2Fipi0vNoOme3kEWBvAqGQ7ZhFws2lCQAOA%2Fnhcuv0zFo4Uuq9jWEaZ4BklIrtoabAbPpNov%2BVY"}]}], [nel, {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}], [content-encoding, gzip], [server, cloudflare], [cf-ray, 9e9a35ef7c2ccc9b-BOS], [alt-svc, h3=":443"; ma=86400]
+[Log] [ChatWindow] Gemini response code: 200
+[Log] [ChatWindow] Gemini response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "As an AI, I don't have personal preferences, taste buds, or the ability to eat food, so I can't \"like\" tacos in the way a human does.\n\nHowever, based on the vast amount of data I've processed, I can tell you that tacos are incredibly popular and enjoyed by countless people around the world! I know they come in a huge variety of delicious forms – from classic al pastor to fish tacos, hard shell to soft shell – and are a staple in many cultures.\n\nIf I *could* eat, I imagine I'd be quite a fan! What kind of tacos do *you* like?"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 4,
+    "candidatesTokenCount": 133,
+    "totalTokenCount": 814,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 4
+      }
+    ],
+    "thoughtsTokenCount": 677
+  },
+  "modelVersion": "gemini-2.5-flash",
+  "responseId": "DLjXaZOdMryn1MkPzrjksQk"
+}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"d6a738b4186594d83dadfe7c5b285779d0d37d3d","size":6937,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/d6a738b4186594d83dadfe7c5b285779d0d37d3d","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/d6a738b4186594d83dadfe7c5b285779d0d37d3d","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"7dd2c53a4ee36be5eb42978cebb8ed557b0b1596","node_id":"C_kwDOROdx39oAKDdkZDJjNTNhNGVlMzZiZTVlYjQyOTc4Y2ViYjhlZDU1N2IwYjE1OTY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/7dd2c53a4ee36be5eb42978cebb8ed557b0b1596","html_url":"https://github.com/DonGoddard/XMLEditor/commit/7dd2c53a4ee36be5eb42978cebb8ed557b0b1596","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:30:54Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:30:54Z"},"tree":{"sha":"0f0a39a9acc64f8fb108c091990b60ff45e941e5","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/0f0a39a9acc64f8fb108c091990b60ff45e941e5"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"ad4f7d6820aeb3899a9bac13e881a8df4c60acb0","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/ad4f7d6820aeb3899a9bac13e881a8df4c60acb0","html_url":"https://github.com/DonGoddard/XMLEditor/commit/ad4f7d6820aeb3899a9bac13e881a8df4c60acb0"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Chat/Chat_20260328_1021.md!</color> HTTP 200
+Worker response: {"message":"is at 7dd2c53a4ee36be5eb42978cebb8ed557b0b1596 but expected ad4f7d6820aeb3899a9bac13e881a8df4c60acb0","documentation_url":"https://docs.github.com/rest/repos/contents#create-or-update-file-contents","status":"409"}
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"e33b962a080d2581236ff81cdfb5fad69b5fcb9b","size":6937,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/e33b962a080d2581236ff81cdfb5fad69b5fcb9b","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/e33b962a080d2581236ff81cdfb5fad69b5fcb9b","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"93b5cbf74fb69073bd82111626a6ec5eaa561cc6","node_id":"C_kwDOROdx39oAKDkzYjVjYmY3NGZiNjkwNzNiZDgyMTExNjI2YTZlYzVlYWE1NjFjYzY","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/93b5cbf74fb69073bd82111626a6ec5eaa561cc6","html_url":"https://github.com/DonGoddard/XMLEditor/commit/93b5cbf74fb69073bd82111626a6ec5eaa561cc6","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:30:56Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:30:56Z"},"tree":{"sha":"35630261bb29706bef88d1537b03d05ed541ef61","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/35630261bb29706bef88d1537b03d05ed541ef61"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"7dd2c53a4ee36be5eb42978cebb8ed557b0b1596","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/7dd2c53a4ee36be5eb42978cebb8ed557b0b1596","html_url":"https://github.com/DonGoddard/XMLEditor/commit/7dd2c53a4ee36be5eb42978cebb8ed557b0b1596"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Chat/Chat_20260328_1021.md!</color> HTTP 200
+Worker response: {"content":{"name":"Chat_20260328_1021.md","path":"SavedData/Global/Files/Chat/Chat_20260328_1021.md","sha":"aa0f02091850cd82e888e01176d0a47f2dfc7c63","size":667,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Chat/Chat_20260328_1021.md?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Chat/Chat_20260328_1021.md","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/aa0f02091850cd82e888e01176d0a47f2dfc7c63","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Chat/Chat_20260328_1021.md","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Chat/Chat_20260328_1021.md?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/aa0f02091850cd82e888e01176d0a47f2dfc7c63","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Chat/Chat_20260328_1021.md"}},"commit":{"sha":"d52d73e0486e33bf926efbdbd42fb148a4cc0092","node_id":"C_kwDOROdx39oAKGQ1MmQ3M2UwNDg2ZTMzYmY5MjZlZmJkYmQ0MmZiMTQ4YTRjYzAwOTI","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/d52d73e0486e33bf926efbdbd42fb148a4cc0092","html_url":"https://github.com/DonGoddard/XMLEditor/commit/d52d73e0486e33bf926efbdbd42fb148a4cc0092","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:31:28Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:31:28Z"},"tree":{"sha":"ca6d42e8039df3ad3738cc07f5eaddae285ad062","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/ca6d42e8039df3ad3738cc07f5eaddae285ad062"},"message":"Sync Global/Files/Chat/Chat_20260328_1021.md","parents":[{"sha":"93b5cbf74fb69073bd82111626a6ec5eaa561cc6","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/93b5cbf74fb69073bd82111626a6ec5eaa561cc6","html_url":"https://github.com/DonGoddard/XMLEditor/commit/93b5cbf74fb69073bd82111626a6ec5eaa561cc6"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"7ada8387fde1b618812df18504b7f080032fc223","size":6937,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/7ada8387fde1b618812df18504b7f080032fc223","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/7ada8387fde1b618812df18504b7f080032fc223","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"ba419fbc6a9b36653fb6334950c49a206ba31d57","node_id":"C_kwDOROdx39oAKGJhNDE5ZmJjNmE5YjM2NjUzZmI2MzM0OTUwYzQ5YTIwNmJhMzFkNTc","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/ba419fbc6a9b36653fb6334950c49a206ba31d57","html_url":"https://github.com/DonGoddard/XMLEditor/commit/ba419fbc6a9b36653fb6334950c49a206ba31d57","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:31:31Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:31:31Z"},"tree":{"sha":"abb762076ecb72236c18555f6ea92085b046dabe","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/abb762076ecb72236c18555f6ea92085b046dabe"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"d52d73e0486e33bf926efbdbd42fb148a4cc0092","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/d52d73e0486e33bf926efbdbd42fb148a4cc0092","html_url":"https://github.com/DonGoddard/XMLEditor/commit/d52d73e0486e33bf926efbdbd42fb148a4cc0092"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [UIManager] Unregistered and Cleaned: ChatApp
+
+[Log] [Dockbar] Spawned 'ChatApp' (Chat AI).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"1724d184330a459924b457503b5a4458619cf7d5","size":6932,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/1724d184330a459924b457503b5a4458619cf7d5","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/1724d184330a459924b457503b5a4458619cf7d5","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"9bb53be9a61257253fc02aa82aaf5a7585828699","node_id":"C_kwDOROdx39oAKDliYjUzYmU5YTYxMjU3MjUzZmMwMmFhODJhYWY1YTc1ODU4Mjg2OTk","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/9bb53be9a61257253fc02aa82aaf5a7585828699","html_url":"https://github.com/DonGoddard/XMLEditor/commit/9bb53be9a61257253fc02aa82aaf5a7585828699","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:32:36Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:32:36Z"},"tree":{"sha":"98c562cd86942a74fafc540234133167f06baa0b","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/98c562cd86942a74fafc540234133167f06baa0b"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"ba419fbc6a9b36653fb6334950c49a206ba31d57","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/ba419fbc6a9b36653fb6334950c49a206ba31d57","html_url":"https://github.com/DonGoddard/XMLEditor/commit/ba419fbc6a9b36653fb6334950c49a206ba31d57"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [ChatWindow] Sending request. Provider=Gemini Model=gemini-2.5-flash
+[Log] [ChatWindow] Debug enabled. WorkerUrl=https://xml-editor-ai.idongoddard.workers.dev GameObject=Chat(Clone)
+[Log] [ChatWindow] Gemini url: https://xml-editor-ai.idongoddard.workers.dev
+[Log] [ChatWindow] Gemini payload: {"provider":"gemini","model":"gemini-2.5-flash","prompt":"this is a chat test. Say hello"}
+[Log] [ChatWindow] Gemini response headers: [date, Thu, 09 Apr 2026 14:32:44 GMT], [content-type, application/json], [access-control-allow-origin, *], [access-control-allow-headers, Content-Type, User-Agent, X-NOS-Client], [access-control-allow-methods, POST, GET, OPTIONS], [x-worker-provider, gemini], [x-worker-version, nos-ai-2026-04-08-03], [report-to, {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4iRQ38o7xzb9I2NPQyIbeTsObtorMIrzODK%2B9udyzq3e1sMzYpCjetE7cHJZxK7PRER9HkLijSrzfUUmj6CJaqh%2FGVebsoMnFlFbgwFTq%2FhWHb80mLYvxa3bff6rZaOMRPIP2XgzVgR2Vt3v136e%2BoASdEmZEtrn"}]}], [nel, {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}], [content-encoding, gzip], [server, cloudflare], [cf-ray, 9e9a39069ab3cc9b-BOS], [alt-svc, h3=":443"; ma=86400]
+[Log] [ChatWindow] Gemini response code: 200
+[Log] [ChatWindow] Gemini response body: {
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello!"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 8,
+    "candidatesTokenCount": 2,
+    "totalTokenCount": 34,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 8
+      }
+    ],
+    "thoughtsTokenCount": 24
+  },
+  "modelVersion": "gemini-2.5-flash",
+  "responseId": "i7jXaZTyF7Kb_uMPvpvjgAQ"
+}
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] <color=cyan>[Uploader] Saved Global/Files/Chat/Chat_20260328_1021.md!</color> HTTP 200
+Worker response: {"content":{"name":"Chat_20260328_1021.md","path":"SavedData/Global/Files/Chat/Chat_20260328_1021.md","sha":"a3032004751f3bb94e9d76c544568ba3679adf60","size":77,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Chat/Chat_20260328_1021.md?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Chat/Chat_20260328_1021.md","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/a3032004751f3bb94e9d76c544568ba3679adf60","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/Files/Chat/Chat_20260328_1021.md","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/Files/Chat/Chat_20260328_1021.md?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/a3032004751f3bb94e9d76c544568ba3679adf60","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/Files/Chat/Chat_20260328_1021.md"}},"commit":{"sha":"57257fb040b199d8dc083a955090725d5a30866b","node_id":"C_kwDOROdx39oAKDU3MjU3ZmIwNDBiMTk5ZDhkYzA4M2E5NTUwOTA3MjVkNWEzMDg2NmI","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/57257fb040b199d8dc083a955090725d5a30866b","html_url":"https://github.com/DonGoddard/XMLEditor/commit/57257fb040b199d8dc083a955090725d5a30866b","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:32:48Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:32:48Z"},"tree":{"sha":"056bbfcfb76b56713eb5a5cac0141d315fb96dff","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/056bbfcfb76b56713eb5a5cac0141d315fb96dff"},"message":"Sync Global/Files/Chat/Chat_20260328_1021.md","parents":[{"sha":"9bb53be9a61257253fc02aa82aaf5a7585828699","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/9bb53be9a61257253fc02aa82aaf5a7585828699","html_url":"https://github.com/DonGoddard/XMLEditor/commit/9bb53be9a61257253fc02aa82aaf5a7585828699"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] <color=orange>[DESKTOP LAYOUT]</color> Saving Wallpaper URL: gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,246.2
+
+[Log] <color=lime>[DESKTOP LAYOUT SAVED]</color> → Global/DesktopLayout.nos
+
+[Log] <color=cyan>[Uploader] Saved Global/DesktopLayout.nos!</color> HTTP 200
+Worker response: {"content":{"name":"DesktopLayout.nos","path":"SavedData/Global/DesktopLayout.nos","sha":"ed786b18807ae6377e6e6579ce59cf291b3466e2","size":6932,"url":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","html_url":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos","git_url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/ed786b18807ae6377e6e6579ce59cf291b3466e2","download_url":"https://raw.githubusercontent.com/DonGoddard/XMLEditor/main/SavedData/Global/DesktopLayout.nos","type":"file","_links":{"self":"https://api.github.com/repos/DonGoddard/XMLEditor/contents/SavedData/Global/DesktopLayout.nos?ref=main","git":"https://api.github.com/repos/DonGoddard/XMLEditor/git/blobs/ed786b18807ae6377e6e6579ce59cf291b3466e2","html":"https://github.com/DonGoddard/XMLEditor/blob/main/SavedData/Global/DesktopLayout.nos"}},"commit":{"sha":"2160bdefbb1df77d42b7c44bfbd331831b536062","node_id":"C_kwDOROdx39oAKDIxNjBiZGVmYmIxZGY3N2Q0MmI3YzQ0YmZiZDMzMTgzMWI1MzYwNjI","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/2160bdefbb1df77d42b7c44bfbd331831b536062","html_url":"https://github.com/DonGoddard/XMLEditor/commit/2160bdefbb1df77d42b7c44bfbd331831b536062","author":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:32:53Z"},"committer":{"name":"DonGoddard","email":"Don@UFOStudios.net","date":"2026-04-09T14:32:53Z"},"tree":{"sha":"b6381e57ac365aa9d3ffa92de5af34a719f20d11","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/trees/b6381e57ac365aa9d3ffa92de5af34a719f20d11"},"message":"Sync Global/DesktopLayout.nos","parents":[{"sha":"57257fb040b199d8dc083a955090725d5a30866b","url":"https://api.github.com/repos/DonGoddard/XMLEditor/git/commits/57257fb040b199d8dc083a955090725d5a30866b","html_url":"https://github.com/DonGoddard/XMLEditor/commit/57257fb040b199d8dc083a955090725d5a30866b"}],"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}}
+
+[Log] [Dockbar] Spawned 'DebugLogApp' (Debug Log).
+
+[Log] <color=orange>[UIManager] Desktop marked dirty.</color>
+
+[Log] [UIManager] Focusing open window: DebugLogApp_16
 
