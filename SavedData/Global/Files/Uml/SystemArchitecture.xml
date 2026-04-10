@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="SystemArchitecture">
     <Classes>
-        <Class id="User" x="24" y="50">
+        <Class id="User" x="24" y="56">
             <Name>Fred</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
@@ -16,7 +16,7 @@
                 <Method visibility="public" name="Logout2" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="438" y="18">
+        <Class id="Admin" x="438" y="24">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="string" />
@@ -26,7 +26,7 @@
                 <Method visibility="public" name="BanUser" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Product" x="537" y="224">
+        <Class id="Product" x="537" y="230">
             <Name>Product</Name>
             <Attributes>
                 <Attribute visibility="public" name="sku" type="string" />
@@ -37,7 +37,7 @@
                 <Method visibility="public" name="UpdateStock" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Order" x="174" y="421">
+        <Class id="Order" x="174" y="427">
             <Name>Order</Name>
             <Attributes>
                 <Attribute visibility="public" name="orderId" type="int" />
