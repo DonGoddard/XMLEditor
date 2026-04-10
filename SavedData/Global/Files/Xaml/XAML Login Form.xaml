@@ -19,6 +19,7 @@
   </models>
 </gorp>]]></nos:Gorp>
   </nos:DataContext>
+  
     <!-- Hand-crafted sample: a realistic login form.
          Demonstrates: nested StackPanels, Border, TextBlock, TextBox,
          PasswordBox, Button, CheckBox, horizontal layout, margin/padding. -->
