@@ -23,6 +23,7 @@
   
   
   
+  
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Canvas Name="GorpCanvas" Background="#1E1E1E" Width="2000" Height="2000">
             <Border Canvas.Left="50" Canvas.Top="50" Background="#33404D" BorderBrush="#6699CC" BorderThickness="2" CornerRadius="4" Padding="10">
