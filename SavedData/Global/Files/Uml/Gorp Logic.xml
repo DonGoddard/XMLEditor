@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-16"?>
 <UMLDiagram name="Gorp Logic">
     <Classes>
-        <Class id="Simple.Add" x="11" y="146">
+        <Class id="Simple.Add" x="24" y="146">
             <Name>Algo: Simple.Add</Name>
             <Attributes />
             <Methods />
         </Class>
-        <Class id="Simple" x="248" y="144">
+        <Class id="Simple" x="261" y="144">
             <Name>Algo: Simple</Name>
             <Attributes />
             <Methods />
         </Class>
-        <Class id="orp" x="244" y="30">
+        <Class id="orp" x="257" y="30">
             <Name>Model: orp</Name>
             <Attributes>
                 <Attribute visibility="public" name="harvey (int)" type="string" />
@@ -19,7 +19,7 @@
             </Attributes>
             <Methods />
         </Class>
-        <Class id="Simple.Escape" x="245" y="213">
+        <Class id="Simple.Escape" x="258" y="213">
             <Name>Model: Simple.Escape</Name>
             <Attributes>
                 <Attribute visibility="public" name="result (bool)" type="string" />
