@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Italic;\f2\fmodern\fcharset0 CourierNewPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue10;\red114\green133\blue183;\red255\green255\blue255;
+\red209\green241\blue169;\red235\green187\blue255;\red255\green197\blue143;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c3922;\csgenericrgb\c44706\c52157\c71765;\csgenericrgb\c100000\c100000\c100000;
+\csgenericrgb\c81961\c94510\c66275;\csgenericrgb\c92157\c73333\c100000;\csgenericrgb\c100000\c77255\c56078;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Units and Types\
+From a user\'92s perspective, every variable must have a specified unit basis and type (e.g. \'93seconds\'94, \'93integer\'94), and these must match in such a way that the operation being performed is valid on these types. By way of example, if the user wants to evaluate x < y, where x is in seconds and y is in kilograms, this is an invalid comparison. A user 
+\f1\i can
+\f0\i0  label a value as unitless, but this must be done explicitly.\
+GORP: What is it?\
+GORP (Gestalt Object Relational Programming) is a non-Turing Complete language for working with \
+GORP Primitives\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8226 	}And\
+{\listtext	\uc0\u8226 	}Choose\
+{\listtext	\uc0\u8226 	}Compare\
+{\listtext	\uc0\u8226 	}Equal\
+{\listtext	\uc0\u8226 	}Exists\
+{\listtext	\uc0\u8226 	}Filter\
+{\listtext	\uc0\u8226 	}Forall\
+{\listtext	\uc0\u8226 	}Greater\
+{\listtext	\uc0\u8226 	}If\
+{\listtext	\uc0\u8226 	}Less\
+{\listtext	\uc0\u8226 	}MathExpression\
+{\listtext	\uc0\u8226 	}Not\
+{\listtext	\uc0\u8226 	}Or\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf0 And\
+Takes two input parameters, P0 and P1, and returns true if they both evaluate to true. These parameters can themselves be GORP invocations \'96 think nested code like\
+ X AND (Y OR Z)\
+Choose\
+Todo\
+Compare\
+Implements the same concept as the C# \'93Comparable\'94 interface \'96 returns -1, 0, or 1 depending on whether the lhs element is less than, equal to, or greater than the rhs element according to a specified mode of comparison.\
+Equal\
+The binary equals operator. Returns true if X and Y are equal, false otherwise.\
+Exists\
+Takes two input parameters, an array and a condition. Returns true if at least 1 element of the array satisfies the condition.\
+Filter\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf2 The set filter operator. Returns all elements of an input set which satisfy a specified condition. It has two inputs (a set and a condition) and one output.\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf0 Forall\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf2 The set forall operator. It applies a specified operation to every element of a set. It has two inputs (a set and an operator) and one output.\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf0 Greater\
+The binary \'93greater than\'94 operator. See \'93Less\'94 for more information.\
+If\
+Standard \'93If\'94 conditional. If the condition is true, do the specified operation.\
+Less\
+The binary \'93less than\'94 operator.\
+In the following example, the first parameter is itself a function, which is then checked against the constant 500 \'96 if the result of the function is less than 500, this will return true.\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\fs16 \cf0 <Less output=" funcname.result" input="nameofinputmodel">\
+	<parameters>\
+		<parameter output="funcname.result" position="0">\
+			<pathvariable namespace=" nameofinputmodel.subspace.etc" type="int"/>\
+		</parameter>\
+		<parameter position="1">500</parameter>\
+	</parameters>\
+</Less>\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\fs24 \cf0 MathExpression\
+This is how we take MathML and turn it into running code. The input here is any valid MathML syntax (with restrictions; not all operators are supported at this time). For example:\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\fs16 \cf0 <math xmlns="http://www.w3.org/1998/Math/MathML">\
+	<apply>\
+		<plus/>\
+		<ci>x</ci>\
+		<cn>1</cn>\
+	</apply>\
+</math>\
+\pard\pardeftab720\sb240\pardirnatural\partightenfactor0
+
+\fs24 \cf0 This would render as \'93x + 1\'94, and does exactly that when compiled into code \'96 takes a variable named x as input and adds 1 (the \'93ci\'94 tag in MathML refers to variables, the \'93cn\'94 tag refers to constants).\
+Right now, the only supported operators are:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sb240\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf0 {\listtext	\uc0\u8226 	}Plus\
+{\listtext	\uc0\u8226 	}Minus\
+{\listtext	\uc0\u8226 	}Times\
+{\listtext	\uc0\u8226 	}Divide\
+{\listtext	\uc0\u8226 	}Power\
+{\listtext	\uc0\u8226 	}Log\
+\pard\pardeftab720\sb240\pardirnatural\partightenfactor0
+\cf0 When representing these as XML, there can also be nested invocations of other MathExpressions. Below is a running code example that shows how a MathML XML document is converted into an executable function in C#.\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\f2 \cf3 //doc = <math xmlns="http://www.w3.org/1998/Math/MathML">\cf4 \uc0\u8232 \cf3 //	        <apply>\cf4 \uc0\u8232 \cf3 //		        <plus/>\cf4 \uc0\u8232 \cf3 //		        <ci>x</ci>\cf4 \uc0\u8232 \cf3 //		        <cn>1</cn>\cf4 \uc0\u8232 \cf3 //	        </apply>\cf4 \uc0\u8232 \cf3 //      </math>\cf4 \uc0\u8232 \u8232 XmlElement? e_math = doc.SelectSingleNode(\cf5 "//Math/math"\cf4 ) \cf6 as\cf4  XmlElement;\uc0\u8232 Assert.NotNull(e_math);\u8232 \u8232 MathExpression expr = \cf6 new\cf4  MathExpression(\cf5 "MyMath"\cf4 );\uc0\u8232 \u8232 Stopwatch sw = \cf6 new\cf4  Stopwatch();\uc0\u8232 sw.Start();\u8232 expr.Compile(e_math);\u8232 sw.Stop();\u8232 Console.WriteLine(\cf5 $"Compiling MathML into C# expression tree took \{sw.ElapsedMilliseconds\}ms"\cf4 );\uc0\u8232 \u8232 SymbolicValue sv = \cf6 new\cf4  SymbolicValue \{ Base = GestaltType.g_double, Unit = \cf7 null\cf4 , Value = \cf7 183497\cf4  \}; \cf3 //This is the input value (i.e. "x")\cf4 \uc0\u8232 GorpValue gv = \cf6 new\cf4  GorpValue \{ TypeSymbol = \cf5 "double"\cf4 , Value = sv \};\uc0\u8232 GorpModelMember \cf6 value\cf4  = \cf6 new\cf4  GorpModelMember()\uc0\u8232 \{\u8232     Value = gv\u8232 \};\u8232 \cf6 value\cf4 .GestaltType = GestaltType.g_double;\uc0\u8232 \cf6 value\cf4 .Namespace = \cf5 "x"\cf4 ; \cf3 //This is how the code knows that the "x" in the MathML gets this specific value\cf4 \uc0\u8232 \u8232 GorpModel model = \cf6 new\cf4  GorpModel();\uc0\u8232 model.Members.Add(\cf6 value\cf4 .Namespace, \cf6 value\cf4 );\uc0\u8232 IModel result = expr.Invoke(model);\u8232 Double output = (Double)result.Members[\cf5 "MathExpression.Result"\cf4 ].Value.Value.Value;\uc0\u8232 \u8232 sw.Reset();\u8232 sw.Start();\u8232 \u8232 \cf6 for\cf4  (\cf6 int\cf4  i = \cf7 0\cf4 ; i < \cf7 10000\cf4 ; i++)\uc0\u8232 \{\u8232     expr.Invoke(model);\u8232 \}\u8232 \u8232 sw.Stop();\u8232 \u8232 Console.WriteLine(\cf5 $"Total ticks elapsed = \{sw.ElapsedTicks\}"\cf4 );\uc0\u8232 Console.WriteLine(\cf5 $"Average actual execution of C# expression tree took: \{((Double)sw.ElapsedTicks) / (Double)\cf7 10000\cf5 \} ticks"\cf4 );\
+\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\f0 \cf0 Not\
+The negation operator: takes any GORP function that returns a Boolean as input and outputs true if that function evaluates to false, and true otherwise.\
+Or\
+The binary OR operator. Same concept as AND, with the same syntax and restrictions.\
+}
