@@ -1,0 +1,62 @@
+<Window xmlns:nos="http://nos.dev/datacontext" x:Class="InsertTextClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Name="Client"
+        Title="Insert Text Client" Height="350" Width="525">
+  <nos:DataContext nos:mode="json">
+    <nos:Json><![CDATA[{
+  "Title": "Hello World"
+}]]></nos:Json>
+    <nos:Gorp><![CDATA[<gorp>
+  <models>
+    <model namespace="data">
+      <variables>
+        <variable name="Title" type="string">Hello World</variable>
+        <variable name="Count" type="int">42</variable>
+      </variables>
+    </model>
+  </models>
+</gorp>]]></nos:Gorp>
+  </nos:DataContext>
+    <!-- Source: Microsoft WPF-Samples (Accessibility/InsertText)
+         Demonstrates: DockPanel, StackPanel, Button, TextBlock, TextBox -->
+
+    <DockPanel>
+        <StackPanel Name="Controls" DockPanel.Dock="Left">
+            <Button Margin="10,0,10,0"
+                    Name="btnStartApp"
+                    Height="25"
+                    Click="btnStartApp_Click"
+                    IsTabStop="True">Start Target App</Button>
+            <TextBlock Name="tbkInsert" Margin="10,10,10,10" Visibility="Visible">
+                Insert Text Using UI Automation or Win32:
+            </TextBlock>
+            <StackPanel Name="spInsert"
+                        Margin="0,0,0,20"
+                        Orientation="Horizontal"
+                        Visibility="Visible">
+                <TextBox Width="200"
+                         Height="25"
+                         Margin="10,0,0,0"
+                         MaxLength="100"
+                         Name="tbInsert"
+                         MaxLines="1"/>
+                <Button Margin="10,0,0,0"
+                        Name="btnUIAutoInsert"
+                        Height="25"
+                        Width="90"
+                        Click="btnInsert_Click">UI Automation</Button>
+                <Button Margin="10,0,10,0"
+                        Name="btnWin32Insert"
+                        Height="25"
+                        Width="50"
+                        Click="btnInsert_Click">Win32</Button>
+            </StackPanel>
+            <TextBlock Margin="10,0,10,0" Name="txtFeedback" TextWrapping="WrapWithOverflow"/>
+        </StackPanel>
+    </DockPanel>
+
+</Window>
