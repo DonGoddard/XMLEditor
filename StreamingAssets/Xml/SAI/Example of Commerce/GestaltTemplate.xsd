@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GestaltTemplate"
+    targetNamespace="http://design.proto.ai/Gestalt.Templates"
+    xmlns:m="http://design.proto.ai/Gestalt.Measurement"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation=
+     "http://design.proto.ai/Gestalt.Measurement
+      http://design.proto.ai/Gestalt.Measurement.xsd
+      http://design.proto.ai/Gestalt.Measurement
+      http://design.proto.ai/Gestalt.Measurement">
+  <xs:element name="templates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="template">
+          <xs:complexType>
+            <xs:sequence>
+              <m:bases />
+              <m:scalars />
+            </xs:sequence>
+            <xs:attribute name="namespace" type="xs:string" use="required" />
+            <xs:attribute name="isabstract" type="xs:boolean" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
