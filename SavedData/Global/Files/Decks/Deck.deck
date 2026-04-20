@@ -4,12 +4,12 @@
     "cardBackPath": "",
     "background": "",
     "sheet": {
-        "path": "Global/Files/Decks/sheet.png",
+        "path": "Global/Files/Decks/Cards_Demo_sheet.png",
         "cols": 13,
         "rows": 4,
-        "paddingX": 15.0,
+        "paddingX": 0.0,
         "paddingY": 0.0,
-        "offsetX": 15.0,
+        "offsetX": 0.0,
         "offsetY": 0.0,
         "colLabels": [
             "A",
