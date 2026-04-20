@@ -7,9 +7,9 @@
         "path": "Global/Files/Decks/sheet.png",
         "cols": 13,
         "rows": 4,
-        "paddingX": 0.0,
+        "paddingX": 15.0,
         "paddingY": 0.0,
-        "offsetX": 0.0,
+        "offsetX": 15.0,
         "offsetY": 0.0,
         "colLabels": [
             "A",
