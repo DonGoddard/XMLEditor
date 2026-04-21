@@ -4,13 +4,13 @@
     "cardBackPath": "",
     "background": "",
     "sheet": {
-        "path": "Global/Files/Images/PlayingCards.png",
+        "path": "Global/Files/Decks/deck_sheet.png",
         "cols": 13,
         "rows": 4,
-        "paddingX": 0.0,
-        "paddingY": 0.0,
-        "offsetX": 0.0,
-        "offsetY": 0.0,
+        "paddingX": 12.057876586914063,
+        "paddingY": 8.842437744140625,
+        "offsetX": 13.665596008300782,
+        "offsetY": 11.254013061523438,
         "colLabels": [
             "A",
             "2",
