@@ -4,7 +4,7 @@
     "cardBackPath": "",
     "background": "",
     "sheet": {
-        "path": "Global/Files/Decks/deck_sheet.png",
+        "path": "Global/Files/Images/PlayingCards.png",
         "cols": 13,
         "rows": 4,
         "paddingX": 0.0,
