@@ -7,10 +7,10 @@
         "path": "Global/Files/Decks/deck_sheet.png",
         "cols": 13,
         "rows": 4,
-        "paddingX": 0.0,
+        "paddingX": 12.64691162109375,
         "paddingY": 0.0,
-        "offsetX": 0.0,
-        "offsetY": 0.0,
+        "offsetX": 12.59063720703125,
+        "offsetY": 11.749397277832032,
         "colLabels": [
             "A",
             "2",
