@@ -1,10 +1,10 @@
 {
-    "deckName": "Cards Demo",
+    "deckName": "New Deck",
     "type": "standard52",
     "cardBackPath": "",
     "background": "",
     "sheet": {
-        "path": "Global/Files/Decks/Cards_Demo_sheet.png",
+        "path": "Global/Files/Images/PlayingCards.png",
         "cols": 13,
         "rows": 4,
         "paddingX": 0.0,
