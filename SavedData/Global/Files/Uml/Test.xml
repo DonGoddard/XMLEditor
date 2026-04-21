@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<UMLDiagram name="SystemArchitecture">
+<UMLDiagram name="Test">
     <Classes>
         <Class id="User" x="24" y="56">
             <Name>Fred</Name>
