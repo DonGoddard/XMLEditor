@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><!-- gorpEndpoint: https://xml-editor-ai.idongoddard.workers.dev --><!-- Using Gorp:  --><Math><name>WR Drops</name><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>12</cn><ci>catch</ci></apply><ci>drop</ci></apply></math><inputs><catch>78</catch><drop>5</drop></inputs></Math>

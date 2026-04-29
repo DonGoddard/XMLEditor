@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><!-- gorpEndpoint: https://xml-editor-ai.idongoddard.workers.dev --><!-- Using Gorp: Values & Variables, Computation --><Math><name>test</name><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><cn>1</cn></apply></math><inputs><x>1</x></inputs></Math>
