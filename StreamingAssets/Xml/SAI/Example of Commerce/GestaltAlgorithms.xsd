@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Gestalt.Algorithms"
+    xmlns:ga="http://design.proto.ai/Gestalt.Algorithms"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="algorithms">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element maxOccurs="unbounded" name="algorithm">
+          <xs:complexType mixed="true">
+            <xs:sequence minOccurs="0">
+              <xs:element minOccurs="0" name="implements">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="delegate">
+                      <xs:complexType>
+                        <xs:attribute name="namespace" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="input">
+                <xs:complexType>
+                  <xs:attribute name="model" type="xs:string" use="required" />
+                  <xs:attribute name="api" type="xs:boolean" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="output">
+                <xs:complexType>
+                  <xs:attribute name="model" type="xs:string" use="required" />
+                  <xs:attribute name="api" type="xs:boolean" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="expressions" type="xs:string" />
+              <xs:element minOccurs="0" name="function">
+                <xs:complexType mixed="true">
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="expressions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="expression">
+                            <xs:complexType>
+                              <xs:attribute name="sequence" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="invoke" type="xs:string" use="optional" />
+                              <xs:attribute name="with" type="xs:string" use="optional" />
+                              <xs:attribute name="constraint" type="xs:string" use="optional" />
+                              <xs:attribute name="delegate" type="xs:string" use="optional" />
+                            </xs:complexType>
+                            <xs:element name="delegate">
+                              <!-- MathML -->
+                            </xs:element>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="delegate">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="control">
+                      <xs:complexType>
+                        <xs:attribute name="model" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="input">
+                      <xs:complexType>
+                        <xs:attribute name="model" type="xs:string" use="required" />
+                        <xs:attribute name="api" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="output">
+                      <xs:complexType>
+                        <xs:attribute name="model" type="xs:string" use="required" />
+                        <xs:attribute name="queued" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="function" />
+                  </xs:sequence>
+                  <xs:attribute name="namespace" type="xs:string" use="optional" />
+                  <xs:attribute name="name" type="xs:string" use="optional" />
+                  <xs:attribute name="fromqueue" type="xs:boolean" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="namespace" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
