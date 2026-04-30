@@ -7,9 +7,9 @@
         "path": "Deck Builder/Files/Decks/deck_sheet.png",
         "cols": 13,
         "rows": 4,
-        "paddingX": 0.0,
+        "paddingX": 5.776068210601807,
         "paddingY": 0.0,
-        "offsetX": 0.0,
+        "offsetX": 8.353075981140137,
         "offsetY": 0.0,
         "colLabels": [
             "A",
