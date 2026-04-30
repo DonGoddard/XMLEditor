@@ -4,15 +4,15 @@
     "cardBackPath": "",
     "background": "",
     "sheet": {
-        "path": "Deck Builder/Files/Decks/deck_sheet.png",
-        "cols": 13,
-        "rows": 4,
-        "paddingX": 5.776068210601807,
-        "paddingY": 0.0,
-        "offsetX": 8.353075981140137,
-        "offsetY": 0.0,
+        "path": "Deck Builder/Files/Images/6akz97o7lj1z.jpg",
+        "cols": 15,
+        "rows": 10,
+        "paddingX": 12.378673553466797,
+        "paddingY": 25.059240341186525,
+        "offsetX": 51.333648681640628,
+        "offsetY": 28.856157302856447,
         "colLabels": [
-            "A",
+            "1",
             "2",
             "3",
             "4",
@@ -22,15 +22,23 @@
             "8",
             "9",
             "10",
-            "J",
-            "Q",
-            "K"
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
         ],
         "rowLabels": [
-            "♠",
-            "♥",
-            "♦",
-            "♣"
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
         ]
     },
     "cards": [
@@ -127,274 +135,960 @@
         },
         {
             "index": 13,
-            "suit": "♥",
-            "rank": "A",
+            "suit": "1",
+            "rank": "14",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 14,
-            "suit": "♥",
-            "rank": "2",
+            "suit": "1",
+            "rank": "15",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 15,
             "suit": "♥",
-            "rank": "3",
+            "rank": "A",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 16,
             "suit": "♥",
-            "rank": "4",
+            "rank": "2",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 17,
             "suit": "♥",
-            "rank": "5",
+            "rank": "3",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 18,
             "suit": "♥",
-            "rank": "6",
+            "rank": "4",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 19,
             "suit": "♥",
-            "rank": "7",
+            "rank": "5",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 20,
             "suit": "♥",
-            "rank": "8",
+            "rank": "6",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 21,
             "suit": "♥",
-            "rank": "9",
+            "rank": "7",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 22,
             "suit": "♥",
-            "rank": "10",
+            "rank": "8",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 23,
             "suit": "♥",
-            "rank": "J",
+            "rank": "9",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 24,
             "suit": "♥",
-            "rank": "Q",
+            "rank": "10",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 25,
             "suit": "♥",
-            "rank": "K",
+            "rank": "J",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 26,
-            "suit": "♦",
-            "rank": "A",
+            "suit": "♥",
+            "rank": "Q",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 27,
-            "suit": "♦",
-            "rank": "2",
+            "suit": "♥",
+            "rank": "K",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 28,
-            "suit": "♦",
-            "rank": "3",
+            "suit": "2",
+            "rank": "14",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 29,
-            "suit": "♦",
-            "rank": "4",
+            "suit": "2",
+            "rank": "15",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 30,
             "suit": "♦",
-            "rank": "5",
+            "rank": "A",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 31,
             "suit": "♦",
-            "rank": "6",
+            "rank": "2",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 32,
             "suit": "♦",
-            "rank": "7",
+            "rank": "3",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 33,
             "suit": "♦",
-            "rank": "8",
+            "rank": "4",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 34,
             "suit": "♦",
-            "rank": "9",
+            "rank": "5",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 35,
             "suit": "♦",
-            "rank": "10",
+            "rank": "6",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 36,
             "suit": "♦",
-            "rank": "J",
+            "rank": "7",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 37,
             "suit": "♦",
-            "rank": "Q",
+            "rank": "8",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 38,
             "suit": "♦",
-            "rank": "K",
+            "rank": "9",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 39,
-            "suit": "♣",
-            "rank": "A",
+            "suit": "♦",
+            "rank": "10",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 40,
-            "suit": "♣",
-            "rank": "2",
+            "suit": "♦",
+            "rank": "J",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 41,
-            "suit": "♣",
-            "rank": "3",
+            "suit": "♦",
+            "rank": "Q",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 42,
-            "suit": "♣",
-            "rank": "4",
+            "suit": "♦",
+            "rank": "K",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 43,
-            "suit": "♣",
-            "rank": "5",
+            "suit": "3",
+            "rank": "14",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 44,
-            "suit": "♣",
-            "rank": "6",
+            "suit": "3",
+            "rank": "15",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 45,
             "suit": "♣",
-            "rank": "7",
+            "rank": "A",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 46,
             "suit": "♣",
-            "rank": "8",
+            "rank": "2",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 47,
             "suit": "♣",
-            "rank": "9",
+            "rank": "3",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 48,
             "suit": "♣",
-            "rank": "10",
+            "rank": "4",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 49,
             "suit": "♣",
-            "rank": "J",
+            "rank": "5",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 50,
             "suit": "♣",
-            "rank": "Q",
+            "rank": "6",
             "name": "",
             "imagePath": ""
         },
         {
             "index": 51,
             "suit": "♣",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 52,
+            "suit": "♣",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 53,
+            "suit": "♣",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 54,
+            "suit": "♣",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 55,
+            "suit": "♣",
+            "rank": "J",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 56,
+            "suit": "♣",
+            "rank": "Q",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 57,
+            "suit": "♣",
             "rank": "K",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 58,
+            "suit": "4",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 59,
+            "suit": "4",
+            "rank": "15",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 60,
+            "suit": "5",
+            "rank": "1",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 61,
+            "suit": "5",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 62,
+            "suit": "5",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 63,
+            "suit": "5",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 64,
+            "suit": "5",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 65,
+            "suit": "5",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 66,
+            "suit": "5",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 67,
+            "suit": "5",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 68,
+            "suit": "5",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 69,
+            "suit": "5",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 70,
+            "suit": "5",
+            "rank": "11",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 71,
+            "suit": "5",
+            "rank": "12",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 72,
+            "suit": "5",
+            "rank": "13",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 73,
+            "suit": "5",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 74,
+            "suit": "5",
+            "rank": "15",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 75,
+            "suit": "6",
+            "rank": "1",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 76,
+            "suit": "6",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 77,
+            "suit": "6",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 78,
+            "suit": "6",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 79,
+            "suit": "6",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 80,
+            "suit": "6",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 81,
+            "suit": "6",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 82,
+            "suit": "6",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 83,
+            "suit": "6",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 84,
+            "suit": "6",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 85,
+            "suit": "6",
+            "rank": "11",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 86,
+            "suit": "6",
+            "rank": "12",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 87,
+            "suit": "6",
+            "rank": "13",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 88,
+            "suit": "6",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 89,
+            "suit": "6",
+            "rank": "15",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 90,
+            "suit": "7",
+            "rank": "1",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 91,
+            "suit": "7",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 92,
+            "suit": "7",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 93,
+            "suit": "7",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 94,
+            "suit": "7",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 95,
+            "suit": "7",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 96,
+            "suit": "7",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 97,
+            "suit": "7",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 98,
+            "suit": "7",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 99,
+            "suit": "7",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 100,
+            "suit": "7",
+            "rank": "11",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 101,
+            "suit": "7",
+            "rank": "12",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 102,
+            "suit": "7",
+            "rank": "13",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 103,
+            "suit": "7",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 104,
+            "suit": "7",
+            "rank": "15",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 105,
+            "suit": "8",
+            "rank": "1",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 106,
+            "suit": "8",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 107,
+            "suit": "8",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 108,
+            "suit": "8",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 109,
+            "suit": "8",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 110,
+            "suit": "8",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 111,
+            "suit": "8",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 112,
+            "suit": "8",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 113,
+            "suit": "8",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 114,
+            "suit": "8",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 115,
+            "suit": "8",
+            "rank": "11",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 116,
+            "suit": "8",
+            "rank": "12",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 117,
+            "suit": "8",
+            "rank": "13",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 118,
+            "suit": "8",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 119,
+            "suit": "8",
+            "rank": "15",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 120,
+            "suit": "9",
+            "rank": "1",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 121,
+            "suit": "9",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 122,
+            "suit": "9",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 123,
+            "suit": "9",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 124,
+            "suit": "9",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 125,
+            "suit": "9",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 126,
+            "suit": "9",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 127,
+            "suit": "9",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 128,
+            "suit": "9",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 129,
+            "suit": "9",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 130,
+            "suit": "9",
+            "rank": "11",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 131,
+            "suit": "9",
+            "rank": "12",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 132,
+            "suit": "9",
+            "rank": "13",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 133,
+            "suit": "9",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 134,
+            "suit": "9",
+            "rank": "15",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 135,
+            "suit": "10",
+            "rank": "1",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 136,
+            "suit": "10",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 137,
+            "suit": "10",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 138,
+            "suit": "10",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 139,
+            "suit": "10",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 140,
+            "suit": "10",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 141,
+            "suit": "10",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 142,
+            "suit": "10",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 143,
+            "suit": "10",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 144,
+            "suit": "10",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 145,
+            "suit": "10",
+            "rank": "11",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 146,
+            "suit": "10",
+            "rank": "12",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 147,
+            "suit": "10",
+            "rank": "13",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 148,
+            "suit": "10",
+            "rank": "14",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 149,
+            "suit": "10",
+            "rank": "15",
             "name": "",
             "imagePath": ""
         }
