@@ -1,0 +1,405 @@
+{
+    "deckName": "Gold and Black Deck",
+    "type": "standard52",
+    "cardBackPath": "Deck Builder/Files/Images/Gold and BLack Back.jpg",
+    "background": "",
+    "sheet": {
+        "path": "Deck Builder/Files/Images/PlayingCards.jpg",
+        "cols": 13,
+        "rows": 4,
+        "paddingX": 10.333575248718262,
+        "paddingY": 9.096514701843262,
+        "offsetX": 11.986224174499512,
+        "offsetY": 12.726611137390137,
+        "cellW": 114.80348205566406,
+        "cellH": 171.9736785888672,
+        "colLabels": [
+            "A",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "J",
+            "Q",
+            "K"
+        ],
+        "rowLabels": [
+            "♠",
+            "♥",
+            "♦",
+            "♣"
+        ]
+    },
+    "cards": [
+        {
+            "index": 0,
+            "suit": "♠",
+            "rank": "A",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 1,
+            "suit": "♠",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 2,
+            "suit": "♠",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 3,
+            "suit": "♠",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 4,
+            "suit": "♠",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 5,
+            "suit": "♠",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 6,
+            "suit": "♠",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 7,
+            "suit": "♠",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 8,
+            "suit": "♠",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 9,
+            "suit": "♠",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 10,
+            "suit": "♠",
+            "rank": "J",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 11,
+            "suit": "♠",
+            "rank": "Q",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 12,
+            "suit": "♠",
+            "rank": "K",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 13,
+            "suit": "♥",
+            "rank": "A",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 14,
+            "suit": "♥",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 15,
+            "suit": "♥",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 16,
+            "suit": "♥",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 17,
+            "suit": "♥",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 18,
+            "suit": "♥",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 19,
+            "suit": "♥",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 20,
+            "suit": "♥",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 21,
+            "suit": "♥",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 22,
+            "suit": "♥",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 23,
+            "suit": "♥",
+            "rank": "J",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 24,
+            "suit": "♥",
+            "rank": "Q",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 25,
+            "suit": "♥",
+            "rank": "K",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 26,
+            "suit": "♦",
+            "rank": "A",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 27,
+            "suit": "♦",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 28,
+            "suit": "♦",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 29,
+            "suit": "♦",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 30,
+            "suit": "♦",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 31,
+            "suit": "♦",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 32,
+            "suit": "♦",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 33,
+            "suit": "♦",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 34,
+            "suit": "♦",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 35,
+            "suit": "♦",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 36,
+            "suit": "♦",
+            "rank": "J",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 37,
+            "suit": "♦",
+            "rank": "Q",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 38,
+            "suit": "♦",
+            "rank": "K",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 39,
+            "suit": "♣",
+            "rank": "A",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 40,
+            "suit": "♣",
+            "rank": "2",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 41,
+            "suit": "♣",
+            "rank": "3",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 42,
+            "suit": "♣",
+            "rank": "4",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 43,
+            "suit": "♣",
+            "rank": "5",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 44,
+            "suit": "♣",
+            "rank": "6",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 45,
+            "suit": "♣",
+            "rank": "7",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 46,
+            "suit": "♣",
+            "rank": "8",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 47,
+            "suit": "♣",
+            "rank": "9",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 48,
+            "suit": "♣",
+            "rank": "10",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 49,
+            "suit": "♣",
+            "rank": "J",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 50,
+            "suit": "♣",
+            "rank": "Q",
+            "name": "",
+            "imagePath": ""
+        },
+        {
+            "index": 51,
+            "suit": "♣",
+            "rank": "K",
+            "name": "",
+            "imagePath": ""
+        }
+    ],
+    "skipped": []
+}
