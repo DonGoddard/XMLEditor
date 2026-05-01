@@ -1,7 +1,7 @@
 {
     "deckName": "Red Diamonds",
     "type": "standard52",
-    "cardBackPath": "Deck Builder/Files/Images/Gold and BLack Back.jpg",
+    "cardBackPath": "Deck Builder/Files/Images/Red Diamonds.jpg",
     "background": "",
     "sheet": {
         "path": "Deck Builder/Files/Images/PlayingCards.jpg",
