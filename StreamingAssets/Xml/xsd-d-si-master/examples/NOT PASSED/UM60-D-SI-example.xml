@@ -1,0 +1,39 @@
+<!--
+		Copyright (c) 2019 - 2021 University of Maribour (UM), all rights reserved. 
+			
+		Authors: 			Bojan Acko, Rok Klobucar
+		DEVELOPMENT:		https://gitlab1.ptb.de/d-ptb/d-si/xsd-d-si
+		D-SI XSD VERSION:	2.2.1
+		RELEASE DATA:		2024-06-21		
+		DOI:				10.5281/zenodo.3366901
+
+		This XML file is free data: you can redistribute it and/or modify
+   		it under the terms of the Creative Commons Attribution 4.0 International License
+   		as published by the Creative Commons Corporation.
+
+    	This XML is distributed in the hope that it will be useful,
+    	but WITHOUT ANY WARRANTY; without even the implied warranty of
+   		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+
+   		You should have received a copy of the Commons Attribution 4.0 International License
+   		along with this XML.  If not, see https://creativecommons.org/licenses/by/4.0/.
+      -->
+
+<siTest:testData id="UM60">
+	<si:realList>
+		<si:listUnit>\metre</si:listUnit>
+		<si:listUnivariateUnc>
+			<si:expandedUnc>
+				<si:uncertainty>0.01</si:uncertainty>
+				<si:coverageFactor>4</si:coverageFactor>
+				<si:coverageProbability>0.95</si:coverageProbability>
+				<si:distribution>normal</si:distribution>
+			</si:expandedUnc>
+		</si:listUnivariateUnc>
+		<si:real>
+			<si:value>200.34</si:value>
+		</si:real>
+		<si:real>
+			<si:value>333.34</si:value>
+		</si:real>
+</siTest:testData>		
