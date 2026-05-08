@@ -9,21 +9,23 @@
                 <Attribute visibility="protected" name="passwordHash" type="string" />
                 <Attribute visibility="protected" name="Nick2" type="float" />
                 <Attribute visibility="public" name="total" type="Dictionary&lt;string, string&gt;" />
+                <Attribute visibility="public" name="newAttr" type="string" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="Logout" returnType="void" />
-                <Method visibility="public" name="Login" returnType="bool" />
                 <Method visibility="public" name="Logout2" returnType="void" />
             </Methods>
         </Class>
-        <Class id="Admin" x="436" y="20">
+        <Class id="Admin" x="431" y="27">
             <Name>Admin</Name>
             <Attributes>
                 <Attribute visibility="public" name="permissions" type="string" />
             </Attributes>
             <Methods>
                 <Method visibility="public" name="NewMethod" returnType="void" />
+                <Method visibility="public" name="Login" returnType="bool" />
                 <Method visibility="public" name="BanUser" returnType="void" />
+                <Method visibility="public" name="NewMethod" returnType="void" />
             </Methods>
         </Class>
         <Class id="Product" x="537" y="230">
@@ -59,5 +61,6 @@
         <Relationship from="User" to="Admin" type="Association" />
         <Relationship from="Order" to="Admin" type="Association" sourceMulti="1" />
         <Relationship from="Order" to="Product" type="Realization" sourceMulti="1..*" targetMulti="1" />
+        <Relationship from="Admin" to="Product" type="Association" />
     </Relationships>
 </UMLDiagram>
