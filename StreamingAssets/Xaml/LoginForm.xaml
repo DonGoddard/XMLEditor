@@ -1,10 +1,24 @@
-<Window x:Class="LoginDemo.MainWindow"
+<Window xmlns:nos="http://nos.dev/datacontext" x:Class="LoginDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login" Height="420" Width="380"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-
+  <nos:DataContext nos:mode="json">
+    <nos:Json><![CDATA[{
+  "Title": "Hello World"
+}]]></nos:Json>
+    <nos:Gorp><![CDATA[<gorp>
+  <models>
+    <model namespace="data">
+      <variables>
+        <variable name="Title" type="string">Hello World</variable>
+        <variable name="Count" type="int">42</variable>
+      </variables>
+    </model>
+  </models>
+</gorp>]]></nos:Gorp>
+  </nos:DataContext>
     <!-- Hand-crafted sample: a realistic login form.
          Demonstrates: nested StackPanels, Border, TextBlock, TextBox,
          PasswordBox, Button, CheckBox, horizontal layout, margin/padding. -->
