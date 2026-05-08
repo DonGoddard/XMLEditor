@@ -2,10 +2,10 @@
 <UMLDiagram name="SystemArchitecture">
     <Classes>
         <Class id="User" x="7" y="48">
-            <Name>Fred</Name>
+            <Name>Jack</Name>
             <Attributes>
                 <Attribute visibility="public" name="email" type="string" />
-                <Attribute visibility="private" name="Nicholas" type="bool" />
+                <Attribute visibility="private" name="Nicholas" type="float" />
                 <Attribute visibility="protected" name="passwordHash" type="string" />
                 <Attribute visibility="protected" name="Nick2" type="float" />
                 <Attribute visibility="public" name="total" type="Dictionary&lt;string, string&gt;" />
