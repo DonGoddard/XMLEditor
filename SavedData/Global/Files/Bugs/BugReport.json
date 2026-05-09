@@ -1,6 +1,18 @@
 {
     "bugs": [
         {
+            "id": "1c133d2a7a3040599d075ba7662c5b5b",
+            "title": "",
+            "description": "",
+            "status": "Open",
+            "severity": "Medium",
+            "priority": "P3",
+            "reporter": "Global",
+            "createdUtc": "2026-05-09T11:23:04.5390000Z",
+            "updatedUtc": "2026-05-09T11:23:04.5390000Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "af80048243ab4510a2d52db051518a04",
             "title": "Open with... too many options",
             "description": "Open with should offer window types to open in and not every window that uses that type. So opening in a Text Window would make sense but opening in Notes Window, Features Window, and To Do window is overkill because they are all just Text Windows",
@@ -25,5 +37,5 @@
             "attachmentPaths": []
         }
     ],
-    "nextDisplayNumber": 3
+    "nextDisplayNumber": 4
 }
