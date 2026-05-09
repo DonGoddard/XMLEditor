@@ -3,14 +3,14 @@
         {
             "id": "BUG-0001",
             "title": "First bug",
-            "description": "",
+            "description": "Fix it!",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:14.2566580Z",
-            "updatedUtc": "2026-05-09T11:45:19.2858060Z",
+            "updatedUtc": "2026-05-09T11:45:26.9038180Z",
             "attachmentPaths": []
         }
     ],
