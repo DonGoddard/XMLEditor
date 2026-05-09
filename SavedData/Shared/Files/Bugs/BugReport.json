@@ -2,7 +2,7 @@
     "bugs": [
         {
             "id": "BUG-0004",
-            "title": "",
+            "title": "Disco",
             "description": "",
             "status": "Open",
             "severity": "Medium",
@@ -10,7 +10,7 @@
             "reporter": "DGod",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:47:15.5942890Z",
-            "updatedUtc": "2026-05-09T11:47:15.5942950Z",
+            "updatedUtc": "2026-05-09T11:47:19.7408220Z",
             "attachmentPaths": []
         },
         {
