@@ -60,3 +60,4 @@
 {"ts":"2026-05-09T13:41:50.7647070Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-09T13:42:03.6987930Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-09T13:42:07.0390340Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-09T13:42:14.2110900Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
