@@ -4,13 +4,15 @@
             "id": "BUG-0004",
             "title": "Disco",
             "description": "Help",
-            "status": "Closed",
+            "status": "Open",
+            "statusNote": "",
             "severity": "Critical",
             "priority": "P1",
+            "app": "NOS",
             "reporter": "DGod",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:47:15.5942890Z",
-            "updatedUtc": "2026-05-09T11:57:18.6645720Z",
+            "updatedUtc": "2026-05-09T12:29:15.2935800Z",
             "attachmentPaths": []
         },
         {
@@ -18,8 +20,10 @@
             "title": "TestT",
             "description": "My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to the end",
             "status": "In Progress",
+            "statusNote": "",
             "severity": "Medium",
             "priority": "P3",
+            "app": "NOS",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:46:03.4436580Z",
@@ -31,8 +35,10 @@
             "title": "Second bug",
             "description": "Im really bugging you now",
             "status": "Open",
+            "statusNote": "",
             "severity": "Medium",
             "priority": "P3",
+            "app": "NOS",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:31.4928910Z",
@@ -44,8 +50,10 @@
             "title": "First bug",
             "description": "Fix it!",
             "status": "Open",
+            "statusNote": "",
             "severity": "Medium",
             "priority": "P3",
+            "app": "NOS",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:14.2566580Z",
@@ -53,5 +61,6 @@
             "attachmentPaths": []
         }
     ],
-    "nextDisplayNumber": 5
+    "nextDisplayNumber": 5,
+    "customApps": []
 }
