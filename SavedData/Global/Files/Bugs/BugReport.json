@@ -2,14 +2,14 @@
     "bugs": [
         {
             "id": "af80048243ab4510a2d52db051518a04",
-            "title": "Open with... too many ",
+            "title": "Open with... too many options, ",
             "description": "",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "createdUtc": "2026-05-09T09:45:40.2044700Z",
-            "updatedUtc": "2026-05-09T09:45:57.8637700Z",
+            "updatedUtc": "2026-05-09T09:46:01.2087810Z",
             "attachmentPaths": []
         },
         {
