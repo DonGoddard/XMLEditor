@@ -5,11 +5,11 @@
             "title": "Open with... too many options",
             "description": "Open with should offer window types to open in and not every window that uses that type. So opening in a Text Window would make sense but opening in Notes Window, Features Window, and To Do window is overkill because they are all just Text Windows",
             "status": "Open",
-            "severity": "Medium",
+            "severity": "Low",
             "priority": "P4",
             "reporter": "Global",
             "createdUtc": "2026-05-09T09:45:40.2044700Z",
-            "updatedUtc": "2026-05-09T09:47:32.1358660Z",
+            "updatedUtc": "2026-05-09T09:47:34.4204870Z",
             "attachmentPaths": []
         },
         {
