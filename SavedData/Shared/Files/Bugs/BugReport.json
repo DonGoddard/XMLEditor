@@ -2,7 +2,7 @@
     "bugs": [
         {
             "id": "BUG-0002",
-            "title": "",
+            "title": "Second bug",
             "description": "",
             "status": "Open",
             "severity": "Medium",
@@ -10,7 +10,7 @@
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:31.4928910Z",
-            "updatedUtc": "2026-05-09T11:45:31.4928960Z",
+            "updatedUtc": "2026-05-09T11:45:36.3060550Z",
             "attachmentPaths": []
         },
         {
