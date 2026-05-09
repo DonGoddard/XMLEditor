@@ -1,0 +1,18 @@
+{
+    "bugs": [
+        {
+            "id": "BUG-0001",
+            "title": "",
+            "description": "",
+            "status": "Open",
+            "severity": "Medium",
+            "priority": "P3",
+            "reporter": "Global",
+            "appVersion": "Recompiled since last build",
+            "createdUtc": "2026-05-09T11:45:14.2566580Z",
+            "updatedUtc": "2026-05-09T11:45:14.2566670Z",
+            "attachmentPaths": []
+        }
+    ],
+    "nextDisplayNumber": 2
+}
