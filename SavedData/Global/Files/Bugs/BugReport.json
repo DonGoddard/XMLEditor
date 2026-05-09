@@ -2,14 +2,14 @@
     "bugs": [
         {
             "id": "1c133d2a7a3040599d075ba7662c5b5b",
-            "title": "This is a bug. ",
+            "title": "This is a bug",
             "description": "Does this bug you? ",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "createdUtc": "2026-05-09T11:23:04.5390000Z",
-            "updatedUtc": "2026-05-09T11:26:10.8310620Z",
+            "updatedUtc": "2026-05-09T11:26:14.6518610Z",
             "attachmentPaths": []
         },
         {
