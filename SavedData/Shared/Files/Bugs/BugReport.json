@@ -16,14 +16,14 @@
         {
             "id": "BUG-0003",
             "title": "TestT",
-            "description": "My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to the en",
+            "description": "My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to the end",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:46:03.4436580Z",
-            "updatedUtc": "2026-05-09T12:20:31.9000000Z",
+            "updatedUtc": "2026-05-09T12:20:32.6660000Z",
             "attachmentPaths": []
         },
         {
