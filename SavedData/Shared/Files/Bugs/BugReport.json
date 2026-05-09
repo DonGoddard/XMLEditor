@@ -16,14 +16,14 @@
         {
             "id": "BUG-0003",
             "title": "Gleek",
-            "description": "My name is Inigo Montoyo",
+            "description": "My name is Inigo Montoyo. You killed ",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:46:03.4436580Z",
-            "updatedUtc": "2026-05-09T12:13:21.6440000Z",
+            "updatedUtc": "2026-05-09T12:13:25.4950000Z",
             "attachmentPaths": []
         },
         {
