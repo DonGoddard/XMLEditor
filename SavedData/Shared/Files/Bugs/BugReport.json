@@ -16,14 +16,14 @@
         {
             "id": "BUG-0003",
             "title": "Gleek",
-            "description": "My name is Inigo Montoyo. You killed my fathers. Prepare to die!",
+            "description": "My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:46:03.4436580Z",
-            "updatedUtc": "2026-05-09T12:13:35.0210000Z",
+            "updatedUtc": "2026-05-09T12:13:38.3740000Z",
             "attachmentPaths": []
         },
         {
