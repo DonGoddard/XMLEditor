@@ -12,8 +12,10 @@
             "reporter": "DGod",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:47:15.5942890Z",
-            "updatedUtc": "2026-05-09T12:29:33.0766820Z",
-            "attachmentPaths": []
+            "updatedUtc": "2026-05-09T12:30:07.9265930Z",
+            "attachmentPaths": [
+                "Shared/Files/Bugs/Attachments/BUG-0004/20260509123006_2482539.png"
+            ]
         },
         {
             "id": "BUG-0003",
