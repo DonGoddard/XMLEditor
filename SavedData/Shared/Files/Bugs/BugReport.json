@@ -42,13 +42,13 @@
             "description": "Im really bugging you now",
             "status": "Open",
             "statusNote": "",
-            "severity": "Major",
+            "severity": "Moderate",
             "priority": "Queue",
             "app": "Ham Sandwich",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:31.4928910Z",
-            "updatedUtc": "2026-05-09T13:13:49.1054650Z",
+            "updatedUtc": "2026-05-09T13:13:51.8055020Z",
             "attachmentPaths": []
         },
         {
