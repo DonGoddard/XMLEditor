@@ -6,11 +6,11 @@
             "description": "Help",
             "status": "Open",
             "severity": "Critical",
-            "priority": "P3",
+            "priority": "P2",
             "reporter": "DGod",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:47:15.5942890Z",
-            "updatedUtc": "2026-05-09T11:47:35.4433690Z",
+            "updatedUtc": "2026-05-09T11:47:48.9061080Z",
             "attachmentPaths": []
         },
         {
