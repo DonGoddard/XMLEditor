@@ -3,13 +3,13 @@
         {
             "id": "1a3758f65e434bd5aa1501d564fea6aa",
             "title": "Cards not reloading",
-            "description": "",
+            "description": "When importing a ",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "createdUtc": "2026-05-09T09:43:39.8064120Z",
-            "updatedUtc": "2026-05-09T09:44:10.0082890Z",
+            "updatedUtc": "2026-05-09T09:44:15.4030500Z",
             "attachmentPaths": []
         }
     ],
