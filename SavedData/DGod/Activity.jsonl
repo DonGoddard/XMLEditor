@@ -4,3 +4,4 @@
 {"ts":"2026-05-09T11:00:23.3839480Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-09T11:11:06.8757170Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-09T11:11:11.5246230Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-09T11:13:16.9827490Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":""}
