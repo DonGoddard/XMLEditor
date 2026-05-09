@@ -104,3 +104,5 @@
 {"ts":"2026-05-09T14:17:08.6253560Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":3322,"detail":""}
 {"ts":"2026-05-09T14:24:09.6292790Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-09T14:24:27.2802580Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-09T14:24:37.7645310Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-09T14:24:40.2649190Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":3435,"detail":""}
