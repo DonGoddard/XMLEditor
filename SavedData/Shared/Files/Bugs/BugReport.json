@@ -41,11 +41,11 @@
             "statusNote": "",
             "severity": "Medium",
             "priority": "P3",
-            "app": "NOS",
+            "app": "Log",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:31.4928910Z",
-            "updatedUtc": "2026-05-09T11:45:42.0925760Z",
+            "updatedUtc": "2026-05-09T12:35:54.8724420Z",
             "attachmentPaths": []
         },
         {
