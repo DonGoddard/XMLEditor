@@ -16,14 +16,14 @@
         {
             "id": "BUG-0003",
             "title": "Gleek",
-            "description": "Bloop",
+            "description": "why can ",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:46:03.4436580Z",
-            "updatedUtc": "2026-05-09T11:46:16.4998360Z",
+            "updatedUtc": "2026-05-09T12:13:10.4120000Z",
             "attachmentPaths": []
         },
         {
