@@ -75,3 +75,4 @@
 {"ts":"2026-05-09T14:41:04.5910000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-09T15:04:24.2220000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
 {"ts":"2026-05-09T15:04:46.2250000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-09T15:05:01.9970000Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":""}
