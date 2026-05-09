@@ -64,3 +64,4 @@
 {"ts":"2026-05-09T13:42:27.1435810Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-09T13:42:30.7612080Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-09T13:42:38.9988030Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":3322,"detail":""}
+{"ts":"2026-05-09T13:46:21.5492290Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
