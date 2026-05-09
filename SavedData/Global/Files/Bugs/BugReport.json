@@ -3,13 +3,13 @@
         {
             "id": "1a3758f65e434bd5aa1501d564fea6aa",
             "title": "Cards not reloading",
-            "description": "When importing an image set and using it for a deck it works but when you go back to the deck editor all of the cards are blank",
+            "description": "When importing an image set and using it for a deck it works but when you go back to the deck editor all of the cards are blank and should ",
             "status": "Open",
             "severity": "Medium",
             "priority": "P3",
             "reporter": "Global",
             "createdUtc": "2026-05-09T09:43:39.8064120Z",
-            "updatedUtc": "2026-05-09T09:44:51.0568610Z",
+            "updatedUtc": "2026-05-09T09:44:53.7700320Z",
             "attachmentPaths": []
         }
     ],
