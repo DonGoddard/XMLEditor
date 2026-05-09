@@ -41,3 +41,4 @@
 {"ts":"2026-05-09T12:13:39.0830000Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":2013,"detail":""}
 {"ts":"2026-05-09T12:13:40.5970000Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":2077,"detail":""}
 {"ts":"2026-05-09T12:13:43.0990000Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":2525,"detail":""}
+{"ts":"2026-05-09T12:16:16.3040000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
