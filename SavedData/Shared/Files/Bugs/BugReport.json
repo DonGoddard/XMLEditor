@@ -4,13 +4,13 @@
             "id": "BUG-0004",
             "title": "Disco",
             "description": "Help",
-            "status": "Open",
+            "status": "In Progress",
             "severity": "Critical",
             "priority": "P1",
             "reporter": "DGod",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:47:15.5942890Z",
-            "updatedUtc": "2026-05-09T11:47:52.6410090Z",
+            "updatedUtc": "2026-05-09T11:57:13.3692530Z",
             "attachmentPaths": []
         },
         {
