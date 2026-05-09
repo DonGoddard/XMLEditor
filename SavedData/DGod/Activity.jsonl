@@ -79,3 +79,5 @@
 {"ts":"2026-05-09T13:59:46.1471350Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-09T14:00:23.5374570Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-09T14:05:08.5684610Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-09T14:05:40.6804350Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-09T14:05:42.5051070Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
