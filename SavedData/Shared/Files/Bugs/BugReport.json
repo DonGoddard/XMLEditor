@@ -1,6 +1,19 @@
 {
     "bugs": [
         {
+            "id": "BUG-0004",
+            "title": "",
+            "description": "",
+            "status": "Open",
+            "severity": "Medium",
+            "priority": "P3",
+            "reporter": "DGod",
+            "appVersion": "Recompiled since last build",
+            "createdUtc": "2026-05-09T11:47:15.5942890Z",
+            "updatedUtc": "2026-05-09T11:47:15.5942950Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "BUG-0003",
             "title": "Gleek",
             "description": "Bloop",
@@ -40,5 +53,5 @@
             "attachmentPaths": []
         }
     ],
-    "nextDisplayNumber": 4
+    "nextDisplayNumber": 5
 }
