@@ -7,12 +7,12 @@
             "status": "In Progress",
             "statusNote": "Evaluating. Need a second opinion",
             "severity": "Critical",
-            "priority": "Now",
+            "priority": "Soon",
             "app": "NOS",
             "reporter": "DGod",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:47:15.5942890Z",
-            "updatedUtc": "2026-05-09T12:30:18.2110120Z",
+            "updatedUtc": "2026-05-09T13:39:21.2199330Z",
             "attachmentPaths": [
                 "Shared/Files/Bugs/Attachments/BUG-0004/20260509123006_2482539.png",
                 "Shared/Files/Bugs/Attachments/BUG-0004/20260509123017_6111867.png"
