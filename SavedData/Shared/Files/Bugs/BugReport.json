@@ -41,11 +41,11 @@
             "statusNote": "",
             "severity": "Medium",
             "priority": "P3",
-            "app": "Chat AI",
+            "app": "Ham Sandwich",
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-09T11:45:31.4928910Z",
-            "updatedUtc": "2026-05-09T12:38:36.6207620Z",
+            "updatedUtc": "2026-05-09T12:41:40.2958840Z",
             "attachmentPaths": []
         },
         {
@@ -65,5 +65,7 @@
         }
     ],
     "nextDisplayNumber": 5,
-    "customApps": []
+    "customApps": [
+        "Ham Sandwich"
+    ]
 }
