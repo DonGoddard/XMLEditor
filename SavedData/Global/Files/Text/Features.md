@@ -1,5 +1,5 @@
 # NOS (Nexus Operating System) — Feature Checklist
-My ***big bold italic*** text
+
 > Unity 6 / WebGL / UI Toolkit desktop OS for XML / XAML / UML editing, with GitHub-backed persistence via Cloudflare Worker.
 > **Audit date:** 2026-05-07. `[x]` = shipped, `[ ]` = planned / partial / not yet wired.
 > Companion: `Scripts/Plans/CodeAudit-2026-05-07.md` (audit + next steps).
