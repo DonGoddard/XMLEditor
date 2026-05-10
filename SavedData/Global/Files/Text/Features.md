@@ -452,21 +452,6 @@
 
 ---
 
-## 13. Documentation & Plans
-
-- [x] `CLAUDE.md` — project overview & code style
-- [x] `Scripts/change.md` — running change log
-- [x] `Scripts/Plans/CardsWindow.md` — original plan
-- [x] `Scripts/Plans/CardsDeckTypesPlan.md` — multi-format / bulk import / auto-crop ladder
-- [x] `Scripts/Plans/UmlXamlIntegrationPlan-2026-04-22.md` — graph projection roadmap
-- [x] `Scripts/Plans/ImportFilePlan.md` — Dock + Desktop import flow
-- [x] `Scripts/Plans/CodeAudit-2026-04-15.md` — prior audit
-- [x] `Scripts/GorpEquationWindow-InteractionPlan.md` — Gorp interaction phases
-- [x] `Scripts/WindowBase-MultilineInPlaceEdit.plan.md` — multi-line edit plan
-- [x] `Scripts/Plans/CodeAudit-2026-05-07.md` — current audit + next steps (this update)
-
----
-
 ## Known platform / browser caveats
 
 - Safari: animated GIF decoded via 20 fps polling (slightly higher CPU than WebCodecs); `~600 KB/s` per active animated GIF.
