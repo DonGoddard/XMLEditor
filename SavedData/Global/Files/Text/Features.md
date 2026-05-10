@@ -35,10 +35,10 @@
 - [x] WebGL bridges & file-drop pipeline (`WebGL` partial)
 - [x] Debug status bar + UI hit-detection visualization (`Debug` partial)
 - [x] `#account=…` URL-fragment override at boot (deep-link from QR scan)
-- [x] Editor `draaagzzzPerform` fallback via TrickleDown `PointerUpEvent` (Unity 6 fix)
+- [x] Editor `DragPerform` fallback via TrickleDown `PointerUpEvent` (Unity 6 fix)
 
 ### 1.4 Window Base (`Windows/WindowBase.cs` — 2664 lines)
-- [x] draaagzzz, snap, resize, minimize, maximize
+- [x] Drag, snap, resize, minimize, maximize
 - [x] `WindowStateData` per-window persistence (position, size, panel widths, scroll restoration)
 - [x] Title-bar buttons: minimize / maximize / close / "?" help
 - [x] Right-click title → Save / Save As / Rename / Delete from GitHub
@@ -52,7 +52,7 @@
   - [x] Double-click = word, triple-click = all
   - [x] WebGL mobile path (`TouchScreenKeyboard.Open`, single-line)
   - [ ] Multi-line edit mode (full plan in `WindowBase-MultilineInPlaceEdit.plan.md`; not yet implemented)
-  - [ ] draaagzzz-to-select with mouse mid-edit
+  - [ ] Drag-to-select with mouse mid-edit
   - [ ] Right-click context menu (Cut / Copy / Paste / Select All) over an active edit session
 - [x] `static FindWindowElement(typeName)` + `static windowsByTypeName` for screenshot capture
 - [ ] Multi-instance lookup (one entry per type → duplicated windows lose first instance) [audit §3]
@@ -66,23 +66,23 @@
 
 ### 2.1 Dockbar (`UI Visual Element/Dockbar.cs`)
 - [x] AppInstance-driven (no parallel arrays)
-- [x] draaagzzz-to-reorder
+- [x] Drag-to-reorder
 - [x] Right-click per icon: Open / Open with… / Pin / Unpin / Save / Rename / Delete / Remove
 - [x] Right-click empty area: Import File…
 - [x] Ctrl+Click duplicates an instance
-- [x] draaagzzz-from-dock onto desktop unpins
+- [x] Drag-from-dock onto desktop unpins
 - [x] `IsImageAppInstance` recognises ImageWindow by definition (post-restart)
 - [x] Auto-import drop-in animation (`PlayImportDropAnimation`, -40 px → 0)
 - [x] `SpawnWindow` picks most-derived `WindowBase` via `IsSubclassOf` (XamlGorp etc.)
 - [x] `IsBinaryExtension` includes `.avif`, `.webp`, `.gif`
 
 ### 2.2 Desktop (`UI Visual Element/Desktop.cs`)
-- [x] Icon grid with draaagzzz-to-rearrange and color tint
+- [x] Icon grid with Drag-to-rearrange and color tint
 - [x] Multi-import via right-click "Import Files…" with scatter placement
-- [x] draaagzzz desktop icon → dock (file-backed icons collision-free via unique instanceId)
-- [x] draaagzzz icon → CardsWindow (image background) or → editor back-preview (deck back)
-- [x] draaagzzz-from-OS into desktop background (single drop) via WebGL `OnExternalFileDropped`
-- [ ] Bulk draaagzzz-from-OS multi-drop into desktop area (only single drop wired today)
+- [x] Drag desktop icon → dock (file-backed icons collision-free via unique instanceId)
+- [x] Drag icon → CardsWindow (image background) or → editor back-preview (deck back)
+- [x] Drag-from-OS into desktop background (single drop) via WebGL `OnExternalFileDropped`
+- [ ] Bulk Drag-from-OS multi-drop into desktop area (only single drop wired today)
 - [x] `IsImageFile` / `IsDeckFile` extension routing
 - [x] `LaunchDesktopIcon` honors `fileUrl` (loads file content before opening)
 - [x] `PinDesktopIconToDock` transfers `fileUrl`
@@ -95,7 +95,7 @@
 
 ### 2.3 Background / Wallpaper (`UI Visual Element/BackgroundDisplay.cs`)
 - [x] Wallpaper renderer driven by `Resources.Backgrounds` manifest
-- [x] draaagzzz-to-set wallpaper from GalleryWindow
+- [x] Drag-to-set wallpaper from GalleryWindow
 - [x] Right-click context menu, persistence
 - [ ] Animated GIF wallpapers (`SetWallpaperAsync` still uses `UnityWebRequestTexture.GetTexture` — needs `ImageDecoder.LoadAnyImageAsync`)
 
@@ -171,7 +171,7 @@
 
 ### 4.2 XmlWindow (`Windows/XmlWindow.*`)
 - [x] XML tree editor (TreeView, `XmlNodeData`, color formatting)
-- [x] Inter-window XML node draaagzzz-and-drop
+- [x] Inter-window XML node Drag-and-drop
 - [x] Line-number gutter render & sync
 - [x] File load / save / export
 - [x] State restore (TreeView expand state) with retry capped at 25
@@ -180,7 +180,7 @@
 
 ### 4.3 UmlWindow (`Windows/UmlWindow.*` — 11 partials)
 - [x] Interactive UML class-diagram editor
-- [x] Free-form draaagzzz, attribute / method compartments, in-place editing
+- [x] Free-form Drag, attribute / method compartments, in-place editing
 - [x] XMI / Enterprise / Gorp / custom UML XML parsing
 - [x] SAI XML import via `Parsers/SaiXmlParser.cs`
 - [x] XAML import → graph projection (`UmlWindow.XamlProjection.cs` — Milestone 1 of plan complete)
@@ -188,8 +188,8 @@
 - [x] Layout submenu: Auto-Layout (Tree/Force), Force-Directed, Tree, Grid, View Extents
 - [x] Force-directed: Fruchterman-Reingold, 200 iterations, k=280, T₀=400
 - [x] BFS layered tree layout
-- [x] Floating minimap with viewport rect, draaagzzz-to-move, 8-direction resize, color-matched fills
-- [x] Live XML side panel: split divider draaagzzz-resize, row selection + scroll, format button, wrap toggle
+- [x] Floating minimap with viewport rect, Drag-to-move, 8-direction resize, color-matched fills
+- [x] Live XML side panel: split divider Drag-resize, row selection + scroll, format button, wrap toggle
 - [x] Class / member / relationship line indicators in the XML panel
 - [x] Focus submenu: Subtree / Context / Clear
 - [x] XAML Filters submenu (XAML mode only)
@@ -211,10 +211,10 @@
 - [x] ~40 WPF control renderers (`XamlWindow.Rendering.cs`)
 - [x] Selection: canvas ↔ source bidirectional, properties panel, attribute add/edit/delete
 - [x] Color picker popup (24-color grid + hex input)
-- [x] draaagzzz-to-move (`Canvas.Left/Top`), draaagzzz-to-resize (8 handles)
+- [x] Drag-to-move (`Canvas.Left/Top`), Drag-to-resize (8 handles)
 - [x] Edit ops: Ctrl+C/X/V/D/Delete/Backspace
-- [x] Auto-hide left palette strip (~50 WPF types in 6 groups), draaagzzz-to-canvas drop
-- [x] Source-row draaagzzz-to-reorder with ghost label and drop indicator
+- [x] Auto-hide left palette strip (~50 WPF types in 6 groups), Drag-to-canvas drop
+- [x] Source-row Drag-to-reorder with ghost label and drop indicator
 - [x] Hierarchy tree (`▶/▼/·` + teal type + italic hint) with auto-expand on selection
 - [x] Bindings: `BindingExpression` model, popup with kind tabs, `StaticResource` autocomplete
 - [x] Data context panel: JSON Apply / Gorp Apply, preview-mode toggle, inline computed-expression evaluator (no NCalc dependency)
@@ -230,7 +230,7 @@
 - [x] Editable `gorpEndpoint`; `BuildGorpPayload` (pure MathML → backend) vs `BuildFullGorpXml` (saved to file)
 - [x] `RegisterNodeInteractions` with `StopPropagation` (innermost wins; click-to-expand parent; Shift-click ancestor)
 - [x] Fraction Y-axis split + zone label badges (NUM/DEN, LEFT/RIGHT)
-- [x] draaagzzz existing subtrees (`RenderIsolated`, `DeepClone` for all 11 node types, ancestor-cycle guard)
+- [x] Drag existing subtrees (`RenderIsolated`, `DeepClone` for all 11 node types, ancestor-cycle guard)
 - [x] `.gorp` XML format (MathML + `<inputs>`); `GetCustomWindowState` / `RestoreCustomWindowState`
 - [x] 50-deep undo stack; Ctrl+Z / Ctrl+Shift+Z
 - [x] Save / Export wrapped in try/catch (no app-killer exceptions)
@@ -251,12 +251,12 @@
 
 ### 4.8 GalleryWindow (`Windows/GalleryWindow.cs`)
 - [x] Background image gallery from manifest
-- [x] draaagzzz-to-wallpaper, draaagzzz-to-CardsWindow background
+- [x] Drag-to-wallpaper, Drag-to-CardsWindow background
 - [ ] Thumbnails routed through `ImageDecoder.LoadAnyImageAsync` (animated GIF gallery)
 
 ### 4.9 AppGalleryWindow (`Windows/AppGalleryWindow.cs`)
 - [x] Built-in app browser; non-removeable dock anchor (leftmost)
-- [x] draaagzzz-to-dock pinning, click-to-open
+- [x] Drag-to-dock pinning, click-to-open
 
 ### 4.10 PerformanceWindow (`Windows/PerformanceWindow.cs`)
 - [x] FPS + memory stats overlay; Ctrl/Cmd+M toggle; color-coded bars
@@ -269,19 +269,19 @@
 - [x] AppRegistry icon fallback when image fails to load (`ApplyAppRegistryFallback`)
 - [x] Async-fetches `FileBytes` from `fileUrl` / `filePath` when null (post-restart)
 - [x] Loading overlay during fetch
-- [x] draaagzzz-out-of-window starts ghost; drop on CardsWindow / Desktop / Dockbar handled
+- [x] Drag-out-of-window starts ghost; drop on CardsWindow / Desktop / Dockbar handled
 
 ### 4.12 CardsWindow (`Windows/CardsWindow.*` — 4 partials)
-- [x] Free-form card table; absolute-positioned VEs, draaagzzz, flip, BringToFront
-- [x] Multi-select draaagzzz, hover gold border, click-to-flip-if-exposed
+- [x] Free-form card table; absolute-positioned VEs, Drag, flip, BringToFront
+- [x] Multi-select Drag, hover gold border, click-to-flip-if-exposed
 - [x] Right-click context menus: card / stack / table / pile
 - [x] Save & Load submenu, Deal submenu (Klondike / Blackjack / 5-Card Poker / Fan)
 - [x] Per-deck `deckId` (8-char GUID slug) for grouped Collect Deck
 - [x] Per-card rotation; Rotate Left/Right at card AND deck level
-- [x] Live preview during canvas handle draaagzzz (`UpdateCardPreview` from `LiveUpdateCellPositions`)
-- [x] Pile markers: Draw / Discard / custom; rotation; label sides; draaagzzz-to-move; right-click menu (Label Side / Shuffle / Reset / Flip / See All)
+- [x] Live preview during canvas handle Drag (`UpdateCardPreview` from `LiveUpdateCellPositions`)
+- [x] Pile markers: Draw / Discard / custom; rotation; label sides; Drag-to-move; right-click menu (Label Side / Shuffle / Reset / Flip / See All)
 - [x] Pile rect + label group container with composed rotations
-- [x] **Sheet mode** deck import: editable headers, draaagzzz-to-reorder, presets, cell assignment popup
+- [x] **Sheet mode** deck import: editable headers, Drag-to-reorder, presets, cell assignment popup
 - [x] Sheet grid with explicit cellW/cellH; sidebar paired rows (Cols+Rows, OffXY, WidthHeight, PadXY)
 - [x] Yellow offset / lime-green padding handles
 - [x] Sheet preview defaults to upper-left card (`GetCellCardData(0,0)`)
@@ -293,7 +293,7 @@
 - [x] Source / Sidedness segmented toggles (`CardSourceMode`, `CardSidedness` enums)
 - [x] `CardData` crop fields (`frontCrop{X,Y,W,H}`, `backCrop{X,Y,W,H}`); render gated on `frontCropW > 0`
 - [x] Save Deck to Desktop with 3-card-stack composite icon (`BuildDeckStackIcon`)
-- [x] draaagzzz-drop a `.deck` icon from Desktop into CardsWindow play area (`ReceiveDeckDrop`)
+- [x] Drag-drop a `.deck` icon from Desktop into CardsWindow play area (`ReceiveDeckDrop`)
 - [x] Deck-icon click loads + deals at center via `ScheduleDealAtCenter`
 - [x] Deck-name keeps spaces in filename (only `/`, `\` sanitized)
 - [x] Last-directory persistence (`lastDeckDir`, `lastBgDir`, `lastSheetDir`)
@@ -305,14 +305,14 @@
 - [ ] Per-card back support in editor + render (PerCard sidedness wiring)
 - [ ] Auto-crop step 1 (background-bbox) + step 2 (manual 4-corner)
 - [ ] Auto-crop step 3 (Sobel + contour + perspective warp) — out of scope for first ship
-- [ ] draaagzzz-to-reorder rows in Individual mode list
+- [ ] Drag-to-reorder rows in Individual mode list
 - [ ] Preserve-transparency PNG encode option in Individual mode (currently JPG-only)
 - [ ] Deck template zones (`zones[]` schema sketched in `CardsWindow.md`)
 
 ### 4.13 HelpWindow (`Windows/HelpWindow.cs`)
 - [x] Static; `OpenFor(typeName)` loads `## TypeName` section from `NOS_Help.md`
-- [x] draaagzzzgable 540×620 panel on `OverlayLayer`; 8-direction resize handles
-- [x] Annotation badges (`[anno: x,y, label, optional tooltip]`) with draaagzzz, `placed` flag
+- [x] Draggable 540×620 panel on `OverlayLayer`; 8-direction resize handles
+- [x] Annotation badges (`[anno: x,y, label, optional tooltip]`) with Drag, `placed` flag
 - [x] Diagonal connector via `Atan2` + `Rotate` + `transformOrigin`
 - [x] `cachedSections` + `decodedScreenshots` lazy-decode caches
 - [x] `.nosh` format (text + base64 JPG); pushed to `SavedData/NOS_Help.nosh`
@@ -321,7 +321,7 @@
 - [x] UFOS menu: Capture (Cmd+Ctrl+Opt+Shift+C), Attach Capture to Prefabs
 - [ ] `NOS_Help.md` content gaps (CardsWindow, UmlWindow.Minimap, UmlWindow.XamlProjection, GorpEquationWindow)
 - [ ] Auto-rerun screenshot capture on schema / prefab changes
-- [ ] In-app annotation editor (draaagzzz-to-place; currently hand-authored markdown)
+- [ ] In-app annotation editor (Drag-to-place; currently hand-authored markdown)
 
 ### 4.14 InputControlsWindow (`Windows/InputControlsWindow.cs`)
 - [x] Reference panel for keyboard / cursor controls
@@ -400,7 +400,7 @@
 
 ## 7. WebGL Bridges (`Plugins/WebGL/`)
 
-- [x] `FileDrop.jslib` — browser draaagzzz-drop → `UIManager.OnExternalFileDropped`; `UNITY_NATIVE_TYPES` allowlist now includes `image/gif`, `image/webp`, `image/avif`
+- [x] `FileDrop.jslib` — browser Drag-drop → `UIManager.OnExternalFileDropped`; `UNITY_NATIVE_TYPES` allowlist now includes `image/gif`, `image/webp`, `image/avif`
 - [x] `UnityBrowserBridge.jslib` — tab-hide save trigger, Cmd+S/W overrides, loading fade, long-press → right-click (mobile)
 - [x] `GitHubFetch.jslib` — fetch with timeout; `NOTFOUND` distinct from `ERROR`; `TOOLARGE|<sha>` for >1 MB blob fall-through
 - [x] `ImageDecoder.jslib` — PNG/JPG sniff-skip; OffscreenCanvas decode for WebP/AVIF/GIF; WebCodecs animated GIF; Safari poll fallback via `createImageBitmap`
