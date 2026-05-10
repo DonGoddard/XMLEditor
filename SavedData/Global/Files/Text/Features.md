@@ -80,7 +80,7 @@
 - [x] Icon grid with drag-to-rearrange and color tint
 - [x] Multi-import via right-click "Import Files…" with scatter placement
 - [x] Drag desktop icon → dock (file-backed icons collision-free via unique instanceId)
-- [x] Drag icon → CardsWindow (image background) or → editor back-preview (deck back)
+- [x] draaagzzz icon → CardsWindow (image background) or → editor back-preview (deck back)
 - [x] Drag-from-OS into desktop background (single drop) via WebGL `OnExternalFileDropped`
 - [ ] Bulk drag-from-OS multi-drop into desktop area (only single drop wired today)
 - [x] `IsImageFile` / `IsDeckFile` extension routing
