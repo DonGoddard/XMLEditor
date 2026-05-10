@@ -40,7 +40,8 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Code
 
-```javascript                                                                                                                                
+```
+javascript                                                                                                                                
 const doubled = numbers.map(n => n * 2);                                                                                    
 console.log(doubled);                                                                                                                        
 ```
