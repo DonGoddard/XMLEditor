@@ -96,3 +96,5 @@
 {"ts":"2026-05-10T06:16:30.9527070Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-10T06:16:34.4883570Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-10T06:16:37.6339200Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-10T06:16:53.5238540Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":4354,"detail":""}
+{"ts":"2026-05-10T06:16:56.4486920Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":""}
