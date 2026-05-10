@@ -40,7 +40,11 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Code
 
-`code`
+```python
+def hello_world():
+    print("Hello, World!")
+```
+
 
 ### Horizontal Rule
 
