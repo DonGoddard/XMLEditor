@@ -39,12 +39,19 @@ These are the elements outlined in John Gruber’s original design document. All
 - Third item
 
 ### Code
+                                                                                                                         
+  # Demo                                                                                                                                       
+   
+  Here's `inline code` and a block:                                                                                                            
+                                                                                                                            
+  ```python                                                                                                                                    
+  def greet(name):                                                                                                          
+      return f"Hello, {name}"            
+  ```
 
-```
-javascript                                                                                                                                
-const doubled = numbers.map(n => n * 2);                                                                                    
-console.log(doubled);                                                                                                                        
-```
+  And ***bold italic*** still works.                                                                                                           
+   
+
 
 
 ### Horizontal Rule
