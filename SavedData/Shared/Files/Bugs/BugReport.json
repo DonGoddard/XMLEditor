@@ -60,21 +60,6 @@
                 "Shared/Files/Bugs/Attachments/BUG-0002/20260510061527_1.gif",
                 "Shared/Files/Bugs/Attachments/BUG-0002/20260510061649_SystemArchitecture.png"
             ]
-        },
-        {
-            "id": "BUG-0001",
-            "title": "First bug",
-            "description": "Fix it!",
-            "status": "Open",
-            "statusNote": "",
-            "severity": "Moderate",
-            "priority": "Queue",
-            "app": "NOS",
-            "reporter": "Global",
-            "appVersion": "Recompiled since last build",
-            "createdUtc": "2026-05-09T11:45:14.2566580Z",
-            "updatedUtc": "2026-05-09T11:45:26.9038180Z",
-            "attachmentPaths": []
         }
     ],
     "nextDisplayNumber": 5,
