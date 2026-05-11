@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<UMLDiagram name="SystemArchitecture">
+<UMLDiagram name="POOptimization Example">
     <Classes>
         <Class id="542088a8-3d44-452a-b861-83e31352b317" x="45" y="30">
             <Name>ProductDescription</Name>
