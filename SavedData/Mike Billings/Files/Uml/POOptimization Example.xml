@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UMLDiagram name="SystemArchitecture">
+    <Classes>
+        <Class id="542088a8-3d44-452a-b861-83e31352b317" x="45" y="30">
+            <Name>ProductDescription</Name>
+            <Attributes>
+                <Attribute visibility="public" name="UPC" type="string" />
+                <Attribute visibility="public" name="ProductName" type="string" />
+                <Attribute visibility="public" name="Weight" type="int" />
+                <Attribute visibility="public" name="Length" type="float" />
+                <Attribute visibility="public" name="Width" type="float" />
+                <Attribute visibility="public" name="Height" type="float" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="b16bd09b-fd04-4872-96a6-c4f7af4073ee" x="362" y="40">
+            <Name>InventoryLevel</Name>
+            <Attributes>
+                <Attribute visibility="public" name="Available" type="int" />
+                <Attribute visibility="public" name="OnOrder" type="int" />
+                <Attribute visibility="public" name="InTransit" type="int" />
+                <Attribute visibility="public" name="UPC" type="string" />
+            </Attributes>
+            <Methods>
+                <Method visibility="public" name="VolumeUsed" returnType="void" />
+            </Methods>
+        </Class>
+        <Class id="faa8d353-da57-4aa9-abe7-0c4db71e58e6" x="362" y="268">
+            <Name>NewPO</Name>
+            <Attributes>
+                <Attribute visibility="public" name="PONumber" type="int" />
+                <Attribute visibility="public" name="UPC" type="string" />
+                <Attribute visibility="public" name="Quantity" type="int" />
+            </Attributes>
+            <Methods>
+                <Method visibility="public" name="NewPO" returnType="void" />
+                <Method visibility="public" name="QuantityOrdered" returnType="void" />
+            </Methods>
+        </Class>
+        <Class id="5e6dc445-b24f-498a-84c8-72f67c948a22" x="42" y="288">
+            <Name>POHistory</Name>
+            <Attributes>
+                <Attribute visibility="public" name="PONumber" type="int" />
+                <Attribute visibility="public" name="Quantity" type="int" />
+                <Attribute visibility="public" name="UPC" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+    </Classes>
+    <Relationships>
+        <Relationship from="542088a8-3d44-452a-b861-83e31352b317" to="b16bd09b-fd04-4872-96a6-c4f7af4073ee" type="Inheritance" name="UPC" />
+        <Relationship from="542088a8-3d44-452a-b861-83e31352b317" to="5e6dc445-b24f-498a-84c8-72f67c948a22" type="Inheritance" name="UPC" />
+        <Relationship from="5e6dc445-b24f-498a-84c8-72f67c948a22" to="faa8d353-da57-4aa9-abe7-0c4db71e58e6" type="Inheritance" name="UPC" />
+        <Relationship from="5e6dc445-b24f-498a-84c8-72f67c948a22" to="faa8d353-da57-4aa9-abe7-0c4db71e58e6" type="Inheritance" name="PO Number" />
+        <Relationship from="5e6dc445-b24f-498a-84c8-72f67c948a22" to="faa8d353-da57-4aa9-abe7-0c4db71e58e6" type="Aggregation" name="Quantity" />
+        <Relationship from="faa8d353-da57-4aa9-abe7-0c4db71e58e6" to="b16bd09b-fd04-4872-96a6-c4f7af4073ee" type="Dependency" name="UPC" />
+        <Relationship from="b16bd09b-fd04-4872-96a6-c4f7af4073ee" to="faa8d353-da57-4aa9-abe7-0c4db71e58e6" type="Composition" name="Quantity" />
+        <Relationship from="542088a8-3d44-452a-b861-83e31352b317" to="b16bd09b-fd04-4872-96a6-c4f7af4073ee" type="Dependency" name="Length" />
+        <Relationship from="542088a8-3d44-452a-b861-83e31352b317" to="b16bd09b-fd04-4872-96a6-c4f7af4073ee" type="Dependency" name="Width" />
+        <Relationship from="542088a8-3d44-452a-b861-83e31352b317" to="b16bd09b-fd04-4872-96a6-c4f7af4073ee" type="Dependency" name="Height" />
+    </Relationships>
+</UMLDiagram>
