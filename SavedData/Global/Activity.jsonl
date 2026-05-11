@@ -147,3 +147,4 @@
 {"ts":"2026-05-11T18:59:14.5160980Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-11T19:02:24.9806430Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-11T19:05:29.4849460Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-11T19:05:46.8460560Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":""}
