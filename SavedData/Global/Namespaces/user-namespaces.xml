@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <userNamespaces>
   <ns prefix="si" uri="/Users/dongoddard/Unity/Builds/WebGL/Nexus/AI\ Designer/Nexus/Nexus/Nexus.SymbolicSyntax/Schemas/xsd-d-si-master/SI_Format.xsd"/>
+  <ns prefix="sii" uri="https://gitlab1.ptb.de/d-ptb/d-si/xsd-d-si"/>
 </userNamespaces>
