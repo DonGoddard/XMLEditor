@@ -181,3 +181,5 @@
 {"ts":"2026-05-12T20:15:23.1012380Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-12T21:00:43.8892970Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-13T06:55:17.1172040Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-13T06:55:22.7055560Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-13T06:55:26.1920360Z","type":"wallpaper_set","appId":"","filePath":"StockCake-Digital_Brain_Illuminated-1922060-standard.jpg","ext":".jpg","bytes":0,"detail":""}
