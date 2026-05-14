@@ -226,3 +226,5 @@
 {"ts":"2026-05-14T16:04:07.3660000Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-14T16:04:19.2500000Z","type":"app_open","appId":"XamlGorpApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-14T16:04:40.4320000Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-14T16:04:53.5710000Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-14T16:04:57.9320000Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"Gemini"}
