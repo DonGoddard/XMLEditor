@@ -209,3 +209,5 @@
 {"ts":"2026-05-14T04:19:08.9523570Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-14T04:20:26.5788400Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-14T04:20:35.4786020Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-14T04:21:07.1090910Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-14T04:21:08.4422170Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
