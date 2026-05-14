@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gorp>
+  <algorithms>
+    <algorithm namespace="Simple.Add">
+      <function>
+        <input model="orp" />
+        <output model="Simple.Escape" />
+        <expressions>
+          <expression sequence="0">
+            <Math>
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <plus/>
+                  <ci>orp.timbucktu.sunrise</ci>
+                  <cn>1</cn>
+                </apply>
+              </math>
+            </Math>
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+    <algorithm namespace="Simple">
+      <input model="orp" />
+      <output model="Simple.Escape" />
+      <function>
+        <expressions>
+          <expression sequence="0" delegate="Simple.Add" limit="100"/>
+          <expression sequence="1">
+            <If input="orp">
+              <parameters>
+                <parameter position="0">
+                  <Less input="orp" output="Simple.Escape.result">
+                    <parameters>
+                      <parameter position="0">
+                        <pathvariable type="int" namespace="orp.timbucktu.sunrise"/>
+                      </parameter>
+                      <parameter position ="1">500</parameter>
+                    </parameters>
+                  </Less>
+                </parameter>
+                <parameter position="1">
+                  <goto sequence="0"/>
+                </parameter>
+              </parameters>
+            </If>
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+  </algorithms>
+  <models>
+    <model namespace="orp">
+      <variables>
+        <variable name="harvey" type="int">17</variable>
+        <variable name="irrelevant" type="string">"More Than Five"</variable>
+      </variables>
+      <pathvariables>
+        <pathvariable path="timbucktu" name="sunrise" type="int">89</pathvariable>
+        <pathvariable path="timbucktu" name="sunset" type="int">-22</pathvariable>
+        <pathvariable path="timbucktu" name="tanzania" type="key">9</pathvariable>
+      </pathvariables>
+      <arrays>
+        <array path="local" name="hillgiant" type="[int]">11, 17, 4</array>
+      </arrays>
+    </model>
+    <model namespace="Simple.Escape">
+      <variables>
+        <variable name="result" type="bool">false</variable>
+      </variables>
+    </model>
+  </models>
+</gorp>

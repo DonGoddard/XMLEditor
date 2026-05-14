@@ -1,0 +1,29 @@
+{
+    "bugs": [
+        {
+            "id": "af80048243ab4510a2d52db051518a04",
+            "title": "Open with... too many options",
+            "description": "Open with should offer window types to open in and not every window that uses that type. So opening in a Text Window would make sense but opening in Notes Window, Features Window, and To Do window is overkill because they are all just Text Windows",
+            "status": "Open",
+            "severity": "Low",
+            "priority": "P4",
+            "reporter": "Global",
+            "createdUtc": "2026-05-09T09:45:40.2044700Z",
+            "updatedUtc": "2026-05-09T09:47:34.4204870Z",
+            "attachmentPaths": []
+        },
+        {
+            "id": "1a3758f65e434bd5aa1501d564fea6aa",
+            "title": "Cards not reloading",
+            "description": "When importing an image set and using it for a deck it works but when you go back to the deck editor all of the cards are blank and should show their image",
+            "status": "Open",
+            "severity": "Medium",
+            "priority": "P3",
+            "reporter": "Global",
+            "createdUtc": "2026-05-09T09:43:39.8064120Z",
+            "updatedUtc": "2026-05-09T09:44:57.9779930Z",
+            "attachmentPaths": []
+        }
+    ],
+    "nextDisplayNumber": 4
+}

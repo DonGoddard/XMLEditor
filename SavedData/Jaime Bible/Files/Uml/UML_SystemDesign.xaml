@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UMLDiagram name="Imported: SAI">
+    <Classes>
+        <Class id="Seraphim.Commerce" x="60" y="60">
+            <Name>Commerce</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Application»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Commerce)" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Test.Subscription" x="340" y="60">
+            <Name>Subscription</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Subscription»" type="string" />
+                <Attribute visibility="" name="(Test.Subscription)" type="string" />
+            </Attributes>
+            <Methods>
+                <Method visibility="+" name="Subscription() «api»" returnType="void" />
+            </Methods>
+        </Class>
+        <Class id="Seraphim.Api" x="620" y="60">
+            <Name>Api</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Api)" type="string" />
+            </Attributes>
+            <Methods>
+                <Method visibility="+" name="Listener() «api»" returnType="void" />
+            </Methods>
+        </Class>
+        <Class id="Seraphim.Journal" x="900" y="60">
+            <Name>Journal</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Journal)" type="string" />
+            </Attributes>
+            <Methods>
+                <Method visibility="+" name="Listeners() «listener»" returnType="void" />
+            </Methods>
+        </Class>
+        <Class id="Seraphim.Tabulate" x="1180" y="60">
+            <Name>Tabulate</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Tabulate)" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Seraphim.Think" x="1460" y="60">
+            <Name>Think</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Think)" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Seraphim.Learn" x="1740" y="60">
+            <Name>Learn</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Learn)" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Seraphim.Integrate" x="2020" y="60">
+            <Name>Integrate</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Integrate)" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Seraphim.Decision" x="2300" y="60">
+            <Name>Decision</Name>
+            <Attributes>
+                <Attribute visibility="" name="«Service»" type="string" />
+                <Attribute visibility="" name="(Seraphim.Decision)" type="string" />
+            </Attributes>
+            <Methods />
+        </Class>
+    </Classes>
+    <Relationships>
+        <Relationship from="Seraphim.Commerce" to="Seraphim" type="Dependency" name="«requires»" />
+        <Relationship from="Seraphim.Commerce" to="Seraphim.Universe" type="Dependency" name="«requires»" />
+        <Relationship from="Seraphim.Commerce" to="Seraphim.Internet" type="Dependency" name="«requires»" />
+        <Relationship from="Seraphim.Commerce" to="Seraphim.Symbolic" type="Dependency" name="«requires»" />
+        <Relationship from="Seraphim.Commerce" to="Seraphim.Geometric" type="Dependency" name="«requires»" />
+        <Relationship from="Seraphim.Commerce" to="Seraphim.Patterns" type="Dependency" name="«requires»" />
+        <Relationship from="Seraphim.Commerce" to="Seraphim.Measureable" type="Dependency" name="«requires»" />
+    </Relationships>
+</UMLDiagram>
