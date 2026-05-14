@@ -1,0 +1,18 @@
+{
+  "symbols": [
+    { "prefix": "x", "name": "String",   "kind": "type", "doc": "Text"                        },
+    { "prefix": "x", "name": "Int32",    "kind": "type", "doc": "Whole number (32-bit)"       },
+    { "prefix": "x", "name": "Int64",    "kind": "type", "doc": "Large whole number (64-bit)" },
+    { "prefix": "x", "name": "Boolean",  "kind": "type", "doc": "True or false"               },
+    { "prefix": "x", "name": "Double",   "kind": "type", "doc": "Decimal number"              },
+    { "prefix": "x", "name": "Single",   "kind": "type", "doc": "Single-precision decimal"    },
+    { "prefix": "x", "name": "Char",     "kind": "type", "doc": "Single character"            },
+    { "prefix": "x", "name": "DateTime", "kind": "type", "doc": "Date and time"               },
+    { "prefix": "x", "name": "Object",   "kind": "type", "doc": "Any value"                   },
+    { "prefix": "x", "name": "Void",     "kind": "type", "doc": "No return value"             },
+    { "prefix": "x", "name": "Array",    "kind": "type", "doc": "Array of T"                  },
+    { "prefix": "p", "name": "Color",    "kind": "type", "doc": "RGBA color"                  },
+    { "prefix": "p", "name": "Point",    "kind": "type", "doc": "(x, y) coordinate"           },
+    { "prefix": "p", "name": "Rect",     "kind": "type", "doc": "Rectangle"                   }
+  ]
+}
