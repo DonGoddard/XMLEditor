@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-16"?>
-<UMLDiagram name="Imported: SAI">
-    <Classes />
-    <Relationships />
+<UMLDiagram name="Imported: Nexus.Tests" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:p="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" xmlns:data="http://www.seraphimtechnology.ai/ns/properties" xmlns:code="http://www.seraphimtechnology.ai/ns/methods" xmlns:sym="http://www.seraphimtechnology.ai/ns/symbols" xmlns:index="http://www.seraphimtechnology.ai/ns/indexes" xmlns:gestalt="http://www.seraphimtechnology.ai/ns/gestalt" xmlns:cloud="http://www.seraphimtechnology.ai/ns/cloud" xmlns:gns="http://www.seraphimtechnology.ai/ns/gestalt-name-service" xmlns:sera="http://www.seraphimtechnology.ai/ns/seraphimai" xmlns:uaiml="http://www.seraphimnexus.ai/ns/uaiml" xmlns:gorp="http://www.seraphimtechnology.ai/ns/gorp" xmlns:nos="http://nos.local/uml-layout">
+  <!-- Unknown sibling content; preserved untouched by the parser. -->
+  <sym:Symbol id="orderflow-marker" />
+  <proto:Class x:Name="User" nos:x="896" nos:y="755" nos:width="280" nos:height="160">
+    <proto:DisplayName>Fred</proto:DisplayName>
+    <data:Property visibility="public" x:Name="email" type="string" />
+    <data:Property visibility="private" x:Name="Nicholas" type="bool" />
+    <data:Property visibility="protected" x:Name="passwordHash" type="string" />
+    <data:Property visibility="protected" x:Name="Nick2" type="float" />
+    <data:Property visibility="public" x:Name="total" type="Dictionary&lt;string, string&gt;" />
+    <code:Method visibility="public" x:Name="Login" return="bool" />
+    <code:Method visibility="public" x:Name="Logout" return="void" />
+    <code:Method visibility="public" x:Name="Logout2" return="void" />
+    <proto:Inherits target="Admin" />
+  </proto:Class>
+  <proto:Class x:Name="Admin" nos:x="734" nos:y="764" nos:width="280" nos:height="160">
+    <data:Property visibility="public" x:Name="permissions" type="string" />
+    <code:Method visibility="public" x:Name="NewMethod" return="void" />
+    <code:Method visibility="public" x:Name="BanUser" return="void" />
+  </proto:Class>
+  <proto:Class x:Name="Product" nos:x="547" nos:y="309" nos:width="284" nos:height="160">
+    <data:Property visibility="public" x:Name="sku" type="string" />
+    <data:Property visibility="public" x:Name="price" type="decimal" />
+    <data:Property visibility="public" x:Name="newAttr" type="string" />
+    <code:Method visibility="public" x:Name="UpdateStock" return="gestalt:Constrain" />
+  </proto:Class>
+  <proto:Class x:Name="Order" nos:x="666" nos:y="519" nos:width="280" nos:height="160">
+    <data:Property visibility="public" x:Name="orderId" type="int" />
+    <code:Method visibility="public" x:Name="Process" return="bool" />
+  </proto:Class>
+  <proto:Relationship from="User" to="Order" kind="Association" />
+  <proto:Relationship from="Order" to="Product" kind="Aggregation" label="Fred the Dead" targetMulti="0..1" />
+  <proto:Relationship from="Order" to="Product" kind="Dependency" />
+  <proto:Relationship from="Admin" to="Order" kind="Aggregation" />
+  <proto:Relationship from="Admin" to="User" kind="Association" />
+  <proto:Relationship from="User" to="Admin" kind="Aggregation" />
+  <proto:Relationship from="User" to="Admin" kind="Association" />
+  <proto:Relationship from="User" to="Admin" kind="Association" />
+  <proto:Relationship from="Order" to="Admin" kind="Association" />
+  <proto:Relationship from="Order" to="Product" kind="Realization" targetMulti="1" />
 </UMLDiagram>
