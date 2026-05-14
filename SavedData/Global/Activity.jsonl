@@ -213,3 +213,4 @@
 {"ts":"2026-05-14T04:21:08.4422170Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-14T04:21:32.7951810Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-14T04:21:34.2776880Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-14T04:23:26.4594460Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
