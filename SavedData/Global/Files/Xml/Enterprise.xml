@@ -1,66 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<enterprise namespace="Proto.AI.Testing">
-  <gestalts>
-    <gestalt namespace="Testing">
-      <applications>
-        <application namespace="Seraphim.Commerce">
-          <requires>
-            <template namespace="Seraphim" />
-            <template namespace="Seraphim.Universe" />
-            <template namespace="Seraphim.Internet" />
-            <template namespace="Seraphim.Symbolic" />
-            <template namespace="Seraphim.Geometric" />
-            <template namespace="Seraphim.Patterns" />
-            <template namespace="Seraphim.Measureable" />
-          </requires>
-        </application>
-      </applications>      
-      <subscriptions>
-        <subscription namespace="Test.Subscription">
-          <delegate behavior="api" namespace="Proto.AI.Testing.Subscription">
-            <algorithm namespace="Proto.AI.Testing.Subscription.Client" />
-          </delegate>
-        </subscription>
-      </subscriptions>
-      <clouds>
-        <cloud host="EastUS2">
-          <services>
-            <service namespace="Seraphim.Api">
-              <delegate behavior="api" namespace="Seraphim.Api.Listener">
-                <algorithms>
-                  <algorithm namespace="Seraphim.Api.Listener">
-                    <messages namespace="Seraphim.Api">
-                      <alias as="sera-api" />
-                      <queue namespace="Journal" />
-                    </messages>
-                  </algorithm>
-                </algorithms>
-              </delegate>
-            </service>
-            <service namespace="Seraphim.Journal">
-              <delegate behavior="listener" namespace="Seraphim.Journal.Listeners">
-                <algorithms>
-                  <algorithm namespace="Seraphim.Commerce.Journal.Listener">
-                    <messages namespace="Seraphim.Commerce.Queues">
-                      <alias as="sera-commerce" />
-                      <queue namespace="Journal" />
-                    </messages>
-                  </algorithm>
-                </algorithms>
-              </delegate>
-            </service>
-            <service namespace="Seraphim.Tabulate" />
-            <service namespace="Seraphim.Think" />
-            <service namespace="Seraphim.Learn" />
-            <service namespace="Seraphim.Integrate" />
-            <service namespace="Seraphim.Decision" />
-          </services>
-          <databases>
-            <database namespace="pai-test-gdb1">
-            </database>
-          </databases>
-        </cloud>
-      </clouds>
-    </gestalt>
-  </gestalts>
-</enterprise>
+<?xml version="1.0" encoding="utf-16"?>
+<UMLDiagram name="Enterprise" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:p="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:nos="http://nos.local/uml-layout">
+  <proto:Class x:Name="Seraphim.Api" nos:x="47" nos:y="46" nos:width="245" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Api</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Journal" nos:x="50" nos:y="99" nos:width="266" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Journal</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Tabulate" nos:x="47" nos:y="151" nos:width="284" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Tabulate</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Think" nos:x="47" nos:y="197" nos:width="243" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Think</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Learn" nos:x="52" nos:y="242" nos:width="251" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Learn</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Integrate" nos:x="53" nos:y="289" nos:width="292" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Integrate</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Decision" nos:x="58" nos:y="351" nos:width="287" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Decision</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Commerce" nos:x="56" nos:y="405" nos:width="283" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>App: Seraphim.Commerce</proto:DisplayName>
+  </proto:Class>
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Universe" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Internet" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Symbolic" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Geometric" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Patterns" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Measureable" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+</UMLDiagram>
