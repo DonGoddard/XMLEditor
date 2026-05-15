@@ -285,3 +285,4 @@
 {"ts":"2026-05-15T17:29:00.6266060Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-15T17:35:43.0411410Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-15T17:40:21.8364950Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-15T17:41:24.3668310Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":""}
