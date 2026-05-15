@@ -230,3 +230,4 @@
 {"ts":"2026-05-14T16:04:57.9320000Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"Gemini"}
 {"ts":"2026-05-14T16:05:31.2130000Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-14T16:07:18.9180000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-15T13:13:35.1360000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
