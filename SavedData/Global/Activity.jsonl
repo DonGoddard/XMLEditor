@@ -251,3 +251,4 @@
 {"ts":"2026-05-15T04:53:00.2662850Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"Gemini"}
 {"ts":"2026-05-15T04:53:12.5521440Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"Gemini"}
 {"ts":"2026-05-15T04:53:21.3894110Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"OpenAI"}
+{"ts":"2026-05-15T04:53:28.9558440Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"Anthropic"}
