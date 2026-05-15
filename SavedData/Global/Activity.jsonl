@@ -256,3 +256,4 @@
 {"ts":"2026-05-15T04:53:47.5413210Z","type":"chat_message","appId":"","filePath":"","ext":"","bytes":0,"detail":"Gemini"}
 {"ts":"2026-05-15T04:54:01.4313550Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-15T05:21:28.1695090Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-15T05:21:33.3524310Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":""}
