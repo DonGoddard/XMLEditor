@@ -260,3 +260,4 @@
 {"ts":"2026-05-15T05:21:51.9299260Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-15T05:22:51.1765600Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-15T05:23:52.4280390Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-15T05:28:57.8311700Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
