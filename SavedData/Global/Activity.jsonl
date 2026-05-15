@@ -280,3 +280,4 @@
 {"ts":"2026-05-15T13:31:48.1596220Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-15T13:45:44.0820360Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-15T13:53:34.1234320Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-15T13:58:53.9592570Z","type":"app_open","appId":"XamlGorpApp","filePath":"","ext":"","bytes":0,"detail":""}
