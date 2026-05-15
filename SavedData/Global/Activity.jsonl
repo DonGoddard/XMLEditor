@@ -235,3 +235,4 @@
 {"ts":"2026-05-15T04:26:58.4523170Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-15T04:27:12.9202190Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-15T04:27:17.5211040Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-15T04:28:05.4124680Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
