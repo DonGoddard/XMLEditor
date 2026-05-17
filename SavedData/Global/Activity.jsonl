@@ -307,3 +307,4 @@
 {"ts":"2026-05-17T06:49:10.4938400Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-17T06:55:38.1362750Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-17T06:56:04.4686540Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-17T06:58:41.2906550Z","type":"file_save","appId":"UMLFileApp","filePath":"Global/Files/Xml/SAI_Fidelity_Test.xml","ext":".xml","bytes":3669,"detail":""}
