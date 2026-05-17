@@ -1,78 +1,115 @@
-<?xml version="1.0" encoding="utf-16"?>
-<!-- nos-uml-state {"mode":"cvb-gestalt","title":"SAI_Fidelity_Test","layout":{"Auth.Principal":{"x":282.41,"y":852.19,"w":280,"h":120},"Auth.User":{"x":277.46,"y":697.36,"w":280,"h":120},"Auth.Admin":{"x":592.58,"y":481.18,"w":280,"h":120},"Auth.Banned":{"x":286.13,"y":273.74,"w":280,"h":120},"Auth.LoginRequest":{"x":593.31,"y":706.03,"w":280,"h":120},"Auth.LoginResult":{"x":273.74,"y":488.03,"w":280,"h":120},"Auth.LoginContract":{"x":589.6,"y":236.58,"w":280,"h":120}},"rels":[{"from":"Auth.Admin","to":"Auth.Banned","type":"Dependency","name":"isBanned == true"},{"from":"Auth.LoginRequest","to":"Auth.Admin","type":"Input","name":"Login() input"},{"from":"Auth.Admin","to":"Auth.LoginResult","type":"Output","name":"Login() output"},{"from":"Auth.Admin","to":"Auth.LoginContract","type":"Realization","name":"Login() implements"},{"from":"Auth.LoginRequest","to":"Auth.User","type":"Input","name":"Logout() input"},{"from":"Auth.User","to":"Auth.LoginResult","type":"Output","name":"Logout() output"}]} -->
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- nos-uml-state {"mode":"cvb-gestalt","title":"SAI Fidelity Test","layout":{}} -->
 <gestalt>
   <classes>
-    <class namespace="Auth.Principal">
+
+    <!-- Abstract class — should render «abstract» line above bold-italic name. -->
+    <class namespace="Auth.Principal" isabstract="true">
       <variables>
-        <variable name="id" type="guid" />
-        <variable name="displayName" type="string" />
+        <variable name="id" type="guid"/>
+        <variable name="displayName" type="string"/>
       </variables>
     </class>
+
+    <!-- Concrete class with rich variable metadata + units + comments.
+         After save you should still see isunique, default, of, the <unit>
+         child, the <comment>, and the <validate> child round-tripped. -->
     <class namespace="Auth.User">
       <inherits>
-        <class namespace="Auth.Principal" />
+        <class namespace="Auth.Principal"/>
       </inherits>
       <variables>
-        <variable name="email" type="string" isunique="true" default="" of="Auth.User.Email">
+        <variable name="email"
+                  type="string"
+                  isunique="true"
+                  default=""
+                  of="Auth.User.Email">
           <comment>RFC 5322 mailbox address</comment>
           <validate>email != ""</validate>
         </variable>
-        <variable name="height" type="double" isconstant="false" default="0">
-          <unit basis="meter" namespace="SI" />
+        <variable name="height"
+                  type="double"
+                  isconstant="false"
+                  default="0">
+          <unit basis="meter" namespace="SI"/>
           <comment>User-reported physical height</comment>
         </variable>
-        <variable name="permissions" type="string" />
+        <variable name="permissions" type="string"/>
       </variables>
     </class>
+
+    <!-- Another concrete class that conflicts with Auth.Banned, with an
+         embedded predicate. The Dependency edge between Auth.Admin and
+         Auth.Banned should be labeled "isBanned == true" on the canvas. -->
     <class namespace="Auth.Admin">
       <inherits>
-        <class namespace="Auth.User" />
+        <class namespace="Auth.User">
+          <conflicts>
+            <conflict namespace="Auth.Banned" with="isBanned">
+              <expression>
+                <expression>isBanned == true</expression>
+              </expression>
+            </conflict>
+          </conflicts>
+        </class>
       </inherits>
       <variables>
-        <variable name="permLevel" type="int" default="0" />
+        <variable name="permLevel" type="int" default="0"/>
       </variables>
     </class>
+
+    <!-- Banned-state class — endpoint for the conflict edge above. -->
     <class namespace="Auth.Banned">
       <variables>
-        <variable name="reason" type="string" />
+        <variable name="reason" type="string"/>
       </variables>
     </class>
+
+    <!-- Models referenced by the algorithm input/output below. Present here
+         so the Input/Output synthetic edges have valid endpoints. -->
     <class namespace="Auth.LoginRequest">
       <variables>
-        <variable name="username" type="string" />
-        <variable name="password" type="string" />
+        <variable name="username" type="string"/>
+        <variable name="password" type="string"/>
       </variables>
     </class>
     <class namespace="Auth.LoginResult">
       <variables>
-        <variable name="token" type="string" />
-        <variable name="ok" type="bool" />
+        <variable name="token" type="string"/>
+        <variable name="ok"    type="bool"/>
       </variables>
     </class>
+
+    <!-- Contract class — target of the Realization edge from Login(). -->
     <class namespace="Auth.LoginContract">
       <variables>
-        <variable name="version" type="string" default="1" />
+        <variable name="version" type="string" default="1"/>
       </variables>
     </class>
+
   </classes>
+
   <algorithms>
-    <algorithm namespace="Auth.User.Logout">
-      <input model="Auth.LoginRequest" />
-      <output model="Auth.LoginResult" />
-    </algorithm>
+
+    <!-- This algorithm should:
+           1. attach Login() to Auth.Admin's method list
+           2. emit an Input  edge: Auth.LoginRequest → Auth.Admin
+           3. emit an Output edge: Auth.Admin → Auth.LoginResult
+           4. emit a Realization edge: Auth.Admin → Auth.LoginContract
+         All four labeled with the method name "Login()" suffix. -->
     <algorithm namespace="Auth.Admin.Login">
       <implements>
-        <delegate namespace="Auth.LoginContract" />
+        <delegate namespace="Auth.LoginContract"/>
       </implements>
-      <input model="Auth.LoginRequest" api="true" />
-      <output model="Auth.LoginResult" api="true" />
+      <input  model="Auth.LoginRequest" api="true"/>
+      <output model="Auth.LoginResult"  api="true"/>
       <function>
         <expressions>
-          <expression sequence="0" invoke="check-credentials" with="password" />
+          <expression sequence="0" invoke="check-credentials" with="password"/>
           <expression sequence="1">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <eq />
+                <eq/>
                 <ci>ok</ci>
                 <cn>1</cn>
               </apply>
@@ -81,5 +118,13 @@
         </expressions>
       </function>
     </algorithm>
+
+    <!-- Simpler algorithm — just Input/Output to confirm those edges
+         survive when no <implements> is present. -->
+    <algorithm namespace="Auth.User.Logout">
+      <input  model="Auth.LoginRequest"/>
+      <output model="Auth.LoginResult"/>
+    </algorithm>
+
   </algorithms>
 </gestalt>
