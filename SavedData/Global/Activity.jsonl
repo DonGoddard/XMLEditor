@@ -318,3 +318,4 @@
 {"ts":"2026-05-17T07:17:12.5387910Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-17T07:17:23.3212140Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-17T07:17:42.4195340Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-17T07:27:46.5031850Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
