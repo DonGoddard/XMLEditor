@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!-- nos-uml-state {"mode":"cvb-gestalt","title":"UML System Design","layout":{"User":{"x":7,"y":48,"w":280,"h":100},"Admin":{"x":431,"y":27,"w":280,"h":100},"Product":{"x":537,"y":230,"w":280,"h":100},"Order":{"x":174,"y":427,"w":280,"h":100}}} -->
+<gestalt>
+  <classes>
+    <class namespace="User">
+      <variables>
+        <variable name="email" type="string" />
+        <variable name="Nicholas" type="float" />
+        <variable name="passwordHash" type="string" />
+        <variable name="Nick2" type="float" />
+        <variable name="total" type="Dictionary&lt;string, string&gt;" />
+        <variable name="newAttr" type="string" />
+      </variables>
+    </class>
+    <class namespace="Admin">
+      <variables>
+        <variable name="permissions" type="string" />
+        <variable name="permissions" type="string" />
+      </variables>
+    </class>
+    <class namespace="Product">
+      <variables>
+        <variable name="sku" type="string" />
+        <variable name="price" type="decimal" />
+        <variable name="newAttr" type="string" />
+      </variables>
+    </class>
+    <class namespace="Order">
+      <variables>
+        <variable name="orderId" type="int" />
+      </variables>
+    </class>
+  </classes>
+  <algorithms>
+    <algorithm namespace="User.Logout">
+      <output model="void" />
+    </algorithm>
+    <algorithm namespace="User.Logout2">
+      <output model="void" />
+    </algorithm>
+    <algorithm namespace="Admin.NewMethod">
+      <output model="void" />
+    </algorithm>
+    <algorithm namespace="Admin.Login">
+      <output model="bool" />
+    </algorithm>
+    <algorithm namespace="Admin.BanUser">
+      <output model="void" />
+    </algorithm>
+    <algorithm namespace="Admin.NewMethod">
+      <output model="void" />
+    </algorithm>
+    <algorithm namespace="Product.UpdateStock">
+      <output model="void" />
+    </algorithm>
+    <algorithm namespace="Order.Process">
+      <output model="bool" />
+    </algorithm>
+  </algorithms>
+</gestalt>
