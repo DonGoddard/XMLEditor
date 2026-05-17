@@ -1,20 +1,73 @@
-<?xml version="1.0" encoding="utf-16"?>
-<UMLDiagram name="Gorp.Loop" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:p="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:nos="http://nos.local/uml-layout">
-  <proto:Class x:Name="Simple.Add" nos:x="50" nos:y="50" nos:width="280" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
-    <proto:DisplayName>Algo: Simple.Add</proto:DisplayName>
-  </proto:Class>
-  <proto:Class x:Name="Simple" nos:x="57" nos:y="112" nos:width="280" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
-    <proto:DisplayName>Algo: Simple</proto:DisplayName>
-  </proto:Class>
-  <proto:Class x:Name="orp" nos:x="359" nos:y="92" nos:width="290" nos:height="150" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
-    <proto:DisplayName>Model: orp</proto:DisplayName>
-    <data:Property visibility="public" x:Name="harvey (int)" type="x:String" xmlns:data="http://www.seraphimtechnology.ai/ns/properties" />
-    <data:Property visibility="public" x:Name="irrelevant (string)" type="x:String" xmlns:data="http://www.seraphimtechnology.ai/ns/properties" />
-  </proto:Class>
-  <proto:Class x:Name="Simple.Escape" nos:x="59" nos:y="189" nos:width="260" nos:height="150" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
-    <proto:DisplayName>Model: Simple.Escape</proto:DisplayName>
-    <data:Property visibility="public" x:Name="result (bool)" type="x:String" xmlns:data="http://www.seraphimtechnology.ai/ns/properties" />
-  </proto:Class>
-  <proto:Relationship from="orp" to="Simple" kind="Input" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
-  <proto:Relationship from="Simple" to="Simple.Escape" kind="Output" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
-</UMLDiagram>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gorp>
+  <algorithms>
+    <algorithm namespace="Simple.Add">
+      <function>
+        <input model="orp" />
+        <output model="Simple.Escape" />
+        <expressions>
+          <expression sequence="0">
+            <Math>
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <plus/>
+                  <ci>orp.timbucktu.sunrise</ci>
+                  <cn>1</cn>
+                </apply>
+              </math>
+            </Math>
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+    <algorithm namespace="Simple">
+      <input model="orp" />
+      <output model="Simple.Escape" />
+      <function>
+        <expressions>
+          <expression sequence="0" delegate="Simple.Add" limit="100"/>
+          <expression sequence="1">
+            <If input="orp">
+              <parameters>
+                <parameter position="0">
+                  <Less input="orp" output="Simple.Escape.result">
+                    <parameters>
+                      <parameter position="0">
+                        <pathvariable type="int" namespace="orp.timbucktu.sunrise"/>
+                      </parameter>
+                      <parameter position ="1">500</parameter>
+                    </parameters>
+                  </Less>
+                </parameter>
+                <parameter position="1">
+                  <goto sequence="0"/>
+                </parameter>
+              </parameters>
+            </If>
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+  </algorithms>
+  <models>
+    <model namespace="orp">
+      <variables>
+        <variable name="harvey" type="int">17</variable>
+        <variable name="irrelevant" type="string">"More Than Five"</variable>
+      </variables>
+      <pathvariables>
+        <pathvariable path="timbucktu" name="sunrise" type="int">89</pathvariable>
+        <pathvariable path="timbucktu" name="sunset" type="int">-22</pathvariable>
+        <pathvariable path="timbucktu" name="tanzania" type="key">9</pathvariable>
+      </pathvariables>
+      <arrays>
+        <array path="local" name="hillgiant" type="[int]">11, 17, 4</array>
+      </arrays>
+    </model>
+    <model namespace="Simple.Escape">
+      <variables>
+        <variable name="result" type="bool">false</variable>
+      </variables>
+    </model>
+  </models>
+</gorp>
