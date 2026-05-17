@@ -301,3 +301,4 @@
 {"ts":"2026-05-17T02:43:30.1575360Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-17T02:50:26.5928780Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-17T02:52:46.4888510Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-17T02:53:01.9372320Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":""}
