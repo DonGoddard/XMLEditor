@@ -333,3 +333,4 @@
 {"ts":"2026-05-17T09:10:48.5564430Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-17T09:11:47.3575980Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-17T09:39:37.1841080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-17T09:40:02.6027760Z","type":"app_open","appId":"UMLGorpApp","filePath":"","ext":"","bytes":0,"detail":""}
