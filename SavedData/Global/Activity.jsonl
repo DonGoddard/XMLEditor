@@ -335,3 +335,4 @@
 {"ts":"2026-05-17T09:39:37.1841080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-17T09:40:02.6027760Z","type":"app_open","appId":"UMLGorpApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-18T03:10:03.1004130Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-18T03:18:28.0913270Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
