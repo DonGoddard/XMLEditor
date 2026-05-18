@@ -366,3 +366,4 @@
 {"ts":"2026-05-18T08:48:45.1855140Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-18T08:50:28.2657730Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-18T09:06:40.7904640Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-05-18T09:09:34.8008080Z","type":"file_save","appId":"XAMLSelectionPatternApp","filePath":"Global/Files/Xaml/Don.tax_rate.gorp","ext":".gorp","bytes":635,"detail":""}
