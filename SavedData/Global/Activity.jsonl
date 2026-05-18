@@ -362,3 +362,4 @@
 {"ts":"2026-05-18T08:37:58.0280080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-18T08:38:50.9286940Z","type":"file_save","appId":"XAMLSelectionPatternApp","filePath":"Global/Files/Xaml/Math.circle.gorp","ext":".gorp","bytes":495,"detail":""}
 {"ts":"2026-05-18T08:39:10.4957650Z","type":"file_save","appId":"XAMLSelectionPatternApp","filePath":"Global/Files/Xaml/Math.quad.gorp","ext":".gorp","bytes":404,"detail":""}
+{"ts":"2026-05-18T08:44:04.9506160Z","type":"file_save","appId":"XAMLSelectionPatternApp","filePath":"Global/Files/Xaml/Don.tax_rate.gorp","ext":".gorp","bytes":415,"detail":""}
