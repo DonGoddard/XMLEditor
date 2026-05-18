@@ -373,3 +373,4 @@
 {"ts":"2026-05-18T17:33:42.7447580Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
 {"ts":"2026-05-18T17:35:09.3948660Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-18T17:35:15.2314630Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-18T17:35:24.6266500Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
