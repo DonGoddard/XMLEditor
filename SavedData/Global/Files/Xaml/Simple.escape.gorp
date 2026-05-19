@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><!-- gorpEndpoint: https://xml-editor-ai.idongoddard.workers.dev --><!-- Using Gorp: Values & Variables, Computation, Comparison, Logic --><models><model namespace="Simple.escape"><variables><variable name="result" type="bool">false</variable></variables></model></models>
