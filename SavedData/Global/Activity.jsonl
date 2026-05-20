@@ -479,3 +479,4 @@
 {"ts":"2026-05-20T08:26:34.3108960Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22236,"detail":"github:PUT"}
 {"ts":"2026-05-20T08:26:38.6940340Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22236,"detail":"github:PUT"}
 {"ts":"2026-05-20T08:26:41.1800370Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22231,"detail":"github:PUT"}
+{"ts":"2026-05-20T08:28:38.0452860Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":198,"detail":"gorp:direct"}
