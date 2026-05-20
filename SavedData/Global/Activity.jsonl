@@ -554,3 +554,4 @@
 {"ts":"2026-05-20T11:27:40.6684410Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
 {"ts":"2026-05-20T11:28:00.6319000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
 {"ts":"2026-05-20T11:28:01.4457320Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
+{"ts":"2026-05-20T11:40:33.1262040Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:worker"}
