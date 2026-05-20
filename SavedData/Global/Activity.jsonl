@@ -545,3 +545,4 @@
 {"ts":"2026-05-20T11:08:50.9295510Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21485,"detail":"github:PUT"}
 {"ts":"2026-05-20T11:08:52.9092810Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:worker"}
 {"ts":"2026-05-20T11:09:47.6398020Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:worker"}
+{"ts":"2026-05-20T11:09:52.9472720Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
