@@ -550,3 +550,4 @@
 {"ts":"2026-05-20T11:10:58.0573200Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
 {"ts":"2026-05-20T11:11:38.1350700Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
 {"ts":"2026-05-20T11:11:59.1192700Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:direct"}
+{"ts":"2026-05-20T11:12:07.6378690Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:worker"}
