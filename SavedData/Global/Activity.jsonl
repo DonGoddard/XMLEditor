@@ -1142,3 +1142,9 @@
 {"ts":"2026-05-22T10:16:38.9201930Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22025,"detail":"github:PUT"}
 {"ts":"2026-05-22T10:16:57.6616520Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T10:17:00.8600470Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:17:18.8946170Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":423,"detail":"github:PUT"}
+{"ts":"2026-05-22T10:17:18.9080740Z","type":"file_rename","appId":"XAMLSelectionPatternApp","filePath":"Global/Files/Xaml/Gorp.Exists.gorp","ext":".gorp","bytes":0,"detail":"Global/Files/Xaml/torture.gorp"}
+{"ts":"2026-05-22T10:17:18.9101780Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20143,"detail":"github:PUT"}
+{"ts":"2026-05-22T10:17:20.0989710Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:DELETE"}
+{"ts":"2026-05-22T10:17:20.3964580Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20143,"detail":"github:PUT"}
+{"ts":"2026-05-22T10:17:23.1586170Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
