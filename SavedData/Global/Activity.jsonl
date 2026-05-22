@@ -1199,3 +1199,13 @@
 {"ts":"2026-05-22T10:32:18.2967880Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T10:32:18.2972130Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T10:32:18.7410940Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21665,"detail":"github:PUT"}
+{"ts":"2026-05-22T10:33:55.1926830Z","type":"file_rename","appId":"XAMLSelectionPatternApp","filePath":"Global/Files/Gorp/Gorp.Exists.gorp","ext":".gorp","bytes":0,"detail":"Global/Files/Gorp/Gorp.Exists.gorp"}
+{"ts":"2026-05-22T10:33:55.1943790Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21665,"detail":"github:PUT"}
+{"ts":"2026-05-22T10:33:56.2748630Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2754810Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2759520Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2763920Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2768390Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2772660Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2777000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T10:33:56.2781330Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
