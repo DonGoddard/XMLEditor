@@ -1582,3 +1582,4 @@
 {"ts":"2026-05-22T12:53:18.6778210Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21725,"detail":"github:PUT"}
 {"ts":"2026-05-22T12:53:18.7535560Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T12:53:18.7539400Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T12:53:18.7710070Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
