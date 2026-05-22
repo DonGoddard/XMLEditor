@@ -1251,3 +1251,5 @@
 {"ts":"2026-05-22T11:35:19.0773400Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T11:35:19.0945500Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-22T11:35:20.3468980Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21665,"detail":"github:PUT"}
+{"ts":"2026-05-22T11:35:49.2160130Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-22T11:35:49.2166660Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
