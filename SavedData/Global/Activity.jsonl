@@ -1908,3 +1908,4 @@
 {"ts":"2026-05-22T14:40:04.4211170Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T14:40:04.4215260Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T14:40:04.4403180Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-05-22T14:40:05.2135900Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21622,"detail":"github:PUT"}
