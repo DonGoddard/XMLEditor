@@ -1919,3 +1919,4 @@
 {"ts":"2026-05-22T16:39:53.9271010Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T16:39:53.9277590Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-22T16:39:53.9444210Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-05-22T16:39:54.8028230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21622,"detail":"github:PUT"}
