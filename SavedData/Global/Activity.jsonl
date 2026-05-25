@@ -1937,3 +1937,4 @@
 {"ts":"2026-05-25T02:17:07.7410130Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-25T02:17:07.8787750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-25T02:17:07.8792230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-25T02:17:08.6217910Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21590,"detail":"github:PUT"}
