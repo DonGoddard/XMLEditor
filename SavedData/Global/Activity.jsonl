@@ -30,3 +30,6 @@
 {"ts":"2026-05-25T13:37:48.4032880Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-25T13:37:48.4037110Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-25T13:37:48.4040280Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-25T13:37:48.4074310Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-25T13:37:48.4237680Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-05-25T13:37:49.3264580Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20848,"detail":"github:PUT"}
