@@ -350,3 +350,5 @@
 {"ts":"2026-05-27T18:13:09.9261550Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-27T18:13:09.9265560Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-27T18:13:09.9268460Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-27T18:13:09.9297540Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-27T18:13:11.0386800Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22127,"detail":"github:PUT"}
