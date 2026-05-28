@@ -1,0 +1,108 @@
+{
+  "xsd": "GestaltModels.xsd",
+  "path": "SAI/Example of Commerce/GestaltModels.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["models"],
+  "elements": [
+    {
+      "name": "models",
+      "contentKind": "complex",
+      "children": ["model"]
+    },
+    {
+      "name": "model",
+      "contentKind": "mixed",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": false },
+        { "name": "with", "type": "string", "required": false },
+        { "name": "isimmutable", "type": "boolean", "required": false }
+      ],
+      "children": ["array", "variables", "variable", "delegate", "any"]
+    },
+    {
+      "name": "array",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "of", "type": "string", "required": true }
+      ],
+      "children": ["validation"]
+    },
+    {
+      "name": "validation",
+      "contentKind": "complex",
+      "children": ["xor", "limit", "basis"]
+    },
+    {
+      "name": "xor",
+      "contentKind": "complex",
+      "children": ["variable"]
+    },
+    {
+      "name": "variable",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "namespace", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "limit",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "namespace", "type": "string", "required": true }
+      ],
+      "children": ["expression"]
+    },
+    {
+      "name": "expression",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "sequence", "type": "unsignedByte", "required": true },
+        { "name": "is", "type": "string", "required": true }
+      ],
+      "children": ["mathml"]
+    },
+    {
+      "name": "mathml"
+    },
+    {
+      "name": "basis",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "namespace", "type": "string", "required": true }
+      ],
+      "children": ["expression"]
+    },
+    {
+      "name": "variables",
+      "contentKind": "complex",
+      "children": ["variable"]
+    },
+    {
+      "name": "delegate",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "method", "type": "string", "required": true },
+        { "name": "namespace", "type": "string", "required": true },
+        { "name": "of", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "any",
+      "contentKind": "complex",
+      "children": ["variable", "pathvariable", "array"]
+    },
+    {
+      "name": "pathvariable",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true }
+      ]
+    }
+  ]
+}
