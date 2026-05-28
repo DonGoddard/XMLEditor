@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "indexes": [
+    "SAI/Example of Commerce/Commerce.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltAlgorithms.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltBindable.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltClasses.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltMeasurment.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltModels.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltScalars.xsd.xsdindex.json",
+    "SAI/Example of Commerce/GestaltTemplate.xsd.xsdindex.json",
+    "SAI/Example of Commerce/QueryModel.xsd.xsdindex.json",
+    "SAI/Schemas/GestaltBindable.xsd.xsdindex.json",
+    "SAI/Schemas/GestaltClasses.xsd.xsdindex.json",
+    "SAI/Schemas/GestaltMeasurment.xsd.xsdindex.json",
+    "SAI/Schemas/GestaltModels.xsd.xsdindex.json",
+    "SAI/Schemas/QueryModel.xsd.xsdindex.json",
+    "xsd-d-si-master/SI_Format.xsd.xsdindex.json",
+    "xsd-d-si-master/examples/SI_Format_TestData.xsd.xsdindex.json",
+    "xsd-d-si-master/qudt/quantitykind.xsd.xsdindex.json"
+  ]
+}
