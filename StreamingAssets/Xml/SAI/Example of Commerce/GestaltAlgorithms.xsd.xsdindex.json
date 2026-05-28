@@ -1,0 +1,60 @@
+{
+  "xsd": "GestaltAlgorithms.xsd",
+  "path": "SAI/Example of Commerce/GestaltAlgorithms.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["algorithms"],
+  "elements": [
+    {
+      "name": "algorithms",
+      "contentKind": "complex",
+      "children": ["algorithm"]
+    },
+    {
+      "name": "algorithm",
+      "contentKind": "mixed",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true }
+      ],
+      "children": ["implements", "input", "output", "expressions", "function", "delegate"]
+    },
+    {
+      "name": "implements",
+      "contentKind": "complex",
+      "children": ["delegate"]
+    },
+    {
+      "name": "delegate",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "input",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "model", "type": "string", "required": true },
+        { "name": "api", "type": "boolean", "required": false }
+      ]
+    },
+    {
+      "name": "output",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "model", "type": "string", "required": true },
+        { "name": "api", "type": "boolean", "required": false }
+      ]
+    },
+    {
+      "name": "expressions",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "function",
+      "contentKind": "mixed",
+      "children": ["expressions"]
+    }
+  ]
+}
