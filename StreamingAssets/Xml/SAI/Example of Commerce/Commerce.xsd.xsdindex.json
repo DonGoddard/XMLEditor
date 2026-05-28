@@ -1,0 +1,395 @@
+{
+  "xsd": "Commerce.xsd",
+  "path": "SAI/Example of Commerce/Commerce.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["gestalt"],
+  "elements": [
+    {
+      "name": "gestalt",
+      "contentKind": "complex",
+      "children": ["enterprise", "templates", "gestalt"]
+    },
+    {
+      "name": "enterprise",
+      "contentKind": "complex",
+      "children": ["subscription"]
+    },
+    {
+      "name": "subscription",
+      "contentKind": "complex",
+      "children": ["payment", "billing"]
+    },
+    {
+      "name": "payment"
+    },
+    {
+      "name": "billing"
+    },
+    {
+      "name": "templates",
+      "contentKind": "complex",
+      "children": ["template"]
+    },
+    {
+      "name": "template",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true },
+        { "name": "isabstract", "type": "boolean", "required": false }
+      ],
+      "children": [
+        "classes",
+        "algorithms",
+        "models",
+        "basis",
+        "scalars",
+        "requires",
+        "references",
+        "comments",
+        "types",
+        "bindable",
+        "understands"
+      ]
+    },
+    {
+      "name": "classes",
+      "contentKind": "complex",
+      "children": ["class"]
+    },
+    {
+      "name": "class",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true },
+        { "name": "domain", "type": "string", "required": false }
+      ],
+      "children": ["inherits", "variables", "pathvariables", "arrays"]
+    },
+    {
+      "name": "inherits",
+      "contentKind": "complex",
+      "children": ["class"]
+    },
+    {
+      "name": "variables",
+      "contentKind": "complex",
+      "children": ["variable"]
+    },
+    {
+      "name": "variable",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "isunique", "type": "boolean", "required": false },
+        { "name": "of", "type": "string", "required": false },
+        { "name": "default", "type": "string", "required": false },
+        { "name": "collapse", "type": "string", "required": false },
+        { "name": "isconstant", "type": "boolean", "required": false },
+        { "name": "unique", "type": "boolean", "required": false },
+        { "name": "with", "type": "string", "required": false }
+      ],
+      "children": ["unit", "comment", "validate"]
+    },
+    {
+      "name": "unit",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "basis", "type": "string", "required": true },
+        { "name": "namespace", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "comment",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "validate",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "pathvariables",
+      "contentKind": "complex",
+      "children": ["pathvariable"]
+    },
+    {
+      "name": "pathvariable",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "symbol", "type": "string", "required": false },
+        { "name": "name", "type": "string", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "of", "type": "string", "required": false },
+        { "name": "with", "type": "string", "required": false },
+        { "name": "universe", "type": "string", "required": false }
+      ],
+      "children": ["comment", "validate"]
+    },
+    {
+      "name": "arrays",
+      "contentKind": "complex",
+      "children": ["array"]
+    },
+    {
+      "name": "array",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "symbol", "type": "string", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "of", "type": "string", "required": false }
+      ],
+      "children": ["path"]
+    },
+    {
+      "name": "path",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true },
+        { "name": "global", "type": "boolean", "required": false }
+      ],
+      "children": ["control", "query", "result", "symbolic", "descrete", "select"]
+    },
+    {
+      "name": "control",
+      "contentKind": "complex",
+      "children": ["model"]
+    },
+    {
+      "name": "model",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "as", "type": "string", "required": true }
+      ],
+      "children": ["set"]
+    },
+    {
+      "name": "set",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "variable", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "query",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "model", "type": "string", "required": false }
+      ],
+      "children": ["model"]
+    },
+    {
+      "name": "result",
+      "contentKind": "complex",
+      "children": ["model"]
+    },
+    {
+      "name": "symbolic",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "algorithm", "type": "string", "required": true },
+        { "name": "input", "type": "string", "required": true },
+        { "name": "output", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "descrete",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "algorithm", "type": "string", "required": false },
+        { "name": "input", "type": "string", "required": false },
+        { "name": "output", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "select",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "algorithm", "type": "string", "required": false },
+        { "name": "input", "type": "string", "required": false },
+        { "name": "output", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "algorithms",
+      "contentKind": "complex",
+      "children": ["algorithm"]
+    },
+    {
+      "name": "algorithm",
+      "contentKind": "mixed",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true }
+      ],
+      "children": ["implements", "input", "output", "expressions", "delegate"]
+    },
+    {
+      "name": "implements",
+      "contentKind": "complex",
+      "children": ["delegate"]
+    },
+    {
+      "name": "delegate",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "input",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "model", "type": "string", "required": true },
+        { "name": "api", "type": "boolean", "required": false }
+      ]
+    },
+    {
+      "name": "output",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "model", "type": "string", "required": true },
+        { "name": "api", "type": "boolean", "required": false }
+      ]
+    },
+    {
+      "name": "expressions",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "models",
+      "contentKind": "complex",
+      "children": ["model"]
+    },
+    {
+      "name": "basis",
+      "contentKind": "complex",
+      "children": ["basis"]
+    },
+    {
+      "name": "scalars",
+      "contentKind": "complex",
+      "children": ["scalar"]
+    },
+    {
+      "name": "scalar",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["scale"]
+    },
+    {
+      "name": "scale",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["conversions"]
+    },
+    {
+      "name": "conversions",
+      "contentKind": "mixed",
+      "children": ["convert"]
+    },
+    {
+      "name": "convert",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "from", "type": "string", "required": true },
+        { "name": "to", "type": "string", "required": true }
+      ],
+      "children": ["expression"]
+    },
+    {
+      "name": "expression",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "requires",
+      "contentKind": "complex",
+      "children": ["template"]
+    },
+    {
+      "name": "references",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "comments",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "types",
+      "contentKind": "complex",
+      "children": ["type"]
+    },
+    {
+      "name": "type",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "bind", "type": "string", "required": false },
+        { "name": "isdynamic", "type": "boolean", "required": false }
+      ],
+      "children": ["inherits", "members", "member"]
+    },
+    {
+      "name": "members",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "member",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "bindable",
+      "contentKind": "complex",
+      "children": ["bind"]
+    },
+    {
+      "name": "bind",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "primative", "type": "boolean", "required": false }
+      ],
+      "children": ["ai"]
+    },
+    {
+      "name": "ai",
+      "contentKind": "complex",
+      "children": ["is"]
+    },
+    {
+      "name": "is",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "net", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": false }
+      ],
+      "children": ["member", "requires"]
+    },
+    {
+      "name": "understands",
+      "contentKind": "complex",
+      "children": ["template"]
+    }
+  ]
+}
