@@ -1,0 +1,88 @@
+{
+  "xsd": "GestaltBindable.xsd",
+  "path": "SAI/Example of Commerce/GestaltBindable.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["bindable", "types"],
+  "elements": [
+    {
+      "name": "bindable",
+      "contentKind": "complex",
+      "children": ["bind"]
+    },
+    {
+      "name": "bind",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "primative", "type": "boolean", "required": false }
+      ],
+      "children": ["ai"]
+    },
+    {
+      "name": "ai",
+      "contentKind": "complex",
+      "children": ["is"]
+    },
+    {
+      "name": "is",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "net", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": false }
+      ],
+      "children": ["member", "requires"]
+    },
+    {
+      "name": "member",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "net", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "requires",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "net", "type": "string", "required": true },
+        { "name": "valueis", "type": "unsignedByte", "required": true }
+      ]
+    },
+    {
+      "name": "types",
+      "contentKind": "complex",
+      "children": ["type"]
+    },
+    {
+      "name": "type",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "bind", "type": "string", "required": false },
+        { "name": "isdynamic", "type": "boolean", "required": false }
+      ],
+      "children": ["inherits", "members", "member"]
+    },
+    {
+      "name": "inherits",
+      "contentKind": "complex",
+      "children": ["base"]
+    },
+    {
+      "name": "base",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "type", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "members",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": true }
+      ]
+    }
+  ]
+}
