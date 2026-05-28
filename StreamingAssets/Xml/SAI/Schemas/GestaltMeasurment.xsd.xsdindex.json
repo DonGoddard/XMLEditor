@@ -1,0 +1,64 @@
+{
+  "xsd": "GestaltMeasurment.xsd",
+  "path": "SAI/Schemas/GestaltMeasurment.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["bases", "scalars"],
+  "elements": [
+    {
+      "name": "bases",
+      "contentKind": "complex",
+      "children": ["basis"]
+    },
+    {
+      "name": "basis",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "scalar", "type": "string", "required": true },
+        { "name": "scale", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "scalars",
+      "contentKind": "complex",
+      "children": ["scalar"]
+    },
+    {
+      "name": "scalar",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["scale"]
+    },
+    {
+      "name": "scale",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["conversions"]
+    },
+    {
+      "name": "conversions",
+      "contentKind": "mixed",
+      "children": ["convert"]
+    },
+    {
+      "name": "convert",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "from", "type": "string", "required": true },
+        { "name": "to", "type": "string", "required": true }
+      ],
+      "children": ["expression"]
+    },
+    {
+      "name": "expression",
+      "contentKind": "simple",
+      "textType": "string"
+    }
+  ]
+}
