@@ -1,0 +1,24 @@
+{
+  "xsd": "QueryModel.xsd",
+  "path": "SAI/Example of Commerce/QueryModel.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["UserQueryModel"],
+  "elements": [
+    {
+      "name": "UserQueryModel",
+      "contentKind": "complex",
+      "children": ["UserKey", "UserLastUpdated"]
+    },
+    {
+      "name": "UserKey",
+      "contentKind": "simple",
+      "textType": "byte"
+    },
+    {
+      "name": "UserLastUpdated",
+      "contentKind": "simple",
+      "textType": "time"
+    }
+  ]
+}
