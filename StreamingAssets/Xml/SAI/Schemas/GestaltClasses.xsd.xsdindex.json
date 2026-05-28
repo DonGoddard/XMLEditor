@@ -1,0 +1,173 @@
+{
+  "xsd": "GestaltClasses.xsd",
+  "path": "SAI/Schemas/GestaltClasses.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["classes"],
+  "elements": [
+    {
+      "name": "classes",
+      "contentKind": "complex",
+      "children": ["class"]
+    },
+    {
+      "name": "class",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true },
+        { "name": "isabstract", "type": "boolean", "required": false }
+      ],
+      "children": ["inherits", "variables", "pathvariables", "arrays"]
+    },
+    {
+      "name": "inherits",
+      "contentKind": "complex",
+      "children": ["class"]
+    },
+    {
+      "name": "variables",
+      "contentKind": "complex",
+      "children": ["variable"]
+    },
+    {
+      "name": "variable",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "isunique", "type": "boolean", "required": false },
+        { "name": "of", "type": "string", "required": false },
+        { "name": "default", "type": "string", "required": false },
+        { "name": "collapse", "type": "string", "required": false },
+        { "name": "isconstant", "type": "boolean", "required": false },
+        { "name": "unique", "type": "boolean", "required": false },
+        { "name": "with", "type": "string", "required": false }
+      ],
+      "children": ["unit", "comment", "validate"]
+    },
+    {
+      "name": "unit",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "basis", "type": "string", "required": true },
+        { "name": "namespace", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "comment",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "validate",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "pathvariables",
+      "contentKind": "complex",
+      "children": ["pathvariable"]
+    },
+    {
+      "name": "pathvariable",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "symbol", "type": "string", "required": false },
+        { "name": "name", "type": "string", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "of", "type": "string", "required": false },
+        { "name": "with", "type": "string", "required": false },
+        { "name": "universe", "type": "string", "required": false }
+      ],
+      "children": ["comment", "validate"]
+    },
+    {
+      "name": "arrays",
+      "contentKind": "complex",
+      "children": ["array"]
+    },
+    {
+      "name": "array",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "symbol", "type": "string", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "of", "type": "string", "required": false }
+      ],
+      "children": ["path"]
+    },
+    {
+      "name": "path",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true },
+        { "name": "global", "type": "boolean", "required": false }
+      ],
+      "children": ["control", "query", "result", "symbolic", "descrete", "select"]
+    },
+    {
+      "name": "control",
+      "contentKind": "complex",
+      "children": ["model"]
+    },
+    {
+      "name": "model",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "as", "type": "string", "required": true }
+      ],
+      "children": ["set"]
+    },
+    {
+      "name": "set",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "variable", "type": "string", "required": true },
+        { "name": "as", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "query",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "model", "type": "string", "required": false }
+      ],
+      "children": ["model"]
+    },
+    {
+      "name": "result",
+      "contentKind": "complex",
+      "children": ["model"]
+    },
+    {
+      "name": "symbolic",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "algorithm", "type": "string", "required": true },
+        { "name": "input", "type": "string", "required": true },
+        { "name": "output", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "descrete",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "algorithm", "type": "string", "required": false },
+        { "name": "input", "type": "string", "required": false },
+        { "name": "output", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "select",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "algorithm", "type": "string", "required": false },
+        { "name": "input", "type": "string", "required": false },
+        { "name": "output", "type": "string", "required": false }
+      ]
+    }
+  ]
+}
