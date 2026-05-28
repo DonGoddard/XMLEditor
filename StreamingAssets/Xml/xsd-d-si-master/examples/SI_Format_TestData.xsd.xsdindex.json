@@ -1,0 +1,42 @@
+{
+  "xsd": "SI_Format_TestData.xsd",
+  "path": "xsd-d-si-master/examples/SI_Format_TestData.xsd",
+  "version": 1,
+  "targetNamespace": "https://ptb.de/si/examples",
+  "rootElements": ["testDSIXML"],
+  "elements": [
+    {
+      "name": "testDSIXML",
+      "contentKind": "complex",
+      "children": ["metaData", "testData"]
+    },
+    {
+      "name": "metaData",
+      "contentKind": "complex",
+      "children": ["testDescription"]
+    },
+    {
+      "name": "testDescription",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "testData",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "ID", "required": false }
+      ],
+      "children": [
+        "real",
+        "complex",
+        "list",
+        "realList",
+        "realListXMLList",
+        "complexList",
+        "complexListXMLList",
+        "constant",
+        "hybrid"
+      ]
+    }
+  ]
+}
