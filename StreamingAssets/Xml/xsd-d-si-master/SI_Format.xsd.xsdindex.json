@@ -1,0 +1,1034 @@
+{
+  "xsd": "SI_Format.xsd",
+  "path": "xsd-d-si-master/SI_Format.xsd",
+  "version": 1,
+  "targetNamespace": "https://ptb.de/si",
+  "rootElements": [
+    "real",
+    "constant",
+    "complex",
+    "realList",
+    "realListXMLList",
+    "complexList",
+    "complexListXMLList",
+    "list",
+    "hybrid",
+    "quantityType",
+    "quantityTypeQUDT",
+    "listQuantityType",
+    "listQuantityTypeQUDT",
+    "quantityTypeXMLList",
+    "quantityTypeQUDTXMLList",
+    "expandedUnc",
+    "coverageInterval",
+    "covarianceMatrix",
+    "ellipsoidalRegion",
+    "rectangularRegion"
+  ],
+  "elements": [
+    {
+      "name": "real",
+      "doc": "Metadata element definition for a real measurement quantity.",
+      "contentKind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "value",
+        "unit",
+        "significantDigit",
+        "dateTime",
+        "measurementUncertaintyUnivariate",
+        "expandedUnc",
+        "coverageInterval"
+      ]
+    },
+    {
+      "name": "label",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "value",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "unit",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "significantDigit",
+      "contentKind": "simple",
+      "textType": "integer"
+    },
+    {
+      "name": "dateTime",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "measurementUncertaintyUnivariate",
+      "contentKind": "complex",
+      "children": ["standardMU", "expandedMU", "coverageIntervalMU"]
+    },
+    {
+      "name": "standardMU",
+      "contentKind": "complex",
+      "children": ["valueStandardMU", "distribution"]
+    },
+    {
+      "name": "valueStandardMU",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "distribution",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "expandedMU",
+      "contentKind": "complex",
+      "children": ["valueExpandedMU", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "valueExpandedMU",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "coverageFactor",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "coverageProbability",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "coverageIntervalMU",
+      "contentKind": "complex",
+      "children": ["valueStandardMU", "intervalMin", "intervalMax", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "intervalMin",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "intervalMax",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "expandedUnc",
+      "contentKind": "complex",
+      "children": ["uncertainty", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "uncertainty",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "coverageInterval",
+      "contentKind": "complex",
+      "children": ["standardUnc", "intervalMin", "intervalMax", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "standardUnc",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "constant",
+      "doc": "Definition of a structure for real numbers, that represent for fundamental physical constants and mathematical constants.",
+      "contentKind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "value",
+        "unit",
+        "significantDigit",
+        "dateTime",
+        "valueStandardMU",
+        "uncertainty",
+        "distribution"
+      ]
+    },
+    {
+      "name": "complex",
+      "doc": "The definition of complex quantities in the D-SI metadata model. Complex quantities allow two representations of complex numerical values: One is the Cartesian coordinate form, the other representation is the polar coordinate form.",
+      "contentKind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "valueReal",
+        "valueImag",
+        "unit",
+        "valueMagnitude",
+        "valuePhase",
+        "unitPhase",
+        "dateTime",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "valueReal",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "valueImag",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "valueMagnitude",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "valuePhase",
+      "contentKind": "simple",
+      "textType": "double"
+    },
+    {
+      "name": "unitPhase",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "ellipsoidalRegion",
+      "contentKind": "complex",
+      "children": ["covarianceMatrix", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "covarianceMatrix",
+      "contentKind": "complex",
+      "children": ["column"]
+    },
+    {
+      "name": "column",
+      "doc": "Definition of a column in the covariance matrix.",
+      "contentKind": "complex",
+      "children": ["covariance"]
+    },
+    {
+      "name": "covariance",
+      "doc": "Each covariance component is defined by - element value (decimal value type) - element unit (string - SI format)",
+      "contentKind": "complex",
+      "children": ["value", "unit"]
+    },
+    {
+      "name": "rectangularRegion",
+      "contentKind": "complex",
+      "children": ["covarianceMatrix", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "realList",
+      "doc": "Meta data element definition for a list of real measurement quantities. The list can represent independent measurement or multivariate vector quantities.",
+      "contentKind": "complex",
+      "children": [
+        "label",
+        "dateTime",
+        "listQuantityType",
+        "listUnit",
+        "listsignificantDigit",
+        "listMeasurementUncertaintyUnivariate",
+        "listUnivariateUnc",
+        "real",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "listUnit",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "listsignificantDigit",
+      "contentKind": "simple",
+      "textType": "integer"
+    },
+    {
+      "name": "listMeasurementUncertaintyUnivariate",
+      "doc": "Definition of a structure, for a global univariate uncertainty, that is used within the list structure with a list of real quantities. The global univariate uncertainty can either be given as an expanded measurement uncertainty or as a coverage interval.",
+      "contentKind": "complex",
+      "children": ["standardMU", "expandedMU", "coverageIntervalMU", "expandedUnc", "coverageInterval"]
+    },
+    {
+      "name": "listUnivariateUnc",
+      "doc": "[deprecated element] use listMeasurementUncertaintyUnivariate instead",
+      "contentKind": "complex",
+      "children": ["expandedUnc", "coverageInterval"]
+    },
+    {
+      "name": "realListXMLList",
+      "doc": "Meta data element definition for a list of real measurement quantities based on the XML type xsd:list. The list can represent independent measurement or multivariate vector quantities. The listed data is separated by blank spaces allowing a memory saving implementation of large data sets.",
+      "contentKind": "complex",
+      "children": [
+        "labelXMLList",
+        "quantityTypeXMLList",
+        "valueXMLList",
+        "unitXMLList",
+        "significantDigitXMLList",
+        "dateTimeXMLList",
+        "measurementUncertaintyUnivariateXMLList",
+        "expandedUncXMLList",
+        "coverageIntervalXMLList",
+        "measurementUncertaintyMultivariateXMLList",
+        "ellipsoidalRegionXMLList",
+        "rectangularRegionXMLList"
+      ]
+    },
+    {
+      "name": "labelXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "valueXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "unitXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "significantDigitXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "dateTimeXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "measurementUncertaintyUnivariateXMLList",
+      "contentKind": "complex",
+      "children": ["standardMUXMLList", "expandedMUXMLList", "coverageIntervalMUXMLList"]
+    },
+    {
+      "name": "standardMUXMLList",
+      "contentKind": "complex",
+      "children": ["valueStandardMUXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "valueStandardMUXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "distributionXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "expandedMUXMLList",
+      "contentKind": "complex",
+      "children": ["valueExpandedMUXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "valueExpandedMUXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "coverageFactorXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "coverageProbabilityXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "coverageIntervalMUXMLList",
+      "contentKind": "complex",
+      "children": ["valueStandardMUXMLList", "intervalMinXMLList", "intervalMaxXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "intervalMinXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "intervalMaxXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "expandedUncXMLList",
+      "contentKind": "complex",
+      "children": ["uncertaintyXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "uncertaintyXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "coverageIntervalXMLList",
+      "contentKind": "complex",
+      "children": ["standardUncXMLList", "intervalMinXMLList", "intervalMaxXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "standardUncXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "measurementUncertaintyMultivariateXMLList",
+      "contentKind": "complex",
+      "children": ["ellipsoidalRegionMUXMLList", "rectangularRegionMUXMLList"]
+    },
+    {
+      "name": "ellipsoidalRegionMUXMLList",
+      "contentKind": "complex",
+      "children": ["covarianceMatrixXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "covarianceMatrixXMLList",
+      "contentKind": "complex",
+      "children": ["columnXMLList"]
+    },
+    {
+      "name": "columnXMLList",
+      "doc": "Definition of a column in the covariance matrix.",
+      "contentKind": "complex",
+      "children": ["covarianceXMLList"]
+    },
+    {
+      "name": "covarianceXMLList",
+      "doc": "Each covariance component is defined by - element value (decimal value type) - element unit (string - SI format)",
+      "contentKind": "complex",
+      "children": ["valueXMLList", "unitXMLList"]
+    },
+    {
+      "name": "rectangularRegionMUXMLList",
+      "contentKind": "complex",
+      "children": ["covarianceMatrixXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "ellipsoidalRegionXMLList",
+      "contentKind": "complex",
+      "children": ["covarianceMatrix", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "rectangularRegionXMLList",
+      "contentKind": "complex",
+      "children": ["covarianceMatrix", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "complexList",
+      "doc": "Meta data element definition for a list of complex measurement quantities. The list can represent independent measurement or multivariate vector quantities.",
+      "contentKind": "complex",
+      "children": [
+        "label",
+        "dateTime",
+        "listQuantityType",
+        "listUnit",
+        "listUnitPhase",
+        "listBivariateUnc",
+        "complex",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "listUnitPhase",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "listBivariateUnc",
+      "doc": "Definition of a structure, for a global bivariate uncertainty, that is used within the list structure with a list of complex quantities. The global bivariate uncertainty can either be given as a hyper-ellipsoidal coverage region or a hyper-rectangular coverage region. Both coverage regions must provide a covariance matrix of dimension 2.",
+      "contentKind": "complex",
+      "children": ["ellipsoidalRegion", "rectangularRegion"]
+    },
+    {
+      "name": "complexListXMLList",
+      "doc": "Meta data element definition for a list of complex measurement quantities. The list can represent independent measurement or multivariate vector quantities. The list support blank space sepetrated values.",
+      "contentKind": "complex",
+      "children": [
+        "labelXMLList",
+        "quantityTypeXMLList",
+        "valueRealXMLList",
+        "valueImagXMLList",
+        "unitXMLList",
+        "valueMagnitudeXMLList",
+        "valuePhaseXMLList",
+        "unitPhaseXMLList",
+        "dateTimeXMLList",
+        "measurementUncertaintyBivariateXMLList",
+        "measurementUncertaintyMultivariateXMLList"
+      ]
+    },
+    {
+      "name": "valueRealXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "valueImagXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "valueMagnitudeXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "valuePhaseXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "unitPhaseXMLList",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "measurementUncertaintyBivariateXMLList",
+      "doc": "bivariate measurement uncertainty",
+      "contentKind": "complex",
+      "children": ["ellipsoidalRegionMUXMLList", "rectangularRegionMUXMLList"]
+    },
+    {
+      "name": "list",
+      "doc": "Meta data element definition for a list of basic measurement quantities. The list can represent independent measurement or multivariate vector quantities.",
+      "contentKind": "complex",
+      "children": [
+        "label",
+        "dateTime",
+        "realList",
+        "realListXMLList",
+        "complexList",
+        "complexListXMLList",
+        "list"
+      ]
+    },
+    {
+      "name": "hybrid",
+      "doc": "The hybrid elements allows to add quantities to the machine readable D-SI format, with other units, than those allowed to be used with the SI by means of the BIPM SI brochure.",
+      "contentKind": "complex",
+      "children": [
+        "real",
+        "complex",
+        "list",
+        "realList",
+        "realListXMLList",
+        "complexList",
+        "complexListXMLList",
+        "constant"
+      ]
+    },
+    {
+      "name": "quantityType",
+      "doc": "Definition of placeholder element for providing different quantity types.",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "quantityTypeQUDT",
+      "doc": "Definition of a quantity element that links to the QUDT ontology IDs for qauntities.",
+      "contentKind": "simple",
+      "textType": "quantitykind"
+    },
+    {
+      "name": "listQuantityType",
+      "doc": "Definition of placeholder element for providing different quantity types.",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "listQuantityTypeQUDT",
+      "doc": "Definition of a quantity element that links to the QUDT ontology IDs for qauntities.",
+      "contentKind": "simple",
+      "textType": "quantitykind"
+    },
+    {
+      "name": "quantityTypeXMLList",
+      "doc": "Definition of placeholder element for providing different quantity types.",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "quantityTypeQUDTXMLList",
+      "doc": "Definition of a quantity element that links to the QUDT ontology IDs for qauntities.",
+      "contentKind": "simple",
+      "textType": "quantitykind"
+    }
+  ],
+  "types": [
+    {
+      "name": "realQuantityType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "value",
+        "unit",
+        "significantDigit",
+        "dateTime",
+        "measurementUncertaintyUnivariate",
+        "expandedUnc",
+        "coverageInterval"
+      ]
+    },
+    {
+      "name": "measurementUncertaintyUnivariateType",
+      "kind": "complex",
+      "children": ["standardMU", "expandedMU", "coverageIntervalMU"]
+    },
+    {
+      "name": "standardMUType",
+      "kind": "complex",
+      "doc": "Definition of standard measurement uncertainty data.",
+      "children": ["valueStandardMU", "distribution"]
+    },
+    {
+      "name": "expandedMUType",
+      "kind": "complex",
+      "doc": "Definition of expanded measurement uncertainty data.",
+      "children": ["valueExpandedMU", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "coverageIntervalMUType",
+      "kind": "complex",
+      "doc": "Definition of coverage interval measurement uncertainty data.",
+      "children": ["valueStandardMU", "intervalMin", "intervalMax", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "expandedUncType",
+      "kind": "complex",
+      "doc": "[deprecated element] use si:expandedMU",
+      "children": ["uncertainty", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "coverageIntervalType",
+      "kind": "complex",
+      "doc": "[deprecated element] use si:coverageIntervalMU",
+      "children": ["standardUnc", "intervalMin", "intervalMax", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "constantQuantityType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "value",
+        "unit",
+        "significantDigit",
+        "dateTime",
+        "valueStandardMU",
+        "uncertainty",
+        "distribution"
+      ]
+    },
+    {
+      "name": "complexQuantityType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "valueReal",
+        "valueImag",
+        "unit",
+        "valueMagnitude",
+        "valuePhase",
+        "unitPhase",
+        "dateTime",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "ellipsoidalRegionType",
+      "kind": "complex",
+      "children": ["covarianceMatrix", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "rectangularRegionType",
+      "kind": "complex",
+      "children": ["covarianceMatrix", "coverageFactor", "coverageProbability", "distribution"]
+    },
+    {
+      "name": "covarianceMatrixType",
+      "kind": "complex",
+      "children": ["column"]
+    },
+    {
+      "name": "realListType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "dateTime",
+        "listQuantityType",
+        "listUnit",
+        "listsignificantDigit",
+        "listMeasurementUncertaintyUnivariate",
+        "listUnivariateUnc",
+        "real",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "realInListType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "value",
+        "unit",
+        "significantDigit",
+        "dateTime",
+        "measurementUncertaintyUnivaraite",
+        "expandedUnc",
+        "coverageInterval"
+      ]
+    },
+    {
+      "name": "listMeasurementUncertaintyUnivariateType",
+      "kind": "complex",
+      "children": ["standardMU", "expandedMU", "coverageIntervalMU", "expandedUnc", "coverageInterval"]
+    },
+    {
+      "name": "listUnivariateUncType",
+      "kind": "complex",
+      "doc": "[deprecated type] use listMeasurementUncertaintyUnivariateType instead",
+      "children": ["expandedUnc", "coverageInterval"]
+    },
+    {
+      "name": "realListXMLListType",
+      "kind": "complex",
+      "children": [
+        "labelXMLList",
+        "quantityTypeXMLList",
+        "valueXMLList",
+        "unitXMLList",
+        "significantDigitXMLList",
+        "dateTimeXMLList",
+        "measurementUncertaintyUnivariateXMLList",
+        "expandedUncXMLList",
+        "coverageIntervalXMLList",
+        "measurementUncertaintyMultivariateXMLList",
+        "ellipsoidalRegionXMLList",
+        "rectangularRegionXMLList"
+      ]
+    },
+    {
+      "name": "measurementUncertaintyUnivariateXMLListType",
+      "kind": "complex",
+      "children": ["standardMUXMLList", "expandedMUXMLList", "coverageIntervalMUXMLList"]
+    },
+    {
+      "name": "standardMUXMLListType",
+      "kind": "complex",
+      "doc": "Definition of standard measurement uncertainty data.",
+      "children": ["valueStandardMUXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "expandedMUXMLListType",
+      "kind": "complex",
+      "doc": "Definition of expanded measurement uncertainty data.",
+      "children": ["valueExpandedMUXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "coverageIntervalMUXMLListType",
+      "kind": "complex",
+      "doc": "Definition of coverage interval measurement uncertainty data.",
+      "children": ["valueStandardMUXMLList", "intervalMinXMLList", "intervalMaxXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "expandedUncXMLListType",
+      "kind": "complex",
+      "doc": "[deprecated type] use si:expandedMUXMLListType",
+      "children": ["uncertaintyXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "coverageIntervalXMLListType",
+      "kind": "complex",
+      "doc": "[deprecated type] use si:coverageIntervalMUXMLListType",
+      "children": ["standardUncXMLList", "intervalMinXMLList", "intervalMaxXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "measurementUncertaintyMultivariateXMLListType",
+      "kind": "complex",
+      "children": ["ellipsoidalRegionMUXMLList", "rectangularRegionMUXMLList"]
+    },
+    {
+      "name": "ellipsoidalRegionMUXMLListType",
+      "kind": "complex",
+      "children": ["covarianceMatrixXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "rectangularRegionMUXMLListType",
+      "kind": "complex",
+      "children": ["covarianceMatrixXMLList", "coverageFactorXMLList", "coverageProbabilityXMLList", "distributionXMLList"]
+    },
+    {
+      "name": "covarianceMatrixXMLListType",
+      "kind": "complex",
+      "children": ["columnXMLList"]
+    },
+    {
+      "name": "covarianceXMLListType",
+      "kind": "complex",
+      "children": ["valueXMLList", "unitXMLList"]
+    },
+    {
+      "name": "complexListType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "dateTime",
+        "listQuantityType",
+        "listUnit",
+        "listUnitPhase",
+        "listBivariateUnc",
+        "complex",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "complexInListType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "quantityType",
+        "valueReal",
+        "valueImag",
+        "unit",
+        "valueMagnitude",
+        "valuePhase",
+        "unitPhase",
+        "dateTime",
+        "ellipsoidalRegion",
+        "rectangularRegion"
+      ]
+    },
+    {
+      "name": "listBivariateUncType",
+      "kind": "complex",
+      "children": ["ellipsoidalRegion", "rectangularRegion"]
+    },
+    {
+      "name": "complexListXMLListType",
+      "kind": "complex",
+      "children": [
+        "labelXMLList",
+        "quantityTypeXMLList",
+        "valueRealXMLList",
+        "valueImagXMLList",
+        "unitXMLList",
+        "valueMagnitudeXMLList",
+        "valuePhaseXMLList",
+        "unitPhaseXMLList",
+        "dateTimeXMLList",
+        "measurementUncertaintyBivariateXMLList",
+        "measurementUncertaintyMultivariateXMLList"
+      ]
+    },
+    {
+      "name": "measurementUncertaintyBivariateXMLListType",
+      "kind": "complex",
+      "children": ["ellipsoidalRegionMUXMLList", "rectangularRegionMUXMLList"]
+    },
+    {
+      "name": "listType",
+      "kind": "complex",
+      "children": [
+        "label",
+        "dateTime",
+        "realList",
+        "realListXMLList",
+        "complexList",
+        "complexListXMLList",
+        "list"
+      ]
+    },
+    {
+      "name": "hybridType",
+      "kind": "complex",
+      "children": [
+        "real",
+        "complex",
+        "list",
+        "realList",
+        "realListXMLList",
+        "complexList",
+        "complexListXMLList",
+        "constant"
+      ]
+    },
+    {
+      "name": "unitType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "BIPM SI brochure unit (9th edition). Based on xs:string."
+    },
+    {
+      "name": "unitXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of units (si:unitType) with separation by blank spaces."
+    },
+    {
+      "name": "unitPhaseType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Unit of angular quantity in SI. Based on xs:string."
+    },
+    {
+      "name": "unitPhaseXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of phase angle units (si:unitPhase Type) with separation by blank spaces."
+    },
+    {
+      "name": "decimalType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Scientific decimal format for numerical values. Based on type xs:double."
+    },
+    {
+      "name": "decimalXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of values (si:decimalType) with separation by blank spaces."
+    },
+    {
+      "name": "valueStandardMUType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Scientific decimal format for numerical values of standard measurement uncertainty that must be positive (greater than zero or equal to zero). Based on type xs:double."
+    },
+    {
+      "name": "valueStandardMUXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of values (si:valueStandardMUType) with separation by blank spaces."
+    },
+    {
+      "name": "valueExpandedMUType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Scientific decimal format for numerical values of expanded measurement uncertainty that must be positive (greater than zero or equal to zero). Based on type xs:double."
+    },
+    {
+      "name": "valueExpandedMUXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of values (si:valueStandardMUType) with separation by blank spaces."
+    },
+    {
+      "name": "uncertaintyValueType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "[deprecated element] use si:valueExpandedMUType or si:valueStandardMUType"
+    },
+    {
+      "name": "uncertaintyValueXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "[deprecated element] use si:valueExpandedMUXMLListType or si:valueStandardMUXMLListType"
+    },
+    {
+      "name": "intervalMinType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Scientific decimal format for numerical values. Based on type xs:double."
+    },
+    {
+      "name": "intervalMinXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of values (si:intervalMinType) with separation by blank spaces."
+    },
+    {
+      "name": "intervalMaxType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Scientific decimal format for numerical values. Based on type xs:double."
+    },
+    {
+      "name": "intervalMaxXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of values (si:intervalMaxType) with separation by blank spaces."
+    },
+    {
+      "name": "kValueType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Scientific decimal format for coverage factor values for uncertainties that must be greater than one or equal to one. Based on type xs:double."
+    },
+    {
+      "name": "kValueXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of coverage factor values (si:kValueType) with separation by blank spaces."
+    },
+    {
+      "name": "probabilityValueType",
+      "kind": "simple",
+      "baseType": "double",
+      "doc": "Decimal format for coverage probability values for uncertainties. The value must be within the interval [0,1]. The scientific exponent \"e\" (or \"E\") is not allowed. Based on type xs:double."
+    },
+    {
+      "name": "probabilityValueXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of coverage probability values (si:probabilityValueType) with separation by blank spaces."
+    },
+    {
+      "name": "significantDigitType",
+      "kind": "simple",
+      "baseType": "integer",
+      "doc": "Type providing information on the significat digit of si:value. This integer number represents the exponent of a power of 10 which identifies the ISO 80000 rounding range of the significant digit. ."
+    },
+    {
+      "name": "significantDigitXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type for identification of significant digiti for XML list style elements. The significant digit numbers are seperated by blank spaces."
+    },
+    {
+      "name": "dateTimeXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of time values (xs:dateTime) with separation by blank spaces."
+    },
+    {
+      "name": "distributionType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "String providing a distribution (statistical distribution of measurement values)."
+    },
+    {
+      "name": "distributionXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of distributions (si:distributionType) with separation by blank spaces."
+    },
+    {
+      "name": "stringXMLListType",
+      "kind": "simple",
+      "baseType": "string",
+      "doc": "Type providing listing of strings (xs:string) with separation by blank spaces."
+    }
+  ]
+}
