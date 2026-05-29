@@ -133,7 +133,13 @@
 {"ts":"2026-05-29T19:39:11.9120620Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-29T19:39:11.9145640Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-29T19:39:13.3810240Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":9086,"detail":"github:PUT"}
-{"ts":"2026-05-29T19:39:20.9723520Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-05-29T19:39:22.4710270Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":9613,"detail":"github:PUT"}
-{"ts":"2026-05-29T19:39:25.5583910Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":9086,"detail":"github:PUT"}
-{"ts":"2026-05-29T19:39:25.8992210Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2664670Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2668750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2673830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2676570Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2682110Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2684970Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2687670Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2690350Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2693160Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T19:39:27.2696040Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
