@@ -860,3 +860,4 @@
 {"ts":"2026-05-29T14:19:45.1498710Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-29T14:19:45.8052490Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24884,"detail":"github:PUT"}
 {"ts":"2026-05-29T14:19:47.1714900Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T14:22:11.0486500Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24869,"detail":"github:PUT"}
