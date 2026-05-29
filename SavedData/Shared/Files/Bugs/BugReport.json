@@ -1,6 +1,23 @@
 {
     "bugs": [
         {
+            "id": "BUG-0007",
+            "kind": "Bug",
+            "featureRef": "feat-001",
+            "title": "Bug: Author & inspect XML — tree editor with line numbers, drag-and-drop nodes, valid…",
+            "description": "Re: AI Design ▸ XML\n\n(Describe the addition, change, or bug.)",
+            "status": "Open",
+            "statusNote": "",
+            "severity": "Moderate",
+            "priority": "Queue",
+            "app": "NOS",
+            "reporter": "Global",
+            "appVersion": "Recompiled since last build",
+            "createdUtc": "2026-05-29T15:14:13.3656140Z",
+            "updatedUtc": "2026-05-29T15:14:13.3656240Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "REQ-0006",
             "kind": "Request",
             "featureRef": "feat-005",
@@ -102,7 +119,7 @@
             ]
         }
     ],
-    "nextDisplayNumber": 7,
+    "nextDisplayNumber": 8,
     "customApps": [
         "Ham Sandwich"
     ]
