@@ -663,3 +663,4 @@
 {"ts":"2026-05-29T11:37:33.4689610Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-29T11:37:33.4957820Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T11:37:34.9727080Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27368,"detail":"github:PUT"}
+{"ts":"2026-05-29T11:40:31.9563080Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
