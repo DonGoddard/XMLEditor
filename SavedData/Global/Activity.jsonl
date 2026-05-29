@@ -961,3 +961,5 @@
 {"ts":"2026-05-29T15:08:16.3218350Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T15:08:17.1766180Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-29T15:08:17.8545070Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25745,"detail":"github:PUT"}
+{"ts":"2026-05-29T15:08:19.2746270Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T15:08:21.0151880Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25759,"detail":"github:PUT"}
