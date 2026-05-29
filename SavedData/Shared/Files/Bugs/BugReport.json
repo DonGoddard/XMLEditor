@@ -1,8 +1,26 @@
 {
     "bugs": [
         {
+            "id": "REQ-0006",
+            "kind": "Request",
+            "featureRef": "feat-005",
+            "title": "Request: Live data binding — Binding pills, JSON/Gorp data context, computed expressions,…",
+            "description": "Re: AI Design ▸ XAML\n\n(Describe the addition, change, or bug.)",
+            "status": "Open",
+            "statusNote": "",
+            "severity": "Moderate",
+            "priority": "Queue",
+            "app": "NOS",
+            "reporter": "Global",
+            "appVersion": "Recompiled since last build",
+            "createdUtc": "2026-05-29T15:08:28.0792980Z",
+            "updatedUtc": "2026-05-29T15:08:28.0793070Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "REQ-0005",
             "kind": "Request",
+            "featureRef": "",
             "title": "Request: Full WPF Grid layout engine (rows/columns/placement) — currently a flat-column a…",
             "description": "Re: AI Design\n\nAdd MAUI and other formats!",
             "status": "Open",
@@ -19,6 +37,7 @@
         {
             "id": "BUG-0004",
             "kind": "Bug",
+            "featureRef": "",
             "title": "Disco",
             "description": "Help",
             "status": "In Progress",
@@ -38,6 +57,7 @@
         {
             "id": "BUG-0003",
             "kind": "Bug",
+            "featureRef": "",
             "title": "TestT",
             "description": "My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to die!My name is Inigo Montoyo. You killed my fathers. Prepare to the end",
             "status": "In Progress",
@@ -59,6 +79,7 @@
         {
             "id": "BUG-0002",
             "kind": "Bug",
+            "featureRef": "",
             "title": "Second bug",
             "description": "Im really bugging you now",
             "status": "Open",
@@ -81,7 +102,7 @@
             ]
         }
     ],
-    "nextDisplayNumber": 6,
+    "nextDisplayNumber": 7,
     "customApps": [
         "Ham Sandwich"
     ]
