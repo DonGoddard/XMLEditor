@@ -1023,3 +1023,6 @@
 {"ts":"2026-05-29T15:30:06.9047880Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-29T15:30:07.5668510Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25752,"detail":"github:PUT"}
 {"ts":"2026-05-29T15:30:10.3156410Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T15:30:18.9460030Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8350,"detail":"github:PUT"}
+{"ts":"2026-05-29T15:30:18.9468800Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":8350,"detail":""}
+{"ts":"2026-05-29T15:30:20.4547200Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25756,"detail":"github:PUT"}
