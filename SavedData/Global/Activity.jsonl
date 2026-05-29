@@ -634,3 +634,6 @@
 {"ts":"2026-05-29T11:33:11.3676870Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22639,"detail":"github:PUT"}
 {"ts":"2026-05-29T11:33:13.5866020Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-29T11:33:15.0853930Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23200,"detail":"github:PUT"}
+{"ts":"2026-05-29T11:34:05.5547730Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-29T11:34:05.5611220Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T11:34:07.3453820Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23853,"detail":"github:PUT"}
