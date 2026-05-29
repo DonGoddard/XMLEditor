@@ -1,6 +1,23 @@
 {
     "bugs": [
         {
+            "id": "BUG-0009",
+            "kind": "Bug",
+            "featureRef": "feat-002",
+            "title": "Bug: Model a domain visually — interactive UML class diagrams, SAI/Enterprise/Gorp im…",
+            "description": "Re: AI Design ▸ UML\n\n(Describe the addition, change, or bug.)",
+            "status": "Open",
+            "statusNote": "",
+            "severity": "Moderate",
+            "priority": "Queue",
+            "app": "NOS",
+            "reporter": "Global",
+            "appVersion": "Recompiled since last build",
+            "createdUtc": "2026-05-29T15:24:51.1056500Z",
+            "updatedUtc": "2026-05-29T15:24:51.1056560Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "REQ-0008",
             "kind": "Request",
             "featureRef": "feat-002",
@@ -136,7 +153,7 @@
             ]
         }
     ],
-    "nextDisplayNumber": 9,
+    "nextDisplayNumber": 10,
     "customApps": [
         "Ham Sandwich"
     ]
