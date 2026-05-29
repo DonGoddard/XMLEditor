@@ -1046,3 +1046,6 @@
 {"ts":"2026-05-29T15:39:49.7532640Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-29T15:39:50.1565110Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25730,"detail":"github:PUT"}
 {"ts":"2026-05-29T15:39:54.8766850Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T15:41:37.9789770Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25751,"detail":"github:PUT"}
+{"ts":"2026-05-29T15:41:42.3859460Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":9080,"detail":"github:PUT"}
+{"ts":"2026-05-29T15:41:42.3870510Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":9080,"detail":""}
