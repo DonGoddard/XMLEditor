@@ -1,6 +1,23 @@
 {
     "bugs": [
         {
+            "id": "REQ-0010",
+            "kind": "Request",
+            "featureRef": "feat-003",
+            "title": "Request: Design UI like WPF — drag ~50 WPF controls onto a canvas, edit properties, dual-…",
+            "description": "Re: AI Design ▸ XAML\n\n(Describe the addition, change, or bug.)",
+            "status": "Open",
+            "statusNote": "",
+            "severity": "Moderate",
+            "priority": "Queue",
+            "app": "NOS",
+            "reporter": "Global",
+            "appVersion": "Recompiled since last build",
+            "createdUtc": "2026-05-29T15:30:18.2208280Z",
+            "updatedUtc": "2026-05-29T15:30:18.2208360Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "BUG-0009",
             "kind": "Bug",
             "featureRef": "feat-002",
@@ -153,7 +170,7 @@
             ]
         }
     ],
-    "nextDisplayNumber": 10,
+    "nextDisplayNumber": 11,
     "customApps": [
         "Ham Sandwich"
     ]
