@@ -649,3 +649,4 @@
 {"ts":"2026-05-29T11:35:34.9018640Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-05-29T11:35:36.4118170Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25347,"detail":"github:PUT"}
 {"ts":"2026-05-29T11:35:37.0082840Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T11:35:39.4818090Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
