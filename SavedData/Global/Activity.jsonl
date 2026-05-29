@@ -690,3 +690,11 @@
 {"ts":"2026-05-29T12:17:38.7773830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T12:17:39.4587090Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T12:17:39.4590590Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T12:17:39.4619330Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T12:17:39.4622130Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T12:17:39.4785590Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-05-29T12:17:40.1174730Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27367,"detail":"github:PUT"}
+{"ts":"2026-05-29T12:17:41.4147560Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T12:17:41.8625670Z","type":"app_open","appId":"FeaturesListApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-29T12:17:41.8703620Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-29T12:17:43.5618770Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27962,"detail":"github:PUT"}
