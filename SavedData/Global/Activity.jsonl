@@ -901,3 +901,11 @@
 {"ts":"2026-05-29T14:42:01.2172660Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25746,"detail":"github:PUT"}
 {"ts":"2026-05-29T14:42:04.2986320Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25761,"detail":"github:PUT"}
 {"ts":"2026-05-29T14:42:07.5283280Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25746,"detail":"github:PUT"}
+{"ts":"2026-05-29T14:42:18.0371820Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":4565,"detail":"github:PUT"}
+{"ts":"2026-05-29T14:42:18.0380050Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":4565,"detail":""}
+{"ts":"2026-05-29T14:42:19.5394590Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25746,"detail":"github:PUT"}
+{"ts":"2026-05-29T14:42:20.5072890Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":4569,"detail":"github:PUT"}
+{"ts":"2026-05-29T14:42:20.5078140Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":4569,"detail":""}
+{"ts":"2026-05-29T14:42:22.0189230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25746,"detail":"github:PUT"}
+{"ts":"2026-05-29T14:42:22.8756750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":4580,"detail":"github:PUT"}
+{"ts":"2026-05-29T14:42:22.8761980Z","type":"file_save","appId":"BugReportApp","filePath":"Shared/Files/Bugs/BugReport.json","ext":".json","bytes":4580,"detail":""}
