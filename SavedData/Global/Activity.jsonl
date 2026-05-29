@@ -1207,3 +1207,4 @@
 {"ts":"2026-05-29T16:40:53.2773690Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T16:40:53.2779190Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T16:40:53.7136500Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22899,"detail":"github:PUT"}
+{"ts":"2026-05-29T16:40:57.8071800Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":258,"detail":"gorp:worker"}
