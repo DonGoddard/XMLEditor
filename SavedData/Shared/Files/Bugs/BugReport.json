@@ -57,7 +57,7 @@
             "featureRef": "feat-002",
             "title": "Request: Model a domain visually — interactive UML class diagrams, SAI/Enterprise/Gorp im…",
             "description": "Re: AI Design ▸ UML\n\n(Describe the addition, change, or bug.)",
-            "status": "Open",
+            "status": "Closed",
             "statusNote": "",
             "severity": "Moderate",
             "priority": "Queue",
@@ -65,7 +65,7 @@
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-29T15:22:43.2825620Z",
-            "updatedUtc": "2026-05-29T15:22:43.2825720Z",
+            "updatedUtc": "2026-05-29T15:41:50.2128230Z",
             "attachmentPaths": []
         },
         {
