@@ -4,7 +4,7 @@
             "id": "REQ-0005",
             "kind": "Request",
             "title": "Request: Full WPF Grid layout engine (rows/columns/placement) — currently a flat-column a…",
-            "description": "Re: AI Design\n\nAdd MAUI",
+            "description": "Re: AI Design\n\nAdd MAUI and other ",
             "status": "Open",
             "statusNote": "",
             "severity": "Moderate",
@@ -13,7 +13,7 @@
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-29T14:41:50.6804570Z",
-            "updatedUtc": "2026-05-29T14:42:19.8028170Z",
+            "updatedUtc": "2026-05-29T14:42:22.1745830Z",
             "attachmentPaths": []
         },
         {
