@@ -1400,3 +1400,4 @@
 {"ts":"2026-05-29T18:56:27.9690000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T18:56:27.9730000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-29T18:56:28.7910000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19588,"detail":"github:PUT"}
+{"ts":"2026-05-29T18:58:09.9390000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
