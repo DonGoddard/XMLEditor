@@ -4,7 +4,7 @@
             "id": "REQ-0005",
             "kind": "Request",
             "title": "Request: Full WPF Grid layout engine (rows/columns/placement) — currently a flat-column a…",
-            "description": "Re: AI Design\n\n(Describe the addition or change you'd like.)",
+            "description": "Re: AI Design\n\nAdd ",
             "status": "Open",
             "statusNote": "",
             "severity": "Moderate",
@@ -13,7 +13,7 @@
             "reporter": "Global",
             "appVersion": "Recompiled since last build",
             "createdUtc": "2026-05-29T14:41:50.6804570Z",
-            "updatedUtc": "2026-05-29T14:41:50.6804690Z",
+            "updatedUtc": "2026-05-29T14:42:17.3285940Z",
             "attachmentPaths": []
         },
         {
