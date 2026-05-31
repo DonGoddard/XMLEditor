@@ -529,3 +529,6 @@
 {"ts":"2026-05-31T21:35:17.3644480Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19765,"detail":"github:PUT"}
 {"ts":"2026-05-31T21:35:31.9347400Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19764,"detail":"github:PUT"}
 {"ts":"2026-05-31T21:35:34.3294230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19167,"detail":"github:PUT"}
+{"ts":"2026-05-31T21:35:42.8048220Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-31T21:35:42.8089410Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T21:35:44.3150660Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19738,"detail":"github:PUT"}
