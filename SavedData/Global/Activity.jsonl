@@ -2049,3 +2049,7 @@
 {"ts":"2026-05-31T17:29:03.6982680Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-31T17:29:04.4296550Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-31T17:29:04.4301280Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T17:29:04.4332610Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T17:29:04.4335660Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T17:29:04.4528380Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-05-31T17:29:05.0112910Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23981,"detail":"github:PUT"}
