@@ -638,3 +638,6 @@
 {"ts":"2026-05-31T22:08:52.1311300Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-05-31T22:08:52.8610960Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-31T22:08:53.5554690Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20314,"detail":"github:PUT"}
+{"ts":"2026-05-31T22:08:57.1332230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19739,"detail":"github:PUT"}
+{"ts":"2026-05-31T22:08:58.9450700Z","type":"app_open","appId":"BookApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-05-31T22:09:00.4532630Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20309,"detail":"github:PUT"}
