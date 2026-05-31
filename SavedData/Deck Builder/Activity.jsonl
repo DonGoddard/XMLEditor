@@ -70,3 +70,4 @@
 {"ts":"2026-05-31T22:08:40.4617470Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-05-31T22:08:41.9596070Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":90176,"detail":"github:PUT"}
 {"ts":"2026-05-31T22:08:45.3354890Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":89501,"detail":"github:PUT"}
+{"ts":"2026-05-31T22:08:51.8646960Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":""}
