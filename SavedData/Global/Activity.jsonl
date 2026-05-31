@@ -425,3 +425,13 @@
 {"ts":"2026-05-31T18:25:50.7263880Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":309,"detail":"gorp:worker"}
 {"ts":"2026-05-31T18:26:03.9584700Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":305,"detail":"gorp:worker"}
 {"ts":"2026-05-31T18:26:15.3796100Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":307,"detail":"gorp:worker"}
+{"ts":"2026-05-31T18:27:09.6975380Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1360,"detail":"github:PUT"}
+{"ts":"2026-05-31T18:27:09.6987990Z","type":"file_save","appId":"XAMLLoginFormApp","filePath":"Global/Files/Xaml/Don.test.gorp","ext":".gorp","bytes":1360,"detail":""}
+{"ts":"2026-05-31T18:27:10.7484420Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7489230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7492860Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7496360Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7499780Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7504160Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7507870Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-05-31T18:27:10.7511240Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
