@@ -12,7 +12,7 @@ NOS is one operating system serving three purposes - **first an AI Designer, sec
 
 ## Model
 
-***XML editor*** - ✓ hierarchical tree editor with color coding and GitHub sync.
+****XML editor**** - ✓ hierarchical tree editor with color coding and GitHub sync.
 - ✓ Line-number gutter with the selected row highlighted
 - ✓ **In-place node editing** - double-click a tag or value, Tab/Enter to commit, Esc to cancel
 - ✓ Inter-window node drag-and-drop between separate open trees
