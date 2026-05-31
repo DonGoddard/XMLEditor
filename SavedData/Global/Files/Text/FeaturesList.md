@@ -12,14 +12,14 @@ NOS is one operating system serving three purposes - **first an AI Designer, sec
 
 ## Model
 
-**XML editor** - ✓ hierarchical tree editor with color coding and GitHub sync.
+***XML editor*** - ✓ hierarchical tree editor with color coding and GitHub sync.
 - ✓ Line-number gutter with the selected row highlighted
-- ✓ *In-place node editing* - double-click a tag or value, Tab/Enter to commit, Esc to cancel
+- ✓ **In-place node editing** - double-click a tag or value, Tab/Enter to commit, Esc to cancel
 - ✓ Inter-window node drag-and-drop between separate open trees
 - ✓ Multi-node drag - move several selected nodes together
 - ✓ Drag-to-reorder with before / after / as-child drop indicators
 - ✓ Real-time search & filter across tags, attributes, values, and content
-- ✓ *Tree state restore* - expand/collapse and scroll survive a reload
+- ✓ **Tree state restore** - expand/collapse and scroll survive a reload
 - ✓ Visual-Studio-style color coding
 - ✓ Options menu - toggle word-wrap and line numbers
 - ✓ Keyword-aware context menus on nodes
