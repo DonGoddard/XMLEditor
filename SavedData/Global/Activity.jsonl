@@ -958,3 +958,9 @@
 {"ts":"2026-06-01T13:01:01.4104990Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18741,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:01:19.4307910Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20086,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:01:21.4447160Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18739,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:01:26.5441380Z","type":"app_open","appId":"XAMLLoginFormApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:01:27.0579990Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:01:27.0585420Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:01:27.0589770Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:01:27.0593190Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:01:28.0543100Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19933,"detail":"github:PUT"}
