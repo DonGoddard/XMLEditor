@@ -1131,3 +1131,7 @@
 {"ts":"2026-06-01T13:30:57.6910000Z","type":"app_open","appId":"CardsApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-06-01T13:30:59.2080000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19514,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:31:02.0910000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18779,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:31:06.6910000Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:31:06.6920000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:31:08.3580000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19432,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:31:10.0590000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19446,"detail":"github:PUT"}
