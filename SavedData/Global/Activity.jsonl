@@ -1005,3 +1005,5 @@
 {"ts":"2026-06-01T13:10:40.3230000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-01T13:10:40.7630000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-01T13:10:41.8920000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18776,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:10:44.7850000Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:10:46.3010000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19324,"detail":"github:PUT"}
