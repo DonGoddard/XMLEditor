@@ -1073,3 +1073,4 @@
 {"ts":"2026-06-01T13:26:44.7890000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:26:45.7590000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19974,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:26:47.0260000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:26:51.7450000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":258,"detail":"gorp:worker"}
