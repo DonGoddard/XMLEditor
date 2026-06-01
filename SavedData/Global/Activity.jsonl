@@ -964,10 +964,10 @@
 {"ts":"2026-06-01T13:01:27.0589770Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:01:27.0593190Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:01:28.0543100Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19933,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:01:44.9116290Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
-{"ts":"2026-06-01T13:03:47.8410930Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22765,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:03:49.8031980Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":202,"detail":"gorp:worker"}
-{"ts":"2026-06-01T13:05:05.0982790Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22872,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:05:08.1755760Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22901,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:05:30.3449880Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22898,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:05:33.8062690Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22910,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:02:19.1989940Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22271,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:04:14.6873940Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6879780Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.9152790Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22265,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:05:22.5012330Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22910,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:05:37.2576790Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22907,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:05:41.7405530Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22921,"detail":"github:PUT"}
