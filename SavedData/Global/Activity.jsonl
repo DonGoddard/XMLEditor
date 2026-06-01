@@ -941,3 +941,6 @@
 {"ts":"2026-06-01T13:00:23.1290000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:00:25.0070000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20689,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:00:26.7820000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20092,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:00:30.0350000Z","type":"app_open","appId":"XamlGorpApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:00:30.0420000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:00:31.5350000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20060,"detail":"github:PUT"}
