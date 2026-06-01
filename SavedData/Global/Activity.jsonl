@@ -986,3 +986,9 @@
 {"ts":"2026-06-01T13:08:33.6552260Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18774,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:08:35.0797920Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-06-01T13:08:36.6355930Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19516,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:08:38.6889300Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:08:40.2323610Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19538,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:08:41.8382400Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18776,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:08:42.0422400Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:08:42.0595830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:08:43.5421510Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20264,"detail":"github:PUT"}
