@@ -964,6 +964,14 @@
 {"ts":"2026-06-01T13:01:27.0589770Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:01:27.0593190Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:01:28.0543100Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19933,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:01:59.3607050Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22771,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:02:04.1706140Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
-{"ts":"2026-06-01T13:04:00.8419090Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":320,"detail":"gorp:worker"}
+{"ts":"2026-06-01T13:02:13.5780340Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:13.4115310Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1611,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:04:13.4129360Z","type":"file_save","appId":"XAMLLoginFormApp","filePath":"Global/Files/Gorp/Gorp.Simple.gorp","ext":".gorp","bytes":1611,"detail":""}
+{"ts":"2026-06-01T13:04:14.0144660Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6090340Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6096520Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6101310Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6105800Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6777890Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6785550Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:04:14.6791800Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
