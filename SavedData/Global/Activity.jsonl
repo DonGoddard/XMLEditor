@@ -1207,3 +1207,4 @@
 {"ts":"2026-06-01T13:38:21.9640000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:38:21.9680000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:38:23.0380000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19963,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:38:24.1210000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
