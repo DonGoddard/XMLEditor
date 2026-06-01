@@ -1,0 +1,22 @@
+{
+  "xsd": "GestaltTemplate.xsd",
+  "path": "SAI/Example of Commerce/GestaltTemplate.xsd",
+  "version": 1,
+  "targetNamespace": "http://design.proto.ai/Gestalt.Templates",
+  "rootElements": ["templates"],
+  "elements": [
+    {
+      "name": "templates",
+      "contentKind": "complex",
+      "children": ["template"]
+    },
+    {
+      "name": "template",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "namespace", "type": "string", "required": true },
+        { "name": "isabstract", "type": "boolean", "required": false }
+      ]
+    }
+  ]
+}

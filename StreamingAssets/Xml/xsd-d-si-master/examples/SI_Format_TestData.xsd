@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="https://ptb.de/si/examples"
+	xmlns:siTest="https://ptb.de/si/examples"
+	xmlns:si="https://ptb.de/si"
+	elementFormDefault="qualified" >
+	
+	<xs:import namespace="https://ptb.de/si" schemaLocation="https://www.ptb.de/si/v2.2.1/SI_Format.xsd"/>
+	
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+						
+			D-SI test data XSD
+			Copyright (c) 2019 - 2024  Physikalisch-Technische Bundesanstalt (PTB), all rights reserved. 
+				
+			This XML Scheme Definition (XSD) is free software: you can redistribute it and/or modify
+   			it under the terms of the GNU Lesser General Public License as published by
+    		the Free Software Foundation, version 3 of the License.
+
+    		This XSD is distributed in the hope that it will be useful,
+    		but WITHOUT ANY WARRANTY; without even the implied warranty of
+    		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    		GNU Lesser General Public License for more details.
+
+			CONTACT: 			smartcom@ptb.de
+			DEVELOPMENT:		https://gitlab1.ptb.de/d-ptb/d-si/xsd-d-si
+			D-SI XSD VERSION:	2.2.1
+			RELEASE DATA:		2024-06-21		
+			DOI:				10.5281/zenodo.3366901
+
+    		You should have received a copy of the GNU Lesser General Public License
+    		along with this XSD.  If not, see http://www.gnu.org/licenses.
+    	</xs:documentation>
+		<xs:documentation xml:lang="en">
+	  		ACKNOWLEDGEMENT:
+		    The development of the XML scheme is part of the research project EMPIR 17IND02 (title: SmartCom). 
+		    This project (17IND02) has received funding from the EMPIR programme, co-financed by the Participating States and 
+		    from the European Union's Horizon 2020 research and innovation programme.
+	    </xs:documentation>
+	</xs:annotation>
+	
+
+	<!-- A simple XML scheme for maintaining multiple XML test examples
+		for the validation of the D-SI XML implementation.-->
+	
+	<!-- root element for any test -->
+	<xs:element name="testDSIXML">
+		<xs:complexType>
+			<xs:sequence>
+				
+				<!-- Description of the test -->
+				<xs:element name="metaData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="testDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+				<!-- The test data (D-SI XML Elements) -->
+				<xs:element name="testData" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+					
+						<!-- D-SI XML elements -->
+						<xs:sequence>
+							<xs:choice>
+								<xs:element ref="si:real"/>
+								<xs:element ref="si:complex"/>
+								<xs:element ref="si:list"/>
+								<xs:element ref="si:realList"/>
+								<xs:element ref="si:realListXMLList"/>
+								<xs:element ref="si:complexList"/>
+								<xs:element ref="si:complexListXMLList"/>
+								<xs:element ref="si:constant"/>
+								<xs:element ref="si:hybrid"/>
+								
+							</xs:choice>
+						</xs:sequence>
+						
+						<!-- Attribute with a unique test data xs:ID -->
+						 <xs:attribute name="id" type="xs:ID"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

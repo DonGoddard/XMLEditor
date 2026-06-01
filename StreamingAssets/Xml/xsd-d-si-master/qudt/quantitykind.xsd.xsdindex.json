@@ -1,0 +1,16 @@
+{
+  "xsd": "quantitykind.xsd",
+  "path": "xsd-d-si-master/qudt/quantitykind.xsd",
+  "version": 1,
+  "targetNamespace": "http://qudt.org/vocab/",
+  "rootElements": [],
+  "elements": [
+  ],
+  "types": [
+    {
+      "name": "quantitykind",
+      "kind": "simple",
+      "baseType": "string"
+    }
+  ]
+}

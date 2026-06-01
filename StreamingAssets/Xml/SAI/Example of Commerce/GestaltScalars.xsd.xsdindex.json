@@ -1,0 +1,49 @@
+{
+  "xsd": "GestaltScalars.xsd",
+  "path": "SAI/Example of Commerce/GestaltScalars.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["scalars"],
+  "elements": [
+    {
+      "name": "scalars",
+      "contentKind": "complex",
+      "children": ["scalar"]
+    },
+    {
+      "name": "scalar",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["scale"]
+    },
+    {
+      "name": "scale",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["conversions"]
+    },
+    {
+      "name": "conversions",
+      "contentKind": "mixed",
+      "children": ["convert"]
+    },
+    {
+      "name": "convert",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "from", "type": "string", "required": true },
+        { "name": "to", "type": "string", "required": true }
+      ],
+      "children": ["expression"]
+    },
+    {
+      "name": "expression",
+      "contentKind": "simple",
+      "textType": "string"
+    }
+  ]
+}
