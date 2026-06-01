@@ -971,7 +971,4 @@
 {"ts":"2026-06-01T13:05:22.5012330Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22910,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:05:37.2576790Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22907,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:05:41.7405530Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22921,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:06:40.9920220Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22294,"detail":"github:PUT"}
-{"ts":"2026-06-01T13:06:42.0771580Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-06-01T13:06:42.0857070Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
-{"ts":"2026-06-01T13:06:43.5779670Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22876,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:06:52.6326990Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22890,"detail":"github:PUT"}
