@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!-- nos-uml-state {"mode":"cvb-classes","title":"UML System Design","layout":{"orp":{"x":60,"y":60,"w":280,"h":100},"Simple.Escape":{"x":340,"y":60,"w":280,"h":100},"Simple.Add":{"x":620,"y":60,"w":280,"h":100},"Simple":{"x":344.84,"y":177.64,"w":280,"h":100}},"rels":[{"from":"orp","to":"Simple","type":"Input"},{"from":"Simple","to":"Simple.Escape","type":"Output"}]} -->
+<classes>
+  <class namespace="orp">
+    <variables>
+      <variable name="harvey" type="int" />
+      <variable name="irrelevant" type="string" />
+      <variable name="sunrise" type="int" />
+      <variable name="sunset" type="int" />
+      <variable name="tanzania" type="key" />
+      <variable name="hillgiant" type="[int]" />
+    </variables>
+  </class>
+  <class namespace="Simple.Escape">
+    <variables>
+      <variable name="result" type="bool" />
+    </variables>
+  </class>
+  <class namespace="Simple.Add" />
+  <class namespace="Simple" />
+</classes>
