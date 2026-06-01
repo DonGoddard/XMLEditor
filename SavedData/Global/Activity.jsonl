@@ -1124,4 +1124,5 @@
 {"ts":"2026-06-01T13:30:32.4610000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:30:33.0540000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20639,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:30:36.7570000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":203,"detail":"gorp:worker"}
-{"ts":"2026-06-01T13:30:39.5900000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":203,"detail":"gorp:worker"}
+{"ts":"2026-06-01T13:30:44.9900000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18780,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:30:49.2570000Z","type":"app_open","appId":"PerformanceApp","filePath":"","ext":"","bytes":0,"detail":""}
