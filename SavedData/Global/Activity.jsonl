@@ -1065,3 +1065,5 @@
 {"ts":"2026-06-01T13:26:09.4876910Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":34037,"detail":"github:PUT"}
 {"ts":"2026-06-01T13:26:29.5750000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:26:31.1930000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18765,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:26:39.2930000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18780,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:26:44.2590000Z","type":"app_open","appId":"XAMLLoginFormApp","filePath":"","ext":"","bytes":0,"detail":""}
