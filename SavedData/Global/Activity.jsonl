@@ -992,3 +992,7 @@
 {"ts":"2026-06-01T13:08:42.0422400Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-06-01T13:08:42.0595830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-01T13:08:43.5421510Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20264,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:08:48.7492010Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18777,"detail":"github:PUT"}
+{"ts":"2026-06-01T13:08:48.9968390Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-01T13:08:49.0134360Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-01T13:08:50.5137750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22872,"detail":"github:PUT"}
