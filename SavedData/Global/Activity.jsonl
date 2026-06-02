@@ -1790,3 +1790,5 @@
 {"ts":"2026-06-02T04:41:43.4040000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20380,"detail":"github:PUT"}
 {"ts":"2026-06-02T04:45:18.9050000Z","type":"wallpaper_set","appId":"","filePath":"green-background-with-card-playing-suits-gamble-velvet-texture-poker-table-decoration-with-gambling-and-bets-vector.jpg","ext":".jpg","bytes":0,"detail":""}
 {"ts":"2026-06-02T04:45:20.4050000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20454,"detail":"github:PUT"}
+{"ts":"2026-06-02T04:45:34.3890000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-02T04:45:35.0060000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21110,"detail":"github:PUT"}
