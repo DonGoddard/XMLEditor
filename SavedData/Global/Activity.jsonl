@@ -1730,3 +1730,4 @@
 {"ts":"2026-06-02T03:54:59.7030000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T03:55:00.4040000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T03:55:01.2410000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19308,"detail":"github:PUT"}
+{"ts":"2026-06-02T03:55:24.3700000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1933705,"detail":"github:PUT-bin"}
