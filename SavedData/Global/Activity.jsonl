@@ -1971,3 +1971,7 @@
 {"ts":"2026-06-02T06:46:02.4806700Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22518,"detail":"github:PUT"}
 {"ts":"2026-06-02T06:46:04.0907520Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23031,"detail":"github:PUT"}
 {"ts":"2026-06-02T06:46:07.0353120Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22644,"detail":"github:PUT"}
+{"ts":"2026-06-02T06:46:08.6377600Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23157,"detail":"github:PUT"}
+{"ts":"2026-06-02T06:46:10.6640610Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22770,"detail":"github:PUT"}
+{"ts":"2026-06-02T06:46:11.4465220Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:DELETE"}
+{"ts":"2026-06-02T06:46:11.4467890Z","type":"file_delete","appId":"GalleryApp","filePath":"Recordings/NOS-20260601-221829.mp4","ext":".mp4","bytes":0,"detail":""}
