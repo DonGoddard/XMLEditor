@@ -23,3 +23,6 @@
 {"ts":"2026-06-02T07:41:15.9412460Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24291,"detail":"github:PUT"}
 {"ts":"2026-06-02T07:41:39.5539440Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23904,"detail":"github:PUT"}
 {"ts":"2026-06-02T07:41:47.1165940Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24417,"detail":"github:PUT"}
+{"ts":"2026-06-02T07:42:03.5298690Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:COPY"}
+{"ts":"2026-06-02T07:42:03.5310830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img"}
+{"ts":"2026-06-02T07:42:04.4431810Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":4413859,"detail":"github:PUT-bin"}
