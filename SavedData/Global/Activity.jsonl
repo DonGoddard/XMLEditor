@@ -1535,3 +1535,4 @@
 {"ts":"2026-06-02T01:11:39.3142180Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-06-02T01:11:39.3300270Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T01:11:41.1327260Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20593,"detail":"github:PUT"}
+{"ts":"2026-06-02T01:11:50.0768980Z","type":"screen_record","appId":"","filePath":"","ext":"","bytes":0,"detail":"3.2"}
