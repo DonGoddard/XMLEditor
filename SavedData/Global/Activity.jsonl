@@ -1778,3 +1778,5 @@
 {"ts":"2026-06-02T04:34:33.1638250Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19294,"detail":"github:PUT"}
 {"ts":"2026-06-02T04:34:34.9627500Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-06-02T04:34:34.9753740Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-02T04:34:36.1907890Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-02T04:34:37.6923860Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20383,"detail":"github:PUT"}
