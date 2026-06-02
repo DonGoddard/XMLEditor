@@ -1,3 +1,8 @@
 {"ts":"2026-06-02T07:31:47.3643590Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:COPY"}
 {"ts":"2026-06-02T07:31:47.3658750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img"}
 {"ts":"2026-06-02T07:31:47.9811230Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1522182,"detail":"github:PUT-bin"}
+{"ts":"2026-06-02T07:31:59.7127190Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:DELETE"}
+{"ts":"2026-06-02T07:31:59.7129830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:COPY"}
+{"ts":"2026-06-02T07:31:59.7130360Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img"}
+{"ts":"2026-06-02T07:31:59.7133210Z","type":"file_rename","appId":"GalleryApp","filePath":"Recordings/NOS-20260601.mp4","ext":".mp4","bytes":0,"detail":"Recordings/NOS-20260601-233958.mp4"}
+{"ts":"2026-06-02T07:31:59.9081590Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":134171,"detail":"github:PUT-bin"}
