@@ -1807,3 +1807,6 @@
 {"ts":"2026-06-02T04:47:04.0221680Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T04:47:04.2591630Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20710,"detail":"github:PUT"}
 {"ts":"2026-06-02T04:48:35.2310000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20710,"detail":"github:PUT"}
+{"ts":"2026-06-02T04:49:49.9029350Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-06-02T04:49:51.4729670Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21472,"detail":"github:PUT"}
+{"ts":"2026-06-02T04:49:53.6767650Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
