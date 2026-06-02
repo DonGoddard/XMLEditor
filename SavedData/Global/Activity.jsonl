@@ -2040,3 +2040,4 @@
 {"ts":"2026-06-02T07:06:20.5046750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T07:06:20.5079650Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T07:06:20.5083980Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-02T07:06:24.4863400Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23410,"detail":"github:PUT"}
