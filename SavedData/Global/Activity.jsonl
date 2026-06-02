@@ -2084,9 +2084,5 @@
 {"ts":"2026-06-02T07:17:56.0135700Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:COPY"}
 {"ts":"2026-06-02T07:17:56.0136070Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img"}
 {"ts":"2026-06-02T07:17:56.4058130Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1933705,"detail":"github:PUT-bin"}
-{"ts":"2026-06-02T07:18:22.3456130Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:DELETE"}
-{"ts":"2026-06-02T07:18:22.3456390Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:COPY"}
-{"ts":"2026-06-02T07:18:22.3456680Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img"}
-{"ts":"2026-06-02T07:18:22.3457700Z","type":"file_rename","appId":"GalleryApp","filePath":"Recordings/NOS-20260601 hey.mp4","ext":".mp4","bytes":0,"detail":"Recordings/NOS-20260601.mp4"}
-{"ts":"2026-06-02T07:18:22.4904360Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":135701,"detail":"github:PUT-bin"}
-{"ts":"2026-06-02T07:18:27.2646750Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23653,"detail":"github:PUT"}
+{"ts":"2026-06-02T07:18:28.4259030Z","type":"wallpaper_set","appId":"","filePath":"green-background-with-card-playing-suits-gamble-velvet-texture-poker-table-decoration-with-gambling-and-bets-vector.jpg","ext":".jpg","bytes":0,"detail":""}
+{"ts":"2026-06-02T07:18:29.9255570Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23653,"detail":"github:PUT"}
