@@ -1862,3 +1862,4 @@
 {"ts":"2026-06-02T05:22:03.4240000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-06-02T05:22:03.4270000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T05:22:04.9810000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20215,"detail":"github:PUT"}
+{"ts":"2026-06-02T05:22:13.1410000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
