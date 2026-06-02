@@ -2003,3 +2003,4 @@
 {"ts":"2026-06-02T06:49:22.3758120Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-06-02T06:49:27.9531790Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23410,"detail":"github:PUT"}
 {"ts":"2026-06-02T06:49:33.0370340Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23412,"detail":"github:PUT"}
+{"ts":"2026-06-02T06:49:41.1934930Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":198841,"detail":"github:PUT-bin"}
