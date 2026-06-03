@@ -64,3 +64,13 @@
 {"ts":"2026-06-03T10:40:27.3735270Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24527,"detail":"github:PUT"}
 {"ts":"2026-06-03T10:40:28.7475120Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-06-03T10:40:30.2986700Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25084,"detail":"github:PUT"}
+{"ts":"2026-06-03T10:58:28.9130000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-06-03T10:58:29.5590000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
+{"ts":"2026-06-03T10:58:29.5770000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-03T10:58:29.5810000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-03T10:58:29.5850000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-03T10:58:31.3690000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25087,"detail":"github:PUT"}
+{"ts":"2026-06-03T10:58:31.3740000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-03T10:58:31.5450000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-03T10:58:31.5530000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-06-03T10:58:31.5600000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
