@@ -1,0 +1,10 @@
+{
+  "signature": "test-index-pipeline",
+  "context": "verify index.json maintenance",
+  "version": "0.1.260808",
+  "platform": "setup",
+  "os": "",
+  "browser": "",
+  "utc": "2026-08-08T11:00:00Z",
+  "logTail": "[Log] index test"
+}
