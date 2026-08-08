@@ -1,3 +1,11 @@
 {
-  "reports": []
+  "reports": [
+    {
+      "file": "2026-08-08T12-41-10Z-exception-NullReferenceException.json",
+      "signature": "exception-NullReferenceException",
+      "utc": "2026-08-08T12:41:10Z",
+      "version": "0.1.260808.1118",
+      "platform": "WebGLPlayer"
+    }
+  ]
 }
