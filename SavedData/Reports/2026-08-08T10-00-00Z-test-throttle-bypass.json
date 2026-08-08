@@ -1,0 +1,10 @@
+{
+  "signature": "test-throttle-bypass",
+  "context": "verify repeat pings work",
+  "version": "0.1.260808",
+  "platform": "setup",
+  "os": "",
+  "browser": "",
+  "utc": "2026-08-08T10:00:00Z",
+  "logTail": ""
+}
