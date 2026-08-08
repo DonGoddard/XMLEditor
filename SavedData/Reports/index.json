@@ -1,13 +1,6 @@
 {
   "reports": [
     {
-      "file": "2026-08-08T12-00-00Z-test-delete-me.json",
-      "signature": "test-delete-me",
-      "utc": "2026-08-08T12:00:00Z",
-      "version": "0.1.260808",
-      "platform": "setup"
-    },
-    {
       "file": "2026-08-08T11-00-00Z-test-index-pipeline.json",
       "signature": "test-index-pipeline",
       "utc": "2026-08-08T11:00:00Z",
