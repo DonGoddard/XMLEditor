@@ -1,6 +1,23 @@
 {
     "bugs": [
         {
+            "id": "BUG-0016",
+            "kind": "Bug",
+            "featureRef": "",
+            "title": "gorp-unreachable",
+            "description": "Promoted from auto-report 2026-08-08T13-02-33Z-gorp-unreachable.json\nContext: Gorp POST https://xml-editor-ai.idongoddard.workers.dev/gorp failed: HTTP 503 Service Unavailable\nSystem: Windows 11\nBrowser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\nLog tail:\n[Log] [GorpTest] POST → https://xml-editor-ai.idongoddard.workers.dev (useWorker=True)\n[Warning] [GorpTest] Response (503) result=ProtocolError error=HTTP/1.1 503 Service Unavailable\n[Log] [GorpEquationWindow] Execute failed — tunnel offline?",
+            "status": "Open",
+            "statusNote": "",
+            "severity": "Moderate",
+            "priority": "Soon",
+            "app": "NOS",
+            "reporter": "NOS Auto",
+            "appVersion": "0.1.260808.1118",
+            "createdUtc": "2026-08-08T13:02:33Z",
+            "updatedUtc": "2026-08-08T09:57:58.9667260Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "BUG-0015",
             "kind": "Bug",
             "featureRef": "",
@@ -221,7 +238,7 @@
             ]
         }
     ],
-    "nextDisplayNumber": 16,
+    "nextDisplayNumber": 17,
     "customApps": [
         "Ham Sandwich"
     ]
