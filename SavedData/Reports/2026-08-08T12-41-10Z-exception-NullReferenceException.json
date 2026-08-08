@@ -1,0 +1,10 @@
+{
+  "signature": "exception-NullReferenceException",
+  "context": "NullReferenceException: Object reference not set to an instance of an object",
+  "version": "0.1.260808.1118",
+  "platform": "WebGLPlayer",
+  "os": "macOS 15.6",
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15",
+  "utc": "2026-08-08T12:41:10Z",
+  "logTail": "[Log] [UIManager] Restoring Layout. User: DGod, Windows: 4\n[Log] [Uploader] Fetch #12 success!\n[Log] [XamlWindow] RebuildCanvas: 38 nodes\n[Warning] [XamlWindow] Unknown control type: RichTextBox — rendering placeholder\n[Exception] NullReferenceException: Object reference not set to an instance of an object\n  at XmlEditor.XamlWindow.RefreshPropertiesPanel () [0x00042]\n  at XmlEditor.XamlWindow.SelectNode (XmlEditor.XamlNode node) [0x0001b]"
+}
