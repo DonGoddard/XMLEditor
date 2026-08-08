@@ -1,0 +1,10 @@
+{
+  "signature": "gorp-unreachable",
+  "context": "Gorp POST https://xml-editor-ai.idongoddard.workers.dev/gorp failed: HTTP 503 Service Unavailable",
+  "version": "0.1.260808.1118",
+  "platform": "WebGLPlayer",
+  "os": "Windows 11",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+  "utc": "2026-08-08T13:02:33Z",
+  "logTail": "[Log] [GorpTest] POST → https://xml-editor-ai.idongoddard.workers.dev (useWorker=True)\n[Warning] [GorpTest] Response (503) result=ProtocolError error=HTTP/1.1 503 Service Unavailable\n[Log] [GorpEquationWindow] Execute failed — tunnel offline?"
+}
