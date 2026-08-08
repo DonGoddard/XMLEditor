@@ -1,0 +1,14 @@
+{
+  "signature": "consent-flow-test",
+  "context": "end-to-end /report verification",
+  "version": "0.1.260808",
+  "platform": "setup",
+  "os": "macOS test",
+  "browser": "curl",
+  "utc": "2026-08-08T09:00:00Z",
+  "logTail": "[Log] line one\n[Warning] line two",
+  "ip": "24.112.245.133",
+  "country": "US",
+  "city": "Jarrettsville",
+  "screenshotFile": "2026-08-08T09-00-00Z-consent-flow-test.jpg"
+}
