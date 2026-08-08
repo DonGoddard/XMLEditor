@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-08T13-15-07Z-github-save-failed.json",
+      "signature": "github-save-failed",
+      "utc": "2026-08-08T13:15:07Z",
+      "version": "0.1.260807.1110",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-08T13-02-33Z-gorp-unreachable.json",
       "signature": "gorp-unreachable",
       "utc": "2026-08-08T13:02:33Z",
