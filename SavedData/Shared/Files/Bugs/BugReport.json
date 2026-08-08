@@ -1,6 +1,23 @@
 {
     "bugs": [
         {
+            "id": "BUG-0015",
+            "kind": "Bug",
+            "featureRef": "",
+            "title": "test-index-pipeline",
+            "description": "Promoted from auto-report 2026-08-08T11-00-00Z-test-index-pipeline.json\nContext: verify index.json maintenance\nLog tail:\n[Log] index test",
+            "status": "Open",
+            "statusNote": "",
+            "severity": "Moderate",
+            "priority": "Soon",
+            "app": "NOS",
+            "reporter": "NOS Auto",
+            "appVersion": "0.1.260808",
+            "createdUtc": "2026-08-08T11:00:00Z",
+            "updatedUtc": "2026-08-08T09:45:57.2640350Z",
+            "attachmentPaths": []
+        },
+        {
             "id": "REQ-0012",
             "kind": "Request",
             "featureRef": "feat-002",
@@ -204,7 +221,7 @@
             ]
         }
     ],
-    "nextDisplayNumber": 15,
+    "nextDisplayNumber": 16,
     "customApps": [
         "Ham Sandwich"
     ]
