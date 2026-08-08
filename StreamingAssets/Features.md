@@ -1,6 +1,6 @@
 # NOS Features
 
-NOS is one operating system serving three purposes - first an AI Designer, second a Game Designer, third an online OS. Every tab below is its own value story; chips link to the window that delivers a feature, dots show status. {meta: updated=2026-05-31}
+NOS is one operating system serving three purposes - first an AI Designer, second a Game Designer, third an online OS. Every tab below is its own value story; chips link to the window that delivers a feature, dots show status. {meta: updated=2026-08-08}
 
 ---
 
@@ -186,7 +186,7 @@ NOS is one operating system serving three purposes - first an AI Designer, secon
 ---
 
 ## OS
-{meta: updated=2026-05-31}
+{meta: updated=2026-08-08}
 
 *An online, collaborative workspace - a Drive / 365-style OS with a suite of tools for building content together.*
 
@@ -247,6 +247,11 @@ NOS is one operating system serving three purposes - first an AI Designer, secon
 - **Status filtering** - filter entries by Stable, Beta, Planned, or Wishlist. {status:Stable} {id:feat-197}
 - **File a request or bug** - right-click any entry to log one against it. {status:Stable} {id:feat-198}
 - **Live counts & dates** - per-tab entry counts and an updated date. {status:Stable} {id:feat-199}
+- [[LedgerWindow]] **Implementations ledger** - a spreadsheet over the 2,000-entry tape of everything ever built into NOS. {status:Beta} {id:feat-315}
+- **Sortable sheet** - Date / System / Type / Description, click-header sorting, live search, colored type pills and a system filter. {status:Beta} {id:feat-316}
+- **Per-system breakdown** - collapsible sections with type mixes, counts and date ranges. {status:Beta} {id:feat-317}
+- **Project statistics** - totals, type mix, a clickable daily-activity chart and system rankings. {status:Beta} {id:feat-318}
+- **Timeline playback** - press play and watch the project build itself one day at a time. {status:Beta} {id:feat-319}
 
 ### Foundations
 - [[GitHubUploader]] **Online persistence & sync** - GitHub-backed storage, fully proxied. {status:Stable} {id:feat-200}
