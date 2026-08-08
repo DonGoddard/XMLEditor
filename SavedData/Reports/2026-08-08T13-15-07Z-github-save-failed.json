@@ -1,0 +1,10 @@
+{
+  "signature": "github-save-failed",
+  "context": "save Global/Files/Notes/ProjectNotes.md failed after all retries",
+  "version": "0.1.260807.1110",
+  "platform": "OSXEditor",
+  "os": "macOS 15.6",
+  "browser": "(not a browser build)",
+  "utc": "2026-08-08T13:15:07Z",
+  "logTail": "[Log] [GitHubUploader] SaveMarkdown called — file: Global/Files/Notes/ProjectNotes.md\n[Warning] [Uploader] Worker error (Network connection lost) for ProjectNotes.md — retry 1/3 in 1.0s\n[Warning] [Uploader] Worker error (Network connection lost) for ProjectNotes.md — retry 2/3 in 2.0s\n[Error] [Uploader] Save failed for ProjectNotes.md: HTTP 500\n[Error] [ErrorReporter] Report github-save-failed queued"
+}
