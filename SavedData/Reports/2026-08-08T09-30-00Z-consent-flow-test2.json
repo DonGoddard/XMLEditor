@@ -1,0 +1,10 @@
+{
+  "signature": "consent-flow-test2",
+  "context": "privacy-fixed pipeline verification",
+  "version": "0.1.260808",
+  "platform": "setup",
+  "os": "macOS test",
+  "browser": "curl",
+  "utc": "2026-08-08T09:30:00Z",
+  "logTail": "[Log] test line"
+}
