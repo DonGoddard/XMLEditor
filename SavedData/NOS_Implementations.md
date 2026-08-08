@@ -1,0 +1,2159 @@
+# NOS Implementations Ledger
+
+Every feature, subfeature, fix, adjustment, and infrastructure change built into
+NOS, one line each, in chronological order - the playback tape of the project.
+Distilled from the full changelogs; maintained by the "update docs" runbook pass.
+
+{meta: synced-through=2026-08-08}
+
+Line format (machine-parseable for the future Timeline window):
+`- {date:YYYY-MM-DD} {sys:System} {type:feature|fix|adjust|infra|docs} description`
+
+## Totals
+
+- **2042 logged implementations** across **49 active days** (2026-03-31 to 2026-08-08)
+- By type: feature: 877, fix: 541, adjust: 436, infra: 121, docs: 67
+- Systems touched: 36; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (188), CardsWindow (141), XamlWindow (80), Desktop (80), Editor (76), BugReportWindow (74)
+
+## The tape
+
+
+### 2026-03-31
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} Full set of .xaml-data-* and .xaml-preview-btn USS classes added to Xaml Window Styles.uss
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} XamlNode.GetAttr intercepts {Binding} expressions when previewContext is set, resolving live values before returning
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} XamlCustomState extended with data context JSON, computed defs, preview state, panel visibility; persisted and restored
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Preview mode: static previewContext, activeDataContext, Preview title-bar button, TogglePreviewMode
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Computed defs serialization helpers SerializeComputedDefs / DeserializeComputedDefs
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} 300ms debounce on JSON field changes
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Data context panel UI: BuildDataContextPanelUI, AddComputedRow, SyncComputedDefsFromUI, RebuildDataContext
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Inline SimpleEval expression evaluator ([VarName] refs, string literals, arithmetic with precedence); NCalc dropped due to CS0433 clash with Unity.VisualScripting
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Recursive-descent JSON parser written in-house, no Newtonsoft dependency
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} New XamlWindow.DataContext.cs partial with XamlDataContext model: values, computedDefs, ResolvePath, ResolveToString, ResolveBinding, ApplyStringFormat
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} ResolveBinding returns null for unresolvable bindings, keeping raw {Binding} text visible instead of empty string
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} RebuildDataContext status label shows value and computed counts after Apply
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} AddComputedRow stores row data in userData; placeholder text and tooltips added to name and expression fields
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} SyncComputedDefsFromUI uses direct ComputedRowData userData reference instead of fragile Q by name; fixes computed expressions silently not evaluating
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} USS: h-split divider/grip and right-panel classes added; props and data panels flex-grow 1, data body scrollable
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Persistence: sourcePanelWidth slot reused for right panel width; sourcePanelHeight and rightPanelVisible added to XamlCustomState
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} SetRightPanelVisible plus right-panel toggle button added; SetSourcePanelVisible toggles hSplitDivider
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} SetupHorizontalDividerDrag resizes source panel height; SetupDividerDrag repurposed to resize right panel width
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Properties and Data Context panels moved into a collapsible right panel column; mainView now Row with left canvas column
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} XML source panel moved from right side to bottom of canvas area with horizontal drag divider
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} propsPanelHeight tracked, persisted in XamlCustomState, restored on reopen; BuildPropertiesPanelUI uses it instead of hardcoded 180
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Draggable rightHSplitDivider between Properties and Data Context panels; drag resizes Properties height clamped 60-600px
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} No-progress bail catches circular computed references, both marked with an error value
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Multi-pass computed evaluation handles any definition ordering; skipped deps resolve on later passes
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Computed results feed back into a merged lookup so one computed variable is resolvable inside another's expression
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} SelectNode ScrollTo calls guarded by panel and contentContainer checks; prevents ArgumentException when scheduled scroll fires after canvas rebuild
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} CommitDragChanges adds TR to commitTop so Canvas.Top persists when TR handle dragged
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} TR resize handle now resizes width and height/top (was horizontal-only)
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} Move drag uses 4px movement threshold; short tap re-selects deepest child; fixes drag never starting because child re-select fired first
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} ArmMoveDrag simplified to 3 args, anchors frame from dragEl worldBound; FindCanvasChildAncestor removed
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} Drag armed only when clicked element is a direct Canvas child; nested elements selectable but not draggable, fixing drag propagating to StackPanel ancestor
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} Clicking move area with a child under cursor re-selects the child immediately without drag; fixes larger element blocking child selection
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} OnCanvasClick uses FindDeepestNodeAtPosition in all paths for consistent hit-testing through TextField internals
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} overflow hidden added to .xaml-textblock as secondary safeguard against resize text-jump
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} Live resize gated to Canvas children; flow-layout children update only on commit, fixing text-jump from stale sibling resolvedStyle during live height changes
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} USS tab bar classes added; computed [Key] expressions available in both JSON and Gorp modes
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} XamlCustomState gains savedGorpXml and savedDataContextMode for full session persistence
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} RebuildDataContext branches on activeDataMode; SetDataStatus helper replaces duplicated status updates; status shows mode name
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} SwitchDataMode toggles container visibility and tab active classes
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Both gorp/models/model and inline gorp/algorithm/input data shapes supported
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Single-model files omit namespace from keys; multi-model files prefix keys with namespace
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Gorp key mapping: variable to flat key, pathvariable to dotted key, array to List (shows item count or index 0)
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} ParseGorpModels + ParseGorpValue parse models XML into the same values dictionary used by JSON mode
+- {date:2026-03-31} {sys:XamlWindow} {type:feature} Data Context panel gains JSON | Gorp tab bar; switching modes rebuilds context immediately
+- {date:2026-03-31} {sys:Docs} {type:docs} GorpUsage.md created in StreamingAssets/Xml/SAI: full reference for Gorp data context format, binding syntax, and troubleshooting
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} ResolvePath exact-key lookup before nested walk; Gorp flat dotted pathvariable keys were never found by the dict-walking resolver
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} ParseGorpModels rewritten with GetElementsByTagName and direct child iteration; no XPath/SelectNodes dependency
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} GorpIsDataModel distinguishes data models from output-only models; built-in example files now bind without namespace prefix
+- {date:2026-03-31} {sys:XamlWindow} {type:adjust} JSON/Gorp text fields wrapped in a fixed 130px vertical ScrollView with dark minimal scrollbar
+- {date:2026-03-31} {sys:XamlWindow} {type:fix} ParseGorpModels dual-key registration: every variable stored under bare key and namespace-qualified key; collisions resolved by qualified form
+
+### 2026-04-01
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Eleven .xaml-gorp-summary-* USS classes added to Xaml Window Styles.uss
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Summary panel refreshes on every debounced edit and Apply; populated with default template at init
+- {date:2026-04-01} {sys:XamlWindow} {type:feature} Algorithms section shows each algorithm's namespace and input-to-output signature
+- {date:2026-04-01} {sys:XamlWindow} {type:feature} RefreshGorpSummary + AddGorpSummaryRow parse raw XML: Models section with per-row binding path, type, and value
+- {date:2026-04-01} {sys:XamlWindow} {type:feature} gorpSummaryContainer panel below Gorp XML field shows all models and binding paths as a readable tree
+- {date:2026-04-01} {sys:XamlWindow} {type:fix} horizontalScrollerVisibility set Hidden in code on jsonScroll and gorpScroll; CSS display none alone didn't reliably hide it
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Gorp summary panel wrapped in dedicated 160px vertical ScrollView so it no longer squishes against Computed rows
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Computed rows wrapped in a 140px ScrollView with dark chrome matching summary and source scrolls
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Gorp summary rows tightened to explicit 15px heights, zero margins/padding; eliminates Unity default double-spacing; headers at 16px
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Removed "Name = expression using [Key] variables" help label and its USS class
+- {date:2026-04-01} {sys:XamlWindow} {type:feature} Draggable xaml-data-divider between data source area and Computed section; computed maxHeight clamped 26-400px, hover darkens
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Models section label moved out of RefreshGorpSummary into the fixed header
+- {date:2026-04-01} {sys:XamlWindow} {type:feature} Draggable splitter inside gorpContainer redistributes source vs summary height
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Status text moved to fixed Models header row right-aligned; status row now only shows errors
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Apply button moved to absolute overlay on top-right of the JSON/Gorp source text area
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} "Computed" renamed to "Computed Variables"
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Models header row restyled to match Computed Variables header (no background/border, same label sizing)
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Source/Models divider hover highlights cyan
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Data Context header/foldout row removed; panel starts directly with JSON/Gorp tabs; SetDataContextPanelVisible kept as no-op for persistence compat
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} All data-divider bars restyled to match h-split divider exactly: #333333 base, cyan hover, 8px, no border
+- {date:2026-04-01} {sys:XamlWindow} {type:fix} Models/Computed separator drag direction fixed; now a true two-pane split adjusting both gorp summary height and computed maxHeight simultaneously
+- {date:2026-04-01} {sys:XamlWindow} {type:adjust} Internal Data Context divider and canvas/source divider max heights raised to 90% of available space
+- {date:2026-04-01} {sys:XamlWindow} {type:fix} flex-shrink 0 on all Data Context body children prevents squishing during divider drag; overflow hidden on right panel clips cleanly
+- {date:2026-04-01} {sys:XamlWindow} {type:feature} Shift+wheel applies vertical wheel delta to horizontal scroll offset for full 2D mouse-wheel pan
+- {date:2026-04-01} {sys:XamlWindow} {type:fix} canvasScroll constructed with ScrollViewMode.VerticalAndHorizontal; fixes 2-finger trackpad horizontal scroll on macOS and 1-finger mobile drag
+- {date:2026-04-01} {sys:Dockbar} {type:fix} RecenterDock threshold 0.5 to 1px stops sub-pixel GeometryChangedEvent feedback loop jiggling the dock 1-2px per cycle
+- {date:2026-04-01} {sys:ChatWindow} {type:fix} PostToAI cleans up dot animation coroutines, loadingIndicator, and sendBtn in a finally block so UI resets even on exception
+- {date:2026-04-01} {sys:ChatWindow} {type:fix} GetChatMarkdown falls back to modelId when displayName is empty, preventing "**AI ()**" in exported markdown
+- {date:2026-04-01} {sys:ChatWindow} {type:fix} Model dropdown callback only updates selectedModel on valid Find match; mismatched name was poisoning the next API request with null modelId
+
+### 2026-04-02
+- {date:2026-04-02} {sys:XamlWindow} {type:fix} DeserializeComputedDefs uses ReadJsonString helper handling escaped quotes/backslashes; extracted strings properly unescaped
+- {date:2026-04-02} {sys:XamlWindow} {type:fix} GetCustomWindowState calls SyncComputedDefsFromUI before serializing so in-progress field edits aren't lost on close
+- {date:2026-04-02} {sys:WebGL} {type:fix} GitHubFetch.jslib UTF-8 corruption: atob Latin-1 decode replaced with Uint8Array + TextDecoder utf-8; affected all WebGL file loads with non-ASCII characters
+- {date:2026-04-02} {sys:UIManager} {type:adjust} ForceReloadDesktopLayout still clears any previously stored cache key for clean migration
+- {date:2026-04-02} {sys:UIManager} {type:fix} PlayerPrefs desktop layout cache removed; app always reads from GitHub on startup, eliminating stale-cache editor/WebGL sync issues
+- {date:2026-04-02} {sys:XamlWindow} {type:fix} DataContext serialization idempotent: re-save strips any existing block before re-injecting
+- {date:2026-04-02} {sys:XamlWindow} {type:feature} xmlns:nos namespace added to root automatically on first save
+- {date:2026-04-02} {sys:XamlWindow} {type:feature} Load strips the nos:DataContext block, populates fields and computed rows, passes clean XAML to parser; backwards-compatible without block
+- {date:2026-04-02} {sys:XamlWindow} {type:feature} Save injects nos:DataContext block as first child of root: JSON source, Gorp source, computed expressions, active mode, all in CDATA
+
+### 2026-04-07
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:adjust} USS: .inplace-editing cyan tint rule (consistent with Uml/Xml windows) and .geq-slot-label styles added
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:fix} Variables panel TextFields get white caret color and forced white text (covers endpoint field)
+- {date:2026-04-07} {sys:WindowBase} {type:fix} EnsureCaretElement does a luminance check before using the label's resolved color; falls back to white when dark or unresolved
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:fix} Slot placeholder/edit label gets geq-slot-label class so typed text is white instead of Unity dark default
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:fix} BuildGorpPayload runs PrecedenceCorrectedTree before SerializeToMathXml so Gorp MathML also reflects correct precedence
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} ParseInfixExpression recursive-descent parser: precedence ^ over */ over +-, right-associative power, parens/decimals/variables
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} SerializeToInfixString flattens tree without implicit structural parens; explicit ParenNodes preserved
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:fix} Test evaluation operator precedence: tree serialized to infix then re-parsed with correct precedence; 9+3*4+1 now 22, was 49 from left-to-right drag-built tree
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:adjust} USS: .geq-xml-split-divider (8px, hover cyan) + grip added; max-height removed from xml panel, flex-shrink 0 added
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} ToggleXmlPanel shows/hides divider and restores xmlPanelHeight; height persisted in GorpEquationState
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} Draggable xmlSplitDivider between equation view and XML panel; panel height tracked (default 200px), drag range 60px to 90% of body
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} Clear button in title bar resets equation to empty slot, clears selection/tab/test values, marks dirty, rebuilds canvas and XML panel
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} BuildFullGorpXml writes "Using Gorp" comment listing active toolbar groups; ApplyGorpXml parses it and restores the four toolbarShow booleans
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:adjust} Execute button enabled whenever XML panel is open, disabled only when panel closed and equation has slots; ToggleXmlPanel refreshes badge on close
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} RunGorpTest uses xmlTextField.value when available; HasSlots guard removed so Execute works regardless of equation completeness
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} RefreshXmlPanel(updateText) only overwrites text on equation change, preserving manual edits on panel toggle
+- {date:2026-04-07} {sys:GorpEquationWindow} {type:feature} XML panel converted to editable multiline TextField instead of read-only Label
+
+### 2026-04-10
+- {date:2026-04-10} {sys:UIManager} {type:fix} UmlWindow/XamlWindow fallback GitHub path now uses GetDefaultSaveFilename so load attempts the same path the save wrote to
+- {date:2026-04-10} {sys:UIManager} {type:fix} SaveDesktopLayout null DesktopLayer guard scoped to fragment loop only; early return was silently aborting entire layout save so filePath never persisted
+- {date:2026-04-10} {sys:UmlWindow} {type:adjust} Removed "Save Diagram" plus separator from canvas right-click menu and hamburger OptionsContextMenu
+- {date:2026-04-10} {sys:UmlWindow} {type:adjust} Restored "Save to GitHub" entry in titlebar menu
+- {date:2026-04-10} {sys:Misc} {type:feature} RenameFileDialog extension field now editable in-place; tracks finalExt, normalizes leading dot, used by rename and toast
+- {date:2026-04-10} {sys:WindowBase} {type:feature} GetDefaultSaveFilename uses AppDefinition defaultFilePath basename as stem, falling back to window title; extension replaced by caller
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} autoExitPlayMode flag: capture exits play mode when done; CaptureAllCoroutine polls up to ~5s for AppRegistry/UIManager at startup
+- {date:2026-04-10} {sys:Editor} {type:feature} Capture menu auto-enters play mode via UFOS_PendingCapture EditorPref and playModeStateChanged listener; blocks with dialog while compiling or on script errors
+- {date:2026-04-10} {sys:HelpWindow} {type:adjust} settleFrames default raised 5 to 20 for fonts, images, and deferred schedule callbacks
+- {date:2026-04-10} {sys:HelpWindow} {type:fix} Capture wait rebuilt as four phases: 10-frame pre-settle, 4500-frame content poll (old 600 too short for worst-case GitHub path), 60-frame overlay clear, 60-frame geometry check
+- {date:2026-04-10} {sys:WindowBase} {type:feature} IsLoadingOverlayVisible public property exposes Syncing overlay state independently of contentLoaded
+- {date:2026-04-10} {sys:HelpWindow} {type:adjust} Size/position config applied immediately after window element found so it lays out at final dimensions from the start
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} extraSettleSeconds inspector float (default 0.1) yields a WaitForSeconds between settleFrames and crop
+- {date:2026-04-10} {sys:WindowBase} {type:feature} ApplyScreenshotLayout virtual lets windows set separators/panels/layout for help screenshots; called after geometry confirmed
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} CaptureWindowConfig serializable class + inspector list sets exact per-window CSS size/position before crop
+- {date:2026-04-10} {sys:Docs} {type:docs} NOS_Help.md: ASCII-art Layout sections replaced with @layout annotation blocks for AppGallery, Performance, DebugLog, Image, and GorpEquation windows; all 11 windows now screenshot-annotated
+- {date:2026-04-10} {sys:Docs} {type:docs} NOS_Help.md: tooltip text added to every annotation label across all 11 windows
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} Annotation badges with tooltips become hoverable (turn cyan, show tooltip); badges without stay PickingMode.Ignore
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} AnnotationEntry gains tooltip field; ExtractAnnotations parses optional third pipe column from @layout rows
+- {date:2026-04-10} {sys:HelpWindow} {type:infra} Debug.Log prints all crop values for the first capture run for coordinate diagnosis
+- {date:2026-04-10} {sys:HelpWindow} {type:adjust} capturePadding default 6 to 0 so captures are pixel-exact to window bounds
+- {date:2026-04-10} {sys:HelpWindow} {type:fix} scaledPixelsPerPoint used to convert panel-points to screen pixels; fixes crop offsets on Retina/HiDPI displays
+- {date:2026-04-10} {sys:HelpWindow} {type:fix} CropWindow uses resolvedStyle left/top/width/height instead of worldBound, which included resize-handle child overflow
+- {date:2026-04-10} {sys:Editor} {type:feature} Tools/UFOS/Export Help Screenshots to Disk menu item, validated to enable only in Play Mode
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} ExportScreenshotsToDisk editor utility decodes cached screenshots to Temp/HelpScreenshots as JPGs and reveals the folder
+- {date:2026-04-10} {sys:Editor} {type:fix} UFOS menu "Setup Screenshot Capture on UIManager" replaces prefab-attach approach; prefab components were never found at play-mode start
+- {date:2026-04-10} {sys:HelpWindow} {type:fix} Close() hides the floating annotation tooltip when the help panel closes
+- {date:2026-04-10} {sys:HelpWindow} {type:adjust} Annotation badges use the custom tooltip on MouseOver/Out instead of single-line TooltipManager property
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} ShowAnnotationTooltip/HideAnnotationTooltip custom wrapping tooltip on activePanel with maxWidth clamped so text never overflows the help window
+- {date:2026-04-10} {sys:HelpWindow} {type:fix} BeginLoadNosh loads local StreamingAssets copy first in editor, bypassing GitHub/Cloudflare caching so help always shows latest capture
+- {date:2026-04-10} {sys:HelpWindow} {type:feature} LocalNoshFilename public const shared between writer and reader
+- {date:2026-04-10} {sys:HelpWindow} {type:fix} Capture writes nosh JSON to StreamingAssets/NOS_Help.nosh in editor and refreshes AssetDatabase before the GitHub push
+
+### 2026-04-13
+- {date:2026-04-13} {sys:GitHubUploader} {type:feature} SaveMarkdown gains optional onComplete callback
+- {date:2026-04-13} {sys:HelpWindow} {type:fix} WindowScreenshotCapture saves and uploads each window immediately after capture via SaveAndUploadSection; fixes 1MB Contents API limit silently dropping the full upload
+- {date:2026-04-13} {sys:HelpWindow} {type:feature} Monolithic NOS_Help.nosh split into per-window files at SavedData/Help/{TypeName}.nosh; cachedSections dict + lazy per-section load replaces single cached file
+- {date:2026-04-13} {sys:Dockbar} {type:fix} SpawnWindow guards AddDockIcon/AddDockInstance on IsPinned; unpinned instances get a window but no dock entry or persistence
+- {date:2026-04-13} {sys:Desktop} {type:fix} LaunchDesktopIcon sets isPinned=false before SpawnWindow so desktop-launched windows don't join the dock
+- {date:2026-04-13} {sys:Desktop} {type:feature} SetDesktopIconRunningState three states: Open (cyan dot, dimmed), Minimized (grey dot), Closed (no dot); driven by window status and minimize events
+- {date:2026-04-13} {sys:Desktop} {type:feature} 6px cyan DesktopIndicatorDot added to desktop icon element, hidden by default
+- {date:2026-04-13} {sys:UIManager} {type:feature} OnWindowMinimized static event fired from MinimizeWindow so minimize state tracks separately from close
+- {date:2026-04-13} {sys:UIManager} {type:fix} MinimizeToIcon and RestoreFromIcon use FindDesktopIconElement fallback so animations target the origin desktop icon
+- {date:2026-04-13} {sys:UIManager} {type:fix} FindDesktopIconElement iterates DesktopLayer children matching appId + "_desk_" prefix; Q(appId) always returned null due to guid suffix
+- {date:2026-04-13} {sys:WindowBase} {type:fix} Minimize button routes through MinimizeWindow instead of MinimizeToIcon directly; was bypassing OnWindowMinimized and icon lookup
+
+### 2026-04-14
+- {date:2026-04-14} {sys:Desktop} {type:fix} Right-clicking an icon outside the multi-selection adds it to the group instead of clearing the selection
+- {date:2026-04-14} {sys:Desktop} {type:fix} Right-click handler snapshots selectedIcons before building menu actions; fixes "Open N Icons" opening only 1 window
+- {date:2026-04-14} {sys:Desktop} {type:fix} AddDesktopIcon, ImportFilesToDesktop, and RestoreDesktopIcon all call LoadDesktopImageIcon; fixes dock-to-desktop drag, import, and session reload icons
+- {date:2026-04-14} {sys:Desktop} {type:feature} LoadDesktopImageIcon async helper fetches image file from GitHub URL and applies texture to the desktop icon; no-op for non-images
+- {date:2026-04-14} {sys:UIManager} {type:fix} CommitFileDrop calls dockbar RefreshIcon in the binary upload success callback
+- {date:2026-04-14} {sys:Dockbar} {type:fix} ImportFileToDock sets filePath before AddDockIconAt and calls RefreshIcon in the upload success callback so the image icon loads
+- {date:2026-04-14} {sys:AppRegistry} {type:feature} IsImageExtension private helper added
+- {date:2026-04-14} {sys:AppRegistry} {type:feature} LoadIconAsync priority 2: image-extension files use their own GitHub URL as the dock icon texture; iconOverrideUrl still wins
+- {date:2026-04-14} {sys:UIManager} {type:feature} Editor OnGUI drag path computes normalized position at DragPerform so editor also respects dock-vs-desktop routing
+- {date:2026-04-14} {sys:UIManager} {type:feature} File/URL drop commit paths route to Desktop.AddDesktopIcon at pointer position when not over the dock; GitHub upload unchanged
+- {date:2026-04-14} {sys:UIManager} {type:feature} IsDropOverDock checks panel position against Dockbar worldBound; returns dock when position unavailable
+- {date:2026-04-14} {sys:UIManager} {type:feature} TryParseNormPos and NormToPanelPos helpers convert normalized canvas coords to panel pixels
+- {date:2026-04-14} {sys:UIManager} {type:feature} OnExternalFileDropped parses optional trailing position token; backward compatible, positionless messages default to dock behavior
+- {date:2026-04-14} {sys:WebGL} {type:feature} FileDrop.jslib appends normalized canvas position to every FILE and URL drop message
+- {date:2026-04-14} {sys:Dockbar} {type:feature} ClearAppIconsForReload removes dock icon visuals while DockInstances is still populated
+- {date:2026-04-14} {sys:Desktop} {type:feature} ClearDesktopIconsForReload removes icon elements and clears icon data plus selection
+- {date:2026-04-14} {sys:UIManager} {type:feature} Awake reads PlayerPrefs active user before first RequestData; added SetCurrentUsername, SoftReloadForUser, CloseAllWindowsImmediate
+- {date:2026-04-14} {sys:GitHubUploader} {type:feature} CopyFile reads source raw base64 and writes verbatim via WriteBase64ToFile through the serial write queue; works for text and binary
+- {date:2026-04-14} {sys:Accounts} {type:feature} Remove Account modal: fetches account layout for file list, requires typing "Destroy All Content", red destroy button, switches to Global first if deleting current
+- {date:2026-04-14} {sys:Accounts} {type:feature} Switch confirmation modal when windows are open: Save All, Discard Changes, Cancel
+- {date:2026-04-14} {sys:Accounts} {type:feature} Account copy: DesktopLayout.nos copied with username/filePath remap plus each referenced user file copied via GitHubUploader.CopyFile
+- {date:2026-04-14} {sys:Accounts} {type:feature} Copy progress modal: non-blocking overlay, scrollable file list with green/red per-file status, x-of-N counter, Switch button unlocks when complete
+- {date:2026-04-14} {sys:Accounts} {type:feature} Create New modal with name validation (non-empty, not Global, no slashes/dots) and duplicate check; registers then runs copy coroutine
+- {date:2026-04-14} {sys:Accounts} {type:feature} Badge right-click context menu fetches accounts.json fresh, shows Create New, Switch to submenu, and Remove Account (non-Global)
+- {date:2026-04-14} {sys:Accounts} {type:feature} New AccountManager singleton (DontDestroyOnLoad): account CRUD and modal UI; active account in PlayerPrefs; index at SavedData/accounts.json on GitHub
+- {date:2026-04-14} {sys:Desktop} {type:fix} UpdateTooltipContent populates user badge tooltip (username, last session, dock/desktop icon counts); label was always empty; font 18 to 12
+- {date:2026-04-14} {sys:UIManager} {type:fix} Awake auto-creates AccountManager GameObject if missing; badge right-click was doing nothing with null Instance
+- {date:2026-04-14} {sys:Accounts} {type:feature} EnsureGlobalAccount helper enforces Global exists and is non-deletable on every load and save; BootstrapAccounts returns fresh Global-only list
+- {date:2026-04-14} {sys:Accounts} {type:feature} AccountData.deletable flag: Global bootstrapped deletable=false; BuildContextMenu checks the flag instead of hard-coded name check
+- {date:2026-04-14} {sys:Accounts} {type:feature} Missing accounts.json bootstraps cachedAccounts with Global seed and writes accounts.json to GitHub
+- {date:2026-04-14} {sys:GitHubUploader} {type:fix} ProcessRequest sends NOTFOUND token on GitHub "Not Found"; HandleFetchFailure falls back immediately with no retries or 7.5s delay
+- {date:2026-04-14} {sys:Accounts} {type:fix} SoftReloadForUser calls UpdateUserBadgeLabel (made public) right after SetCurrentUsername so badge updates at switch instead of on hover
+- {date:2026-04-14} {sys:Accounts} {type:fix} StyleTextField also styles Unity's inner text-field input element on AttachToPanel; fixes white-text-on-white in Create/Destroy modals
+- {date:2026-04-14} {sys:Accounts} {type:feature} ExtractSavedDataRelPath helper extracts SavedData-relative path from a raw GitHub URL
+- {date:2026-04-14} {sys:Accounts} {type:fix} CopyLayoutWithRemap also remaps fileUrl in dockInstances and desktopIcons (old-user SavedData paths were left pointing at the old account)
+- {date:2026-04-14} {sys:Accounts} {type:fix} GatherReferencedFiles checks both filePath and path derived from fileUrl for dock instances and desktop icons
+- {date:2026-04-14} {sys:Accounts} {type:feature} Copy progress modal gains always-enabled Close button; "Switch to" still unlocks only after all files copied
+- {date:2026-04-14} {sys:Accounts} {type:adjust} StyleTextField loads the USS once (cached static) and applies the class, following other windows' pattern
+- {date:2026-04-14} {sys:Accounts} {type:adjust} New Account Manager Styles.uss with .account-modal-field class for white caret in dark modal text fields
+- {date:2026-04-14} {sys:Accounts} {type:adjust} Copy modal text "Close" button replaced with window-style x button matching other windows' red-on-hover close
+- {date:2026-04-14} {sys:Accounts} {type:fix} XamlWindow/XmlWindow/UmlWindow/NotesWindow now store resolved fallback githubPath back on AppInstance.Data.filePath and MarkDirty, making file-bearing windows visible to GatherReferencedFiles
+
+### 2026-04-15
+- {date:2026-04-15} {sys:Desktop} {type:fix} Desktop icons missing on initial boot (Global account): ClearDesktopIconsForReload queried backgroundEl instead of UIManager DesktopLayer so icons were never removed from the DOM
+
+### 2026-04-16
+- {date:2026-04-16} {sys:Desktop} {type:adjust} All structured tooltip fonts bumped 12 to 18px with proportionally scaled key column widths
+- {date:2026-04-16} {sys:Desktop} {type:adjust} Accounts badge tooltip rebuilt as two-column layout (Account / Session / Desktop / Dock), font 18px, key column 96px
+- {date:2026-04-16} {sys:Desktop} {type:adjust} Copyright badge tooltip reverted to original UFO Studios content
+- {date:2026-04-16} {sys:Misc} {type:adjust} Version badge tooltip rebuilt as two-column key-value layout with aligned colons, dimmed keys, brighter values, 1500ms hover delay
+- {date:2026-04-16} {sys:Desktop} {type:adjust} Copyright and user badge tooltips use 1500ms delay; only appear if pointer still over element when timer fires
+- {date:2026-04-16} {sys:Accounts} {type:adjust} Account badge right-click menu opens above the cursor via anchorAbove
+- {date:2026-04-16} {sys:ContextMenu} {type:feature} ShowContextMenu gains anchorAbove parameter: menu hidden until layout resolves, positioned above the click point with top-of-screen floor clamp
+- {date:2026-04-16} {sys:UIManager} {type:feature} ShowWindow applies saved last position/size for the window's baseId and skips centering
+- {date:2026-04-16} {sys:UIManager} {type:feature} CloseWindow captures closing geometry into lastPosByBaseId and marks dirty; dict saved/restored with layout
+- {date:2026-04-16} {sys:WindowBase} {type:feature} WindowLastPos serializable class (baseId, x, y, width, height) added to DesktopLayoutData for persistence
+- {date:2026-04-16} {sys:DebugLogWindow} {type:fix} logField.value synced lazily on first PointerDown instead of every log; TextField re-measurement was the most expensive part
+- {date:2026-04-16} {sys:DebugLogWindow} {type:fix} OnLogReceived only sets dirty flags; 100ms scheduled ticker batches rapid bursts into one label refresh/layout pass
+- {date:2026-04-16} {sys:GitHubUploader} {type:fix} Removed putResponse from success log lines (GitHub PUT echoes full base64 content, injecting 100s of KB per save); error logs truncate to 300 chars
+- {date:2026-04-16} {sys:AppGalleryWindow} {type:fix} OpenOrRestoreApp no longer auto-pins to dock; unpinned transient instance created when app not already pinned
+- {date:2026-04-16} {sys:AppGalleryWindow} {type:feature} Right-click cell context menu: Open/Restore primary plus "Open with [AppName]" per shared-extension handler via FindAllForExtension
+- {date:2026-04-16} {sys:AppGalleryWindow} {type:feature} Cell hover shows TooltipManager tooltip with display name plus handled extensions
+- {date:2026-04-16} {sys:UIManager} {type:feature} backgroundScaleMode persisted in DesktopLayoutData; SaveDesktopLayout writes it, RestoreLayout sets PendingScaleMode before SetWallpaperFromUrl
+- {date:2026-04-16} {sys:Desktop} {type:adjust} Gradient + Clear Background + Scale grouped into a Background submenu; Scale nested submenu shows checkmarks on active mode
+- {date:2026-04-16} {sys:Desktop} {type:feature} ApplyScaleMode with five wallpaper scale modes: cover, contain, stretch, tile, auto (original size)
+- {date:2026-04-16} {sys:ContextMenu} {type:feature} Added subSubMenuRoot third menu panel enabling two-level submenu nesting; BuildMenuItems takes depth param; HideSubMenu also hides depth-2; ClampToScreen wired
+- {date:2026-04-16} {sys:Desktop} {type:adjust} Scale submenu disabled with "(no image set)" suffix when wallpaper is empty or a gradient:// URL; MakeScaleOption helper reduces repetition
+- {date:2026-04-16} {sys:Desktop} {type:feature} Scale submenu live preview on hover; one-shot OnMenuHidden subscription reverts to original mode if no scale committed
+- {date:2026-04-16} {sys:ContextMenu} {type:feature} ContextOption gains onHover action called on PointerEnter at any depth; captured locals avoid stale closure over loop variable
+- {date:2026-04-16} {sys:ContextMenu} {type:feature} Added OnMenuHidden static event fired from HideContextMenu
+- {date:2026-04-16} {sys:GalleryWindow} {type:feature} OpenImageWith creates read-only AppInstance.FromUrl, sets FileBytes from EncodeToPNG for immediate display, spawns via Dockbar.SpawnWindow
+- {date:2026-04-16} {sys:GalleryWindow} {type:feature} Right-click shows "Open with [AppName]" per AppRegistry handler for the image extension
+- {date:2026-04-16} {sys:GalleryWindow} {type:fix} Icon drag handler guards evt.button != 0 so right/middle-click no longer starts a ghost drag
+- {date:2026-04-16} {sys:Desktop} {type:fix} ApplyScaleMode tile/auto replace StyleKeyword.Auto (renders no image in Unity 6) with explicit pixel dims from the resolved texture; tile positions from Left/Top; falls back to Contain
+- {date:2026-04-16} {sys:ContextMenu} {type:fix} Outside-click TrickleDown handler now also checks subSubMenuRoot.Contains(target); depth-2 clicks were hiding the menu before ClickEvent fired so scale was never committed
+- {date:2026-04-16} {sys:WindowBase} {type:fix} RecalcTitleLabel registered on three triggers (titleBar geometry, left-buttons geometry, AttachToPanel deferred schedule) so layout resolves before USS width:0 wins
+- {date:2026-04-16} {sys:WindowBase} {type:feature} Titlebar text centered on window: titleLabel absolute in titleTooltipZone with overflow hidden clip between button groups
+- {date:2026-04-16} {sys:WindowBase} {type:fix} RecalcTitleLabel Priority 2 centered branch uses textWidth not maxSymmetricWidth for the box
+- {date:2026-04-16} {sys:WindowBase} {type:fix} Null-font measurement fallback multiplier changed from 0.5 to 0.65
+- {date:2026-04-16} {sys:WindowBase} {type:fix} TryMeasureTextSize tries Unity 6 6-param signature first, then 7-param, then TextElement.MeasureTextSize via reflection; was ~50% undercount for bold text
+- {date:2026-04-16} {sys:GalleryWindow} {type:adjust} Tooltip hidden before the context menu opens
+- {date:2026-04-16} {sys:GalleryWindow} {type:feature} ShowIconContextMenu rewritten: Set as Wallpaper, Delete Image (immediate remove + queued GitHub delete), and Open As submenu of AppRegistry handlers
+- {date:2026-04-16} {sys:GalleryWindow} {type:fix} Per-icon tooltips wired to TooltipManager (name, resolution, file size, filename); .tooltip property was never triggering
+- {date:2026-04-16} {sys:GalleryWindow} {type:fix} Removed container-level iconList right-click handler that showed a non-functional stub menu for all right-clicks
+- {date:2026-04-16} {sys:DebugLogWindow} {type:adjust} RebuildLogDisplay rebuilds rich-text label from structured entries respecting filter and collapse; 100ms ticker replaces raw string assignment
+- {date:2026-04-16} {sys:DebugLogWindow} {type:feature} Log/Warning/Error filter toggles with colored icons, dimmed when inactive
+- {date:2026-04-16} {sys:DebugLogWindow} {type:feature} Collapse toggle groups duplicate messages with xN badge
+- {date:2026-04-16} {sys:DebugLogWindow} {type:adjust} Two static StringBuilder log stores replaced with structured List of LogEntry plus plainLogHistory for clipboard/save
+- {date:2026-04-16} {sys:Tooltip} {type:adjust} TooltipManager showDelaySeconds default changed from 0.5s to 1.5s
+- {date:2026-04-16} {sys:WindowBase} {type:fix} WireButtonTooltip simplified to direct PointerEnter/Leave calls; removed local 1.5s scheduler that double-stacked delays and bypassed sticky/grace system
+- {date:2026-04-16} {sys:WindowBase} {type:adjust} Window help button restyled: white color, font 13 to 26px, width 22 to 30px
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:fix} Variables panel and result panel elements (labels, test/Gorp buttons, endpoint fields) converted from .tooltip to WireButtonTooltip
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:fix} All 14 toolbar tiles converted to WireButtonTooltip so descriptive tooltips show via TooltipManager
+- {date:2026-04-16} {sys:WindowBase} {type:adjust} SetTitleTooltip converted from .tooltip assignment to TooltipManager with titleZoneTooltipText field for dynamic updates
+- {date:2026-04-16} {sys:WindowBase} {type:fix} WireGroupTooltips clears btn.tooltip after wiring so Unity native tooltip no longer overlaps TooltipManager tooltip
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:fix} RebuildVariablesPanel initial SetEnabled for Test and Gorp buttons updated with same hasVars requirement
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:fix} enableTests guard also requires hasVariables
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:feature} UpdateCompletenessBadge requires at least one variable: shows "No Variables" partial state, keeps Execute/Test/Gorp disabled
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:fix} Cancelled drop leaving an uneditable "?" NumberNode fixed: single click on any Number or Variable node opens its inline editor
+- {date:2026-04-16} {sys:GorpEquationWindow} {type:fix} PointerUp now opens value editor for NumberNode/VariableNode; ClickEvent handlers were dead code due to CapturePointer + StopImmediatePropagation
+
+### 2026-04-17
+- {date:2026-04-17} {sys:WindowBase} {type:adjust} Title label font size reduced from 28 to 20px across all window title bars
+- {date:2026-04-17} {sys:Desktop} {type:fix} SelectIcon always removes instanceId from selectedIcons even when the element is gone; RemoveDesktopIcon deselects before removal (ghost selection fix)
+- {date:2026-04-17} {sys:Desktop} {type:feature} Option+drag copies desktop icons: green circled-plus badge cue; drop duplicates each selected icon with fresh GUID at drop position, originals stay
+- {date:2026-04-17} {sys:Dockbar} {type:feature} "Reset Icon" shown only when an override is active; clears iconOverrideUrl and reverts to the definition's default icon
+- {date:2026-04-17} {sys:Dockbar} {type:feature} "Change Icon..." on dock icon menu: PickAndSetIcon via FilePicker + SaveFileBytes to SavedData/Icons, then SetIconOverride + RefreshIcon + MarkDirty
+- {date:2026-04-17} {sys:UIManager} {type:feature} Layout JSON persists definition icon overrides: WindowBase AppDefinitionIconOverride type; Save snapshots, Restore reapplies before dock rebuild
+- {date:2026-04-17} {sys:Dockbar} {type:feature} RefreshIconsForAppId refreshes all dock icons of an app type whose instances carry no personal override
+- {date:2026-04-17} {sys:AppRegistry} {type:feature} definitionIconOverrides dict + Set/Clear/Snapshot/Restore API; LoadIconAsync checks definition override before defaultIconGitHubPath
+- {date:2026-04-17} {sys:AppGalleryWindow} {type:feature} "Change Icon..." / "Reset Icon" in cell menu: definition-level override uploaded as App_<appId>; refreshes cell and all matching dock icons
+- {date:2026-04-17} {sys:Desktop} {type:feature} "Change Icon..." / "Reset Icon" in single-icon menu: PickAndSetDesktopIcon uploads to SavedData/Icons + sets override; Reset reloads default
+- {date:2026-04-17} {sys:AppRegistry} {type:adjust} LoadIconAsync switched to cache-bypassing RequestImage; UnityWebRequestTexture and unused Networking import removed
+- {date:2026-04-17} {sys:GitHubUploader} {type:feature} RequestImage public API: jslib on WebGL, no-cache UnityWebRequest elsewhere; OnImageReceived base64-decode callback; imageRequestRegistry
+- {date:2026-04-17} {sys:WebGL} {type:feature} GitHubFetch.jslib FetchRawImageInstant fetches with cache:'reload' bypassing browser + CDN cache; fixes stale icon after path overwrite
+- {date:2026-04-17} {sys:AppRegistry} {type:fix} LoadIconAsync awaits RequestImageAsync directly; each concurrent load fully independent with no shared state
+- {date:2026-04-17} {sys:GitHubUploader} {type:fix} RequestImageAsync AwaitableCompletionSource wrapper removes while(!done) polling that returned wrong data on concurrent icon loads
+- {date:2026-04-17} {sys:Dockbar} {type:adjust} Icon overrides stored as relative SavedData paths (Icons/App_<appId>.png) not raw CDN URLs, across AppGallery, Desktop, and Dockbar
+- {date:2026-04-17} {sys:AppRegistry} {type:fix} Relative-path icon overrides load via RequestBinaryDataAsync (always current); full http URLs keep RequestImageAsync for old saved layouts
+- {date:2026-04-17} {sys:GitHubUploader} {type:feature} RequestBinaryData/RequestBinaryDataAsync + ProcessBinaryRequest: Worker Contents API binary fetch (jslib on WebGL, coroutine in editor)
+- {date:2026-04-17} {sys:WebGL} {type:feature} GitHubFetch.jslib FetchGitHubImageInstant: Worker POST returning raw base64 (no UTF-8 decode) so binary image data is preserved
+- {date:2026-04-17} {sys:Desktop} {type:fix} PinDesktopIconToDock: app shortcuts already in dock clean up the spacer and remove the redundant desktop shortcut instead of a broken duplicate add
+- {date:2026-04-17} {sys:AppGalleryWindow} {type:fix} PinAppToDock early return now hides the external drag spacer, preventing a lingering blank dock slot
+- {date:2026-04-17} {sys:Dockbar} {type:feature} Hidden IconDropBadge overlay added to every dock icon and every App Gallery cell; icon-drop-badge USS classes (green circle, white plus)
+- {date:2026-04-17} {sys:Desktop} {type:feature} Drop image on a dock icon or App Gallery cell to set app icon: green plus badge on hover; dock = per-instance, gallery = definition-level override
+- {date:2026-04-17} {sys:Desktop} {type:fix} PointerUp !altKey guard on icon-drop logic so alt-drag falls through to normal copy behavior
+- {date:2026-04-17} {sys:Desktop} {type:fix} Image drags suppress ShowExternalDragSpacer so dock icons stay pickable; !altKey guard on badge show/hide; lingering badge cleared on alt mid-drag
+- {date:2026-04-17} {sys:Desktop} {type:feature} FindIconDropTarget gains exclude param + DesktopIconData matching: dragging an image onto another desktop icon sets its iconOverrideUrl
+- {date:2026-04-17} {sys:Desktop} {type:fix} BuildDesktopIconElement sets root.userData and adds IconDropBadge overlay so desktop icons are identifiable drop targets with visible badge
+
+### 2026-04-18
+- {date:2026-04-18} {sys:WebGL} {type:fix} HandleUrlDrop IsImageUrl helper: URL-only path falls through to image-app definitions so ImageWindow opens instead of Unknown; query string stripped first
+- {date:2026-04-18} {sys:WebGL} {type:feature} looksLikeImageUrl URLs fetched with CORS and sent as FILE bytes; CORS failure falls back to sending a URL message
+- {date:2026-04-18} {sys:WebGL} {type:feature} Drop handler three-pass web image handling: image/* blobs sent directly, OS files unchanged, URL-only drops extract actual img src from text/html
+- {date:2026-04-18} {sys:Desktop} {type:feature} "Remove Selection" renamed "Delete Selection"; Ctrl/Cmd+Delete/Backspace deletes selection (no-op when none selected or a text input focused)
+- {date:2026-04-18} {sys:WebGL} {type:feature} sendBlobAsFile: SHA-1 content-hash filename stems (12 hex chars) make uploads idempotent and collision-free; meaningful OS names kept; timestamps removed
+- {date:2026-04-18} {sys:ImageWindow} {type:fix} LoadImageFromRepoAsync fetches via Worker Contents API; load priority FileBytes then FilePath then external FileUrl; bypasses CDN 404 caching
+- {date:2026-04-18} {sys:WebGL} {type:adjust} OS file drops also route through sendBlobAsFile so they get the same transcoding; falls back to original bytes on failure
+- {date:2026-04-18} {sys:WebGL} {type:feature} FileDrop.jslib transcodes non-PNG/JPG images (WebP, GIF, BMP, AVIF, TIFF) to PNG via createImageBitmap + canvas before sending to Unity
+- {date:2026-04-18} {sys:ImageWindow} {type:adjust} Removed all three defaultImage fallback assignments; failed imports leave the image element blank instead of the placeholder texture
+- {date:2026-04-18} {sys:WebGL} {type:feature} FileDrop.jslib rejectIndicator: red-circle DOM overlay for clearly non-image drags; classifyDrag inspects dataTransfer.items; rejects never reach Unity
+- {date:2026-04-18} {sys:AppRegistry} {type:fix} LoadIconAsync image-as-icon prefers FilePath through Worker Contents API, avoiding CDN 404 caching; FileUrl kept as legacy fallback
+- {date:2026-04-18} {sys:WebGL} {type:fix} CommitFileDrop passes instanceId and stops assigning CDN fileUrl; FetchAndUploadUrl likewise; RefreshDesktopIcon triggers filePath-based load
+- {date:2026-04-18} {sys:Desktop} {type:fix} CreateFileBackedDesktopInstance drops the BuildRawUrl CDN fallback; filePath is the source of truth for repo-backed files
+- {date:2026-04-18} {sys:Desktop} {type:fix} LoadDesktopImageIcon: CDN fetch replaced with Worker Contents API via RequestBinaryDataAsync; newly uploaded files load immediately; legacy URL fallback
+- {date:2026-04-18} {sys:Desktop} {type:fix} AddDesktopIcon optional instanceId param so the icon's ID matches inst.InstanceId and RefreshDesktopIcon finds the element after upload
+
+### 2026-04-19
+- {date:2026-04-19} {sys:WebGL} {type:feature} CommitFileDrop calls ApplyBytesToDesktopIcon right after AddDesktopIcon so the thumbnail shows the moment the drop lands (desktop parity with dock)
+- {date:2026-04-19} {sys:Desktop} {type:feature} ApplyBytesToDesktopIcon decodes raw bytes and applies the thumbnail immediately on drop, no network round-trip
+- {date:2026-04-19} {sys:Desktop} {type:fix} CreateFileBackedDesktopInstance assigns pendingFileBytes to inst.FileBytes so ImageWindow displays instantly from memory, no premature GitHub fetch
+- {date:2026-04-19} {sys:Desktop} {type:fix} DesktopIconData.pendingFileBytes (NonSerialized) holds dropped image bytes until GitHub commit; consumed on first window open
+- {date:2026-04-19} {sys:GitHubUploader} {type:fix} RequestBinaryDataAsync gains 4-attempt exponential-backoff retry matching text path; fixes blank icon thumbnails/images on cold-boot reload
+- {date:2026-04-19} {sys:GitHubUploader} {type:fix} Plain "ERROR"/"TIMEOUT" Worker PUT responses no longer log false success; retries 2 to 4 with exponential backoff on both 409 and Worker errors
+- {date:2026-04-19} {sys:WebGL} {type:feature} sourceUrl threaded through ExternalDropPlacement, HandleFileDrop/HandleUrlDrop, and FileDrop.jslib |src: suffix; web drags capture text/uri-list
+- {date:2026-04-19} {sys:Desktop} {type:adjust} AddDesktopIcon centers the icon on the drop cursor; IconWidth/IconImageH constants added; clamping updated
+- {date:2026-04-19} {sys:Desktop} {type:feature} DesktopIconData.originalSourceUrl stores drop provenance (web image/page URL) for future attribution; not yet used at runtime
+- {date:2026-04-19} {sys:DebugLogWindow} {type:fix} Removed default border/margin from logField and unity-text-input so the selection overlay aligns with the label
+- {date:2026-04-19} {sys:DebugLogWindow} {type:fix} plainDisplayText tag-stripped mirror: copy button copies exactly the visible filtered text; selection no longer offset by invisible rich-text tags
+- {date:2026-04-19} {sys:GitHubUploader} {type:fix} isSuccess also matches "commit" in response body; successful SHA-conflict retry no longer logged as failure
+- {date:2026-04-19} {sys:GitHubUploader} {type:fix} Pre-flight FetchSha before the PUT loop eliminates 422 on every save; conflict handler dedup'd to FetchSha; verbose base64 payload log removed
+- {date:2026-04-19} {sys:UIManager} {type:fix} Pending image uploads never triggered: SaveDesktopLayout now calls ProcessPendingImages; _uploadingImages guard prevents concurrent batches
+- {date:2026-04-19} {sys:Editor} {type:adjust} Proxima: GetInstanceID pragma suppressions; deprecated FindObjectsSortMode parameter removed from FindObjectsByType
+- {date:2026-04-19} {sys:Editor} {type:adjust} EasyChart ChartElement: deprecated UxmlFactory replaced with [UxmlElement] + [UxmlAttribute]; transform.scale replaced with style.scale
+- {date:2026-04-19} {sys:Editor} {type:adjust} EasyChart editor scripts: removed deprecated PreventDefault calls; GetInstanceID warning suppressed via pragma
+- {date:2026-04-19} {sys:Desktop} {type:fix} Bulk-drop bug 2: ClearPendingImages removes only processed batch paths; images added mid-upload stay buffered for the next batch
+- {date:2026-04-19} {sys:WebGL} {type:fix} CommitFileDrop passes pendingBytes for binary desktop drops; redundant ApplyBytesToDesktopIcon call removed
+- {date:2026-04-19} {sys:Desktop} {type:fix} Bulk-drop bug 1: AddDesktopIcon gains pendingBytes param so LoadDesktopImageIcon always early-returns for fresh drops (stops 50-request Worker flood)
+- {date:2026-04-19} {sys:UIManager} {type:fix} UploadPendingImages failure marks matching desktop icons UPLOAD_FAILED so future startups don't retry files never committed to GitHub
+- {date:2026-04-19} {sys:Desktop} {type:fix} LoadDesktopImageIcon: UPLOAD_FAILED sentinel = no network; PENDING_UPLOAD tries once then marks UPLOAD_FAILED so next startup also skips
+- {date:2026-04-19} {sys:GitHubUploader} {type:fix} Startup image retry storm fixed: concurrentBinaryFetches capped at 3 with frame-yield wait; counter guarded by try/finally
+- {date:2026-04-19} {sys:CardsWindow} {type:docs} Inspector setup documented: prefab with CardsWindow component, USS assignment, AppDefinitionData extensions and save folder
+- {date:2026-04-19} {sys:GalleryWindow} {type:feature} After desktop wallpaper drop check, gallery drop walks panel.Pick for a CardsWindow and calls SetTableBackground(tex, gallery:filename)
+- {date:2026-04-19} {sys:ImageWindow} {type:feature} SetupImageDragToCards: drag the displayed image onto a CardsWindow calls ReceiveImageDrop; ghost thumbnail in OverlayLayer
+- {date:2026-04-19} {sys:Misc} {type:feature} GlobalDragState: AppInstanceType constant + DraggedAppInstance field; Reset clears it
+- {date:2026-04-19} {sys:CardsWindow} {type:adjust} Cards Window Styles.uss: card face/back, editor panel, sidebar controls, grid headers with drag ghost, tinted cells, assignment popup
+- {date:2026-04-19} {sys:CardsWindow} {type:feature} IO: BuildCardSprites via Sprite.Create rects (one texture, N sprites), ApplyDeck/ApplyDeckJson, LoadDeckFromPath, SaveDeck
+- {date:2026-04-19} {sys:CardsWindow} {type:feature} Deck editor: slide-in panel, sheet ScrollView with live grid overlay, editable drag-to-reorder headers, cell identity popup, Skip cells, preset dropdown
+- {date:2026-04-19} {sys:CardsWindow} {type:feature} New CardsWindow: free-form card table, data models, card drag/flip/remove, table + card menus, multi-source background drops, full state persistence
+- {date:2026-04-19} {sys:CardsWindow} {type:fix} USS dark-mode child selectors for deck editor fields and dropdowns; fixes white-on-white text in all editor inputs
+- {date:2026-04-19} {sys:CardsWindow} {type:fix} BuildCardSprites clamps sprite rects to texture bounds; float accumulation pushed last column 0.0002px past edge causing ArgumentException
+- {date:2026-04-19} {sys:CardsWindow} {type:adjust} Deck editor headers enlarged: col header 28 to 48px, row header 60 to 56px; header field font 11 to 28px, padding/margin zeroed
+- {date:2026-04-19} {sys:GalleryWindow} {type:fix} Gallery + ImageWindow drop detection: panel.Pick walk-up (picked the dragging window) replaced with CardsWindow.FindAtPosition
+- {date:2026-04-19} {sys:CardsWindow} {type:adjust} ConfirmDeck calls DealDeckToTable + SaveDeck after applying so cards appear immediately and the deck auto-saves
+- {date:2026-04-19} {sys:CardsWindow} {type:feature} "Set Background..." added to table right-click menu via ShowBackgroundPicker + FilePicker
+- {date:2026-04-19} {sys:CardsWindow} {type:feature} DealDeckToTable spawns all deck cards as a stacked pile at canvas center
+- {date:2026-04-19} {sys:CardsWindow} {type:feature} activeInstances static list + FindAtPosition(worldPos) helper; registered/unregistered in CreateAndGetWindow/OnDestroy
+- {date:2026-04-19} {sys:UIManager} {type:fix} RestoreWindow falls back to FindById + FromDefinition when GetInstance returns no prefab so unpinned apps (like CardsApp) restore correctly
+
+### 2026-04-20
+- {date:2026-04-20} {sys:GalleryWindow} {type:fix} Removed wrong CardsWindow check from the old placeholder-icon drag path (code never ran for loaded icons)
+- {date:2026-04-20} {sys:ImageWindow} {type:fix} Passes evt.position to ReceiveImageDrop for card-back vs background detection
+- {date:2026-04-20} {sys:Desktop} {type:fix} OnCaptureOut checks CardsWindow.FindAtPosition before applying desktop wallpaper; gallery background drags on a window route to CardsWindow
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Stack drag: cards overlapping the dragged card move together
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Deck ops: CountCardsAtBounds, CollectDeck, ShuffleDeck, DealKlondike, DealBlackjack, DealPoker; deck menu at stack 3+, table menu deck ops when deck active
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} ReceiveImageDrop detects face-down card drop to set the card back for all cards; ReceiveGalleryBackground for gallery drops; back persisted
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Hamburger button in title bar opens the table context menu
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} Card flip bug: ApplyCardFace now clears the element and removes the opposite class before any state change
+- {date:2026-04-20} {sys:CardsWindow} {type:adjust} USS: cards-card--selected cyan 2px border + cards-box-select cyan semi-transparent rubber band
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Individual card right-click menu: Flip, Rotate Left/Right, Discard, Return to Deck Top/Bottom; DiscardCard + ReturnToDeck methods
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Box rubber-band select registered on tableCanvas, fires only on empty canvas: RegisterBoxSelect/UpdateBoxSelect
+- {date:2026-04-20} {sys:CardsWindow} {type:adjust} Left-click drag moves only the topmost card (or all selected if clicked card is in selection); proximity-based stack drag removed
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Card selection: selectedCards HashSet, SelectCard/ClearSelection helpers, Ctrl/Cmd+click toggles selection
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Card rotation field on CardInstance + CardTableState; ApplyCardRotation; SpawnCard takes rotation; persistence saves/restores it
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} Table context menu switched to bubble-phase PointerDown; card's TrickleDown handler stops propagation so table menu never fires on card clicks
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} Card right-click moved from ContextClickEvent to PointerDownEvent button 1 TrickleDown so it fires before bubble handlers; ShowCardContextMenu extracted
+- {date:2026-04-20} {sys:GalleryWindow} {type:adjust} UpdateGhost shows a green plus icon when dragging over a CardsWindow (via FindAtPosition)
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} LoadSheetTextureAsync logs failure; sprite-refresh updates ALL table cards so face-down cards show the correct sprite on flip
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} ConfirmDeck refreshes sprites in place when cards already on table (no wipe); sheet filename includes deck slug to avoid multi-deck collision
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} UpdateBoxSelect highlights cards in real time as the rubber band grows (world-space rect from canvas origin)
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} LoadAndSetCardBackAsync handles gallery: prefix via StreamingAssets URL
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} ReceiveGalleryBackground falls back to FindTopmostFaceDownCard when the exact position hit misses
+- {date:2026-04-20} {sys:CardsWindow} {type:adjust} ShuffleDeck re-randomizes z-order in place, no longer calls CollectDeck
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Table menu "Add Deck Here" spawns a full deck pile at click position via AddDeckAtPos
+- {date:2026-04-20} {sys:CardsWindow} {type:feature} Context menu "Stack Here" header made actionable: StackCardsAt collects overlapping cards face-down at click position
+- {date:2026-04-20} {sys:CardsWindow} {type:fix} DealBlackjack z-order: face-down cards brought to front first, face-up last so the face card lands on top
+- {date:2026-04-20} {sys:WindowBase} {type:feature} SetTitle calls Desktop.UpdateIconLabel so dock tooltip and desktop icon label both rename on any title change
+- {date:2026-04-20} {sys:Desktop} {type:feature} DesktopIconLabel name added to icon label element; UpdateIconLabel(instanceId, name) updates label text + displayName
+
+### 2026-04-21
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} cards-scrub-label USS class added for scrub labels (ew-resize cursor)
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} colsValueLbl/rowsValueLbl refs keep the displayed Cols/Rows in sync when the preset dropdown changes them programmatically
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Header row/col TextFields and the CCG cell popup TextField+OK replaced with Label + BeginInPlaceEdit (Enter commits, assigns name, closes popup)
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} WebGL-safe editor inputs: Integer/FloatField sidebar inputs replaced with scrub-drag Labels (drag to adjust, click to type via BeginInPlaceEdit)
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Live handle drag without full rebuild: pointer capture transferred to imageContainer, LiveUpdateCellPositions repositions cells by name, full RebuildGrid on release
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Grid adjustment handles on the sheet overlay: orange offset strips (left/top margins) and cyan padding strips between columns/rows, with hover cursors
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Unity-inspector scrub-on-label-name: drag events and resize cursor moved to the field name label; value label keeps click-to-type via BeginInPlaceEdit
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Export (Download) entry added to hamburger menu, single-card right-click menu, and stack right-click menu; Export Deck button added to editor sidebar
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Export Deck: PerformExport override serialises activeDeck JSON through DownloadTextFile
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Green circled-plus drop indicator follows the cursor during ImageWindow drags over the table via MouseMoveEvent; hides on leave and drop
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Hamburger menu moved to leftmost title-bar position; standalone Save button removed, Save lives inside the menu (menuBtn replaces saveBtn)
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Shuffle takes a target list: shuffles selected cards ("Shuffle Selected (N)"), a stack's overlapping cards, or all; auto-collects face-down at centroid in new order
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} New USS classes: cards-scrub-label cursor, cards-preview-el box, grid legend dot/label styles
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Grid editor clarity: labels renamed (Pad X (col), Off Y (top), etc.), orange/cyan color legend added, handles color-coded with descriptive tooltips
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Spade and club suit symbols bumped to fontSize 34 (popup buttons 14px) to visually match hearts/diamonds
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Card preview panel in the deck editor sidebar shows the face of the last clicked cell; updates on cell click and popup rank assignment
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Multi-card drag group sorted by tableCards index before BringToFront, preserving relative stacking within the selection
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} View Extents in the table right-click menu shifts all cards toward the pad origin and resizes the window to fit tightly
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} ShuffleDeck anchors the collected pile at the bottom-of-z-order card's position instead of the centroid, so shuffling a pile stays in place
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} FilePicker last-directory memory: lastDeckDir/lastBgDir/lastSheetDir passed to pickers and persisted in CardsCustomState
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Selection drag z-order sorted by actual sibling index in tableCanvas children (list-index sort diverged after prior BringToFront calls, reversing stacks)
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} Click-to-flip only when fully exposed; a covered card is brought to front instead, letting users peel a stack one card at a time
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Card hover border changed to 2px gold/yellow instead of white
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} ReceiveImageDrop FileUrl fallback via LoadAndSetBackgroundFromUrlAsync for images from external URLs
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} ReceiveImageDrop removed the face-down-card fallback: card-back routing only when dropped directly on a face-down card, not any empty-table drop
+- {date:2026-04-21} {sys:Dockbar} {type:fix} Dock-icon image drag sets GlobalDragState (AppInstanceType + instance) enabling the CardsWindow drop indicator; Reset called after drop and in FinalizeDrop
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Cell popup toggle: lastPopupCell tracks the opener so a second click on the same cell closes the popup; outside-click resets it
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Grid handle colors: offset bright yellow, padding bright lime green; minimum handle width 6 -> 8px; legend dots updated
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Editor preview sprite crops live from editorSheetTexture via GetEditorCellSprite (sprite cache was empty until ConfirmDeck)
+- {date:2026-04-21} {sys:CardsWindow} {type:feature} CardsCustomState.activeDeckJson stores full deck JSON at save; restore falls back to it when activeDeckPath is empty so picker-loaded decks always restore
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Gallery background drop on empty space always sets the table background; card-back rerouting only when landing directly on a face-down card
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Drop indicator now also shows for gallery BackgroundType drags, not just image AppInstance drags
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Flip fix: clickedCardWasOnTop captured at PointerDown before BringToFront, so covered cards bring-to-front on first click and flip on second
+- {date:2026-04-21} {sys:Dockbar} {type:fix} IsImageAppInstance also checks Definition.handledExtensions, so restored ImageWindow dock icons (no runtime FileBytes) still enable the drop indicator
+- {date:2026-04-21} {sys:Desktop} {type:feature} Desktop PointerUp checks CardsWindow.FindAtPosition first and routes to ReceiveImageDrop with GlobalDragState reset; debug logs at drag start and drop
+- {date:2026-04-21} {sys:Desktop} {type:feature} Image desktop-icon drag sets GlobalDragState CurrentType and DraggedAppInstance at drag start so CardsWindow's poll sees the drag
+- {date:2026-04-21} {sys:Dockbar} {type:fix} Dockbar sets GlobalDragState.LastPointerPosition during image-app drags so the shared poll path works for dock-icon drags
+- {date:2026-04-21} {sys:CardsWindow} {type:fix} Indicator poll uses GlobalDragState.LastPointerPosition (panel-space) instead of Input.mousePosition Y-flip, which diverged under screen/DPI scaling
+- {date:2026-04-21} {sys:CardsWindow} {type:adjust} Removed the canvas-floating drop-indicator circle (field, polling, stale display call); the ghost badge replaces it
+- {date:2026-04-21} {sys:Desktop} {type:adjust} Image-drag over a CardsWindow shows the green + badge on the drag ghost (bottom-right), matching the GalleryWindow GhostPlus pattern
+- {date:2026-04-21} {sys:UIManager} {type:fix} UI Toolkit PointerUpEvent callback (TrickleDown on root) handles drops when DragPerform never fires; shared CommitEditorFileDrop + editorDropHandled prevent double-processing
+- {date:2026-04-21} {sys:UIManager} {type:fix} Unity 6 Editor external file drop: paths, alt state, and drop position captured during DragUpdated as a fallback for empty DragAndDrop.paths at DragPerform
+- {date:2026-04-21} {sys:UmlWindow} {type:fix} Layout-wrapper roots (Grid/Canvas/StackPanel) are unwrapped to their UMLDiagram child before UML parsing, so wrapped diagram files load fully
+
+### 2026-04-27
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} ParseXml gains forceXaml parameter bypassing the WPF-root heuristic; .xaml extension detection in ImportXaml and all three LoadUmlData paths forces XAML parsing
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} BuildCanvasContextMenu mode-aware: XAML mode shows Filters + Focus submenus, UML mode shows Add Class + Import + Focus; both get layout and reload entries
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Renamed XamlFocusMode/xamlFocusMode/xamlFocusedNodeIds to mode-neutral FocusMode/focusMode/focusedNodeIds
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} GetReachableNodeIds accepts null relationshipType meaning any type, enabling UML traversal; ApplyFocusVisibility works for both modes
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} New Focus partial: FocusSelectedSubtree/Context and ClearFocus de-coupled from XAML-only mode; UML mode traverses all relationship types
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} BuildImportSubmenu groups Import Xaml, Import Nexus Directory, and Import SAI XML; flat import entries removed from hamburger, title-bar, and canvas menus
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Focus submenu always shows all three items (Clear Focus, Focus Context, Focus Subtree) with Context/Subtree disabled when no class selected
+- {date:2026-04-27} {sys:ContextMenu} {type:feature} ContextOption gains a disabled flag; BuildMenuItems calls SetEnabled(false) to gray out and block disabled items
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} BuildLayoutSubmenu (Auto-Layout, Force-Directed, Tree, Grid, View Extents) replaces flat items in hamburger, background right-click, and title-bar menus
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Old 3-column grid kept as an explicit ApplyGridLayout option
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} ApplyTreeLayout: BFS-layered layout (Containment for XAML, Inheritance for UML), layers centered, disconnected nodes appended in a final row
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} ApplyForceDirectedLayout: Fruchterman-Reingold, 200 iterations, k=280, decaying temperature, circle initialisation; all edges attract, all pairs repel
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} AutoLayout dispatches to tree layout (XAML mode) or force-directed layout (UML mode) instead of the flat grid
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} ConfirmClearAll and ConfirmReloadDiagram wrap destructive actions in ShowConfirm; menu entries moved to bottom; Clear All now available for XAML-backed diagrams
+- {date:2026-04-27} {sys:UIManager} {type:feature} ShowConfirm(title, message, confirmLabel, onConfirm): backdrop + centered modal with gray Cancel and dark-red Confirm buttons
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Minimap repaint hooks: scroller changes, canvas pans, node drags, canvas resize, and post-rebuild all mark the minimap dirty
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Minimap drag-to-move clamped inside mainView; corner resize via ApplyMinimapResize with per-corner semantics and cursors
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} ComputeMinimapTransform shared scale/offset helper; ScrollCanvasToMinimapPoint click-to-scroll centers the canvas on the clicked coordinate
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Minimap toggle button in title bar with active-state class; ToggleMinimap updates visibility
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} New Minimap partial: floating panel (default bottom-right) with generateVisualContent drawing relationship lines, node rects, and a viewport indicator
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Dynamic canvas sizing: hardcoded 1200x900 removed; ResizeCanvas driven by GeometryChangedEvent fills viewport when empty, expands to content + 300px margin
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} RegisterButtonTooltip helper wires TooltipManager show/hide onto any button; all four title-bar buttons get tooltips (Options, XML Panel, Minimap, Validate)
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} Canvas overflow set to Visible after creation so absolutely-positioned nodes render while ResizeCanvas establishes explicit dimensions
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} Canvas node visibility: scrollView.contentContainer overflow set to Visible (defaults to hidden and collapsed to 0x0, clipping all nodes)
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Minimap corner handles restyled as 20x20 transparent outline frames instead of solid squares
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Minimap viewport-rect drag: clicking inside the indicator drags the canvas via inverse-scale delta; clicking outside moves the panel; click-without-move scrolls to that point
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} All 4 minimap resize handles use ResizeDirection.TopLeft, the confirmed-correct corner cursor (BottomLeft/TopRight rendered as horizontal)
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Wrap-button USS states (cyan on, gray off); default code-field white-space changed to nowrap
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} SyncFieldFromDiagram schedules ScrollXmlToSelectedClass (60ms) to center the selected class line in the code viewport
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} BuildXmlClassLineRanges finds Class id ranges (UML) or x:Name element ranges (XAML) for the indicator bars
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} xmlLineIndicator: 3px absolute strip at the panel's left edge drawing colored bars for selected/ancestor/descendant/related class line ranges, tracking scroll
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Word-wrap toggle button in the XML panel header (default off, no-wrap + horizontal scroll); toggles white-space and ScrollView mode
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} ApplyNodeSelectionHighlight repaints the minimap on every canvas selection change
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Minimap relationship lines color-matched: ancestor-path amber, descendant light-blue, binding salmon, touching-selected cyan, unrelated dim
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Minimap coloring: ancestor/descendant/related sets computed with the same BFS as canvas highlights; node fills/borders match CSS (cyan/amber/light-blue/salmon)
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Minimap viewport rectangle stroke changed from yellow to white
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} New compact .uml-xml-action-btn style for Format and Apply, replacing the unstyled apply-btn class
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Format button: PrettifyXmlCode re-serializes the field content with indentation without triggering the apply debounce; shows Formatted status
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Header restructured: title line + single button row with status (flex-grow), wrap, Format, and Apply at far right
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} XML panel scroll fix: min-height 0 on the TextField and wrapper so the flex container constrains height instead of expanding to content
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} .uml-xml-code-scroll USS: dark background, styled slim scrollbars, hidden arrow buttons, hover dragger
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} ScheduleXmlSync(200) at the end of RebuildGraphUI so the XML panel refreshes on every graph rebuild
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} ParseXml no longer overwrites currentXamlSource with compact OuterXml, so the panel shows formatted markup after XAML import
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} TryFormatXml helper auto-formats imported XML/XAML with 4-space indentation before populating the panel field
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Line indicators and class scrolling read/write the explicit ScrollView's offset; scroller subscriptions moved to its vertical/horizontal scrollers
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} XML panel wrapped in an explicit ScrollView (vertical + horizontal) with flexShrink 0 TextField; reliable scrolling for any content length
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} ImportXaml and ImportDirectory reset xmlFieldFocused before RebuildGraphUI so the scheduled XML panel sync always fires
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Bright white single-line indicator bar drawn at the matched member line on top of the class-range bar
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Member selection scroll: selecting an attribute/method scrolls the XML panel to that exact member line via GetMemberSourceSearchTerm
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} XML line-indicator alignment computed from resolvedStyle metrics at draw time instead of hardcoded line-height constants; accurate for any font/theme
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} Stale XML panel content: ToggleXmlPanel clears xmlFieldFocused on open and close (Unity fires no FocusOutEvent when the parent is hidden)
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} UmlWindowState persistence: xmlPanelOpen + xmlPanelWidth serialized in GetCustomWindowState and restored (panel reopen scheduled after 120ms layout)
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} NullReferenceException fixed: indicator code no longer reads selectedClass.id when only a relationship is selected
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} DrawXmlLineIndicators relationship branch: from-class amber, to-class light-blue, relationship-line cyan (UML); from-element cyan + attribute white (XAML)
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} XamlSearchTermForId converts XAML element ids to x:Name search terms for source lookups
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} XML panel scrolls to the selected relationship's source line via ScrollXmlToSelectedRelationship + FindRelationshipLine (UML exact/from-only, XAML x:Name + binding attr)
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} Removed .uml-xml-button-row style; header title loses margin-bottom, gains flex-shrink 0
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} Added missing .uml-xml-status-label USS rule (text was black-on-black) plus status ok/edited/error color classes that existed only in C#
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} XML panel header collapsed to a single row: title, status label (flex-grow), and buttons as direct children of header
+- {date:2026-04-27} {sys:Misc} {type:infra} Icon path consolidation: Assets/UI/Icons moved to Assets/Resources/Art/Icons; all USS URLs and Resources.Load paths updated
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} XML status ok color changed from dim gray to green (#4ec94e)
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} FocusInEvent on xmlCodeField schedules SelectRange(0,0) to suppress select-all on first click
+- {date:2026-04-27} {sys:UmlWindow} {type:fix} xmlJustFocused pointer handling suppresses Unity's default select-all on the XML field's first focus click
+- {date:2026-04-27} {sys:UmlWindow} {type:adjust} ShowImportDirectoryDialog split into guard + ShowDirectoryInputDialog body so the confirm callback can open the dialog
+- {date:2026-04-27} {sys:UmlWindow} {type:feature} Replace Diagram confirm before ImportSaiXml, Import Nexus Directory, and ImportXaml when existing content is present (HasContent helper)
+- {date:2026-04-27} {sys:WindowBase} {type:fix} Title recalc on SetTitle: RecalcTitleLabel promoted to class method, width reset to Auto then recalculated after 50ms layout delay (fixes truncation without a window drag)
+
+### 2026-04-28
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} Copy writes routed through the SaveFileBytes/UpdateOrCreateFileBytes pipeline (serial queue, SHA pre-flight, 4 attempts, conflict retry); weak WriteBase64ToFile helper removed
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} CopyFileCoroutine reads source via raw.githubusercontent.com (no 1MB Contents-API truncation), fixing mass copy failures on account clone
+- {date:2026-04-28} {sys:Accounts} {type:feature} Account discovery: top-level SavedData folders not in accounts.json are merged into cachedAccounts and persisted, surfacing pre-index accounts like Tako/DGod
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} ListDirectoryFolders helper: Contents-API listing wrapped for JsonUtility, returns names of dir entries
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} CopyFileCoroutine falls back to the Contents API when the raw URL returns no bytes (fresh small files 404 on the CDN for minutes)
+- {date:2026-04-28} {sys:Accounts} {type:fix} Account discovery filters candidates by probing {folder}/DesktopLayout.nos in parallel, so non-account folders (Files, Icons, Help) stop appearing in the Switch-to submenu
+- {date:2026-04-28} {sys:Accounts} {type:fix} Destroy modal and deletion use ListAllFilesRecursive so orphan files outside the layout are shown and wiped; DesktopLayout.nos force-included
+- {date:2026-04-28} {sys:Accounts} {type:fix} LoadAccountsThenShowMenu re-validates every cached account (union of folders and index names, probe DesktopLayout.nos for all), dropping stale bogus entries; Global always retained
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} ListAllFilesRecursive: BFS walk over SavedData/{path} returning every file's full relative path; empty list on failure
+- {date:2026-04-28} {sys:GitHubUploader} {type:adjust} ListDirectoryFolders refactored onto a shared ListDirectoryEntriesCoroutine returning name+type entries
+- {date:2026-04-28} {sys:Accounts} {type:adjust} Modal ScrollViews carry account-modal-scroll class; matching slim-scrollbar rules added to Account Manager Styles.uss (10px, hidden arrows, dark track)
+- {date:2026-04-28} {sys:Accounts} {type:adjust} SetRowStatus takes CopyFileResult: green Copied, muted gray "no source file", red WriteFailed so template files no longer look like errors
+- {date:2026-04-28} {sys:Accounts} {type:adjust} Rename updates accounts.json preserving metadata and PerformSwitch re-binds the UI when the active user was renamed
+- {date:2026-04-28} {sys:Accounts} {type:feature} "Rename Account..." badge menu entry with create-modal validation; copies each file to the new prefix (layout remapped), deletes source only if every copy succeeded
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} CopyFileCoroutine retries the Worker Contents API fallback up to 3 times with backoff; failure log includes the attempted raw URL
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} CopyFileResult enum (Copied/SourceMissing/WriteFailed) + CopyFileWithStatus so callers distinguish missing source from write failure; legacy CopyFile kept as wrapper
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} BuildRawUrl URL-encodes each path segment (slashes preserved), fixing fetches of filenames with spaces, brackets, # and ?
+- {date:2026-04-28} {sys:Accounts} {type:fix} BuildModal attaches both Xml Window Styles and Account Manager Styles to the overlay so unscoped scrollbar selectors reach every descendant
+- {date:2026-04-28} {sys:Accounts} {type:adjust} RenameAccountCoroutine reduced from a multi-minute per-file progress modal to 3 calls (atomic rename + layout username remap + accounts save/switch); single toast
+- {date:2026-04-28} {sys:Accounts} {type:feature} DeleteAccountFiles tries the atomic folder delete first, falling back to the legacy per-file loop on WorkerUnsupported
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} DeleteAccountFolder and RenameAccountFolder: atomic 6-call Git Data API dance (ref->commit->tree->new tree->commit->PATCH ref), one commit per folder op, truncated-tree abort
+- {date:2026-04-28} {sys:GitHubUploader} {type:infra} Serializable response shapes for Git Data API (ref/commit/tree/sha) plus BuildTreeEntriesJson + EscapeJsonString hand-rolled serialisation and FolderOpResult enum
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} GhRequest generic worker proxy for arbitrary GitHub API endpoints with ERROR/TIMEOUT and status-body failure detection
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} BuildTreeEntriesJson emits literal unquoted null for sha (empty string fails GitHub validation)
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} Tree rewrite switched to base_tree diff: delete emits sha:null per blob, rename emits re-add + sha:null; request body proportional to change set (fixes silent delete)
+- {date:2026-04-28} {sys:GorpEquationWindow} {type:fix} SaveToGitHub wrapped in try/catch pairs (build and upload) with toast + log so a save exception no longer kills the app
+- {date:2026-04-28} {sys:Misc} {type:fix} VersionDisplay label and tooltip use PickingMode.Ignore with TrickleDown pointer polling for hover, so clicks pass through to desktop and dock behind them
+- {date:2026-04-28} {sys:GitHubUploader} {type:infra} Atomic-delete diagnostics: per-step response logging plus post-PATCH verification counting blobs under the deleted prefix (marks Failed so the fallback runs)
+- {date:2026-04-28} {sys:Desktop} {type:fix} UpdateIconLabel falls back to matching by filePath/fileUrl when instanceId doesn't match, so title-bar renames update file-backed desktop icon labels
+- {date:2026-04-28} {sys:Accounts} {type:fix} Account create copies actual folder contents via ListAllFilesRecursive instead of GatherReferencedFiles, eliminating phantom default-path files and catching orphans
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} RewriteAccountFolderCoroutine wrapped in a 3-attempt loop: on 422 fast-forward it re-reads HEAD, rebuilds the diff, and PATCHes again; other failures abort
+- {date:2026-04-28} {sys:Accounts} {type:fix} Atomic delete 422 race: SaveAccounts now runs after DeleteAccountFolder completes; on rewrite failure the cached entry is restored so the menu reflects reality
+- {date:2026-04-28} {sys:Accounts} {type:fix} Modal scrollbar styling: attach the global stylesheet directly to each modal ScrollView instance so the slim-scroller cascade reliably reaches the lazy scroller children
+- {date:2026-04-28} {sys:Accounts} {type:adjust} Context-menu entry renamed "Remove Account" -> "Delete Account..." with matching modal title
+- {date:2026-04-28} {sys:Accounts} {type:feature} QR link drops a desktop icon centered above the User badge (displayName = full URL) and auto-launches an ImageWindow with pre-populated FileBytes; layout saved
+- {date:2026-04-28} {sys:Accounts} {type:feature} "Create QR Link" badge menu entry: builds #account= deep-link URL, generates QR PNG via ZXing, uploads through the serial write queue
+- {date:2026-04-28} {sys:GorpEquationWindow} {type:fix} CreateAndGetWindow only assigns the default title when the AppInstance has no name, so file-backed windows keep the filename title matching their icon
+- {date:2026-04-28} {sys:Accounts} {type:fix} CreateQRLink renders at configured pixel size via QRImageProperties (was ~30px upscaled to blur) and sets FilterMode.Point for crisp modules
+- {date:2026-04-28} {sys:Accounts} {type:feature} Inspector fields qrFallbackBaseUrl (Editor/standalone fallback) and qrImageSize (default 1024px) for QR link generation
+- {date:2026-04-28} {sys:UIManager} {type:feature} ParseAccountFromUrl + boot-time hook: a #account= URL fragment overrides CurrentUsername before layout fetch and persists via PlayerPrefs (QR deep-link consumer)
+- {date:2026-04-28} {sys:Dockbar} {type:infra} SpawnWindow logs appId, displayName, prefab name, and resolved WindowBase type to surface Gorp-vs-Xaml prefab misconfiguration
+- {date:2026-04-28} {sys:Desktop} {type:infra} PinDesktopIconToDock diagnostic logs at every early-return path plus success confirmation for the QR icon-disappearance report
+- {date:2026-04-28} {sys:Accounts} {type:adjust} Per-file progress modal replaced with a single status label; AddProgressRow and SetRowStatus helpers deleted (operation now too fast to need per-file feedback)
+- {date:2026-04-28} {sys:Accounts} {type:fix} SaveAccounts moved last in account creation so accounts.json doesn't race the Git Data API tree rewrite (the 422 fast-forward source)
+- {date:2026-04-28} {sys:Accounts} {type:feature} CreateAccountAndCopyFiles rewritten: categorizes layout paths dock/desktop/orphan and honors the Copy Desktop/Dock/AppWindow toggles as a real file filter
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} RewriteAccountFolderCoroutine accepts an includeFilter and mode-aware verification (source-empty for delete/rename, destination-count for copy)
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} CopyAccountFolder: atomic account copy re-adding filtered blobs at destination paths with the same blob SHA; single commit, ~6 API calls regardless of file count
+- {date:2026-04-28} {sys:GitHubUploader} {type:feature} FolderRewriteMode enum (Delete/Rename/Copy) replaces the implicit newName-null mode flag
+- {date:2026-04-28} {sys:Desktop} {type:adjust} Image-drag-to-dock shows the spacer animation over empty dock space but hides it over existing icons (where the drop becomes icon-override)
+- {date:2026-04-28} {sys:GitHubUploader} {type:fix} Compile fix: RewriteAccountFolderCoroutine commit message switched per rewrite mode (Delete/Rename/Copy) after the newName parameter removal
+- {date:2026-04-28} {sys:Desktop} {type:fix} File-backed dock-pin disappearance: CreateFileBackedDesktopInstance overrides instanceId with the desktop icon's unique id, fixing dock-key collisions between same-app instances
+- {date:2026-04-28} {sys:Accounts} {type:adjust} Account switch only prompts Discard/Save All when there are actual unsaved changes, not merely open windows
+- {date:2026-04-28} {sys:UIManager} {type:feature} HasUnsavedChanges() iterates registered windows for any visible non-fragment window with dirty content
+- {date:2026-04-28} {sys:WindowBase} {type:feature} Public IsContentDirty accessor over the protected ContentDirty flag
+
+### 2026-04-29
+- {date:2026-04-29} {sys:Dockbar} {type:fix} SpawnWindow picks the most-derived WindowBase via GetComponents + IsSubclassOf (fixes XamlGorpWindow opening as plain XamlWindow); warns on duplicate components
+- {date:2026-04-29} {sys:UmlWindow} {type:adjust} Drag-handle Labels emptied but kept as Labels so tooltip wiring and pointer registrations stay intact
+- {date:2026-04-29} {sys:UmlWindow} {type:adjust} Row drag handles use the hamburger icon at 50% size via USS background-image with hover tint, replacing the braille placeholder glyph
+- {date:2026-04-29} {sys:WebGL} {type:fix} Renamed QRCodeShare jslib DownloadFile to QRShare_DownloadFile to resolve wasm-ld signature mismatch build failure
+- {date:2026-04-29} {sys:WebGL} {type:fix} Renamed QRCodeShare jslib UploadFile to QRShare_UploadFile to resolve wasm-ld signature collision with StandaloneFileBrowser
+- {date:2026-04-29} {sys:GitHubUploader} {type:fix} Added X-NOS-Client header to all 9 UnityWebRequest sites (writes, FetchSha, DeleteFile, CopyFile, GhRequest) so the Worker's WebGL gate stops silently rejecting them
+- {date:2026-04-29} {sys:WebGL} {type:fix} FetchGitHubFileInstant distinguishes HTTP 404 and sends NOTFOUND instead of ERROR, so discovery probes no longer burn 5 retries each
+- {date:2026-04-29} {sys:GitHubUploader} {type:fix} Removed User-Agent headers (4 sites): browsers reject the forbidden header and Unity turned every WebGL write into ConnectionError HTTP 500
+- {date:2026-04-29} {sys:Accounts} {type:feature} BackgroundValidateAccounts coroutine runs the folder-list + layout-probe walk once per session, silently updating cachedAccounts and accounts.json on drift
+- {date:2026-04-29} {sys:Accounts} {type:fix} Account badge right-click opens instantly: menu shows immediately from cachedAccounts instead of blocking on folder probes (~10s of 404 retries)
+- {date:2026-04-29} {sys:DebugLogWindow} {type:fix} Error filter glyph swapped from U+2716 heavy X (missing in WebGL default font) to Latin-1 multiplication sign that renders everywhere
+- {date:2026-04-29} {sys:DebugLogWindow} {type:fix} Moved ClearIcon.png and CollapseTextIcon.png (with .meta files, preserving GUIDs) into Resources/Art/Icons so Resources.Load resolves the Clear button icon
+- {date:2026-04-29} {sys:DebugLogWindow} {type:adjust} SetFilterActive tints Label color or unityBackgroundImageTintColor depending on icon child type; active/inactive colors preserved
+- {date:2026-04-29} {sys:DebugLogWindow} {type:feature} MakeFilterBtn texture-first overload builds a 20x20 icon element with glyph-Label fallback; glyph overload kept for Collapse
+- {date:2026-04-29} {sys:DebugLogWindow} {type:adjust} Filter buttons use real Unity console icon PNGs (info/warn/error 32x32) saved into Resources/Art/Icons
+- {date:2026-04-29} {sys:Tooltip} {type:fix} HideTooltipImmediate clears currentAnchor to avoid stale references
+- {date:2026-04-29} {sys:Tooltip} {type:fix} GeometryChangedEvent re-runs UpdatePosition while visible so the bubble re-centers once the measured width arrives (first frame used width 0)
+- {date:2026-04-29} {sys:Tooltip} {type:feature} Anchor-centered positioning: stored currentAnchor/lastMousePos; bubble placed 8px above the anchor's center, flips below when clipping the top
+- {date:2026-04-29} {sys:Tooltip} {type:adjust} Tooltip font 22 -> 16, whiteSpace NoWrap, maxWidth removed so the bubble grows to fit one line; reused GlobalTooltipRoot re-styled too
+- {date:2026-04-29} {sys:Tooltip} {type:adjust} Tooltip show delay raised 1.5s -> 2.0s
+- {date:2026-04-29} {sys:WindowBase} {type:adjust} UpdateFilePathTooltip rewritten: "{displayName} - {filePath} - Right-click to Save or Rename - Double-click title to rename" with graceful fallbacks
+- {date:2026-04-29} {sys:WindowBase} {type:fix} Title-bar text tooltip fires: titleLabel set to PickingMode.Ignore so hover reaches titleTooltipZone; rename handlers unaffected (handled on titleBar)
+- {date:2026-04-29} {sys:ImageWindow} {type:fix} CreateAndGetWindow, LoadImageFromRepoAsync, and LoadImageFromUrlAsync all call the AppRegistry fallback instead of leaving the canvas blank on failure
+- {date:2026-04-29} {sys:ImageWindow} {type:feature} LoadFallbackFromPathAsync fetches and decodes the icon GitHub path with defaultImage as last resort
+- {date:2026-04-29} {sys:ImageWindow} {type:feature} ApplyAppRegistryFallback substitutes the app definition icon (defaultIconTexture, then GitHub icon path, then inspector defaultImage) when the image can't resolve
+
+### 2026-04-30
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Pile persistence: GetCustomWindowState writes pile data; RestoreCustomWindowState recreates piles before cards so layering is preserved; ClearTable removes all piles
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Editable pile labels via InPlaceEditSession; empty input restores default; edits persist to PileMarkerData.label
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Discard Pile auto-created on first discard; DiscardCard flips face-down, snaps to discard anchor with per-card stack offset, and brings to front (card stays in tableCards)
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Draw Pile auto-created at deck anchor in AddDeckAtPos, DealDeckToTable, and CollectDeck; repeat calls just reposition the marker
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Pile helpers CreatePile/EnsureDrawPile/EnsureDiscardPile/ApplyPilePosition/RemoveAllPiles/FindPile; markers inserted at canvas bottom so cards render above
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Pile markers: PileMarkerData + CardsCustomState.piles persist Draw/Discard markers; runtime TablePile with card-sized translucent rect and label
+- {date:2026-04-30} {sys:CardsWindow} {type:fix} Return to Deck Top/Bottom keeps per-card back texture, back path, and rotation on the rebuilt CardInstance
+- {date:2026-04-30} {sys:CardsWindow} {type:adjust} Confirm button renamed "Confirm Deck" -> "Use This Deck" in the deck editor sidebar
+- {date:2026-04-30} {sys:CardsWindow} {type:fix} Sheet preview defaults to the upper-left card after loading a sheet via new GetCellCardData(0,0) helper (was blank until a cell click)
+- {date:2026-04-30} {sys:Docs} {type:docs} Multi-format-deck design sketched in Scripts/Plans/CardsDeckTypesPlan.md (CardSourceMode/CardSidedness, bulk import, auto-crop ladder); no code yet
+- {date:2026-04-30} {sys:WindowBase} {type:fix} RenameFileDialog first-save bug: onRenamed now passes newRelPath whenever a save fired, so an empty oldRelPath no longer resets filePath and loses the image on reload
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Background drop on a card also applies to the current selection: SetStackBackTexture writes to the union of overlapping cards and selectedCards; toast count reflects union
+- {date:2026-04-30} {sys:FilePicker} {type:fix} Native picker confirms on double-click: OpenSingle/OpenMultiple switched from SFB async (Open-button-only) to sync OpenFilePanel via PickSingleSync/PickMultipleSync
+- {date:2026-04-30} {sys:GitHubUploader} {type:feature} Large-file uploads (>1MB) go through Git Data API blob->tree->commit->ref dance; size dispatch at 900KB headroom; up to 3 PATCH attempts for fast-forward conflicts
+- {date:2026-04-30} {sys:WebGL} {type:fix} GitHubFetch.jslib FetchGitHubImageInstant sends TOOLARGE|<sha> when content empty but sha set; OnImageReceived dispatches to blob fetch without dropping the registry entry
+- {date:2026-04-30} {sys:GitHubUploader} {type:fix} Large-file reads (>1MB) follow up via Git Data API blob endpoint: FetchBlobAndComplete fetches /git/blobs/{sha} when Contents API elides content; exactly 2 round-trips
+- {date:2026-04-30} {sys:WindowBase} {type:fix} Rename callback captures old path/url, refreshes Data.fileUrl to the new raw URL, and forces an immediate SaveDesktopLayout so quick quits can't lose the new path
+- {date:2026-04-30} {sys:Desktop} {type:fix} Rename propagates to the desktop icon: Desktop.UpdateIconFilePath matches by instanceId then oldFilePath, updates filePath/fileUrl, saves layout directly
+- {date:2026-04-30} {sys:CardsWindow} {type:fix} Per-card Collect Deck collects only that card's deck at the right-click point via CollectDeckAtPos, ignoring the selection fallback that pulled every deck
+- {date:2026-04-30} {sys:CardsWindow} {type:fix} Pile rect and label wrapped in a group container so left/right side labels render correctly under rotation; drag math and RemoveAllPiles simplified
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Deck Editor auto-restores the last sheet: PopulateEditorFromActiveDeck rebuilds config, assignments, and skips; reuses runtime texture or async-fetches
+- {date:2026-04-30} {sys:CardsWindow} {type:adjust} Hamburger menu reorder: Clear Table first, Deck Editor moved to bottom under divider; ConfirmClearTable wraps ClearTable in a confirm dialog (skipped on empty table)
+- {date:2026-04-30} {sys:CardsWindow} {type:adjust} Even top/bottom label gap: fixed label height plus MiddleCenter alignment for every side
+- {date:2026-04-30} {sys:CardsWindow} {type:fix} Pile label rotates and orbits with the rect via transformOrigin pointed at rect center composed with side rotation
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Pile rotation: persisted PileMarkerData.rotation with Rotate Left/Right (90deg) context-menu entries
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Drag-to-move piles: rect starts a left-button drag, updates anchor per frame, MarkDirty only when actually moved
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Add Pile option in table right-click menu creates a user pile (custom_<guid8>, default label NEW PILE) that persists like built-in piles
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Pile side-labels rotate +/-90deg for left/right sides, sized and centered to run vertically along the rect edge
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} CollectDeck is per-deck: each deckId with a selected card collects all its cards to that deck's selection centroid; menu label Collect Selected Deck(s) (D)
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Per-deck identity: CardInstance/CardTableState deckId (8-char GUID); minted per deal, carried through ReturnToDeck and restore, legacy cards share one fallback group
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} CollectDeck respects selection: gathers only selected cards to their centroid; menu label Collect Selected (N) vs Collect All; Draw Pile only re-anchored on collect-all
+- {date:2026-04-30} {sys:CardsWindow} {type:adjust} CollectDeck resets each card's rotation to 0 before stacking
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Discard honors multi-selection: label becomes "Discard (N)" and discards every selected card; DiscardCard resets card rotation to 0
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} Pile right-click menu: Label Side submenu, Shuffle, Reset Deck (gather all face-down), Flip Cards, See All Cards (wrapped grid layout)
+- {date:2026-04-30} {sys:CardsWindow} {type:feature} PileMarkerData.labelSide (top/bottom/left/right) positions the label per side and persists across reload
+- {date:2026-04-30} {sys:CardsWindow} {type:adjust} Default pile labels now ALL CAPS (DRAW PILE, DISCARD PILE) including restore fallback
+- {date:2026-04-30} {sys:CardsWindow} {type:adjust} Pile rect 10% larger via PILE_SCALE with half-extra offset so cards still drop centered; ApplyPilePosition owns sizing
+
+### 2026-05-01
+- {date:2026-05-01} {sys:FilePicker} {type:adjust} Cancellation return values match the prior wrapper contract; async interface methods run the sync path inline; native bundle no longer referenced, no sign/notarise step
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Stock runModal honours double-click, fixing the bundle's swallowed double-click confirm
+- {date:2026-05-01} {sys:FilePicker} {type:feature} StandaloneFileBrowserMac rewritten to drive NSOpenPanel/NSSavePanel directly: RunOpenPanel, RunSavePanel, ApplyAllowedFileTypes extension filtering
+- {date:2026-05-01} {sys:FilePicker} {type:feature} Replaced SFB precompiled macOS bundle with pure C# Obj-C runtime bridge (MacObjC.cs: objc_msgSend overloads, selector cache, NSString helpers, ~80 lines)
+- {date:2026-05-01} {sys:FilePicker} {type:fix} ForceActiveAndKey helper pins the picker panel as foreground before runModal to stop the Unity-window activation race eating double-clicks
+- {date:2026-05-01} {sys:FilePicker} {type:infra} MacObjC: added SendLong overload for runModalSession: (one pointer arg, NSInteger return)
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Manual modal session loop with ~50ms warm-up pump so the panel's outline view is live before first click; 10ms sleep main pump
+- {date:2026-05-01} {sys:FilePicker} {type:adjust} MacObjC: removed unused SendLong(IntPtr, IntPtr, IntPtr) overload
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Dropped explicit activateIgnoringOtherApps: (the source of 1-3s open delay); RunModal simplified to makeKeyAndOrderFront + runModal
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Modal mainWindow lookup null-checked and excludes the panel itself
+- {date:2026-05-01} {sys:FilePicker} {type:fix} setIgnoresMouseEvents:YES on Unity main window during modal (restored via try/finally) blocks parallel-dispatch click leak on Force Touch double-click
+- {date:2026-05-01} {sys:FilePicker} {type:fix} URL stability compared via [NSURL path] string compare since NSURL pointer identity is not reliable across polls
+- {date:2026-05-01} {sys:FilePicker} {type:adjust} RunOpenPanel passes autoConfirm only for single-file mode; Import Files and folder pickers keep the Open button; save panel always runModal
+- {date:2026-05-01} {sys:FilePicker} {type:feature} Single-click-to-open: RunModal autoConfirmOnSelect flag polls panel.URL every 20ms in a manual modal session; stable selection ends modal with OK
+- {date:2026-05-01} {sys:FilePicker} {type:infra} MacObjC: added no-arg SendVoid objc_msgSend overload for [panel center]
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Removed Thread.Sleep(20) from the modal loop; panel responsive again (runModalSession paces itself)
+- {date:2026-05-01} {sys:FilePicker} {type:adjust} Auto-confirm stability check switched from tick counting to wall-clock (0.16s), stable regardless of runModalSession pacing
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Auto-confirm arms only after panel.URL observed empty at least once, so a pre-populated URL no longer confirms before the user can click
+- {date:2026-05-01} {sys:FilePicker} {type:adjust} Mac picker panel opens centered via [panel center] for both single- and multi-select paths
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Multi-select and Save switched from [panel runModal] to [NSApp runModalForWindow:] to dodge Unity's sendEvent: interception and the 3+ second open delay
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Auto-confirm now calls [panel ok:] so panel.URLs is populated; dock single-click both selects and actually imports the file
+- {date:2026-05-01} {sys:FilePicker} {type:infra} MacObjC gains CoreFoundation P/Invoke surface (CFRunLoop timer create/add/remove, CFRelease, CFString) plus the timer callback delegate type
+- {date:2026-05-01} {sys:FilePicker} {type:fix} CFRunLoopTimerCallback delegate held in static field so GC cannot collect it while native code holds the pointer (IL2CPP safety)
+- {date:2026-05-01} {sys:FilePicker} {type:feature} Auto-confirm via CFRunLoopTimer: 50ms polling during modal, confirms via [panel ok:] after 160ms stable selection; armed only after URL seen empty, okFired guard
+- {date:2026-05-01} {sys:FilePicker} {type:fix} Mac picker unified on single [NSApp runModalForWindow:] path for single open, multi open, and save; true modal fixes click leak and panel refusing to close
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} Preset dropdown popup styled dark (white text, checkmark on blue selection) plus slim-scrollbar override in Cards Window Styles.uss
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Deck name editor: cards-deck-name label edited via BeginInPlaceEdit; defaults to sheet filename, overridden by back-image drop, restored from activeDeck.deckName
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} Sheet-load feedback: ShowSheetLoadingHint repurposes drop hint as "Loading {file}..." status and hides the stale sheet during the fetch
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} ConfirmDeck writes cardBackPath into the saved deck
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} SetEditorBackFromInstance dispatches sync (FileBytes) or async (GitHub fetch with loading overlay) back-image apply; ApplyEditorBackBytes refreshes every face-down table card
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Backside preview swatch is a drop target: ReceiveImageDrop hit-tests IsOverBackPreview before the sheet-chop path; sets deck-wide back image
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} UpdatePreviewSizes resizes face and back preview cards to current cellW:cellH aspect, tracked live from RebuildGrid
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} Deck editor sidebar rebuilt into 4 paired rows (Cols+Rows, Off X+Y, Width+Height, Pad X+Y) via MakePairRow and scrubbable cells; labels color-tinted to legend
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} BuildCardSprites honors cfg.cellW/cellH when present, falls back to old auto-fit math otherwise
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Editor W/H behavior: changing cols/rows re-fits cell W/H to sheet; changing offset/padding or dragging handles preserves user-sized cards
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} DeckSheetConfig gains explicit cellW/cellH; legacy decks (cellW==0) still auto-fit on load
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} ReceiveDeckDrop: Loading toast, fetches deck JSON via GitHubUploader, ApplyDeckJson sets active deck, deals full deck face-down at cursor via AddDeckAtPos
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Drag-drop a deck from Desktop into a CardsWindow play area: IsDeckFile check, isDraggingDeck flag, green + ghost badge over CardsWindow
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} Save Deck to Desktop reachable from new sidebar button and title-bar hamburger menu; stack-icon generation falls back to default Cards icon on failure
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} BuildDeckStackIcon composites a 96x96 3-layer card-stack PNG of the deck back (4px offsets, brightness gradient) used as the desktop icon override
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Save Deck to Desktop: saves deck JSON to GitHub and drops a .deck icon on the NOS desktop
+- {date:2026-05-01} {sys:WindowBase} {type:fix} Editor/standalone exports now save to ~/Downloads via GetDownloadsFolder (Desktop special folder silently no-op'd in some configs); affects every app's Export; toast updated
+- {date:2026-05-01} {sys:CardsWindow} {type:fix} Live face-preview updates during canvas handle drag: LiveUpdateCellPositions calls UpdateCardPreview instead of only refreshing on PointerUp
+- {date:2026-05-01} {sys:Desktop} {type:fix} Desktop icons preserve image aspect ratio: backgroundSize Contain, centered, no repeat; non-square images letterbox instead of stretching to 52x52
+- {date:2026-05-01} {sys:CardsWindow} {type:fix} Deck editor back-preview catches up after session-loaded deck: LoadEditorBackPreviewAsync read-only fetch with loading overlay fills the blank swatch
+- {date:2026-05-01} {sys:CardsWindow} {type:fix} SaveDeckToDesktop keeps spaces in saved deck filenames; only / and \ are replaced now
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} ScheduleDealAtCenter deals loaded deck face-down at canvas center after ~150ms layout deferral; skipped if session restore already spawned cards
+- {date:2026-05-01} {sys:CardsWindow} {type:fix} Deck-icon click now loads deck via LoadDeckFromPath when FileContent empty but FilePath set (fresh desktop-icon clicks previously left activeDeck null)
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} New DealFan dealer: arranges cards face-down along an arc, spread min(160deg, 6deg per card), radius fit to 85% canvas width, rotation persisted via CardTableState.rotation
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} Stack right-click menu (size > 2) gains Deal and Save & Load submenus, replacing flat dealer entries and lone Export item
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Deal submenu (Klondike, Blackjack, 5-Card Poker, Fan) in table menu, gated on hasDeck
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Save & Load submenu (Save, Save Deck to Desktop, Export Deck, Load Deck) in table context menu, replaces four flat entries
+- {date:2026-05-01} {sys:WebGL} {type:docs} Editor caveat documented: WebP/AVIF do not preview in the Unity Editor (LoadImage fallback fails silently); WebGL builds render correctly
+- {date:2026-05-01} {sys:AppRegistry} {type:adjust} Extension lists updated end-to-end for webp/avif/gif: App Registry prefab, IsImageExtension, Desktop/Dockbar/UIManager gates, Cards pickers
+- {date:2026-05-01} {sys:WebGL} {type:adjust} All user-facing image-load sites swapped to the wrapper: ImageWindow, CardsWindow (8+ paths), CardsWindow.IO, DeckEditor, Desktop, dock icon, AppRegistry icons
+- {date:2026-05-01} {sys:WebGL} {type:feature} ImageDecoder.LoadAnyImageAsync: magic-byte sniffing sends PNG/JPG straight to Texture2D.LoadImage, others through the browser path; auto-creates hidden host GameObject
+- {date:2026-05-01} {sys:WebGL} {type:feature} New ImageDecoder.jslib: browser-native WebP/AVIF/GIF decode (blob, img.decode, canvas RGBA readback with row flip); two-step fetch protocol avoids base64 shoveling
+- {date:2026-05-01} {sys:WebGL} {type:feature} C# GIF animator: first frame shown immediately, fire-and-forget loop swaps frames via LoadRawTextureData + Apply on the decoder's schedule until texture destroyed
+- {date:2026-05-01} {sys:WebGL} {type:feature} Animated GIF playback via WebCodecs ImageDecoder (Chrome/Edge 94+, Firefox 133+): per-frame decode with durations, 200-frame cap, single packed payload
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} New segmented-button USS styles (rounded outer corners, active blue state)
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Deck editor segmented toggles: Deck Source (Sheet/Individual) and Card Backs (Shared/Per Card) via new MakeSegmentedToggle helper; persisted in DeckData
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Deck data shape step 1+2: CardSourceMode and CardSidedness enums; CardData gains backPath + 8 crop floats; DeckData gains sourceMode/sidedness, backward compatible
+- {date:2026-05-01} {sys:ImageWindow} {type:fix} EnsureFormatMatchesEncodableBytes: when re-encoding a Texture2D (no original bytes), toast and downgrade to PNG so bytes match the extension
+- {date:2026-05-01} {sys:ImageWindow} {type:feature} ImageFormat expanded to PNG/JPG/GIF/WEBP/AVIF; TryMapExtensionToFormat detects format from path so drops light the right toggle; CycleFormat rotates all five
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} New USS: individual cell, contain-fit thumb, ellipsised name, subdued red remove button
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} ApplyDeck and ApplyDeckJson branch on sourceMode, skipping the sheet-texture slice path for Individual decks
+- {date:2026-05-01} {sys:CardsWindow} {type:adjust} Deck editor: + Add Cards button, ApplySourceModeView swaps sheet area vs individual panel, OpenDeckEditor restores Individual decks from card list
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} ConfirmIndividualDeck builds Individual-mode DeckData and hot-fills sprite cache from editor thumbnails so dealt cards show immediately
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} BuildCardSpritesIndividualAsync parallel render path fetches each card image async; already-dealt cards refresh as sprites land
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Individual panel: wrap-row 100x140 thumbnail grid with per-cell Remove button; thumb cache keyed by imagePath survives reorder/remove
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} Import pipeline: decode, downscale to 512px long side, JPG q88 encode, serial GitHub upload with streaming "Imported N/M" status
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} New CardsWindow.Individual partial: bulk per-card image import via multi-file picker, sorted by filename
+- {date:2026-05-01} {sys:WebGL} {type:fix} FileDrop.jslib native-type allowlist gains image/gif, image/webp, image/avif so drops keep raw bytes instead of first-frame PNG transcode
+- {date:2026-05-01} {sys:WebGL} {type:feature} BindAnimated wired: ImageWindow (all three image paths), dock icon drop path, desktop image icon both branches, Dockbar icon build and cold-start load
+- {date:2026-05-01} {sys:WebGL} {type:fix} Animated GIFs actually repaint: BindAnimated + IsAnimated API with weak-ref element lists; each frame Apply calls MarkDirtyRepaint on bound elements
+- {date:2026-05-01} {sys:WebGL} {type:fix} ClearAnimatedTextureById takes the cached instance id, fixing the registry leak when a destroyed texture compares == null
+- {date:2026-05-01} {sys:WebGL} {type:feature} DecodeViaBrowserAsync branches three ways on frameCount: -2 polled Safari mode, <=1 static, >1 WebCodecs animated
+- {date:2026-05-01} {sys:WebGL} {type:feature} New NOS_FetchAnimatedFrame (non-deleting read) and NOS_StopAnimatedPolling (interval clear + blob revoke); __nosPolling registry keeps img/canvas/interval alive
+- {date:2026-05-01} {sys:WebGL} {type:feature} Safari GIF fallback: hidden img animates natively, 50ms canvas sampling ships current frame to Unity; frameCount -2 sentinel triggers the C# polling loop
+- {date:2026-05-01} {sys:WebGL} {type:fix} Polling img elements attached to a shared off-screen host div (Safari only animates DOM-attached GIF images); removed on teardown
+- {date:2026-05-01} {sys:WebGL} {type:infra} [GIF Decoder] diagnostic logging across jslib and C#: poll engagement, capture fingerprints, empty-fetch warnings, bind confirmations, teardown summaries
+- {date:2026-05-01} {sys:WebGL} {type:fix} Poll-mode block extracted to doPollDecode; WebCodecs frameCount<=1 or thrown exception now routes to poll instead of static decode (Safari 17 ships a broken ImageDecoder)
+- {date:2026-05-01} {sys:WebGL} {type:fix} captureBusy re-entry guard keeps slow async captures from stacking; initial pre-SendMessage capture awaited so the stash is populated before C# pulls
+- {date:2026-05-01} {sys:WebGL} {type:fix} Safari poll capture switched from drawImage (always frame 0 on Safari) to await createImageBitmap snapshot + blit + close; verified via pixel-hash test
+- {date:2026-05-01} {sys:WebGL} {type:adjust} GIF diagnostic logs trimmed: successful drops now log nothing; only the load-bearing failure warnings remain in ImageDecoder.cs and the jslib
+- {date:2026-05-01} {sys:Desktop} {type:feature} BindAnimated wired for desktop icon bytes path and the three LoadIconAsync icon-update callbacks
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} BindAnimated wired in deck editor sheet preview, back-image preview swatch, and Individual-mode thumbnail cells
+- {date:2026-05-01} {sys:CardsWindow} {type:feature} BindAnimated wired at CardsWindow sites: SetTableBackground, URL/persisted background loads, per-card image load, ApplyCardFace face-up and face-down paths
+
+### 2026-05-03
+- {date:2026-05-03} {sys:CardsWindow} {type:feature} New RotateDeck helper rotates each card in the supplied list around its own centre and marks dirty once
+- {date:2026-05-03} {sys:CardsWindow} {type:feature} Stack right-click menu gains Rotate Deck Left (-90) and Rotate Deck Right (90) entries operating on the overlapping stack
+
+### 2026-05-07
+- {date:2026-05-07} {sys:Docs} {type:docs} CodeAudit-2026-05-07.md: carries forward open items, adds new findings, tiered next-steps roadmap plus quick-win shortlist
+- {date:2026-05-07} {sys:Docs} {type:docs} Features.md rewritten from 829-line prose to hierarchical bullet checklist across 13 sections with shipped/planned markers
+- {date:2026-05-07} {sys:AppRegistry} {type:adjust} New FromDefinitionWithId factory clarifies instanceId contract; Desktop.CreateFileBackedDesktopInstance refactored onto it; XML-doc comments added
+- {date:2026-05-07} {sys:Misc} {type:adjust} Dead assets deleted: Backend/old worker.js, DebugLogWindow.cs.disabled, legacy MessagesWindow.cs (plus .meta sidecars)
+- {date:2026-05-07} {sys:Misc} {type:adjust} 76 FindAnyObjectByType callsites replaced with cheap static Instance access across 13 files; editor-time UFOSMenuItems site deliberately kept
+- {date:2026-05-07} {sys:Misc} {type:adjust} Static Instance accessors added to Dockbar, Desktop, ContextMenuManager (assigned in Awake)
+- {date:2026-05-07} {sys:Misc} {type:adjust} Tier 0 hygiene: 18 underscore-prefixed fields renamed to plain camelCase across 7 files per CLAUDE.md style rule
+
+### 2026-05-08
+- {date:2026-05-08} {sys:Dockbar} {type:feature} Dock icon PointerUp checks CardsWindow.FindAtPosition first: image instance dropped on CardsWindow routes to ReceiveImageDrop without opening a window
+- {date:2026-05-08} {sys:CardsWindow} {type:fix} ApplyCardRotation fixed to el.style.rotate = new Rotate(degrees)
+- {date:2026-05-08} {sys:CardsWindow} {type:feature} SetStackBackTexture changes only the dropped-on stack; LoadBackTextureFromPathAsync shared loader handles gallery: + GitHub; back path persisted
+- {date:2026-05-08} {sys:CardsWindow} {type:feature} Per-card backs: CardInstance backTexture + backPath, CardTableState backPath, backTextureCache, ApplyCardFace uses per-card back with fallback
+- {date:2026-05-08} {sys:BuildDeploy} {type:infra} RecordBuild auto-writes .nojekyll at build output root; stops Pages running Jekyll on SavedData markdown (actual cause of Pages timeouts)
+- {date:2026-05-08} {sys:BuildDeploy} {type:infra} GitBuildCommitter Pages wait timeout 240s to 600s; polls log status transitions, HTTP errors, and last status on timeout; request disposed
+- {date:2026-05-08} {sys:UmlWindow} {type:adjust} SaiXmlParser, Duplicate-class copy, and drag-and-drop src/tgt list locals retyped to MemberEntry; value-copy semantics preserve kind across lists
+- {date:2026-05-08} {sys:UmlWindow} {type:feature} BuildXamlRowLabel kind-aware rendering: muted-blue owner prefix for AttachedProp, cyan diamond glyph for Binding, amber lambda for Event
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} Six renderer edit sites use WithVis/WithText so visibility/name/type edits preserve member kind instead of demoting to Field
+- {date:2026-05-08} {sys:UmlWindow} {type:feature} XAML projection emits explicit kinds: Binding for binding-like values, AttachedProp for dotted names, Property otherwise; synthetic rows tagged Property
+- {date:2026-05-08} {sys:UmlWindow} {type:adjust} UmlClass attributes/methods retyped to List of MemberEntry; method adds upgraded to explicit Method kind at 4 parse/menu sites
+- {date:2026-05-08} {sys:UmlWindow} {type:feature} Phase 4A: MemberEntryKind enum (Field/Method/Property/AttachedProp/Binding/Event) + MemberEntry struct with tuple conversion, Deconstruct, WithVis/WithText
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} Pointer-capture leak fixed: EndNodeDrag unconditionally releases held capture, so right-click works after selecting a member row
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} Method drop indicator on empty-methods classes now positions below the last attribute row instead of just under the header
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} Attached-property detection inverted: condition corrected to unprefixed dotted names so Grid.Row etc. finally classify as AttachedProp
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} XAML Filter selection passes forceXaml true so re-projection can't replace the user's diagram with an embedded UMLDiagram block
+- {date:2026-05-08} {sys:UmlWindow} {type:adjust} XAML projection wrapper nodes show "Children = N" placeholder instead of "(no scalar properties)" so structural shape is visible
+- {date:2026-05-08} {sys:UmlWindow} {type:feature} LoadUmlData parse failure now shows a toast with two recovery paths (Clear All + Save, or Import Xaml) plus byte count and path in the log
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} XML side panel ApplyXmlCode passes forceXaml so XAML-backed diagrams don't mis-route to ParseAsCustom and lose the projection
+- {date:2026-05-08} {sys:UmlWindow} {type:infra} ImportXaml catch logs file name, byte/char counts, head and tail excerpts to distinguish corrupt streams from parser mismatches
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} Click-to-dirty regression: EndNodeDrag only marks dirty when drag distance exceeds 0.5px; click-to-select no longer dirties the window
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} forceXaml mode sniffs root for UML formats (XMI/enterprise/gorp/gestalt/UMLDiagram) before ParseAsXaml, so re-imported UML content isn't mangled on reload
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} Fallback appends the correct extension and .xaml branch looks in StreamingAssets/Xaml subfolder matching XamlWindow; warns when fallback also empty
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} StreamingAssets fallback filename now derived from AppInstance.FilePath instead of always defaulting to UML_SystemDesign
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} When AppInstance.FilePath is set and GitHub 404s, surface a toast instead of silently substituting a StreamingAssets file; local fallback only on true first-run
+- {date:2026-05-08} {sys:UmlWindow} {type:fix} NormalizeMarkupText reduced to pure Trim; BOM/left-angle strip branches removed after they silently truncated valid XAML document heads
+- {date:2026-05-08} {sys:WindowBase} {type:fix} GetOrBuildSaveFilePath no longer silently relocates saves to the def's defaultSaveFolder; stored paths used as-is, preserving Open With semantics
+- {date:2026-05-08} {sys:UIManager} {type:fix} RestoreWindow rebuilds AppInstance from the snapshot before falling back to empty FromDefinition; fixes "Imported: SAI" ghost after Open With + reload
+- {date:2026-05-08} {sys:WindowBase} {type:fix} GetWindowState snapshots AppInstance.Data by value at save time
+- {date:2026-05-08} {sys:WindowBase} {type:fix} WindowStateData gains appInstanceData snapshot field so unpinned windows' file binding survives restart
+- {date:2026-05-08} {sys:UIManager} {type:docs} Verified pinning is not a restore precondition: SaveDesktopLayout/RestoreLayout cover every registered window regardless of pin state
+- {date:2026-05-08} {sys:Desktop} {type:feature} Desktop icon right-click gains Open With menu mirroring Dockbar: alternate handlers listed, current app checkmarked, transient window on pick
+- {date:2026-05-08} {sys:AppGalleryWindow} {type:fix} OpenWithDef captures resolved sourcePath from the original def and stamps it onto the new instance; single-arg shim kept for compat
+- {date:2026-05-08} {sys:Desktop} {type:fix} LaunchDesktopIconWithDef stamps sourcePath onto the transient AppInstance so the alternate viewer opens the SAME file
+- {date:2026-05-08} {sys:Desktop} {type:fix} Desktop Open With resolves sourcePath via ResolveDefaultFilePath so app-shortcut icons (empty per-icon path) finally show the menu
+- {date:2026-05-08} {sys:AppRegistry} {type:adjust} Dock/Desktop/AppGallery Open With unified onto shared handlers + ResolveDefaultFilePath; only difference is where explicitPath comes from
+- {date:2026-05-08} {sys:AppRegistry} {type:feature} GetAllHandlersForDef: single shared Open With handler rule across dock/desktop/gallery, self ordered first for reliable checkmark row
+- {date:2026-05-08} {sys:UIManager} {type:feature} New FindFilePathForAppId helper walks registered windows for the first matching populated filePath
+- {date:2026-05-08} {sys:AppRegistry} {type:fix} ResolveDefaultFilePath chains through existing dock instance path, then any open window's path, before def.defaultFilePath; fixes empty Open With windows
+
+### 2026-05-09
+- {date:2026-05-09} {sys:Docs} {type:docs} CodeAudit-2026-05-07 status pass: per-item markers with file:line evidence; Tier 0 mostly done, Tiers 1-8 unstarted, per-card backs partial
+- {date:2026-05-09} {sys:Docs} {type:docs} CodeAudit-2026-05-07 Tier 0 marked done; shortlist updated; grep verifies one benign FindAnyObjectByType remains (VersionDisplay)
+- {date:2026-05-09} {sys:Desktop} {type:adjust} CreateFileBackedDesktopInstance URL branch switched to single FromUrlWithId call; defensive instanceId override and comment removed
+- {date:2026-05-09} {sys:AppRegistry} {type:feature} AppInstance.FromUrlWithId overload honors caller-supplied instanceId for URL-backed instances (GUID fallback if empty)
+- {date:2026-05-09} {sys:Desktop} {type:adjust} Icon label double-click rename uses WindowBase.AnyOpenWindow() instead of FindAnyObjectByType
+- {date:2026-05-09} {sys:WindowBase} {type:feature} New static AnyOpenWindow() iterates the windowsByTypeName registry, returns any live window without an O(n) scene scan
+- {date:2026-05-09} {sys:Dockbar} {type:adjust} Record button uses ScreenRecorderManager.Instance instead of FindAnyObjectByType
+- {date:2026-05-09} {sys:ScreenRecorder} {type:adjust} ScreenRecorderManager gains static Instance (set in Awake, cleared in OnDestroy) matching other manager singletons
+- {date:2026-05-09} {sys:Desktop} {type:fix} Desktop icon rename works with no window open: BeginIconLabelRename prefers AnyOpenWindow BeginInPlaceEdit, falls back to ModalInputField overlay
+- {date:2026-05-09} {sys:Desktop} {type:fix} iconNameEdited dirty flag: unmodified Icon Name doesn't fight Window Name propagation; edited value applies after onRenamed so user's value wins
+- {date:2026-05-09} {sys:Desktop} {type:feature} RenameFileDialog gains an Icon Name section (shown only when a matching desktop icon exists) to decouple icon label from window title
+- {date:2026-05-09} {sys:Desktop} {type:feature} SetIconDisplayName(data, name) mutates and persists the icon label
+- {date:2026-05-09} {sys:Desktop} {type:fix} FindIconForInstance gains app-shortcut fallback matching by appId so the Icon Name field works for built-in pinned apps
+- {date:2026-05-09} {sys:Desktop} {type:feature} "Rename..." entry on desktop icon right-click menu; BeginRenameDesktopIcon centralizes Cmd+click, label double-click, and menu paths
+- {date:2026-05-09} {sys:Desktop} {type:feature} Cmd/Ctrl+click on a desktop icon triggers inline rename (replaces multi-select role; box-select remains the multi-select gesture)
+- {date:2026-05-09} {sys:Docs} {type:docs} CodeAudit-2026-05-07 Tier 1 marked done; quick-win shortlist refreshed
+- {date:2026-05-09} {sys:AppRegistry} {type:adjust} LoadIconAsync distinguishes fetch-failed vs decode-failed and warns with URL + appId before default fallback (previously silent)
+- {date:2026-05-09} {sys:Misc} {type:adjust} ImageDecoder polled-GIF loop throttles to 1s cadence when no live bindings (20fps otherwise); saves Safari's per-frame JS poll cost
+- {date:2026-05-09} {sys:GalleryWindow} {type:fix} DownloadAndApplyTexture swapped to the same bytes + ImageDecoder path; thumbnails BindAnimated so animated gallery thumbnails play
+- {date:2026-05-09} {sys:Desktop} {type:fix} SetWallpaperAsync switched to bytes fetch + ImageDecoder.LoadAnyImageAsync + BindAnimated: animated GIF/WebP wallpapers now play; failures log filename
+- {date:2026-05-09} {sys:BugReportWindow} {type:infra} Prefab, .meta files, and App Registry BugReportApp entry generated as plain text; no Inspector work needed
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Image attachments via FilePicker: uploaded per-bug to GitHub, async thumbnails via ImageDecoder, X removes entry (blob kept as undo path)
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Expanded body: title, multiline description, three ContextMenuManager dropdowns, meta line, attachment grid, Attach/Delete actions with confirm modal
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Severity color-coded left border per row; status/severity/priority pills colored to match
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Filter chips All/Open/In Progress/Closed; sort status rank then priority then newest; + New Bug button and open/total count label
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Single-JSON storage with 700ms debounced autosave on every edit; dirty-title asterisk honored
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Data model: BugReportEntry (id/title/description/status/severity/priority/reporter/timestamps/attachments) + BugReportData
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} New BugReportWindow bug tracker: inline-expand list rows, one bug expanded at a time
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Overview tab per account: file count, storage total, dock/desktop icon counts, relative creation date, top 6 extensions with byte totals
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:infra} Account Activity prefab and AccountActivityApp registry entry hand-authored in YAML (extensions, save folder, placeholder icon)
+- {date:2026-05-09} {sys:GitHubUploader} {type:feature} ListAllFilesRecursiveWithSizes + GitHubFileInfo struct; listing entries now deserialize the size field the API already returned
+- {date:2026-05-09} {sys:Accounts} {type:feature} AccountManager gains GetAccountList (defensive copy) and RefreshAccounts async re-fetch callback
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Phase 1: new AccountActivityWindow app skeleton with chip row, tab strip, Overview tab, and Account Activity Styles.uss
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:adjust} Account chips gain 8px per-account hue swatch matching Storage segments and Apps bars
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:adjust} Refresh re-fetches accounts.json via AccountManager.RefreshAccounts so new accounts appear without reload
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Storage tab: per-account byte bars segmented by app with hue-shifted segments plus top-8 app legend pills
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Apps tab: horizontal stacked bars per app, segments sized per account and tinted with stable per-account HSV hash color
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Files tab: sortable cross-account table (Account/Path/Ext/Size), click headers to sort/flip, sort state persisted, 500-row cap with "N more" line
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Snapshot model gains byApp breakdown keyed by AppDefinition displayName alongside byExtension
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:adjust} Phase 2 file split into partials: main, DataLoader (parallel snapshot fan-out + extension-to-app resolver), Tabs
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:adjust} Event rows color-coded by type with local-time clock, account-tinted swatch, and account name
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:adjust} Refresh button also clears activityCache so force-refresh re-fetches jsonl files
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Timeline tab: merged multi-account feed grouped by day (Today/Yesterday headers); Global suppressed when other accounts selected
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Logs tab: per-account sections with header chip, event count, newest 200 events plus hidden-count hint
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Activity log loader: per-account jsonl fetch via RequestRawData, per-line parse, malformed lines skipped, TTL cache
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Recorder hook points wired: RestoreLayout session start, quit session end, SpawnWindow app open, WindowBase destroy app close, OnContentSaved file save
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:infra} Content policy enforced at type level: ActivityEvent has metadata fields only, so hooks physically cannot store edited content or chat text
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Buffered event append: 5s debounce or 10-event flush, grouped by user; OnApplicationQuit writes session_end and final flush
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} New ActivityRecorder singleton with auto-instantiating static facade: session start/end, app open/close, file save/rename/delete, wallpaper, chat, screen-record events
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:infra} Monthly rollover: Activity.jsonl over 256 KB archived to Activity-yyyy-MM.jsonl; loader merges archives chronologically with live log last
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} Remaining recorder hooks wired: file rename, wallpaper set (3 paths), chat message with provider, screen-record duration, gallery background delete
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:feature} OnContentSaved gains bytes parameter; every window's PerformSave passes real save size so file_save events carry byte counts rendered in Logs/Timeline
+- {date:2026-05-09} {sys:AccountActivityWindow} {type:fix} Tab-switch race fixed via activeTabGeneration counter; stale coroutines bail so fast tab clicks can't leak elements into the wrong tab
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} New Bug Report Styles.uss sets --unity-cursor-color #e6e6e6 so the caret is visible in dark title/description fields; wired into prefab
+- {date:2026-05-09} {sys:WebGL} {type:feature} HandleFileDrop routes binary image drops to BugReportWindow before desktop/dock placement (Alt still forces Open With picker)
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} External OS/browser image drop onto a bug row auto-attaches: activeInstances registry, FindAtPosition, FindBugAtPosition, RouteExternalImageDrop + toast
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Sort By button: Smart/ID/Title/Status/Severity/Priority/Created/Updated plus asc/desc; view state persisted via custom window state
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} New bugs stamped with appVersion from GameSettings; historical bugs deliberately left unstamped
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Collapsed row header shows permanent bug.id (cyan bold) instead of synthetic display index
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Stable BUG-#### IDs: monotonic nextDisplayNumber, never recycled; legacy GUID ids migrated; collision-proof bump past highest existing
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Globally shared bug list: all accounts read/write Shared/Files/Bugs/BugReport.json; attachments under shared root; filePath force-rewritten on load
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} New statusNote free-text field; empty storage displays per-status default (Waiting for review / Evaluating / Fixed) that auto-tracks status changes
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Collapsed-row meta line now surfaces app name: ID, App, Reporter, Version, Created, Updated
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} "Custom..." app entry opens inline modal (Enter commit, Esc/click-out cancel); dedupes case-insensitively and persists to shared JSON for all accounts
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} New App field per bug (default NOS); options built from AppRegistry built-ins plus shared user-typed customApps list
+- {date:2026-05-09} {sys:ContextMenu} {type:fix} ClampToScreen made idempotent via SetIfChanged (0.5px threshold); kills "recursive layout" warning on tall menus
+- {date:2026-05-09} {sys:ContextMenu} {type:feature} ApplyMaxHeight caps menu height to panel height minus 40 (120px floor); scrollOffset reset to top on each show
+- {date:2026-05-09} {sys:ContextMenu} {type:feature} All three menu containers switched to ScrollView (vertical auto, horizontal hidden) so long menus scroll instead of running off screen
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} AddNewBug seeds App field from most-recently-created prior bug (sorted by createdUtc), falling back to "NOS"
+- {date:2026-05-09} {sys:ContextMenu} {type:adjust} Context menu scrollbar styled to match NOS dark look: dark track, hidden arrows, rounded thumb, horizontal scroller force-hidden
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} App dropdown merged onto one row with Status/Severity/Priority; no more flexGrow full-width row
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Dropdown minWidth bumped 90 to 110 so longest icon-prefixed labels fit
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} OnLoaded migrates legacy severity/priority values (High/Medium/Low/P1-P4) and dirties the file for next save; unknown values default mid-tier
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} BuildDropdown gains formatLabel func so button text and menu rows share icon formatting
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} New-bug defaults set to Moderate severity and Queue priority
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Symbols kept out of stored JSON: FormatSeverity/FormatPriority prefix icons at render time only
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Minor severity color swapped blue to green so it doesn't share a hue with priority Queue
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Severity/priority vocabularies renamed: Critical/Major/Moderate/Minor and Now/Soon/Queue/Later with per-tier symbols
+- {date:2026-05-09} {sys:ContextMenu} {type:adjust} Context Menu Styles scrollbar rewritten to exactly mirror Xml Window Styles thin NOS scroller (8px, translucent pill, hidden arrows)
+- {date:2026-05-09} {sys:WebGL} {type:fix} FileDrop.jslib bufToBase64 rewritten from O(n^2) char-concat to chunked 32 KB String.fromCharCode.apply; large image drops no longer OOM the tab
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} BuildPill gains optional textColor parameter and enables rich text for future inline tags
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} Moderate pill renders black warning glyph on yellow (road-sign look, better legibility) via new SeverityTextColor helper
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} Severity/priority emoji replaced with BMP geometric glyphs so WebGL default fonts render them (no more tofu boxes)
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} "Click to view full size" tooltip on thumbs; X remove button excluded from the open-click handler
+- {date:2026-05-09} {sys:BugReportWindow} {type:feature} Attachment thumbnails clickable: opens full-size ImageWindow via transient unpinned AppInstance with unique instanceId; ScaleToFit preserves aspect
+- {date:2026-05-09} {sys:GitHubUploader} {type:adjust} Retry warning log trimmed to 120 chars and reports next backoff window
+- {date:2026-05-09} {sys:GitHubUploader} {type:fix} Worker-error retry detection broadened (Worker exception / Network connection lost / Internal Server Error / 5xx+transport) in both text and binary PUT paths
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} LoadAttachmentImage checks pending bytes first so thumbnails decode instantly regardless of upload progress
+- {date:2026-05-09} {sys:Desktop} {type:feature} New TryGetPendingImage(path, out bytes) accessor for O(1) pending-upload byte lookup
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} Attachment uploads rerouted through Desktop's batched pending-image pipeline (JSON save first, binary second) instead of inline SaveFileBytes
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} OpenAttachmentImage prefers in-memory pending bytes (Desktop.TryGetPendingImage) so a just-attached image opens before its upload lands
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} UploadAttachmentBytes registers failure rollback that removes the orphaned path and re-saves; bug looked up by stable id, not stale reference
+- {date:2026-05-09} {sys:UIManager} {type:feature} UploadPendingImages fires per-path completion callback after each SaveFileBytes, try/catch guarded
+- {date:2026-05-09} {sys:Desktop} {type:feature} AddPendingImage overload with completion callback + TryConsumePendingCallback one-shot consumer
+- {date:2026-05-09} {sys:GitHubUploader} {type:fix} Binary writes over 250 KB routed through Git Data API (blob/tree/commit) since Worker subrequests drop large Contents-API binary bodies; text keeps 900 KB threshold
+- {date:2026-05-09} {sys:GitHubUploader} {type:fix} GhRequest (Git Data API path) error detection broadened to match Worker exception / Network connection lost / Internal Server Error bodies
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} AutoCleanOrphanedAttachment: after fetch retries exhaust, dead attachment path removed from bug, re-saved, and toasted; pendingImages guard prevents racing uploads
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} OnDestroy clears attachingByPath so a still-running upload can't fire against destroyed UI state
+- {date:2026-05-09} {sys:BugReportWindow} {type:adjust} BuildAttachmentList merges committed and in-flight paths so UI treats them identically; X button branches on which dict the path lives in
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} Upload completion callback commits path on success, toasts on failure with nothing to roll back; cancel-via-X guard no-ops the callback
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} Attachment paths no longer committed to bug JSON until upload succeeds; new attachingByPath in-flight dict (never persisted)
+- {date:2026-05-09} {sys:Desktop} {type:fix} ImportFilesToDesktop sanitizes filename for the GitHub path while preserving the original as icon displayName
+- {date:2026-05-09} {sys:BugReportWindow} {type:fix} SanitizeFilename delegates to shared SanitizePathComponent, fixing macOS screenshot names breaking attachment fetch URLs
+- {date:2026-05-09} {sys:GitHubUploader} {type:fix} New SanitizePathComponent: replaces invalid filename chars and ALL Unicode whitespace (U+202F etc.) with underscore
+
+### 2026-05-10
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} H3-H6 markdown headings render (16/14/13/12pt) alongside existing H1/H2; exact # count + whitespace so levels don't interfere
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Inline backtick code renders light blue (closest available to monospace in UIElements rich text)
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} ~~text~~ renders strikethrough
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} ***text*** renders bold+italic; runs before ** and * regexes, fixing stray mid-word star rendering bug
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Fenced code blocks: extracted first via [[CBn]] sentinels, styled blue inside <noparse>, leading spaces converted to NBSP to preserve indentation
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Fence regex anchored at line start on both fences with indent/trailing tolerance; stray indented closing fence no longer swallows the document as code
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Heading regexes allow 0-3 leading spaces per CommonMark; 2-space-indented headings no longer render as literal text; levels stay mutually exclusive
+- {date:2026-05-10} {sys:NotesWindow} {type:adjust} Bullet and horizontal-rule regexes widened to allow up to 3 leading spaces of indent (and trailing whitespace for HR)
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Blockquote "> text" renders gray with a left bar
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Ordered list "1. item" bolds the numeric marker (up to 3 leading spaces per CommonMark)
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Markdown [text](url) links render blue underlined (visual only, no click); negative lookbehind skips image syntax
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Markdown ==text== highlight renders yellow (no inline background-color span in UIElements)
+- {date:2026-05-10} {sys:NotesWindow} {type:docs} Search MVP limits noted: case-insensitive only, no regex mode, view-mode highlights not auto-scrolled, extreme code-block sentinel collision possible
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Replace: case-insensitive substring; ReplaceAll uses Regex.Escape + Match evaluator so typed $ stays literal; view-mode replace saves immediately
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Match highlighting: view mode wraps matches in yellow rich text (current match orange) before markdown pass; edit mode selects via cursorIndex/selectIndex
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Search source resolution: live editField in edit mode, currentRawText in view mode; RebuildSearchMatches on open, text change, replace, mode toggle
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Search keyboard: Enter = next match, Shift+Enter = prev in search field; Enter = replace current in replace field; Esc closes from either
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Search bar layout: row 1 = search field + match count + up/down nav + close; row 2 = replace field + Replace + Replace All, both rows always visible
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} New search & replace bar at top of window: open Ctrl/Cmd+F, close Esc or X button
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Third titlebar-left search button (magnifying glass, tooltip with shortcut) reusing the #WindowSearchBtn USS rule shared with XmlWindow
+- {date:2026-05-10} {sys:UIManager} {type:adjust} Window-maximize shortcut moved from Cmd/Ctrl+F to Alt/Option+F, freeing Cmd/Ctrl+F for in-window search
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Scroll-to-match in view mode: y estimated by newline-count ratio, current match lands ~30% from viewport top, deferred one frame
+- {date:2026-05-10} {sys:NotesWindow} {type:adjust} Compact search bar: 22px rows, reduced paddings, 22x22 icon buttons, "Replace All" shortened to "All"; total bar ~52px was ~80px+
+- {date:2026-05-10} {sys:NotesWindow} {type:adjust} Search bar dark-mode restyle: StyleSearchField/MakeIconButton/MakeTextButton helpers apply dark backgrounds, borders, light text, hover states
+- {date:2026-05-10} {sys:NotesWindow} {type:adjust} Notes Styles.uss: search field caret color white + dark selection color (Unity default caret rendered near-black in the dark bar)
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} MakeFieldWithPlaceholder: italic gray overlay placeholder ("Search Text" / "Replace Text"), hides on first keystroke, click-through picking
+- {date:2026-05-10} {sys:NotesWindow} {type:adjust} Match count label restyled: white instead of muted gray, bold, font size 10 to 11
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Field wrap flex-direction row plus flex-basis 0 / min-width 0 / width auto: search field no longer expands on type
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} UpdateMatchCountLabel writes NBSP for empty state; min-width 44 to 60 to fit "100 / 1024"; flex-shrink 0 on the label
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Count label initialized with non-breaking space so the empty Label no longer collapses to 0 width (root cause of search field width jump)
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Search bar: explicit height 22 on rows, field wraps, count label plus flex-shrink 0 on rows stops vertical reflow while typing
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} StopImmediatePropagation keeps editField from receiving an "F" when Cmd+F is pressed while editing
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Search shortcut registers synchronously plus on AttachToPanelEvent; panelKeyRegistered prevents doubles; DetachFromPanelEvent unregisters
+- {date:2026-05-10} {sys:NotesWindow} {type:fix} Cmd/Ctrl+F KeyDown registered on panel root so it works regardless of focus; gated by IsActiveWindow so only the foreground Notes window responds
+- {date:2026-05-10} {sys:NotesWindow} {type:feature} Wrap toggle persisted across sessions via NotesCustomState { isWrapping } in Get/RestoreCustomWindowState; was hardcoded true every open
+- {date:2026-05-10} {sys:BugReportWindow} {type:adjust} BugReport gets first pick over CardsWindow on drops: a bug-row drop is more specific intent than drop-on-window-behind
+- {date:2026-05-10} {sys:BugReportWindow} {type:feature} Drop routing wired: ImageWindow drag, any dock-icon drag, gallery-image drop, desktop icon drag, AppGallery cell drag all check BugReport first
+- {date:2026-05-10} {sys:BugReportWindow} {type:feature} NormaliseDropFilename strips directories, forces known image extension, falls back to drop_guid8.png
+- {date:2026-05-10} {sys:BugReportWindow} {type:feature} EncodeTextureToPng helper: GetPixel probe then Graphics.Blit + ReadPixels for non-readable textures; self-cleans temp copy
+- {date:2026-05-10} {sys:BugReportWindow} {type:feature} RouteGalleryImage accepts Texture2D drops from Gallery and AppGallery cells, PNG-encoded via blit path so atlas/RenderTexture sources work
+- {date:2026-05-10} {sys:BugReportWindow} {type:feature} Attachment byte resolution chain: FileBytes, then binary fetch, then FileUrl GET, then icon-texture encode (so file-less apps attach their icon)
+- {date:2026-05-10} {sys:BugReportWindow} {type:feature} RouteImageDropFromInstance: in-app drops from ImageWindow content, dock icons, desktop icons attach to bug rows
+- {date:2026-05-10} {sys:AccountActivityWindow} {type:fix} ScheduleFlush defensive this == null guard for the window between native destroy and OnDestroy
+- {date:2026-05-10} {sys:AccountActivityWindow} {type:fix} ActivityRecorder clears static Instance in OnDestroy; fixes MissingReferenceException on Play Mode stop (?. is not Unity-aware)
+
+### 2026-05-11
+- {date:2026-05-11} {sys:Editor} {type:feature} DefaultAsset and TextAsset custom inspectors cover StreamingAssets XML and imported .xml TextAssets, with plain scrollable fallback for other text
+- {date:2026-05-11} {sys:Editor} {type:feature} XmlSyntaxHighlighter: VS light and VS Code dark palettes, 200K char cap with truncation HelpBox, cached per path
+- {date:2026-05-11} {sys:Editor} {type:feature} New XmlInspectorPreview.cs: syntax-highlighted .xml/.xaml/.xsd preview in the Inspector via hand-rolled no-regex tokenizer
+- {date:2026-05-11} {sys:Editor} {type:adjust} Monospace font fallback chain Menlo/Monaco/SF Mono/Consolas/Courier New/Courier so macOS gets a real monospace font
+- {date:2026-05-11} {sys:Editor} {type:fix} Dropped duplicate filename header (Unity's asset header already shows it); byte count moved to one-line miniLabel
+- {date:2026-05-11} {sys:Editor} {type:fix} Switched preview rendering to GUILayout.Label (LabelField clipped multi-line rich text to one line)
+- {date:2026-05-11} {sys:Editor} {type:feature} Word wrap toggle mini-button persisted via EditorPrefs; flips GUIStyle wrap and label width behavior for horizontal scroll
+- {date:2026-05-11} {sys:Editor} {type:adjust} RTF skips fonttbl/stylesheet/info/pict and ignorable destinations; lazy Sync helper guarantees balanced rich-text tags
+- {date:2026-05-11} {sys:Editor} {type:feature} RtfRenderer: parses color table, bold/italic/cf color/plain, par/line/tab, hex and Unicode escapes, group-nesting format stack
+- {date:2026-05-11} {sys:Editor} {type:feature} Configurable tab width IntField in toolbar (EditorPrefs, clamp 1-16); literal tabs expanded to spaces once per cache fill; cache invalidates on change
+- {date:2026-05-11} {sys:Editor} {type:adjust} Inspector preview defaults changed: tab width 4 to 2, word wrap on to off (existing EditorPrefs values persist)
+- {date:2026-05-11} {sys:Editor} {type:fix} codeStyle.richText forced off for plain files so literal b/i/color strings show as source instead of being parsed
+- {date:2026-05-11} {sys:Editor} {type:feature} .txt and .md added to inspector preview via plain-text path sharing toolbar, tab expansion, and cache
+- {date:2026-05-11} {sys:Editor} {type:adjust} Markdown theme: GitHub-ish light/dark palettes keyed off isProSkin
+- {date:2026-05-11} {sys:Editor} {type:feature} MarkdownRenderer initial: ATX headers, bold, italic, inline code, fenced code, links, blockquotes, bullet replacement, horizontal rules
+- {date:2026-05-11} {sys:Editor} {type:adjust} Dead-code cleanup: TextAsset plain-text fallback label and plainStyle removed; every TextAsset goes through unified Draw pipeline
+- {date:2026-05-11} {sys:Editor} {type:fix} Folder guard on IsSupported so DefaultAsset folder inspectors are not intercepted
+- {date:2026-05-11} {sys:Editor} {type:adjust} Dispatch flipped so Highlight is no longer default; IsXml/IsPlain helpers; unknown extensions get rich-text parsing off so literal tags show as source
+- {date:2026-05-11} {sys:Editor} {type:feature} Inspector preview accepts any non-folder asset: json/csv/yaml/log/ini/py/no-extension files show as plain text (200K cap)
+- {date:2026-05-11} {sys:Editor} {type:fix} Fenced-block and inline-code content run DecodeEscapes so backslash sequences render literally; HR detection moved after setext check
+- {date:2026-05-11} {sys:Editor} {type:feature} Fence language label: ```python emits the language above the block in small italic quote color
+- {date:2026-05-11} {sys:Editor} {type:feature} Indented code blocks (4 spaces or tab, after blank line) emitted in code color
+- {date:2026-05-11} {sys:Editor} {type:feature} Setext headers: = underline to H1, - underline to H2; checked before HR rule so Title/--- becomes a heading
+- {date:2026-05-11} {sys:Editor} {type:feature} Images ![alt](src) render as "[image: alt]" in quote color; runs before explicit-link pass
+- {date:2026-05-11} {sys:Editor} {type:feature} Auto-links: bare http(s) URLs colored, negative lookbehind avoids re-coloring URLs already inside explicit links
+- {date:2026-05-11} {sys:Editor} {type:feature} Task lists - [ ] / - [x] render Unicode ballot boxes with indent preserved
+- {date:2026-05-11} {sys:Editor} {type:feature} Strikethrough ~~text~~ via U+0336 combining long stroke overlay (IMGUI has no s tag)
+- {date:2026-05-11} {sys:Editor} {type:feature} Markdown backslash escapes encoded into Unicode private-use range so escaped metacharacters never trigger block or inline rules
+- {date:2026-05-11} {sys:Editor} {type:feature} Footnotes: definition pre-pass, auto-numbered inline refs in reference order, appended Footnotes section; unknown ids left as raw text
+- {date:2026-05-11} {sys:Editor} {type:feature} Smart typography pass: ellipsis, double-hyphen conversion, curly double and single quotes, apostrophes; code spans and escapes exempt
+- {date:2026-05-11} {sys:Editor} {type:feature} Ordered-list alignment: look-ahead finds widest number in a block, pads entries so multi-digit lists line up; block-extent cache avoids rescans
+- {date:2026-05-11} {sys:Editor} {type:feature} Nested blockquotes: leading > markers counted, each level adds a bar glyph and dims one step across three theme slots
+- {date:2026-05-11} {sys:Editor} {type:feature} Markdown GFM highlight ==text== rendered as colored span (mustard light / warm yellow dark)
+- {date:2026-05-11} {sys:Editor} {type:feature} XmlTextAssetInspector declared editorForChildClasses so .cs MonoScript files get the colored source preview
+- {date:2026-05-11} {sys:Editor} {type:adjust} Draw dispatch order: RTF, Markdown, XML, HTML, C#, JS, Shader, CSS, plain; IsRichRendered drives codeStyle.richText automatically
+- {date:2026-05-11} {sys:Editor} {type:adjust} VS palette in light and dark themes picked off EditorGUIUtility.isProSkin for all code highlighters
+- {date:2026-05-11} {sys:Editor} {type:feature} HTML highlighting delegates to XmlSyntaxHighlighter (tag/attribute/comment coloring transfers cleanly)
+- {date:2026-05-11} {sys:Editor} {type:feature} CSS highlighter with context-aware selector/property/value roles via braceDepth + inValue state; comments, strings, at-rules handled
+- {date:2026-05-11} {sys:Editor} {type:feature} CodeHighlighter: shared C-style tokenizer for C#/JS/shader (comments, doc comments, preprocessor, verbatim/interpolated/template strings, numbers, keywords, types)
+- {date:2026-05-11} {sys:Editor} {type:feature} Inline HTML conversion: br, strong/b, em/i, code, a href, s/strike/del, h1-h6; other tags stripped with lookahead protecting emitted IMGUI tags
+- {date:2026-05-11} {sys:Editor} {type:feature} Reference-style links [text][id] and [text][] with definitions collected in the footnote pre-pass
+- {date:2026-05-11} {sys:Editor} {type:feature} Markdown tables (GFM pipe syntax): per-column width measurement, alignment from separator row, box-drawing cell separators, bold header cells
+- {date:2026-05-11} {sys:Editor} {type:adjust} XmlDefaultAssetInspector ShouldHandle skips folders so folder inspectors are not intercepted
+- {date:2026-05-11} {sys:Editor} {type:feature} Shader and ComputeShader source inspectors added; .shader defaults to FoldoutAbove so Unity's compile pane stays reachable
+- {date:2026-05-11} {sys:Editor} {type:feature} SourcePreviewSettings UI under Tools/UFOS: per-extension mode popup + Reset, custom "Add ext" row, global foldout-state toggles
+- {date:2026-05-11} {sys:Editor} {type:feature} SourcePreviewWindow floating EditorWindow: right-click Assets/Source Preview on any supported asset; Tools/UFOS menu entry; header path + Ping button
+- {date:2026-05-11} {sys:Editor} {type:adjust} SourcePreviewInspectorBase abstract Editor: all asset inspectors derive from it and inherit mode dispatch, foldout headers, and default-editor delegation
+- {date:2026-05-11} {sys:Editor} {type:feature} DefaultEditorWrapper resolves Unity internal inspectors by name convention via CreateEditorWithContext, avoiding recursion into our own CustomEditor
+- {date:2026-05-11} {sys:Editor} {type:feature} SourcePreviewMode: InspectorMode enum (Override/FoldoutAbove/FoldoutBelow/None) with per-extension EditorPrefs storage; shader family defaults FoldoutAbove
+- {date:2026-05-11} {sys:UmlWindow} {type:infra} Hand-authored Test.UMLDiagram.xml CVB sample exercising every parse branch including unknown sym:Symbol sibling for preserve testing
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} ParseAsCvb walks proto:Class then proto:Relationship; DisplayName/Property/Method/Inherits mapped; nos:x/y/width/height populate class rect
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} IsCvbUmlRoot detects nexus xmlns on UMLDiagram; forceXaml and heuristic branches route to ParseAsCvb; legacy unprefixed files keep ParseAsCustom
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} New window fields isCvbDiagram, shadowDoc, declaredXmlns dict plus nexus namespace URI constants
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CVB Phase 1: MemberEntry/UmlClass/UmlRelationship gain XmlElement back-refs; WithVis/WithText copy the link through value-copy round-trips
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} GenerateXmlString routes to GenerateCvbXmlString when isCvbDiagram; Save/Export/GetSaveContent pick it up automatically
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CvbSerialize via XmlWriter with 2-space indent and UTF-8; preserves xml prolog
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} SplitNameAndType / SplitNameAndReturn parse rendered "name : type" and "name() : ret" strings back into structured fields
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CvbReflectRelationship writes from/to/kind plus optional label/multiplicities; drops legacy type attr for consistent CVB shape
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CvbReflectClass rebuilds known class children in canonical order (DisplayName, Property, Method, Inherits); unknown children stay in place
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CvbReflectAll single-pass sync: creates elements for new model objects, removes deleted proto:Class/Relationship, keeps UMLDiagram name attr in sync
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CVB Phase 2: GenerateCvbXmlString round-trip write path; unknown content (prolog, comments, foreign-namespace siblings) preserved
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Title-bar menu gains "Manage Namespaces" when isCvbDiagram is true
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Namespace Add appends xmlns declaration directly to shadow doc root and marks content dirty so next save persists it
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Namespace Remove disabled while any element or attribute in the shadow doc still references the URI (full doc walk)
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CVB Phase 3: Namespaces panel with declared-on-diagram list and catalog list grouped by bundle; polls catalog load on main thread
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} NamespaceCatalog.cs: lazy async WebGL-safe load; parses presentation and nexus bundles into NamespaceEntry records; FindByPrefix/FindByUri/ByBundle/RegisterCustom
+- {date:2026-05-11} {sys:UmlWindow} {type:infra} Moved namespaces.xml catalog from StreamingAssets/Nexus.Tests to StreamingAssets/Xml/Namespaces
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} SymbolTable.cs static singleton loader (WebGL-friendly UnityWebRequest); Lookup and AllForPrefixes accessors; Symbol.QName
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CVB Phase 4: curated common-symbols.json (14 entries: x: CLR primitives + p: visual types) for the Intellisense picker
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} CreateTypeDropdown short-circuits to CVB typeahead picker when isCvbDiagram; legacy diagrams keep DropdownField flow unchanged
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} EnsurePrefixDeclared auto-imports the picked symbol's xmlns onto the shadow doc root with a toast making the implicit mutation visible
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} OpenCvbTypePicker builds items from SymbolTable filtered by declared xmlns plus current diagram class ids; polls SymbolTable.IsLoaded before showing
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} onCommitRaw fires on Enter with no matching row so users can type custom non-catalog types
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Typeahead row layout: cyan bold prefix, white name, dim grey doc string
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Typeahead keys: letters/digits/:/_/./</> filter, Backspace, up/down selection, Enter commits, Esc or click-outside cancels
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Typeahead captures keystrokes at panel root via KeyDownEvent (WebGL-safe, no TextField), mirroring ModalInputField approach
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CVB Phase 5: IntellisensePopupManager static singleton; floating typeahead list anchored under any element on the overlay layer
+- {date:2026-05-11} {sys:Editor} {type:infra} New Tools/UFOS/Test UML Round-Trip menu: loads Test.UMLDiagram.xml, serializes, re-parses, verifies class and xmlns counts match
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} CVB Phase 6: XML side panel auto read-only for CVB diagrams; Apply hidden; status reads "Raw (read-only)" to preserve live xmlElement back-refs
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespace row layout tightened: overflow Hidden, flexShrink 0 on prefix and buttons, ellipsis-clipping URI labels so Remove button stays visible
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Loaded and attached UmlWindow.uss to Namespaces panel and Intellisense popup overlays to replace Unity default chunky scrollbars
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Same uml-scroll-view class added to IntellisensePopupManager popup ScrollView
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Scrollbar fix take 2: AddToClassList("uml-scroll-view") on Namespaces panel ScrollView so scoped UmlWindow.uss rules actually match
+- {date:2026-05-11} {sys:Docs} {type:docs} Memory feedback_scrollbar_style updated: Xml Window Styles.uss is the canonical project-wide scrollbar stylesheet for new overlays
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} IntellisensePopupManager stylesheet switched to Xml Window Styles (global unscoped selectors); dropped failed uml-scroll-view class attempt
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Compact namespace rows: 24px tall, 11px prefix, 10px URI, 60x18 action button
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Chevron expands per-prefix symbol sub-list from SymbolTable (name column + doc) so users see contents before adding
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Single combined namespace list: declared (highlighted) first, then catalog grouped by bundle; per-row Remove / In use / Add state button
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespaces panel loads Xml Window Styles.uss so unscoped rules give it the thin NOS scrollbar automatically
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespaces panel rebuilt as HelpWindow-style 460x520 floating draggable panel; no full-screen dim; slim 24px title bar with X close
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} "Manage Namespaces" added to hamburger options menu and canvas right-click menu, gated by isCvbDiagram
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Removed "Manage Namespaces" from title-bar right-click menu
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} BuildUriPair splits URI at last slash: dim grey path with left-ellipsis, white terminal with flexShrink 0; full URI on tooltip
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} "Restore:" chip strip in Namespaces panel; clicking a chip re-adds the removed prefix and pops the stash
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Namespace recovery flow: namespacesRecentlyRemoved stash (up to 6, MRU) pushed before delete; auto-pruned on re-declare
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} URI gap fix: two-label path/terminal pair replaced with single RichText label, killing phantom ellipsis-glyph gap; left-truncates when narrow
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Namespaces panel resize: eight hit-zones (12x12 corner grips, 4px edge strips); left/top edges anchor opposite side during drag
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespaces panel default size raised to 720x560 (was 460x520) with minWidth 420 / minHeight 280 clamps
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespaces panel resize handles set 8-way directional cursors via CursorManager on hover
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Dim path color moved to the label's base style so start-truncation can't chew into the inline color tag
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} URI font doubled to 20px with left-truncation keeping the terminal segment always visible
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespaces panel default width halved to 360px with 280px minimums
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} New uml-ns-highlight USS rules: cyan-teal border on highlighted nodes, transparent wash on member rows
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Active highlight prefix pill tinted soft green; removed-prefix restore stash no longer capped at 6
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Member hover tooltips summarize element namespace and type prefix with URIs in CVB mode
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Clicking a prefix in Manage Namespaces highlights every class/member using it (toggle), surviving graph rebuilds
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Namespace URI font size dropped to 14px
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Namespace URI display rebuilt as a two-label CSS left-clip; rich-text truncation was breaking color tags and bleeding colors
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Mode chip refreshed after every parse so load/import mode transitions show immediately
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Legacy-to-CVB converter seeds a shadow doc and xmlns bundle, humanizes GUID class ids, reflects the model, toasts to save
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Mode popup shows an at-a-glance capabilities matrix (edit, picker, round-trip, ...) plus a conversion footer
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Title-bar mode chip (CVB green, XAML amber, Legacy grey) with a click-to-open capabilities popup
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} DiagramMode gains XamlWrapper; popup adds a "Saves as" row; ConvertToCvbStrip/ConvertToLegacyXml/ConvertToXamlWrapper actions
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} wrapAsXaml flag saves diagrams inside a Grid XAML envelope as .xaml; parse detects and round-trips the envelope
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Convert submenu (To CVB UML / To Legacy XML / To XAML Wrapper) in hamburger and canvas menus, no-op targets disabled
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Picker commits and xmlns add/remove rebuild the graph UI so warning state stays in sync across all rows
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Type-prefix schema validation: inline warning glyph on CVB types referencing undeclared xmlns prefixes
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Fresh diagrams initialize as CVB with namespaces and type picker enabled, no dirty marker or manual conversion step
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} .uml-node overflow hidden clips chrome on narrow resize; class titles ellipsize instead of wrapping
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Warning badge switched to an orange "!" pill; the U+26A0 glyph isn't in the project font and rendered blank
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Closed-namespace name validation: x: locals checked against SymbolTable so x:banana warns with allowed types listed
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Warning badge moved before the type dropdown so narrow class resizes don't clip it off the right edge
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Validation tooltips made multi-line and explicit with fix instructions for all three failure kinds
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Unprefixed type values validated against LegacyPrimitives and in-diagram class ids; typos like Int322 now warn
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Validation badge tooltips moved to the two-level RegisterMemberTooltip hover system with per-kind titles and fix guidance
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Picker filter gains a visible blinking caret with Left/Right/Home/End/Backspace/Delete and insert-at-caret typing
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Picker surfaces unprefixed global primitives (int, string, bool, ...) mirroring the validator's LegacyPrimitives set
+- {date:2026-05-11} {sys:UmlWindow} {type:adjust} Caret blink toggles backgroundColor only so no flex relayout fires on every blink
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Picker caret positioned via a hidden UITK measure label, replacing IMGUI font metrics that drifted across the text
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} Picker caret row height stabilized with a zero-width-space prefix so the caret doesn't ride up at position 0
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Namespaces panel shows Curated and In-this-diagram symbol sections; empty namespaces get an explanatory message
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Type picker appends harvested in-diagram classes, deduped by QName, stamped "in this diagram"
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} SymbolHarvest walks the doc for named entities, classifying class/property/method with owning-class attribution
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} "+ Add custom xmlns" inline panel form with prefix/URI fields, persist checkbox defaulting on, duplicate-prefix guards
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} LoadUserOverlayAsync merges the per-user overlay after the global file; global wins conflicts, 404 is silent
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} RegisterCustom(persist) tags user-bundle entries and rewrites the overlay asynchronously; RemoveUserEntry paired save
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Custom xmlns declarations persist per-user via a GitHub-backed overlay file, reusable across diagrams and sessions
+- {date:2026-05-11} {sys:WindowBase} {type:feature} WebGL mobile keyboard opens multiline per session; paste normalizes CRLF and collapses newlines in single-line mode
+- {date:2026-05-11} {sys:WindowBase} {type:feature} 2D multiline caret and per-line selection strips via UpdateMultilineCaretPosition and LineStartFor/LineEndFor helpers
+- {date:2026-05-11} {sys:WindowBase} {type:feature} Multiline in-place editing: multiline flag, Enter inserts newline, Up/Down navigate lines preserving column offset
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Palette-style right-click type picker: cascading submenu per declared xmlns prefix with primitives and harvested symbols
+- {date:2026-05-11} {sys:UmlWindow} {type:feature} Picker filter selection range: Shift+arrows/Home/End extend, Ctrl/Cmd+A/C/X/V, typing replaces selection, tinted bar overlay
+- {date:2026-05-11} {sys:UmlWindow} {type:fix} NamespaceCatalog overlay reload made username-aware; RefreshOverlayIfUserChangedAsync re-fetches when the user changes
+
+### 2026-05-12
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Self-contained GIF87a/89a decoder (full LZW, disposal methods, interlace, loop count) powers animated preview with play/pause
+- {date:2026-05-12} {sys:AnyFilePreview} {type:fix} Scrub keeps tracking outside the preview rect via the proper hotControl pattern plus forced repaint
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} GIF scrub: horizontal click-drag seeks frames with a slide cursor, pauses, parks on release; Play resumes the clock
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Aspect ratio appended to the info line, GCD-reduced with a decimal fallback for awkward ratios
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Checker pattern now Unity's own pixel-for-pixel via a transparent 1x1 through DrawTextureTransparent
+- {date:2026-05-12} {sys:AnyFilePreview} {type:fix} Multi-select duplication fixed: OnPreviewGUI draws per target; DrawPreviewGrid and GetPreview removed
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Scrub bar overlaid at the bottom of animated previews showing loop position, a clear click-drag target
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} DetectAlpha scans pixels so the toolbar adapts RGB vs RGBA to actual alpha content, aggregated across multi-select
+- {date:2026-05-12} {sys:AnyFilePreview} {type:fix} All-channels-off short-circuits to a solid black fill, bypassing a preview-pipeline blend quirk that rendered white
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Channel filter promoted from radio to independent toggles via a _ChannelMask vec4; combos like R+G and R+A work
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Checker/black background clipped to the image's centered fit-rect rather than the full preview pane
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Channel visuals matched to TextureImporter: per-channel color with alpha, SrcAlpha blend, checker for RGB, black fill for A
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Channel-filter shader plus RGB|R|G|B|A toolbar in the preview pane header; selection persists across selections
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Info string shows WxH, format, and size in Unity's style; preview title shows the filename or "N files"
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Multi-select preview grid with thumbnail plus filename per cell; CanEditMultipleObjects enabled
+- {date:2026-05-12} {sys:AnyFilePreview} {type:feature} Image preview for DefaultAssets (e.g. StreamingAssets images) with Unity's checkered alpha-aware background
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} XmlInspectorPreview renamed FileInspectorPreview with drawer/inspector class renames; EditorPrefs keys preserved
+- {date:2026-05-12} {sys:Editor} {type:fix} BackgroundManifestGenerator writes the manifest only when content differs, breaking the mtime-mismatch import-error loop
+- {date:2026-05-12} {sys:AnyFilePreview} {type:infra} Six source-preview files grouped into a dedicated Scripts/Editor/AnyFilePreview/ subfolder with .meta companions
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Menu items moved to Tools/Any File Preview/; EditorPrefs keys, singleton asset path, window titles, log prefix renamed
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Rename pass: SourcePreview/FileInspectorPreview files and classes renamed to the AnyFilePreview family, GUIDs preserved
+- {date:2026-05-12} {sys:AnyFilePreview} {type:adjust} Project-agnostic rename: namespace to AnyFilePreview; shader id and EditorPrefs keys drop the NOS prefix
+- {date:2026-05-12} {sys:AnyFilePreview} {type:infra} Promoted to a drop-in asset at Assets/AnyFilePreview/Editor/ with folder GUID preserved
+- {date:2026-05-12} {sys:AnyFilePreview} {type:fix} All-channels-off shows black on opaque images too: effective A computed from showA and the asset's HasAlpha flag
+
+### 2026-05-13
+- {date:2026-05-13} {sys:AnyFilePreview} {type:feature} JSON tree view with per-path foldout cache, backed by a self-contained ~150-line TinyJson parser
+- {date:2026-05-13} {sys:AnyFilePreview} {type:feature} Inline search-match highlighting (yellow, orange for the focused match) injected without splitting syntax tags
+- {date:2026-05-13} {sys:AnyFilePreview} {type:feature} Cmd/Ctrl+F search bar with match counter, Enter/Shift+Enter navigation, Esc close, scroll-to-match centering
+- {date:2026-05-13} {sys:AnyFilePreview} {type:feature} Save Frame button exports the current animated frame to PNG, with AssetDatabase refresh when saved inside Assets
+- {date:2026-05-13} {sys:AnyFilePreview} {type:feature} Pixel inspector: hover readout of (x,y) RGBA and hex for the texel under the cursor, live repaint
+- {date:2026-05-13} {sys:WindowBase} {type:feature} Horizontal scroll position persisted: WindowStateData.scrollX, dirty tracking on pan, per-axis restore with shared retry cap
+- {date:2026-05-13} {sys:Editor} {type:infra} StandaloneFileBrowser and the four WebGL jslibs moved under UFOS/Plugins with GUIDs preserved, zero code edits
+- {date:2026-05-13} {sys:Editor} {type:infra} Assets/Resources moved to UFOS/Resources; 13 USS url() references and 3 C# path constants updated
+- {date:2026-05-13} {sys:Editor} {type:infra} All third-party plugin folders consolidated under Assets/ThirdParty/; empty Plugins folder deleted, no code changes needed
+- {date:2026-05-13} {sys:Editor} {type:infra} Deleted unused StandaloneFileBrowser Sample demos; removed a stray NUnit using from WindowBase.cs
+- {date:2026-05-13} {sys:Editor} {type:infra} UFOS, UFOS.Editor, and QRCodeShare asmdefs isolate NOS code from Assembly-CSharp for faster recompiles and tighter stripping
+- {date:2026-05-13} {sys:ScreenRecorder} {type:fix} Patched 6 hardcoded VoxelBusters install paths for the ThirdParty/ location, fixing the WebGL build crash
+- {date:2026-05-13} {sys:Misc} {type:adjust} MinimizeIcon and Vortex renamed to Button_* with USS refs updated; GUIDs preserved via .meta moves
+- {date:2026-05-13} {sys:Misc} {type:adjust} Icon-rename sweep: 25 string references across 9 files updated for Button_/Indicator_ prefixed icons (USS + Resources.Load)
+- {date:2026-05-13} {sys:Misc} {type:infra} Editor GIF path compile-time stripped from WebGL builds where the browser decoder stays canonical
+- {date:2026-05-13} {sys:Misc} {type:feature} ImageDecoder animated-GIF pipeline for Editor/standalone mirroring the WebGL shape: shared texture, CopyTexture frame swaps
+- {date:2026-05-13} {sys:Misc} {type:feature} Runtime GifDecoder (GIF87a/89a) compiled for every platform, copied from the AnyFilePreview editor decoder
+
+### 2026-05-14
+- {date:2026-05-14} {sys:AppRegistry} {type:fix} RestoreInstances heals duplicate/empty instanceIds with fresh GUID suffixes; dock icons no longer silently dropped on cold start
+- {date:2026-05-14} {sys:AnyFilePreview} {type:adjust} CDATA split into meta-gray delimiters and text-colored content; unterminated CDATA tails render as text
+- {date:2026-05-14} {sys:AnyFilePreview} {type:fix} Markup files rendered empty in raw mode; source escaped with zero-width spaces before SelectableLabel
+- {date:2026-05-14} {sys:AnyFilePreview} {type:fix} Longest-line scan replaces unreliable CalcSize for multi-line width measurement in raw mode
+- {date:2026-05-14} {sys:AnyFilePreview} {type:fix} No-wrap raw mode sizes the label to content width so horizontal scrolling and drag panning work
+- {date:2026-05-14} {sys:AnyFilePreview} {type:feature} Raw text mode: selectable literal-bytes view, persisted with Undo, bypasses JSON tree and search highlighting
+- {date:2026-05-14} {sys:AnyFilePreview} {type:adjust} Tree foldout state cached per path; viewMode defaults to Color and the JSON implicit-Tree default is removed
+- {date:2026-05-14} {sys:AnyFilePreview} {type:feature} XML/XAML/XSD/HTML tree view: XmlReader fragment parse, foldouts with inline attrs, CDATA blocks, themed comments and PIs
+- {date:2026-05-14} {sys:AnyFilePreview} {type:feature} File-type label (XML, C#, JPEG, ...) before the byte count; ~35 extensions mapped with an .EXT fallback
+- {date:2026-05-14} {sys:AnyFilePreview} {type:feature} View-mode segment Color|Raw|Tree backed by a persisted enum with Undo support; Tree disabled for non-hierarchical files
+- {date:2026-05-14} {sys:Editor} {type:infra} XsdAssetPostprocessor regenerates sidecar indexes automatically on XSD import, move, and delete
+- {date:2026-05-14} {sys:Editor} {type:infra} Tools/UFOS/Inspect Schema Registry menu for a synchronous sanity-check reload and summary dialog
+- {date:2026-05-14} {sys:Editor} {type:infra} Tools/UFOS/Build XSD Index menu: indexes every XSD, rebuilds the WebGL manifest, cancelable progress bar, result summary
+- {date:2026-05-14} {sys:Editor} {type:infra} XsdIndexer indexes every reachable XSD element/attribute with documentation, via a diff-friendly custom JSON emitter
+- {date:2026-05-14} {sys:UmlWindow} {type:infra} SchemaRegistry static lookup with editor Directory scan plus WebGL manifest fetch; GetForRoot/GetElement/GetAttribute API
+- {date:2026-05-14} {sys:UmlWindow} {type:infra} SchemaRegistryTypes: serializable XsdIndex/XsdElementDef/XsdAttrDef shapes for sidecar JSON files
+- {date:2026-05-14} {sys:UmlWindow} {type:adjust} declaredXmlns became a computed property off the shadow doc; seven consumer sites refactored, dict mutations removed
+- {date:2026-05-14} {sys:UmlWindow} {type:feature} XmlScope utility: lexically-scoped xmlns resolution with InScopeXmlns, DefaultNamespaceAt, ResolveQName
+- {date:2026-05-14} {sys:UmlWindow} {type:feature} Open-As popup (CVB / XAML / Plain XML, remember-per-file via PlayerPrefs); built but not yet auto-invoked
+- {date:2026-05-14} {sys:UmlWindow} {type:adjust} Mode chip labels refined: CVB:classes/model/enterprise variants, XAML/CVB combo label, honest Unknown label
+- {date:2026-05-14} {sys:UmlWindow} {type:feature} ParseXml stores the classification on docClass with a diagnostic log entry per classification
+- {date:2026-05-14} {sys:UmlWindow} {type:feature} Classifier detection order: XAML wrapper unwrap, legacy tag, XAML projection, SchemaRegistry root lookup, then Unknown
+- {date:2026-05-14} {sys:UmlWindow} {type:feature} CvbFormatClassifier sniffs loaded docs into a DocClass enum covering the CVB family, legacy, XAML kinds, and Unknown
+
+### 2026-05-15
+- {date:2026-05-15} {sys:UmlWindow} {type:adjust} All parser branches (Gestalt, Custom, XMI, Enterprise, Gorp, CVB, SAI import, XAML) routed through SetParsedTitle
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} SetParsedTitle preserves the opened icon's name; parser-derived titles no longer rename desktop icons
+- {date:2026-05-15} {sys:Desktop} {type:feature} Green + badge toggles on PointerMove when hovering an Open-With-eligible target during non-image drags
+- {date:2026-05-15} {sys:Desktop} {type:feature} TryOpenWithDrop reuses LaunchDesktopIconWithDef so transient AppInstance creation stays unified; dock targets excluded
+- {date:2026-05-15} {sys:Desktop} {type:feature} Drag-drop Open With: drop a file icon on a handler app icon (desktop or AppsGallery) to open the file in that app
+- {date:2026-05-15} {sys:Desktop} {type:adjust} Drag ghost shows a blue arrow badge over Open-With-eligible targets, distinct from the green + merge/pin badge
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} Dropped text files pre-fill the chat input with fenced file content plus a "My question:" prompt and caret
+- {date:2026-05-15} {sys:Desktop} {type:adjust} Open-With eligibility computed unconditionally on PointerMove so the arrow badge shows during image drags too
+- {date:2026-05-15} {sys:Desktop} {type:feature} Image dropped on Chat or ImageWindow icons routes to Open-With (open as content) instead of icon-override
+- {date:2026-05-15} {sys:Desktop} {type:feature} Open-With eligibility falls back to content-kind: text windows accept text extensions, ImageWindow/Chat accept images
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Namespace utilities: NamespaceLeaf/Parent split, StripPrefix, CollectXsdElementChildren member flattening
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} ParseGestalt forwards classes/algorithms children so gestalt files render a class-with-methods canvas
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} XSD parser: complexTypes become classes, elements/attributes become members, extension maps to Generalization
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Parser for the model shape as a single class node placeholder carrying variables
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Parser for algorithms: attaches methods to matching classes or floats standalone Algo nodes with Input/Output rels
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Parser for the classes root shape: flat list of namespaced classes with variables and inherits
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} EnsureLayoutAfterParse runs AutoLayout when every parsed class sits at origin (SAI shapes carry no layout)
+- {date:2026-05-15} {sys:UmlWindow} {type:infra} Diagnostic breadcrumb logs for Gorp parse and layout (match counts, coords) to triage future "no visuals" reports
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} Force-directed layout translates the bounding box to (60,60) so small diagrams aren't rendered offscreen
+- {date:2026-05-15} {sys:Desktop} {type:feature} Image-drag drop checks open ChatWindows before the icon-target and Open-With fallbacks
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} messageHistory records an "[N image attachment(s) sent]" marker so saved markdown logs the fact
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} Image-only sends allowed; attachment strip snapshotted and cleared atomically per send
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} Base64 ImagePayload array added to provider requests; Gemini, OpenAI, and Anthropic paths all forward images
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} Attachment thumbnails with corner x remove; user bubbles show inline preview rows for sent attachments
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} ReceiveImageDrop + FindAtPosition route a drop on an open chat body into that chat's attachment strip
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} TryAttachImageFromAppInstance attaches on open via FileBytes or Worker fetch; binary-only formats fall back to a filename label
+- {date:2026-05-15} {sys:ChatWindow} {type:feature} Image attachment strip above the chat input, hidden when empty
+- {date:2026-05-15} {sys:Editor} {type:fix} Rewrote stale project://database UXML/USS paths in 56 vendor files across 4 vendors after the ThirdParty move
+- {date:2026-05-15} {sys:Desktop} {type:feature} Image-drag PointerUp consults ImageWindow.FindAtPosition so drops on open galleries append instead of overriding
+- {date:2026-05-15} {sys:ImageWindow} {type:adjust} Active thumbnail gets a 2px blue border; gallery swaps use BindAnimated so animated formats keep playing
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} AttachPrimaryTexture late-binds the primary thumbnail once the async image loads resolve
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} FindAtPosition returns the topmost open ImageWindow under the cursor for Desktop drag routing
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} ReceiveImageDrop resolves dragged bytes via FileBytes or Worker RequestImage, auto-switching to the new image
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} Primary gallery entry anchored at index 0 and non-removable; later entries get a corner x remove button
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} Multi-image gallery: drop an image on an open ImageWindow to append a bottom thumbnail strip, click to swap main view
+- {date:2026-05-15} {sys:AnyFilePreview} {type:adjust} 3-button view segment replaced by a single cycle button; Tree skipped from the cycle for non-hierarchical formats
+- {date:2026-05-15} {sys:AnyFilePreview} {type:fix} Tree view rendered HTML entities literally; switched to zero-width-space defang and simplified EscapeRich
+- {date:2026-05-15} {sys:Desktop} {type:feature} IsImageMergeEligible check surfaces the blue arrow ghost badge during image-on-image-icon hover
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} FindOpenForInstance routes the drop straight into an already-open target window without duplicating
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} pendingDrops queue pre-stages a drop before the target window spawns; drained and appended on window create
+- {date:2026-05-15} {sys:ImageWindow} {type:feature} Dropping an image icon on another image icon merges into a multi-image window instead of destructive icon-override
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} NormalizeMarkupText strips a leading UTF-8 BOM before XmlDocument.LoadXml, fixing "Gorp.Algorithm parses to nothing"
+- {date:2026-05-15} {sys:UmlWindow} {type:adjust} GenerateXmlString dispatches on cvbShape; Convert-to-CVB and fresh-seed paths simplified with no async xmlns wait
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} TryApplyStateCommentLayout restores per-class rects from the comment; covered classes skip AutoLayout
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} CvbShape enum (Legacy/Flat); parse routing sets the shape and EnterFlatCvbMode marks Flat docs for the writer
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Minimal inline JSON emitter for the state comment, no Newtonsoft dependency, invariant-culture floats
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Methods emit as algorithm elements namespaced ClassNs.methodName with output model from the return type
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Generalization rels emit as inherits elements; "name : type" attributes split into variable name/type for clean round-trip
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Bare-classes mode: the gestalt wrapper is only emitted when at least one class has methods
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} GenerateFlatCvbXmlString builds a fresh XmlDocument per save with no shadow-doc bookkeeping
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Editor state (per-class rects, title, focus, minimap) round-trips via a nos-uml-state JSON comment external tools ignore
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} CVB diagrams save in flat SAI shape (gestalt/classes/algorithms) by default, matching the external CVB toolchain
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Legacy CVB files auto-migrate to Flat shape on load with dirty mark + toast; close-without-save keeps the legacy file
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} BeginReferenceCacheScan runs after every successful ParseXml so external refs resolve while the user reads
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} HasDefinitionBody distinguishes definitions from leaf refs; LookupReference/CachedReferences API, purged on destroy
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Per-window reference cache background-loads external namespaces from StreamingAssets/Xml/SAI/{ns}.xml
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} LabelForElement disambiguates same-name siblings by appending x:Name/name/namespace/id in brackets
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Manage Namespaces gains a Nested xmlns section grouped by declaring element with breadcrumb paths, hidden when empty
+- {date:2026-05-15} {sys:UmlWindow} {type:adjust} ScheduleXmlSync refreshes only the visible panel view to avoid regenerating XML for a hidden surface
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} BuildTreeNode compact one-line leaves, collapse arrows, mirrored closing-tag rows, green comments, whitespace skipped
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Raw/Tree toggle button in the panel header; both views read the same live diagram-derived XML
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} XML side panel gains a Tree view: indented expand/collapse hierarchy with syntax coloring, now the default view
+- {date:2026-05-15} {sys:UmlWindow} {type:adjust} Wrap, Format, and Apply buttons hidden in Tree mode where text editing is meaningless
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} Raw toggle button no longer shows the word-wrap background icon; switched to inline chip styles
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} Stale "Raw (read-only)" status cleared; Tree mode stamps its own status label on every transition
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} Tree attribute tokens no longer mash together; MakeSpaceLabel returns a fixed-width 5px spacer element
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} External picker entries carry "from {file}.xml" so the source file is visible in the intellisense popup
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} CVB type picker merges external cached SAI definitions, deduped by QName so local symbols shadow external ones
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Unknown-classified files auto-open the side panel in Tree mode at min 500px width, once per window
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} Legacy CVB files without nos:x/y now default to origin so AutoLayout runs instead of stacking classes at (100,100)
+- {date:2026-05-15} {sys:UmlWindow} {type:adjust} Member tree matches scoped to the correct class ancestor so same-named attributes elsewhere don't tint
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Tree rows tagged uml-tree-row with XmlElement userData for O(rows) selection sweeps without rebuilds
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Shape-aware tree matchers ElementMatchesClass/Member/Relationship cover all three persisted diagram shapes
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Tree view tints the row for the canvas selection (class blue, member purple, relationship green) and scrolls it into view
+- {date:2026-05-15} {sys:UmlWindow} {type:adjust} Raw view inner text input set to PickingMode.Position so click, drag-select, Cmd+A work in read-only mode
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} GetClassSourceSearchTerm shape dispatch; BuildXmlClassLineRanges handles self-closing Flat CVB classes
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Raw caret click or arrow movement selects the enclosing class on the canvas; same-class no-ops suppressed
+- {date:2026-05-15} {sys:UmlWindow} {type:feature} Tree row click now selects the matching class/member/relationship on the canvas with downstream sync
+- {date:2026-05-15} {sys:UmlWindow} {type:fix} Raw view selection highlight made shape-aware across Flat CVB, Legacy CVB, and Legacy UMLDiagram tag forms
+
+### 2026-05-16
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Canvas group drag: pointer delta moves every selected class; combined bounds drive canvas expansion
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} 80ms caret-polling loop with change signature replaces unreliable PointerUp for raw drag-select sync
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Raw drag-select spanning multiple classes populates the multi-selection with the first hit as primary
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Raw line indicators paint dimmer cyan for secondary multi-selected classes, bright cyan for the primary
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} ToggleClassSelection Ctrl/Cmd-click semantics with primary fallback when the primary is deselected
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Shared selectedClassIds set drives multi-select across canvas, tree, and raw views
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Raw caret sync registered on inner unity-text-input with 20ms delay so the caret index is populated before read
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Tree member click passes the bare member name from ExtractMemberName instead of the "name : type" label
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} EscapeRich now replaces embedded angle brackets in attribute values and text leaves too
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} XML tree brackets use lookalike U+2039/U+203A so Unity 6 rich text stops HTML-escaping element names
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} Popup activator rect captured via GetRect + GUI.Button; GetLastRect returned a stale rect during the click event
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Vertical slider snaps to 0.05 and repaints all views live per tick
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Inline horizontal Size slider replaced with a Size button + vertical slider popup, ~70px toolbar savings
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Popup right-aligned onto the Size button via GUIToScreenRect; live multiplier readout floats at the slider thumb
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Size popup rebuilt as a borderless EditorWindow dropdown since PopupWindow chrome cannot be suppressed
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Reset restores the scale captured when the slider opened, tooltip shows it; overlay shifted below the Size button
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Slider readout follows the thumb with a faux text outline; outside click or Esc closes without consuming the click
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Size slider drawn inline as an inspector overlay; ScalePopupWindow removed, no window chrome at all
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} TryLoadOSFont adds render-path glyph probe so bad OS fonts (Courier Bold) fail at load and fall back to mono candidates
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} uml-class-bundle-v1 clipboard signature gates paste so non-UML clipboard content isn't parsed
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Esc clears selection; Delete/Backspace removes selected classes plus any referencing relationships
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Cmd/Ctrl+X cut, Cmd/Ctrl+V paste (id regen, unique names, +20px offset), Cmd/Ctrl+D duplicate
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Cmd/Ctrl+C copies selected classes to the system clipboard as a JSON ClipboardBundle with in-memory mirror
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Cmd/Ctrl+A selects all classes
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Shift+drag marquee select on canvas with translucent cyan rect; Ctrl/Cmd during drag makes it additive
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Member highlight helpers iterate the multi-selection list instead of a single container
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Ctrl/Cmd-click toggles member selection on canvas attribute/method rows and tree rows
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Member multi-select: MemberKey + selectedMembers HashSet shared across canvas and tree views
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Tree-view drag-select: sweep rows to union classes and members into selection, additive Ctrl carries prior selection
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Undo/redo hotkeys: Cmd/Ctrl+Z undo, Cmd/Ctrl+Shift+Z redo, Cmd/Ctrl+Y redo (Windows convention)
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Format conversions and SAI/XAML imports excluded from undo (suppress flag + history reset)
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Undo captures on MarkContentDirty; ResetUmlUndoHistory reseeds a clean baseline on document replacement
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} 50-deep snapshot undo/redo stack over classes and relationships (new UmlWindow.UndoRedo.cs partial)
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Collapsed-caret guard stops raw multi-select collapsing to a single class on mouse release
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Cmd/Ctrl+Z registered on both window and mainView with StopImmediatePropagation so focused elements can't eat it
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Tree drag stores the XmlElement and re-resolves rows by userData so mid-drag rebuilds don't kill selection
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Marquee gate changed to plain left-drag on empty canvas; Shift+drag was undiscoverable
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Raw drag-select multi-selects members via CollectMembersInRawRange line matching
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Tree drag-select rewired through mainView PointerMove; ScrollView pointer-capture was subverting it
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Marquee intersection extended to members and relationship midpoints; selectedRelationships HashSet added
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Marquee now selects live on every PointerMove, rebuilding from a baseline so dragging off a node drops it
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} ApplyTreeBoxSelection selects classes, attributes, and methods whose worldBound Y-range overlaps the box
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Tree-pane Y-range box-select: trickle-down pointer down, 4px drag threshold, translucent cyan overlay, additive Ctrl
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} codeStyle marked NonSerialized to silence "Deleting invalid font reference" warnings on script reload
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} ParseStateCommentRels reads rels block back without Newtonsoft; restore filters missing endpoints and dedups
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Flat CVB save no longer silently drops non-inheritance relationships; round-tripped via nos-uml-state "rels" array
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} xmlViewMode (Tree/Raw) persisted in UmlWindowState so the user's view choice survives reload
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} XML panel reopens on restore: schedule hangs off mainView instead of a null xmlPanel
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Marquee intersection switched to worldBound screen-space tests, fixing wrong member picks in CVB mode
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Cmd+Z focus filter walks focus chain for a TextField ancestor; focusing plain Labels no longer suppresses undo
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Undo/Redo entries added to hamburger and canvas context menus, disabled-gated on stack state
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Tree Shift+click range select via ApplyShiftClickRange; anchor stays fixed so consecutive Shift+clicks grow the range
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Shrinking a raw drag-select now deselects swept-out members (selection set reset on every poll)
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Raw text multi-select of Flat CVB methods: search term switches to namespace="Cls.M" via owningClass parameter
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Every selection writer and highlight reader now computes and filters by the full occurrence-aware member key
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Occurrence helpers: ComputeMemberOccurrence, ComputeXmlMemberOccurrence, FindMemberIndexByOccurrence map model and tree sides
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} MemberKey gains occurrence index so duplicate-named members no longer share selection
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Raw-text click on non-class line now clears canvas/tree selection (empty hits treated as explicit deselect)
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Removed racing row-to-row tree drag handler; box-select is now the only tree drag mechanism
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Tree shift-click anchor switched from XmlElement ref to display-order treeAnchorIndex so anchor survives tree rebuilds
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Raw-text selection of <algorithm namespace=> now syncs to canvas: CollectAlgorithmHitsInRawRange resolves owning class by longest-prefix match and highlights the method
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Shift+click bypasses box-select arming so range extension commits inline
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Empty-area click in the tree clears selection, matching canvas behavior
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Tree click deferred to PointerUp so box-select past drag threshold abandons the row click, no more select flash
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} UmlRelationship.synthetic flag marks SAI-derived edges; state JSON skips them so they re-derive on load without duplicates
+- {date:2026-05-16} {sys:UmlWindow} {type:adjust} Refs to namespaces absent from current diagram silently skipped to avoid edges to nowhere
+- {date:2026-05-16} {sys:UmlWindow} {type:feature} Synthesise UML edges from SAI cross-class refs: variable of= Association, pathvariable of= Association, array of= Aggregation, conflict Dependency
+- {date:2026-05-16} {sys:UmlWindow} {type:fix} Cmd/Ctrl+Z focus-dispatch: mainView made focusable and focused on click (unless a TextField owns focus) so KeyDownEvents reach the handler
+- {date:2026-05-16} {sys:AnyFilePreview} {type:adjust} Folder listing skips .meta, .DS_Store, ._* resource forks, tilde-hidden folders; results cached ~1.5s with cache clear on sort change
+- {date:2026-05-16} {sys:AnyFilePreview} {type:feature} Folder rows: depth indent, foldout chevrons, cached asset icons, consistent date format, single-click ping/select, double-click open, hover wash
+- {date:2026-05-16} {sys:AnyFilePreview} {type:feature} Folder tree view for folder selections: toolbar counts + total bytes, sortable Name/Ext/Modified/Size headers, folders-first sorting
+- {date:2026-05-16} {sys:AnyFilePreview} {type:feature} Breadcrumb nav bar on every preview: Back button, clickable per-segment path strip with tooltips, ping + select navigation
+- {date:2026-05-16} {sys:AnyFilePreview} {type:feature} Browser-style Forward navigation: back/forward stacks bounded at 64, path-change detection, disabled-state buttons with target tooltips
+- {date:2026-05-16} {sys:AnyFilePreview} {type:feature} Resizable folder columns: draggable dividers with clamps, EditorPrefs persistence, lazy load and MouseUp save
+- {date:2026-05-16} {sys:Editor} {type:fix} StaticFontCleanup reflectively nulls Proxima's static Font field before assembly reload, silencing "Deleting invalid font reference" warning
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} Breadcrumb bar hoisted to OnInspectorGUI base so it appears on all asset types including binaries and images; duplicate draws removed
+- {date:2026-05-16} {sys:AnyFilePreview} {type:fix} Folder column drag tracked physical-pixel deltas on high-DPI; switched to absolute-position tracking so divider stays under cursor
+
+### 2026-05-17
+- {date:2026-05-17} {sys:AnyFilePreview} {type:adjust} Breadcrumb segments rebased to toolbarButton style so clickable segments highlight on hover
+- {date:2026-05-17} {sys:AnyFilePreview} {type:fix} Image extensions restored to Settings dialog (png/jpg/gif/bmp/tga/tiff/psd/webp/exr/hdr); existing EditorPrefs were intact, just unlisted
+- {date:2026-05-17} {sys:UmlWindow} {type:adjust} Abstract classes render an abstract stereotype line with bold-italic name
+- {date:2026-05-17} {sys:UmlWindow} {type:adjust} Conflict edge name pulls embedded nested-expression predicate text when present
+- {date:2026-05-17} {sys:UmlWindow} {type:feature} ParseAlgorithmsShape surfaces Input, Output, and Realization edges from input/output/implements declarations, all synthetic re-derived on load
+- {date:2026-05-17} {sys:UmlWindow} {type:feature} SAI fidelity: UmlClass carries isAbstract + extraAttrs; MemberEntry carries extraAttrs and extraChildren subtrees, all round-tripping through Flat writer
+- {date:2026-05-17} {sys:AnyFilePreview} {type:adjust} .NET project/solution extensions listed in Settings dialog group; .sln included in IsRichRendered
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} New .sln highlighter: solution keywords, section names, GUID validation, quoted strings, version numbers, comments
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} .csproj/.props/.targets recognized as XML for highlighting and hierarchical tree view
+- {date:2026-05-17} {sys:UmlWindow} {type:fix} isAbstract lost on save part 2: xmlFieldDirty flag stops read-only field focus-out from scheduling stale ApplyXmlCode re-parse that wiped state
+- {date:2026-05-17} {sys:UmlWindow} {type:fix} isAbstract lost on save part 1: CloneUmlClass now copies isAbstract and extraAttrs; CloneUmlRelationship copies synthetic
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} Font preview for .ttf/.otf: custom sample TextField plus canned pangram/alphabet samples at 6 sizes; FontPreviewInspector CustomEditor added
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} TOML syntax highlighter: section headers, array-of-tables, multi-line and single-line strings, numbers/date-times, booleans, comments
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} YAML syntax highlighter: keys, comments, document markers, list bullets, anchors/aliases, tags, block scalars, strings, booleans, numbers
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} CSV header-row heuristic detection with pinned bold header excluded from sort, plus manual "Header row" toolbar toggle
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} Sortable CSV columns: stable asc/desc sort with numeric-aware compare, display-order index array, gutter keeps original line numbers
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} CSV separator auto-detection samples first 5 lines across comma/semicolon/tab/pipe candidates; toolbar shows the detected separator
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} CSV/TSV grid preview: row gutter, spreadsheet letter headers, per-column resize handles, zebra striping, RFC-4180-ish parser, long-cell truncation
+- {date:2026-05-17} {sys:AnyFilePreview} {type:adjust} FBX Info tab gated to model extensions only (.fbx/.obj/.dae/.blend/.3ds); model extensions listed in Settings dialog
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} FbxModelInfo.Read introspects sub-assets + ModelImporter; triangle counts avoid Mesh.triangles allocation; cached per path
+- {date:2026-05-17} {sys:AnyFilePreview} {type:feature} FBX Info preview tab for 3D models: file/geometry/per-mesh/materials/skeleton/animations/import-settings sections
+- {date:2026-05-17} {sys:UmlWindow} {type:adjust} Dropped obsolete PreventDefault() from all 9 hotkey paths (Unity 6 deprecation); StopPropagation already covered them
+- {date:2026-05-17} {sys:AnyFilePreview} {type:fix} Standalone window vertical scroll: GetInspectorBodyHeight returns the standalone window's own height instead of the inspector's, fixing clipped bottom
+
+### 2026-05-18
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Library tree extras: right-click context menu, kind icons, refresh button + auto-refresh 900ms after save, live substring filter, drag-resizable edge
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Library tree pane: federated GitHub scan of Files/Gorp, parses algorithm + model elements, dotted-segment tree, click-to-open with unsaved prompt
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Library + Name UI rows; dotted Name input auto-splits prefix to Library via ApplyDottedNameInput
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Algorithm wrapper: gorpLibrary + gorpName produce <algorithm namespace="Lib.Leaf"> with function/expressions wrapper; empty fields keep legacy <Math> shape
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Logic/Conditional serialization: IsPureMath context switch, Compare/Logic/If emit SAI <Element><parameters> shape, variables emit ci vs pathvariable by context
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Find usages partial: reports definition count from loaded entry set (cross-file caller scan deferred)
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Real library delete: ShowConfirm + GitHubUploader.DeleteFile with 800ms delayed tree refresh
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Real library duplicate: auto-picks _copy suffix with collision check, rewrites namespace, writes new file
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Real library rename: in-place edit on row label, targeted namespace rewrite preserving formatting, save to new path, delete old, window state updated in lock-step
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Library tree collapse state persists across re-renders via libraryCollapsedPaths HashSet
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Tree row visibility hardened: explicit widths, flexShrink 0, explicit colors, minHeight 22 so inherited rules can't zero them out
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Library search field switched to Label + BeginInPlaceEdit, fixing Unity TextField light-palette rendering
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} New equation gesture: + button in library tree header with dirty-save confirm, fresh state reset, and "New equation in X" on grouping-node right-click
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} Save derives path from namespace via BuildLibraryFilePathForNamespace so editing Library/Name no longer overwrites the previously loaded file
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} ParseSaiGorpNode round-trips written files: delegate expressions, comparison/logic/If operators, embedded MathML, parameter bodies
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Drag-from-tree: SetupTileDrag gains onClick callback; short press loads, drag spawns ghost and drops as DelegateNode on a slot
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} New DelegateNode type: namespace reference pill with optional limit, context-aware serializer (expression delegate= at top level, <delegate namespace=/> nested)
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Leaf-drop guidance: dragging a DelegateNode highlights empty slots and replaceable leaves; composite drops fire an explanatory toast instead of failing silently
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Library tree chevrons enlarged (14px -> 22px, font 14 bold), row height 22 -> 26px, picking only when expandable
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Live draft library entries: setting Library + Name adds amber italic draft row instantly, no save required; drafts skip drag and file context menus
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} Variables strip spans full canvas width (right: 8px anchor) and wraps overflow instead of clipping badges past the canvas edge
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Local Test button gated off when only delegates carry the body; tooltip explains local test can't evaluate delegate references
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} DelegateNode counts as computable body: HasDelegates helper suppresses "No Variables" badge and enables the Gorp button
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Clickable Usages popup: dimmed backdrop, scrollable caller rows, click loads the caller via OpenLibraryEntry with dirty-save prompt
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} FindUsagesAcrossLibrary scans cached files for delegate references, resolving enclosing algorithm/model, skipping self-references
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Cross-file Find Usages: libraryFileContents cache populated during library scan
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} If/Compare/Logic serialization fix: PrecedenceCorrectedTree short-circuits for non-pure-math trees, stopping IF equations collapsing to <cn>0</cn>
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} LeafEntryMatchesFilter handles mixed nodes rendering as leaf or grouping row depending on chip state; child recursion re-checks chips
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Library tree kind-filter chips: algorithms (green), models (purple), drafts (amber); combine with substring filter
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Model files preserve unrendered body content verbatim (arrays, limits, basis, delegates, any) via modelExtraNodesXml
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Phase 3 model authoring mode: WindowMode enum, model editor panel, mode toggle pill, model-vs-algorithm save/load routing
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} SerializeModelToXml always emits canonical <models><model> shape; LoadModelFromXml accepts both <models> and bare <model> roots
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Model picker tab row with switch/close/add; three per-model section tables with add-row and per-row delete; extras notice for preserved content
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Model editor rewrite for real Gestalt files: ModelEntry with <models> wrapper, three sub-blocks (variables/pathvariables/arrays), text-content values, extraNodesXml round-trip
+- {date:2026-05-18} {sys:AnyFilePreview} {type:feature} Recursive foldout toggles implemented for folder tree, JSON tree, and XML tree with depth cap of 16
+- {date:2026-05-18} {sys:AnyFilePreview} {type:feature} Option-click on closed foldout expands whole subtree; closing collapses all descendants so reopen reveals a clean single level
+- {date:2026-05-18} {sys:UmlWindow} {type:feature} Tab cycles selected class through classes (Shift+Tab reverses) with viewport centering and wraparound
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Model panel Tab navigation: every editable cell registers in flat modelTabOrder; Tab/Shift+Tab open next/previous cell in visual order
+- {date:2026-05-18} {sys:WindowBase} {type:feature} InPlaceEditSession gains onTabCommit / onShiftTabCommit hooks invoked after commit for chained cell navigation
+- {date:2026-05-18} {sys:UIManager} {type:adjust} ToggleShowDesktop moved from Tab to BackQuote, freeing Tab for window-local field navigation
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} GorpEquationState gains xmlPanelWidth and modelPanelHeight; legacy xmlPanelHeight kept on disk for older windows
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} ApplyGorpXml detects <gorp> root and routes children to algorithm parser and LoadModelFromXml; loading one shape clears the other surface
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Both-shapes file format: <gorp> root wraps algorithm + models when both authored; single-shape files keep bare roots for compatibility
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} New divider drags: XML panel width resize with clamps, model panel height resize leaving 60px minimum above
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Layout refactor: mode toggle removed, model editor centre-bottom and XML panel full-height right strip, both always visible
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} XML panel scroll: thin-scroll class + flex-shrink 0 on multiline TextField so measured height isn't compressed by viewport
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} Model panel scroll: sectionsScroll forces Auto vertical scroller, hidden horizontal, flex-shrink 0 on host so content can outgrow viewport
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} New .geq-thin-scroll USS class mirrors NOS-style thin scrollbar (8px track, no spinners, dark thumb)
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Renamed editor-local <inputs> test-values block to <testValues>; loader accepts both and skips <inputs model=> defensively
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Algorithm-level <input model=/> and <output model=/> bindings: fields, editable panel rows with local-model hint tooltips, emit before <function>, parsed from both positions, persisted
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Gorp XML panel gets syntax-colored read-only Label when unlocked, plain editable TextField when locked; TextField stays single source of truth
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Runtime XmlSyntaxHighlighter class ported from AnyFilePreview editor code (VS dark palette, no EditorGUIUtility dependency, 200k cap)
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Variable pill tooltip surfaces kind + type; .geq-variable--constant USS renders constants bold non-italic
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} VariableNode gains isConstant + dataType; right-click checkboxes and Type submenu; serializer emits pathvariable vs variable-isconstant shapes
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Saved files always use canonical <gorp><algorithms><algorithm> + <models> wrapper shape; IndentBlock helper re-pads nested output
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} Dotted names in variable input: alphanumericOnly flag was silently stripping dots, blocking namespace paths like orp.timbucktu.sunrise
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} RenderAlgorithmCall purple-bordered gear pill with (input -> output) badge; click opens 3-field popup; drop auto-opens popup; new toolbar tile
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} New AlgorithmCallNode emitting canonical <Algorithm namespace input output/> shape, distinct from loop-friendly DelegateNode
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} AppendAllAlgorithmsXml emits N algorithm siblings in canonical wrapper, skipping wholly empty entries; loader accepts bare or wrapped algorithms
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} BuildAlgorithmPicker tab row above canvas with green active pill, close buttons, and + add button
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Multi-algorithm-per-file: AlgorithmEntry model, algorithmEntries list with active-entry mirroring, snapshot/restore on tab switch
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Parser accepts both output= and result= binding synonyms; always emits output=; DeepClone and SAI parser propagate new fields
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Per-operator input=/output= bindings on Compare/Logic/If with right-click Bindings submenu, floating edit popup, and Clear
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} isimmutable checkbox column on model variables rows; serializer emits and parser reads the attribute
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} DelegateNode pill click opens the algorithm-picker dropdown first with typed edit as fallback
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Canvas slot right-click gains "Pick from model..." as first option; VariableNode right-click gains "Re-pick from model..."
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Model variable/pathvariable/array type cells open a picker listing SAI primitive types; array rows use bracketed variants
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} BuildOperatorBindingRow gains pickerKind parameter (None/Model/ModelDotVar/Algorithm); popups wire the appropriate picker per slot
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} Every picker ends with (Clear) + Type custom entries so external cross-file refs can still be typed
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} OpenAlgorithmPickerMenu lists every declared algorithm namespace for algorithm-call namespace slot and DelegateNode click
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} OpenModelDotVariablePickerMenu two-stage menu composes dotted model.variable refs for operator output/result bindings
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:feature} OpenModelPickerMenu context menu lists every declared model namespace, used by Input/Output model fields and algorithm-call input/output slots
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:adjust} Removed stale namespace-sync plumbing (CommitCurrentNamespaceToModel, SyncFieldsToCurrentModel, related ApplyDottedNameInput calls)
+- {date:2026-05-18} {sys:GorpEquationWindow} {type:fix} Dedicated namespace field for active model: BuildModelNamespaceRow with click-to-edit label fixes permanently "(unnamed)" model tabs
+
+### 2026-05-19
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} MoveModelEntry mutates on-disk model sibling order, re-anchors active index, marks dirty and refreshes picker + XML immediately
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Model picker tabs drag-to-reorder: short press switches, drag past 6px threshold reorders with translucent ghost + amber insert line
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Algorithm tab label tracks Library/Name edits live: commit callbacks now call SaveActiveAlgorithmToEntry + RebuildAlgorithmPicker
+- {date:2026-05-19} {sys:WindowBase} {type:fix} Detached-label guard: BeginInPlaceEdit bails when label.panel is null, protecting all click-to-edit labels project-wide
+- {date:2026-05-19} {sys:WindowBase} {type:fix} Re-entry guard on BeginInPlaceEdit: second click on already-editing label is a no-op, fixing hard Unity freeze from commit-rebuild orphaning the label
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} allowEmpty: true propagated to every Gorp field where empty is legitimate (names, endpoints, bindings, popups, model cells, test values, filter)
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Right-click "Clear" context entries on Library and Name fields
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} ApplyDottedNameInput("") clears both name and library so fresh tabs no longer inherit previous library
+- {date:2026-05-19} {sys:WindowBase} {type:feature} allowEmpty flag on InPlaceEditSession lets empty buffer commit as-is; new BeginInPlaceEdit overload, backwards compatible
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} AlgorithmCall and Delegate pills gain "Edit call..." and "Delete -> slot" right-click entries
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Right-click conversions both ways: Algorithm-call pill to delegate (loop form) and delegate pill to Algorithm call with inherited bindings
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} Drag ghost label changed from delegate arrow glyph to gear call glyph
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Library-row drag onto slot now creates canonical AlgorithmCallNode (not DelegateNode), pre-populated with active algorithm's input/output bindings
+- {date:2026-05-19} {sys:AnyFilePreview} {type:fix} Tree-view horizontal scroll v2: SizedLabel/SizedFoldout with self-sizing horizontal groups, manual indent, temp indentLevel reset so rows report true natural width
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Pick-from-model menu was killed by ContextMenuManager auto-hide; pickers refactored into option builders nested as SubMenuOption children in same menu lifecycle
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} New .geq-row-delete-btn USS class: red hover/active styling matching window close button; tooltip mentions undo
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Model row delete buttons call PushUndo before mutating so Ctrl/Cmd+Z restores deleted rows and position
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Undo stack refactored from Stack<ExprNode> to Stack<UndoSnapshot> covering tree, names, bindings, test values, model and algorithm entries, index pointers
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} New .geq-variable--mutable USS class so all three variable shapes are visually distinct; picker labels get name:type + (const) annotations
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Variable pill right-click exposes 3 mutually-exclusive shape checkboxes (pathvariable / variable / variable isconstant)
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} VarPickHint struct carries namespace/isPath/isConstant/dataType from picker; source row pre-fills the right shape with zero hand-tweaking
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} VariableNode gains isPath flag; three canonical SAI variable ref shapes reachable (pathvariable, variable, variable isconstant)
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} TryAutoFillOutputBinding: single-variable output models auto-fill dotted "model.var" binding, else bare model namespace as starting point
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Auto-fill operator input= from active algorithm's input model on Compare/Logic/If creation when unset
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:docs} Name field tooltip updated to document new dotted-input mapping
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} ApplyDottedNameInput always sets both name and library; removed preserve-library convenience rule that made single-segment namespaces impossible after tab switches
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} LoadAlgorithmsFromXml never triggered canvas render; now routes through LoadEntryIntoActiveAlgorithm(0) matching the tab-switch render path
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} Leaf-replaces-leaf drop path auto-opens the AlgorithmCallNode popup, matching DropOnSlot behavior
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} IsPureMath default-true bug: AlgorithmCallNode fell through and whole tree collapsed to 0 on save; explicit case added and default flipped to false
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:docs} Comment updated to make backend-contract status of <inputs> explicit so it doesn't get renamed again
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Reverted <testValues> back to <inputs>: backend keys on <inputs> as the runtime value channel; loader accepts both names
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} Undo snapshot expanded to cover algorithmOutputName; cloners propagate all new Phase A+B fields through copy/paste/duplicate
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} <output name=/> algorithm variant: algorithmOutputName field emitted when output model empty; loader populates whichever the file used
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} New UsesSymbolNode leaf: blue chip with symbol name, click to in-place edit, toolbar tile, droppable in Exists predicates
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} New ExistsNode with predicate body + declarations list; save emits parameter-0 declarations and parameter-1 predicate; toolbar tile added
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Canvas right-click "Add sequential expression" wraps existing root and appends a new SlotNode
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Multi-expression-per-algorithm: ExpressionListNode root, vertical stack with sequence labels, "+ Expression" footer, per-row remove with auto-unwrap
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} New GotoNode leaf for <goto sequence=/> with toolbar tile, parsed at expression top level and nested in parameters
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} Operator attribute synonyms: Compare/Logic/If gain useWithAttr and asAttr; parser accepts input=/with= and round-trips the file's chosen name
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} <inputs> save emits only unresolved vars, no more empty entries shadowing model values
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Status badge treats model-declared-only equations as Ready; ValidateVariableInputs checks only unresolved vars
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Inline test-value strip shows only unresolved vars; model-declared-only equations show empty strip
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:feature} IsModelDeclaredVariable + CollectUnresolvedVariables helpers detect variables already declared in bound models
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:adjust} Local Test button stays disabled for Algorithm-call-only bodies; tooltip explains local test can't evaluate delegate or Algorithm-call references
+- {date:2026-05-19} {sys:GorpEquationWindow} {type:fix} Algorithm whose body is only an Algorithm call now counts as computable: HasAlgorithmCalls OR'd into hasComputableBody, badge reads Ready
+
+### 2026-05-20
+- {date:2026-05-20} {sys:Gorp} {type:infra} Trycloudflare temp tunnel replaced with permanent gai-traveler-tunnel named tunnel at gai.ufostudios.net/gorpIT; DNS migrated to Cloudflare nameservers; end-to-end curl verified
+- {date:2026-05-20} {sys:GorpEquationWindow} {type:fix} GorpTestCoroutine sends BuildGorpItCallPayload for both worker and direct paths; removed panel-XML override and mismatched canonical direct payload
+- {date:2026-05-20} {sys:GorpEquationWindow} {type:feature} GetGorpItInputValue resolves variable values preferring local test strip, falling back to model-declared values
+- {date:2026-05-20} {sys:GorpEquationWindow} {type:feature} BuildGorpItCallPayload emits GORPHandler runtime shape (<Math><name>+MathML+<inputs>) distinct from canonical SAI file format
+- {date:2026-05-20} {sys:GorpEquationWindow} {type:fix} LoadAlgorithmsFromXml never read child <inputs>, leaving testValues empty after restore; LoadAlgorithmTestValues now round-trips variable values
+- {date:2026-05-20} {sys:AccountActivityWindow} {type:feature} Timeline tab renders api_call events via BuildEventDetail and ColorForEventType
+- {date:2026-05-20} {sys:AccountActivityWindow} {type:feature} ClassifyApiBucket maps events to buckets; API tab added to tab strip between Timeline and Logs
+- {date:2026-05-20} {sys:AccountActivityWindow} {type:feature} New API tab aggregates api_call + chat_message events into 4 worker buckets per account with stacked bar and per-bucket count/bytes rows
+- {date:2026-05-20} {sys:GorpEquationWindow} {type:feature} GorpTestCoroutine records api_call("gorp", worker/direct) with payload byte count
+- {date:2026-05-20} {sys:GitHubUploader} {type:feature} Every public entry point records api_call events (GET, GET-raw, GET-img, GET-bin, PUT, PUT-bin, DELETE, COPY) with byte sizes
+- {date:2026-05-20} {sys:AccountActivityWindow} {type:fix} suppressRecording reentry guard prevents recorder's own Activity.jsonl reads/writes from self-feeding into an infinite loop
+- {date:2026-05-20} {sys:AccountActivityWindow} {type:feature} New api_call event type + RecordApiCall(category, operation, bytes) facade in ActivityRecorder
+- {date:2026-05-20} {sys:Worker} {type:infra} WORKER_VERSION bumped to nos-ai-2026-05-20-01
+- {date:2026-05-20} {sys:Worker} {type:infra} 429 response body names the bucket and limit for easier debugging
+- {date:2026-05-20} {sys:Worker} {type:infra} Per-bucket rate limits replace shared IP array: github 300/min, ai 30/min, gorp 100/min, other 30/min; old GitHub multiplier removed
+
+### 2026-05-21
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} ExistsNode right-click menu: Edit declarations, Delete predicate, Bindings submenu, Delete-to-slot
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Exists declarations popup implemented: edits with= symbols plus scrollable declaration rows with kind/type/namespace cells, add/delete buttons, dim overlay, single undo step
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} New "Output name" row for <output name=/> alternative output binding under Output model in the algorithm bindings strip
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} SaiPrimitiveTypes now includes double, matching GorpUsage.md's six-type set
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:fix} Operator-binding popup flips label to white non-italic when in-place edit begins, instead of unreadable placeholder style while typing
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Skip emitting empty <inputs> block in both file save and GorpIT call payload when no unresolved variables exist
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Tightened popup widths (AlgorithmCall 420->320, ExistsDeclarations 520->420), reduced paddings, smaller Close button
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:fix} Removed " ▾" child-label affordance rendering as tiny dot (font lacked U+25BE glyph)
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Optimistic library-tree delete/duplicate: rows disappear/appear immediately before the GitHub rescan
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Library tree case preservation: draft entry's casing wins over older saved-file casing on case-insensitive bucket match
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Name/Library fields wire onChange to update draft library-tree entry and algorithm picker per keystroke
+- {date:2026-05-21} {sys:WindowBase} {type:feature} InPlaceEditSession gains onChange callback fired when buffer mutates, covering all mutation sites
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Exists pill surfaces input=/result= bindings inline as a chip so canvas reflects saved state
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Toolbar Exists tile relabelled from "∃Ex" to "∃" so tile, operator, and saved XML share one glyph
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} SerializeToMathXml auto-emits <uses symbol=/> for variables matching enclosing Exists bound symbols; multi-symbol scopes supported
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Exists domain picker lists every variable/pathvariable/array in local models as categorised submenus, plus Clear and Advanced entries
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Symbolic Exists rendering: standard math notation with clickable bound-symbol chip, domain chip, and predicate slot
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Type-validated drops: TryDropOnCanvas consults SlotAccepts and refuses type-mismatched drops with explanatory toast
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:fix} Defensive rendering: per-type render dispatch wrapped in try/catch, failures show red error pill instead of crashing Unity editor
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} ExprKind type system (Any/Numeric/Boolean) with GetExprKind, GetSlotKind, SlotAccepts compatibility check
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Bound-symbol auto-fill on drop: Compare/Logic nodes landing in single-symbol Exists context pre-fill left operand with bound symbol
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Persistent English readout label under the canvas reads whole equation in English, refreshed on every edit
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} ToEnglish(ExprNode) walks subtree producing plain-English sentence; wired as default tooltip on every rendered node
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} Binding placeholder copy changed to non-italic gray [required]/[optional] inferred from hint prefix; italic toggle removed
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} BuildOperatorBindingRow rewritten: pickable fields render as dropdown wrapper with chevron; plain-text fields skip the chevron
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} macOS-style dropdown affordance: new geq-dropdown-field/text/chevron USS classes with CSS-border triangle chevron (fixes "shows as dot" glyph issue)
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Paired <variables type=/> declaration auto-synthesised when user adds a single pathvariable or array domain, matching canonical type+domain pattern
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:fix} SerializeExistsNode emits with= on inner parameters wrapper matching canonical Gorp.Exists; ParseExistsElement accepts both shapes
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:fix} SerializeExpressionBody emits canonical <uses symbol=/> for bound Exists symbols in SAI-parameter path (parity with SerializeToMathXml)
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:adjust} AlgorithmCall pill badge and tooltip show "(in -> out as alias)" when alias set; ToEnglish narrates "(aliased as X)"
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} as= attribute serialized after output=, parsed on load, propagated through DeepClone
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} AlgorithmCall popup gains fourth as= text field row with canonical-use tooltip
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:feature} Algorithm call as= alias attribute is first-class: AlgorithmCallNode asAttr field with optional constructor param
+- {date:2026-05-21} {sys:GorpEquationWindow} {type:fix} Corrected Exists parameter-0 shape: with= on outer parameter element, inner parameters wrapper reverted; parser still accepts both shapes
+
+### 2026-05-22
+- {date:2026-05-22} {sys:AnyFilePreview} {type:adjust} HelpBox notice on Raw-mode truncation tells user how much was clipped and points to Color mode or external editor
+- {date:2026-05-22} {sys:AnyFilePreview} {type:fix} Raw mode capped at 200K chars (matches highlight cap); uncapped SelectableLabel blew Unity's ~32k px widget height and rendered blank on mid-size XML/XSD
+- {date:2026-05-22} {sys:AnyFilePreview} {type:fix} Normalize CRLF and lone CR to LF on load; CalcHeight counted CRLF but glyph runner skipped drawing, producing tall blank scroll area
+- {date:2026-05-22} {sys:AnyFilePreview} {type:fix} Strip leading UTF-8 BOM on file load; mono runtime sometimes leaks it through, blanking SelectableLabel and confusing highlighters
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Canvas horizontal scroll no longer snaps back to 0 on edit; both axes reset only when content fits, else clamped to valid range
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Multi-algorithm save no longer duplicates the file per active tab; pinned AppInstance filePath kept, namespace-derived path only on first save
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Library tree leaves show italic-gray owning-file annotation when file name differs from algorithm namespace
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Save-time safety net bumps colliding names via FindUniqueNamespace with a toast notice
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} + button pre-fills safe placeholder name ("New Gorp", "New Gorp 2", or "Lib.New Gorp" from preset node)
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Duplicate now collision-safe: " Copy"/" Copy 2" macOS-style naming with FindUniqueNamespace checking both namespace and file path
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} OnAfterRename override patches libraryEntries filePaths to new path, rebuilds tree immediately, schedules 900ms safety-net refresh
+- {date:2026-05-22} {sys:WindowBase} {type:feature} New OnAfterRename(oldPath, newPath) protected virtual hook fired at end of rename callback
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} ComputeLibraryGorpFolderPath scans the folder the active file lives in, so cross-folder moves show up after refresh
+- {date:2026-05-22} {sys:WindowBase} {type:fix} Rename dialog Save Folder field uses AppInstance filePath's actual directory instead of definition defaultSaveFolder
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Single Namespace field replaces separate Library + Name fields; ApplyDottedNameInput still splits on last dot internally
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Multi-folder library scanning: comma/semicolon-separated extra-folders field aggregates entries from multiple GitHub folders
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Models with no variable/pathvariable/array data filtered out of library tree via ModelElementHasData
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Removed per-leaf file-name annotation as redundant; file path stays in tooltip
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} File-first library tree: top-level nodes are files, algorithms and models nest by dotted namespace inside each file
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} LibraryTreeNode gains isFolderNode flag; folder icon warm-yellow, file icon light-blue, "Folder: ..." row tooltip
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Library tree files render full filename with .gorp extension so files aren't confused with namespaces
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Library tree: folder grouping as outermost level, collapsible per-folder top nodes with full-path tooltip
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Extra-folders input switched from native TextField to custom Label + BeginInPlaceEdit for consistent dark styling
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Library pane inputs flip to white non-italic while typing; commit restores gray placeholder style when blank
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Library pane: example placeholders (e.g. JailBreak, orp.timbucktu / Files/Gorp, Files/Xaml) replace generic copy
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Library pane: section headers "Search namespaces:" and "Scan extra folders:" above the two inputs to clarify purpose
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Scan-extra-folders input moved above the Search-namespaces input to match set-scope-then-narrow workflow
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Default library folder hardcoded to Files/Gorp, ignoring cross-app defaultSaveFolder so spawns through other apps stop saving Gorp files to the wrong folder
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Alt/Option-click on a chevron cascades expand/collapse to all descendant grouping nodes via new SetCollapsedRecursive
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Algorithms render before models inside each file, matching editor layout and canonical gorp XML output order
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Alt-click reliability: chevron handler made state-only (read set, flip, cascade, single render), removing the local-toggle vs rerender race
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Library filter inputs persisted: libraryExtraFoldersText and librarySearchTerm saved and restored through GorpEquationState
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Clicking a library entry now activates that specific algorithm/model tab via SelectEntryAfterLoad instead of snapping to index 0
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Shift-click accepted as alternate cascade modifier since macOS Option was unreliable through UITK (removed in a later pass)
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Library row order now matches pane tab order: children switched from SortedDictionary to insertion-ordered List plus lookup dict
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Mixed-namespace nodes (same name as both algorithm and prefix) split into two rows: a leaf-only row and a grouping-only row via suppressLeaf/suppressChildren params
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Shift modifier removed from cascade-fold; Alt/Option is the sole cascade trigger
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Alt-detection reliability: 50ms poller updates a held-Alt field OR'd into the cascade decision alongside evt.altKey and modifiers (later removed)
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Library pane background right-click gains Collapse all / Expand all as a deterministic bulk-fold path
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Polled Alt fallback removed from the chevron handler; false-positive cascades on normal clicks were undoing collapses
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:infra} GorpFold diagnostic logging added: click event, post-render, and cascade-tick state trails for repro analysis
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Cascade deferred one frame via schedule.Execute modeled on the working XmlWindow alt-expand pattern (later reverted to synchronous)
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Per-row right-click menu adds deterministic Collapse children / Expand children entries independent of modifier detection
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:feature} Grouping rows are now toggle targets edge-to-edge: left-click anywhere on a childed row toggles collapse, no more pixel-hunting the 22px chevron
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Left-click fold handlers made fully synchronous (mutate, recurse, render once) matching the reliably working right-click path; deferred cascade and instrumentation removed
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:infra} Fold v3 build-marker debug logs added to distinguish stale-compiled Unity code from wrong logic
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Parent-toggle plus cascade extracted into shared ToggleLibraryNodeCollapse used by both chevron and row click handlers
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} AppendInputsBlock validates variable names against XML element-name rules, falling back to an attribute shape so the serializer can never write invalid XML
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:fix} Library harvester tolerates corrupt inputs blocks: on XmlException it strips inputs sections via regex and retries, so the file's entries still appear
+- {date:2026-05-22} {sys:GorpEquationWindow} {type:adjust} Session end-state: alt-click cascade kept at the flipped SetCollapsedRecursive(!newCollapsed) version per explicit user choice, known glitch on expand accepted
+
+### 2026-05-24
+- {date:2026-05-24} {sys:GorpEquationWindow} {type:adjust} File/folder context-menu builder refactored to incremental list so file-only options append only on file nodes
+- {date:2026-05-24} {sys:GorpEquationWindow} {type:feature} Library file-node right-click gains Delete file with confirm dialog showing filename, path, and contained-entry count; optimistic remove plus scheduled rescan
+- {date:2026-05-24} {sys:GorpEquationWindow} {type:feature} Library file-node right-click gains Duplicate file: Finder-style Copy / Copy N naming, whole-file clone with namespace prefix remap, optimistic tree update
+
+### 2026-05-25
+- {date:2026-05-25} {sys:CardsWindow} {type:fix} Duplicate inline filename sanitizers in CardsWindow Individual and DeckEditor replaced with GitHubUploader.SanitizePathComponent
+- {date:2026-05-25} {sys:GitHubUploader} {type:fix} SanitizePathComponent keeps regular spaces in filenames; strips cross-platform forbidden chars, normalizes exotic Unicode whitespace to a space, trims and collapses runs
+- {date:2026-05-25} {sys:GitHubUploader} {type:fix} New BuildContentsApiPath percent-encodes Contents-API paths at every call site (fetch, binary, PUTs, delete, list) matching the raw-URL encoding
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Duplicating the currently open file/entry now rewires the window to the duplicate (filePath, panel names, XML panel) so saves stop overwriting the original
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} OpenInlineNodeEditor now refreshes the XML panel after RebuildCanvas; it was the lone mutation path missing the pairing
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Infix parser now consumes dots in identifiers so dotted SAI names like orp.timbucktu.sunrise round-trip instead of silently truncating to the first segment
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:feature} EnsureCurrentSelectionExpanded unfolds only the ancestors of the current selection, then a deferred ScrollTo brings the highlighted row into view
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Library tree no longer reorders on refresh: entries stable-sorted by filePath (in-file order preserved), unsaved draft sorts last
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Compile error fixed: using System.Linq added to LibraryTree partial for the OrderBy stable-sort patch
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:feature} Limit edits call MarkContentDirty plus RefreshXmlPanel so the XML pane sees the change live
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:feature} DelegateNode pill gains an editable loop-limit chip: faded "+ limit" affordance when unset, "limit: N" green chip when set, in-place numeric edit
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Limit chip routing replaced separate child/parent handlers with a single wrap click handler branching on evt.target
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Limit chip target check switched to an ancestor walk because UITK Label internals can surface a child element as evt.target
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:feature} Last-active algorithm and model tab restored after window reopen: indices saved in GorpEquationState, consumed one-shot after load
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} BringToFront on the limit label so UITK hit-testing resolves it first when bounds tie
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:adjust} Limit chip hover highlight added (background swap on MouseEnter/Leave) for discoverability
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Tab switches now MarkDirty: LoadEntryIntoActiveAlgorithm and SelectModelIndex trigger the debounced layout save so tab clicks persist
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:adjust} Limit slot redesigned as a "limit: [ ]" row: static prefix plus input-styled box with hover border and faint italic em-dash empty state
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Restore double-load race fixed: CreateAndGetWindow skips auto-load while UIManager.IsRestoringLayout, so the restore load with the pending index is the only load
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:infra} Diagnostic logs on inner vs wrap click handlers plus element names (geq-limit-row/value/prefix) so the UI Debugger surfaces useful identifiers
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Defensive limit-click routing: dedicated ClickEvent handlers on limitValue and limitRow with StopImmediatePropagation, ancestor-walk fallback retained
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:adjust} Wrap-level ClickEvent handler simplified back to just opening the namespace picker since limit clicks no longer reach it
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Limit-click root cause found: wrap's CapturePointer swallowed clicks; PointerDown intercepted on limitValue/limitRow with StopPropagation, editor open deferred one tick
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:adjust} limit prefix bumped to fontSize 13 and near-white tint matching the namespace label so the row reads as one pair
+- {date:2026-05-25} {sys:WindowBase} {type:fix} In-place edit text now always white and upright: InPlaceEditSession stashes color/fontStyle and forces white plus Normal at edit start, universal for every window
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Namespace picker no longer pops over the limit editor: ancestor-walk check restored at the top of the wrap ClickEvent handler
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} After the rename cascade, RebuildCanvas and RefreshXmlPanel fire so canvas chips and the XML view pick up the new strings
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:feature} RewriteModelRef matches exact equality or dotted-suffix prefix so dotted member refs rename with the model
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:feature} CascadeModelNamespaceRename walks every algorithm entry, live working fields, and equation-tree node binding when a model namespace is renamed
+- {date:2026-05-25} {sys:Gorp} {type:adjust} SAI Gorp.Loop.xml Simple.Add bindings moved out of function to siblings for internal consistency (reverted 2026-05-27)
+- {date:2026-05-25} {sys:GorpEquationWindow} {type:fix} Library current-selection highlight, hover treatment, and auto-expand walker now require filePath match as well as namespace, removing duplicate-name ambiguity
+
+### 2026-05-27
+- {date:2026-05-27} {sys:AnyFilePreview} {type:fix} Color mode scroll now reaches file bottom at all font sizes: explicit GUILayout.Height from CalcHeight/line count replaces Unity's under-counting auto height
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} IF drop no longer auto-fills outputBinding (no canonical SAI IF carries one); inputModel auto-fill kept, Compare/Logic unchanged
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} Three serializer call sites (binary, unary, IfNode) refactored to use the AppendParameter helper
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} New AppendParameter helper emits bare NumberNode parameters inline on a single line, matching canonical SAI shape
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} Cascade now calls RebuildVariablesPanel so Input/Output Model rows reflect a rename immediately
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} Normalize sweep hooked at end of CascadeModelNamespaceRename and ApplyGorpXml so stale files self-repair on load
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} New NormalizeAllModelReferences sweep rewrites every case-insensitive model-namespace match to canonical case across bindings, nodes, and dotted refs
+- {date:2026-05-27} {sys:AnyFilePreview} {type:adjust} Assets menu item priority settled at 19 so Any File Preview lands between Reveal in Finder and Open
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:feature} AppendAlgorithmXml branches on the bindings flag so both SAI shapes round-trip byte-identically; new algorithms default to siblings-before-function
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:feature} Per-algorithm bindingsInsideFunction round-trip flag set by new DetectBindingsInsideFunction parser helper
+- {date:2026-05-27} {sys:Gorp} {type:fix} Reverted unauthorized edit to SAI Gorp.Loop.xml: Simple.Add input/output restored to inside function; SAI files are the spec
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} Call, seq, exists, and uses toolbar tooltips updated to lead with the canvas slot pattern while keeping the XML serialization line
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:feature} EnumerateEnclosingExistsSymbols helper walks the ancestor chain extracting bound symbols from both canonical SAI and inline shorthand declarations
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:feature} uses tile removed from toolbar; surfaced instead as conditional right-click options on empty slots inside an exists scope, one entry per bound symbol
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} RenderAlgorithmCall pill prefix and library-row drag ghost updated to the function-call glyph for a consistent visual chain
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} Goto tile changed from circular refresh arrow to up-left arrow reading as jump-back-to-earlier-line
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} Call tile changed from gear glyph to math-italic f() matching MathML editor convention (later replaced with plain f)
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} Goto tile reduced to symbol-only arrow, dropping the goto word per user request
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} Canvas Call pill prefix, library drag ghost label, and tooltip all switched to plain italic f
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} Toolbar Call tile switched from math-italic f (missing glyph box in default font) to plain f() with FontStyle.Italic via new AddTileStyled helper
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} Dropped GotoNode canvas pill updated to the new up-left arrow glyph so toolbar tile, drop ghost, and settled pill all match
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:fix} Serialization restore treats pre-split saves as Flow-visible-by-default so upgraders keep access to IF/f()/goto/exists
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:adjust} BuildFullGorpXml "Using Gorp" comment now includes Flow when enabled
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:feature} Logic and Flow groups independently toggleable via toolbar right-click checkboxes; new toolbarFlowGroup, separator, and toolbarShowFlow flag
+- {date:2026-05-27} {sys:GorpEquationWindow} {type:feature} Logic toolbar group split: pure boolean AND/OR/NOT stay in Logic; IF, f(), goto, and exists move to a new Flow group
+
+### 2026-05-29
+- {date:2026-05-29} {sys:Docs} {type:docs} Help coverage audit documented: stale nosh for 2 windows, 3 windows with no help, no sections carry Status/Purpose lines yet
+- {date:2026-05-29} {sys:Docs} {type:docs} StreamingAssets/Features.md created: curated 3-tab product index with link/status/media/req entry markers
+- {date:2026-05-29} {sys:Docs} {type:docs} UpdateHelpFeatures.md authored: repeatable runbook for the help/features update pipeline, 3-purpose model, schemas, invariants, coverage checklist
+- {date:2026-05-29} {sys:Docs} {type:docs} Features.md gains per-tab updated dates plus a global updated date in the at-a-glance line; convention documented in the runbook
+- {date:2026-05-29} {sys:Docs} {type:docs} Full NOS_Help.md sections authored for 5 windows with no help: CardsWindow, BugReportWindow, AccountActivityWindow, InputControlsWindow, XamlGorpWindow
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} New ParseTabs/RenderTabs/ShowTab/StyleTab/StatusColor methods; tabs auto-hide when their bucket is empty
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} Status line feeds a colored status pill top-right of the tab strip; Status/Purpose lines hidden from visible text
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} Help panel now tabbed: Overview, Guide, Shortcuts, Video, parsed from existing per-window markdown with no nosh format or capture change
+- {date:2026-05-29} {sys:FeaturesWindow} {type:infra} Features.prefab created and registered as AppRegistry FeaturesIndexApp; old app coexists as Features List
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Thin scrollbars styled in C# (width 8, arrow buttons hidden) per the no-default-scrollbar rule; no native TextField for WebGL safety
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Changelog button opens an in-window scrollable popup of change.md (local file in editor, Resources TextAsset fallback at runtime)
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Entry rows render clickable window chip opening HelpWindow, descriptor text, and a colored status badge; subsections become headers
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Per-tab header shows entry count plus updated date from meta or the global at-a-glance date
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Purpose tabs from level-2 headings (AI Design / Game Design / OS), each tab button showing a live entry count
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} New FeaturesWindow (WindowBase subclass): loads Features.md from local StreamingAssets in editor, GitHub SavedData at runtime
+- {date:2026-05-29} {sys:AppRegistry} {type:adjust} AppRegistry displayName Features to Features List and appId FeaturesApp to FeaturesListApp for internal consistency
+- {date:2026-05-29} {sys:AppRegistry} {type:adjust} Prefab m_Name and windowTitle updated to Features List
+- {date:2026-05-29} {sys:AppRegistry} {type:adjust} Old NotesWindow-based Features app renamed: MD Features.prefab to Features List.prefab with GUID preserved
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} Changelog relocated as a hidden dev feature: bottom-bar button visible only while all four modifiers held and window active, opens scrollable change.md popup
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Changelog button removed from FeaturesWindow
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Status filter dropdown via ContextMenuManager (All/Stable/Beta/Planned/Wishlist); header shows "N of M" when filtered, empty sections hidden
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Status side-pane toggled by a Status button with per-tab legend of status pills and live counts; clicking a pill filters
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Wrap-text toggle in the title bar (same icon as NotesWindow) flips whiteSpace on content labels and rebuilds the active tab
+- {date:2026-05-29} {sys:AnyFilePreview} {type:docs} AUDIT.md updated to drop the now-fixed cross-tag-boundary caveat
+- {date:2026-05-29} {sys:AnyFilePreview} {type:adjust} Highlight-injection memo cache (path+query+focused-match+tab width) so the wrap pass runs only when inputs change, not every repaint
+- {date:2026-05-29} {sys:AnyFilePreview} {type:fix} TryRichTagAt plus RichTagNames distinguish emitted rich-text tags from literal source angle brackets so plain reconstruction is exact
+- {date:2026-05-29} {sys:AnyFilePreview} {type:fix} Cmd+F highlight now matches across syntax-token boundaries: InjectMatchHighlights rewritten as a 3-pass plain-source reconstruction and re-emit
+- {date:2026-05-29} {sys:BugReportWindow} {type:fix} Hidden changelog button non-interactive on macOS (Ctrl+click = right-click): added a PointerDownEvent handler that opens on right-click
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Resizable vertical splitter between status pane and content (clamp 90-320px, resize cursor), shown/hidden with the pane
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Legend always lists all four statuses with live counts; clicking a pill filters, re-click or empty pane area resets to All
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Inline status pill restored on every entry row alongside the side-pane legend
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Status toggle moved to the title bar as a vertical-dots button; content-area Status button and redundant filter dropdown removed
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Status pane default width now auto (sizes to longest legend entry) instead of fixed 150px; drag-splitter still overrides
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Per-line status shown as a colored dot at row start (tooltip = status word); status-less rows get a transparent dot for alignment
+- {date:2026-05-29} {sys:BugReportWindow} {type:fix} Changelog button reworked to a latch: Shift+Ctrl+Option reveals it and it stays after release so left-click fires (Ctrl+click was a macOS right-click)
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} Changelog popup renders markdown (headings/bold/code) instead of raw text, capped at the most recent 250 lines
+- {date:2026-05-29} {sys:BugReportWindow} {type:adjust} Changelog button restyled to match New Bug (green, white text, padding, radius)
+- {date:2026-05-29} {sys:BugReportWindow} {type:adjust} WireButtonFeedback helper (hover lighten, click flash) applied to New Bug and Changelog buttons
+- {date:2026-05-29} {sys:FeaturesWindow} {type:fix} Status dots switched to TooltipManager tooltips; UITK built-in .tooltip is not rendered by this project
+- {date:2026-05-29} {sys:BugReportWindow} {type:fix} OpenChangelog guards against stacking a second overlay and clears the overlay reference on close
+- {date:2026-05-29} {sys:BugReportWindow} {type:fix} Changelog button never shown while the changelog overlay is already open
+- {date:2026-05-29} {sys:BugReportWindow} {type:fix} Changelog reveal made edge-triggered (rising edge of the key combo) instead of level-triggered, fixing erratic re-open
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Hovering an entry's window chip for 350ms shows a floating 320x200 screenshot preview on the OverlayLayer, flipping near screen edges
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} New public RequestScreenshot(typeName, callback) returns a window's captured screenshot decoupled from the help panel, with caching
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Status dot and chip moved into a centered 18px leading column so they align with the descriptor's first line
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Preview frame brightens to cyan on hover to signal clickability
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Preview positioned to the left of the hovered chip and clamped fully on-screen
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Preview clickable to zoom: pointer bridge keeps it open (220ms hide delay), click opens a full-screen lightbox dismissed by any click
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Hover preview sizes to the image aspect ratio (max 360x300), removing black letterbox bars
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Status-pane button glyph replaced with generated list icon PNG, tinted cyan when the pane is open, glyph fallback until import
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Right-click any entry offers "Request a change" pre-filling title and body referencing the tab/window
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} Static RequestChange cross-window entry point adds to a loaded window or spawns one and consumes a pending request in OnLoaded
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} Filter bar adds Bugs/Requests kind chips; request rows show a purple REQUEST pill
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} Kind-aware IDs: NextId issues REQ-#### or BUG-#### from the shared counter; load normalization and parsing respect both prefixes
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} BugReportEntry gains kind field (Bug default, Request); backward-compatible with old JSON and existing BUG- ids
+- {date:2026-05-29} {sys:ChatWindow} {type:adjust} MakeTitleIconBtn gains PointerDown/PointerUp pressed-state feedback (had hover only)
+- {date:2026-05-29} {sys:ImageWindow} {type:adjust} SetupButtonHover added to the format-toggle title-bar button
+- {date:2026-05-29} {sys:XmlWindow} {type:adjust} SetupButtonHover added to options, search, and well-formedness title-bar buttons (previously no hover/press feedback)
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} SetupButtonHover applied to wrap and status title-bar buttons; status button custom open-tint removed
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} BugReportEntry gains featureRef link field; AddRequest generalized to AddEntry(kind) and RequestChange to FileForFeature
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Right-click an entry offers both "Request a change" and "Report a bug", each filing into BugReportWindow with the feat id
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Every Features.md entry carries a permanent feat-NNN id; ids never renumber or reuse
+- {date:2026-05-29} {sys:BugReportWindow} {type:feature} OpenEntry/FocusEntry added to open/focus and expand a specific entry; open/focus/spawn logic factored into shared EnsureBugWindowOpen
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Generated Button_BugIcon.png and Button_LightbulbIcon.png with letter fallbacks until Unity imports them
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Throttled refresh (at least 3s apart) on any click so status flips in Bug Reports appear here
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Top "Bugs/Reqs" toggle shows/hides the status pills to reduce noise
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Live status pills per linked bug/request: bug or lightbulb icon tinted by status, hover shows ID and status, click opens that entry in BugReportWindow
+- {date:2026-05-29} {sys:FeaturesWindow} {type:feature} Entries load BugReport.json via GitHubUploader and map linked bugs/requests by featureRef
+- {date:2026-05-29} {sys:Docs} {type:docs} StreamingAssets/Features.md migrated the full checklist into the 3-tab index: 40 to 96 entries with statuses, links, and roadmap depth
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Wishlist tab heading shortened to just Wishlist and the tab right-pinned via marginLeft Auto
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Diagnostic Debug.Logs stripped and BuildLinkMap simplified now that pills are confirmed working
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Bug/request pills moved to the end of descriptor text in a wrapping textBlock so they follow the last line instead of overflowing
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} New Button_BugReqIcon.png generated: bug upper-left, lightbulb lower-right, diagonal split, tinted at runtime
+- {date:2026-05-29} {sys:FeaturesWindow} {type:adjust} Bugs/requests toggle moved to the title bar as a combined bug+lightbulb icon button; on = full opacity, off = dimmed 0.4
+- {date:2026-05-29} {sys:HelpWindow} {type:fix} RenderTabs falls back to bundled NOS_Help.md for the Video block when the loaded nosh has none, so adding a video is just edit plus rebuild
+- {date:2026-05-29} {sys:HelpWindow} {type:docs} Video block added to the GorpEquationWindow section of NOS_Help.md and patched into the stale local .nosh
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} ExtractVideoUrl resolves relative paths against Application.streamingAssetsPath so one authored string plays on every target
+- {date:2026-05-29} {sys:HelpWindow} {type:infra} User capture remuxed losslessly to StreamingAssets/Help/Videos/GorpEquationWindow.mp4 via avconvert passthrough
+- {date:2026-05-29} {sys:Docs} {type:docs} UpdateHelpFeatures.md documents the Video authoring convention plus format guidance (mp4 H.264 for universal playback)
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} Help panel Video tab now plays an inline VideoSurface via ExtractVideoUrl; disposed on every tab switch and on close
+- {date:2026-05-29} {sys:WebGL} {type:feature} New VideoOverlay.jslib: HTML5 video element layered over the canvas, 50ms tick maps the panel rect so it tracks drag/resize
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} Editor/standalone video path: VideoPlayer to RenderTexture in a UITK Image with custom play/pause, drag scrub bar, and time label
+- {date:2026-05-29} {sys:HelpWindow} {type:feature} New VideoSurface.cs cross-platform reusable video element (IDisposable, add Root to any hierarchy)
+- {date:2026-05-29} {sys:BuildDeploy} {type:infra} New "Clean Up Junk Files on GitHub" button: lists repo tree via Trees API, confirms with preview, deletes junk with cancelable progress bar and deleted/failed counts
+- {date:2026-05-29} {sys:BuildDeploy} {type:infra} GitBuildCommitter filters OS junk files (.DS_Store, AppleDouble ._*, Thumbs.db, desktop.ini) via IsIgnoredJunkFile at both file-walk sources
+- {date:2026-05-29} {sys:HelpWindow} {type:docs} (Misdiagnosis pass) Removed the Video block from the GorpEquationWindow help section and local .nosh so the Video tab hides cleanly
+- {date:2026-05-29} {sys:BuildDeploy} {type:infra} (Misdiagnosis pass) Moved GorpEquationWindow.mp4 out of StreamingAssets to NOS/VideoSource to keep the 8.4MB clip out of the build payload
+- {date:2026-05-29} {sys:HelpWindow} {type:adjust} GorpEquationWindow.mp4 re-bundled into StreamingAssets/Help/Videos and the Video block restored in NOS_Help.md and local .nosh
+- {date:2026-05-29} {sys:BuildDeploy} {type:infra} Git Data path wired between the GraphQL bulk fast path and the per-file fallback; ParseFirstSha/ParseTreeSha/Trunc helpers added
+- {date:2026-05-29} {sys:BuildDeploy} {type:infra} GitBuildCommitter gains TryCommitBuildViaGitData: per-file blobs then one tree+commit+ref, landing large builds atomically (blob endpoint allows 100MB)
+- {date:2026-05-29} {sys:BuildDeploy} {type:fix} Diagnosed deployed-build crash: 40MB .wasm never uploaded (GraphQL bulk 6MB cap plus Contents API fallback failing), browser parsed a 404 HTML page as wasm
+
+### 2026-05-31
+- {date:2026-05-31} {sys:Docs} {type:docs} Added UFOS/Backend/NetworkChecks.md triage runbook: 5-step triage, HTTP-code cause table, domain-migration checklist, reboot matrix, service registration, probe one-liners
+- {date:2026-05-31} {sys:Worker} {type:infra} Confirmed cloudflared Windows service auto-start after reboot; Nexus.ApiService relaunched manually; Worker /gorp now returns real GORPHandler responses
+- {date:2026-05-31} {sys:Worker} {type:fix} Stray "thi" cleared from the tunnel route Path regex field that was blocking requests
+- {date:2026-05-31} {sys:Worker} {type:infra} Cloudflare DNS row for gai.aireport.us re-created as a Tunnel-type record, replacing a self-looping hand-made proxied CNAME
+- {date:2026-05-31} {sys:Worker} {type:infra} Gorp routing migration finished: Worker env GORP_TUNNEL_URL updated from ufostudios.net to https gai.aireport.us/gorpIT
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} GorpIT endpoint row inserted first in the variables panel flow so it is never clipped off the bottom
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} Algorithm picker row given flexShrink 0 so tab row stops compressing when content demands vertical space
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} Top toolbar no longer shrinks under vertical pressure: flex-shrink 0 added to .geq-toolbar in Gorp Window Styles.uss
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Empty-state hint labels dropped from the three model sections; unused EmptyHint helper removed
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Variables, Path Variables, and Arrays sections laid out side-by-side in a wrapping flex row that gracefully wraps to 2 or 1 columns on narrow panels
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Model editor header collapsed from three stacked rows to one horizontal row; descriptive subtitle moved into a tooltip, recovering about 50px
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Model section headings renamed from XML element names to human labels: Variables, Path Variables, Arrays
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} BuildSectionWrap gives every sub-table a small plus button next to its heading; addLabel parameter renamed to addTooltip
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Plus Model button replaced with a small inline plus sitting after the last model tab, matching the Algorithms picker affordance
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Models picker border swapped from bottom to top so the separator caps the bottom anchor correctly
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Models picker moved to bottom of the model panel as a single flat row mirroring the Algorithms picker at top; fixes vertical tab wrap
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} All padding/margin stripped from algorithm/model tabs and plus buttons so they size to content
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library kind-filter chips switched from Unity built-in tooltip to sticky TooltipManager tooltips with expanded descriptions
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} BuildEditCell and BuildTypePickerCell no longer wrap long values: NoWrap plus Ellipsis so CSV arrays truncate instead of cropping in the 22px row
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Algorithm and model tabs resized: 30 percent smaller padding/margin, tab label font 11 to 13, close x bumped to 16
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Plus buttons restored to compact size at all five call sites (algorithm picker, model picker, Variables/Path Variables/Arrays sections)
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Model plus button height 22 to 16 with explicit minHeight 0 and zeroed vertical margin/padding, side padding kept for click target
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Models picker row compressed to about half height: row padding 4 to 1, tab padding/margin zeroed, text sizes untouched
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library kind-filter chip tooltips trimmed from full sentences to plain labels: Algorithms, Models, Save in Progress
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Tab height clamped: close x fontSize 16 to 13, inner Label vertical margins/paddings zeroed, defensive minHeight 0
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Bottom gap removed: modelEditorPanel paddingBottom 10 to 0 so the Models row meets the panel edge
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Algorithm picker row padding top/bottom 4 to 1, mirroring the Models picker row
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Algorithm plus button resized height 22 to 16 with minHeight 0 and zeroed vertical margins, matching the Model plus button
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Algorithm tabs crushed to match Models tabs: zero vertical padding/margins, close x reverted to fontSize 13 width 13
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Algorithms and Models picker labels promoted to section-heading style (fontSize 12 bold); trailing colon dropped from Algorithms
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library pane remembered width still captured and re-applied on show so it reopens at its previous size
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} In-pane libraryCollapseBtn deleted; ToggleLibraryPaneCollapsed simplified to a pure display None/Flex toggle
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Title-bar Library toggle button (book icon, leftmost, hover styling, flip tooltip) replaces the in-pane collapse button
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library entries count moved into the kind-filter chip row, right-aligned after a spacer; chip row flipped Wrap to NoWrap to keep it anchored
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library book toggle icon doubled: fontSize 24, height 28, padding/margin zeroed so the glyph fills the button
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library pane resize separator made visible with dark-blue fill and cyan brighten on hover
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Duplicated placeholder string literals deduped into private consts referenced from all call sites
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Library section-open flags persisted via GorpEquationState libraryExtraFoldersSectionOpen and librarySearchSectionOpen
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library section toggle icons tint bluish when the underlying field has content; off-state falls back to default button background
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Opening a Library section toggle schedules a 40ms deferred auto-focus of its input field; click and auto-focus share commit logic via refactored shared methods
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Folders and search sections wrapped in containers toggled wholesale via style.display
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Folder and search header toggle buttons in Library header reveal/hide the Scan-extra-folders and Search-namespaces sections
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} UITK line-break recursion warnings fixed: NoWrap plus Hidden/Ellipsis on libraryTreeStatus, folders/search labels, and algorithm/model tab labels
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library title-bar book icon bottom-anchored: button height 28 to 32 plus LowerCenter align so the glyph stops poking above the button
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Scan-extra-folders field kept commit-on-Enter so path parse does not refetch GitHub per keystroke
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Library namespace search now live: onChange re-renders library tree on every keystroke instead of waiting for Enter
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} Folder containing the loaded file is now collapsible: lastEnsuredSelectionId gate makes auto-expand fire once per new selection instead of every render
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Library button reverted to the standard 24px height; glyph sized 18 with padding so it sits centered in the standard button frame
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:infra} Temporary [GorpSave]/[GorpRestore] diagnostics log persisted Library-pane fields + collapsed-path counts to pin down the persistence report
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} Line-break recursion warnings fixed at the three remaining sources: whiteSpace NoWrap on Libraries / Scan-folders / Search header labels
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Library foldout collapse state now persists: libraryCollapsedPaths snapshotted to a list in GorpEquationState and rehydrated on restore
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} Library namespace foldout keys scoped per file (filePath + "::" + accum) so same-named namespaces across files no longer collapse together
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Retired standalone "namespace=" rows: variables-panel row (~100 lines) and BuildModelNamespaceRow (~75 lines) removed; tab rename covers the workflow
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} BeginRenameModelTab: commit mutates the entry namespace and CascadeModelNamespaceRename fixes dangling references in algorithms/nodes
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} CopyAlgorithmNamespaceToClipboard / CopyModelNamespaceToClipboard with a toast of the copied value
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} SwapAlgorithmEntries for Move Left/Right, keeping currentAlgorithmIndex on the same logical entry
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} BeginRenameAlgorithmTab: in-place tab rename via BeginInPlaceEdit with the full commit chain; onChange wired for live library-tree updates while typing
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:fix} PointerDownEvent button==1 used instead of ContextClickEvent, which fires inconsistently across macOS input methods
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Algorithm/model picker tabs gained a right-click menu: Rename, Move Left/Right (disabled at ends), Copy Namespace, Delete
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:feature} Confirm dialog before right-click Delete on algorithm/model picker tabs (ConfirmDeleteAlgorithmEntry/ModelEntry); tab x close still removes directly
+- {date:2026-05-31} {sys:GorpEquationWindow} {type:adjust} Section + buttons (Variables / Path Variables / Arrays) restyled to exactly match the algorithm/model picker + buttons, so all five match
+- {date:2026-05-31} {sys:FeaturesWindow} {type:adjust} FeaturesList app now reads FeaturesList.md: seed TextAsset renamed with GUID preserved; defaultFilePath updated in App Registry.prefab
+- {date:2026-05-31} {sys:Docs} {type:docs} Many Planned entries and a large Wishlist tab added (live shared desktop, collaboration, messaging, security, AI everywhere, games-as-a-platform)
+- {date:2026-05-31} {sys:Docs} {type:docs} feat-NNN ids renumbered fresh feat-001..feat-314; prior ids + linked Bug/Request test data discarded per request
+- {date:2026-05-31} {sys:Docs} {type:docs} StreamingAssets/Features.md rebuilt as a long scannable index organized AI Designer / Game Designer / Online OS / Wishlist
+- {date:2026-05-31} {sys:Docs} {type:docs} Every em dash replaced with a normal hyphen across FeaturesList.md and StreamingAssets/Features.md; 0 remaining verified
+- {date:2026-05-31} {sys:Docs} {type:docs} All 253 FeaturesList.md bullets reformatted to a consistent "glyph **Feature** - description" shape
+- {date:2026-05-31} {sys:Docs} {type:docs} FeaturesList.md: markdown bullets dropped, status glyph is the sole leading marker; ✓ swapped for ● so markers read as one family
+- {date:2026-05-31} {sys:Docs} {type:docs} Subfeature lines indented with U+00A0 non-breaking spaces so NotesWindow renders nesting; brand-new apps added as ○ planned features
+- {date:2026-05-31} {sys:Docs} {type:docs} Separate Planned sections dissolved into parent features as ☐ subfeatures; a handful of ☒ declined items added
+- {date:2026-05-31} {sys:Docs} {type:docs} FeaturesList.md restructured to a two-tier hierarchy: circle main features (● complete, ◑ in progress, ○ planned, ☆ wishlist), checkbox subfeatures (☑ ☐ ☒)
+- {date:2026-05-31} {sys:Docs} {type:docs} FeaturesList counts after pass: 17 ●, 12 ◑, 11 ○, 69 ☆ features; 235 ☑, 45 ☐, 5 ☒ subfeatures; 0 em dashes
+- {date:2026-05-31} {sys:Docs} {type:docs} Foundations gained auto-save, versioning, activity tracking, backend framing; Dock feature, UML box drag-select, and Minimize/restore all added
+- {date:2026-05-31} {sys:Docs} {type:docs} New shared features added: Desktop, Files, Dialogs & popups, Buttons & controls, and Windowing framework (WindowBase) with explicit capability lists
+- {date:2026-05-31} {sys:Docs} {type:docs} FeaturesList.md: every window is a feature enumerating the shared capabilities it actually implements (verified by grepping the Windows source)
+- {date:2026-05-31} {sys:WindowBase} {type:adjust} Replaces the reverted editor-only "prefer bundled seed" shortcut; edit-save-restore now round-trips through GitHub consistently in editor and build
+- {date:2026-05-31} {sys:NotesWindow} {type:feature} NotesWindow overrides the delete hook to revert to its bundled seed TextAsset: the clean reset path for seed-backed notes
+- {date:2026-05-31} {sys:WindowBase} {type:feature} On confirm: DeleteFile + activity record + clears filePath/fileUrl (next save recreates) + toast + new protected virtual OnFileDeletedFromGitHub hook
+- {date:2026-05-31} {sys:WindowBase} {type:feature} "Delete from GitHub…" added to the title-bar right-click menu, shown only when a saved file path resolves; confirm dialog before anything happens
+- {date:2026-05-31} {sys:NotesWindow} {type:adjust} Counts include features and subfeatures (Completed = ● + ☑, Planned = ○ + ☐, etc.); current Features List = All 391
+- {date:2026-05-31} {sys:NotesWindow} {type:fix} Search now operates on displayed text via new GetDisplaySource; fixes search highlighting disappearing while a status filter was active
+- {date:2026-05-31} {sys:NotesWindow} {type:adjust} Active filter shown by cyan/bold button text; filtering applies in view mode only; plain notes unaffected (button hidden)
+- {date:2026-05-31} {sys:NotesWindow} {type:feature} FilterSourceByStatus keeps the preamble and non-empty section headers, includes matching feature lines plus their indented subfeature lines
+- {date:2026-05-31} {sys:NotesWindow} {type:feature} Status filter bar (All / Completed / Partial / Planned / Wishlist) with live counts; Filter button revealed only when the note carries status markers
+- {date:2026-05-31} {sys:NotesWindow} {type:adjust} Partial = ◑ only (its done subitems belong to Completed); new SetAllCats / RefreshFilterButtons / FilterSourceByCats replace FilterSourceByStatus
+- {date:2026-05-31} {sys:NotesWindow} {type:fix} Line-level union filtering fixes "Completed says 251 but ~90 show": done ☑ subitems under in-progress ◑ features now included with context headers
+- {date:2026-05-31} {sys:NotesWindow} {type:feature} Status filter reworked to independent on/off checkbox toggles with live counts; All flips every category; closing the bar restores all-on
+
+### 2026-06-01
+- {date:2026-06-01} {sys:FeaturesWindow} {type:fix} StreamingAssets fallback: LoadFeatures falls back to the bundled copy via UnityWebRequest instead of dead-ending in WebGL when GitHub has no Features.md
+- {date:2026-06-01} {sys:FeaturesWindow} {type:feature} Save targets the shared SavedData/Features.md directly via SaveMarkdown (index is one shared file, not user-namespaced), with success/fail toast
+- {date:2026-06-01} {sys:FeaturesWindow} {type:feature} FeaturesWindow now saveable: HasSaveableContent/GetSaveContent/PerformSave/PerformExport; title menu offers Save to GitHub / Export (Download)
+- {date:2026-06-01} {sys:BuildDeploy} {type:docs} One-time unstick documented for the mismatched remote: toggle Force Full Upload and commit once
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} Git Data path (blobs -> one tree with base_tree -> one commit -> ref) confirmed atomic and stays the workhorse; manifest saved only on full success
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} GraphQL bulk path bails on multi-chunk change-sets and hands them to the atomic Git Data path
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Per-file Contents-API fallback now aborts (remote untouched, clear dialog) if any file exceeds 1 MB instead of half-deploying
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Root-caused the recurring deployed-build OOB: non-atomic upload fallbacks could leave mismatched .wasm/.data on Pages; every path now atomic-or-abort
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} Update-driven upload keeps the editor usable between files; synchronous CommitBuildToGitHub kept as fallback for non-URL/local-git repos
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Section reverts to the persistent Committed Files text when in-memory state clears; window repaints via OnInspectorUpdate while uploading
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} Cancel Upload button during the blob phase; cancel commits nothing since the ref only advances at the final atomic step
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} Progress UI: Committing Files header, total-bytes bar + active-file label, per-file rows colored gray/yellow/green/red with error text
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} Live per-file upload progress: BeginCommitWithProgress drives one blob per editor tick using the exact atomic Git Data sequence, rendered in the GBC window
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} File sizes right-aligned in a column at the view's right edge in the Committing Files list
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} Draggable Description/Files splitter with persisted descRatio (0.12-0.88, EditorPrefs); both panes stretch on vertical resize
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Settings foldout moved to the bottom of the GBC window
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Splitter rewritten with GetControlID + hotControl and absolute mouse tracking (1:1, no drift); cyan hover/drag highlight added
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Resize was ~5 FPS from a per-frame settings save; debounced to 0.5s with a final flush in OnDisable/OnDestroy
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Field-initializer crash: EditorPrefs.GetFloat read moved from a field initializer to OnEnable (forbidden on ScriptableObject)
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} OnEnable heals an already-saved giant lastDescription (>8000 chars) by re-seeding from the capped extract
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} 5-FPS resize root cause: Description seeded with the entire 120 KB change.md; now seeds only the most recent entry via ExtractLatestChangeEntry, capped 4000 chars
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Bottom gap removed: files pane uses ExpandHeight + MinHeight(40), pushing the diff summary + Settings foldout to the bottom edge
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Min window size ~50% smaller: width 520->280, compact height 420->180, expanded 620->300
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Description and files panes both stretch and are draggable; Settings foldout sits flush on the window bottom with no gap
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Layout made self-measuring: Description + splitter + files in a height-bounded VerticalScope; regionH measured on Repaint, converges in ~1 frame
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Toggling Settings no longer resizes the window: foldout toggle just sets flag + Repaint; ApplyWindowSize (open only) enforces the minimum without shrinking
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Last-diff line restyled: leads with build version + date/time (new GetLastBuildStamp), plain 1.5x muted-gray wrapped label instead of the Info balloon
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Diff count/date/version folded into the Committed Files header line via new BuildCommittedHeader; standalone "Last diff" line and diffStyle removed
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Live-upload file list wrapped in a dark inset panel matching the Description and idle Committed Files areas
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} File size pinned to the right edge: rows drawn with manual rects at exactly the visible width, filename clips, fixed 72px size column always visible
+- {date:2026-06-01} {sys:BuildDeploy} {type:docs} Full Proxima revert steps documented in _NOS_BUILD_NOTES.md; note on clearing stale StreamingAssets/proxima from the remote
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} ProximaWebGLBuildStep (copied the web app into every WebGL build's StreamingAssets) gated behind PROXIMA_IN_BUILDS define, off by default
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} Proxima Resources moved to Editor/Resources: still loads in Play mode but the ~400KB blob + dragged-in sprites leave the build
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} proxima-websocket-sharp.dll plugin set Editor-only
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} Proxima stripped from builds: Runtime/Proxima.asmdef includePlatforms set Editor-only (code no longer compiled into the .wasm)
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} ShouldRetryWorker now also retries transport-level failures (ConnectionError) and 408/5xx, not just 429/rate-limit
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} One flaky file no longer aborts the upload: UploadBlobMaxAttempts 12, 2s transport retry floor, 2.5s launch cooldown after a transport reset
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Upload tail crawl fixed: short transport retry delays (0.75s x attempt, 3s cap) and the launch cooldown skipped once in-flight drops below 6
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} "Max MB in flight" setting (uploadByteBudgetMB, default 8), the real throttle; concurrency 100 + 8 MB budget finished a full upload in 67s
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} "Uploads at once" setting (uploadConcurrency, default 6, no upper cap); 6 ran a 267-file full upload in ~84s, down from ~300s serial
+- {date:2026-06-01} {sys:BuildDeploy} {type:adjust} Per-file idle frame removed; live list shows up to N yellow uploading rows; active label reads "Uploading X / N done (K in flight)"
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} Atomicity unchanged with concurrency: single tree+commit+ref at the end; per-request retry with exponential backoff; non-retryable failure aborts the upload
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} LaunchBlob fires non-blocking SendWebRequest instead of the old busy-wait so requests overlap; DisposeInFlight cleans up on cancel/abort
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} GitBuildUploadProgress rewritten for concurrent blob uploads: up to UploadConcurrency requests in flight via reap/retry/fill/finalize tick loop
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} TextMesh Pro Resources moved under Editor/Resources: excluded from builds (~3 MB off the .data) while staying Resources.Load-able in the editor
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Scheduler head-of-line blocking fixed: files sorted largest-first and the fill loop skips over-budget files instead of breaking; finalize on all-entries-done
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Patient finalize retry: tree+commit+ref retries up to 6 times with tick-driven backoff (12s doubling, 60s cap) instead of discarding 267 uploaded blobs on a rate limit
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} EnsureSyncBaselineSeeded: first sync seeds its diff baseline from the last build's manifest so a post-build sync shows 0 changes instead of re-uploading everything
+- {date:2026-06-01} {sys:BuildDeploy} {type:infra} Sync reuses build machinery: synthetic BuildInfo at dataPath, sync-specific manifest diff, atomic tree/commit/ref; honors Force Full; skips .meta and dot-files
+- {date:2026-06-01} {sys:BuildDeploy} {type:feature} New Sync Data button + GitBuildCommitter.SyncStreamingAssets: pushes changed StreamingAssets to the deployed repo differentially, no IL2CPP rebuild
+- {date:2026-06-01} {sys:BuildDeploy} {type:fix} Upload settings kept reverting to defaults: flaky ScriptableSingleton load; upload tuning moved to EditorPrefs (concurrency/byte budget, defaults 10/20)
+- {date:2026-06-01} {sys:ScreenRecorder} {type:docs} TODO noted: MediaRecorder WebM + server-side ffmpeg transcode fallback for older browsers
+- {date:2026-06-01} {sys:ScreenRecorder} {type:feature} ScreenRecorderManager platform-branched: WebGL uploads the MP4 via SaveFileBytes to Recordings/NOS-<ts>.mp4; F11 / dock Record unchanged
+- {date:2026-06-01} {sys:ScreenRecorder} {type:feature} New WebGLScreenRecorder.cs C# wrapper: IsSupported, Start(includeMic), Stop, WaitForResult coroutine; stubs off-WebGL
+- {date:2026-06-01} {sys:ScreenRecorder} {type:infra} New mp4-muxer.jspre: vendored mp4-muxer v5 UMD (~74 KB) prepended to the loader with a globalThis binding; API surface verified
+- {date:2026-06-01} {sys:ScreenRecorder} {type:infra} New WebGLVideoRecorder.jslib: canvas capture, VideoEncoder avc1 + AudioEncoder AAC mic, mp4-muxer fastStart in-memory, polled byte handoff to Unity
+- {date:2026-06-01} {sys:ScreenRecorder} {type:feature} WebGL screen recording via WebCodecs + mp4-muxer producing a universal client-side MP4 (H.264 + AAC), no 30 MB ffmpeg.wasm
+- {date:2026-06-01} {sys:ScreenRecorder} {type:fix} addVideoChunk duration error fixed: switched to addVideoChunkRaw/addAudioChunkRaw with explicit durations (33333us at 30fps; 1024/sampleRate for AAC)
+- {date:2026-06-01} {sys:ScreenRecorder} {type:infra} Audio-chunk counter added to the [NOSRec] done log (N frames, M audio chunks) to confirm audio is flowing
+- {date:2026-06-01} {sys:ScreenRecorder} {type:fix} No-audio fix: AudioContext started SUSPENDED without a DOM gesture; now created at record start and re-resumed on every pointerdown/keydown until running
+- {date:2026-06-01} {sys:ScreenRecorder} {type:feature} Live mic-level meter: WebGLRec_AudioLevel RMS drives a green ring around the dock Record button that brightens with mic level (80ms schedule)
+- {date:2026-06-01} {sys:ScreenRecorder} {type:fix} Silent AAC track fixed: Safari's oversized decoderConfig.description yielded a malformed esds; clean 2-byte AAC-LC AudioSpecificConfig built and passed to the muxer
+- {date:2026-06-01} {sys:ScreenRecorder} {type:infra} Verbose [NOSRec] logging + no-frames guard; vendored mp4-muxer kept; C# bridge unchanged
+- {date:2026-06-01} {sys:ScreenRecorder} {type:fix} Resolution-aware H.264: first codec passing VideoEncoder.isConfigSupported (level 5.2 -> 4.0 -> 3.1) so Retina canvases encode fine
+- {date:2026-06-01} {sys:ScreenRecorder} {type:fix} Audio garble fixed: mic -> AudioContext -> inline AudioWorklet -> AudioEncoder (AAC) configured from the real AudioContext.sampleRate
+- {date:2026-06-01} {sys:ScreenRecorder} {type:infra} New PreserveDrawingBuffer.jspre patches getContext to force preserveDrawingBuffer:true so VideoFrame(canvas) reads real pixels, not a cleared buffer
+- {date:2026-06-01} {sys:ScreenRecorder} {type:fix} Cross-browser video capture: requestAnimationFrame + new VideoFrame(canvas) at 30fps replaces Chromium-only MediaStreamTrackProcessor (fixes "a few frames")
+
+### 2026-06-02
+- {date:2026-06-02} {sys:GalleryWindow} {type:docs} Remaining noted: drag-to-desktop video wallpapers, All/Images/Videos filter, real poster thumbnails, pause on minimize
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} LoadRecordings lists SavedData/Recordings/*.mp4 newest-first and adds video tiles; click opens a full-content panel with a top Close bar
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} New VideoPlayerOverlay.cs: HTML5 <video> with native controls, aligned to a UITK element via a 16ms scheduler mapping worldBound to canvas coords (WebGL-only)
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Gallery shows screen recordings alongside image backgrounds (phase 1 of the unified image+video gallery)
+- {date:2026-06-02} {sys:GalleryWindow} {type:fix} Video Close left the <video> on screen: jslib keys by int id but got a string pointer; VideoPlayerOverlay switched to int ids via GetInstanceID
+- {date:2026-06-02} {sys:WebGL} {type:infra} Added NOS_VideoThumbStart/State/Length/Copy to VideoOverlay.jslib
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Video tiles show a real poster frame with the play glyph as an overlay instead of black placeholders
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} New Managers/VideoThumbnail.cs cross-platform poster generator (WebGL off-screen video->canvas->JPEG jslib; editor one-shot VideoPlayer + ReadPixels)
+- {date:2026-06-02} {sys:GalleryWindow} {type:fix} Gallery recordings now play in the editor too: switched to the existing cross-platform VideoSurface; redundant WebGL-only VideoPlayerOverlay.cs deleted
+- {date:2026-06-02} {sys:Docs} {type:docs} CLAUDE.md updated for the Voxel Busters removal
+- {date:2026-06-02} {sys:ScreenRecorder} {type:infra} Verified zero remaining references across all 382 SDK scripts; also reclaims ~1 MB LiberationSans TMP font pulled in only by a VoxelBusters prefab
+- {date:2026-06-02} {sys:ScreenRecorder} {type:infra} Removed VoxelBusters.ScreenRecorderKit + CoreLibrary references from UFOS.asmdef
+- {date:2026-06-02} {sys:ScreenRecorder} {type:infra} Deleted Assets/ThirdParty/VoxelBusters (~5.4 MB) plus two orphaned force-bundled ScreenRecorderKitSettings assets
+- {date:2026-06-02} {sys:ScreenRecorder} {type:infra} ScreenRecorderManager rewritten without Voxel Busters; now WebGL-only with a clear toast elsewhere; F11/dock button/mic-ring integration kept
+- {date:2026-06-02} {sys:ScreenRecorder} {type:docs} Limitations noted: window/box crops locked at record start; normalized-panel-to-canvas mapping needs a WebGL build to verify
+- {date:2026-06-02} {sys:Dockbar} {type:feature} Right-click on the Record button opens ShowRecordContextMenu (ContextMenuManager + GetWindowsOfType)
+- {date:2026-06-02} {sys:ScreenRecorder} {type:feature} ScreenRecorderManager: RecordScreen/RecordWindow/BeginBoxSelect; rects normalized against OverlayLayer; region outline drawn just outside the crop
+- {date:2026-06-02} {sys:ScreenRecorder} {type:infra} WebGLRec_Start now takes a normalized crop rect applied via VideoFrame visibleRect (even-aligned, encoder configured at crop size); Start(includeMic, crop) plumbs it
+- {date:2026-06-02} {sys:ScreenRecorder} {type:feature} Box Select overlay: drag a rectangle, records just that region, outline persists until stop; menu shows "Stop Recording" while recording; Esc/tiny drag cancels
+- {date:2026-06-02} {sys:ScreenRecorder} {type:feature} Dock Record button right-click menu with three capture modes: Record Screen, Record Window (submenu of open windows), Box Select Area
+- {date:2026-06-02} {sys:GalleryWindow} {type:docs} Queued follow-ups noted: image click-to-open, tooltips, video right-click menu, GitHub rename, drag-video-to-desktop live wallpapers
+- {date:2026-06-02} {sys:GalleryWindow} {type:adjust} In-place video panel removed; a video tile click opens its own VideoWindow; multiple videos open at once, grid stays browsable
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} New Windows/VideoWindow.cs: WindowBase hosting a VideoSurface, spawned programmatically with the gallery's styleSheets (no new prefab/registry entry)
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Speed slider 0-4x with a generateVisualContent tick strip and live X.Xx label; drives SetSpeed (WebGL NOS_VideoSetRate; editor playbackSpeed)
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Loop toggle persisted per video in PlayerPrefs (NOSVidLoop_<filename>); drives SetLoop (WebGL NOS_VideoSetLoop; editor isLooping)
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Reverse playback simulated by stepping time backwards per frame (choppy + silent by nature), wraps to the end when looping; WebGL rAF + editor stepping
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Speed slider range widened to -2x..5x: >0 forward, 0 pause, <0 reverse; tick strip spans the range; readout shows Pause at 0
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Loop control now a dark-mode pill (grey off, green-highlighted on) replacing the unreadable default Toggle checkbox; same per-video persistence
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Video tooltips via TooltipManager: DescribeRecording parses the recording date/time from the NOS-timestamp filename + "Click to play"
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Image tooltips show last-modified: BackgroundInfo.lastModified populated at build time by BackgroundManifestGenerator
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Left-click a gallery image opens ImageWindow with click-vs-drag distinction (<6px move = click); a click cancels the wallpaper drag state
+- {date:2026-06-02} {sys:WebGL} {type:fix} WebGL playback <video> sets crossOrigin=anonymous so the snapshot canvas stays untainted
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Live thumbnail refresh: static ThumbnailUpdated(relPath, jpgBytes) event fires at capture; gallery keys video tiles by path and swaps the tile background instantly
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Gallery prefers a custom poster when one exists (recursive listing flags present posters, no blind 404 fetches), else auto-generated thumbnail
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Set current frame as gallery thumbnail: right-click a playing VideoWindow -> Set as Thumbnail; CaptureFrame saves a downscaled JPEG to Recordings/Posters
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Video right-click menu mirroring images: Set as Wallpaper (toast for now), Delete Video (+ activity record, removes tile), Open As submenu
+- {date:2026-06-02} {sys:GalleryWindow} {type:fix} Gallery image drag no longer flickers a ghost at top-left on a plain click: ghost primed on pointer-down but shown only after ~6px movement
+- {date:2026-06-02} {sys:GalleryWindow} {type:adjust} New FormatSize helper (B/KB/MB); Modified parsed from the NOS-timestamp filename; tooltip re-reads a mutable resStr on hover
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} VideoThumbnail.Generate reports original video dimensions via callback (WebGL new NOS_VideoThumbW/H getters; editor VideoPlayer.width/height)
+- {date:2026-06-02} {sys:GalleryWindow} {type:feature} Video tooltips match the image tooltip (name, Resolution, Size, Modified, File); LoadRecordings switched to ListAllFilesRecursiveWithSizes
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} VideoSurface minimum heights lowered (root 220->140, display 180->120) so slider + ticks + numbers stay fully visible
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} Speed slider scale numbers restored (-2x / 0 / 5x, 10px, brighter); the label row was clipping off the bottom of short windows
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} VideoSurface minimum heights lowered further (root/anchor 220->100, native display 180->90) so the controls bar stays on-screen
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Removed the meaningless 1.0x readout to the right of the slider
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Number row moved above the tick strip (slider -> numbers -> ticks) so short windows can't clip the numbers
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Speed labels -2x / 0 / 5x each centered directly over their tick mark (shared pad inset, positioned on GeometryChangedEvent)
+- {date:2026-06-02} {sys:GalleryWindow} {type:adjust} "Delete Video" and "Delete Image" in the gallery now confirm via UIManager.ShowConfirm before removing from GitHub
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} Loop now works in reverse: loop intent tracked separately, native looping forced off during reverse, manual wrap to just-before-end (editor + WebGL)
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} TogglePlay restarts from 0 if parked at the end
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Transport button now a large custom-drawn play triangle / round-capped pause bars via generateVisualContent; clicking the video toggles play/pause
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} ConfirmDelete confirms, deletes recording + poster, raises RecordingDeleted, closes the window; gallery updates tiles in place via per-tile VideoTileRef
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} ApplyRename does a real GitHub rename of the recording and its poster (CopyFile + DeleteFile), updates title/url, raises RecordingRenamed
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Title-bar right-click menu (Rename… / Delete from GitHub…) + double-click in-place rename via BeginInPlaceEdit (VideoWindow has no AppInstance)
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Instant rename: gallery tile updates its name the moment of rename via optimistic RecordingRenamed, not after the background GitHub copy/delete
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} Playback stops on close: DetachFromPanelEvent disposes the surface (OnDestroy wasn't guaranteed to fire; minimize unaffected)
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} End of a non-looping clip reliably flips the transport back to the play triangle via VideoPlayer.loopPointReached (guarded for looping clips)
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} Close-on-detach disposal deferred one frame so a transient re-parent during show/animation can't stop playback/audio
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} Editor AudioSource made explicitly 2D (spatialBlend 0) + full volume so it's audible regardless of AudioListener distance
+- {date:2026-06-02} {sys:VideoWindow} {type:feature} Volume slider ("Vol" label + compact 0..1 slider) driving new VideoSurface.SetVolume (editor AudioSource.volume; WebGL <video>.volume via NOS_VideoSetVolume)
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Speed control redesigned to one readable row with a live readout (1.0x / Pause / -2.0x); vertical tick strip removed
+- {date:2026-06-02} {sys:VideoWindow} {type:fix} Editor audio: VideoSurface adds an AudioListener when the scene has none (UI-only app produced no sound at all)
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Speed row simplified: cramped -2x/5x flanking labels dropped, speed slider grows to fill the row, volume slider to its right
+- {date:2026-06-02} {sys:VideoWindow} {type:adjust} Window opens landscape 580x400 with min 420x220 so the speed/volume sliders can't be squeezed away on resize
+
+### 2026-06-03
+- {date:2026-06-03} {sys:Collab} {type:docs} Plan: stream tuning levers in priority order; shader downsample-then-capture rejected; Cloudflare Realtime TURN chosen; warm watchers; cursor presence post-v1
+- {date:2026-06-03} {sys:Collab} {type:docs} Plan: viewing = live WebRTC mesh video of the operator's screen via own .jslib (com.unity.webrtc has no WebGL); desktop state serialized only at handoff
+- {date:2026-06-03} {sys:Collab} {type:docs} New CollabSessionPlan-2026-06-03.md: account-keyed session via a Durable Object, single-operator baton with request/grant/release handoff, first join wins
+- {date:2026-06-03} {sys:Collab} {type:infra} iPhone 11 loopback: full-res capture ~31% fps cost, mid-stream downscale kills the iOS encoder; reinforces mobile = watch-only in v1
+- {date:2026-06-03} {sys:Collab} {type:infra} Spike result (WebGL loopback): canvas streaming ~0% fps cost; decision = ship full res, downscale is a per-watcher bandwidth lever; Spike PASSED
+- {date:2026-06-03} {sys:Collab} {type:adjust} Removed the earlier throwaway CollabVideoSpike.cs OnGUI harness
+- {date:2026-06-03} {sys:Collab} {type:infra} New CollabTest.prefab cloned from Performance.prefab; CollabVideoTestApp registered in App Registry so it appears in the App Gallery
+- {date:2026-06-03} {sys:Collab} {type:feature} New CollabTestWindow.cs: Run Benchmark measures Unity fps in three states (off/full/half res); manual Start/Stop + Scale x1/x2/x4; live fps + sent-stream readout
+- {date:2026-06-03} {sys:Collab} {type:feature} New CollabVideoBridge.cs static managed wrapper over the jslib (DllImports + editor stubs), reusable by Phase 1
+- {date:2026-06-03} {sys:Collab} {type:infra} New CollabVideo.jslib: canvas.captureStream into a single-page WebRTC loopback, corner video proves the stream is live, scaleResolutionDownBy lever + getStats polling
+- {date:2026-06-03} {sys:Collab} {type:feature} Collab video Spike packaged as an openable App Gallery window (Collab Video Test), runnable any time
+- {date:2026-06-03} {sys:Collab} {type:adjust} CollabTest.prefab default size bumped to 400x560 for the added section
+- {date:2026-06-03} {sys:Collab} {type:feature} CollabTestWindow gained a Session section: Connect/Disconnect, connection status + role, live roster list with [driving] marker
+- {date:2026-06-03} {sys:Collab} {type:feature} New Scripts/Managers/CollabSession.cs singleton: Connect/join, roster + OperatorId/IsOperator, roster/connection events, Request/Grant/ReleaseControl baton API
+- {date:2026-06-03} {sys:Collab} {type:infra} New Plugins/WebGL/CollabSocket.jslib browser WebSocket bridge; callbacks reach Unity via window.unityInstance.SendMessage
+- {date:2026-06-03} {sys:Collab} {type:docs} New Backend/CollabBackend.md deploy guide: /session/:account route, DO binding + migration, Workers Paid requirement, two-tab verification steps
+- {date:2026-06-03} {sys:Collab} {type:infra} New Backend/session-do.js: SessionRoom Durable Object per account; WebSocket fan-out, participant tracking, baton assignment, generic cursor/video/control relay
+- {date:2026-06-03} {sys:Collab} {type:feature} Collab Phase 0: two tabs on the same account connect to one Durable Object with a live roster; control baton first-join wins, reassigned on operator disconnect
+
+### 2026-07-18
+- {date:2026-07-18} {sys:AnyFilePreview} {type:docs} Deferred per AUDIT roadmap: lazy per-page rendering with LRU eviction; PDFium binaries if Windows editor parity is ever needed
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} Settings grew pdfMaxPages (default 30) + pdfRenderScale (default 2.0), Undo-wrapped, editable under a new "PDF preview" section
+- {date:2026-07-18} {sys:AnyFilePreview} {type:adjust} "Save Frame" becomes "Save Page" for PDFs, names files _page001.png (1-based); info line shows "N pages" or "N of M pages (capped)"
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} PreviewEntry grew IsPaged/TotalPageCount/IsMultiFrame; PDFs reuse the multi-frame pipeline (scrub flips pages, filters + picker work on pages for free)
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} New PdfDecoder.cs: CGPDFDocument per-page render; handles /Rotate, crop-box, 4096px bound, password-locked docs warn and fall through
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} PDF page preview in the inspector: pages rasterized by macOS CoreGraphics via P/Invoke, zero dependencies; Windows/Linux keep default chrome
+- {date:2026-07-18} {sys:AnyFilePreview} {type:adjust} Pan clamped per-axis; zoomed draw clipped via GUI group; pixel picker maps texels through the zoomed rect; zoom resets on selection change, persists across pages
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} Toolbar view controls: Fit (default), W (fit width, top-anchored reading mode), 1:1 (actual pixels), live percent readout while zoomed
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} Drag-to-pan while overflowing with a Pan cursor hint; at Fit drag still scrubs; zoomed scrub grab area shrinks to a 14px strip over the scrub bar
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} Preview-pane zoom: scroll-to-zoom anchored at the cursor; plain scroll pans once overflowing; zoom-out snaps back to Fit; range fit to 16x
+- {date:2026-07-18} {sys:AnyFilePreview} {type:adjust} SetScrubFromMouse maps cursor Y for pages (X for frames); at Fit whole-pane drags flip pages; ResizeVertical cursor over the page bar
+- {date:2026-07-18} {sys:AnyFilePreview} {type:adjust} ScrubStripRect now entry-aware (right-edge vertical for pages, bottom horizontal for frames); HandlePan excludes the same rect
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} DrawPageScrollBar: full-height 14px track pinned to the pane's right edge, proportional thumb (min 24px), dark "3/7" page badge riding the thumb
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} PDF page scrubber replaced with a real vertical scroll bar (the PDF-viewer convention); GIFs keep the horizontal bottom timeline
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} Plain scroll flips pages on PDFs at Fit with notch accumulation; scroll still pans while zoomed; Alt/Cmd/Ctrl+scroll always zooms; images keep scroll-to-zoom
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} "NN%" zoom button with vertical drop-down slider (log-scaled fit to 16x); drag to bottom snaps back to Fit; ESC or click-out closes
+- {date:2026-07-18} {sys:AnyFilePreview} {type:feature} Fit Width now fits the page's content, not the page: GetContentBounds scans for non-near-white pixels (cached per page), zooms to content width +4%, top-anchored
+- {date:2026-07-18} {sys:AnyFilePreview} {type:adjust} Page scrollbar switched to Unity's own GUI.VerticalScrollbar with the editor skin; float pageScrollValue keeps the thumb smooth between page snaps
+- {date:2026-07-18} {sys:Editor} {type:infra} Replacement constructs verified by compiling a probe against the 6000.5.4f1 CoreModule.dll with obsolete warnings as errors
+- {date:2026-07-18} {sys:Editor} {type:fix} EasyChartLibraryWindow.Series: foldout key via GetEntityId().ToString() (hidden until the runtime assembly compiled)
+- {date:2026-07-18} {sys:Editor} {type:fix} EasyChart UGUIChartBridge: 5 generated-object name interpolations use GetEntityId() directly
+- {date:2026-07-18} {sys:Editor} {type:fix} EasyChart ChartTextStyleApplier: AppliedState cache fields retyped int -> EntityId, compares with ==, null case uses EntityId.None
+- {date:2026-07-18} {sys:Editor} {type:fix} ProximaComponentCommands: component id + idToComponentInfo key via StableId
+- {date:2026-07-18} {sys:Editor} {type:fix} ProximaGameObjectCommands: UpdateGameObjectInfo id/parentId via StableId (ids start at 1, 0 stays the no-parent sentinel)
+- {date:2026-07-18} {sys:Editor} {type:fix} ProximaCommandHelpers: new StableId(Object) folds EntityId.ToULong to a session-stable int via dictionary (Proxima wire protocol is int-keyed)
+- {date:2026-07-18} {sys:Editor} {type:fix} Unity 6000.5.4f1 upgrade compile break fixed: GetInstanceID + EntityId->int conversion now error-level obsolete; all 14 third-party call sites replaced
+
+### 2026-07-19
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Wheel zoom aligned to 25-250%; floor extends below 25% to the fit scale; old snap-to-fit on zoom-out removed; Fit Width clamp aligned to 250%
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Slider matches the Size selector: linear 25-250% snapped to whole percents, percent readout floats at the thumb Y with the fake-outline trick
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Dead zoom slider root cause: DefaultAsset inspectors render with GUI.enabled=false; OnPreviewGUI now forces GUI.enabled=true, fixing slider + page bar at once
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Document mode: PDFs hide the pixel-sampler toggle and RGB/R/G/B channel filters; pages always render full color; toolbar = Fit / W / 1:1 / % / Save Page
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Pan grab-hand cursor no longer shows over the zoom slider or the scrub strip
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Zoom slider with manual MouseDown/Drag/Up and its own control id; track Y maps 25-250% with whole-percent snap; grab area is track ±6px
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Page scrollbar draws the editor skin's verticalScrollbar styles Repaint-only; input back through HandleScrub; strip width reads the skin scrollbar width
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Native IMGUI controls doubly broken in the preview pane (wrong skin + no input); switched to editor-skin-style draw with manual input handling
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} Temporary DebugZoomSlider instrumentation logs every slider MouseDown routing decision to the Console
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} SetZoomFromMouse travel = track minus thumb, mirrored exactly by the thumb draw, so the dot rides the cursor instead of sitting offset
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Zoom slider restructured input-first: HandleZoomSliderInput runs before every other mouse handler; GetControlID called unconditionally for stable id order
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} DrawPageScrollBar hand-draws the flat UITK look (theme-aware gutter, mid-gray inset thumb that lightens while dragging); IMGUI skin cannot reproduce the UITK scroller
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Toolbar buttons renamed: "Fit" -> "Full", "W" -> "Fit W", including the ZoomPercentLabel fallback and comments
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Zoom thumb alignment: groove hand-drawn as a 2px line at the rect's exact center with the thumb centered on the same axis
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Input-first restructure confirmed fixing the dead zoom slider; DebugZoomSlider instrumentation removed
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Zoom thumb replaced with a generated 24px AA circle texture (skin texture had asymmetric padding, sat off the groove); slider now 100% self-drawn
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} HandleScrub restructured: arrow hits consume the click without a drag; scrubZone captured at MouseDown for stable mapping; cursor hint confined to the track
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Up/down page-step arrow buttons at the scroller ends, one page per click (StepPage), matching the Project scroller
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Page scroller rebuilt to the UITK design: rounded pill thumb via GUI.DrawTexture border-radius, theme-aware colors, lightens while dragging
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Documents open at Fit W by default: ApplyFitWidth auto-applied on first repaint via one-shot flag; images/GIFs still default to Full
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} ImageIO verified via Mono harness against 10 real formats: all decoded with correct dimensions; ICO returned 4 sizes, ICNS 10 (largest-pick exercised)
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} ImageIOExtensions gates IsPreviewable on macOS only; new extensions added to BinaryExtensions and ExtDisplayNames
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} ImageIO correctness: manual un-premultiply, all-8-case EXIF orientation remap (portrait HEICs no longer sideways), 4096px bound, row flip
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Multi-image containers (ICO sizes, ICNS, multi-page TIFF) keep only the largest image
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Animated WebP/APNG: frames + per-frame delays feed the existing GIF pipeline for Play/scrub; APNG detected by acTL-before-IDAT sniff
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} New ImageIODecoder.cs: macOS ImageIO fallback adding WebP, ICO, ICNS, PSD, HEIC/HEIF, AVIF, JPEG-2000, EXR, APNG; fixes claimed-but-broken BMP/TGA/TIFF
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} SVG verified via standalone Mono harness: intrinsic 300x200 reported, rasterized 600x400, pixel-perfect shapes/colors/text/AA
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} SVG is macOS-only (IsSupported stub elsewhere); invalid SVG falls through to no preview
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} .svg keeps source body with XML syntax highlighting + tree view while the preview pane renders the image; channel filters, zoom, picker work on the render
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} New SvgDecoder.cs: SVG rasterized via AppKit NSImage (CoreSVG, macOS 11+) through libobjc P/Invoke; 2x intrinsic size, 4096px bound, 512px viewBox fallback
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} Video decode verified via standalone Mono harness on GorpEquationWindow.mp4: correct 221s duration, frames pixel-perfect at 841x520
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} CMTime marshaling: objc_msgSend_stret on x86_64 but plain objc_msgSend on arm64 (no stret trampoline), arch-checked at runtime
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Video decodes from file path (no managed read); 1024px bound aspect-kept; preferred track transform uprights portrait videos; info shows "M:SS N frames sampled"
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Video previews cover .mp4/.m4v/.mov/.avi/.mpg/.mpeg/.3gp (AVFoundation codecs; WebM/MKV excluded); StreamingAssets help videos finally preview
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} New VideoDecoder.cs: samples up to 30 frames via AVFoundation AVAssetImageGenerator P/Invoke (fourth zero-dependency decoder), scrub + slideshow Play + Save Frame
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} CSV/TSV virtualization: fixed row height, one reserved rect, only rows within a 2400px scroll window drawn (~100 draws per repaint)
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Alt-click expand-all guard: subtree expand/collapse dict writes capped at 20k nodes so a million-node subtree can't stall the click
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} JSON child cap: objects/arrays show first 500 children + "+N more (Color view shows all)"
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} JSON row budget: max 1000 tree rows laid out per repaint; "tree display capped" notice when spent
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} JSON parse gate: files over 3 MB skip tree parsing with a HelpBox pointing to Color/Raw views
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Editor hang on large JSON/CSV fixed: unbounded per-repaint IMGUI layout (full-file tree parse, one measured row per visible node every repaint)
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} Virtualization verified headless on the reported file: 370K chars -> 68 chunks in 10ms, 4316 line count preserved, every chunk tag-balanced
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Virtualized-file trade-offs noted inline: word wrap ignored (horizontal scroll), Raw-mode selection disabled; under-2000-line files keep the single-label path
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Color spans crossing chunk boundaries are closed/reopened so highlighting stays correct per chunk; total height matches so scroll restore unchanged
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Virtualized source rendering: files over 2000 lines split into 64-line chunk labels with exact heights; only chunks within ~2400px of scroll draw
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} Real large-file hang fix: Color/Raw views drew the whole rendered file (370K chars) as ONE label re-laid-out every repaint; parse and highlight proven innocent
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Denser video sampling: 4 samples/sec up to 60 frames at 512px (was 2/sec, 30 frames, 1024px); clips up to 15s scrub near-smoothly, memory halved per frame
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} New msgSend variants: float return (nominalFrameRate), CMTime by-value setter (tolerances), indexed NSArray access
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Save Frame exports the exact scrubbed frame named with its true frame number; info line shows real totals ("3:41 13261 frames @ 60 fps")
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Decoded frame stays displayed after release (parked where scrubbed) until Play clears it
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Real frame numbers derived from track nominalFrameRate; tracks with no usable rate degrade to sample-snap scrubbing
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} VideoDecoder.VideoSession: zero-tolerance AVAssetImageGenerator kept alive per video; 27-40ms per request; 48-entry LRU frame cache (~48 MB)
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} "1234 / 13261" frame counter badge (current / total, 1-based) floats top-center while scrubbing
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} True per-frame video scrubbing: timeline drag decodes the exact frame under the cursor instead of snapping to ~60 pre-sampled thumbnails
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} Playback plumbing verified headless on x86_64: BGRA output settings, timeRange seek landed at exactly 60.00s, CMSampleBuffer/CVPixelBuffer APIs, 120 valid frames
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Playback starts from the scrub position; pausing parks exactly on the reached frame; timeline bar tracks real progress; refused files fall back to slideshow
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} True-framerate playback via VideoDecoder.PlaybackSession: sequential AVAssetReader decode (measured 723 fps), paced by editor clock, late-frame dropping, loops at end
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Frame counter readout lives in a reserved 18px strip above the video (reserved whenever a session exists) so nothing overlaps the frames
+- {date:2026-07-19} {sys:AnyFilePreview} {type:docs} Debug detour recorded: test file is "wav audio fx.wav" not "audio fx.wav"; initial FAIL was a wrong path, not a decoder bug
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Video soundtracks: Play extracts audio once (cached per entry, NoSoundtrack flag avoids re-probing) and plays in sync; pause/scrub stops it
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Audio info line shows duration, sample rate, channel count, format
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Audio file previews (.wav/.mp3/.m4a/.aac/.aiff/.aif/.flac/.caf): theme-aware waveform, drag-to-seek playhead, live time readout, play/pause, auto-stop+rewind at end
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Audio playback via reflection into UnityEditor.AudioUtil.PlayPreviewClip; verified headless on 8-channel test wav
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} New AudioDecoder.cs (fifth zero-dependency decoder): AVAssetReader PCM extraction (float32, 400MB/~10min cap), AudioClip creation, waveform textures
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Frame counter moved from reserved strip above video to just below the white playback-position bar, clamped into pane
+- {date:2026-07-19} {sys:AnyFilePreview} {type:fix} MP4 playback fix: VFR WebCodecs recordings report nominalFrameRate 0; fps now falls back to minFrameDuration then 30; Play gate checks VideoDurationSec
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} Volume number updates live while dragging; clip + playback restart with new gain on mouse-up; volume persists across selections in session
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Volume button + vertical 0-100% slider for audio files and videos; gain baked into clip samples via AudioDecoder.ApplyVolume
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Multi-channel waveforms: one stacked envelope band per channel with thin separators, capped at 8 bands
+- {date:2026-07-19} {sys:AnyFilePreview} {type:infra} FFT verified against a synthetic 440Hz sine (430.7Hz, within one bin) with exact per-channel peaks
+- {date:2026-07-19} {sys:AnyFilePreview} {type:feature} Audio crosshair: hover readout with time position, per-channel peak levels over a ±25ms window (up to 4 channels), dominant frequency from 2048-point Hann FFT
+- {date:2026-07-19} {sys:AnyFilePreview} {type:adjust} RGB/color channel buttons hidden for audio files (image-only feature); crosshair toggle stays since it now means something for audio
+
+### 2026-08-02
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} Tooling research: official Unity MCP lacks screenshot/C# exec; CoplayDev/unity-mcp recommended for editor-connected visual verification
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} Audit verified clean: objc arch-gating, native release pairing, control-ID ordering, texture lifetimes, 6000.5.x deprecations
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} Audit also flagged: uncapped tabular loader, unbounded parse caches, sync PCM on click, GifDecoder bounds, Windows BMP/TGA/TIFF empty panes, loop drops soundtrack
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} Full code audit of all 12k lines completed; remaining findings ranked (no negative caching, autoplay-killing static isPlaying, XmlTreeView caps missing)
+- {date:2026-08-02} {sys:AnyFilePreview} {type:fix} Smoke harness false-FAIL fixed: Texture2D was null-checked after Dispose; now evaluated before disposal
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} Smoke test now asserts samples = rate x duration x channels; found the fix independently of the audit
+- {date:2026-08-02} {sys:AnyFilePreview} {type:fix} Critical AudioDecoder fix: ASBD channel count read at offset 24 (mBytesPerFrame) instead of 28; stereo read as 8ch, clips played ~4x fast
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} First smoke run on Unity 6000.5.6f1 (upgraded from 6000.5.4f1): everything passes
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} Smoke test also runs via Tools > UFOS menu; dumps decoded PNGs + report to $TMPDIR/afp_smoke
+- {date:2026-08-02} {sys:AnyFilePreview} {type:infra} New AnyFilePreviewSmokeTest.cs: headless batchmode smoke test exercising all 5 decoders against Nexus.Tests, exit code = failure count
+
+### 2026-08-07
+- {date:2026-08-07} {sys:Worker} {type:infra} Outage root cause: expired GITHUB_TOKEN PAT on the Worker; fix operational - rotate the secret with a new PAT scoped to XMLEditor Contents read/write
+- {date:2026-08-07} {sys:WebGL} {type:fix} GitHubFetch.jslib file/image fetchers send sessionId|AUTHFAIL on 401 Bad-credentials bodies (previously generic ERROR retry loop); next WebGL build
+- {date:2026-08-07} {sys:GitHubUploader} {type:fix} GhRequest (Git Data API: large files, blob fetches, folder rewrites) detects and notifies auth failure
+- {date:2026-08-07} {sys:GitHubUploader} {type:fix} Delete path: pre-flight SHA GET no longer masks 401 as "no SHA found, skipping delete"; DELETE response error branch also detects
+- {date:2026-08-07} {sys:GitHubUploader} {type:fix} Write paths: UpdateOrCreateFile/Bytes check PUT response before conflict/retry logic and break out of the 4-attempt loop on 401
+- {date:2026-08-07} {sys:GitHubUploader} {type:fix} Binary path: ProcessBinaryRequest detects 401 on no-content/no-sha branch; OnImageReceived handles AUTHFAIL from jslib
+- {date:2026-08-07} {sys:GitHubUploader} {type:fix} Read path: ProcessRequest emits AUTHFAIL token; HandleFetchFailure treats it like NOTFOUND (no 5-retry loop, immediate fallback) plus notify
+- {date:2026-08-07} {sys:GitHubUploader} {type:feature} New IsAuthFailure (matches Bad credentials / status 401) + NotifyAuthFailure: logs every occurrence, one toast per session via authFailureNotified
+- {date:2026-08-07} {sys:GitHubUploader} {type:feature} New public AuthFailed property; auth-failure toast now passes persistent:true
+- {date:2026-08-07} {sys:UIManager} {type:fix} Layout-load fallback skips the misleading "Could not load your saved layout" Retry toast when GitHubUploader.AuthFailed
+- {date:2026-08-07} {sys:UIManager} {type:feature} ShowToast optional persistent parameter: skips 8s auto-dismiss, stays until manually dismissed via X
+- {date:2026-08-07} {sys:UIManager} {type:feature} ShowToast toasts now stack in lazily-created top-center ToastContainer (column flex, 6px spacing, PickingMode.Ignore); removal via RemoveFromHierarchy
+- {date:2026-08-07} {sys:Worker} {type:docs} Alert payload policy: system-level data only (signature, context, NOS version, platform, UTC), no IP/username/content; richer diagnostics wait for consent flow
+- {date:2026-08-07} {sys:Worker} {type:infra} Staged sendDiscordAlert (webhook secret, user @mention) + tokenHealthCheck daily cron: 401 = token DEAD alert, expiry header under 14 days = warning
+- {date:2026-08-07} {sys:Worker} {type:infra} Staged worker-alert-patch.js: /alert route with KV throttle (one ping per signature per 6h, repeat count carried on next ping)
+- {date:2026-08-07} {sys:GitHubUploader} {type:feature} NotifyAuthFailure also calls new SendOpsAlert("github-401"): fire-and-forget POST to {workerUrl}/alert inside once-per-session guard
+- {date:2026-08-07} {sys:Worker} {type:infra} iOS Discord phone notifications badge but no banner/buzz despite settings audit + reinstall, unresolved; Mac notifications work
+- {date:2026-08-07} {sys:Worker} {type:infra} Security open items logged: 5 original key bindings still plain-text vars, need Secret conversion + rotation; GITHUB_TOKEN rotation pending
+- {date:2026-08-07} {sys:Worker} {type:infra} DISCORD_WEBHOOK_URL stored as a true Secret on the Worker
+- {date:2026-08-07} {sys:Worker} {type:infra} Cron 0 15 * * * (8am PT) registered: daily GITHUB_TOKEN health check (dead = daily Discord ping; expiring PAT = 14-day warning)
+- {date:2026-08-07} {sys:Worker} {type:feature} /alert route live: Discord webhook to #alerts with @mention; end-to-end test verified KV throttle (sent:true count:1 then sent:false count:2)
+- {date:2026-08-07} {sys:Worker} {type:infra} Deployed merged Worker (version 5185256a); new project home NOS/WorkerLive/ is source of truth; keep_vars=true prevents deploys deleting dashboard key vars
+
+### 2026-08-08
+- {date:2026-08-08} {sys:Worker} {type:infra} Remaining item logged: regenerate the 3 AI keys at their providers (old values exposed while plaintext) and paste into existing Secrets
+- {date:2026-08-08} {sys:Worker} {type:infra} ANTHROPIC/GEMINI/OPENAI keys converted plain_text to secret_text via API PATCH, values verified; GORP_TUNNEL_URL left plaintext by design
+- {date:2026-08-08} {sys:Worker} {type:infra} Outage resolved: GITHUB_TOKEN rotated (twice, final PAT expires Nov 6 2026) and stored as Secret; proxy + NOS sync verified restored; cron warns from ~Oct 23
+- {date:2026-08-08} {sys:Worker} {type:docs} PAT policy noted: deliberate 90-day expiring PATs as blast-radius limiter; GitHub App migration declined for now
+- {date:2026-08-08} {sys:Worker} {type:infra} rotate-keys.sh guided rotation: wrangler secret put per key (paste at prompt, never in shell history) then /health verify; provider dashboard URLs in header
+- {date:2026-08-08} {sys:Worker} {type:infra} New public GET /health runs the same checks on demand, returns JSON, fires no alerts; deployed and verified all four ok, 90 PAT days left
+- {date:2026-08-08} {sys:Worker} {type:infra} Distinguishes dead (auth rejected) from unreachable/error:NNN so provider outages never false-alarm as revoked keys
+- {date:2026-08-08} {sys:Worker} {type:infra} Dead credential fires Discord alert {provider}-key-dead with 20h TTL for daily re-ping; GitHub 14-day expiry warning retained
+- {date:2026-08-08} {sys:Worker} {type:infra} Cron refactored to checkProviders + opsHealthCheck: daily auth-only checks (zero token spend) on GitHub, OpenAI, Anthropic, Gemini credentials
+- {date:2026-08-08} {sys:Misc} {type:adjust} Client toast distinguishes "sent" vs "stored, alert skipped: similar report already sent recently" vs "could not be sent"
+- {date:2026-08-08} {sys:Worker} {type:fix} "Reports stopped arriving" non-bug: 6h throttle suppressed repeat test pings; Worker now skips ping throttle for test- signatures (daily 30-report cap still gates)
+- {date:2026-08-08} {sys:Desktop} {type:adjust} Right-click entry became "Diagnostics" submenu: Privacy Settings... plus Send Test Report (TestReport clears session dedupe so it can fire repeatedly)
+- {date:2026-08-08} {sys:Misc} {type:fix} DiagnosticsPanel.StyleThinScroller rewritten to UmlWindow.uss scrollbar spec: 10px scroller + min-width (root cause of fat bar), hidden arrows, dark track, rounded thumb
+- {date:2026-08-08} {sys:Worker} {type:infra} Verified end to end: /report returned stored/screenshotDelivered/pinged true; stored JSON confirmed IP-free; Discord carries IP line + inline screenshot
+- {date:2026-08-08} {sys:Worker} {type:infra} Test reports containing a real IP deleted from repo (still in git history, accepted); sendDiscordAlert extended with optional attachment fields
+- {date:2026-08-08} {sys:Worker} {type:fix} Privacy rule after test IP exposure: repo is public so IP/geo/screenshot never stored there; IP in Discord message only, screenshot as Discord attachment
+- {date:2026-08-08} {sys:Worker} {type:infra} /report route: sanitizes + caps all fields (context 500, logs 12KB, screenshot 900KB b64), 30 stored reports/day KV cap, 6h per-signature Discord throttle
+- {date:2026-08-08} {sys:WebGL} {type:feature} UnityBrowserBridge.jslib GetBrowserUserAgent() (malloc/stringToUTF8 return); takes effect next WebGL build
+- {date:2026-08-08} {sys:GitHubUploader} {type:feature} NotifyAuthFailure additionally calls ErrorReporter.Report("github-401")
+- {date:2026-08-08} {sys:Desktop} {type:feature} Background right-click menu gains "Diagnostics and Privacy..." entry
+- {date:2026-08-08} {sys:Misc} {type:feature} DiagnosticsPanel report preview: exact field list, log tail, screenshot thumbnail, server-side IP note, Send / Don't Send / Privacy Settings buttons
+- {date:2026-08-08} {sys:Misc} {type:feature} DiagnosticsPanel consent panel: agreement ScrollView, accept checkbox, 3-way mode buttons, field toggles; Save blocks enabling without acceptance
+- {date:2026-08-08} {sys:Misc} {type:feature} AskEachTime opens preview dialog, Automatic sends silently; one rich report per signature per session; first-ever error opens the consent panel once
+- {date:2026-08-08} {sys:Misc} {type:feature} ErrorReporter screenshot via ScreenCapture at end of frame (JPG q55, omitted over 700KB base64); gathers only consented fields; JSON with proper escaping
+- {date:2026-08-08} {sys:Misc} {type:feature} ErrorReporter.cs: Report(signature, context) entry for error sites plus 40-line log ring buffer hooked via RuntimeInitializeOnLoad
+- {date:2026-08-08} {sys:Misc} {type:feature} Versioned plain-language consent agreement (v1); bumping CurrentAgreementVersion forces re-prompt; text is a template pending legal review
+- {date:2026-08-08} {sys:Misc} {type:feature} DiagnosticsConsent.cs: PlayerPrefs consent model (device-local by design), mode Off/AskEachTime/Automatic, per-field toggles with IP + screenshot default off
+- {date:2026-08-08} {sys:BugReportWindow} {type:fix} Auto-report header click handler ignores Button targets so the X delete does not toggle expand
+- {date:2026-08-08} {sys:Worker} {type:infra} /report-delete filename strictly validated (regex, traversal-proof, Reports-scoped); deindex heals stale entries even if file already gone; verified end to end
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} Per-row X delete with ShowConfirm: Worker POST /report-delete removes the file and deindexes it (Worker stays index.json's only writer)
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} Promoted report detail shows blue "View BUG-####" button in place of Promote (FindPromotedBug via filename-in-description key); promotion does not auto-delete report
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} Promotion dedupe: report filename embedded in bug description is the key; re-promoting jumps to existing bug; switches to Bugs tab with entry expanded
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} Promote to Bug: PromoteAutoReport creates BUG-#### (title = signature, severity Major for exception-* else Moderate, reporter "NOS Auto", createdUtc = error time)
+- {date:2026-08-08} {sys:BugReportWindow} {type:infra} Verified /report to index.json pipeline; one test-index-pipeline report left for in-editor Auto-tab testing
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} Auto tab reload button; missing index shows "No auto-filed diagnostic reports"
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} Auto-report row expand lazy-fetches the full report JSON (cached), shows context/system/browser + log tail in capped thin-scrollbar ScrollView
+- {date:2026-08-08} {sys:BugReportWindow} {type:feature} New "Auto" filter chip: read-only list of auto-filed reports, rows show gear icon + signature + version/platform/local-time
+- {date:2026-08-08} {sys:Worker} {type:infra} /report maintains SavedData/Reports/index.json (newest-first, capped 200) via read-modify-write with one SHA-conflict retry; Worker is sole writer
+- {date:2026-08-08} {sys:GorpEquationWindow} {type:feature} GorpTestCoroutine transport-error branch reports gorp-unreachable (HTTP code + error + endpoint); non-OK Gorp Status deliberately not reported
+- {date:2026-08-08} {sys:GitHubUploader} {type:adjust} Save-failure reports skipped while authFailureNotified (401 already reported; every save would fail identically)
+- {date:2026-08-08} {sys:GitHubUploader} {type:feature} SaveMarkdown/SaveFileBytes wrap onComplete via WrapSaveCallback: saves that exhaust all retries report github-save-failed with filename
+- {date:2026-08-08} {sys:Misc} {type:fix} insideReport reentrancy guard prevents the reporting pipeline reporting its own exceptions; Report refactored to guard + ReportInternal
+- {date:2026-08-08} {sys:Misc} {type:feature} ErrorReporter log handler auto-reports unhandled exceptions as exception-{TypeName}, one per exception type per session, buffered into log ring first
+- {date:2026-08-08} {sys:Docs} {type:docs} Both manuals stamped synced-through=2026-08-08
+- {date:2026-08-08} {sys:Docs} {type:docs} Sec 9 also defines per-entry classification rules, append-only glossary invariant, drift alarm at ~10+ entries behind, per-chapter preference log
+- {date:2026-08-08} {sys:Docs} {type:docs} UpdateHelpFeatures.md sec 9 maintenance contract: single-source rule (manuals link to tiers 1-2, never duplicate), change.md as update queue via synced-through markers
+- {date:2026-08-08} {sys:Docs} {type:docs} UpdateHelpFeatures.md: new "update docs" command row and tier-3 file registrations in sec 1
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Developers.md client build/deploy atomic rule plus hard-won gotchas (UITK, Unity, GitHub I/O, error reporting)
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Developers.md Worker ops runbook: deploy, keep_vars, secret rotation + 90-day PAT policy (Nov 6 2026 expiry), /health, alert/report pipeline, Gorp routing
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Developers.md developer manual: reading order, ASCII system map, repos/environments table, tools index, docs-system summary, incident/audit refs
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Manual.md gains append-only vocabulary/glossary (~25 terms) plus learn-more pointers
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Manual.md user-maintenance chapter: saving model, resetting, toast meanings, Diagnostics and Privacy walkthrough
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Manual.md user manual: scope + three purposes, getting started, core concepts, everyday workflows, windows at a glance, troubleshooting
+- {date:2026-08-08} {sys:Docs} {type:docs} UpdateHelpFeatures.md sec 9 sync step 4: root NOS_Manual.md is canonical; every docs update refreshes the Resources TextAsset + GitHub copy (diff first)
+- {date:2026-08-08} {sys:GitHubUploader} {type:infra} Seeded GitHub SavedData/Global/Files/Text/NOS_Manual.md so the manual window loads the live copy without the fallback banner
+- {date:2026-08-08} {sys:AppRegistry} {type:feature} App Registry gains NOSManualApp entry after FeaturesIndexApp; icon = NOS launcher icon; shows in gallery, not pinned
+- {date:2026-08-08} {sys:AppRegistry} {type:feature} New NOS Manual.prefab: NotesWindow titled "NOS Manual", 560x680
+- {date:2026-08-08} {sys:AppRegistry} {type:feature} Added Resources/UI/Text Files/NOS_Manual.md TextAsset fallback copy
+- {date:2026-08-08} {sys:AppRegistry} {type:feature} New NOS Manual registry app exposing the manual in-app, zero new code (NotesWindow + bundled markdown TextAsset, Features List pattern)
+- {date:2026-08-08} {sys:Docs} {type:docs} NOS_Manual.md strengthened: SavedData is a public GitHub repo browsable without an account; deletes are confirm-then-permanent, no trash or undo
