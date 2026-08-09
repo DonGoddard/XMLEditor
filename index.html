@@ -126,6 +126,25 @@
       // ... (Keep your existing banner logic)
     }
 
+    // ── WebGL drawing-buffer cap ─────────────────────────────────────────────
+    // Unity multiplies the canvas backing store by window.devicePixelRatio, so a Retina
+    // display asks for 4x the pixels (2x per axis). Windowed that is fine; at macOS
+    // fullscreen on a large Retina screen it pushes the WebGL surface into the tens of
+    // millions of pixels, past what Safari will allocate. The failure is not graceful:
+    // it wedges the shared GPU/content process (freezing the whole browser, not just the
+    // tab) and leaves the wasm runtime trapping with assorted call_indirect / out-of-bounds
+    // errors. Clamping the effective ratio keeps the buffer inside a sane budget: on a huge
+    // screen we render nearer 1x, which is slightly softer but stays alive.
+    var NOS_MAX_DRAWING_BUFFER_PIXELS = 8000000;   // ~8 MP, comfortably inside Safari's limits
+
+    function nosPixelRatio() {
+      var dpr = window.devicePixelRatio || 1;
+      var w = Math.max(1, window.innerWidth);
+      var h = Math.max(1, window.innerHeight);
+      var maxRatio = Math.sqrt(NOS_MAX_DRAWING_BUFFER_PIXELS / (w * h));
+      return Math.max(1, Math.min(dpr, maxRatio));   // never below 1x
+    }
+
     // Use dynamic paths for the loader so it works on any build name
     var buildUrl = "Build";
     var loaderUrl = buildUrl + "/AIDesigner.loader.js";
@@ -136,9 +155,22 @@
       streamingAssetsUrl: "StreamingAssets",
       companyName: "UFO Studios",
       productName: "NOS",
-      productVersion: "0.1.260809.0149",
+      productVersion: "0.1.260809.0225",
       showBanner: unityShowBanner,
+      devicePixelRatio: nosPixelRatio(),
     };
+
+    // Recompute on resize: going fullscreen is exactly when the budget is exceeded, and
+    // the ratio chosen at load no longer applies. Debounced, because macOS fullscreen
+    // animates and fires a burst of resize events.
+    var nosRatioTimer = null;
+    window.addEventListener("resize", function () {
+      if (nosRatioTimer) clearTimeout(nosRatioTimer);
+      nosRatioTimer = setTimeout(function () {
+        var inst = window.unityInstance;
+        if (inst && inst.Module) inst.Module.devicePixelRatio = nosPixelRatio();
+      }, 120);
+    });
 
     loadingBar.style.display = "flex";
 
