@@ -814,3 +814,7 @@
 {"ts":"2026-08-09T07:51:57.0730000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6851,"detail":"github:PUT"}
 {"ts":"2026-08-09T07:52:17.9500000Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-08-09T07:52:19.4500000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7379,"detail":"github:PUT"}
+{"ts":"2026-08-09T07:52:23.1000000Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-09T07:52:23.1060000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
+{"ts":"2026-08-09T07:52:24.6160000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8042,"detail":"github:PUT"}
+{"ts":"2026-08-09T07:52:27.1660000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7514,"detail":"github:PUT"}
