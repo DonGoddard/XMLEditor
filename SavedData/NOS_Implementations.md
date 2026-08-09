@@ -11,9 +11,9 @@ Line format (machine-parseable for the future Timeline window):
 
 ## Totals
 
-- **2095 logged implementations** across **49 active days** (2026-03-31 to 2026-08-08)
-- By type: feature: 902, fix: 549, adjust: 445, infra: 129, docs: 70
-- Systems touched: 37; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), XamlWindow (80), Desktop (80), Editor (76), BugReportWindow (74)
+- **2129 logged implementations** across **50 active days** (2026-03-31 to 2026-08-09)
+- By type: feature: 909, fix: 562, adjust: 456, infra: 130, docs: 72
+- Systems touched: 39; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (81), XamlWindow (80), Editor (76), BugReportWindow (74)
 
 ## The tape
 
@@ -2210,3 +2210,39 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-08} {sys:Docs} {type:docs} UpdateHelpFeatures.md gains step 3-and-three-quarters: every update docs pass must republish the tape to GitHub or the Ledger shows the previous pass's data
 - {date:2026-08-08} {sys:Docs} {type:feature} NOS_Implementations.md created: every implementation in the project's life as one machine-parseable line, 2,042 entries across 49 active days
 - {date:2026-08-08} {sys:Docs} {type:feature} Tools/build_ledger_views.py regenerates the derived by-system view from the tape; the derived file is never hand-edited
+
+### 2026-08-09
+- {date:2026-08-09} {sys:Docs} {type:docs} First update-docs pass under the new contract: 53 ledger lines appended, Totals recomputed from the file, both manuals and all four synced-through markers moved
+- {date:2026-08-09} {sys:Desktop} {type:adjust} Three print-resolution wallpapers resized to fit 2560x1440: Backgrounds 16.8MB to 2.0MB on disk, 50MB to 12-14MB decoded; originals preserved outside Assets
+- {date:2026-08-09} {sys:ImageDecoder} {type:adjust} Static decoded images call Apply(false, true) to drop the CPU-side copy once pixels are on the GPU; animated branches keep readability
+- {date:2026-08-09} {sys:BuildDeploy} {type:infra} ThirdParty/TEXDraw hidden with a trailing tilde: 14MB off disk, 1.9MB of Resources out of the .data, 5 sample scripts out of Assembly-CSharp
+- {date:2026-08-09} {sys:BuildDeploy} {type:feature} Git Build Commit gains a build-output button: opens the output folder directly, with a dropdown for Copy Path and Set Build Location
+- {date:2026-08-09} {sys:BuildDeploy} {type:feature} That dropdown's path is a clickable breadcrumb drawn with PopupWindowContent; selecting a segment retargets Open, Copy Path and the folder picker to that level
+- {date:2026-08-09} {sys:BuildDeploy} {type:fix} OpenFolderInOS uses OpenWithDefaultApp rather than RevealInFinder, which selects a folder inside its parent instead of opening it; files and .app bundles are still revealed so a build is never launched
+- {date:2026-08-09} {sys:WebGL} {type:fix} WebGL crash root cause: UI Toolkit's UIR.MeshManager overflows a fixed 576KB / 12,288-vertex mesh page, copies out of bounds and corrupts the heap; found by switching exception support to Full With Stacktrace
+- {date:2026-08-09} {sys:WebGL} {type:adjust} PanelSettings vertexBudget 0 to 65536; zero means the engine default page that was bursting
+- {date:2026-08-09} {sys:WebGL} {type:adjust} devicePixelRatio clamp in the WebGL template caps the drawing buffer near 8MP and recomputes on resize, so a Retina fullscreen surface cannot be requested at 4x the pixels
+- {date:2026-08-09} {sys:LedgerWindow} {type:adjust} Descriptions clipped before render (Sheet 110 chars, Systems and Timeline 150): UI Toolkit emits geometry per character whether or not it is visible
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Search box emoji replaced with text; TextCore has no emoji font here, so it logged a font-fallback warning on every layout pass
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Systems tab virtualized: sections and entries flattened into one ListView row list, so only the visible slice exists and the 150-per-system cap is gone
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Systems uses FixedHeight virtualization at a uniform 38px row; DynamicHeight without a fixedItemHeight estimate builds every item to measure it, which is not virtualization
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Systems rows lost their margin and vertical padding: with FixedHeight the ListView sizes the scrollbar as count times row height, so taller rows accumulate until the last ones are unreachable
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Systems entry rows paint their own opaque background and dark hover; ListView draws a light hover wash that made light text unreadable on a dark window
+- {date:2026-08-09} {sys:LedgerWindow} {type:feature} Full session state persisted: active tab, search, type/system/day filters, sort column and direction, expanded foldouts, three scroll positions, timeline playhead and speed
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Tab switches, timeline scrubs and speed changes now mark the layout dirty; window state is only serialised on a dirty mark, so the values were saved but never at the right moment
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} Tab teardown nulls the torn-down lists and scroll capture is guarded on panel not null; a detached ScrollView reports offset 0 and was overwriting the saved position
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} restoringState flag stops RestoreCustomWindowState capturing over itself: in the editor the tape loads synchronously so the default tab is built before the restore runs
+- {date:2026-08-09} {sys:LedgerWindow} {type:fix} RestoreScroll retries every 80ms up to twelve attempts; a virtualized ListView clamps scrollOffset to the content height it currently knows, which is not settled for several frames
+- {date:2026-08-09} {sys:LedgerWindow} {type:adjust} Editor source banner replaced by a quiet header suffix; it announced expected behaviour on every run since the canonical root file is always the editor's source
+- {date:2026-08-09} {sys:PerformanceWindow} {type:fix} Texture Memory read 0.0MB forever: GetAllocatedMemoryForGraphicsDriver is unimplemented on WebGL, replaced with Texture.currentTextureMemory
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Growth counters added with per-sample deltas: UI Elements, UI Text Glyphs, Textures, Open Windows, Largest Texture, Heaviest Window
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} UI Text Glyphs is the counter that matters: element count is a poor proxy for UIR load because text costs a quad per character (1,287 elements against 54,056 glyphs in one stress test)
+- {date:2026-08-09} {sys:PerformanceWindow} {type:fix} Rows live in a ScrollView and never shrink; flex layout was crushing them until the bars had no height and the readout silently degraded
+- {date:2026-08-09} {sys:PerformanceWindow} {type:adjust} Bars auto-scale to their session peak instead of fixed caps, which were wrong in both directions: memory sat at 1.5% of a 512MB scale, glyphs pegged past a 20,000 cap
+- {date:2026-08-09} {sys:PerformanceWindow} {type:adjust} Largest Texture restricted to Texture2D and skips engine scratch strips; a 3072x1 TempBuffer claimed 57MB while total texture memory was 18MB
+- {date:2026-08-09} {sys:PerformanceWindow} {type:adjust} Amber editor caveat on the platform note: in the editor these counters measure the editor, not NOS, and a run reading 1,044 textures and 1,387MB looked like a catastrophic leak
+- {date:2026-08-09} {sys:UIManager} {type:feature} OpenWindowCount property exposes the registered-window count without allocating
+- {date:2026-08-09} {sys:WebGL} {type:adjust} Exception support returned to Explicitly Thrown Exceptions Only once the crash was confirmed fixed on desktop and an iPhone XR
+- {date:2026-08-09} {sys:LedgerWindow} {type:feature} Tape publishes itself: opening the Ledger in the editor compares the canonical root file against the published copy and pushes if they differ, once per session, with a toast
+- {date:2026-08-09} {sys:LedgerWindow} {type:adjust} Publish comparison normalises line endings and trailing whitespace so a harmless difference cannot trigger a republish every run
+- {date:2026-08-09} {sys:Docs} {type:docs} UpdateHelpFeatures step 3-and-three-quarters, the LedgerWindow help section and NOS_Developers docs-system section rewritten now that publishing is automatic
