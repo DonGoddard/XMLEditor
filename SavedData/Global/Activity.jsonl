@@ -705,3 +705,7 @@
 {"ts":"2026-08-09T06:34:13.4360000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6091,"detail":"github:PUT"}
 {"ts":"2026-08-09T06:34:24.8460000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6105,"detail":"github:PUT"}
 {"ts":"2026-08-09T06:34:26.3200000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6105,"detail":"github:PUT"}
+{"ts":"2026-08-09T06:35:53.2050000Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-09T06:35:54.7040000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6633,"detail":"github:PUT"}
+{"ts":"2026-08-09T06:35:57.0240000Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-09T06:35:57.0330000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw"}
