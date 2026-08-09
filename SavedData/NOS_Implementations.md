@@ -4,16 +4,16 @@ Every feature, subfeature, fix, adjustment, and infrastructure change built into
 NOS, one line each, in chronological order - the playback tape of the project.
 Distilled from the full changelogs; maintained by the "update docs" runbook pass.
 
-{meta: synced-through=2026-08-08}
+{meta: synced-through=2026-08-09}
 
 Line format (machine-parseable for the future Timeline window):
 `- {date:YYYY-MM-DD} {sys:System} {type:feature|fix|adjust|infra|docs} description`
 
 ## Totals
 
-- **2042 logged implementations** across **49 active days** (2026-03-31 to 2026-08-08)
-- By type: feature: 877, fix: 541, adjust: 436, infra: 121, docs: 67
-- Systems touched: 36; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (188), CardsWindow (141), XamlWindow (80), Desktop (80), Editor (76), BugReportWindow (74)
+- **2095 logged implementations** across **49 active days** (2026-03-31 to 2026-08-08)
+- By type: feature: 902, fix: 549, adjust: 445, infra: 129, docs: 70
+- Systems touched: 37; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), XamlWindow (80), Desktop (80), Editor (76), BugReportWindow (74)
 
 ## The tape
 
@@ -2157,3 +2157,56 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-08} {sys:AppRegistry} {type:feature} Added Resources/UI/Text Files/NOS_Manual.md TextAsset fallback copy
 - {date:2026-08-08} {sys:AppRegistry} {type:feature} New NOS Manual registry app exposing the manual in-app, zero new code (NotesWindow + bundled markdown TextAsset, Features List pattern)
 - {date:2026-08-08} {sys:Docs} {type:docs} NOS_Manual.md strengthened: SavedData is a public GitHub repo browsable without an account; deletes are confirm-then-permanent, no trash or undo
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} New LedgerWindow app: pseudo-spreadsheet over NOS_Implementations.md; 5 partials, Ledger.prefab 900x640, Icon_Ledger.png, LedgerApp registry entry
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Tape parser: one regex to LedgerEntry plus DayBucket/SysBucket aggregates; cross-checked against the tape's own Totals block and reproduces it exactly
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Shared filter and sort state across every tab: search, multi-select type filter, system filter, day filter, sort column and direction
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Sheet tab: virtualized ListView with CollectionVirtualizationMethod.FixedHeight so 2,042 rows scroll without building 2,042 elements
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Sheet: Date/System/Type/Description columns with click-header sorting and a direction arrow; stable sort using tape order as tiebreaker
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Sheet: five colored type filter pills (feature green, fix red, adjust blue, infra purple, docs grey), multi-select
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Sheet: system filter built on ContextMenuManager with per-system counts rather than a Unity dropdown
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Sheet: live search via BeginInPlaceEdit plus activeEdit.onChange, refiltering on every keystroke
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Sheet: right-click row menu filters to that system, day or type, copies the raw tape line, or plays the day on the Timeline
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} Sheet: alternating row stripes preserved across ListView recycling via a marker class read by the pointer-leave handler
+- {date:2026-08-08} {sys:LedgerWindow} {type:fix} Sheet: hover detail bar under the grid replaces a TooltipManager tooltip that rendered at near-full window width over the rows it described
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} Sheet: uniform type-pill width so the Type column reads as a column instead of ragged content-sized pills
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Systems tab: collapsible per-system sections ordered Busiest, A-Z or Most recent, with counts, date ranges and a Sheet jump button
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Systems: per-system type-mix proportion bar, width scaled against the busiest system
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} Systems: expanded sections list up to 150 entries inline then offer the remainder in the Sheet
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Stats tab: headline tiles for implementations, active days, average per active day, systems touched and peak day
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Stats: type mix with counts, bars and percentages; clicking a row filters the Sheet to that type
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Stats: per-day stacked activity chart; left-click opens that day in the Sheet, right-click plays it on the Timeline, hover shows the per-type breakdown and cumulative
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Stats: top-20 system rankings with type-mix bars, click to filter the Sheet
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Timeline tab: day-by-day playback with activity strip filling in behind the playhead and live cumulative counters
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Timeline: hand-built slider because Unity's Slider inherits the global unity-base-slider dragger rules meant for scrollbars
+- {date:2026-08-08} {sys:LedgerWindow} {type:fix} Timeline: transport rebuilt to the standard set and order (jump-first, step-back, play/pause centre, step-forward, jump-last)
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} Timeline: speed relabelled days/sec on a 1000ms base, replacing 1x/2x/4x/8x multipliers that said nothing about what a tick advances
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Timeline: speed became a 1 to 12 days/sec slider with a live rate and total run-time readout
+- {date:2026-08-08} {sys:LedgerWindow} {type:fix} TransportIcon draws every glyph with Painter2D from one geometry; composed text glyphs kerned loosely and the Media Controls codepoints rendered as tofu
+- {date:2026-08-08} {sys:LedgerWindow} {type:fix} Disclosure triangles use one drawn triangle rotated 90 degrees when open; the arrow characters are not the same optical size at one point size
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} Type ramp (FontTiny 11 through FontDisplay 24, IconSize, MinTarget 30) replaces 39 hardcoded font sizes; nothing renders below FontTiny
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} Every clickable control keeps a MinTarget-sized box so touch targets survive the panel downscale on narrow dense screens
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} TypeDescription plus WireTooltip put a plain-language definition on hover behind every type pill, since infra and adjust are not self-explanatory
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} Active tab, search, type/system/day filters and sort persisted through GetCustomWindowState
+- {date:2026-08-08} {sys:LedgerWindow} {type:adjust} GitHub SavedData/NOS_Implementations.md is the only runtime source; the StreamingAssets copy was deleted because a bundled tape can only ever be stale
+- {date:2026-08-08} {sys:LedgerWindow} {type:fix} Editor reads the canonical root NOS_Implementations.md directly, so Publish can no longer push a stale bundled copy over a newer GitHub one
+- {date:2026-08-08} {sys:LedgerWindow} {type:feature} ShowUnavailable empty state with a Retry button instead of silently showing stale data when the tape cannot be fetched
+- {date:2026-08-08} {sys:LedgerWindow} {type:docs} NOS_Help.md gains a LedgerWindow section with layout annotations and a definition of all five tape types
+- {date:2026-08-08} {sys:Docs} {type:docs} Features index gains feat-315 through feat-319 for the Ledger app; global and OS tab updated markers moved to 2026-08-08
+- {date:2026-08-08} {sys:AnyFilePreview} {type:infra} Nexus.Tests corpus (27MB, 24 editor-only fixtures) removed from StreamingAssets, which ships everything it contains to users
+- {date:2026-08-08} {sys:AnyFilePreview} {type:fix} Corpus relocated under an Editor folder after moving it outside Assets broke the workflow: AnyFilePreview previews the asset selected in the Project window, so its fixtures must be imported
+- {date:2026-08-08} {sys:AnyFilePreview} {type:infra} Nexus.Tests.Fixtures.asmdef with an unsatisfiable define constraint keeps the two .NET 6 fixture scripts importable but never compiled; they fail Unity's C# 9 compiler
+- {date:2026-08-08} {sys:AnyFilePreview} {type:adjust} AnyFilePreviewSmokeTest resolves the corpus from Editor/AnyFilePreview/Tests and logs a MISSING line rather than silently skipping every file test
+- {date:2026-08-08} {sys:BuildDeploy} {type:infra} ShunUI hidden with a trailing tilde: 8.4MB of Resources (8.0MB Geist fonts) with zero references anywhere outside ThirdParty
+- {date:2026-08-08} {sys:BuildDeploy} {type:infra} GarageWareGames WindowFramework hidden with a trailing tilde: 3.7MB of Resources including demo and tutorial folders
+- {date:2026-08-08} {sys:BuildDeploy} {type:fix} info.png rescued from the WindowFramework demo theme into Icon_InputControls.png and the App Registry repointed before hiding the package
+- {date:2026-08-08} {sys:BuildDeploy} {type:infra} Measured from Unity's build reports: data 8.08MB to 4.51MB and initial download 20.21MB to 16.45MB, the first meaningful cut since June
+- {date:2026-08-08} {sys:BuildDeploy} {type:infra} Found that ShunUI and WindowFramework had no asmdefs, so 100 of Assembly-CSharp's 179 files were vendor code; IL2CPP had already stripped it, so the win was entirely in Resources
+- {date:2026-08-08} {sys:BuildDeploy} {type:infra} 18 stale files (8.4MB) deleted from the local build output; Unity never cleans that folder, so they were being redeployed since June
+- {date:2026-08-08} {sys:BuildDeploy} {type:feature} GitBuildCommitter CleanUpOrphanedRemoteFiles prunes remote files that no longer exist in the local build; the committer previously only ever added and updated
+- {date:2026-08-08} {sys:BuildDeploy} {type:fix} Prune scoped to Build/ and StreamingAssets/ via PrunableRoots: the deployed build shares its repo with SavedData, so an unscoped diff would delete the entire persistence store
+- {date:2026-08-08} {sys:BuildDeploy} {type:feature} FileListDialog modal EditorWindow shows the full scrollable file list with copyable rows and a Copy List button; DisplayDialog cannot scroll and truncated to the Console
+- {date:2026-08-08} {sys:BuildDeploy} {type:adjust} Prune aborts when the build folder is unknown, missing or empty, or when GitHub truncates the tree listing, since each case makes every remote file look orphaned
+- {date:2026-08-08} {sys:BuildDeploy} {type:infra} 50.39MB of orphaned artifacts deleted from the deployed repo: two product-name generations plus an uncompressed build and a stale public test corpus
+- {date:2026-08-08} {sys:Docs} {type:docs} UpdateHelpFeatures.md gains step 3-and-three-quarters: every update docs pass must republish the tape to GitHub or the Ledger shows the previous pass's data
+- {date:2026-08-08} {sys:Docs} {type:feature} NOS_Implementations.md created: every implementation in the project's life as one machine-parseable line, 2,042 entries across 49 active days
+- {date:2026-08-08} {sys:Docs} {type:feature} Tools/build_ledger_views.py regenerates the derived by-system view from the tape; the derived file is never hand-edited
