@@ -909,3 +909,7 @@
 {"ts":"2026-08-09T08:37:57.1704520Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7870,"detail":"github:PUT"}
 {"ts":"2026-08-09T08:38:05.4103650Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7887,"detail":"github:PUT"}
 {"ts":"2026-08-09T08:38:07.5088390Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7884,"detail":"github:PUT"}
+{"ts":"2026-08-09T08:38:19.9615220Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-09T08:38:20.7910560Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
+{"ts":"2026-08-09T08:38:20.8832430Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-08-09T08:38:22.2892610Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7884,"detail":"github:PUT"}
