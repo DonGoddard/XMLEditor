@@ -550,3 +550,6 @@
 {"ts":"2026-08-09T04:23:13.4977470Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-08-09T04:23:13.4985200Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-08-09T04:23:13.8653080Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6002,"detail":"github:PUT"}
+{"ts":"2026-08-09T04:23:17.2842090Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-09T04:23:18.9207640Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6664,"detail":"github:PUT"}
+{"ts":"2026-08-09T04:23:19.7951580Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":367961,"detail":"github:PUT"}
