@@ -768,3 +768,6 @@
 {"ts":"2026-08-09T07:29:52.2330000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10357,"detail":"github:PUT"}
 {"ts":"2026-08-09T07:30:10.3520000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10351,"detail":"github:PUT"}
 {"ts":"2026-08-09T07:31:04.9180000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10362,"detail":"github:PUT"}
+{"ts":"2026-08-09T07:31:10.4010000Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-09T07:31:10.4060000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-09T07:31:12.1010000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":11010,"detail":"github:PUT"}
