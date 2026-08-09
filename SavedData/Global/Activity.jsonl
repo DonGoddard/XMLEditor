@@ -1013,3 +1013,7 @@
 {"ts":"2026-08-09T10:38:06.4900000Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-08-09T10:38:06.5100000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-08-09T10:38:08.0080000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8123,"detail":"github:PUT"}
+{"ts":"2026-08-09T10:38:15.4610000Z","type":"app_open","appId":"NOSManualApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-09T10:38:15.4760000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-09T10:38:17.2450000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8708,"detail":"github:PUT"}
+{"ts":"2026-08-09T10:38:20.1210000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8736,"detail":"github:PUT"}
