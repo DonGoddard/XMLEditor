@@ -1063,3 +1063,6 @@
 {"ts":"2026-08-10T16:43:28.6513520Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-08-10T16:43:28.6548850Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
 {"ts":"2026-08-10T16:43:28.6553570Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-08-10T16:43:55.2594050Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-10T16:43:56.8113260Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6568,"detail":"github:PUT"}
+{"ts":"2026-08-10T16:43:59.4547350Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6128,"detail":"github:PUT"}
