@@ -1400,3 +1400,6 @@
 {"ts":"2026-08-11T17:21:42.3140730Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":""}
 {"ts":"2026-08-11T17:21:44.0797830Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8006,"detail":"github:PUT"}
 {"ts":"2026-08-11T17:21:49.9624780Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7527,"detail":"github:PUT"}
+{"ts":"2026-08-11T17:22:15.9233300Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-11T17:22:15.9288200Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-11T17:22:17.6330500Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":8192,"detail":"github:PUT"}
