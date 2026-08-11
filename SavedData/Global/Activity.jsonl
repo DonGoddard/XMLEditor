@@ -1396,3 +1396,5 @@
 {"ts":"2026-08-11T17:21:35.3552380Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-08-11T17:21:35.3555330Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-08-11T17:21:36.3055460Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7418,"detail":"github:PUT"}
+{"ts":"2026-08-11T17:21:38.5688260Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7403,"detail":"github:PUT"}
+{"ts":"2026-08-11T17:21:42.3140730Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":""}
