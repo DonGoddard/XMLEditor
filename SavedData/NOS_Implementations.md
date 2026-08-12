@@ -11,9 +11,9 @@ Line format (machine-parseable for the future Timeline window):
 
 ## Totals
 
-- **2129 logged implementations** across **50 active days** (2026-03-31 to 2026-08-09)
-- By type: feature: 909, fix: 562, adjust: 456, infra: 130, docs: 72
-- Systems touched: 39; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (81), XamlWindow (80), Editor (76), BugReportWindow (74)
+- **2140 logged implementations** across **50 active days** (2026-03-31 to 2026-08-09)
+- By type: feature: 916, fix: 565, adjust: 456, infra: 130, docs: 73
+- Systems touched: 40; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (81), XamlWindow (80), Editor (76), BugReportWindow (74)
 
 ## The tape
 
@@ -2246,3 +2246,14 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-09} {sys:LedgerWindow} {type:feature} Tape publishes itself: opening the Ledger in the editor compares the canonical root file against the published copy and pushes if they differ, once per session, with a toast
 - {date:2026-08-09} {sys:LedgerWindow} {type:adjust} Publish comparison normalises line endings and trailing whitespace so a harmless difference cannot trigger a republish every run
 - {date:2026-08-09} {sys:Docs} {type:docs} UpdateHelpFeatures step 3-and-three-quarters, the LedgerWindow help section and NOS_Developers docs-system section rewritten now that publishing is automatic
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Every metric row expands on click into a breakdown, computed on demand rather than on the 2Hz tick so the measurement cannot distort what it reports
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Total Allocated breakdown groups every loaded UnityEngine object by type with counts and summed size, biggest first
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Texture breakdown lists the biggest individual textures with dimensions and names
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Per-window breakdown costs each window-root subtree by elements and glyphs, with a final row for desktop, dock and overlays
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} FPS breakdown shows average, best, worst and 1 percent low frame times in ms, since an average hides the stalls that are actually felt
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Managed Heap breakdown reports growth since baseline, gen-0 collections and Mono used vs reserved; managed objects are not individually enumerable at runtime so no per-object list is possible
+- {date:2026-08-09} {sys:PerformanceWindow} {type:feature} Reserved breakdown spells out reserved vs allocated vs unused: unused reserved is not waste, and reserved climbing while allocated is flat means fragmentation
+- {date:2026-08-09} {sys:PerformanceWindow} {type:docs} Object breakdown states its scope up front: FindObjectsOfTypeAll sees assets only, not the C# heap, so the numbers cannot be expected to reconcile with Managed Heap
+- {date:2026-08-09} {sys:VideoSurface} {type:fix} FindFirstObjectByType replaced with FindAnyObjectByType; the call is a null check so instance-id ordering is irrelevant and the deprecated form warned on every reload
+- {date:2026-08-09} {sys:UIManager} {type:fix} snapPreview marked NonSerialized; a VisualElement can never be serialized and the analyzer flagged the field on every reload
+- {date:2026-08-09} {sys:XmlWindow} {type:fix} XmlNodeData.Attributes marked NonSerialized; checked first for real data loss and found none since the class is never persisted despite carrying Serializable
