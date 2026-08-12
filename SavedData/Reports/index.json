@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T11-59-00-000Z-test-tail-diagnosis.json",
+      "signature": "test-tail-diagnosis",
+      "utc": "2026-08-12T11:59:00.000Z",
+      "version": "0.1.260812",
+      "platform": "WebGL"
+    },
+    {
       "file": "2026-08-12T11-43-47-7251-test-report.json",
       "signature": "test-report",
       "utc": "2026-08-12T11:43:47.7251410Z",
