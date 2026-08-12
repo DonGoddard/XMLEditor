@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T11-33-18-0316-test-report.json",
+      "signature": "test-report",
+      "utc": "2026-08-12T11:33:18.0316250Z",
+      "version": "0.1.260812.0732",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-12T11-06-17-6284-test-report.json",
       "signature": "test-report",
       "utc": "2026-08-12T11:06:17.6284780Z",
