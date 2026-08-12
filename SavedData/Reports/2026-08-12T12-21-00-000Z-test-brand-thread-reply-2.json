@@ -1,0 +1,10 @@
+{
+  "signature": "test-brand-thread-reply-2",
+  "context": "Reply into NOS thread after propagation",
+  "version": "0.1.260812",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-12T12:21:00.000Z",
+  "logTail": ""
+}
