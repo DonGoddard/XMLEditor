@@ -1,0 +1,10 @@
+{
+  "signature": "test-tail-diagnosis",
+  "context": "Instrumented report while tailing worker logs",
+  "version": "0.1.260812",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-12T11:59:00.000Z",
+  "logTail": ""
+}
