@@ -1,0 +1,10 @@
+{
+  "signature": "test-debug-surface-2",
+  "context": "Status string surfaced",
+  "version": "0.1.260812",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-12T12:15:00.000Z",
+  "logTail": ""
+}
