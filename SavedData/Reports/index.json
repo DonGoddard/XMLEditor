@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T12-05-00-000Z-test-brand-thread-3.json",
+      "signature": "test-brand-thread-3",
+      "utc": "2026-08-12T12:05:00.000Z",
+      "version": "0.1.260812",
+      "platform": "WebGL"
+    },
+    {
       "file": "2026-08-12T12-02-50-000Z-test-brand-thread-2.json",
       "signature": "test-brand-thread-2",
       "utc": "2026-08-12T12:02:50.000Z",
