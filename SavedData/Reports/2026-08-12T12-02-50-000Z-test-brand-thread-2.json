@@ -1,0 +1,10 @@
+{
+  "signature": "test-brand-thread-2",
+  "context": "Second alert - should POST INTO the same NOS thread",
+  "version": "0.1.260812",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-12T12:02:50.000Z",
+  "logTail": ""
+}
