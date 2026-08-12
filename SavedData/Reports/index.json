@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T12-15-00-000Z-test-debug-surface-2.json",
+      "signature": "test-debug-surface-2",
+      "utc": "2026-08-12T12:15:00.000Z",
+      "version": "0.1.260812",
+      "platform": "WebGL"
+    },
+    {
       "file": "2026-08-12T12-12-00-000Z-test-debug-surface.json",
       "signature": "test-debug-surface",
       "utc": "2026-08-12T12:12:00.000Z",
