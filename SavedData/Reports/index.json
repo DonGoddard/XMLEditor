@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T11-43-47-7251-test-report.json",
+      "signature": "test-report",
+      "utc": "2026-08-12T11:43:47.7251410Z",
+      "version": "0.1.260812.0732",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-12T11-41-00-000Z-test-ufos-mirror.json",
       "signature": "test-ufos-mirror",
       "utc": "2026-08-12T11:41:00.000Z",
