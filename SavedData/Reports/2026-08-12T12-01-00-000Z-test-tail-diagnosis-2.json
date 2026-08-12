@@ -1,0 +1,10 @@
+{
+  "signature": "test-tail-diagnosis-2",
+  "context": "Second instrumented report",
+  "version": "0.1.260812",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-12T12:01:00.000Z",
+  "logTail": ""
+}
