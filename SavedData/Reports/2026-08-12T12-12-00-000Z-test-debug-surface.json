@@ -1,0 +1,10 @@
+{
+  "signature": "test-debug-surface",
+  "context": "Mirror result surfaced in response",
+  "version": "0.1.260812",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-12T12:12:00.000Z",
+  "logTail": ""
+}
