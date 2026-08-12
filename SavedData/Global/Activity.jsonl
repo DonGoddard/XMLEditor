@@ -697,3 +697,7 @@
 {"ts":"2026-08-12T14:15:47.8600000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
 {"ts":"2026-08-12T14:15:49.3550000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7996,"detail":"github:PUT"}
 {"ts":"2026-08-12T14:15:49.5100000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-12T14:15:53.5610000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-12T14:15:55.9900000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":7444,"detail":"github:PUT"}
+{"ts":"2026-08-12T14:15:58.2240000Z","type":"app_open","appId":"NOSManualApp","filePath":"","ext":"","bytes":0,"detail":""}
+{"ts":"2026-08-12T14:15:58.2280000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
