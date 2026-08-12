@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T11-06-17-6284-test-report.json",
+      "signature": "test-report",
+      "utc": "2026-08-12T11:06:17.6284780Z",
+      "version": "0.1.260812.0703",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-11T16-00-59-5346-exception-InvalidOperationException.json",
       "signature": "exception-InvalidOperationException",
       "utc": "2026-08-11T16:00:59.5346710Z",
