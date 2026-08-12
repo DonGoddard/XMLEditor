@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-12T12-26-00-000Z-test-final-verify-2.json",
+      "signature": "test-final-verify-2",
+      "utc": "2026-08-12T12:26:00.000Z",
+      "version": "0.1.260812",
+      "platform": "WebGL"
+    },
+    {
       "file": "2026-08-12T12-24-00-000Z-test-final-verify.json",
       "signature": "test-final-verify",
       "utc": "2026-08-12T12:24:00.000Z",
