@@ -11,8 +11,8 @@ Line format (machine-parseable for the future Timeline window):
 
 ## Totals
 
-- **2165 logged implementations** across **52 active days** (2026-03-31 to 2026-08-13)
-- By type: feature: 923, fix: 567, adjust: 463, infra: 131, docs: 81
+- **2172 logged implementations** across **52 active days** (2026-03-31 to 2026-08-13)
+- By type: feature: 924, fix: 569, adjust: 464, infra: 131, docs: 84
 - Systems touched: 41; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (82), XamlWindow (80), Editor (77), BugReportWindow (74)
 
 ## The tape
@@ -2286,3 +2286,10 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-13} {sys:Docs} {type:docs} Both manuals and the ledger stamped synced-through=2026-08-13; totals recomputed from the tape and the by-system view regenerated
 - {date:2026-08-13} {sys:Editor} {type:docs} Build output path is recoverable outside Unity from the GitBuildCommit.LastBuildPath EditorPrefs key, which resolved a wrong-build test against a four-month-old copy
 - {date:2026-08-13} {sys:Desktop} {type:docs} Wallpapers and gallery images load from StreamingAssets via UnityWebRequest, so a build opened over file:// shows videos (fetched from GitHub over https) but no wallpapers; WebGL builds must be served over HTTP
+- {date:2026-08-13} {sys:LedgerWindow} {type:fix} Auto-publish rekeyed from a once-per-session flag to the canonical file's last-write time; the flag assumed the tape never changes mid-session, which is exactly what an update-docs pass does, and it silently swallowed a publish
+- {date:2026-08-13} {sys:FeaturesWindow} {type:feature} Features.md auto-publishes from the editor on the same timestamp-keyed check, written against the corrected Ledger pattern so the session-flag bug was not inherited
+- {date:2026-08-13} {sys:FeaturesWindow} {type:fix} The editor branch no longer shows "not yet published to GitHub" unconditionally; the banner and its Publish button now appear only when there is no uploader or a publish actually failed
+- {date:2026-08-13} {sys:AccountActivityWindow} {type:adjust} Both Global activity archives compacted via the button: 2103 to 700 and 2096 to 691 records, 524KB to 191KB, with per-bucket counts and byte totals verified identical
+- {date:2026-08-13} {sys:Docs} {type:docs} NOS_Help.md AccountActivityWindow section gains the Compact archives layout row, a compaction section and the full tab list; the earlier edit went into the generated .nosh by mistake and was correctly discarded by the capture run
+- {date:2026-08-13} {sys:Docs} {type:docs} Recorded that StreamingAssets/Help/*.nosh is a generated artifact built from NOS_Help.md plus a live screenshot, never a source to edit
+- {date:2026-08-13} {sys:GitHubUploader} {type:docs} Verify writes to SavedData through the Contents API rather than raw.githubusercontent.com; the CDN served a cached pre-compaction copy and nearly produced a passing check against an unchanged file
