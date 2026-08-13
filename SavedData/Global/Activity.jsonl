@@ -795,3 +795,5 @@
 {"ts":"2026-08-13T15:55:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21287,"detail":"github:PUT","count":2}
 {"ts":"2026-08-13T15:55:57.1726500Z","type":"app_open","appId":"FeaturesIndexApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:56:31.0155900Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-13T15:56:41.1782590Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T15:56:42.9410580Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
