@@ -876,3 +876,4 @@
 {"ts":"2026-08-13T23:11:03.1320000Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T23:11:16.6700000Z","type":"file_save","appId":"NotesApp","filePath":"Global/Files/Text/Notes Test.md","ext":".md","bytes":2930,"detail":"","count":1}
 {"ts":"2026-08-13T23:11:23.1650000Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T23:11:39.2320000Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
