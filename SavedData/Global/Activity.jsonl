@@ -818,3 +818,4 @@
 {"ts":"2026-08-13T22:43:23.0007160Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T22:43:23.8339380Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T22:43:24.3960670Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T22:45:50.4225840Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
