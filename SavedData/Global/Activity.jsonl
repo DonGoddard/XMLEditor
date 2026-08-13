@@ -695,3 +695,6 @@
 {"ts":"2026-08-13T12:06:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":76656,"detail":"github:PUT","count":9}
 {"ts":"2026-08-13T12:07:26.3000000Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T12:07:57.8830000Z","type":"app_open","appId":"FeaturesIndexApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T12:07:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":1}
+{"ts":"2026-08-13T12:07:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-08-13T12:07:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":41949,"detail":"github:PUT","count":5}
