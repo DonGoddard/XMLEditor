@@ -809,3 +809,4 @@
 {"ts":"2026-08-13T17:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":1}
 {"ts":"2026-08-13T17:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":72674,"detail":"github:PUT","count":7}
 {"ts":"2026-08-13T17:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":1}
+{"ts":"2026-08-13T17:22:04.8065300Z","type":"app_open","appId":"PerformanceApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
