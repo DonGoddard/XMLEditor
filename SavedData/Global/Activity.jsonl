@@ -804,3 +804,4 @@
 {"ts":"2026-08-13T17:03:40.0658020Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXPlayer","count":1}
 {"ts":"2026-08-13T17:21:15.1105610Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-13T17:21:38.5597340Z","type":"app_open","appId":"NOSManualApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T17:21:52.4403750Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
