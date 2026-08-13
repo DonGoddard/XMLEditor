@@ -878,3 +878,6 @@
 {"ts":"2026-08-13T23:11:23.1650000Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T23:11:39.2320000Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T23:11:50.5470000Z","type":"app_open","appId":"CardsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T23:11:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":1}
+{"ts":"2026-08-13T23:11:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-08-13T23:11:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":103218,"detail":"github:PUT","count":11}
