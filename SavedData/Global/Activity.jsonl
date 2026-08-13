@@ -797,3 +797,8 @@
 {"ts":"2026-08-13T15:56:31.0155900Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-13T15:56:41.1782590Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:56:42.9410580Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T17:03:04.0830200Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-13T17:03:05.7752070Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXPlayer"}
+{"ts":"2026-08-13T17:03:05.8116250Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin"}
+{"ts":"2026-08-13T17:03:05.8538780Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET"}
+{"ts":"2026-08-13T17:03:05.9808200Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10342,"detail":"github:PUT"}
