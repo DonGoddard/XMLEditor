@@ -766,13 +766,13 @@
 {"ts":"2026-08-13T15:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6958,"detail":"github:PUT","count":1}
 {"ts":"2026-08-13T15:38:58.4696780Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-13T15:39:06.4706630Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T15:41:33.1851530Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-13T15:41:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
 {"ts":"2026-08-13T15:41:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-08-13T15:41:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":1}
 {"ts":"2026-08-13T15:41:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":403583,"detail":"github:PUT","count":4}
-{"ts":"2026-08-13T15:42:12.9707370Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T15:41:33.1851530Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-13T15:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":33559,"detail":"github:PUT","count":5}
+{"ts":"2026-08-13T15:42:12.9707370Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:45:17.9830930Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:45:18.6326670Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:45:19.8206610Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
@@ -789,8 +789,9 @@
 {"ts":"2026-08-13T15:45:38.0943100Z","type":"app_open","appId":"XAMLInsertTextApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:45:38.7725080Z","type":"app_open","appId":"XAMLLoginFormApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:45:39.4469470Z","type":"app_open","appId":"XAMLSelectionPatternApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T15:46:07.5361790Z","type":"app_open","appId":"FeaturesIndexApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:46:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31053,"detail":"github:PUT","count":3}
 {"ts":"2026-08-13T15:46:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-08-13T15:46:07.5361790Z","type":"app_open","appId":"FeaturesIndexApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T15:55:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21287,"detail":"github:PUT","count":2}
 {"ts":"2026-08-13T15:55:57.1726500Z","type":"app_open","appId":"FeaturesIndexApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T15:56:31.0155900Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
