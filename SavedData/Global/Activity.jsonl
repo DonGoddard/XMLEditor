@@ -838,16 +838,4 @@
 {"ts":"2026-08-13T22:48:12.1312130Z","type":"app_open","appId":"FeaturesListApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T22:48:13.1522290Z","type":"app_open","appId":"FeaturesIndexApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T22:48:13.5249880Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:18.8243710Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:19.2435930Z","type":"app_open","appId":"XAMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:19.4889030Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:19.7317340Z","type":"app_open","appId":"PerformanceApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:19.9904140Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:20.2809330Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:20.8075190Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:21.2455300Z","type":"app_open","appId":"XAMLInsertTextApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:21.7680820Z","type":"app_open","appId":"XAMLLoginFormApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:22.2285650Z","type":"app_open","appId":"XAMLSelectionPatternApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:22.6835190Z","type":"app_open","appId":"XamlGorpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:23.4456530Z","type":"app_open","appId":"CardsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-13T22:48:23.6951290Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T22:48:24.5543510Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
