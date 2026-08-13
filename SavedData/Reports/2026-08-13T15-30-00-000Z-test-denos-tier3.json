@@ -1,0 +1,10 @@
+{
+  "signature": "test-denos-tier3",
+  "context": "Verify worker after UFOS_ALERTS binding + header rename",
+  "version": "0.1.260813",
+  "platform": "WebGL",
+  "os": "curl",
+  "browser": "",
+  "utc": "2026-08-13T15:30:00.000Z",
+  "logTail": ""
+}
