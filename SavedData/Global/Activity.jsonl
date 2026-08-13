@@ -689,3 +689,4 @@
 {"ts":"2026-08-13T12:06:00.2640000Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T12:06:12.4320000Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-13T12:06:25.8650000Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-13T12:06:49.0490000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
