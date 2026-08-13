@@ -4,16 +4,16 @@ Every feature, subfeature, fix, adjustment, and infrastructure change built into
 NOS, one line each, in chronological order - the playback tape of the project.
 Distilled from the full changelogs; maintained by the "update docs" runbook pass.
 
-{meta: synced-through=2026-08-09}
+{meta: synced-through=2026-08-13}
 
 Line format (machine-parseable for the future Timeline window):
 `- {date:YYYY-MM-DD} {sys:System} {type:feature|fix|adjust|infra|docs} description`
 
 ## Totals
 
-- **2140 logged implementations** across **50 active days** (2026-03-31 to 2026-08-09)
-- By type: feature: 916, fix: 565, adjust: 456, infra: 130, docs: 73
-- Systems touched: 40; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (81), XamlWindow (80), Editor (76), BugReportWindow (74)
+- **2165 logged implementations** across **52 active days** (2026-03-31 to 2026-08-13)
+- By type: feature: 923, fix: 567, adjust: 463, infra: 131, docs: 81
+- Systems touched: 41; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (82), XamlWindow (80), Editor (77), BugReportWindow (74)
 
 ## The tape
 
@@ -2257,3 +2257,32 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-09} {sys:VideoSurface} {type:fix} FindFirstObjectByType replaced with FindAnyObjectByType; the call is a null check so instance-id ordering is irrelevant and the deprecated form warned on every reload
 - {date:2026-08-09} {sys:UIManager} {type:fix} snapPreview marked NonSerialized; a VisualElement can never be serialized and the analyzer flagged the field on every reload
 - {date:2026-08-09} {sys:XmlWindow} {type:fix} XmlNodeData.Attributes marked NonSerialized; checked first for real data loss and found none since the class is never persisted despite carrying Serializable
+
+### 2026-08-12
+- {date:2026-08-12} {sys:ActivityRecorder} {type:infra} api_call events roll up into one record per user, minute and detail, carrying a count and summed bytes; 90.7 percent of the log was api_call records holding one of only eight distinct strings
+- {date:2026-08-12} {sys:ActivityRecorder} {type:fix} api_call events no longer count toward FLUSH_BATCH_SIZE; ten of them tripped the batch trigger and forced an immediate read-modify-write, defeating the 5s debounce that was already there
+- {date:2026-08-12} {sys:ActivityRecorder} {type:feature} MIN_SECONDS_BETWEEN_WRITES floors how often the log may reach GitHub at all, bypassed only on quit and session end where there is no later flush to defer to
+- {date:2026-08-12} {sys:ActivityRecorder} {type:adjust} Only closed minute buckets are drained; the flush cadence is finer than the bucket width so releasing the in-progress minute would emit a dozen partial records and undo the rollup
+- {date:2026-08-12} {sys:ActivityRecorder} {type:feature} ActivityEvent gains a count field with an Occurrences accessor that reads 1 for pre-rollup records, so existing logs keep counting correctly
+- {date:2026-08-12} {sys:ActivityRecorder} {type:adjust} Mixed batches sorted by timestamp before append, since rollups carry minute-boundary stamps while every other type is recorded to the tick
+- {date:2026-08-12} {sys:ActivityRecorder} {type:feature} CompactApiCalls retro-compacts already-written logs; idempotent, returns null when nothing would change, and refuses outright if any line fails to parse rather than risk dropping it
+- {date:2026-08-12} {sys:ActivityRecorder} {type:feature} Live logs compact themselves once per account per session on the first flush, reusing the read the append path already performs
+- {date:2026-08-12} {sys:GitHubUploader} {type:feature} Content-fingerprint guard skips byte-identical re-saves in SaveMarkdown and SaveFileBytes; 23 percent of adjacent PUT pairs in the activity log had identical payload sizes seconds apart
+- {date:2026-08-12} {sys:GitHubUploader} {type:adjust} Fingerprint is FNV-1a 64 plus byte length rather than a single hash, because a false positive would silently drop a save
+- {date:2026-08-12} {sys:GitHubUploader} {type:adjust} Fingerprint set optimistically at enqueue so a burst of identical saves collapses to one, and cleared in WrapSaveCallback on failure so a failed save always retries
+- {date:2026-08-12} {sys:GitHubUploader} {type:feature} InvalidateWriteFingerprint wired into DeleteFile, CopyFileWithStatus, account folder rewrites and NotifyAuthFailure
+- {date:2026-08-12} {sys:GitHubUploader} {type:adjust} Suppressed writes still run through the write queue so callers chaining off onComplete keep their sequencing
+- {date:2026-08-12} {sys:AccountActivityWindow} {type:feature} Compact archives button in the Logs tab rewrites Activity-yyyy-MM.jsonl archives, with a confirmation stating exactly what changes
+- {date:2026-08-12} {sys:AccountActivityWindow} {type:adjust} The archive pass deliberately skips the live Activity.jsonl; the recorder read-modify-writes it every 5s and a second pass alongside would drop whatever it appended in between
+- {date:2026-08-12} {sys:AccountActivityWindow} {type:fix} API tab sums ev.Occurrences instead of incrementing by one, so rolled-up records report the true call count
+- {date:2026-08-12} {sys:AccountActivityWindow} {type:adjust} Timeline rows show a multiplier on rolled-up api_call entries, so one record standing for fifteen calls does not read as one
+
+### 2026-08-13
+- {date:2026-08-13} {sys:Docs} {type:docs} NOS_Developers section 5 gains the redundant-write trap: byte-identical re-saves are skipped, so any path that changes a remote file outside SaveMarkdown or SaveFileBytes must call InvalidateWriteFingerprint or the next save silently no-ops
+- {date:2026-08-13} {sys:Docs} {type:docs} NOS_Developers section 5 records that a read-modify-write on an append-only file costs the whole file per append; the fix is aggregating high-frequency low-information events, not sharding
+- {date:2026-08-13} {sys:Docs} {type:docs} NOS_Developers section 5 gains a Telemetry block: read counts through ActivityEvent.Occurrences never count, and the in-progress minute is held back so a just-made API call takes up to 65s to appear
+- {date:2026-08-13} {sys:Docs} {type:docs} NOS_Developers section 2 records that unsigned sessions write to SavedData/Global rather than a named account, since UIManager.CurrentUsername defaults to Global
+- {date:2026-08-13} {sys:Docs} {type:docs} NOS_Manual section 6 gains an Activity history paragraph covering what the log records and the Compact archives control, in user language
+- {date:2026-08-13} {sys:Docs} {type:docs} Both manuals and the ledger stamped synced-through=2026-08-13; totals recomputed from the tape and the by-system view regenerated
+- {date:2026-08-13} {sys:Editor} {type:docs} Build output path is recoverable outside Unity from the GitBuildCommit.LastBuildPath EditorPrefs key, which resolved a wrong-build test against a four-month-old copy
+- {date:2026-08-13} {sys:Desktop} {type:docs} Wallpapers and gallery images load from StreamingAssets via UnityWebRequest, so a build opened over file:// shows videos (fetched from GitHub over https) but no wallpapers; WebGL builds must be served over HTTP
