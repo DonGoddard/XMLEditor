@@ -1044,3 +1044,4 @@
 {"ts":"2026-08-14T16:36:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
 {"ts":"2026-08-14T16:36:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":1}
 {"ts":"2026-08-14T16:36:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":29439,"detail":"github:PUT","count":3}
+{"ts":"2026-08-14T16:37:02.8555910Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
