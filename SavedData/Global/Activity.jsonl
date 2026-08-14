@@ -930,3 +930,4 @@
 {"ts":"2026-08-14T02:28:10.7518660Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T02:28:16.2633180Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T02:28:29.2646460Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-14T02:34:30.8970270Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
