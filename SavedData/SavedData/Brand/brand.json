@@ -1,10 +1,44 @@
 {
-    "version": 2,
+    "version": 3,
     "osName": "Nexus OS",
     "companyName": "Nexus",
     "supportEmail": "nexus@ufostudios.net",
     "primaryFont": "DejaVu Symbols Fallback",
     "primaryFontPath": "",
+    "symbolFont": "",
+    "symbolFontPath": "",
     "colors": [],
-    "skins": []
+    "skins": [],
+    "apps": [
+        {
+            "appId": "CardsApp",
+            "visible": false,
+            "iconPath": ""
+        },
+        {
+            "appId": "CollabVideoTestApp",
+            "visible": false,
+            "iconPath": ""
+        },
+        {
+            "appId": "ImageApp",
+            "visible": false,
+            "iconPath": ""
+        },
+        {
+            "appId": "AccountActivityApp",
+            "visible": false,
+            "iconPath": ""
+        },
+        {
+            "appId": "LedgerApp",
+            "visible": false,
+            "iconPath": ""
+        },
+        {
+            "appId": "DebugLogApp",
+            "visible": false,
+            "iconPath": ""
+        }
+    ]
 }
