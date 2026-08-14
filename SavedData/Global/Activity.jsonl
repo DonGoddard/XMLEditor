@@ -1010,3 +1010,4 @@
 {"ts":"2026-08-14T15:12:46.3526130Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T15:14:05.4198730Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T15:15:10.0845460Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-14T15:15:20.6216820Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
