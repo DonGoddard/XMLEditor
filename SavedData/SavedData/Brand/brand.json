@@ -58,7 +58,7 @@
         },
         {
             "name": "scrim",
-            "hex": "#FF0000FF"
+            "hex": "#4C008099"
         },
         {
             "name": "link",
@@ -123,26 +123,6 @@
         {
             "name": "desktopBg",
             "hex": "#140029FF"
-        },
-        {
-            "name": "badgeBg",
-            "hex": "#FF8000CC"
-        },
-        {
-            "name": "badgeBorder",
-            "hex": "#00FF00FF"
-        },
-        {
-            "name": "badgeFg",
-            "hex": "#0000FFFF"
-        },
-        {
-            "name": "thumbOutline",
-            "hex": "#FFFF00FF"
-        },
-        {
-            "name": "thumbOutlineHover",
-            "hex": "#FF0000FF"
         }
     ]
 }
