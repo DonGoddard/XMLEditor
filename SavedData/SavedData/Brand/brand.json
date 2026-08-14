@@ -39,6 +39,16 @@
             "appId": "DebugLogApp",
             "visible": false,
             "iconPath": ""
+        },
+        {
+            "appId": "PlanetsApp",
+            "visible": false,
+            "iconPath": ""
+        },
+        {
+            "appId": "BookApp",
+            "visible": false,
+            "iconPath": ""
         }
     ]
 }
