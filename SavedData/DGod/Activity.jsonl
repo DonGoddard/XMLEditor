@@ -138,3 +138,6 @@
 {"ts":"2026-05-29T19:46:33.0500000Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T23:09:50.0359180Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T23:42:03.9215530Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-14T23:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":17}
+{"ts":"2026-08-14T23:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
+{"ts":"2026-08-14T23:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10616,"detail":"github:PUT","count":2}
