@@ -18,7 +18,7 @@
         },
         {
             "name": "dockBackground",
-            "hex": "#59008CEB"
+            "hex": "#FF0000FF"
         },
         {
             "name": "textPrimary",
@@ -110,7 +110,7 @@
         },
         {
             "name": "titlebarBg",
-            "hex": "#8C00BFFF"
+            "hex": "#008888FF"
         },
         {
             "name": "titlebarFg",
