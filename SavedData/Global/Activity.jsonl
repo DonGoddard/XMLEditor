@@ -915,3 +915,4 @@
 {"ts":"2026-08-14T01:48:29.3922540Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T01:48:37.5928490Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T01:57:13.9986360Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-14T01:57:42.4944150Z","type":"app_open","appId":"CardsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
