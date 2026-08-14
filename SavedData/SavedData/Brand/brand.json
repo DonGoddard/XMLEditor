@@ -1,0 +1,148 @@
+{
+    "version": 1,
+    "osName": "Nexus OS",
+    "companyName": "Nexus",
+    "supportEmail": "nexus@ufostudios.net",
+    "colors": [
+        {
+            "name": "surface",
+            "hex": "#2E0852FF"
+        },
+        {
+            "name": "surfaceElevated",
+            "hex": "#420D73FF"
+        },
+        {
+            "name": "desktopChrome",
+            "hex": "#330066F2"
+        },
+        {
+            "name": "dockBackground",
+            "hex": "#59008CEB"
+        },
+        {
+            "name": "textPrimary",
+            "hex": "#D9FFFFFF"
+        },
+        {
+            "name": "textSecondary",
+            "hex": "#FF59E6FF"
+        },
+        {
+            "name": "accent",
+            "hex": "#00FFCCFF"
+        },
+        {
+            "name": "accentAction",
+            "hex": "#FF00FFFF"
+        },
+        {
+            "name": "warning",
+            "hex": "#FFE600FF"
+        },
+        {
+            "name": "error",
+            "hex": "#FF1A66FF"
+        },
+        {
+            "name": "selection",
+            "hex": "#00FFCC73"
+        },
+        {
+            "name": "editSelection",
+            "hex": "#FF00FF73"
+        },
+        {
+            "name": "border",
+            "hex": "#00FFFFFF"
+        },
+        {
+            "name": "scrim",
+            "hex": "#4C008099"
+        },
+        {
+            "name": "link",
+            "hex": "#00FFFFFF"
+        },
+        {
+            "name": "indicator",
+            "hex": "#33FF4CFF"
+        },
+        {
+            "name": "buttonBg",
+            "hex": "#7300B2FF"
+        },
+        {
+            "name": "buttonBgHover",
+            "hex": "#BF1AF2FF"
+        },
+        {
+            "name": "buttonBgPressed",
+            "hex": "#4C0080FF"
+        },
+        {
+            "name": "buttonFg",
+            "hex": "#00FFFFFF"
+        },
+        {
+            "name": "buttonFgHover",
+            "hex": "#FFFF66FF"
+        },
+        {
+            "name": "buttonNeutral",
+            "hex": "#660D8CFF"
+        },
+        {
+            "name": "successAction",
+            "hex": "#00E673FF"
+        },
+        {
+            "name": "titlebarHover",
+            "hex": "#00FFFF4C"
+        },
+        {
+            "name": "closeHover",
+            "hex": "#FF0066F2"
+        },
+        {
+            "name": "closeActive",
+            "hex": "#FF3399FF"
+        },
+        {
+            "name": "titlebarBg",
+            "hex": "#8C00BFFF"
+        },
+        {
+            "name": "titlebarFg",
+            "hex": "#00FFFFFF"
+        },
+        {
+            "name": "windowBg",
+            "hex": "#210540FF"
+        },
+        {
+            "name": "desktopBg",
+            "hex": "#140029FF"
+        },
+        {
+            "name": "badgeBg",
+            "hex": "#FF8000CC"
+        },
+        {
+            "name": "badgeBorder",
+            "hex": "#00FF00FF"
+        },
+        {
+            "name": "badgeFg",
+            "hex": "#0000FFFF"
+        },
+        {
+            "name": "thumbOutline",
+            "hex": "#FFFF00FF"
+        },
+        {
+            "name": "thumbOutlineHover",
+            "hex": "#FF0000FF"
+        }
+    ]
+}
