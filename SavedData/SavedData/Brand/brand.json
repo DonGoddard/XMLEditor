@@ -6,123 +6,123 @@
     "colors": [
         {
             "name": "surface",
-            "hex": "#2E0852FF"
+            "hex": "#1A1A1CFF"
         },
         {
             "name": "surfaceElevated",
-            "hex": "#420D73FF"
+            "hex": "#212126FF"
         },
         {
             "name": "desktopChrome",
-            "hex": "#330066F2"
+            "hex": "#0D0D0FF2"
         },
         {
             "name": "dockBackground",
-            "hex": "#FF0000FF"
+            "hex": "#0D0D0DD9"
         },
         {
             "name": "textPrimary",
-            "hex": "#D9FFFFFF"
+            "hex": "#D9D9DEFF"
         },
         {
             "name": "textSecondary",
-            "hex": "#FF59E6FF"
+            "hex": "#8C8F99FF"
         },
         {
             "name": "accent",
-            "hex": "#00FFCCFF"
+            "hex": "#59A6FFFF"
         },
         {
             "name": "accentAction",
-            "hex": "#FF00FFFF"
+            "hex": "#4080E6FF"
         },
         {
             "name": "warning",
-            "hex": "#FFE600FF"
+            "hex": "#F29933FF"
         },
         {
             "name": "error",
-            "hex": "#FF1A66FF"
+            "hex": "#E64C4CFF"
         },
         {
             "name": "selection",
-            "hex": "#00FFCC73"
+            "hex": "#4C80CC66"
         },
         {
             "name": "editSelection",
-            "hex": "#FF00FF73"
+            "hex": "#4C80CC66"
         },
         {
             "name": "border",
-            "hex": "#00FFFFFF"
+            "hex": "#4C4C5499"
         },
         {
             "name": "scrim",
-            "hex": "#4C008099"
+            "hex": "#00000099"
         },
         {
             "name": "link",
-            "hex": "#00FFFFFF"
+            "hex": "#66B2FFFF"
         },
         {
             "name": "indicator",
-            "hex": "#33FF4CFF"
+            "hex": "#59A6FFFF"
         },
         {
             "name": "buttonBg",
-            "hex": "#7300B2FF"
+            "hex": "#29292BFF"
         },
         {
             "name": "buttonBgHover",
-            "hex": "#BF1AF2FF"
+            "hex": "#424247FF"
         },
         {
             "name": "buttonBgPressed",
-            "hex": "#4C0080FF"
+            "hex": "#1A1A1CFF"
         },
         {
             "name": "buttonFg",
-            "hex": "#00FFFFFF"
+            "hex": "#B2B2BAFF"
         },
         {
             "name": "buttonFgHover",
-            "hex": "#FFFF66FF"
+            "hex": "#EBEBF2FF"
         },
         {
             "name": "buttonNeutral",
-            "hex": "#660D8CFF"
+            "hex": "#333338FF"
         },
         {
             "name": "successAction",
-            "hex": "#00E673FF"
+            "hex": "#2E734CFF"
         },
         {
             "name": "titlebarHover",
-            "hex": "#00FFFF4C"
+            "hex": "#FFFFFF14"
         },
         {
             "name": "closeHover",
-            "hex": "#FF0066F2"
+            "hex": "#D92633E6"
         },
         {
             "name": "closeActive",
-            "hex": "#FF3399FF"
+            "hex": "#991A26FF"
         },
         {
             "name": "titlebarBg",
-            "hex": "#008888FF"
+            "hex": "#212126FF"
         },
         {
             "name": "titlebarFg",
-            "hex": "#00FFFFFF"
+            "hex": "#BFC2CCFF"
         },
         {
             "name": "windowBg",
-            "hex": "#210540FF"
+            "hex": "#17171AFF"
         },
         {
             "name": "desktopBg",
-            "hex": "#140029FF"
+            "hex": "#0A0D17FF"
         }
     ]
 }
