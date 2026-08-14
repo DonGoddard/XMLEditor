@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-14T16-09-16-3751-exception-InvalidOperationException.json",
+      "signature": "exception-InvalidOperationException",
+      "utc": "2026-08-14T16:09:16.3751170Z",
+      "version": "0.1.260814.1205",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-14T16-07-12-7452-exception-InvalidOperationException.json",
       "signature": "exception-InvalidOperationException",
       "utc": "2026-08-14T16:07:12.7452730Z",
