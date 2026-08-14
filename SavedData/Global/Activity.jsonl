@@ -1127,12 +1127,13 @@
 {"ts":"2026-08-14T21:41:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10455,"detail":"github:PUT","count":1}
 {"ts":"2026-08-14T21:41:56.1316940Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T21:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10467,"detail":"github:PUT","count":1}
-{"ts":"2026-08-14T22:03:43.3458100Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T22:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
 {"ts":"2026-08-14T22:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":1}
 {"ts":"2026-08-14T22:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10467,"detail":"github:PUT","count":1}
+{"ts":"2026-08-14T22:03:43.3458100Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T22:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":984,"detail":"github:PUT","count":1}
+{"ts":"2026-08-14T22:06:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":42039,"detail":"github:PUT","count":5}
 {"ts":"2026-08-14T22:06:13.4695700Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T22:06:55.2503260Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-14T22:06:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":42039,"detail":"github:PUT","count":5}
 {"ts":"2026-08-14T22:10:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":10471,"detail":"github:PUT","count":1}
+{"ts":"2026-08-14T22:29:38.6880000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
