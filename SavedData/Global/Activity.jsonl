@@ -939,3 +939,4 @@
 {"ts":"2026-08-14T02:35:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
 {"ts":"2026-08-14T02:35:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":50628,"detail":"github:PUT","count":4}
 {"ts":"2026-08-14T02:36:05.7914980Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-14T02:36:21.3300870Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
