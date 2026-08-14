@@ -147,17 +147,22 @@
       return Math.max(1, Math.min(dpr, maxRatio));   // never below 1x
     }
 
-    // Use dynamic paths for the loader so it works on any build name
+    // Use dynamic paths for the loader so it works on any build name.
+    // The ?v= build-version query makes every build's files distinct URLs:
+    // a stale CDN edge or the Unity IndexedDB cache can then never pair one
+    // build's data with another's wasm (the source of "call_indirect to a
+    // signature that does not match" startup crashes after a deploy).
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/AIDesigner.loader.js";
+    var buildVer = "?v=" + encodeURIComponent("0.1.260814.1117");
+    var loaderUrl = buildUrl + "/AIDesigner.loader.js" + buildVer;
     var config = {
-      dataUrl: buildUrl + "/AIDesigner.data.unityweb",
-      frameworkUrl: buildUrl + "/AIDesigner.framework.js.unityweb",
-      codeUrl: buildUrl + "/AIDesigner.wasm.unityweb",
+      dataUrl: buildUrl + "/AIDesigner.data.unityweb" + buildVer,
+      frameworkUrl: buildUrl + "/AIDesigner.framework.js.unityweb" + buildVer,
+      codeUrl: buildUrl + "/AIDesigner.wasm.unityweb" + buildVer,
       streamingAssetsUrl: "StreamingAssets",
       companyName: "UFO Studios",
       productName: "NOS",
-      productVersion: "0.1.260814.1032",
+      productVersion: "0.1.260814.1117",
       showBanner: unityShowBanner,
       devicePixelRatio: ufosPixelRatio(),
     };
