@@ -969,3 +969,4 @@
 {"ts":"2026-08-14T03:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":194,"detail":"gorp:worker","count":1}
 {"ts":"2026-08-14T03:39:15.4436100Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-14T03:39:26.4274190Z","type":"app_open","appId":"PerformanceApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-14T03:39:36.0739930Z","type":"app_open","appId":"XamlGorpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
