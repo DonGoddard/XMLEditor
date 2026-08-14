@@ -3,5 +3,22 @@
     "osName": "Nexus OS",
     "companyName": "Nexus",
     "supportEmail": "nexus@ufostudios.net",
-    "colors": []
+    "colors": [
+        {
+            "name": "textPrimary",
+            "hex": "#0BF000FF"
+        },
+        {
+            "name": "textSecondary",
+            "hex": "#B2B5B8FF"
+        },
+        {
+            "name": "accent",
+            "hex": "#00BEFFFF"
+        },
+        {
+            "name": "buttonBg",
+            "hex": "#4175ADFF"
+        }
+    ]
 }
