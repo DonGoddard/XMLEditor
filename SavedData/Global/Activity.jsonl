@@ -1045,12 +1045,13 @@
 {"ts":"2026-08-14T16:36:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":29439,"detail":"github:PUT","count":3}
 {"ts":"2026-08-14T16:36:39.7952010Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T16:37:02.8555910Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-14T16:39:05.0451340Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T16:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-08-14T16:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":1}
 {"ts":"2026-08-14T16:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":13212,"detail":"github:PUT","count":3}
-{"ts":"2026-08-14T16:40:39.3439290Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-08-14T16:40:44.2590020Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-14T16:39:05.0451340Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-14T16:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-08-14T16:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":32570,"detail":"github:PUT","count":3}
 {"ts":"2026-08-14T16:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":1}
+{"ts":"2026-08-14T16:40:39.3439290Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-14T16:40:44.2590020Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-14T16:48:10.9549230Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
