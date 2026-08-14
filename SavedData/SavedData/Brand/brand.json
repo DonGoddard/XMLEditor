@@ -1,9 +1,9 @@
 {
     "version": 2,
-    "osName": "",
-    "companyName": "",
-    "supportEmail": "",
-    "primaryFont": "",
+    "osName": "Nexus OS",
+    "companyName": "Nexus",
+    "supportEmail": "nexus@ufostudios.net",
+    "primaryFont": "DejaVu Symbols Fallback",
     "primaryFontPath": "",
     "colors": [],
     "skins": []
