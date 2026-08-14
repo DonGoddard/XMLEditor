@@ -28,26 +28,26 @@
         },
         {
             "appId": "ImageApp",
-            "visible": false,
-            "mode": 1,
+            "visible": true,
+            "mode": 2,
             "iconPath": ""
         },
         {
             "appId": "AccountActivityApp",
-            "visible": false,
-            "mode": 1,
+            "visible": true,
+            "mode": 2,
             "iconPath": ""
         },
         {
             "appId": "LedgerApp",
-            "visible": false,
-            "mode": 1,
+            "visible": true,
+            "mode": 2,
             "iconPath": ""
         },
         {
             "appId": "DebugLogApp",
-            "visible": false,
-            "mode": 1,
+            "visible": true,
+            "mode": 2,
             "iconPath": ""
         },
         {
