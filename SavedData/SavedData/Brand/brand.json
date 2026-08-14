@@ -1,24 +1,153 @@
 {
-    "version": 1,
+    "version": 2,
     "osName": "Nexus OS",
     "companyName": "Nexus",
     "supportEmail": "nexus@ufostudios.net",
+    "primaryFont": "DejaVu Symbols Fallback",
     "colors": [
         {
+            "name": "surface",
+            "hex": "#0D0F24FF"
+        },
+        {
+            "name": "surfaceElevated",
+            "hex": "#141A33FF"
+        },
+        {
+            "name": "desktopChrome",
+            "hex": "#080A1AF0"
+        },
+        {
+            "name": "dockBackground",
+            "hex": "#0A0D21D9"
+        },
+        {
             "name": "textPrimary",
-            "hex": "#0BF000FF"
+            "hex": "#E0E6FFFF"
         },
         {
             "name": "textSecondary",
-            "hex": "#B2B5B8FF"
+            "hex": "#8C99CCFF"
         },
         {
             "name": "accent",
-            "hex": "#00BEFFFF"
+            "hex": "#8C66FFFF"
+        },
+        {
+            "name": "accentAction",
+            "hex": "#598CFFFF"
+        },
+        {
+            "name": "warning",
+            "hex": "#FFB24CFF"
+        },
+        {
+            "name": "error",
+            "hex": "#FF5973FF"
+        },
+        {
+            "name": "selection",
+            "hex": "#8066FF66"
+        },
+        {
+            "name": "editSelection",
+            "hex": "#598CFF66"
+        },
+        {
+            "name": "border",
+            "hex": "#5966B299"
+        },
+        {
+            "name": "scrim",
+            "hex": "#00000D99"
+        },
+        {
+            "name": "link",
+            "hex": "#80B2FFFF"
+        },
+        {
+            "name": "indicator",
+            "hex": "#66E6FFFF"
         },
         {
             "name": "buttonBg",
-            "hex": "#4175ADFF"
+            "hex": "#1A1F3DFF"
+        },
+        {
+            "name": "buttonBgHover",
+            "hex": "#293361FF"
+        },
+        {
+            "name": "buttonBgPressed",
+            "hex": "#0F1429FF"
+        },
+        {
+            "name": "buttonFg",
+            "hex": "#BFCCFFFF"
+        },
+        {
+            "name": "buttonFgHover",
+            "hex": "#FFFFFFFF"
+        },
+        {
+            "name": "buttonNeutral",
+            "hex": "#1F2447FF"
+        },
+        {
+            "name": "successAction",
+            "hex": "#338073FF"
+        },
+        {
+            "name": "titlebarHover",
+            "hex": "#8099FF1F"
+        },
+        {
+            "name": "closeHover",
+            "hex": "#E64C80E6"
+        },
+        {
+            "name": "closeActive",
+            "hex": "#B23366FF"
+        },
+        {
+            "name": "titlebarBg",
+            "hex": "#12172EFF"
+        },
+        {
+            "name": "titlebarFg",
+            "hex": "#CCD9FFFF"
+        },
+        {
+            "name": "windowBg",
+            "hex": "#0A0D1FFF"
+        },
+        {
+            "name": "desktopBg",
+            "hex": "#050814FF"
+        }
+    ],
+    "skins": [
+        {
+            "name": "titlebarSkin",
+            "enabled": true,
+            "imagePath": "",
+            "fit": 0,
+            "sliceLeft": 0,
+            "sliceRight": 0,
+            "sliceTop": 0,
+            "sliceBottom": 0,
+            "tintHex": "#00FF10FF"
+        },
+        {
+            "name": "minimizeIcon",
+            "enabled": true,
+            "imagePath": "",
+            "fit": 0,
+            "sliceLeft": 14,
+            "sliceRight": 14,
+            "sliceTop": 14,
+            "sliceBottom": 14,
+            "tintHex": "#FFFFFFFF"
         }
     ]
 }
