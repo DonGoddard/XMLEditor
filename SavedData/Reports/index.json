@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-14T18-27-22-0917-gorp-unreachable.json",
+      "signature": "gorp-unreachable",
+      "utc": "2026-08-14T18:27:22.0917510Z",
+      "version": "0.1.260814.1426",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-14T16-09-16-3751-exception-InvalidOperationException.json",
       "signature": "exception-InvalidOperationException",
       "utc": "2026-08-14T16:09:16.3751170Z",
