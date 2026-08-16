@@ -1183,3 +1183,4 @@
 {"ts":"2026-08-14T23:51:41.5953980Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-16T01:41:33.3190000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-08-16T13:25:32.6140000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-08-16T13:25:48.2300000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
