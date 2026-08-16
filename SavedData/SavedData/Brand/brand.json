@@ -7,7 +7,7 @@
     "termsUrl": "https://policies.google.com/terms?hl=en-US",
     "privacyUrl": "https://policies.google.com/privacy?hl=en-US",
     "eulaUrl": "https://gist.github.com/heiswayi/04d091fc4a5e9f92f4cc38067936ffb8",
-    "primaryFont": "DejaVu Symbols Fallback",
+    "primaryFont": "LiberationSans Fallback",
     "primaryFontPath": "",
     "symbolFont": "",
     "symbolFontPath": "",
@@ -28,25 +28,25 @@
         },
         {
             "appId": "ImageApp",
-            "visible": true,
+            "visible": false,
             "mode": 2,
             "iconPath": ""
         },
         {
             "appId": "AccountActivityApp",
-            "visible": true,
+            "visible": false,
             "mode": 2,
             "iconPath": ""
         },
         {
             "appId": "LedgerApp",
-            "visible": true,
+            "visible": false,
             "mode": 2,
             "iconPath": ""
         },
         {
             "appId": "DebugLogApp",
-            "visible": true,
+            "visible": false,
             "mode": 2,
             "iconPath": ""
         },
