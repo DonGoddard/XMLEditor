@@ -1280,3 +1280,4 @@
 {"ts":"2026-08-16T18:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":62752,"detail":"github:PUT","count":6}
 {"ts":"2026-08-16T18:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-08-16T18:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:DELETE","count":1}
+{"ts":"2026-08-16T18:53:28.6650000Z","type":"file_rename","appId":"UMLFileApp","filePath":"Global/Files/Gorp/UML Gorp.Loop.gorp","ext":".gorp","bytes":0,"detail":"Global/Files/Gorp/Gorp.Loop.gorp","count":1}
