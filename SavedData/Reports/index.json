@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-16T18-36-23-0260-exception-MethodAccessException.json",
+      "signature": "exception-MethodAccessException",
+      "utc": "2026-08-16T18:36:23.0260000Z",
+      "version": "0.1.260816.1401",
+      "platform": "WebGLPlayer"
+    },
+    {
       "file": "2026-08-14T19-09-20-1940-gorp-unreachable.json",
       "signature": "gorp-unreachable",
       "utc": "2026-08-14T19:09:20.1940630Z",
