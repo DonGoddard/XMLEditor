@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-16T18-48-26-4980-exception-ArgumentNullException.json",
+      "signature": "exception-ArgumentNullException",
+      "utc": "2026-08-16T18:48:26.4980000Z",
+      "version": "0.1.260816.1401",
+      "platform": "WebGLPlayer"
+    },
+    {
       "file": "2026-08-16T18-36-23-0260-exception-MethodAccessException.json",
       "signature": "exception-MethodAccessException",
       "utc": "2026-08-16T18:36:23.0260000Z",
