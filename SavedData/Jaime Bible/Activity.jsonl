@@ -251,3 +251,6 @@
 {"ts":"2026-08-14T23:09:49.8732870Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-16T15:02:33.2480000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-08-16T15:02:36.7570000Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-16T15:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":52785,"detail":"github:PUT","count":3}
+{"ts":"2026-08-16T15:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":11}
+{"ts":"2026-08-16T15:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
