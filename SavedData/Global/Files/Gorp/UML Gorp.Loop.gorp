@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UMLDiagram name="UML File">
+    <Classes>
+        <Class id="orp" x="240" y="505">
+            <Name>orp</Name>
+            <Attributes>
+                <Attribute visibility="public" name="harvey" type="int" />
+                <Attribute visibility="public" name="irrelevant" type="string" />
+                <Attribute visibility="public" name="sunrise" type="int" />
+                <Attribute visibility="public" name="sunset" type="int" />
+                <Attribute visibility="public" name="tanzania" type="key" />
+                <Attribute visibility="public" name="hillgiant" type="[int]" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Simple.Escape" x="325" y="60">
+            <Name>Escape</Name>
+            <Attributes>
+                <Attribute visibility="public" name="result" type="bool" />
+            </Attributes>
+            <Methods />
+        </Class>
+        <Class id="Simple.Add" x="60" y="240">
+            <Name>Add</Name>
+            <Attributes />
+            <Methods />
+        </Class>
+        <Class id="Simple" x="505" y="326">
+            <Name>Simple</Name>
+            <Attributes />
+            <Methods />
+        </Class>
+    </Classes>
+    <Relationships>
+        <Relationship from="orp" to="Simple.Add" type="Input" />
+        <Relationship from="Simple.Add" to="Simple.Escape" type="Output" />
+        <Relationship from="orp" to="Simple" type="Input" />
+        <Relationship from="Simple" to="Simple.Escape" type="Output" />
+    </Relationships>
+</UMLDiagram>
