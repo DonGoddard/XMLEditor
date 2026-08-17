@@ -267,3 +267,4 @@
 {"ts":"2026-08-17T17:22:18.9570000Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-17T17:25:53.7880000Z","type":"app_open","appId":"CardsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-17T17:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31907,"detail":"github:PUT","count":3}
+{"ts":"2026-08-17T17:26:12.9050000Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
