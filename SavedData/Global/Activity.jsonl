@@ -1394,3 +1394,4 @@
 {"ts":"2026-08-17T17:06:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":104998,"detail":"github:PUT","count":11}
 {"ts":"2026-08-17T17:06:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":1}
 {"ts":"2026-08-17T17:07:30.3130000Z","type":"app_open","appId":"XAMLInsertTextApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-17T17:07:50.7940000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
