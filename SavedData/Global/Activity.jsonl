@@ -1402,3 +1402,5 @@
 {"ts":"2026-08-17T17:09:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27404,"detail":"github:PUT","count":3}
 {"ts":"2026-08-17T17:09:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":14}
 {"ts":"2026-08-17T17:10:06.7130000Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-17T17:27:40.9500000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-08-17T17:27:42.9550000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
