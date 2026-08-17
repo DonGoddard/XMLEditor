@@ -1389,3 +1389,4 @@
 {"ts":"2026-08-17T17:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":100300,"detail":"github:PUT","count":10}
 {"ts":"2026-08-17T17:06:06.3930000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-17T17:06:20.9600000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-17T17:06:43.6930000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
