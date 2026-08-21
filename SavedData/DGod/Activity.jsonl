@@ -288,3 +288,5 @@
 {"ts":"2026-08-21T08:02:21.7028750Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-21T08:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-08-21T08:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":41229,"detail":"github:PUT","count":4}
+{"ts":"2026-08-21T08:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":12412,"detail":"github:PUT","count":1}
+{"ts":"2026-08-21T08:06:04.8706220Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
