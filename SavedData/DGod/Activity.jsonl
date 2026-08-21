@@ -271,8 +271,9 @@
 {"ts":"2026-08-17T17:26:25.9880000Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-17T17:26:49.8220000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-17T17:38:27.7990000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-08-21T06:17:30.6330000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-08-21T06:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":19}
 {"ts":"2026-08-21T06:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-08-21T06:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":12303,"detail":"github:PUT","count":1}
+{"ts":"2026-08-21T06:17:30.6330000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-08-21T06:18:12.6460000Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-21T07:50:20.5553760Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
