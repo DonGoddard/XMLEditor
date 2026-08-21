@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
-<gorp name="AI Designer">
-  <!-- nos-uml-state {"mode":"ai-design","title":"AI Designer","layout":{"ai.sample.CustomerRecords":{"x":6324.32,"y":60,"w":280,"h":150},"ai.sample.TransactionLog":{"x":60,"y":5884.86,"w":280,"h":150},"ai.sample.ChurnPredictor":{"x":29.43,"y":29.43,"w":403.64,"h":150},"ai.sample.ScoreAndRank":{"x":2667.08,"y":60,"w":280,"h":100},"Fight":{"x":292.22,"y":-1.05,"w":280,"h":110},"SkunkModel":{"x":288.02,"y":113.52,"w":280,"h":110},"SkunkData":{"x":532.94,"y":174.49,"w":280,"h":110}}} -->
+<gorp name="AI Skunk">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Skunk","layout":{"ai.sample.CustomerRecords":{"x":6324.32,"y":60,"w":280,"h":150},"ai.sample.TransactionLog":{"x":60,"y":5884.86,"w":280,"h":150},"ai.sample.ChurnPredictor":{"x":29.43,"y":29.43,"w":403.64,"h":150},"ai.sample.ScoreAndRank":{"x":2667.08,"y":60,"w":280,"h":100},"Fight":{"x":292.22,"y":-1.05,"w":280,"h":110},"SkunkModel":{"x":288.02,"y":113.52,"w":280,"h":110},"SkunkData":{"x":532.94,"y":174.49,"w":280,"h":110}}} -->
   <data namespace="SkunkData">
     <variables>
       <variable name="id" type="key" />
