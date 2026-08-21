@@ -9,13 +9,13 @@
   </data>
   <data namespace="xmlIT.Session">
     <variables>
-      <variable name="Key" type="227421943938003D" />
-      <variable name="User" type="613259D1EBF3C673" />
-      <variable name="Site" type="B86F66A2218A73FD" />
-      <variable name="CreationDate" type="52 PM" />
-      <variable name="LastTouched" type="52 PM" />
-      <variable name="Action[0]" type="9659DD475C6EADA2" />
-      <variable name="Item[0]" type="8DD24DADD0EDB74E" />
+      <variable name="Key" type="67BAB9C573D2D8C5" />
+      <variable name="User" type="4B94C0106943FD67" />
+      <variable name="Site" type="9BFC9BD900861A13" />
+      <variable name="CreationDate" type="27 PM" />
+      <variable name="LastTouched" type="27 PM" />
+      <variable name="Action[0]" type="2FD5D8E24AF0314F" />
+      <variable name="Item[0]" type="43F86CD9B859E65D" />
     </variables>
   </data>
   <model namespace="SkunkModel">
