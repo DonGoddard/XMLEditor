@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-21T07-57-24-3317-xmlit-unreachable.json",
+      "signature": "xmlit-unreachable",
+      "utc": "2026-08-21T07:57:24.3317070Z",
+      "version": "0.1.260816.1526",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-08-16T18-48-26-4980-exception-ArgumentNullException.json",
       "signature": "exception-ArgumentNullException",
       "utc": "2026-08-16T18:48:26.4980000Z",
