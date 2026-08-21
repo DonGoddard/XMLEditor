@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <gorp name="AI Designer">
-  <!-- nos-uml-state {"mode":"ai-design","title":"AI Designer","layout":{"SkunkData":{"x":549.75,"y":59.92,"w":280,"h":110},"SkunkModel":{"x":340,"y":60,"w":280,"h":110},"ai.sample.CustomerRecords":{"x":128.24,"y":260.69,"w":251.23,"h":150},"ai.sample.TransactionLog":{"x":394.18,"y":262.79,"w":241.77,"h":150},"ai.sample.ChurnPredictor":{"x":640.15,"y":268.04,"w":330.06,"h":150},"ai.sample.ScoreAndRank":{"x":982.83,"y":268.04,"w":362.65,"h":100},"Fight":{"x":116.68,"y":56.76,"w":280,"h":110},"xmlIT.Session":{"x":1196.22,"y":3.15,"w":281.71,"h":150}}} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Designer","layout":{"SkunkData":{"x":549.75,"y":59.92,"w":280,"h":110},"xmlIT.Session":{"x":867.2,"y":23.13,"w":272.25,"h":150},"SkunkModel":{"x":340,"y":60,"w":280,"h":110},"ai.sample.CustomerRecords":{"x":89.35,"y":260.69,"w":238.61,"h":150},"ai.sample.TransactionLog":{"x":358.44,"y":262.79,"w":235.46,"h":150},"ai.sample.ChurnPredictor":{"x":640.15,"y":268.04,"w":274.35,"h":150},"ai.sample.ScoreAndRank":{"x":921.86,"y":297.48,"w":298.53,"h":100},"Fight":{"x":116.68,"y":56.76,"w":280,"h":110}}} -->
   <data namespace="SkunkData">
     <variables>
       <variable name="id" type="key" />
