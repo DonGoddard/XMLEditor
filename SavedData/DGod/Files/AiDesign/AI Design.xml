@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-16"?>
+<gorp name="AI Designer">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Designer","layout":{"SkunkData":{"x":549.75,"y":59.92,"w":280,"h":110},"SkunkModel":{"x":340,"y":60,"w":280,"h":110},"ai.sample.CustomerRecords":{"x":128.24,"y":260.69,"w":251.23,"h":150},"ai.sample.TransactionLog":{"x":394.18,"y":262.79,"w":241.77,"h":150},"ai.sample.ChurnPredictor":{"x":640.15,"y":268.04,"w":330.06,"h":150},"ai.sample.ScoreAndRank":{"x":982.83,"y":268.04,"w":362.65,"h":100},"Fight":{"x":116.68,"y":56.76,"w":280,"h":110},"xmlIT.Session":{"x":1196.22,"y":3.15,"w":281.71,"h":150}}} -->
+  <data namespace="SkunkData">
+    <variables>
+      <variable name="id" type="key" />
+      <variable name="value" type="double" />
+    </variables>
+  </data>
+  <data namespace="xmlIT.Session">
+    <variables>
+      <variable name="Key" type="227421943938003D" />
+      <variable name="User" type="613259D1EBF3C673" />
+      <variable name="Site" type="B86F66A2218A73FD" />
+      <variable name="CreationDate" type="52 PM" />
+      <variable name="LastTouched" type="52 PM" />
+      <variable name="Action[0]" type="9659DD475C6EADA2" />
+      <variable name="Item[0]" type="8DD24DADD0EDB74E" />
+    </variables>
+  </data>
+  <model namespace="SkunkModel">
+    <variables>
+      <variable name="inputs" type="[double]" />
+      <variable name="outputs" type="[double]" />
+    </variables>
+    <operations>
+      <operation name="predict" />
+    </operations>
+  </model>
+  <algorithm namespace="ai.sample.CustomerRecords">
+    <variables>
+      <variable name="id" type="key" />
+      <variable name="tenure" type="int" />
+      <variable name="monthly" type="double" />
+      <variable name="churned" type="bool" />
+      <variable name="signedUp" type="utcdatetime" />
+    </variables>
+  </algorithm>
+  <algorithm namespace="ai.sample.TransactionLog">
+    <variables>
+      <variable name="id" type="guid" />
+      <variable name="customer" type="key" />
+      <variable name="amounts" type="[double]" />
+      <variable name="source" type="uri" />
+    </variables>
+  </algorithm>
+  <algorithm namespace="ai.sample.ChurnPredictor">
+    <variables>
+      <variable name="features" type="[double]" />
+      <variable name="weights" type="[double]" />
+      <variable name="bias" type="double = 0.0" />
+      <variable name="threshold" type="double = 0.5" />
+      <variable name="labels" type="[symbol]" />
+    </variables>
+    <operations>
+      <operation name="predict" returns="double" />
+    </operations>
+  </algorithm>
+  <algorithm namespace="ai.sample.ScoreAndRank">
+    <operations>
+      <operation name="score" returns="double" />
+      <operation name="rank" returns="[key]" />
+      <operation name="explain" returns="string" />
+    </operations>
+  </algorithm>
+  <algorithm namespace="Fight">
+    <operations>
+      <operation name="run" />
+    </operations>
+  </algorithm>
+</gorp>
