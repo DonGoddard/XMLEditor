@@ -412,12 +412,13 @@
 {"ts":"2026-08-24T16:24:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
 {"ts":"2026-08-24T16:25:00.0427840Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-24T16:44:06.3979080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
-{"ts":"2026-08-24T16:57:46.4109080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-24T16:57:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-08-24T16:57:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-08-24T16:57:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":15933,"detail":"github:PUT","count":1}
-{"ts":"2026-08-24T16:58:40.7843440Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-24T16:57:46.4109080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-24T16:58:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-08-24T16:58:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":78103,"detail":"github:PUT","count":5}
 {"ts":"2026-08-24T16:58:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1784,"detail":"xmlit:direct","count":1}
+{"ts":"2026-08-24T16:58:40.7843440Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-24T17:00:09.5797400Z","type":"file_save","appId":"AiDesignerApp","filePath":"DGod/Files/Xml/Gorp.DSi.Units.xml","ext":".xml","bytes":2983,"detail":"","count":1}
+{"ts":"2026-08-24T17:00:25.0324790Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
