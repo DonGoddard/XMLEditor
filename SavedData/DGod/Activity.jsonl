@@ -401,3 +401,5 @@
 {"ts":"2026-08-24T12:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-08-24T12:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-08-24T12:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":36588,"detail":"github:PUT","count":3}
+{"ts":"2026-08-24T12:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":38314,"detail":"github:PUT","count":3}
+{"ts":"2026-08-24T12:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":3937,"detail":"xmlit:direct","count":2}
