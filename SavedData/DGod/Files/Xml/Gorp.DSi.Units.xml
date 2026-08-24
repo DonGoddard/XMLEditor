@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <gorp name="Gorp.DSi.Units">
-  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":50,"y":50,"w":280,"h":150},"Reading":{"x":300,"y":50,"w":280,"h":150},"Verdict":{"x":550,"y":50,"w":280,"h":150},"DwellCheck":{"x":50,"y":300,"w":280,"h":100},"xmlIT.Session":{"x":549.75,"y":194.46,"w":300,"h":150}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":-3.15,"y":50,"w":296.43,"h":150},"xmlIT.Session":{"x":556.06,"y":224.95,"w":270.15,"h":150},"Reading":{"x":300,"y":50,"w":291.17,"h":150},"Verdict":{"x":615.98,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":3.15,"y":300,"w":247.02,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
   <data namespace="SensorFeed">
     <variables>
       <variable name="elapsed" type="double">
@@ -23,13 +23,13 @@
   </data>
   <data namespace="xmlIT.Session">
     <variables>
-      <variable name="Key" type="C69DDB3AF9806D7B" />
-      <variable name="User" type="47214932442407E7" />
-      <variable name="Site" type="9BDD13D6C29393CA" />
-      <variable name="CreationDate" type="58 PM" />
-      <variable name="LastTouched" type="58 PM" />
-      <variable name="Action[0]" type="D03A626D980D2967" />
-      <variable name="Item[0]" type="39CF4B27465FAF0B" />
+      <variable name="Key" type="6FF0CF81F93B06CC" />
+      <variable name="User" type="C803BF4BE173ABA9" />
+      <variable name="Site" type="5DC482D4FE40C86C" />
+      <variable name="CreationDate" type="06 PM" />
+      <variable name="LastTouched" type="06 PM" />
+      <variable name="Action[0]" type="EF6E721FFD8F00F8" />
+      <variable name="Item[0]" type="41CBDA0B6E4326B1" />
     </variables>
   </data>
   <model namespace="Reading">
