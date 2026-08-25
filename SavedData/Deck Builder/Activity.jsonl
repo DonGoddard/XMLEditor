@@ -26,3 +26,4 @@
 {"ts":"2026-08-25T10:03:58.5110000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-08-25T10:04:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":8}
 {"ts":"2026-08-25T10:04:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":89539,"detail":"github:PUT","count":1}
+{"ts":"2026-08-25T10:39:51.9280000Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
