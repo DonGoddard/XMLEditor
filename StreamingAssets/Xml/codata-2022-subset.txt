@@ -1,0 +1,16 @@
+# CODATA 2022 subset - the constants Tools/gen_dsi_table.py hand-enters.
+# Source: https://physics.nist.gov/cuu/Constants/Table/allascii.txt (2022 adjustment)
+# Vendored so Tools/DSiConformance verifies magnitudes offline, with no network.
+# Regenerate by re-running the extractor documented in change.md 2026-08-25.
+# Format: <d-si identifier> TAB <codata quantity name> TAB <value in SI base units>
+\atomicmassunit	atomic mass constant	1.66053906892e-27
+\atomicunittime	atomic unit of time	2.4188843265864e-17
+\bohr	Bohr radius	5.29177210544e-11
+\clight	speed of light in vacuum	299792458.0
+\dalton	atomic mass constant	1.66053906892e-27
+\electronmass	electron mass	9.1093837139e-31
+\electronvolt	electron volt-joule relationship	1.602176634e-19
+\elementarycharge	elementary charge	1.602176634e-19
+\hartree	Hartree energy	4.359744722206e-18
+\naturalunittime	natural unit of time	1.28808866644e-21
+\planckbar	reduced Planck constant	1.054571817e-34

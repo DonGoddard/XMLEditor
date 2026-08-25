@@ -31,7 +31,7 @@
                   type="double"
                   isconstant="false"
                   default="0">
-          <unit basis="meter" namespace="SI"/>
+          <unit basis="\metre" namespace="D-SI"/>
           <comment>User-reported physical height</comment>
         </variable>
         <variable name="permissions" type="string"/>

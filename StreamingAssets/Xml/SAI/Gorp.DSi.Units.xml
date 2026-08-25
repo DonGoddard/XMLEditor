@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  D-SI unit probe for the xmlIT wire format.
+
+  PURPOSE: every variable below carries a <unit> child. Before 2026-08-24 the
+  AI Designer's `BuildXmlItCallPayload` emitted only name+type, so these units
+  round-tripped through save/load and showed on the hover tooltip but never
+  reached the server. This file exists to prove they now travel, and to hand
+  whoever implements `XmlHandler.HandleXmlPost` a concrete sample of what the
+  client will send.
+
+  Deliberately mixes conformance classes so the eventual validator has real
+  material rather than a happy path:
+
+    \second, \kilogram        D-SI PLATINUM  (SI base units)
+    \kilo\metre\hour\tothe{-1}  D-SI GOLD    (prefix + exponent syntax)
+    \one                      D-SI PLATINUM  (explicit dimensionless — the
+                                              Gorp.rtf rule that "unitless"
+                                              must be declared, not implied)
+    \degreecelsius            D-SI GOLD      (AFFINE — has an offset, so it is
+                                              not safe to multiply, and
+                                              differences belong in \kelvin)
+    meter (namespace="SI")    REGIONAL SPELLING. Strict D-SI rejects it —
+                                              PTB test case PTB17, "spelling of
+                                              'meter' is not allowed" — and
+                                              DSiUnit.Parse still does. But
+                                              DSiUnitRef folds US spellings to
+                                              the canonical identifier before
+                                              parsing, so this resolves as
+                                              metre and displays as "m". Kept
+                                              as the fixture for that path.
+
+  The DwellCheck algorithm encodes the exact invalid comparison named in
+  StreamingAssets/Xml/SAI/Gorp.rtf §"Units and Types": elapsed (\second)
+  against payloadMass (\kilogram). A unit-aware Gorp must reject it.
+
+  See change.md 2026-08-24.
+-->
+<gorp name="D-SI Unit Probe">
+  <data namespace="SensorFeed">
+    <variables>
+      <variable name="elapsed" type="double">
+        <unit basis="\second" namespace="D-SI"/>
+        <comment>Dwell time. PLATINUM: SI base unit.</comment>
+      </variable>
+      <variable name="payloadMass" type="double">
+        <unit basis="\kilogram" namespace="D-SI"/>
+        <comment>PLATINUM. Comparing this to elapsed is the invalid case.</comment>
+      </variable>
+      <variable name="speed" type="double">
+        <unit basis="\kilo\metre\hour\tothe{-1}" namespace="D-SI"/>
+        <comment>GOLD: exercises prefix, juxtaposition and \tothe{n}.</comment>
+      </variable>
+      <variable name="height" type="double" default="0">
+        <unit basis="meter" namespace="SI"/>
+        <comment>Legacy SI vocabulary — IMPROVABLE under D-SI (PTB17).</comment>
+      </variable>
+    </variables>
+  </data>
+
+  <model namespace="Reading">
+    <variables>
+      <variable name="ratio" type="double">
+        <unit basis="\one" namespace="D-SI"/>
+        <comment>Explicitly dimensionless, not merely unit-less.</comment>
+        <validate>ratio >= 0</validate>
+      </variable>
+      <variable name="coolantTemp" type="double">
+        <unit basis="\degreecelsius" namespace="D-SI"/>
+        <comment>Affine scale — offset, not just a factor.</comment>
+      </variable>
+      <variable name="dwellLimit" type="int" isconstant="true">500<unit basis="\second" namespace="D-SI"/></variable>
+    </variables>
+  </model>
+
+  <model namespace="Verdict">
+    <variables>
+      <variable name="result" type="bool">false</variable>
+    </variables>
+  </model>
+
+  <algorithm namespace="DwellCheck">
+    <input model="SensorFeed"/>
+    <output model="Verdict"/>
+    <operations>
+      <operation name="compareDwell" returns="bool">
+        <comment>elapsed &lt; payloadMass — \second against \kilogram. Invalid.</comment>
+      </operation>
+      <operation name="normalise" returns="double">
+        <unit basis="\one" namespace="D-SI"/>
+      </operation>
+    </operations>
+  </algorithm>
+</gorp>
