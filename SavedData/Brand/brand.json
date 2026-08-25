@@ -1,0 +1,66 @@
+{
+    "version": 4,
+    "osName": "Nexus OS",
+    "companyName": "Nexus",
+    "supportEmail": "nexus@ufostudios.net",
+    "websiteUrl": "www.Nexus.ai",
+    "termsUrl": "https://policies.google.com/terms?hl=en-US",
+    "privacyUrl": "https://policies.google.com/privacy?hl=en-US",
+    "eulaUrl": "https://gist.github.com/heiswayi/04d091fc4a5e9f92f4cc38067936ffb8",
+    "primaryFont": "Poppins",
+    "primaryFontPath": "",
+    "symbolFont": "",
+    "symbolFontPath": "",
+    "colors": [],
+    "skins": [],
+    "apps": [
+        {
+            "appId": "CardsApp",
+            "visible": false,
+            "mode": 1,
+            "iconPath": ""
+        },
+        {
+            "appId": "CollabVideoTestApp",
+            "visible": false,
+            "mode": 1,
+            "iconPath": ""
+        },
+        {
+            "appId": "ImageApp",
+            "visible": false,
+            "mode": 2,
+            "iconPath": ""
+        },
+        {
+            "appId": "AccountActivityApp",
+            "visible": false,
+            "mode": 2,
+            "iconPath": ""
+        },
+        {
+            "appId": "LedgerApp",
+            "visible": false,
+            "mode": 2,
+            "iconPath": ""
+        },
+        {
+            "appId": "DebugLogApp",
+            "visible": false,
+            "mode": 2,
+            "iconPath": ""
+        },
+        {
+            "appId": "PlanetsApp",
+            "visible": false,
+            "mode": 1,
+            "iconPath": ""
+        },
+        {
+            "appId": "BookApp",
+            "visible": false,
+            "mode": 1,
+            "iconPath": ""
+        }
+    ]
+}
