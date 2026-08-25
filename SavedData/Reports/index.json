@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-08-25T08-44-16-0980-exception-ArgumentException.json",
+      "signature": "exception-ArgumentException",
+      "utc": "2026-08-25T08:44:16.0980000Z",
+      "version": "0.1.260825.0422",
+      "platform": "WebGLPlayer"
+    },
+    {
       "file": "2026-08-25T08-29-46-9140-xmlit-unreachable.json",
       "signature": "xmlit-unreachable",
       "utc": "2026-08-25T08:29:46.9140000Z",
