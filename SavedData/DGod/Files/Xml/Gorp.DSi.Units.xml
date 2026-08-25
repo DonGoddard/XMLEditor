@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <gorp name="Gorp.DSi.Units">
-  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":-3.15,"y":50,"w":296.43,"h":150},"xmlIT.Session":{"x":556.06,"y":224.95,"w":270.15,"h":150},"Reading":{"x":300,"y":50,"w":291.17,"h":150},"Verdict":{"x":615.98,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":3.15,"y":300,"w":247.02,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":-3.15,"y":50,"w":274.35,"h":150},"xmlIT.Session":{"x":542.4,"y":228.1,"w":275.4,"h":150},"Reading":{"x":300,"y":50,"w":307.99,"h":150},"Verdict":{"x":615.98,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":3.15,"y":300,"w":358.44,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
   <data namespace="SensorFeed">
     <variables>
       <variable name="elapsed" type="double">
