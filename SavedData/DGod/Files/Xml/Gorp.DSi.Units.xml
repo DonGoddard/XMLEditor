@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <gorp name="Gorp.DSi.Units">
-  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":-3.15,"y":50,"w":274.35,"h":150},"xmlIT.Session":{"x":542.4,"y":228.1,"w":275.4,"h":150},"Reading":{"x":300,"y":50,"w":307.99,"h":150},"Verdict":{"x":615.98,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":3.15,"y":300,"w":358.44,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":-3.15,"y":50,"w":274.35,"h":150},"Reading":{"x":300,"y":50,"w":307.99,"h":150},"Verdict":{"x":615.98,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":3.15,"y":300,"w":358.44,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
   <data namespace="SensorFeed">
     <variables>
       <variable name="elapsed" type="double">
@@ -19,17 +19,6 @@
         <unit basis="meter" namespace="SI" />
         <comment>Legacy SI vocabulary — IMPROVABLE under D-SI (PTB17).</comment>
       </variable>
-    </variables>
-  </data>
-  <data namespace="xmlIT.Session">
-    <variables>
-      <variable name="Key" type="6FF0CF81F93B06CC" />
-      <variable name="User" type="C803BF4BE173ABA9" />
-      <variable name="Site" type="5DC482D4FE40C86C" />
-      <variable name="CreationDate" type="06 PM" />
-      <variable name="LastTouched" type="06 PM" />
-      <variable name="Action[0]" type="EF6E721FFD8F00F8" />
-      <variable name="Item[0]" type="41CBDA0B6E4326B1" />
     </variables>
   </data>
   <model namespace="Reading">
@@ -52,6 +41,8 @@
     </variables>
   </model>
   <algorithm namespace="DwellCheck">
+    <input model="SensorFeed" />
+    <output model="Verdict" />
     <operations>
       <operation name="compareDwell" returns="bool">
         <comment>elapsed &lt; payloadMass — \second against \kilogram. Invalid.</comment>
