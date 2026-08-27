@@ -578,3 +578,6 @@
 {"ts":"2026-08-27T07:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":3568,"detail":"xmlit:worker","count":2}
 {"ts":"2026-08-27T07:17:09.5170840Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-27T07:17:21.4327800Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-08-27T07:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-08-27T07:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1784,"detail":"xmlit:worker","count":1}
+{"ts":"2026-08-27T07:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":90452,"detail":"github:PUT","count":6}
