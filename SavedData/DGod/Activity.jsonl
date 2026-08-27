@@ -544,11 +544,12 @@
 {"ts":"2026-08-27T06:00:58.9757080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-27T06:01:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":2153,"detail":"xmlit:worker","count":1}
 {"ts":"2026-08-27T06:01:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":15381,"detail":"github:PUT","count":1}
-{"ts":"2026-08-27T06:53:04.8058970Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
-{"ts":"2026-08-27T06:53:17.1675270Z","type":"file_save","appId":"AiDesignerApp","filePath":"DGod/Files/Xml/Gorp.DSi.Units.xml","ext":".xml","bytes":2525,"detail":"","count":1}
-{"ts":"2026-08-27T06:53:46.9897520Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-27T06:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-08-27T06:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-08-27T06:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":15381,"detail":"github:PUT","count":1}
+{"ts":"2026-08-27T06:53:04.8058970Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-27T06:53:17.1675270Z","type":"file_save","appId":"AiDesignerApp","filePath":"DGod/Files/Xml/Gorp.DSi.Units.xml","ext":".xml","bytes":2525,"detail":"","count":1}
+{"ts":"2026-08-27T06:53:46.9897520Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-27T06:54:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":15395,"detail":"github:PUT","count":1}
 {"ts":"2026-08-27T06:54:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1784,"detail":"xmlit:worker","count":1}
+{"ts":"2026-08-27T06:55:28.0484250Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
