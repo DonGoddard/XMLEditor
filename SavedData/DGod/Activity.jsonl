@@ -592,3 +592,4 @@
 {"ts":"2026-08-27T07:28:20.8967980Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-27T07:28:53.9216580Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-27T07:29:22.5570890Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-27T07:29:57.5209000Z","type":"file_save","appId":"AiDesignerApp","filePath":"DGod/Files/Xml/Gorp.DSi.Units.xml","ext":".xml","bytes":2574,"detail":"","count":1}
