@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <gorp name="Gorp.DSi.Units">
-  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":24,"y":50,"w":274.35,"h":150},"Reading":{"x":327.15,"y":50,"w":307.99,"h":150},"Verdict":{"x":643.13,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":30.3,"y":300,"w":358.44,"h":100}},"result":{"x":645.23,"y":159.78,"w":300,"h":150},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":24,"y":50,"w":274.35,"h":150},"Reading":{"x":302.73,"y":65.17,"w":307.99,"h":150},"Verdict":{"x":643.13,"y":48.35,"w":280,"h":150},"DwellCheck":{"x":30.3,"y":300,"w":358.44,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
   <data namespace="SensorFeed">
     <variables>
       <variable name="elapsed" type="double">
@@ -45,7 +45,22 @@
     <output model="Verdict" />
     <operations>
       <operation name="compareDwell" returns="bool">
+        <expression>speed * elapsed / 2</expression>
         <comment>elapsed &lt; payloadMass — \second against \kilogram. Invalid.</comment>
+        <test>
+          <s></s>
+          <sp></sp>
+          <spe></spe>
+          <spee></spee>
+          <speed></speed>
+          <e></e>
+          <el></el>
+          <ela></ela>
+          <elap></elap>
+          <elaps></elaps>
+          <elapse></elapse>
+          <elapsed></elapsed>
+        </test>
       </operation>
       <operation name="normalise" returns="double">
         <unit basis="\one" namespace="D-SI" />
