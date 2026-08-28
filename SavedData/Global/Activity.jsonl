@@ -1480,3 +1480,4 @@
 {"ts":"2026-08-28T04:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-08-28T04:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":17}
 {"ts":"2026-08-28T04:24:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":203,"detail":"gorp:worker","count":1}
+{"ts":"2026-08-28T04:25:23.6689860Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
