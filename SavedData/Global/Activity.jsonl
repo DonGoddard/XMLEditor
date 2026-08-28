@@ -1474,3 +1474,4 @@
 {"ts":"2026-08-25T09:39:13.1270000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-08-25T09:39:27.5430000Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-08-28T04:19:48.3936080Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-28T04:19:54.5170030Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
