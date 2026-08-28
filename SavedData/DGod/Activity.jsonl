@@ -689,3 +689,4 @@
 {"ts":"2026-08-28T09:20:26.4824810Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-08-28T09:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":197,"detail":"gorp:worker","count":1}
 {"ts":"2026-08-28T09:54:45.9296310Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-08-28T10:31:43.3790000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
