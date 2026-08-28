@@ -47,19 +47,19 @@
       <operation name="compareDwell" returns="bool">
         <expression>speed * elapsed / 2</expression>
         <comment>elapsed &lt; payloadMass — \second against \kilogram. Invalid.</comment>
-        <test>
+        <test expects="180">
           <s></s>
           <sp></sp>
           <spe></spe>
           <spee></spee>
-          <speed></speed>
+          <speed>90</speed>
           <e></e>
           <el></el>
           <ela></ela>
           <elap></elap>
           <elaps></elaps>
           <elapse></elapse>
-          <elapsed></elapsed>
+          <elapsed>4</elapsed>
         </test>
       </operation>
       <operation name="normalise" returns="double">
