@@ -717,3 +717,8 @@
 {"ts":"2026-09-02T08:13:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":45086,"detail":"github:PUT","count":3}
 {"ts":"2026-09-02T08:17:21.6865930Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-02T08:17:25.9150950Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-02T08:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":111303,"detail":"github:PUT","count":7}
+{"ts":"2026-09-02T08:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-09-02T08:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":6810,"detail":"github:PUT-bin","count":1}
+{"ts":"2026-09-02T08:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":4738,"detail":"github:PUT","count":1}
+{"ts":"2026-09-02T08:19:59.8680760Z","type":"file_save","appId":"AiDesignerApp","filePath":"DGod/Files/Xml/Gorp.DSi.Units.xml","ext":".xml","bytes":4738,"detail":"","count":1}
