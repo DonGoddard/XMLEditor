@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <gorp name="Gorp.DSi.Units">
-  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":701.41,"y":60,"w":280,"h":150},"Reading":{"x":352.44,"y":6341.27,"w":280,"h":150},"Verdict":{"x":60,"y":60,"w":280,"h":150},"DwellCheck":{"x":380.71,"y":60,"w":280,"h":100}},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"Gorp.DSi.Units","layout":{"SensorFeed":{"x":701.41,"y":60,"w":280,"h":150},"Reading":{"x":352.44,"y":6341.27,"w":280,"h":150},"Verdict":{"x":60,"y":60,"w":280,"h":150},"DwellCheck":{"x":380.71,"y":60,"w":280,"h":100}},"result":{"x":541.92,"y":309.27,"w":300,"h":150},"rels":[{"from":"SensorFeed","to":"DwellCheck","type":"Input"},{"from":"DwellCheck","to":"Verdict","type":"Output"}]} -->
   <data namespace="SensorFeed">
     <variables>
       <variable name="elapsed" type="double">
