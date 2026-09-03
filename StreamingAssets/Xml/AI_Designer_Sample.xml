@@ -51,13 +51,82 @@
     </operations>
   </model>
 
-  <!-- «algorithm» — the runnable step xmlIT executes. -->
+  <!-- «algorithm» — the runnable step xmlIT executes.
+
+       <input>/<output> are the Input/Output edges on the canvas.
+
+       <function><expressions> is the algorithm's FLOW in Gorp's own idiom
+       (Gorp.Loop.xml is the canonical case): numbered steps run in order,
+       <If> guards a <goto sequence>, and falling off the last step ends. The
+       State Machine view reads exactly this — one state per sequence, one
+       transition per goto or fall-through. `name` on an <expression> is our
+       display label; Gorp ignores it. Guards name variables by their dotted
+       path, as Gorp does (<ci>orp.timbucktu.sunrise</ci>). -->
   <algorithm namespace="ai.sample.ScoreAndRank">
+    <input  model="ai.sample.CustomerRecords" />
+    <output model="ai.sample.ChurnPredictor" />
     <operations>
       <operation name="score"   returns="double" />
       <operation name="rank"    returns="[key]" />
       <operation name="explain" returns="string" />
     </operations>
+    <function>
+      <expressions>
+        <expression sequence="0" name="score">
+          <Math>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <ci>ai.sample.ChurnPredictor.bias</ci>
+                <ci>ai.sample.CustomerRecords.monthly</ci>
+              </apply>
+            </math>
+          </Math>
+        </expression>
+        <expression sequence="1" name="low spender?">
+          <If input="ai.sample.CustomerRecords">
+            <parameters>
+              <parameter position="0">
+                <Less input="ai.sample.CustomerRecords">
+                  <parameters>
+                    <parameter position="0">
+                      <pathvariable type="double" namespace="ai.sample.CustomerRecords.monthly"/>
+                    </parameter>
+                    <parameter position="1">20</parameter>
+                  </parameters>
+                </Less>
+              </parameter>
+              <parameter position="1">
+                <goto sequence="3"/>
+              </parameter>
+            </parameters>
+          </If>
+        </expression>
+        <expression sequence="2" name="rank" delegate="ai.sample.Rank" limit="1"/>
+        <expression sequence="3" name="explain">
+          <Algorithm namespace="ai.sample.Explain" input="ai.sample.CustomerRecords" output="ai.sample.ChurnPredictor"/>
+        </expression>
+        <expression sequence="4" name="more customers?">
+          <If input="ai.sample.CustomerRecords">
+            <parameters>
+              <parameter position="0">
+                <Greater input="ai.sample.CustomerRecords">
+                  <parameters>
+                    <parameter position="0">
+                      <pathvariable type="int" namespace="ai.sample.CustomerRecords.tenure"/>
+                    </parameter>
+                    <parameter position="1">0</parameter>
+                  </parameters>
+                </Greater>
+              </parameter>
+              <parameter position="1">
+                <goto sequence="0"/>
+              </parameter>
+            </parameters>
+          </If>
+        </expression>
+      </expressions>
+    </function>
   </algorithm>
 
 </gorp>
