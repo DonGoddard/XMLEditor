@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-09-04T17-05-23-1625-gorp-unreachable.json",
+      "signature": "gorp-unreachable",
+      "utc": "2026-09-04T17:05:23.1625910Z",
+      "version": "0.1.260904.1203",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-09-03T16-05-48-1095-exception-NullReferenceException.json",
       "signature": "exception-NullReferenceException",
       "utc": "2026-09-03T16:05:48.1095260Z",
