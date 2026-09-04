@@ -1715,3 +1715,4 @@
 {"ts":"2026-09-04T15:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":14082,"detail":"github:PUT","count":1}
 {"ts":"2026-09-04T15:31:15.1020830Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.Less Copy 2.gorp","ext":".gorp","bytes":1004,"detail":"","count":1}
 {"ts":"2026-09-04T15:32:21.5880000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-09-04T16:03:18.5381810Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
