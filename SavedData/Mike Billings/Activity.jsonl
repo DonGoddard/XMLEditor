@@ -1,16 +1,17 @@
-{"ts":"2026-05-11T18:05:00.6890000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
-{"ts":"2026-05-11T18:05:10.0270000Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-05-11T20:23:33.5390000Z","type":"file_rename","appId":"UMLApp","filePath":"Mike Billings/Files/Uml/POOptimization Example.xml","ext":".xml","bytes":0,"detail":"Mike Billings/Files/Uml/SystemArchitecture.xml"}
-{"ts":"2026-05-11T20:23:41.1610000Z","type":"file_save","appId":"UMLApp","filePath":"Mike Billings/Files/Uml/POOptimization Example.xml","ext":".xml","bytes":3986,"detail":""}
-{"ts":"2026-05-13T10:32:21.2450000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
-{"ts":"2026-05-14T04:23:53.0863280Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
-{"ts":"2026-05-14T04:24:17.5269270Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-05-14T04:24:22.7778230Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-05-14T04:25:03.7781290Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-05-14T04:25:37.0413800Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor"}
-{"ts":"2026-05-14T04:25:41.4112950Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":""}
-{"ts":"2026-05-14T20:41:31.8750000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
-{"ts":"2026-05-18T18:05:31.5790000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
-{"ts":"2026-05-22T18:10:57.3300000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
-{"ts":"2026-05-27T14:41:48.7990000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
-{"ts":"2026-05-27T16:56:58.5950000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl"}
+{"ts":"2026-05-11T18:05:00.6890000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-05-11T18:05:10.0270000Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-05-11T20:23:33.5390000Z","type":"file_rename","appId":"UMLApp","filePath":"Mike Billings/Files/Uml/POOptimization Example.xml","ext":".xml","bytes":0,"detail":"Mike Billings/Files/Uml/SystemArchitecture.xml","count":1}
+{"ts":"2026-05-11T20:23:41.1610000Z","type":"file_save","appId":"UMLApp","filePath":"Mike Billings/Files/Uml/POOptimization Example.xml","ext":".xml","bytes":3986,"detail":"","count":1}
+{"ts":"2026-05-13T10:32:21.2450000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-05-14T04:23:53.0863280Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-05-14T04:24:17.5269270Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-05-14T04:24:22.7778230Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-05-14T04:25:03.7781290Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-05-14T04:25:37.0413800Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-05-14T04:25:41.4112950Z","type":"session_end","appId":"","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-05-14T20:41:31.8750000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-05-18T18:05:31.5790000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-05-22T18:10:57.3300000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-05-27T14:41:48.7990000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-05-27T16:56:58.5950000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-09-04T11:43:54.9450000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
