@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  AI Designer starter document — the first-run sample.
+
+  Root is <gorp> because that is what UmlWindow.Parse.cs dispatches to
+  ParseGorp, the parser that understands <data>, <model> and <algorithm>.
+
+  Members MUST sit inside a <variables> container — ParseModelMembersInto
+  selects `*[local-name()='variables']/*[local-name()='variable']`, so a
+  <variable> placed directly under <data> parses to nothing and the node
+  renders as an empty box. Same for <operations>/<operation>.
+
+  NOTE: every Editor save rewrites this file — UmlWindow.File.cs writes the
+  document back to `resourceFileName` under UNITY_EDITOR as a local seed. If
+  it has turned into someone's working diagram, restore it from here. See
+  item 7 in Scripts/Plans/AiDesignerPlan-2026-08-21.md.
+-->
+<gorp name="Churn Example">
+
+  <!-- «data» — a concrete dataset the design consumes. -->
+  <data namespace="ai.sample.CustomerRecords">
+    <variables>
+      <variable name="id"       type="key" />
+      <variable name="tenure"   type="int" />
+      <variable name="monthly"  type="double" />
+      <variable name="churned"  type="bool" />
+      <variable name="signedUp" type="utcdatetime" />
+    </variables>
+  </data>
+
+  <data namespace="ai.sample.TransactionLog">
+    <variables>
+      <variable name="id"       type="guid" />
+      <variable name="customer" type="key" />
+      <variable name="amounts"  type="[double]" />
+      <variable name="source"   type="uri" />
+    </variables>
+  </data>
+
+  <!-- «model» — the shape learned over that data, not the rows themselves. -->
+  <model namespace="ai.sample.ChurnPredictor">
+    <variables>
+      <variable name="features"  type="[double]" />
+      <variable name="weights"   type="[double]" />
+      <variable name="bias"      type="double = 0.0" />
+      <variable name="threshold" type="double = 0.5" />
+      <variable name="labels"    type="[symbol]" />
+    </variables>
+    <operations>
+      <operation name="predict" returns="double" />
+    </operations>
+  </model>
+
+  <!-- «algorithm» — the runnable step xmlIT executes.
+
+       <input>/<output> are the Input/Output edges on the canvas.
+
+       <function><expressions> is the algorithm's FLOW in Gorp's own idiom
+       (Gorp.Loop.xml is the canonical case): numbered steps run in order,
+       <If> guards a <goto sequence>, and falling off the last step ends. The
+       State Machine view reads exactly this — one state per sequence, one
+       transition per goto or fall-through. `name` on an <expression> is our
+       display label; Gorp ignores it. Guards name variables by their dotted
+       path, as Gorp does (<ci>orp.timbucktu.sunrise</ci>). -->
+  <algorithm namespace="ai.sample.ScoreAndRank">
+    <input  model="ai.sample.CustomerRecords" />
+    <output model="ai.sample.ChurnPredictor" />
+    <operations>
+      <operation name="score"   returns="double" />
+      <operation name="rank"    returns="[key]" />
+      <operation name="explain" returns="string" />
+    </operations>
+    <function>
+      <expressions>
+        <expression sequence="0" name="score">
+          <Math>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <ci>ai.sample.ChurnPredictor.bias</ci>
+                <ci>ai.sample.CustomerRecords.monthly</ci>
+              </apply>
+            </math>
+          </Math>
+        </expression>
+        <expression sequence="1" name="low spender?">
+          <If input="ai.sample.CustomerRecords">
+            <parameters>
+              <parameter position="0">
+                <Less input="ai.sample.CustomerRecords">
+                  <parameters>
+                    <parameter position="0">
+                      <pathvariable type="double" namespace="ai.sample.CustomerRecords.monthly"/>
+                    </parameter>
+                    <parameter position="1">20</parameter>
+                  </parameters>
+                </Less>
+              </parameter>
+              <parameter position="1">
+                <goto sequence="3"/>
+              </parameter>
+            </parameters>
+          </If>
+        </expression>
+        <expression sequence="2" name="rank" delegate="ai.sample.Rank" limit="1"/>
+        <expression sequence="3" name="explain">
+          <Algorithm namespace="ai.sample.Explain" input="ai.sample.CustomerRecords" output="ai.sample.ChurnPredictor"/>
+        </expression>
+        <expression sequence="4" name="more customers?">
+          <If input="ai.sample.CustomerRecords">
+            <parameters>
+              <parameter position="0">
+                <Greater input="ai.sample.CustomerRecords">
+                  <parameters>
+                    <parameter position="0">
+                      <pathvariable type="int" namespace="ai.sample.CustomerRecords.tenure"/>
+                    </parameter>
+                    <parameter position="1">0</parameter>
+                  </parameters>
+                </Greater>
+              </parameter>
+              <parameter position="1">
+                <goto sequence="0"/>
+              </parameter>
+            </parameters>
+          </If>
+        </expression>
+      </expressions>
+    </function>
+  </algorithm>
+
+</gorp>
