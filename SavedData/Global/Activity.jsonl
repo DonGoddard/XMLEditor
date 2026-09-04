@@ -1715,5 +1715,4 @@
 {"ts":"2026-09-04T15:27:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":53245,"detail":"github:PUT","count":5}
 {"ts":"2026-09-04T15:27:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":895,"detail":"gorp:worker","count":4}
 {"ts":"2026-09-04T15:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":632,"detail":"gorp:worker","count":1}
-{"ts":"2026-09-04T15:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":343,"detail":"gorp:worker","count":1}
-{"ts":"2026-09-04T15:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27496,"detail":"github:PUT","count":2}
+{"ts":"2026-09-04T15:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":14082,"detail":"github:PUT","count":1}
