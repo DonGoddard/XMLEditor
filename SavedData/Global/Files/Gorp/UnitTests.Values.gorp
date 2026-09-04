@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- gorpEndpoint: default -->
+<!-- Using Gorp: Values & Variables, Computation, Comparison, Logic, Flow -->
+<gorp>
+  <algorithms>
+    <algorithm namespace="UnitTests.Values.Number">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Math>
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <cn>42</cn>
+              </math>
+            </Math>
+          </expression>
+        </expressions>
+      </function>
+    </algorithm>
+    <algorithm namespace="UnitTests.Values.Variable">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Math>
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <ci>x</ci>
+              </math>
+            </Math>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>7</x>
+      </inputs>
+    </algorithm>
+  </algorithms>
+</gorp>
