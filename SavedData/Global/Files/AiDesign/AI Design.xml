@@ -56,11 +56,11 @@
             <parameters>
               <parameter position="0">
                 <Less with="model">
-  <parameters>
-    <parameter namespace="Less.P0" of="ai.sample.CustomerRecords.monthly" />
-    <parameter namespace="Less.P1" is="20" />
-  </parameters>
-</Less>
+                  <parameters>
+                    <parameter namespace="Less.P0" of="ai.sample.CustomerRecords.monthly" />
+                    <parameter namespace="Less.P1" is="20" />
+                  </parameters>
+                </Less>
               </parameter>
               <parameter position="1">
                 <goto sequence="3" />
@@ -77,11 +77,11 @@
             <parameters>
               <parameter position="0">
                 <Greater with="model">
-  <parameters>
-    <parameter namespace="Greater.P0" of="ai.sample.CustomerRecords.tenure" />
-    <parameter namespace="Greater.P1" is="0" />
-  </parameters>
-</Greater>
+                  <parameters>
+                    <parameter namespace="Greater.P0" of="ai.sample.CustomerRecords.tenure" />
+                    <parameter namespace="Greater.P1" is="0" />
+                  </parameters>
+                </Greater>
               </parameter>
               <parameter position="1">
                 <goto sequence="0" />
@@ -94,11 +94,11 @@
             <parameters>
               <parameter position="0">
                 <Less with="model">
-  <parameters>
-    <parameter namespace="Less.P0" of="elapsed" />
-    <parameter namespace="Less.P1" of="payloadMass" />
-  </parameters>
-</Less>
+                  <parameters>
+                    <parameter namespace="Less.P0" of="elapsed" />
+                    <parameter namespace="Less.P1" of="payloadMass" />
+                  </parameters>
+                </Less>
               </parameter>
               <parameter position="1">
                 <goto sequence="0" />
