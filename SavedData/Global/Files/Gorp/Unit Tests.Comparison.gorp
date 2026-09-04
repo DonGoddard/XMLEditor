@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- gorpEndpoint: default -->
+<!-- Using Gorp: Values & Variables, Computation, Comparison, Logic, Flow -->
+<gorp>
+  <algorithms>
+    <algorithm namespace="Unit Tests.Comparison.Equal">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Equal>
+              <parameters>
+                <parameter position="0">
+                  <pathvariable type="int" namespace="x"/>
+                </parameter>
+                <parameter position="1">
+                  <pathvariable type="int" namespace="y"/>
+                </parameter>
+              </parameters>
+            </Equal>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>3</x>
+        <y>5</y>
+      </inputs>
+    </algorithm>
+    <algorithm namespace="Unit Tests.Comparison.Less">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Less>
+              <parameters>
+                <parameter position="0">
+                  <pathvariable type="int" namespace="x"/>
+                </parameter>
+                <parameter position="1">
+                  <pathvariable type="int" namespace="y"/>
+                </parameter>
+              </parameters>
+            </Less>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>3</x>
+        <y>5</y>
+      </inputs>
+    </algorithm>
+    <algorithm namespace="Unit Tests.Comparison.Greater">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Greater>
+              <parameters>
+                <parameter position="0">
+                  <pathvariable type="int" namespace="x"/>
+                </parameter>
+                <parameter position="1">
+                  <pathvariable type="int" namespace="y"/>
+                </parameter>
+              </parameters>
+            </Greater>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>3</x>
+        <y>5</y>
+      </inputs>
+    </algorithm>
+    <algorithm namespace="Unit Tests.Comparison.NotEqual">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Not>
+              <parameters>
+                <parameter position="0">
+                  <Equal>
+                    <parameters>
+                      <parameter position="0">
+                        <pathvariable type="int" namespace="x"/>
+                      </parameter>
+                      <parameter position="1">
+                        <pathvariable type="int" namespace="y"/>
+                      </parameter>
+                    </parameters>
+                  </Equal>
+                </parameter>
+              </parameters>
+            </Not>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>3</x>
+        <y>5</y>
+      </inputs>
+    </algorithm>
+    <algorithm namespace="Unit Tests.Comparison.LessOrEqual">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Not>
+              <parameters>
+                <parameter position="0">
+                  <Greater>
+                    <parameters>
+                      <parameter position="0">
+                        <pathvariable type="int" namespace="x"/>
+                      </parameter>
+                      <parameter position="1">
+                        <pathvariable type="int" namespace="y"/>
+                      </parameter>
+                    </parameters>
+                  </Greater>
+                </parameter>
+              </parameters>
+            </Not>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>3</x>
+        <y>5</y>
+      </inputs>
+    </algorithm>
+    <algorithm namespace="Unit Tests.Comparison.GreaterOrEqual">
+      <function>
+        <expressions>
+          <expression sequence="0">
+            <Not>
+              <parameters>
+                <parameter position="0">
+                  <Less>
+                    <parameters>
+                      <parameter position="0">
+                        <pathvariable type="int" namespace="x"/>
+                      </parameter>
+                      <parameter position="1">
+                        <pathvariable type="int" namespace="y"/>
+                      </parameter>
+                    </parameters>
+                  </Less>
+                </parameter>
+              </parameters>
+            </Not>
+          </expression>
+        </expressions>
+      </function>
+      <inputs>
+        <x>3</x>
+        <y>5</y>
+      </inputs>
+    </algorithm>
+  </algorithms>
+</gorp>
