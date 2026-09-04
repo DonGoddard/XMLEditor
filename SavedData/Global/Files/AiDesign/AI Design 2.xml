@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<gorp name="AI Design 2">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Design 2","layout":{"Data":{"x":354.04,"y":292.15,"w":280,"h":110},"Model":{"x":511.91,"y":28.38,"w":280,"h":110},"Algorithm":{"x":187.11,"y":126.14,"w":280,"h":110}}} -->
+  <data namespace="Data">
+    <variables>
+      <variable name="id" type="key" />
+      <variable name="value" type="double" />
+    </variables>
+  </data>
+  <model namespace="Model">
+    <variables>
+      <variable name="inputs" type="[double]" />
+      <variable name="outputs" type="[double]" />
+    </variables>
+    <operations>
+      <operation name="predict" />
+    </operations>
+  </model>
+  <algorithm namespace="Algorithm">
+    <operations>
+      <operation name="run" />
+    </operations>
+  </algorithm>
+</gorp>
