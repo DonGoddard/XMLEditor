@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-09-04T17-19-36-3125-gorp-unreachable.json",
+      "signature": "gorp-unreachable",
+      "utc": "2026-09-04T17:19:36.3125480Z",
+      "version": "0.1.260904.1318",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-09-04T17-05-23-1625-gorp-unreachable.json",
       "signature": "gorp-unreachable",
       "utc": "2026-09-04T17:05:23.1625910Z",
