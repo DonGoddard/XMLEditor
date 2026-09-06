@@ -1790,3 +1790,6 @@
 {"ts":"2026-09-06T20:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":16}
 {"ts":"2026-09-06T20:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-06T20:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":13582,"detail":"github:PUT","count":1}
+{"ts":"2026-09-06T20:51:23.2380000Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-06T20:51:23.7870000Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-06T20:51:24.2210000Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
