@@ -1798,3 +1798,4 @@
 {"ts":"2026-09-07T07:30:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":16386,"detail":"github:PUT","count":1}
 {"ts":"2026-09-07T07:30:55.7845370Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-07T07:52:40.4440950Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-07T07:52:45.4539960Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
