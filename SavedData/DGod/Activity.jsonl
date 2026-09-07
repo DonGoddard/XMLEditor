@@ -772,8 +772,9 @@
 {"ts":"2026-09-07T10:14:37.1620000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-09-07T10:17:14.5120000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-09-07T10:26:24.7720000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-07T11:28:06.9100000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-09-07T11:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
 {"ts":"2026-09-07T11:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-09-07T11:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31558,"detail":"github:PUT","count":2}
+{"ts":"2026-09-07T11:28:06.9100000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-09-07T11:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":15779,"detail":"github:PUT","count":1}
+{"ts":"2026-09-07T13:50:29.7590000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
