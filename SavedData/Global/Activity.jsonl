@@ -24,9 +24,10 @@
 {"ts":"2026-09-08T20:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":54681,"detail":"github:PUT","count":3}
 {"ts":"2026-09-08T20:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":380,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-08T20:03:03.9740000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-08T20:05:06.8050000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-08T20:05:40.6350000Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/UnitTests.Comparison.gorp","ext":".gorp","bytes":3032,"detail":"","count":1}
 {"ts":"2026-09-08T20:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":27}
 {"ts":"2026-09-08T20:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-08T20:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":40158,"detail":"github:PUT","count":3}
 {"ts":"2026-09-08T20:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":376,"detail":"gorp:worker","count":1}
+{"ts":"2026-09-08T20:05:06.8050000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-09-08T20:05:40.6350000Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/UnitTests.Comparison.gorp","ext":".gorp","bytes":3032,"detail":"","count":1}
+{"ts":"2026-09-08T20:16:05.3113590Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
