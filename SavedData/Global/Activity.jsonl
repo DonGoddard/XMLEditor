@@ -64,3 +64,6 @@
 {"ts":"2026-09-09T18:15:29.9889930Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-09T18:15:34.1839720Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-09T21:43:50.2537050Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-09T21:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":16}
+{"ts":"2026-09-09T21:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
+{"ts":"2026-09-09T21:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18319,"detail":"github:PUT","count":1}
