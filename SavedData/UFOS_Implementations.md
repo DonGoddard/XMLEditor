@@ -4,16 +4,16 @@ Every feature, subfeature, fix, adjustment, and infrastructure change built into
 NOS, one line each, in chronological order - the playback tape of the project.
 Distilled from the full changelogs; maintained by the "update docs" runbook pass.
 
-{meta: synced-through=2026-08-13}
+{meta: synced-through=2026-08-16}
 
 Line format (machine-parseable for the future Timeline window):
 `- {date:YYYY-MM-DD} {sys:System} {type:feature|fix|adjust|infra|docs} description`
 
 ## Totals
 
-- **2172 logged implementations** across **52 active days** (2026-03-31 to 2026-08-13)
-- By type: feature: 924, fix: 569, adjust: 464, infra: 131, docs: 84
-- Systems touched: 41; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (82), XamlWindow (80), Editor (77), BugReportWindow (74)
+- **2182 logged implementations** across **53 active days** (2026-03-31 to 2026-08-16)
+- By type: feature: 925, fix: 575, adjust: 465, infra: 131, docs: 86
+- Systems touched: 41; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (82), XamlWindow (80), Editor (79), BuildDeploy (76)
 
 ## The tape
 
@@ -2293,3 +2293,15 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-13} {sys:Docs} {type:docs} NOS_Help.md AccountActivityWindow section gains the Compact archives layout row, a compaction section and the full tab list; the earlier edit went into the generated .nosh by mistake and was correctly discarded by the capture run
 - {date:2026-08-13} {sys:Docs} {type:docs} Recorded that StreamingAssets/Help/*.nosh is a generated artifact built from NOS_Help.md plus a live screenshot, never a source to edit
 - {date:2026-08-13} {sys:GitHubUploader} {type:docs} Verify writes to SavedData through the Contents API rather than raw.githubusercontent.com; the CDN served a cached pre-compaction copy and nearly produced a passing check against an unchanged file
+
+### 2026-08-16
+- {date:2026-08-16} {sys:BuildDeploy} {type:fix} NOS Theme.asset primaryFont was NotoSansSC-Bold SDF, a 10.1MB Simplified Chinese font from EasyChart's demo folder adopted when the theme was created from that template; repointed to Roboto
+- {date:2026-08-16} {sys:BuildDeploy} {type:fix} Catalog font assets carried populated atlas data while reporting EMPTY glyph tables, so a glyph-count check reads them as clean; Montserrat 15MB and Lato 9.5MB cleared to ~5KB each
+- {date:2026-08-16} {sys:Editor} {type:feature} FontAtlasMaintenance editor tool (Tools > UFOS > Clear Baked Font Atlases) clears baked atlases from the Catalog fonts, gating on file size rather than glyph count and resolving ClearFontAssetData reflectively across Unity versions
+- {date:2026-08-16} {sys:BuildDeploy} {type:adjust} Initial download measured 11,909,559 to 5,039,972 bytes of .data with the wasm unchanged, the signature of an asset-only regression
+- {date:2026-08-16} {sys:BuildDeploy} {type:fix} Proxima's SvelteKit web console was shipping as 44 loose files under StreamingAssets/proxima despite zero code references, because StreamingAssets ships unconditionally
+- {date:2026-08-16} {sys:BuildDeploy} {type:fix} Stale Build/XMLEditor.* payload from before the product rename removed; Unity never cleans the build output folder so it had persisted across every rebuild
+- {date:2026-08-16} {sys:Editor} {type:fix} Tools/build_ledger_views.py repointed to UFOS_Implementations.md; the tape rename left the derived by-system generator pointing at a path that no longer exists
+- {date:2026-08-16} {sys:Gorp} {type:fix} Gorp 502 after a PC reboot traced to Nexus.ApiService not running; cloudflared is a Windows service and returns, the ApiService is launched by hand and does not
+- {date:2026-08-16} {sys:Docs} {type:docs} NOS_Developers section 4 records that a build dependency report answers what code references, not what ships, and that StreamingAssets bypasses it entirely
+- {date:2026-08-16} {sys:Docs} {type:docs} NOS_Developers section 5 records the dynamic font asset trap: atlas weight can persist while the glyph table reads empty, so gate cleanup on file size
