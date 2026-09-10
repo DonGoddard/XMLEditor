@@ -371,3 +371,8 @@
 {"ts":"2026-09-10T20:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":29}
 {"ts":"2026-09-10T20:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-09-10T20:54:04.5389720Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-10T20:54:26.6429850Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T20:54:27.1034780Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T20:54:27.9023030Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T20:54:28.5035830Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T20:54:28.9062510Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
