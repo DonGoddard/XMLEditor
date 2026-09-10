@@ -142,3 +142,5 @@
 {"ts":"2026-09-10T15:13:42.3117500Z","type":"app_open","appId":"XmlUrlHttpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:14:20.1146100Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:14:21.0615110Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:18:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
+{"ts":"2026-09-10T15:19:00.8317000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
