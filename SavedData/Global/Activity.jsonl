@@ -133,10 +133,10 @@
 {"ts":"2026-09-10T14:57:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":23870,"detail":"github:PUT","count":2}
 {"ts":"2026-09-10T14:57:48.9341330Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-10T15:13:09.7004860Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
-{"ts":"2026-09-10T15:13:37.6518520Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:13:38.3765940Z","type":"app_open","appId":"UMLGorpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:13:39.1529840Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:13:39.8579030Z","type":"app_open","appId":"polynomial_simpleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:13:40.6481250Z","type":"app_open","appId":"finite_diffApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:13:40.9845020Z","type":"app_open","appId":"XmlUrlHttpsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:13:42.3117500Z","type":"app_open","appId":"XmlUrlHttpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:43.1665990Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:43.4444440Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:44.1915170Z","type":"app_open","appId":"XAMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:44.4861430Z","type":"app_open","appId":"PerformanceApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:44.7843480Z","type":"app_open","appId":"InputControlsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:45.0771250Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:13:45.8450700Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
