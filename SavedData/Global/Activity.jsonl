@@ -471,24 +471,25 @@
 {"ts":"2026-09-10T22:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":8}
 {"ts":"2026-09-10T22:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":14403,"detail":"github:PUT","count":2}
 {"ts":"2026-09-10T22:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":8}
-{"ts":"2026-09-10T22:38:48.0072070Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-10T22:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":6}
 {"ts":"2026-09-10T22:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-10T22:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":16}
 {"ts":"2026-09-10T22:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":11931,"detail":"github:PUT","count":1}
-{"ts":"2026-09-10T22:40:38.8609920Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design Sample.xml","ext":".xml","bytes":4984,"detail":"","count":1}
+{"ts":"2026-09-10T22:38:48.0072070Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-10T22:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":8}
 {"ts":"2026-09-10T22:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":16410,"detail":"github:PUT-bin","count":1}
 {"ts":"2026-09-10T22:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31294,"detail":"github:PUT","count":4}
 {"ts":"2026-09-10T22:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
-{"ts":"2026-09-10T22:42:31.9108300Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design 7.xml","ext":".xml","bytes":5583,"detail":"","count":1}
-{"ts":"2026-09-10T22:42:33.6289550Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T22:40:38.8609920Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design Sample.xml","ext":".xml","bytes":4984,"detail":"","count":1}
 {"ts":"2026-09-10T22:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":9}
 {"ts":"2026-09-10T22:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22561,"detail":"github:PUT-bin","count":1}
 {"ts":"2026-09-10T22:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31316,"detail":"github:PUT","count":4}
 {"ts":"2026-09-10T22:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
-{"ts":"2026-09-10T22:43:24.9070190Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design 3.xml","ext":".xml","bytes":855,"detail":"","count":1}
+{"ts":"2026-09-10T22:42:31.9108300Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design 7.xml","ext":".xml","bytes":5583,"detail":"","count":1}
+{"ts":"2026-09-10T22:42:33.6289550Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T22:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":9}
 {"ts":"2026-09-10T22:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":14139,"detail":"github:PUT-bin","count":1}
 {"ts":"2026-09-10T22:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":39433,"detail":"github:PUT","count":5}
 {"ts":"2026-09-10T22:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-09-10T22:43:24.9070190Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design 3.xml","ext":".xml","bytes":855,"detail":"","count":1}
+{"ts":"2026-09-10T22:48:44.2840030Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
