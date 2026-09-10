@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="AI Design 4">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Design 4","layout":{"ai.sample.CustomerRows":{"x":15.34,"y":62.37,"w":280,"h":150},"ai.sample.TransactionLog":{"x":791.41,"y":289.37,"w":280,"h":150},"ai.sample.CustomerRecords":{"x":495.91,"y":58.28,"w":280,"h":150},"ai.sample.ChurnPredictor":{"x":22.49,"y":266.87,"w":280,"h":150},"ai.sample.ScoreInput":{"x":432.52,"y":296.52,"w":280,"h":150},"ai.sample.Verdict":{"x":787.32,"y":560.33,"w":280,"h":150},"ai.sample.ScoreAndRank":{"x":34.76,"y":523.52,"w":280,"h":100},"ai.sample.Rank":{"x":410.02,"y":468.3,"w":280,"h":100}},"rels":[{"from":"ai.sample.ScoreInput","to":"ai.sample.ScoreAndRank","type":"Input"},{"from":"ai.sample.ScoreAndRank","to":"ai.sample.Verdict","type":"Output"},{"from":"ai.sample.ScoreInput","to":"ai.sample.Rank","type":"Input"},{"from":"ai.sample.Rank","to":"ai.sample.Verdict","type":"Output"}]} -->
+  <data namespace="ai.sample.CustomerRows" of="ai.sample.CustomerRecords">
+    <variables>
+      <variable name="id" type="key">C-1042</variable>
+      <variable name="tenure" type="int">14</variable>
+      <variable name="monthly" type="double">42.50</variable>
+      <variable name="churned" type="bool">false</variable>
+    </variables>
+  </data>
+  <data namespace="ai.sample.TransactionLog">
+    <variables>
+      <variable name="id" type="guid" />
+      <variable name="customer" type="key" of="ai.sample.CustomerRecords.id" />
+      <variable name="amounts" type="[double]" />
+      <variable name="source" type="uri" />
+    </variables>
+  </data>
+  <model namespace="ai.sample.CustomerRecords">
+    <variables>
+      <variable name="id" type="key" />
+      <variable name="tenure" type="int" />
+      <variable name="monthly" type="double" />
+      <variable name="churned" type="bool" />
+      <variable name="signedUp" type="utcdatetime" />
+    </variables>
+  </model>
+  <model namespace="ai.sample.ChurnPredictor">
+    <variables>
+      <variable name="features" type="[double]" />
+      <variable name="weights" type="[double]" />
+      <variable name="bias" type="double = 0.0" />
+      <variable name="threshold" type="double = 0.5" />
+      <variable name="labels" type="[symbol]" />
+    </variables>
+    <operations>
+      <operation name="predict" returns="double" />
+    </operations>
+  </model>
+  <model namespace="ai.sample.ScoreInput">
+    <variables>
+      <variable name="records" type="key" of="ai.sample.CustomerRecords" />
+      <variable name="predictor" type="key" of="ai.sample.ChurnPredictor" />
+    </variables>
+  </model>
+  <model namespace="ai.sample.Verdict">
+    <variables>
+      <variable name="result" type="bool">false</variable>
+      <variable name="score" type="double" />
+    </variables>
+  </model>
+  <algorithm namespace="ai.sample.ScoreAndRank">
+    <input model="ai.sample.ScoreInput" />
+    <output model="ai.sample.Verdict" />
+    <operations>
+      <operation name="score" returns="double" />
+      <operation name="rank" returns="[key]" />
+      <operation name="explain" returns="string" />
+    </operations>
+    <function>
+      <expressions>
+        <expression sequence="0" name="score">
+          <Math>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus />
+                <ci>ai.sample.ChurnPredictor.bias</ci>
+                <ci>ai.sample.CustomerRecords.monthly</ci>
+              </apply>
+            </math>
+          </Math>
+        </expression>
+        <expression sequence="1" name="low spender?">
+          <If input="ai.sample.CustomerRecords">
+            <parameters>
+              <parameter position="0">
+                <Less input="ai.sample.CustomerRecords" output="ai.sample.Verdict.result">
+                  <parameters>
+                    <parameter position="0">
+                      <pathvariable type="double" namespace="ai.sample.CustomerRecords.monthly" />
+                    </parameter>
+                    <parameter position="1">20</parameter>
+                  </parameters>
+                </Less>
+              </parameter>
+              <parameter position="1">
+                <goto sequence="3" />
+              </parameter>
+            </parameters>
+          </If>
+        </expression>
+        <expression sequence="2" name="rank" delegate="ai.sample.Rank" limit="1" />
+        <expression sequence="3" name="explain">
+          <Algorithm namespace="ai.sample.Explain" input="ai.sample.CustomerRecords" output="ai.sample.Verdict" />
+        </expression>
+        <expression sequence="4" name="more customers?">
+          <If input="ai.sample.CustomerRecords">
+            <parameters>
+              <parameter position="0">
+                <Greater input="ai.sample.CustomerRecords">
+                  <parameters>
+                    <parameter position="0">
+                      <pathvariable type="int" namespace="ai.sample.CustomerRecords.tenure" />
+                    </parameter>
+                    <parameter position="1">0</parameter>
+                  </parameters>
+                </Greater>
+              </parameter>
+              <parameter position="1">
+                <goto sequence="0" />
+              </parameter>
+            </parameters>
+          </If>
+        </expression>
+      </expressions>
+    </function>
+  </algorithm>
+  <algorithm namespace="ai.sample.Rank">
+    <input model="ai.sample.ScoreInput" />
+    <output model="ai.sample.Verdict" />
+    <operations>
+      <operation name="rank" returns="[key]" />
+    </operations>
+  </algorithm>
+</gorp>
