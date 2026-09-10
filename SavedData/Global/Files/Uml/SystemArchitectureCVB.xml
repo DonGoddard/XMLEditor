@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- nos-uml-state {"mode":"cvb-gestalt","title":"UML System Design","layout":{"User":{"x":7,"y":48,"w":280,"h":100},"Admin":{"x":431,"y":27,"w":280,"h":100},"Product":{"x":537,"y":230,"w":280,"h":100},"Order":{"x":174,"y":427,"w":280,"h":100}}} -->
 <gestalt>
   <classes>
