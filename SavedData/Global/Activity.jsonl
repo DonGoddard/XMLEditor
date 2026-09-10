@@ -283,16 +283,16 @@
 {"ts":"2026-09-10T19:12:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":4278,"detail":"github:PUT-bin","count":1}
 {"ts":"2026-09-10T19:12:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19336,"detail":"github:PUT","count":3}
 {"ts":"2026-09-10T19:12:26.9916690Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design 4.xml","ext":".xml","bytes":5586,"detail":"","count":1}
+{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":11}
+{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":5}
+{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1025497,"detail":"github:PUT","count":12}
+{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":2}
 {"ts":"2026-09-10T19:16:31.6752890Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-10T19:16:53.4231200Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:16:53.8768470Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:16:54.6418580Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:16:55.2208180Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:16:55.6299270Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":11}
-{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":5}
-{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1025497,"detail":"github:PUT","count":12}
-{"ts":"2026-09-10T19:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":2}
 {"ts":"2026-09-10T19:16:56.5698020Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:16:57.2553190Z","type":"app_open","appId":"NotesApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:16:57.8153980Z","type":"app_open","appId":"FeaturesListApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
@@ -308,3 +308,4 @@
 {"ts":"2026-09-10T19:17:13.7188470Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:17:14.1274030Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T19:17:14.6575330Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T19:25:47.2115280Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
