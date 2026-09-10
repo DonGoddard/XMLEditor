@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <UMLDiagram name="Gorp Logic 2">
     <Classes>
         <Class id="Simple.Add" x="50" y="50">

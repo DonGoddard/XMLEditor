@@ -10,6 +10,18 @@
   <variable> placed directly under <data> parses to nothing and the node
   renders as an empty box. Same for <operations>/<operation>.
 
+  HOW THE THREE CONSTRUCTS TIE TOGETHER (Scripts/Plans/ModelWiringPlan-2026-09-09.md):
+
+    «model»      a SHAPE. The algorithm's Input and Output ports name models.
+    «data»       an INSTANCE of a model: of="…" names the shape, the rows carry
+                 values. On Run the values are sent as <inputs>, keyed
+                 Model.field. A data node with no of= is its own model.
+    «algorithm»  reads ONE input model and writes ONE output model (SAI's
+                 limit). Needs two? Compose them: a model whose fields
+                 reference each source with of="…" — ScoreInput below.
+    of="X"       on a FIELD: this field refers to an instance of X. Drawn as an
+                 arrow from the row. On a DATA node: the model it instantiates.
+
   NOTE: every Editor save rewrites this file — UmlWindow.File.cs writes the
   document back to `resourceFileName` under UNITY_EDITOR as a local seed. If
   it has turned into someone's working diagram, restore it from here. See
@@ -17,8 +29,8 @@
 -->
 <gorp name="Churn Example">
 
-  <!-- «data» — a concrete dataset the design consumes. -->
-  <data namespace="ai.sample.CustomerRecords">
+  <!-- «model» — the shape of a customer record. -->
+  <model namespace="ai.sample.CustomerRecords">
     <variables>
       <variable name="id"       type="key" />
       <variable name="tenure"   type="int" />
@@ -26,16 +38,7 @@
       <variable name="churned"  type="bool" />
       <variable name="signedUp" type="utcdatetime" />
     </variables>
-  </data>
-
-  <data namespace="ai.sample.TransactionLog">
-    <variables>
-      <variable name="id"       type="guid" />
-      <variable name="customer" type="key" />
-      <variable name="amounts"  type="[double]" />
-      <variable name="source"   type="uri" />
-    </variables>
-  </data>
+  </model>
 
   <!-- «model» — the shape learned over that data, not the rows themselves. -->
   <model namespace="ai.sample.ChurnPredictor">
@@ -51,20 +54,62 @@
     </operations>
   </model>
 
+  <!-- «model» — SAI allows one input per algorithm, so an algorithm that needs
+       both the records and the predictor reads a COMPOSED model: one field per
+       source, each an of="…" reference. The canvas draws each field's arrow. -->
+  <model namespace="ai.sample.ScoreInput">
+    <variables>
+      <variable name="records"   type="key" of="ai.sample.CustomerRecords" />
+      <variable name="predictor" type="key" of="ai.sample.ChurnPredictor" />
+    </variables>
+  </model>
+
+  <!-- «model» — what the algorithm produces. The Gorp samples' `escape`. -->
+  <model namespace="ai.sample.Verdict">
+    <variables>
+      <variable name="result" type="bool">false</variable>
+      <variable name="score"  type="double" />
+    </variables>
+  </model>
+
+  <!-- «data» — one customer, as an INSTANCE of CustomerRecords. The rows are
+       values; on Run they become <inputs> keyed ai.sample.CustomerRecords.id … -->
+  <data namespace="ai.sample.CustomerRows" of="ai.sample.CustomerRecords">
+    <variables>
+      <variable name="id"      type="key">C-1042</variable>
+      <variable name="tenure"  type="int">14</variable>
+      <variable name="monthly" type="double">42.50</variable>
+      <variable name="churned" type="bool">false</variable>
+    </variables>
+  </data>
+
+  <!-- «data» — a log with no model of its own (it IS its shape), whose
+       `customer` field REFERS to a CustomerRecords instance. -->
+  <data namespace="ai.sample.TransactionLog">
+    <variables>
+      <variable name="id"       type="guid" />
+      <variable name="customer" type="key" of="ai.sample.CustomerRecords.id" />
+      <variable name="amounts"  type="[double]" />
+      <variable name="source"   type="uri" />
+    </variables>
+  </data>
+
   <!-- «algorithm» — the runnable step xmlIT executes.
 
-       <input>/<output> are the Input/Output edges on the canvas.
+       <input>/<output> are the PORTS on the canvas — one model each.
 
        <function><expressions> is the algorithm's FLOW in Gorp's own idiom
        (Gorp.Loop.xml is the canonical case): numbered steps run in order,
        <If> guards a <goto sequence>, and falling off the last step ends. The
        State Machine view reads exactly this — one state per sequence, one
        transition per goto or fall-through. `name` on an <expression> is our
-       display label; Gorp ignores it. Guards name variables by their dotted
-       path, as Gorp does (<ci>orp.timbucktu.sunrise</ci>). -->
+       display label; Gorp ignores it. Steps reach into models by DOTTED PATH
+       (<ci>ai.sample.CustomerRecords.monthly</ci>) — through the composed
+       input's references — and write results the same way
+       (output="ai.sample.Verdict.result"). Check verifies every path. -->
   <algorithm namespace="ai.sample.ScoreAndRank">
-    <input  model="ai.sample.CustomerRecords" />
-    <output model="ai.sample.ChurnPredictor" />
+    <input  model="ai.sample.ScoreInput" />
+    <output model="ai.sample.Verdict" />
     <operations>
       <operation name="score"   returns="double" />
       <operation name="rank"    returns="[key]" />
@@ -87,7 +132,7 @@
           <If input="ai.sample.CustomerRecords">
             <parameters>
               <parameter position="0">
-                <Less input="ai.sample.CustomerRecords">
+                <Less input="ai.sample.CustomerRecords" output="ai.sample.Verdict.result">
                   <parameters>
                     <parameter position="0">
                       <pathvariable type="double" namespace="ai.sample.CustomerRecords.monthly"/>
@@ -104,7 +149,7 @@
         </expression>
         <expression sequence="2" name="rank" delegate="ai.sample.Rank" limit="1"/>
         <expression sequence="3" name="explain">
-          <Algorithm namespace="ai.sample.Explain" input="ai.sample.CustomerRecords" output="ai.sample.ChurnPredictor"/>
+          <Algorithm namespace="ai.sample.Explain" input="ai.sample.CustomerRecords" output="ai.sample.Verdict"/>
         </expression>
         <expression sequence="4" name="more customers?">
           <If input="ai.sample.CustomerRecords">
@@ -127,6 +172,16 @@
         </expression>
       </expressions>
     </function>
+  </algorithm>
+
+  <!-- «algorithm» — a step of ScoreAndRank delegates here, so a dashed
+       «delegate» arrow is DERIVED from that step. Nothing to draw. -->
+  <algorithm namespace="ai.sample.Rank">
+    <input  model="ai.sample.ScoreInput" />
+    <output model="ai.sample.Verdict" />
+    <operations>
+      <operation name="rank" returns="[key]" />
+    </operations>
   </algorithm>
 
 </gorp>
