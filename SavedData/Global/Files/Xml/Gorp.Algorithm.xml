@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <UMLDiagram name="Gorp.Algorithm" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:p="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:nos="http://nos.local/uml-layout">
   <proto:Class x:Name="floop" nos:x="60" nos:y="60" nos:width="280" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
     <proto:DisplayName>Algo: floop</proto:DisplayName>
