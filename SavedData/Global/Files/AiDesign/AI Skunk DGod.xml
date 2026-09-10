@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gorp name="AI Skunk">
-  <!-- nos-uml-state {"mode":"ai-design","title":"AI Skunk","saved":"2026-09-10T23:32:19Z","by":"Global","layout":{"SkunkData":{"x":32.72,"y":46.01,"w":280,"h":110},"SkunkModel":{"x":300,"y":50,"w":280,"h":110},"ai.sample.CustomerRecords":{"x":550,"y":50,"w":280,"h":150},"ai.sample.TransactionLog":{"x":50,"y":300,"w":280,"h":150},"ai.sample.ChurnPredictor":{"x":373.21,"y":404.91,"w":286.3,"h":150},"ai.sample.ScoreAndRank":{"x":550,"y":300,"w":280,"h":100},"Fight":{"x":50,"y":550,"w":280,"h":110}},"rels":[{"from":"SkunkData","to":"Fight","type":"Input"},{"from":"ai.sample.TransactionLog","to":"Fight","type":"Output"}]} -->
+<gorp name="AI Skunk DGod">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Skunk DGod","saved":"2026-09-10T23:32:24Z","by":"Global","layout":{"SkunkData":{"x":32.72,"y":46.01,"w":280,"h":110},"SkunkModel":{"x":300,"y":50,"w":280,"h":110},"ai.sample.CustomerRecords":{"x":550,"y":50,"w":280,"h":150},"ai.sample.TransactionLog":{"x":50,"y":300,"w":280,"h":150},"ai.sample.ChurnPredictor":{"x":373.21,"y":404.91,"w":286.3,"h":150},"ai.sample.ScoreAndRank":{"x":550,"y":300,"w":280,"h":100},"Fight":{"x":50,"y":550,"w":280,"h":110}},"rels":[{"from":"SkunkData","to":"Fight","type":"Input"},{"from":"ai.sample.TransactionLog","to":"Fight","type":"Output"}]} -->
   <data namespace="SkunkData">
     <variables>
       <variable name="id" type="key" />
