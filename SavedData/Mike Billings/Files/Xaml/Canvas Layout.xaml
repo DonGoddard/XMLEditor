@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Window xmlns:nos="http://nos.dev/datacontext" x:Class="CanvasDemo.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Canvas Layout Demo" Height="500" Width="700">
   <nos:DataContext nos:mode="gorp">
     <nos:Json><![CDATA[{
