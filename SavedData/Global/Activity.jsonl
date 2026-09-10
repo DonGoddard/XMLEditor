@@ -184,3 +184,8 @@
 {"ts":"2026-09-10T15:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":13189,"detail":"github:PUT","count":1}
 {"ts":"2026-09-10T15:52:33.2753170Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-10T16:07:02.8311680Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-10T16:07:21.7321720Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T16:07:21.7668180Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T16:07:21.7765830Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T16:07:21.8050290Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T16:07:21.8495960Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
