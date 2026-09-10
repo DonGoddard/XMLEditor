@@ -385,3 +385,4 @@
 {"ts":"2026-09-10T20:54:46.8148360Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T20:54:47.2378200Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T20:54:47.7661560Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T21:20:35.0155540Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
