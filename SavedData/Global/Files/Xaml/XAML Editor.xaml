@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Window x:Class="CanvasDemo.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Canvas Layout Demo" Height="500" Width="700">
     <!-- Demonstrates: Canvas with absolute positioning, Rectangle, Ellipse,
          TextBlock, Border, Button — the core Phase 2 rendering targets -->
