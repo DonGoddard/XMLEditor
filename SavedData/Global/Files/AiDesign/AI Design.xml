@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <gorp name="AI Design">
   <!-- nos-uml-state {"mode":"ai-design","title":"AI Design","layout":{"ai.sample.CustomerRows":{"x":32.72,"y":13.29,"w":280,"h":150},"ai.sample.TransactionLog":{"x":410.02,"y":120.65,"w":280,"h":150},"ai.sample.CustomerRecords":{"x":986.71,"y":9.2,"w":280,"h":150},"ai.sample.ChurnPredictor":{"x":35.79,"y":254.6,"w":280,"h":150},"ai.sample.ScoreInput":{"x":466.26,"y":333.33,"w":280,"h":150},"ai.sample.Verdict":{"x":938.65,"y":319.02,"w":280,"h":150},"ai.sample.ScoreAndRank":{"x":100.2,"y":552.15,"w":280,"h":100},"ai.sample.Rank":{"x":857.87,"y":558.28,"w":280,"h":100}},"rels":[{"from":"ai.sample.ScoreInput","to":"ai.sample.ScoreAndRank","type":"Input"},{"from":"ai.sample.ScoreAndRank","to":"ai.sample.Verdict","type":"Output"},{"from":"ai.sample.ScoreInput","to":"ai.sample.Rank","type":"Input"},{"from":"ai.sample.Rank","to":"ai.sample.Verdict","type":"Output"}]} -->
   <data namespace="ai.sample.CustomerRows" of="ai.sample.CustomerRecords">
