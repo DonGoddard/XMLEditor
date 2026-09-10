@@ -179,10 +179,12 @@ Click **?** in any window for its full reference. One line each:
 ## 6. Keeping your NOS healthy (user maintenance)
 
 **Saving and sync.** Layout changes (moving windows, icons, wallpaper) save
-automatically a moment after you make them; document content saves when you
-press Cmd/Ctrl+S. Closing the browser tab triggers a final save. If you work in
-two browser tabs at once, the last one to save wins - avoid parallel editing
-of the same file.
+automatically a moment after you make them. Document content saves when you
+press Cmd/Ctrl+S, and the XML, UML, AI Designer, XAML and Gorp Equation
+windows also save unsaved changes when you close the window or hide the
+browser tab (switching tabs counts). Notes saves when you press Done or
+Cmd/Ctrl+S. If you work in two browser tabs at once, the last one to save
+wins - avoid parallel editing of the same file.
 
 **Resetting.** There is no hidden local state to clear: NOS *is* its cloud
 storage. To reset something, delete it explicitly - remove the file from
