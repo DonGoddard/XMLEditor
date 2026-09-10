@@ -180,10 +180,11 @@ Click **?** in any window for its full reference. One line each:
 
 **Saving and sync.** Layout changes (moving windows, icons, wallpaper) save
 automatically a moment after you make them. Document content saves when you
-press Cmd/Ctrl+S, and the XML, UML, AI Designer, XAML and Gorp Equation
-windows also save unsaved changes when you close the window or hide the
-browser tab (switching tabs counts). Notes saves when you press Done or
-Cmd/Ctrl+S. If you work in two browser tabs at once, the last one to save
+press Cmd/Ctrl+S, and the XML, UML, AI Designer, XAML, Gorp Equation and
+Notes windows also save unsaved changes when you close or minimize the
+window, or when the browser tab holding NOS goes hidden (switching to
+another browser tab counts). Nothing is saved on every keystroke, so a
+half-finished thought stays yours until one of those moments. If you work in two browser tabs at once, the last one to save
 wins - avoid parallel editing of the same file.
 
 **Resetting.** There is no hidden local state to clear: NOS *is* its cloud
