@@ -151,6 +151,8 @@
 {"ts":"2026-09-10T15:19:56.0490100Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:19:56.6940140Z","type":"app_open","appId":"NOSManualApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:19:57.4039350Z","type":"app_open","appId":"PlanetsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1307668,"detail":"github:PUT","count":24}
+{"ts":"2026-09-10T15:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":20}
 {"ts":"2026-09-10T15:20:08.2456310Z","type":"app_open","appId":"XAMLInsertTextApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:20:08.9419200Z","type":"app_open","appId":"XAMLLoginFormApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:20:09.6974830Z","type":"app_open","appId":"XAMLSelectionPatternApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
@@ -160,5 +162,4 @@
 {"ts":"2026-09-10T15:20:12.1412550Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:20:12.5337600Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:20:13.2027190Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-10T15:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1307668,"detail":"github:PUT","count":24}
-{"ts":"2026-09-10T15:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":20}
+{"ts":"2026-09-10T15:43:52.8247220Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
