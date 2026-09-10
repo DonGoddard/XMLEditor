@@ -548,3 +548,6 @@
 {"ts":"2026-09-10T23:30:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":14}
 {"ts":"2026-09-10T23:32:19.7177410Z","type":"file_rename","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Skunk DGod.xml","ext":".xml","bytes":0,"detail":"Global/Files/AiDesign/AI Skunk (from DGod).xml","count":1}
 {"ts":"2026-09-10T23:32:24.4783380Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Skunk DGod.xml","ext":".xml","bytes":2796,"detail":"","count":1}
+{"ts":"2026-09-10T23:32:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20417,"detail":"github:PUT-bin","count":1}
+{"ts":"2026-09-10T23:32:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:DELETE","count":1}
+{"ts":"2026-09-10T23:32:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":45751,"detail":"github:PUT","count":6}
