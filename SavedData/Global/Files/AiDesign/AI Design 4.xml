@@ -8,9 +8,6 @@
       <variable name="monthly" type="double">42.50</variable>
       <variable name="churned" type="bool">false</variable>
     </variables>
-    <operations>
-      <operation name="test" returns="void" />
-    </operations>
   </data>
   <data namespace="ai.sample.TransactionLog">
     <variables>
