@@ -4,16 +4,16 @@ Every feature, subfeature, fix, adjustment, and infrastructure change built into
 NOS, one line each, in chronological order - the playback tape of the project.
 Distilled from the full changelogs; maintained by the "update docs" runbook pass.
 
-{meta: synced-through=2026-08-16}
+{meta: synced-through=2026-09-10}
 
 Line format (machine-parseable for the future Timeline window):
 `- {date:YYYY-MM-DD} {sys:System} {type:feature|fix|adjust|infra|docs} description`
 
 ## Totals
 
-- **2182 logged implementations** across **53 active days** (2026-03-31 to 2026-08-16)
-- By type: feature: 925, fix: 575, adjust: 465, infra: 131, docs: 86
-- Systems touched: 41; busiest: GorpEquationWindow (325), UmlWindow (298), AnyFilePreview (192), CardsWindow (141), Desktop (82), XamlWindow (80), Editor (79), BuildDeploy (76)
+- **2616 logged implementations** across **65 active days** (2026-03-31 to 2026-09-10)
+- By type: feature: 1038, fix: 713, adjust: 559, infra: 168, docs: 138
+- Systems touched: 48; busiest: GorpEquationWindow (400), UmlWindow (356), AnyFilePreview (192), CardsWindow (141), AiDesignerWindow (90), BuildDeploy (86), Editor (85), Desktop (83)
 
 ## The tape
 
@@ -2305,3 +2305,450 @@ Line format (machine-parseable for the future Timeline window):
 - {date:2026-08-16} {sys:Gorp} {type:fix} Gorp 502 after a PC reboot traced to Nexus.ApiService not running; cloudflared is a Windows service and returns, the ApiService is launched by hand and does not
 - {date:2026-08-16} {sys:Docs} {type:docs} NOS_Developers section 4 records that a build dependency report answers what code references, not what ships, and that StreamingAssets bypasses it entirely
 - {date:2026-08-16} {sys:Docs} {type:docs} NOS_Developers section 5 records the dynamic font asset trap: atlas weight can persist while the glyph table reads empty, so gate cleanup on file size
+
+### 2026-08-24
+- {date:2026-08-24} {sys:AiDesignerWindow} {type:fix} BuildXmlItCallPayload rebuilt on XmlDocument reusing BuildMemberElement, so units, values and SAI attributes travel
+- {date:2026-08-24} {sys:AiDesignerWindow} {type:fix} Empty type attribute omitted from payload members instead of written as an empty string
+- {date:2026-08-24} {sys:UmlWindow} {type:fix} ParseOperationsInto walks child nodes, so a unit on an operation survives parse and the next save
+- {date:2026-08-24} {sys:DebugLogWindow} {type:fix} ForLog wraps payloads in noparse and StripRichText honours it, so logged XML stops being eaten as markup
+- {date:2026-08-24} {sys:Units} {type:feature} Tools/gen_dsi_table.py generates DSiUnitTable.g.cs from PTB UnitSystem.md: 74 units, 32 prefixes, doubled exponents
+- {date:2026-08-24} {sys:Units} {type:fix} Generator classifies tables by header, drops operator rows, and uses verbatim literals for backslash identifiers
+- {date:2026-08-24} {sys:Units} {type:fix} Dimension expansion made recursive and medal taken from first listing, fixing dimensionless bar and km/h as a length
+- {date:2026-08-24} {sys:Units} {type:feature} DSiUnit.cs parser: tokeniser, prohibitions, medal grading, dimension algebra, conversion; 184 of 184 PTB cases
+- {date:2026-08-24} {sys:Units} {type:infra} Tools/DSiConformance harness lives outside Assets and links the shipping Units sources; three suites, exit code 0 or 1
+- {date:2026-08-24} {sys:AiDesignerWindow} {type:fix} The returned session node is skipped by id so it stops being posted back in the next run's payload
+- {date:2026-08-24} {sys:AiDesignerWindow} {type:fix} Document title read from the name attribute and restored from the state comment instead of showing the app name
+- {date:2026-08-24} {sys:AiDesignerWindow} {type:fix} GetDefaultRenameFileStem falls through to the document, so every design stops offering to save over AI Design
+- {date:2026-08-24} {sys:Units} {type:feature} DSiUnit.Math.cs adds Multiply, Divide, Power and Root over doubled integer exponents
+- {date:2026-08-24} {sys:Units} {type:feature} Affine and logarithmic operands refused, and results D-SI cannot write such as m to the 1.5 refused
+- {date:2026-08-24} {sys:Units} {type:feature} DSiUnitRef resolves a unit element and reports grade, dimension, defect and a conservative suggestion
+- {date:2026-08-24} {sys:UmlWindow} {type:adjust} Variable badge tooltip resolves through DSiUnitRef instead of echoing basis and namespace verbatim
+- {date:2026-08-24} {sys:Units} {type:infra} Conformance grows to five suites: corpus, table invariants, API contract, algebra, suggestions
+- {date:2026-08-24} {sys:UmlWindow} {type:feature} Set Unit on a variable or operation context menu, validating each keystroke with a one-click Use suggestion
+- {date:2026-08-24} {sys:UmlWindow} {type:adjust} Units authored in the app are namespace D-SI; the legacy SI vocabulary stays readable but is not offered
+- {date:2026-08-24} {sys:UmlWindow} {type:fix} MemberEntry is a struct, so edits write back by index through the new SetMemberAt
+- {date:2026-08-24} {sys:Misc} {type:feature} ModalInputField gained SetValue so a suggested fix can be applied without retyping
+- {date:2026-08-24} {sys:GorpEquationWindow} {type:feature} Equation tree carries D-SI from leaves to root; add, subtract and compare require compatible operands
+- {date:2026-08-24} {sys:GorpEquationWindow} {type:feature} Unknown is a third unit state so units can be adopted one variable at a time; literals are Unknown
+- {date:2026-08-24} {sys:GorpEquationWindow} {type:feature} Unit chip beside each variable test value and the derived unit shown next to RESULT
+- {date:2026-08-24} {sys:UmlWindow} {type:infra} Unit picker moved out of UmlWindow.UnitEditor.cs into the shared DSiUnitDialog
+- {date:2026-08-24} {sys:Sai} {type:adjust} SAI_Fidelity_Test.xml migrated to metre and D-SI; Gorp.DSi.Units.xml keeps meter as a fixture
+- {date:2026-08-24} {sys:Units} {type:feature} Unit picker composes from constrained dropdowns so all sixteen DSiProblem failure modes are unreachable
+- {date:2026-08-24} {sys:Units} {type:infra} Suite 6 builds and parses 15,281 single-term and 5,550 rate combinations
+- {date:2026-08-24} {sys:Units} {type:fix} The dimensionless unit excluded from denominators, and percent no longer rejected by a per substring guard
+- {date:2026-08-24} {sys:Units} {type:adjust} Denominators written as negative exponents, never per, so a rate keeps its Platinum grade
+- {date:2026-08-24} {sys:Units} {type:feature} Picker offers three tiers: Quick, Compose and Advanced text; opening on an existing unit decomposes it
+- {date:2026-08-24} {sys:UmlWindow} {type:fix} The Editor seed write is skipped when a file path is bound, so the shipped sample stops being overwritten by Save
+- {date:2026-08-24} {sys:Units} {type:fix} Picker preview and dropdown text colours set explicitly; near-black text sat on a near-black panel
+- {date:2026-08-24} {sys:Units} {type:adjust} prefix, unit and power captions added; a new row defaults to metre over second; an empty composer says so
+- {date:2026-08-24} {sys:Units} {type:adjust} DropdownField replaced with buttons opening the context menu, click to open rather than press and drag
+- {date:2026-08-24} {sys:Units} {type:adjust} Dialog caption contrast lifted from 0.5 grey to 0.72 through 0.78
+- {date:2026-08-24} {sys:Units} {type:feature} Generator captures the SI symbol column so DSiCompose.Pretty renders m/s, km and degrees Celsius
+- {date:2026-08-24} {sys:Units} {type:fix} Dialog shipped light because UI Toolkit control defaults are light; Dark and Text helpers darken every raw control
+- {date:2026-08-24} {sys:Units} {type:fix} Caption row given an explicit height so prefix, unit and power stop drawing behind the controls
+- {date:2026-08-24} {sys:Units} {type:adjust} Quick picks laid out as a real four by four grid with a filler cell
+- {date:2026-08-24} {sys:Units} {type:feature} Recents: the eight most recently set units above quick picks, persisted newline-separated in PlayerPrefs
+- {date:2026-08-24} {sys:Units} {type:feature} DSiCompose.Tooltip gives grade, dimension and behavioural warnings; prefixes show their multiplier as a power
+- {date:2026-08-24} {sys:Units} {type:fix} DSi Unit Dialog.uss loads Base Styles plus its own sheet, scoping generic Button and Label rules to the dialog
+- {date:2026-08-24} {sys:Docs} {type:docs} CLAUDE.md Styling records that OverlayLayer has no stylesheets and UFOS has no global Button rule
+- {date:2026-08-24} {sys:Units} {type:fix} Dialog rebuilt as head, scrolling body and footer with no flex shrink, ending the squash and per-click jitter
+- {date:2026-08-24} {sys:Units} {type:adjust} The raw identifier line lifted to a lighter grey and 11px, since it is the exact string written to file
+- {date:2026-08-24} {sys:Docs} {type:docs} Sheet header records the convention that Base Styles comes first and the specific sheet second
+- {date:2026-08-24} {sys:Docs} {type:docs} xmlIT recorded as a deliberate placeholder rather than pending work, in code, CLAUDE.md and memory
+- {date:2026-08-24} {sys:AiDesignerWindow} {type:docs} A Status OK session stub from Run proves transport only, never that the payload was understood
+- {date:2026-08-24} {sys:Units} {type:fix} The power menu rebuilds its row, so its button stops showing the previous value
+- {date:2026-08-24} {sys:Units} {type:adjust} The non-SI toggle states how many units the menus will offer, since the effect was otherwise invisible
+- {date:2026-08-24} {sys:Units} {type:fix} Advanced scrolls the body to the end when opened, so its field is no longer below the fold
+- {date:2026-08-24} {sys:UmlWindow} {type:feature} Unit chips on variable and operation rows in SI symbol form, amber when the declared unit does not parse
+- {date:2026-08-24} {sys:Units} {type:infra} DSiExprRules extracted to Scripts/Units with suite 7 pinning refusals, unknown propagation and no cascade
+### 2026-08-25
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} CreateNodeElement applies the saved width, so resized nodes stop collapsing to the 200px default on reload
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Unit chip moved beside the member name and made clickable to open the picker
+- {date:2026-08-25} {sys:Units} {type:fix} Recent and Quick buttons routed through TooltipManager; native tooltip assignments in the picker were dead
+- {date:2026-08-25} {sys:Units} {type:adjust} Composer holds one ordered list with a per-row multiply or divide toggle instead of two separate blocks
+- {date:2026-08-25} {sys:Units} {type:infra} CODATA 2022 subset vendored to StreamingAssets and pinned by suite 8; seven stale 2018 magnitudes corrected
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} Unit chip now renders after the name and without brackets; insertion order had put it before every name
+- {date:2026-08-25} {sys:Units} {type:adjust} DSiUnitRef.Resolve folds regional spellings while the parser stays strict; the picker writes canonical identifiers
+- {date:2026-08-25} {sys:Units} {type:adjust} Display uses US spelling where it differs: meter, liter and deka
+- {date:2026-08-25} {sys:Units} {type:infra} Suite 9 asserts both halves and that canonicalising leaves all 75 identifiers alone
+- {date:2026-08-25} {sys:Units} {type:adjust} Cancel and Set removed: clicking outside or Escape applies, with one removal path inside Commit
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} ApplyUnit made copy-on-write so an undo snapshot sharing the member list is not rewritten
+- {date:2026-08-25} {sys:Units} {type:feature} Gold, Silver and Bronze tier chips replace the single non-SI switch; Platinum deliberately has no chip
+- {date:2026-08-25} {sys:Units} {type:adjust} Power selector narrowed from 70px to 44px
+- {date:2026-08-25} {sys:Units} {type:adjust} Row delete becomes a borderless trash can with a new Button_TrashIcon.png and a del text fallback
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} Node resize edges straddle the border at plus or minus 5px; the clip moved to header and section
+- {date:2026-08-25} {sys:Units} {type:fix} Every dialog variant rule rescoped so the generic Button and Label rules stop outranking them
+- {date:2026-08-25} {sys:Units} {type:adjust} Unit column widened from 170px to 246px so Bronze stops running into power
+- {date:2026-08-25} {sys:Docs} {type:docs} The USS specificity trap written into the sheet header and Assets/CLAUDE.md
+- {date:2026-08-25} {sys:Units} {type:adjust} Two add buttons replaced by one Extend Unit that inherits the side of the last row and says which
+- {date:2026-08-25} {sys:Units} {type:adjust} The unit caption shows the offered count, and tier chips show Gold plus 27, Silver plus 9, Bronze plus 25
+- {date:2026-08-25} {sys:Units} {type:adjust} Unit column widened 246 to 268 with the selector matched to it
+- {date:2026-08-25} {sys:Units} {type:fix} DSiTerm carries its own divide flag over one list, so flipping a term no longer moves the row
+- {date:2026-08-25} {sys:Units} {type:fix} Single-list TryDecompose rewritten as a real one-pass walk; the delegating version silently reordered terms
+- {date:2026-08-25} {sys:UmlWindow} {type:feature} Member tooltips show the whole signature with the hovered token lit, wrapped as appended not searched
+- {date:2026-08-25} {sys:Units} {type:adjust} Clear moved into the preview box, the footer removed, and Recents made a fixed eight-column row
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} Tooltip category line restored above the signature; the label now wraps and the panel cap raised to 280px
+- {date:2026-08-25} {sys:Units} {type:adjust} Advanced moved to the right end of the grade line with its field beneath, removing the scroll hack
+- {date:2026-08-25} {sys:Units} {type:infra} Head and body section order asserted explicitly rather than eyeballed
+- {date:2026-08-25} {sys:Units} {type:feature} Typing in Advanced syncs the composer in three states: decomposable, valid but not composable, invalid
+- {date:2026-08-25} {sys:Units} {type:fix} A syncing guard stops the field change callback pushing straight back into the composer
+- {date:2026-08-25} {sys:Units} {type:infra} Suite 6 pins all eight Advanced input states including meter folding and round-trip identity
+- {date:2026-08-25} {sys:Units} {type:fix} Both dialog columns take min-width zero so one long unbreakable unit stops pushing Advanced off the panel
+- {date:2026-08-25} {sys:Units} {type:infra} The dialog logs on open that the Recents header was added, its container, and how many recents loaded
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Diagram unit chip raised from 9px to 12px and its hue matched to the node's other blues
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Tooltip separators group the unit tight against the name, the way a quantity is written
+- {date:2026-08-25} {sys:Units} {type:fix} Compose caption row margin removed so all three sections start level below their headers
+- {date:2026-08-25} {sys:Misc} {type:fix} ModalInputField places the caret at the nearest glyph boundary on pointer down instead of jumping to the end
+- {date:2026-08-25} {sys:Misc} {type:feature} ModalInputField opens the mobile TouchScreenKeyboard and closes it on teardown
+- {date:2026-08-25} {sys:Units} {type:fix} The grade label rule rescoped; a bare rule lost its flex shrink to the scoped generic Label rule
+- {date:2026-08-25} {sys:Units} {type:infra} Suite 10 lints USS specificity by resolving which classes land on Button or Label; mutation tested
+- {date:2026-08-25} {sys:AiDesignerWindow} {type:fix} The xmlIT endpoint defaults through the Worker, so Run works in a browser; direct posts failed CORS preflight
+- {date:2026-08-25} {sys:Worker} {type:feature} Worker route /xml mirrors /gorp, forwarding the raw body with CORS and sharing the gorp rate-limit bucket
+- {date:2026-08-25} {sys:Worker} {type:infra} XMLIT_TUNNEL_URL is optional; the default derives from GORP_TUNNEL_URL by swapping the last path segment
+- {date:2026-08-25} {sys:AiDesignerWindow} {type:fix} NormaliseEndpoint folds an explicitly pinned tunnel address back to the portal, leaving typed LAN addresses alone
+- {date:2026-08-25} {sys:AiDesignerWindow} {type:adjust} Endpoint tooltip states the trap: a typed address goes direct, which works in the editor and not on the web
+- {date:2026-08-25} {sys:Accounts} {type:fix} SystemFolders excludes Reports, Shared and SavedData, saving about 22 seconds of boot retries on WebGL
+- {date:2026-08-25} {sys:Accounts} {type:docs} Deck Builder recorded as a real account that must stay off SystemFolders; a derived exclusion list removed
+- {date:2026-08-25} {sys:Misc} {type:fix} ModalInputField mobile path left its handlers null while teardown unregistered them, throwing on iPhone
+- {date:2026-08-25} {sys:WindowBase} {type:fix} BeginInPlaceEdit had the same null-handler hole; both paths go through one unhook that clears the fields
+- {date:2026-08-25} {sys:Misc} {type:infra} Seventeen other UnregisterCallback sites audited and found already guarded
+- {date:2026-08-25} {sys:Units} {type:adjust} The multiply and divide button loses its box; the glyph carries state in colour and grows to 15px
+- {date:2026-08-25} {sys:Units} {type:adjust} The first composer row has no operator button, just a spacer keeping the prefix column under its heading
+- {date:2026-08-25} {sys:Units} {type:fix} A divided first row gets an explicit 1 row in front of it, so a reciprocal cannot render as a plain unit
+- {date:2026-08-25} {sys:Units} {type:fix} Build drops the dimensionless unit when another term is present; alone it is still emitted
+- {date:2026-08-25} {sys:Units} {type:infra} Suite 6 pins the three divided-first-row shapes and four multiply-first expressions asserted untouched
+- {date:2026-08-25} {sys:ContextMenu} {type:feature} ContextMenuManager gains IsMenuOpen and MenuClosedThisFrame reads
+- {date:2026-08-25} {sys:Units} {type:fix} The unit dialog backdrop no longer closes the dialog when the same click dismissed an open dropdown
+- {date:2026-08-25} {sys:BrandStudio} {type:fix} Brand paths carried the SavedData prefix twice; reads fall back to the doubled path and copy forward once
+- {date:2026-08-25} {sys:BrandStudio} {type:fix} The brand art folder path corrected outright, since no art had ever been uploaded
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} The variable badge stops listing the resolved unit, which the row's unit chip already shows
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} A row whose only extra was a unit gets no badge; a blank basis still reports a declared but empty unit
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Badge redrawn as an ASCII i in a USS circle, since the circled-i glyphs are in none of the shipped fonts
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Badge moved to the node's right edge, pushed flush by auto margin and protected from shrinking
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} Method badge tooltip gains comment, validate and extra attributes, so a commented method shows a badge
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Amber and cyan badge tints collapsed to one colour, since the row already says which half it is
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Drag handle and info badge reveal on row hover by opacity; the handle's one-second delay removed
+- {date:2026-08-25} {sys:UmlWindow} {type:adjust} Resting badge opacity set to 0.25 in one constant, so a row with extras still differs from one without
+- {date:2026-08-25} {sys:UmlWindow} {type:fix} Badge pulled flush right with a negative margin spending the section's padding difference
+### 2026-08-26
+- {date:2026-08-26} {sys:UmlWindow} {type:feature} Clicking the info badge opens a readable member panel instead of relying on a hover tooltip
+- {date:2026-08-26} {sys:UmlWindow} {type:adjust} Member extra text limit raised from 80 characters to 400 now that the container can wrap
+- {date:2026-08-26} {sys:UmlWindow} {type:fix} Panel hosted on the overlay layer, loads its own stylesheet, positions after layout, dismisses on trickle-down
+- {date:2026-08-26} {sys:UmlWindow} {type:fix} Panel closed from RebuildGraphUI and OnDestroy so it cannot outlive its row or its window
+- {date:2026-08-26} {sys:AiDesignerWindow} {type:fix} AppendConnectionElements writes input and output elements, so wiring stops being demoted to a comment
+- {date:2026-08-26} {sys:AiDesignerWindow} {type:feature} Input and Output added to the relationship type menu through a virtual, kept off plain UML diagrams
+- {date:2026-08-26} {sys:UmlWindow} {type:feature} Input and Output edges draw a solid filled arrowhead, matched in the context-menu preview
+- {date:2026-08-26} {sys:UmlWindow} {type:fix} UmlRelationship gains extraAttrs so api and queued survive a save instead of being regenerated away
+- {date:2026-08-26} {sys:AiDesignerWindow} {type:adjust} A second input or output edge is skipped with a warning rather than silently dropped
+- {date:2026-08-26} {sys:AiDesignerWindow} {type:feature} Sequence view derived from classes and relationships on every rebuild via a new OnGraphRebuilt hook
+- {date:2026-08-26} {sys:Sequence} {type:feature} SequenceModel orders lifelines by topological sort, appending whatever the sort cannot drain so cycles survive
+- {date:2026-08-26} {sys:Sequence} {type:feature} Input edges become solid calls, operations self-calls, output edges dashed replies; activation bars per algorithm
+- {date:2026-08-26} {sys:Sequence} {type:adjust} A design with no input or output connections is refused with an explanation rather than a guessed order
+- {date:2026-08-26} {sys:Sequence} {type:infra} Suite 11 pins the canonical shape end to end; the harness links any UnityEngine-free folder under Scripts
+- {date:2026-08-26} {sys:AiDesignerWindow} {type:fix} One sized sequence content element added; two absolutely positioned layers had measured zero and been clipped
+- {date:2026-08-26} {sys:AiDesignerWindow} {type:infra} RebuildSequenceView logs lifeline and message counts so blank can be told from nothing to show
+### 2026-08-27
+- {date:2026-08-27} {sys:UmlWindow} {type:feature} DefaultRelationshipType made virtual; the AI Designer answers Input, Output or Association from construct kinds
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Message label height set explicitly so sequence labels sit above their arrow instead of on it
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} Label eliding follows the arrow span in pixels instead of a three-name cap
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Hover detail on message arrows, participant boxes, and a 16px hover strip per painted lifeline
+- {date:2026-08-27} {sys:Sequence} {type:feature} SeqMessage gains Detail, built in the model and covered by suite 11
+- {date:2026-08-27} {sys:UmlWindow} {type:fix} Type column width expressed in flex with a measured max, so it grows with the node then yields to the name
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} A Run result becomes its own node kind, outside the set the writer iterates, so replies stop being saved
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Result values live in the value attribute, so a timestamp stops being read as a member type
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Result node gets its own shape: rounded, green accent, session caption, no type column, no editable rows
+- {date:2026-08-27} {sys:UmlWindow} {type:infra} TryCreateCustomNodeElement virtual added beside the hard-coded xaml branch
+- {date:2026-08-27} {sys:UmlWindow} {type:fix} Node interaction wiring moved onto the common creation path; the result node never released the captured pointer
+- {date:2026-08-27} {sys:UmlWindow} {type:fix} Canvas pointer up releases any node still holding the pointer and logs which one
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Invisible 14px hit strips along every message arrow, so painted lines answer a hover
+- {date:2026-08-27} {sys:UmlWindow} {type:feature} TwoStageTooltip added, host agnostic, 1.5s cold, 2s to detail, 200ms warm window
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Tooltip panel ignores picking and hides on detach, so it cannot loop or describe a destroyed element
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Result node position, width and height saved under their own key in the state comment
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Rect parsing returns null unless all four numbers parse, and reads with invariant culture like the writer
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} The default result placement falls back to the visible viewport when the natural spot lands off screen
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Activity view added, annotating every variable with its resolved unit and showing validate rules as guards
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} A basis the parser rejects renders amber with its defect on hover rather than being hidden
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} Activity built from real elements in a flex column, with no absolute positioning or painted layer
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:infra} View switching moved into a DiagramViews table with lazy building; adding a view is one entry
+- {date:2026-08-27} {sys:Sequence} {type:infra} Suite 12 asserts unit annotation is resolved in the model rather than the renderer
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Check panel lists offline findings: bad units, incompatible comparisons, clashing names, unwired algorithms
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Check findings are clickable, switching to the Class Diagram and selecting the construct
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} The unreachable Improvable branch replaced with a Bronze note, since Improvable is the failure grade
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} The validate reader handles only A op B and skips anything else silently rather than guessing
+- {date:2026-08-27} {sys:Units} {type:infra} Suite 13 pins that a regional spelling raises no finding
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} InfixExpression parses typed maths to one tree serving MathML, unit resolution and variable discovery
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} The design checker now checks arithmetic operands through the real tree instead of skipping them
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:infra} Suite 14 pins refusals and precedence by tree shape, with power right-associative and comparison loosest
+- {date:2026-08-27} {sys:Units} {type:adjust} A bare number is dimensionless, an unannotated variable Unknown, a variable exponent leaves the branch Unknown
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} TwoStageTooltip takes a cold delay and the read-only Sequence view passes zero
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Sequence tooltip positions from the cursor, sits above it, and follows until the detail appears
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:fix} Tooltip hosted on the scroller rather than the content, so it stops inflating the scrollable area
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Test on an operation's context menu: expression, generated input fields and expected result, posted to gorpIT
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Test input fields re-derived from the expression on every keystroke, keeping values already typed
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Tests stored in the document as expression and test children of the operation, written copy-on-write
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:feature} Four test outcomes: Pass or Fail compared numerically, No expectation, Not run naming the gap, Error
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} Units are checked in the Test panel from the same tree before a round trip is spent
+- {date:2026-08-27} {sys:UmlWindow} {type:infra} AppendMemberContextOptions hook added, mirroring AppendClassContextOptions
+- {date:2026-08-27} {sys:AiDesignerWindow} {type:adjust} Tests post to the same endpoint Run resolves, so a LAN-pointed design tests against that server
+### 2026-08-28
+- {date:2026-08-28} {sys:Misc} {type:feature} ModalInputField.ChainTabOrder links fields; Tab and Shift Tab move and commit, and the ends do not wrap
+- {date:2026-08-28} {sys:AiDesignerWindow} {type:adjust} Test panel tab order is expression, then values in read order, then expected, re-chained on each keystroke
+- {date:2026-08-28} {sys:Misc} {type:fix} ModalInputField focus made exclusive in a static, so six fields stop blinking and stealing every keystroke
+- {date:2026-08-28} {sys:Misc} {type:adjust} Auto-focus on attach is conditional, so a later field cannot steal focus in a multi-field form
+- {date:2026-08-28} {sys:Gorp} {type:docs} gorpIT 500s on comparisons because a hard Double cast throws, not because the engine cannot evaluate them
+- {date:2026-08-28} {sys:AiDesignerWindow} {type:adjust} Comparison refusal caught before the request with a NotRun outcome, phrased as a marshalling gap
+- {date:2026-08-28} {sys:Docs} {type:docs} ChangeRequest-GORPHandler-2026-08-28.md written with four items for Don to forward instead of a patch
+- {date:2026-08-28} {sys:UmlWindow} {type:fix} Canvas hotkeys stand down while any modal field is editing, so Tab and Backspace stop reaching the canvas
+- {date:2026-08-28} {sys:UmlWindow} {type:feature} New SuppressCanvasHotkeys virtual, overridden while the Test or Check panel is open
+- {date:2026-08-28} {sys:AiDesignerWindow} {type:adjust} The Test panel opens with the caret in the expression field, which the value fields are generated from
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} CanRoundTripInfix split from IsPureMath; square root was evaluating to zero and saving as zero
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Wire serialisation lowers square root to a half power and unary minus to zero minus x, on the call path only
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} GorpItRefusalReason names the reason pre-flight instead of sending six identical 500s
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The pre-flight guard stops the unreachable-origin alert firing for an unsupported construct
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Click the active algorithm tab to rename it inline, and click the Name required badge to fix it
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Tab and badge tooltips say that Input model, Output model and Output name do not name the algorithm
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The variables panel stops shrinking, so binding rows are no longer crushed behind the splitter
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Badge reads Name required with a click hint and a dynamic tooltip laid out as where, how and not this
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Both unnamed chips describe only the gestures actually wired to them
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Model tabs get the same click-to-rename as algorithm tabs
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Gorp request toggle shows the exact wire bytes through the same two calls the send path uses
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} XML panel status corrected to say display only, not saved or sent; manual edits were never sent
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Side by side toggle shows the saved document and the wire request with a scroll each
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Gorp request is disabled rather than hidden while side by side is on, so controls do not vanish
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Copy button puts the exact single-line request bytes on the clipboard, or toasts the refusal instead
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The XML header became a column with a wrapping toggle row; the last toggle had been clipped off entirely
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Both panes get automatic horizontal scrollers while side by side is on
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} Checkboxes now precede their captions, and the caption rule names three Unity label classes
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Gorp request renamed Request only, with both tooltips stating the layout trade
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} MissingInputRefusal walks the corrected tree, so a blank model row cannot post a request missing an input
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:docs} Recorded that model values are resolved client side and inlined; gorpIT never sees the model on this route
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The Ready badge resolves through the same value lookup the payload builder uses, so the two cannot disagree
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} ValidateLocalTestInputs added for the Test button, which cannot read a value held on a model row
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Both disabled buttons name the offending variable in their tooltip
+- {date:2026-08-28} {sys:WindowBase} {type:fix} The geometry mark-dirty hook moved out of the fragment branch, so moving or resizing any window saves layout
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} Both internal dividers mark the layout dirty on pointer up rather than only marking the document dirty
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The Gorp request and side by side toggles persisted in window state and restored through the change path
+- {date:2026-08-28} {sys:Gorp} {type:docs} GORP.dll 1.0.62 implements every conditional; the handler's one compile path never calls CompileAlgorithm
+- {date:2026-08-28} {sys:Docs} {type:docs} Change request headline rewritten to ask for a route that compiles an algorithm rather than a cast fix
+- {date:2026-08-28} {sys:Gorp} {type:docs} Piecewise fails even with only an otherwise branch, ruling out client-side lowering of IF
+- {date:2026-08-28} {sys:Gorp} {type:docs} Gorp.rtf read: GORP has 13 primitives and MathExpression is one of them, over Plus, Minus, Times, Divide, Power, Log
+- {date:2026-08-28} {sys:Gorp} {type:docs} Symbolics.dll defines 30 Gestalt types; the handler hard-codes double in both directions
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} Not-equal, less-or-equal and greater-or-equal composed from Not over real primitives instead of invented elements
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The Not pattern collapses back on load only when the inner element is a plain comparison with no bindings
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Forall and Filter tiles added on a new SetOpNode; Range is modelled but deliberately not offered
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Twelve non-runnable tiles greyed to 45 percent with an explanatory tooltip, but still fully draggable
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} SetOpNode wired through the model rename switches so its bindings are not orphaned
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} Tile greying split into runs on Gorp and runs locally; grey only when neither can evaluate
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Bright tiles gain a tooltip line saying Test runs them and Gorp does not yet
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} A boolean result prints true or false instead of 1, using the expression kind
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} A false conditional prints condition false, no result, instead of the bare word NaN
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} Two serialiser default branches called each other on the same node, killing the Editor with no crash dialog
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The unrepresentable-node fallback recurses only on children, so the default branch strictly decreases
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The wrap-drop path now type-checks its slot and refuses a boolean into a numeric slot, suggesting the fix
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} A stale message claiming gorpIT loses a true or false corrected; a comparison never compiles at all
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:adjust} Unsupported constructs warn and send rather than being refused, with the expected failure suppressing the alert
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} The request preview shows the payload with the warning above it, instead of the warning replacing it
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} ParameterAt accepts position, the dotted slot suffix, or document order; two sample files had loaded empty
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:feature} Value and Array elements parsed
+- {date:2026-08-28} {sys:Gorp} {type:docs} Unanchored XPaths make gorpIT answer a different question and still report OK; item 0 of the change request
+- {date:2026-08-28} {sys:GorpEquationWindow} {type:fix} Reverted the namespace slot, Value and Array parsing from the Gorp parser; those files are not Gorp documents
+- {date:2026-08-28} {sys:Gorp} {type:docs} A Gorp comparison writes into a model member declared bool rather than returning a value
+- {date:2026-08-28} {sys:Docs} {type:docs} The change request now asks an algorithm route to return the output model rather than a scalar
+- {date:2026-08-28} {sys:Gorp} {type:docs} The deployed service exposes only weatherforecast, gorpIT and xmlIT; no algorithm route exists on either
+- {date:2026-08-28} {sys:Gorp} {type:docs} A real shipped sample returns 4 and Status OK while discarding everything but one nested Math
+- {date:2026-08-28} {sys:Gorp} {type:docs} All four canonical Gorp sample files 400 against gorpIT, as does the shape the documentation demonstrates
+- {date:2026-08-28} {sys:Gorp} {type:docs} gorpIT's accepted wire shape mapped by probe: Math with name, math and inputs children, in no sample or doc
+- {date:2026-08-28} {sys:Gorp} {type:docs} Three probes show no Gorp primitive is reachable on that route; a sibling comparison is ignored, reply still OK
+### 2026-09-02
+- {date:2026-09-02} {sys:Editor} {type:fix} StaticFontCleanup replaces assembly enumeration with a qualified type lookup, clearing the new UAC0005 analyzer
+- {date:2026-09-02} {sys:BuildDeploy} {type:fix} Six Kamgam example SetText calls qualified explicitly after Unity 6000.6 added an instance SetText
+- {date:2026-09-02} {sys:BuildDeploy} {type:infra} Upgraded to Unity 6000.6.0f1 with Addressables, Multiplayer Center and uGUI bumps and texture meta churn committed
+- {date:2026-09-02} {sys:UmlWindow} {type:feature} UmlClass gains extraChildren so a construct's unknown children survive a save
+- {date:2026-09-02} {sys:Sai} {type:feature} Scripts/Sai/ConstructChildren.cs holds the regenerate-or-preserve policy in two sets, pinned by suite 15
+- {date:2026-09-02} {sys:Sai} {type:adjust} Input and output are edge-represented only when they name a model and carry no children
+- {date:2026-09-02} {sys:Sai} {type:fix} MergeInheritsExtras folds each parent's conflicts back onto the regenerated inherits entry
+- {date:2026-09-02} {sys:UmlWindow} {type:docs} CloneUmlClass shares extraChildren by reference, so writers must replace rather than mutate the list
+- {date:2026-09-02} {sys:StateMachine} {type:feature} StateMachineModel reads an algorithm's function expressions as a state machine; suite 16 added
+- {date:2026-09-02} {sys:StateMachine} {type:feature} SummariseCondition renders a Gorp operator tree as real infix; the tokeniser learned dotted identifiers
+- {date:2026-09-02} {sys:StateMachine} {type:feature} Conflicts reader unions conflict pairs into one machine per cluster, with the predicate as the guard
+- {date:2026-09-02} {sys:StateMachine} {type:feature} Validate emits findings for unreachable steps, missing goto targets, undeclared guard values and unit clashes
+- {date:2026-09-02} {sys:StateMachine} {type:feature} Step evaluates outgoing guards locally; ambiguous and cannot-evaluate are distinct from false
+- {date:2026-09-02} {sys:StateMachine} {type:adjust} Unknown elements become Opaque states, and a delegate typo is flagged with a did-you-mean, not silently read
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:feature} State Machine view: the selected construct's machine in a pane below the canvas, split by a horizontal divider
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:adjust} Pane drawn with one sized element, a painter layer, real boxes, 14px hit strips and two-stage tooltips
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:adjust} Pane layout is deterministic and unsaved: backward jumps arc over, forward skips under, self-transitions loop
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:infra} The pane polls the selection every 200ms rather than threading a hook through twenty assignment sites
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:adjust} Pane header carries owner, counts, source idiom and the Validate verdict with findings on hover
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:adjust} Pane height is window state rather than document content, correcting the plan
+- {date:2026-09-02} {sys:Sai} {type:adjust} The starter sample gains input and output edges and a five-step flow so the pane has something to show
+- {date:2026-09-02} {sys:Docs} {type:docs} Load order recorded: the GitHub copy wins and the bundled seed appears only for a fresh account
+- {date:2026-09-02} {sys:Sai} {type:adjust} Gorp.DSi.Units.xml DwellCheck gains a four-step flow including the seconds-against-kilograms guard
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:fix} The pane hands Validate a unit map with regional spellings folded to canonical first
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:feature} View and selection persisted in window state and restored in two stages once the document arrives
+- {date:2026-09-02} {sys:AiDesignerWindow} {type:adjust} Selection remembered by namespace rather than runtime id, since a palette node's id changes on reload
+- {date:2026-09-02} {sys:Gorp} {type:docs} The newer GORP repo is a library with no HTTP handler, no control flow, and unfinished Branch and Choose
+- {date:2026-09-02} {sys:Gorp} {type:docs} New wire format uses a namespace slot rather than position, Value literals, and leaf input keys bound at build
+- {date:2026-09-02} {sys:Docs} {type:docs} ChangeRequest-GORP-NewRepo-2026-09-02.md asks for a callable surface, if-else, a jump, and unit compatibility
+- {date:2026-09-02} {sys:Gorp} {type:docs} A Nexus designer branch found with a handler rewrite compiling seven operators from a posted document, undeployed
+- {date:2026-09-02} {sys:Docs} {type:docs} Three findings added: the dispatch gate, culture-dependent input conversion, and functions cleared per request
+### 2026-09-03
+- {date:2026-09-03} {sys:GorpEquationWindow} {type:fix} Every gorpIT input key prefixed with the compile namespace through one shared helper; bare keys now 500
+- {date:2026-09-03} {sys:GorpEquationWindow} {type:fix} An equation with no name sends Equation, since an empty name element 500s
+- {date:2026-09-03} {sys:Gorp} {type:docs} The new GORP verified live on the tunnel: And, Math, Or, Not, If and a namespaced comparison all answer correctly
+- {date:2026-09-03} {sys:Gorp} {type:docs} Measured refusals recorded: two literals compared, an input carrying a unit, and MathML comparison inside Math
+- {date:2026-09-03} {sys:Gorp} {type:docs} Nick's later commit removes the dispatch gate and adds a GetParameters envelope listing leaf input keys
+- {date:2026-09-03} {sys:BuildDeploy} {type:infra} The build-output Nexus clone switched from the xmlapi branch to the designer branch and fast-forwarded
+- {date:2026-09-03} {sys:GorpEquationWindow} {type:feature} A comparison or logic root now goes out in GORP's own operator shape rather than as MathML
+- {date:2026-09-03} {sys:GorpEquationWindow} {type:feature} Bare operands omit their slot and ride in inputs; arithmetic operands become a nested Math keyed under the slot
+- {date:2026-09-03} {sys:GorpEquationWindow} {type:feature} Not-equal, less-or-equal and greater-or-equal lower to Not over a primitive, with keys passing through the Not slot
+- {date:2026-09-03} {sys:GorpEquationWindow} {type:adjust} The refusal predictor splits for predicate roots, and the IF refusal is reworded to the route's real limit
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:feature} Expressions/GorpPredicateXml.cs writes the operator shape; suite 17 asserts two documents byte for byte
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:fix} The test runner stops refusing comparisons; a literal is never written into the first slot as a Value
+- {date:2026-09-03} {sys:StateMachine} {type:feature} StateMachineWriter writes a machine back as function expressions, the exact inverse of the reader; suite 18
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:feature} State machine authoring in the pane: add, rename, guard, reorder and delete steps; retarget or edit transitions
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:feature} Guard editor checks as you type: parse, then D-SI propagation, then whether GORP can evaluate it
+- {date:2026-09-03} {sys:StateMachine} {type:adjust} Sequence numbers renumber canonically and a step's body is carried through verbatim rather than re-derived
+- {date:2026-09-03} {sys:StateMachine} {type:adjust} Guards written twice: as GORP's operator tree and as an attribute holding the infix a person typed
+- {date:2026-09-03} {sys:StateMachine} {type:fix} The reader accepts the deployed namespace slot spelling as well as position, so guards read back as typed
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:adjust} Machines derived from conflicts stay read-only in the pane by design
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:fix} The guard verdict became three-way and Apply is disabled with a reason on an Error; undeclared names only warn
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:fix} Arc lanes assigned so two backward jumps stop drawing at the same height and overprinting their labels
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:feature} Check folds in state machine findings and recounts its summary rather than incrementing it
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:fix} Findings gained construct and state targets, so a flow finding is clickable; suite 18 pins the contract
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:feature} Step bar under the pane header with step, reset and one field per guard variable, evaluated entirely locally
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:adjust} A guard with no value reports cannot-evaluate naming the variable, never a silent false
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:feature} The matching operation on the class node lights with the running step, matched by name and nothing else
+- {date:2026-09-03} {sys:AiDesignerWindow} {type:adjust} Machines are validated once each, not once per construct in a shared conflicts cluster
+### 2026-09-04
+- {date:2026-09-04} {sys:UmlWindow} {type:feature} New Diagram on the hamburger and title-bar menus clears the canvas and binds a new file
+- {date:2026-09-04} {sys:AiDesignerWindow} {type:feature} New AI Design resets step, highlight and pending restores through a new OnDocumentReset hook, back to Class Diagram
+- {date:2026-09-04} {sys:UmlWindow} {type:feature} The new file name is chosen against the real save folder using the app definition's own file stem
+- {date:2026-09-04} {sys:GitHubUploader} {type:fix} Directory listing now reports whether the server was reached; an empty list no longer means a failed request
+- {date:2026-09-04} {sys:UmlWindow} {type:fix} The window is unbound from its old path before the naming request goes out
+- {date:2026-09-04} {sys:UmlWindow} {type:feature} Open Saved lists the app's save folder filtered to its extension, marking and disabling the current file
+- {date:2026-09-04} {sys:UmlWindow} {type:adjust} A canvas with nothing on it skips the confirmation dialog
+- {date:2026-09-04} {sys:Docs} {type:docs} Recorded that this window has three menus built by three methods, so an entry must be added to each
+- {date:2026-09-04} {sys:BuildDeploy} {type:infra} Build v0.1.260904.0846 committed to the Nexus designer branch, 225 files, stale engine payload removed
+- {date:2026-09-04} {sys:BuildDeploy} {type:docs} The build output path sits inside a Nexus clone, so a build dirties that clone's working tree
+- {date:2026-09-04} {sys:BuildDeploy} {type:docs} The published build is 43MB: 14MB of D-SI wiki and 8MB of help videos ship from StreamingAssets, trimming deferred
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:fix} A fresh equation rebuilds the library tree, so its draft row appears without touching something else
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:fix} Rename updates the library entry optimistically, capturing the old namespace before the rewrite
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:fix} Library rescan gains a generation counter and one coalescing scheduler across eleven call sites
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:fix} Duplicate and new-equation defaults changed so generated names carry no space and stay runnable
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:fix} The name is normalised where it is typed, dropping spaces, with a toast saying what it became
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:adjust} The dotted-name parser stays pure, so opening a legacy document cannot silently rename its file
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:adjust} A legacy name with a space is refused with a sentence naming the character and the name to use
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:infra} Suite 17 pins the normaliser and the refusal; 25 unit-test files re-uploaded without spaces
+- {date:2026-09-04} {sys:WindowBase} {type:feature} WireTooltipsRecursive hooks any subtree tooltip text to TooltipManager, read at hover time so it can change
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:fix} About forty written tooltips came alive at once; the native tooltip property renders only in the Editor
+- {date:2026-09-04} {sys:GorpEquationWindow} {type:adjust} Path-reference variables get their own grey-blue style so they stop reading as unresolved
+### 2026-09-07
+- {date:2026-09-07} {sys:Cgm} {type:feature} CGM window: a Dexcom glucose dashboard with readout, seven statistic tiles, chart, footer, CSV save and export
+- {date:2026-09-07} {sys:Worker} {type:feature} Five Dexcom routes: login, callback, status, unlink and the data proxies, with tokens in KV under a random handle
+- {date:2026-09-07} {sys:Worker} {type:adjust} Dexcom payloads pass through untouched; a refused refresh deletes the link; 60 requests a minute per IP
+- {date:2026-09-07} {sys:Cgm} {type:feature} The link handle is 24 random bytes in PlayerPrefs, deliberately not in the layout file, which is public
+- {date:2026-09-07} {sys:Cgm} {type:feature} Scripts/Cgm adds readings, unit conversion, target ranges, de-duplication, CV, time in range, GMI and staleness
+- {date:2026-09-07} {sys:Cgm} {type:feature} MiniJson added because JsonUtility cannot express a null value, which Dexcom sends for pegged readings
+- {date:2026-09-07} {sys:Cgm} {type:feature} Dexcom v3 parser counts pegged readings rather than zeroing them and converts a record claiming mmol/L
+- {date:2026-09-07} {sys:Cgm} {type:adjust} The window reads back from the data range end rather than the wall clock, so a lagging feed still fills the span
+- {date:2026-09-07} {sys:Cgm} {type:feature} Chart drawn with a shaded target band, runs broken across gaps over 15 minutes, out-of-range readings dotted
+- {date:2026-09-07} {sys:AppRegistry} {type:feature} CGM prefab and icon registered as CgmApp with Files/CGM as its save folder, renamed from Glucose
+- {date:2026-09-07} {sys:Cgm} {type:infra} Suites 19 and 20 added for CGM statistics and Dexcom payloads; 20 suites all green
+- {date:2026-09-07} {sys:Worker} {type:fix} The callback answers connected when a link written in the last minute exists, since KV is eventually consistent
+- {date:2026-09-07} {sys:WebGL} {type:feature} Plugins/WebGL/OpenOnGesture.jslib opens the consent tab inside a real DOM click, which Safari otherwise blocks
+- {date:2026-09-07} {sys:Worker} {type:fix} Sign-in state made self-contained under an HMAC with no storage, then shortened to about 56 characters
+- {date:2026-09-07} {sys:Worker} {type:fix} Status answers from a key listing rather than a get, avoiding a negatively cached miss that stalled the window
+- {date:2026-09-07} {sys:Cgm} {type:adjust} Labels made honest: Waiting for Dexcom, then Retrieving, then Disconnect; a fresh handle minted on every Connect
+- {date:2026-09-07} {sys:WebGL} {type:fix} The gesture bridge listens for pointerup, touchend and click so iOS opens the tab, with a fallback when it did not
+- {date:2026-09-07} {sys:Cgm} {type:docs} Target range is the consensus default with no UI to change it; production Dexcom access is applied for
+- {date:2026-09-07} {sys:WindowBase} {type:fix} Three geometry callbacks recompute only on a size change, so dragging a window stops jumping the title left
+- {date:2026-09-07} {sys:Docs} {type:docs} Change request section 4 proposes an optional unit attribute with per-operator dimension rules and examples
+- {date:2026-09-07} {sys:GorpEquationWindow} {type:docs} Gap recorded: variable units live in window state and are not written into the saved gorp file
+### 2026-09-08
+- {date:2026-09-08} {sys:Sai} {type:feature} Scripts/Sai/CollapseRules.cs holds the merge-policy table with legality, offers, validation and suggestion
+- {date:2026-09-08} {sys:Sai} {type:infra} Suite 21 pins every rule and the property that anything offered is never an error on validation
+- {date:2026-09-08} {sys:UmlWindow} {type:feature} Set Collapse on a variable's menu: legal live, illegal greyed with a reason, current ticked, recommendation starred
+- {date:2026-09-08} {sys:UmlWindow} {type:feature} A collapse chip after the unit chip shows the declared policy in violet, amber or orange and opens the menu
+- {date:2026-09-08} {sys:UmlWindow} {type:adjust} The gear badge no longer lists collapse, since the chip now says it
+- {date:2026-09-08} {sys:AiDesignerWindow} {type:feature} Check validates collapse before the unit branch: refused is an error, dubious a warning, not-said one note per construct
+- {date:2026-09-08} {sys:AiDesignerWindow} {type:fix} Session ingest keeps unit and collapse from the reply in both spellings and shows them verbatim on the node
+- {date:2026-09-08} {sys:ContextMenu} {type:feature} The context menu draws its own tooltip on its own panel, beside the menu and level with the row, after 450ms
+- {date:2026-09-08} {sys:ContextMenu} {type:fix} No context menu had ever shown a tooltip at runtime; the native tooltip property renders only in the Editor
+- {date:2026-09-08} {sys:ContextMenu} {type:fix} Greyed rows use a disabled class rather than being disabled, so the tooltip explaining why can still fire
+- {date:2026-09-08} {sys:UmlWindow} {type:adjust} The collapse chip tooltip names the policy, then explains only the colour it is wearing, with its own glyph
+- {date:2026-09-08} {sys:Tooltip} {type:fix} Plain tooltip segments ride inside noparse, since the hover tooltip has rich text on
+- {date:2026-09-08} {sys:AiDesignerWindow} {type:feature} The predicate writer takes a unit map and writes a unit attribute on inputs; a literal never carries one
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:feature} The Math payload and operator writer send units too, remembered per input key and written in the trailer
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:fix} The response is parsed as XML and reads the result unit; the old string scan would have missed a result with attributes
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:feature} A returned unit is shown after the number and held against the derived unit, with disagreement flagged in red
+- {date:2026-09-08} {sys:AiDesignerWindow} {type:feature} A right number in the wrong unit is a test failure with the reason, and passing lines show the unit
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:fix} The inputs block writes a unit per input and both loaders read it back, so a gorp file carries its units
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:adjust} Unit restore fills gaps and never overwrites, so a unit the file declared wins over window state
+- {date:2026-09-08} {sys:Gorp} {type:docs} Measured that the live server ignores a unit attribute today; a units comparison is kept as the regression probe
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:feature} A unit chip on the canvas pill after the variable name, blue when it parses and orange when it does not
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:fix} The chip stops its own pointer and click events so it cannot select, drag or rename the node
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:feature} Set Unit on the pill's right-click menu; units are per variable name and shared across the whole file
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:fix} Loaders declare a unit instead of setting one, so opening a document no longer marks it dirty mid-parse
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:adjust} The variables strip and derived-unit line show the pretty unit, with D-SI spelling and dimension on hover
+- {date:2026-09-08} {sys:GorpEquationWindow} {type:adjust} A basis that does not parse is still shown as typed, in orange, so the defect stays visible
+### 2026-09-09
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} An algorithm node carries Input and Output port rows naming the models wired to each
+- {date:2026-09-09} {sys:UmlWindow} {type:feature} TryAnchorPoint hook returns an outline point and outward direction; edge geometry unified into one computation
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} Compose inputs into one model writes a model whose fields reference each source and wires it to the port
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} Set Reference on a variable row writes an of attribute and draws a solid Reference arrow from that row
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} A data node is an instance of a model: Set Model, a dashed Instance arrow, and editable value chips on its rows
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} On Run a data node's values go out as inputs keyed by model and path under the model it instantiates
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} A delegate step in the flow is drawn as a dashed Delegate arrow, never drawn by hand
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:adjust} Path variables fold under a path header so a dotted name can be found on the node by eye
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:adjust} Reference, Instance and Delegate are derived on every rebuild via a new hook and never written to the state comment
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:fix} The xmlIT payload sends the saved SAI document minus the state comment plus inputs, not an invented third shape
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} Checks/WiringCheck.cs adds structural rules: two models on a port, unresolved references, mismatched data rows
+- {date:2026-09-09} {sys:Sai} {type:infra} Suite 22 added with Sai/ModelRefs.cs; 22 suites all green
+- {date:2026-09-09} {sys:Sai} {type:adjust} The starter sample now shows a composed input, a data instance with values, a field reference and a delegate
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:fix} A remembered SAI import folder that no longer exists is forgotten and the bundled one used
+- {date:2026-09-09} {sys:AiDesignerWindow} {type:feature} Open Starter Sample on the hamburger opens the bundled sample as a new document, leaving the open design alone
+- {date:2026-09-09} {sys:UmlWindow} {type:fix} The method row fallback splits on the first separator and takes the last segment, so types stop being appended twice
+- {date:2026-09-09} {sys:UmlWindow} {type:feature} Anchored edges are curves with a horizontal tangent at the port, so a line enters from the port's own side
+- {date:2026-09-09} {sys:UmlWindow} {type:adjust} Dash phase carries across joints, labels turn with the local tangent, and the hit test measures the polyline
+- {date:2026-09-09} {sys:Docs} {type:docs} ModelWiringPlan-2026-09-09.md records that only an algorithm has ports and that SAI has no data element
+- {date:2026-09-09} {sys:Docs} {type:docs} Open questions for Nick recorded: envelope shape, whether a reference must name a Symbol, whether data may stay
+### 2026-09-10
+- {date:2026-09-10} {sys:BuildDeploy} {type:fix} Two vendor assemblies walk Unity's loaded-assembly list under a version guard, clearing UAC0005
+- {date:2026-09-10} {sys:BuildDeploy} {type:fix} EasyChart package export and import routed through the new 6.6 package API, clearing four CS0618 warnings
+- {date:2026-09-10} {sys:BuildDeploy} {type:adjust} BuildReport's two deprecated reads suppressed with a pragma and a comment, since they describe a past build
+- {date:2026-09-10} {sys:Docs} {type:docs} Every third-party edit marked UFOS with the date so a vendor update can be reconciled
+- {date:2026-09-10} {sys:BuildDeploy} {type:docs} Two console lines left alone: the Intel Editor deprecation and the Input Manager notice
+- {date:2026-09-10} {sys:Editor} {type:infra} A whole session driven from Bash against the live Editor: play, open windows, read the model, capture the view
+- {date:2026-09-10} {sys:UmlWindow} {type:fix} The scroll viewport is pinned to stretch and the canvas resize re-runs on its own geometry event, fixing an empty canvas
+- {date:2026-09-10} {sys:Docs} {type:docs} CLAUDE.md records two CLI traps: eval lacks UI Toolkit usings, and capture save paths are relative to Assets
+- {date:2026-09-10} {sys:Worker} {type:fix} The github provider is restricted to what the uploader sends, with every tree entry checked to sit under SavedData
+- {date:2026-09-10} {sys:Worker} {type:fix} The unauthenticated whoami route removed; alert gains a per-IP hourly cap and report a per-IP daily cap
+- {date:2026-09-10} {sys:Worker} {type:infra} Three stale copies of the Worker source deleted; git log keeps them
+- {date:2026-09-10} {sys:Misc} {type:fix} Utility/Utf8StringWriter.cs added and six XML writers routed through it, so declarations stop claiming utf-16
+- {date:2026-09-10} {sys:Sai} {type:fix} Two shipped UML samples and the XAML sample corrected; three wire calls now send charset utf-8
+- {date:2026-09-10} {sys:Sai} {type:infra} Suite 23 scans shipped samples for a declaration that does not match the bytes; a BOM is not a failure
+- {date:2026-09-10} {sys:AiDesignerWindow} {type:adjust} The xmlIT envelope root is now xaiml with a version attribute, and the body begins with an XML declaration
+- {date:2026-09-10} {sys:Docs} {type:docs} Docs/xmlIT-gorpIT-Contract-2026-09-10.md states what the next build sends and reads on both routes
+- {date:2026-09-10} {sys:Gorp} {type:docs} All four round trips replayed live through the Worker once the tunnel origin was brought back
+- {date:2026-09-10} {sys:GitHubUploader} {type:fix} The write queue runs under try and finally per job, so one throwing job cannot stall every later save in the session
+- {date:2026-09-10} {sys:GitHubUploader} {type:fix} Write requests get a 30 second timeout while reads keep 8, so one hung PUT cannot starve the serial queue
+- {date:2026-09-10} {sys:Misc} {type:fix} Ten singletons clear their static instance on destroy
+- {date:2026-09-10} {sys:XmlWindow} {type:fix} Attribute values and element text are escaped on write, so a value with an ampersand stays reopenable
+- {date:2026-09-10} {sys:Misc} {type:infra} An unreferenced popup window shipping a direct API client deleted, along with three commented-out blocks
+- {date:2026-09-10} {sys:Misc} {type:fix} All 17 bare catch blocks in the runtime layer log a warning naming the file and the attempt, two once per session
+- {date:2026-09-10} {sys:Desktop} {type:feature} The desktop layout and account index carry a version field, stamped by every writer including copies
+- {date:2026-09-10} {sys:UIManager} {type:feature} A layout newer than the running build loads read-only: saves refuse, one warning, and a persistent toast
+- {date:2026-09-10} {sys:Accounts} {type:feature} The account index does the same on both load paths, so role and password edits apply for the session only
+- {date:2026-09-10} {sys:Docs} {type:docs} Version bump rule recorded: bump on meaning change or removal, and a missing field reads as legacy
+- {date:2026-09-10} {sys:Misc} {type:infra} The frozen duplicate change log under Assets deleted
+- {date:2026-09-10} {sys:AiDesignerWindow} {type:feature} A Wire button beside Raw fills the XML panel with the exact read-only bytes a Run posts
+- {date:2026-09-10} {sys:UmlWindow} {type:feature} HasWireView and BuildWireViewXml virtuals added, so a plain UML diagram shows no Wire button
+- {date:2026-09-10} {sys:GitHubUploader} {type:infra} Every SavedData file re-saved through the app: 75 declarations to utf-8, nine layouts and the index stamped
+- {date:2026-09-10} {sys:Docs} {type:docs} UFOS_Help.md gains six window sections and Status and Purpose lines on the older eleven, so all 23 match
+- {date:2026-09-10} {sys:Docs} {type:docs} The State Machine view tooltip no longer says read-only in this phase, since authoring landed
+- {date:2026-09-10} {sys:Editor} {type:fix} Screenshot capture walks every definition with a window prefab, instead of the brand-filtered visible app list
+- {date:2026-09-10} {sys:Editor} {type:fix} The capture hides pre-existing windows and the dock, slides each window on screen, and restores everything after
+- {date:2026-09-10} {sys:Editor} {type:infra} The capture run from the terminal through the Unity CLI: 37 apps captured, 0 skipped
+- {date:2026-09-10} {sys:Docs} {type:docs} UpdateHelpFeatures.md sections 0 to 2 rewritten with the new file names and the CLI capture recipe
+- {date:2026-09-10} {sys:Editor} {type:docs} The Game view must be maximized first, and the capture closes each app it opens, re-saving that layout
+- {date:2026-09-10} {sys:BrandStudio} {type:docs} Brand Studio text fields render light on the dark window; seen in the capture and not fixed
