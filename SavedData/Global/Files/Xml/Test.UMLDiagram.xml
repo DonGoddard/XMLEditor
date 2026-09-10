@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <UMLDiagram name="Imported: Nexus.Tests" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:p="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" xmlns:data="http://www.seraphimtechnology.ai/ns/properties" xmlns:code="http://www.seraphimtechnology.ai/ns/methods" xmlns:sym="http://www.seraphimtechnology.ai/ns/symbols" xmlns:index="http://www.seraphimtechnology.ai/ns/indexes" xmlns:gestalt="http://www.seraphimtechnology.ai/ns/gestalt" xmlns:cloud="http://www.seraphimtechnology.ai/ns/cloud" xmlns:gns="http://www.seraphimtechnology.ai/ns/gestalt-name-service" xmlns:sera="http://www.seraphimtechnology.ai/ns/seraphimai" xmlns:uaiml="http://www.seraphimnexus.ai/ns/uaiml" xmlns:gorp="http://www.seraphimtechnology.ai/ns/gorp" xmlns:nos="http://nos.local/uml-layout">
   <!-- Unknown sibling content; preserved untouched by the parser. -->
   <sym:Symbol id="orderflow-marker" />
