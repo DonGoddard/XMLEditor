@@ -160,3 +160,5 @@
 {"ts":"2026-09-10T15:20:12.1412550Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:20:12.5337600Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-10T15:20:13.2027190Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-10T15:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1307668,"detail":"github:PUT","count":24}
+{"ts":"2026-09-10T15:20:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":20}
