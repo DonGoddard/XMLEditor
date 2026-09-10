@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="AI Design 6">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Design 6","layout":{"orp":{"x":265.85,"y":344.58,"w":330.27,"h":150},"escape":{"x":694.27,"y":247.44,"w":280,"h":150},"Torture":{"x":575.66,"y":80.78,"w":280,"h":100},"shinynewalgorithm":{"x":115.54,"y":98.16,"w":280,"h":100}},"rels":[{"from":"orp","to":"Torture","type":"Input"},{"from":"Torture","to":"escape","type":"Output"},{"from":"orp","to":"shinynewalgorithm","type":"Input"}]} -->
+  <model namespace="orp">
+    <variables>
+      <variable name="limitofcheese" type="int" isimmutable="true">500</variable>
+      <variable name="harvey" type="int">17</variable>
+      <variable name="irrelevant" type="string">"More Than Five"</variable>
+      <variable name="sunrise" type="int" path="timbucktu">89</variable>
+      <variable name="sunset" type="int" path="timbucktu">-22</variable>
+      <variable name="tanzania" type="key" path="timbucktu">9</variable>
+      <variable name="hillgiant" type="[int]" path="local">11, 17, 4</variable>
+    </variables>
+  </model>
+  <model namespace="escape">
+    <variables>
+      <variable name="result" type="bool">false</variable>
+    </variables>
+  </model>
+  <algorithm namespace="Torture">
+    <input model="orp" />
+    <output model="escape" />
+    <function>
+      <expressions>
+        <expression sequence="0">
+          <Exists with="orp" result="escape.result">
+            <parameters>
+              <parameter position="0" with="symbol(x) as series[variables:pathvariables:arrays]; symbol(y) as constant(1);">
+                <variables type="int" />
+                <pathvariables type="int" namespace="orp.timbucktu.sunrise" />
+                <arrays type="[int]" />
+              </parameter>
+              <parameter position="1">
+                <And with="orp" as="result">
+                  <parameters>
+                    <parameter position="0">
+                      <Algorithm namespace="floop" input="orp" output="floop" as="result" />
+                    </parameter>
+                    <parameter position="1">
+                      <Algorithm namespace="joey" input="orp" output="joey" as="result" />
+                    </parameter>
+                    <parameter position="1">
+                      <Or with="orp">
+                        <parameters>
+                          <parameter position="0">
+                            <Or with="orp">
+                              <parameters>
+                                <parameter position="0">
+                                  <Less with="orp">
+                                    <parameters>
+                                      <parameter position="0">
+                                        <uses symbol="x" />
+                                      </parameter>
+                                      <parameter position="1">-1</parameter>
+                                    </parameters>
+                                  </Less>
+                                </parameter>
+                                <parameter position="1">
+                                  <Equal with="orp">
+                                    <parameters>
+                                      <parameter position="0">
+                                        <uses symbol="x" />
+                                      </parameter>
+                                      <parameter position="1">3</parameter>
+                                    </parameters>
+                                  </Equal>
+                                </parameter>
+                              </parameters>
+                            </Or>
+                          </parameter>
+                          <parameter position="1">
+                            <Greater with="orp" result="out.GreaterResult">
+                              <parameters>
+                                <parameter position="0">
+                                  <uses symbol="x" />
+                                </parameter>
+                                <parameter position="1">5</parameter>
+                              </parameters>
+                            </Greater>
+                          </parameter>
+                        </parameters>
+                      </Or>
+                    </parameter>
+                  </parameters>
+                </And>
+              </parameter>
+            </parameters>
+          </Exists>
+        </expression>
+      </expressions>
+    </function>
+  </algorithm>
+  <algorithm namespace="shinynewalgorithm">
+    <input model="orp" />
+    <output name="result" />
+    <function>
+      <expressions>
+        <expression sequence="0">
+          <Algorithm namespace="uri.delegate" input="model" output="model" />
+        </expression>
+      </expressions>
+    </function>
+  </algorithm>
+</gorp>
