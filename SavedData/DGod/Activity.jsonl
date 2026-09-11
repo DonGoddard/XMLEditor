@@ -951,22 +951,23 @@
 {"ts":"2026-09-11T16:48:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":40152,"detail":"github:PUT","count":24}
 {"ts":"2026-09-11T16:51:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":3528,"detail":"github:PUT","count":1}
 {"ts":"2026-09-11T16:53:12.1603930Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
-{"ts":"2026-09-11T16:56:39.2432720Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-11T16:56:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":6}
 {"ts":"2026-09-11T16:56:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-09-11T16:56:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":17927,"detail":"github:PUT","count":1}
+{"ts":"2026-09-11T16:56:39.2432720Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-11T16:57:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
 {"ts":"2026-09-11T16:57:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":17981,"detail":"github:PUT","count":1}
 {"ts":"2026-09-11T16:58:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":53900,"detail":"github:PUT","count":3}
-{"ts":"2026-09-11T17:01:03.5538320Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1685,"detail":"","count":1}
 {"ts":"2026-09-11T17:01:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":17014,"detail":"github:PUT-bin","count":1}
 {"ts":"2026-09-11T17:01:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":43922,"detail":"github:PUT","count":4}
 {"ts":"2026-09-11T17:01:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1202,"detail":"xmlit:worker","count":1}
-{"ts":"2026-09-11T17:02:14.2130880Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1685,"detail":"","count":1}
-{"ts":"2026-09-11T17:02:23.4963540Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1690,"detail":"","count":1}
-{"ts":"2026-09-11T17:02:35.5437200Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1690,"detail":"","count":1}
+{"ts":"2026-09-11T17:01:03.5538320Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1685,"detail":"","count":1}
 {"ts":"2026-09-11T17:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":132000,"detail":"github:PUT","count":12}
 {"ts":"2026-09-11T17:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":11}
 {"ts":"2026-09-11T17:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":35}
 {"ts":"2026-09-11T17:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":30777,"detail":"github:PUT-bin","count":2}
 {"ts":"2026-09-11T17:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-api","count":6}
+{"ts":"2026-09-11T17:02:14.2130880Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1685,"detail":"","count":1}
+{"ts":"2026-09-11T17:02:23.4963540Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1690,"detail":"","count":1}
+{"ts":"2026-09-11T17:02:35.5437200Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1690,"detail":"","count":1}
+{"ts":"2026-09-11T17:21:48.6698590Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
