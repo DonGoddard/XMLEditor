@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  T08 Guarded Flow
+
+  A REAL FUNCTION BLOCK: numbered steps, a guard that compares two values of
+  the SAME quantity, a goto, and a fall-through end. This is what the State
+  Machine view reads — one state per sequence, one transition per goto.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+-->
+<gorp name="T08 Guarded Flow">
+  <!-- nos-uml-state {"mode":"ai-design","title":"T08 Guarded Flow","layout":{"ut.flow.In":{"x":60,"y":60,"w":280,"h":140},"ut.flow.Gate":{"x":420,"y":60,"w":300,"h":160},"ut.flow.Out":{"x":800,"y":60,"w":280,"h":140}}} -->
+
+  <comment view="class">A real function block. Gate's function has three numbered steps: step 0 compares level against limit — both in metres, so the guard is legal — and jumps to step 2 when it passes; step 1 refuses; step 2 accepts.
+
+This is what the State Machine view reads: one state per sequence, one transition per goto. Select Gate and switch to it.</comment>
+  <expect>Check finds nothing.
+
+The State Machine view shows three states and the goto as a guarded transition; the Sequence view shows In into Gate and Gate out to Out.
+
+Compare two different quantities inside the guard and Check must refuse it the way N01 is refused.</expect>
+  <model namespace="ut.flow.In">
+    <variables>
+      <variable name="level" type="double" collapse="Monotone"><unit basis="\metre" namespace="D-SI"/></variable>
+      <variable name="limit" type="double" collapse="Monotone"><unit basis="\metre" namespace="D-SI"/></variable>
+    </variables>
+  </model>
+
+  <algorithm namespace="ut.flow.Gate">
+    <input  model="ut.flow.In" />
+    <output model="ut.flow.Out" />
+    <operations>
+      <operation name="gate" returns="bool" />
+    </operations>
+    <function>
+      <expressions>
+        <expression sequence="0" name="over the limit?">
+          <If input="ut.flow.In">
+            <parameters>
+              <parameter position="0">
+                <Less input="ut.flow.In" output="ut.flow.Out.passed">
+                  <parameters>
+                    <parameter position="0"><pathvariable type="double" namespace="ut.flow.In.level"/></parameter>
+                    <parameter position="1"><pathvariable type="double" namespace="ut.flow.In.limit"/></parameter>
+                  </parameters>
+                </Less>
+              </parameter>
+              <parameter position="1"><goto sequence="2"/></parameter>
+            </parameters>
+          </If>
+        </expression>
+        <expression sequence="1" name="refuse" />
+        <expression sequence="2" name="accept" />
+      </expressions>
+    </function>
+  </algorithm>
+
+  <model namespace="ut.flow.Out">
+    <variables>
+      <variable name="passed" type="bool" />
+    </variables>
+  </model>
+</gorp>

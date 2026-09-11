@@ -33,8 +33,8 @@
   <model namespace="ai.sample.CustomerRecords">
     <variables>
       <variable name="id"       type="key" />
-      <variable name="tenure"   type="int" />
-      <variable name="monthly"  type="double" />
+      <variable name="tenure"   type="int"    collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="monthly"  type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
       <variable name="churned"  type="bool" />
       <variable name="signedUp" type="utcdatetime" />
     </variables>
@@ -68,7 +68,7 @@
   <model namespace="ai.sample.Verdict">
     <variables>
       <variable name="result" type="bool">false</variable>
-      <variable name="score"  type="double" />
+      <variable name="score"  type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
     </variables>
   </model>
 
@@ -77,8 +77,8 @@
   <data namespace="ai.sample.CustomerRows" of="ai.sample.CustomerRecords">
     <variables>
       <variable name="id"      type="key">C-1042</variable>
-      <variable name="tenure"  type="int">14</variable>
-      <variable name="monthly" type="double">42.50</variable>
+      <variable name="tenure"  type="int"    collapse="Monotone">14<unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="monthly" type="double" collapse="Monotone">42.50<unit basis="\one" namespace="D-SI"/></variable>
       <variable name="churned" type="bool">false</variable>
     </variables>
   </data>
@@ -107,6 +107,18 @@
        (<ci>ai.sample.CustomerRecords.monthly</ci>) — through the composed
        input's references — and write results the same way
        (output="ai.sample.Verdict.result"). Check verifies every path. -->
+  <!-- «algorithm» — the step ScoreAndRank's <Algorithm> element calls (Rank,
+       its `delegate=` target, is declared at the end of the file). Declared so
+       every name the flow uses is a construct of this design: the no-fail
+       rule (2026-09-10) greys a design that calls what it does not have. -->
+  <algorithm namespace="ai.sample.Explain">
+    <input  model="ai.sample.CustomerRecords" />
+    <output model="ai.sample.Verdict" />
+    <operations>
+      <operation name="explain" returns="string" />
+    </operations>
+  </algorithm>
+
   <algorithm namespace="ai.sample.ScoreAndRank">
     <input  model="ai.sample.ScoreInput" />
     <output model="ai.sample.Verdict" />

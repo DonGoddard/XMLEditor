@@ -39,19 +39,19 @@
 <gorp name="D-SI Unit Probe">
   <data namespace="SensorFeed">
     <variables>
-      <variable name="elapsed" type="double">
+      <variable name="elapsed" type="double" collapse="Monotone">
         <unit basis="\second" namespace="D-SI"/>
         <comment>Dwell time. PLATINUM: SI base unit.</comment>
       </variable>
-      <variable name="payloadMass" type="double">
+      <variable name="payloadMass" type="double" collapse="Monotone">
         <unit basis="\kilogram" namespace="D-SI"/>
         <comment>PLATINUM. Comparing this to elapsed is the invalid case.</comment>
       </variable>
-      <variable name="speed" type="double">
+      <variable name="speed" type="double" collapse="Monotone">
         <unit basis="\kilo\metre\hour\tothe{-1}" namespace="D-SI"/>
         <comment>GOLD: exercises prefix, juxtaposition and \tothe{n}.</comment>
       </variable>
-      <variable name="height" type="double" default="0">
+      <variable name="height" type="double" default="0" collapse="Monotone">
         <unit basis="meter" namespace="SI"/>
         <comment>Legacy SI vocabulary — IMPROVABLE under D-SI (PTB17).</comment>
       </variable>
@@ -60,16 +60,16 @@
 
   <model namespace="Reading">
     <variables>
-      <variable name="ratio" type="double">
+      <variable name="ratio" type="double" collapse="Monotone">
         <unit basis="\one" namespace="D-SI"/>
         <comment>Explicitly dimensionless, not merely unit-less.</comment>
         <validate>ratio >= 0</validate>
       </variable>
-      <variable name="coolantTemp" type="double">
+      <variable name="coolantTemp" type="double" collapse="Antimonotone">
         <unit basis="\degreecelsius" namespace="D-SI"/>
         <comment>Affine scale — offset, not just a factor.</comment>
       </variable>
-      <variable name="dwellLimit" type="int" isconstant="true">500<unit basis="\second" namespace="D-SI"/></variable>
+      <variable name="dwellLimit" type="int" isconstant="true" collapse="Monotone">500<unit basis="\second" namespace="D-SI"/></variable>
     </variables>
   </model>
 
