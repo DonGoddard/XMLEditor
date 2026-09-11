@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T03 Compatible Rule
+
+  A <validate> RULE THAT HOLDS UP. Two values in the same unit, compared —
+  the positive case of the rule Gorp.rtf opens with (seconds against kilograms
+  is the one that must be refused; see N01).
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T03 Compatible Rule"><!-- nos-uml-state {"mode":"ai-design","title":"T03 Compatible Rule","layout":{"ut.rule.Span":{"x":60,"y":60,"w":280,"h":140},"ut.rule.Check":{"x":420,"y":60,"w":280,"h":140},"ut.rule.Verdict":{"x":780,"y":60,"w":280,"h":140}}} --><model namespace="ut.rule.Span"><variables><variable name="low" type="double" collapse="Monotone"><unit basis="\metre" namespace="D-SI" /></variable><variable name="high" type="double" collapse="Monotone"><unit basis="\metre" namespace="D-SI" /><validate>low &lt; high</validate></variable></variables></model><algorithm namespace="ut.rule.Check"><input model="ut.rule.Span" /><output model="ut.rule.Verdict" /><operations><operation name="check" returns="bool" /></operations></algorithm><model namespace="ut.rule.Verdict"><variables><variable name="ok" type="bool" /></variables></model></gorp>
