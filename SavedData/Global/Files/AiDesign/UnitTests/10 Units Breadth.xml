@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T10 Units Breadth
+
+  HOW MUCH OF D-SI A CLEAN DESIGN CAN USE: a prefix with a negative exponent,
+  an affine scale, an explicit dimensionless value, and a US spelling that folds
+  to the canonical identifier before it is parsed.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T10 Units Breadth"><!-- nos-uml-state {"mode":"ai-design","title":"T10 Units Breadth","layout":{"ut.units.Probe":{"x":60,"y":60,"w":320,"h":200},"ut.units.Read":{"x":460,"y":60,"w":280,"h":140},"ut.units.Reading":{"x":820,"y":60,"w":280,"h":140}}} --><model namespace="ut.units.Probe"><variables><variable name="speed" type="double" collapse="Monotone"><unit basis="\kilo\metre\hour\tothe{-1}" namespace="D-SI" /></variable><variable name="temp" type="double" collapse="Monotone"><unit basis="\degreecelsius" namespace="D-SI" /></variable><variable name="ratio" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable><variable name="height" type="double" collapse="Monotone"><unit basis="meter" namespace="SI" /></variable></variables></model><algorithm namespace="ut.units.Read"><input model="ut.units.Probe" /><output model="ut.units.Reading" /><operations><operation name="read" returns="double" /></operations></algorithm><model namespace="ut.units.Reading"><variables><variable name="value" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model></gorp>
