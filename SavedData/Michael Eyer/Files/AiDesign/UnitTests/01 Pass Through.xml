@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T01 Pass Through
+
+  THE SMALLEST COMPLETE DESIGN. One model in, one algorithm, one model out.
+  Every number is measured and says how it collapses; nothing else is here.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T01 Pass Through"><!-- nos-uml-state {"mode":"ai-design","title":"T01 Pass Through","layout":{"ut.pass.In":{"x":60,"y":60,"w":280,"h":140},"ut.pass.Copy":{"x":420,"y":60,"w":280,"h":140},"ut.pass.Out":{"x":780,"y":60,"w":280,"h":140}}} --><comment view="class">The smallest design that is still complete. One model carries a single dimensionless number in, one algorithm copies it, one model carries it out.
+
+Every variable is measured (\one) and says how repeat observations merge (Monotone), which is everything the no-fail rule asks for. Nothing else is here on purpose: if this one does not check clean, the problem is in the checker rather than in the design.</comment><expect>Check finds nothing — 0 errors, 0 warnings — so Run is available.
+
+Run posts the design to xmlIT and comes back with status OK. That proves the transport and nothing more: xmlIT is a deliberate placeholder that reads the body and discards it, so no computed value comes back for any design on this shelf.</expect><model namespace="ut.pass.In"><variables><variable name="value" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model><algorithm namespace="ut.pass.Copy"><input model="ut.pass.In" /><output model="ut.pass.Out" /><operations><operation name="copy" returns="double" /></operations></algorithm><model namespace="ut.pass.Out"><variables><variable name="result" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model></gorp>

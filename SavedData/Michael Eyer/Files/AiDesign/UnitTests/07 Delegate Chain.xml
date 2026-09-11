@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T07 Delegate Chain
+
+  ONE ALGORITHM HANDS OVER TO ANOTHER. A step with delegate= is the only
+  algorithm-to-algorithm tie SAI has; the dashed arrow on the canvas is DERIVED
+  from that step, never drawn by hand.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T07 Delegate Chain"><!-- nos-uml-state {"mode":"ai-design","title":"T07 Delegate Chain","layout":{"ut.chain.In":{"x":60,"y":160,"w":280,"h":140},"ut.chain.First":{"x":420,"y":60,"w":280,"h":140},"ut.chain.Second":{"x":420,"y":280,"w":280,"h":140},"ut.chain.Out":{"x":780,"y":160,"w":280,"h":140}}} --><comment view="class">One algorithm hands over to another. First's step carries delegate="ut.chain.Second", which is the only algorithm-to-algorithm tie SAI has, and the dashed arrow between them is DERIVED from that step.
+
+Both algorithms read In and write Out, so the chain is closed at both ends.</comment><expect>Check finds nothing and Run comes back OK.
+
+Point the delegate at a namespace that does not exist and Check must report the broken hand-off by name.</expect><model namespace="ut.chain.In"><variables><variable name="value" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model><algorithm namespace="ut.chain.First"><input model="ut.chain.In" /><output model="ut.chain.Out" /><operations><operation name="start" returns="double" /></operations><function><expressions><expression sequence="0" name="hand over" delegate="ut.chain.Second" limit="1" /></expressions></function></algorithm><algorithm namespace="ut.chain.Second"><input model="ut.chain.In" /><output model="ut.chain.Out" /><operations><operation name="finish" returns="double" /></operations></algorithm><model namespace="ut.chain.Out"><variables><variable name="result" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model></gorp>

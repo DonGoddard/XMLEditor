@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UMLDiagram name="Enterprise" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:p="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:nos="http://nos.local/uml-layout">
+  <proto:Class x:Name="Seraphim.Api" nos:x="47" nos:y="46" nos:width="245" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Api</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Journal" nos:x="50" nos:y="99" nos:width="266" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Journal</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Tabulate" nos:x="47" nos:y="151" nos:width="284" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Tabulate</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Think" nos:x="47" nos:y="197" nos:width="243" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Think</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Learn" nos:x="52" nos:y="242" nos:width="251" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Learn</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Integrate" nos:x="53" nos:y="289" nos:width="292" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Integrate</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Decision" nos:x="58" nos:y="351" nos:width="287" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>Service: Seraphim.Decision</proto:DisplayName>
+  </proto:Class>
+  <proto:Class x:Name="Seraphim.Commerce" nos:x="56" nos:y="405" nos:width="283" nos:height="100" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass">
+    <proto:DisplayName>App: Seraphim.Commerce</proto:DisplayName>
+  </proto:Class>
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Universe" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Internet" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Symbolic" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Geometric" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Patterns" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+  <proto:Relationship from="Seraphim.Commerce" to="Seraphim.Measureable" kind="Dependency" xmlns:proto="http://www.seraphimtechnology.ai/ns/protoclass" />
+</UMLDiagram>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="Algorithm">
+  <!-- nos-uml-state {"mode":"ai-design","title":"Algorithm","saved":"2026-09-11T14:45:58Z","by":"DGod","layout":{"floop":{"x":158.49,"y":44.99,"w":280,"h":100}}} -->
+  <algorithm namespace="floop">
+    <expressions>
+      <expression sequence="0" model="orp" delgate="Mathy" />
+    </expressions>
+  </algorithm>
+</gorp>

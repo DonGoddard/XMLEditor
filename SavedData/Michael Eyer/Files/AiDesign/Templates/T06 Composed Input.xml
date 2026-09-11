@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="T06 Composed Input">
+  <!-- nos-uml-state {"mode":"ai-design","title":"T06 Composed Input","saved":"2026-09-11T17:38:30Z","by":"DGod","layout":{"ut.comp.Left":{"x":35.79,"y":33.74,"w":280,"h":140},"ut.comp.Right":{"x":26.58,"y":357.87,"w":280,"h":140},"ut.comp.Both":{"x":376.28,"y":155.42,"w":280,"h":140},"ut.comp.Sum":{"x":715.75,"y":350.72,"w":280,"h":140},"ut.comp.Add":{"x":719.84,"y":154.4,"w":280,"h":140}},"result":{"x":765.32,"y":118.22,"w":300,"h":150},"rels":[{"from":"ut.comp.Both","to":"ut.comp.Add","type":"Input"},{"from":"ut.comp.Add","to":"ut.comp.Sum","type":"Output"}]} -->
+  <comment view="state">No construct declares a flow yet</comment>
+  <model namespace="ut.comp.Left">
+    <variables>
+      <variable name="a" type="double" collapse="Monotone">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <model namespace="ut.comp.Right">
+    <variables>
+      <variable name="b" type="double" collapse="Monotone">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <model namespace="ut.comp.Both">
+    <variables>
+      <variable name="left" type="key" of="ut.comp.Left" />
+      <variable name="right" type="key" of="ut.comp.Right" />
+    </variables>
+  </model>
+  <model namespace="ut.comp.Sum">
+    <variables>
+      <variable name="total" type="double" collapse="Monotone">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <algorithm namespace="ut.comp.Add">
+    <input model="ut.comp.Both" />
+    <output model="ut.comp.Sum" />
+    <operations>
+      <operation name="add" returns="double" />
+    </operations>
+  </algorithm>
+</gorp>

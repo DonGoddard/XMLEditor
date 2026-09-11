@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  N01 Incompatible Rule
+
+  MUST BE REFUSED. The rule Gorp.rtf opens with: a comparison across quantities
+  that do not share a dimension — seconds against kilograms. Everything else in
+  this design is clean, so the only finding is the one being tested.
+
+  A UNIT TEST DESIGN THAT IS SUPPOSED TO FAIL. Bundled and read-only:
+  suite [25] asserts the check CATCHES this, so a fix here would quietly
+  remove the test.
+--><gorp name="N01 Incompatible Rule"><!-- nos-uml-state {"mode":"ai-design","title":"N01 Incompatible Rule","layout":{"ut.bad.Mix":{"x":60,"y":60,"w":280,"h":140},"ut.bad.Compare":{"x":420,"y":60,"w":280,"h":140},"ut.bad.Verdict":{"x":780,"y":60,"w":280,"h":140}}} --><comment view="class">MUST BE REFUSED. mass carries a validate rule comparing elapsed against mass — seconds against kilograms, which share no dimension.
+
+Everything else here is clean on purpose, so the only thing Check can find is the thing being tested. This is the case Gorp.rtf opens with; T03 is the same shape with both sides in metres.</comment><expect>Check must report ONE finding and it must name Mix.mass: the two sides of the rule are not compatible quantities. Run must be greyed out while it stands.
+
+A green check on this design means the unit comparison stopped working.</expect><model namespace="ut.bad.Mix"><variables><variable name="elapsed" type="double" collapse="Monotone"><unit basis="\second" namespace="D-SI" /></variable><variable name="mass" type="double" collapse="Monotone"><unit basis="\kilogram" namespace="D-SI" /><validate>elapsed &lt; mass</validate></variable></variables></model><algorithm namespace="ut.bad.Compare"><input model="ut.bad.Mix" /><output model="ut.bad.Verdict" /><operations><operation name="compare" returns="bool" /></operations></algorithm><model namespace="ut.bad.Verdict"><variables><variable name="ok" type="bool" /></variables></model></gorp>

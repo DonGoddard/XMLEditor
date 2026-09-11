@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<model>
+  <variables>
+    <variable name="ID" type="guid" />
+    <variable name="Name" type="string" />
+    <variable name="Description" type="string" />
+    <variable name="Domain" type="uri" />
+    <variable name="MaxRecommendations" type="int" />
+    <variable name="RecTargeting" type="bool" />
+    <variable name="TotalNumRecs" type="int" />
+    <variable name="MessagesProcessed" type="int" />
+  </variables>
+  <pathvariables>
+    <pathvariable path="Seraphim.Application.ID" name="Application" type="key" of="Seraphim.Application.Symbol" />
+    <pathvariable path="Seraphim.Application.ID" name="Category" type="key" of="Seraphim.Category.Symbol" />
+    <pathvariable path="Seraphim.Application.ID" name="ABTest" type="bool" />
+    <pathvariable path="Seraphim.Application.ID" name="ABTestStart" type="utcdatetime" />
+    <pathvariable path="Seraphim.Application.ID" name="LearnCycles" type="int" />
+    <pathvariable path="Seraphim.Application.ID" name="LastSessionAnalyzed" type="int" />
+    <pathvariable path="Seraphim.Application.ID" name="MinSupport" type="int" />
+    <pathvariable path="Seraphim.Application.ID" name="RandomizeDepth" type="int" />
+    <pathvariable path="Seraphim.Application.ID" name="RandomizeCoef" type="double" />
+    <pathvariable path="Seraphim.Application.ID" name="ProductionLevel" type="int" />
+    <pathvariable path="Seraphim.Application.ID" name="Partition" type="int" />
+    <pathvariable path="Seraphim.Application.ID" name="Deadline" type="utcdatetime" />
+  </pathvariables>
+  <arrays>
+    <array path="Seraphim.Universe.ID" name="Sessions" type="[symbol]" of="Seraphim.Internet.Session.Symbol">
+      <path label="All">
+        <control>
+          <model as="Seraphim.Internet.Actions.Control">
+            <set variable="OrderBy" as="Seraphim.Patterns.Actions.IndexByEnum.date" />
+          </model>
+        </control>
+        <query>
+          <model as="Seraphim.Patterns.Actions.Query">
+            <set variable="SelectBy" as="Seraphim.Patterns.Actions.IndexByEnum.at_or_before" />
+            <set variable="SessionID" of="Seraphim.Internet.Session.ID" />
+            <set variable="Label" of="Seraphim.Internet.Item.Label" />
+            <set variable="EventType" of="Seraphim.Symbolic.Verb.Symbol" />
+            <set variable="DateTime" basis="utc" />
+            <set variable="Duration" basis="timespan" />
+          </model>
+        </query>
+        <result>
+          <model as="Seraphim.Internet.Actions.Result" />
+          <model as="Seraphim.Universe.Result" />
+        </result>
+        <query model="Seraphim.Internet.Actions.Query" />
+        <symbolic algorithm="Seraphim.Patterns.Actions.Symbolic" input="Seraphim.Patterns.Actions.Control" output="Seraphim.Universe.Result" />
+        <descrete algorithm="Seraphim.Patterns.Actions.Discrete" input="Seraphim.Patterns.Actions.Control" output="Seraphim.Universe.Result" />
+        <select algorithm="Seraphim.Patterns.Actions.Select" input="Seraphim.Patterns.Actions.Query" output="Seraphim.Patterns.Actions.Result" />
+      </path>
+    </array>
+  </arrays>
+</model>

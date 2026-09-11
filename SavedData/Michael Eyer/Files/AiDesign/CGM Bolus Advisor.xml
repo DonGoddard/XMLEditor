@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  CGM Bolus Advisor
+
+  A WORKED DESIGN OVER REAL CGM DATA (Don, 2026-09-11). One model holds a
+  sensor reading and the therapy settings it is read against; one algorithm
+  turns them into a correction dose, a carbohydrate dose and a trend
+  adjustment, and refuses to dose at all below the low threshold.
+
+  EVERY NUMBER IS MEASURED, which is the whole point of putting this on the
+  AI Designer rather than in a spreadsheet: mg/dL cannot be compared with
+  grams, and the design says so in the file.
+
+  NOT MEDICAL ADVICE. It is a worked example of the arithmetic every pump and
+  every bolus calculator does; the numbers in the data node are made up.
+-->
+<gorp name="CGM Bolus Advisor">
+  <!-- nos-uml-state {"mode":"ai-design","title":"CGM Bolus Advisor","layout":{"cgm.bolus.Session":{"x":60,"y":60,"w":340,"h":320},"cgm.bolus.Morning":{"x":60,"y":430,"w":340,"h":320},"cgm.bolus.Advise":{"x":500,"y":140,"w":320,"h":200},"cgm.bolus.Dose":{"x":920,"y":140,"w":320,"h":240}}} -->
+
+  <comment view="class">Everything the arithmetic needs, in one model, because SAI allows one model on an algorithm's port.
+
+Session holds the CGM reading — glucose in mg/dL and the trend in mg/dL per minute, which is what a continuous monitor gives you that a finger stick does not — beside the therapy settings it has to be read against: target, low threshold, insulin sensitivity, carbohydrate ratio, insulin already on board and a maximum dose.
+
+Morning is a data instance of Session with one plausible breakfast in it. Advise reads Session and writes Dose.
+
+Two measurements worth looking at. The trend is \milli\gram\deci\litre\tothe{-1}\minute\tothe{-1} — a rate written with negative exponents rather than \per, so it grades Platinum and still reads as mg/dL/min on the chip. And an insulin unit has no SI dimension at all, so every dose row is declared \one: sensitivity is "mg/dL per unit", and per a dimensionless count that is just mg/dL.</comment>
+  <expect>Check finds nothing — 0 errors, 0 warnings — so Run is available, and Run comes back OK. (xmlIT reads the body and discards it, so no dose comes back: this design says what to compute, it does not compute it here.)
+
+The arithmetic it describes:
+  correction = (glucose − target) / sensitivity
+  carbDose   = carbs / carbRatio
+  trendAdjust= trend × 30 min / sensitivity
+  units      = max(0, correction + carbDose + trendAdjust − activeInsulin), capped at maxDose
+
+Below the low threshold it must not dose at all: step 0 jumps straight to hold.
+
+Two things this design is deliberately honest about. A glucose reading wants "keep the latest", and the server's collapse table allows Latest only on a date, so every reading here collapses Monotone instead — worth raising with Nick. And validate rules only compare rows of the same quantity: low against target in mg/dL, activeInsulin against maxDose in units. Compare glucose against carbs and Check must refuse it.</expect>
+
+  <model namespace="cgm.bolus.Session">
+    <variables>
+      <variable name="id"       type="key" />
+      <variable name="taken"    type="utcdatetime" collapse="Latest" />
+      <variable name="glucose"  type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="trend"    type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}\minute\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="target"   type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="low"      type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/>
+        <validate>low &lt; target</validate>
+      </variable>
+      <variable name="sensitivity"   type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="carbRatio"     type="double" collapse="Monotone"><unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="carbs"         type="double" collapse="Monotone"><unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="activeInsulin" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="maxDose"       type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/>
+        <validate>activeInsulin &lt; maxDose</validate>
+      </variable>
+    </variables>
+  </model>
+
+  <data namespace="cgm.bolus.Morning" of="cgm.bolus.Session">
+    <variables>
+      <variable name="id"      type="key">CGM-DEMO</variable>
+      <variable name="taken"   type="utcdatetime" collapse="Latest">2026-09-11T08:15:00Z</variable>
+      <variable name="glucose" type="double" collapse="Monotone">196<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="trend"   type="double" collapse="Monotone">1.4<unit basis="\milli\gram\deci\litre\tothe{-1}\minute\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="target"  type="double" collapse="Monotone">110<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="low"     type="double" collapse="Monotone">70<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="sensitivity"   type="double" collapse="Monotone">45<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="carbRatio"     type="double" collapse="Monotone">10<unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="carbs"         type="double" collapse="Monotone">45<unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="activeInsulin" type="double" collapse="Monotone">1.2<unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="maxDose"       type="double" collapse="Monotone">12<unit basis="\one" namespace="D-SI"/></variable>
+    </variables>
+  </data>
+
+  <algorithm namespace="cgm.bolus.Advise">
+    <input  model="cgm.bolus.Session" />
+    <output model="cgm.bolus.Dose" />
+    <operations>
+      <operation name="correction"  returns="double" />
+      <operation name="carbDose"    returns="double" />
+      <operation name="trendAdjust" returns="double" />
+      <operation name="advise"      returns="double" />
+    </operations>
+    <function>
+      <expressions>
+        <expression sequence="0" name="below the low threshold?">
+          <If input="cgm.bolus.Session">
+            <parameters>
+              <parameter position="0">
+                <Less input="cgm.bolus.Session" output="cgm.bolus.Dose.hold">
+                  <parameters>
+                    <parameter position="0"><pathvariable type="double" namespace="cgm.bolus.Session.glucose"/></parameter>
+                    <parameter position="1"><pathvariable type="double" namespace="cgm.bolus.Session.low"/></parameter>
+                  </parameters>
+                </Less>
+              </parameter>
+              <parameter position="1"><goto sequence="4"/></parameter>
+            </parameters>
+          </If>
+        </expression>
+        <expression sequence="1" name="correction — the gap over the sensitivity" />
+        <expression sequence="2" name="carbohydrate — the meal over the ratio" />
+        <expression sequence="3" name="subtract insulin on board, floor at zero, cap at the maximum" />
+        <expression sequence="4" name="hold — treat the low instead of dosing" />
+      </expressions>
+    </function>
+  </algorithm>
+
+  <model namespace="cgm.bolus.Dose">
+    <variables>
+      <variable name="correction"  type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="carbDose"    type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="trendAdjust" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="units"       type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="hold"        type="bool" />
+      <variable name="advice"      type="string" />
+    </variables>
+  </model>
+</gorp>
