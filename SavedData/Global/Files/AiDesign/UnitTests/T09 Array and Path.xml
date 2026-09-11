@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T09 Array and Path
+
+  AN ARRAY ROW AND A DOTTED PATH. [double] is a shape, not a quantity, so it
+  carries no unit; a row whose of= names another model's row is drawn as a
+  reference and must resolve.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T09 Array and Path"><!-- nos-uml-state {"mode":"ai-design","title":"T09 Array and Path","layout":{"ut.path.Series":{"x":60,"y":60,"w":280,"h":140},"ut.path.Window":{"x":60,"y":280,"w":280,"h":140},"ut.path.Smooth":{"x":440,"y":160,"w":280,"h":140},"ut.path.Smoothed":{"x":800,"y":160,"w":280,"h":140}}} --><model namespace="ut.path.Series"><variables><variable name="id" type="key" /><variable name="values" type="[double]" /></variables></model><model namespace="ut.path.Window"><variables><variable name="source" type="key" of="ut.path.Series.id" /><variable name="width" type="int" collapse="Sum"><unit basis="\one" namespace="D-SI" /></variable></variables></model><algorithm namespace="ut.path.Smooth"><input model="ut.path.Window" /><output model="ut.path.Smoothed" /><operations><operation name="smooth" returns="[double]" /></operations></algorithm><model namespace="ut.path.Smoothed"><variables><variable name="values" type="[double]" /></variables></model></gorp>
