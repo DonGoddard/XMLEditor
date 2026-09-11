@@ -994,21 +994,22 @@
 {"ts":"2026-09-11T17:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-api","count":6}
 {"ts":"2026-09-11T17:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18821,"detail":"github:PUT","count":1}
 {"ts":"2026-09-11T17:29:17.4072550Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
-{"ts":"2026-09-11T17:34:01.8829850Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-11T17:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":9}
 {"ts":"2026-09-11T17:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-09-11T17:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":94127,"detail":"github:PUT","count":5}
 {"ts":"2026-09-11T17:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":37}
 {"ts":"2026-09-11T17:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-api","count":6}
+{"ts":"2026-09-11T17:34:01.8829850Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-11T17:37:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18844,"detail":"github:PUT","count":1}
-{"ts":"2026-09-11T17:38:04.7077160Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/Templates/T06 Composed Input.xml","ext":".xml","bytes":1742,"detail":"","count":1}
-{"ts":"2026-09-11T17:38:30.0971350Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/Templates/T06 Composed Input.xml","ext":".xml","bytes":1742,"detail":"","count":1}
 {"ts":"2026-09-11T17:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-09-11T17:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":17240,"detail":"github:PUT-bin","count":1}
 {"ts":"2026-09-11T17:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":65640,"detail":"github:PUT","count":7}
 {"ts":"2026-09-11T17:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1052,"detail":"xmlit:worker","count":1}
+{"ts":"2026-09-11T17:38:04.7077160Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/Templates/T06 Composed Input.xml","ext":".xml","bytes":1742,"detail":"","count":1}
+{"ts":"2026-09-11T17:38:30.0971350Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/Templates/T06 Composed Input.xml","ext":".xml","bytes":1742,"detail":"","count":1}
 {"ts":"2026-09-11T17:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1666,"detail":"xmlit:worker","count":1}
 {"ts":"2026-09-11T17:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":40433,"detail":"github:PUT","count":2}
 {"ts":"2026-09-11T17:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
 {"ts":"2026-09-11T17:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20221,"detail":"github:PUT","count":1}
 {"ts":"2026-09-11T17:41:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1408,"detail":"xmlit:worker","count":1}
+{"ts":"2026-09-11T17:46:16.2884920Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
