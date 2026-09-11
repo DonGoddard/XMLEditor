@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T02 Data Instance
+
+  ADDS REAL VALUES. A «data» node instantiates the input model (of=) and carries
+  one row per model row, so a Run has inputs to send.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T02 Data Instance"><!-- nos-uml-state {"mode":"ai-design","title":"T02 Data Instance","layout":{"ut.data.Reading":{"x":60,"y":60,"w":280,"h":140},"ut.data.Sample":{"x":60,"y":260,"w":280,"h":140},"ut.data.Report":{"x":420,"y":60,"w":280,"h":140},"ut.data.Summary":{"x":780,"y":60,"w":280,"h":140}}} --><model namespace="ut.data.Reading"><variables><variable name="count" type="int" collapse="Sum"><unit basis="\one" namespace="D-SI" /></variable><variable name="level" type="double" collapse="Monotone"><unit basis="\metre" namespace="D-SI" /></variable></variables></model><data namespace="ut.data.Sample" of="ut.data.Reading"><variables><variable name="count" type="int" collapse="Sum">3<unit basis="\one" namespace="D-SI" /></variable><variable name="level" type="double" collapse="Monotone">1.75<unit basis="\metre" namespace="D-SI" /></variable></variables></data><algorithm namespace="ut.data.Report"><input model="ut.data.Reading" /><output model="ut.data.Summary" /><operations><operation name="report" returns="double" /></operations></algorithm><model namespace="ut.data.Summary"><variables><variable name="total" type="double" collapse="Monotone"><unit basis="\metre" namespace="D-SI" /></variable></variables></model></gorp>
