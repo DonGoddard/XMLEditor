@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T06 Composed Input
+
+  SAI ALLOWS ONE MODEL ON A PORT. An algorithm that needs two reads a COMPOSED
+  model instead: one row per source, each an of= reference. The canvas draws a
+  reference arrow from each row.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T06 Composed Input"><!-- nos-uml-state {"mode":"ai-design","title":"T06 Composed Input","layout":{"ut.comp.Left":{"x":60,"y":60,"w":280,"h":140},"ut.comp.Right":{"x":60,"y":260,"w":280,"h":140},"ut.comp.Both":{"x":420,"y":160,"w":280,"h":140},"ut.comp.Add":{"x":780,"y":160,"w":280,"h":140},"ut.comp.Sum":{"x":1140,"y":160,"w":280,"h":140}}} --><model namespace="ut.comp.Left"><variables><variable name="a" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model><model namespace="ut.comp.Right"><variables><variable name="b" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model><model namespace="ut.comp.Both"><variables><variable name="left" type="key" of="ut.comp.Left" /><variable name="right" type="key" of="ut.comp.Right" /></variables></model><algorithm namespace="ut.comp.Add"><input model="ut.comp.Both" /><output model="ut.comp.Sum" /><operations><operation name="add" returns="double" /></operations></algorithm><model namespace="ut.comp.Sum"><variables><variable name="total" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable></variables></model></gorp>
