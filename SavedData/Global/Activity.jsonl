@@ -845,3 +845,5 @@
 {"ts":"2026-09-11T21:19:52.3560000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-11T21:19:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":75849,"detail":"github:PUT","count":5}
 {"ts":"2026-09-11T21:19:57.6440000Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-11T21:20:04.1050000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-11T21:20:04.2480000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
