@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-09-11T16:18:07Z","designs":[
-  {"file":"T06 Composed Input.xml","title":"T06 Composed Input","saved":"2026-09-11T16:18:07Z","by":"DGod","algorithms":1,"models":4,"data":0,"constructs":["ut.comp.Left","ut.comp.Right","ut.comp.Both","ut.comp.Sum","ut.comp.Add"],"thumb":"Thumbs/T06 Composed Input.jpg","tags":[],"incomplete":""},
+{"version":1,"updated":"2026-09-11T16:19:14Z","designs":[
+  {"file":"T06 Composed Input.xml","title":"T06 Composed Input","saved":"2026-09-11T16:19:13Z","by":"DGod","algorithms":1,"models":4,"data":0,"constructs":["ut.comp.Left","ut.comp.Right","ut.comp.Both","ut.comp.Sum","ut.comp.Add"],"thumb":"Thumbs/T06 Composed Input.jpg","tags":[],"incomplete":""},
   {"file":"Algorithm.xml","title":"Algorithm","saved":"2026-09-11T14:45:58Z","by":"DGod","algorithms":1,"models":0,"data":0,"constructs":["floop"],"thumb":"Thumbs/Algorithm.jpg","tags":[],"incomplete":"floop has no input"}
 ]}
