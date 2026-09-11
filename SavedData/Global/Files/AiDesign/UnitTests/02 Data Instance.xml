@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <gorp name="T02 Data Instance">
-  <!-- nos-uml-state {"mode":"ai-design","title":"T02 Data Instance","saved":"2026-09-11T17:01:03Z","by":"DGod","layout":{"ut.data.Sample":{"x":60,"y":260,"w":280,"h":140},"ut.data.Reading":{"x":60,"y":60,"w":280,"h":140},"ut.data.Summary":{"x":780,"y":60,"w":280,"h":140},"ut.data.Report":{"x":420,"y":60,"w":280,"h":140}},"result":{"x":765.32,"y":118.22,"w":300,"h":150},"rels":[{"from":"ut.data.Reading","to":"ut.data.Report","type":"Input"},{"from":"ut.data.Report","to":"ut.data.Summary","type":"Output"}]} -->
+  <!-- nos-uml-state {"mode":"ai-design","title":"T02 Data Instance","saved":"2026-09-11T17:02:14Z","by":"DGod","layout":{"ut.data.Sample":{"x":60,"y":260,"w":280,"h":140},"ut.data.Reading":{"x":60,"y":60,"w":280,"h":140},"ut.data.Summary":{"x":780,"y":60,"w":280,"h":140},"ut.data.Report":{"x":420,"y":60,"w":280,"h":140}},"result":{"x":438.65,"y":228.02,"w":300,"h":150},"rels":[{"from":"ut.data.Reading","to":"ut.data.Report","type":"Input"},{"from":"ut.data.Report","to":"ut.data.Summary","type":"Output"}]} -->
   <data namespace="ut.data.Sample" of="ut.data.Reading">
     <variables>
       <variable name="count" type="int" collapse="Sum">3<unit basis="\one" namespace="D-SI" /></variable>
