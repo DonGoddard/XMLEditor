@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  T05 Collapse Policies
+
+  ONE ROW PER TYPE FAMILY, EACH WITH THE POLICY THE SERVER ACCEPTS FOR IT:
+  a date takes Latest, a counter takes Sum, a real takes Monotone, and a key
+  or a flag takes none at all — and carries no unit, because neither is a
+  quantity.
+
+  A UNIT TEST DESIGN. Bundled with the app and read-only: suite [25]
+  asserts what this file is supposed to prove, so editing it here
+  changes what the harness tests.
+--><gorp name="T05 Collapse Policies"><!-- nos-uml-state {"mode":"ai-design","title":"T05 Collapse Policies","layout":{"ut.collapse.Row":{"x":60,"y":60,"w":300,"h":220},"ut.collapse.Merge":{"x":440,"y":60,"w":280,"h":140},"ut.collapse.Merged":{"x":800,"y":60,"w":280,"h":140}}} --><model namespace="ut.collapse.Row"><variables><variable name="id" type="key" /><variable name="seen" type="utcdatetime" collapse="Latest" /><variable name="count" type="int" collapse="Sum"><unit basis="\one" namespace="D-SI" /></variable><variable name="ratio" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI" /></variable><variable name="ok" type="bool" /></variables></model><algorithm namespace="ut.collapse.Merge"><input model="ut.collapse.Row" /><output model="ut.collapse.Merged" /><operations><operation name="merge" returns="double" /></operations></algorithm><model namespace="ut.collapse.Merged"><variables><variable name="total" type="int" collapse="Sum"><unit basis="\one" namespace="D-SI" /></variable></variables></model></gorp>
