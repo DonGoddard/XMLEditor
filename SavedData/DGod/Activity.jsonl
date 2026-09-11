@@ -970,10 +970,10 @@
 {"ts":"2026-09-11T17:02:14.2130880Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1685,"detail":"","count":1}
 {"ts":"2026-09-11T17:02:23.4963540Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1690,"detail":"","count":1}
 {"ts":"2026-09-11T17:02:35.5437200Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/UnitTests/02 Data Instance.xml","ext":".xml","bytes":1690,"detail":"","count":1}
-{"ts":"2026-09-11T17:21:48.6698590Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-11T17:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-09-11T17:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-09-11T17:21:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18927,"detail":"github:PUT","count":1}
+{"ts":"2026-09-11T17:21:48.6698590Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-11T17:22:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":7}
 {"ts":"2026-09-11T17:22:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":158319,"detail":"github:PUT-bin","count":12}
 {"ts":"2026-09-11T17:22:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":67210,"detail":"github:PUT","count":24}
@@ -982,3 +982,4 @@
 {"ts":"2026-09-11T17:23:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":13448,"detail":"github:PUT","count":2}
 {"ts":"2026-09-11T17:24:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":18818,"detail":"github:PUT","count":1}
 {"ts":"2026-09-11T17:24:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-09-11T17:26:12.1328040Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
