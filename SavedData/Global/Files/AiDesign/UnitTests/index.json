@@ -1,4 +1,5 @@
-{"version":1,"updated":"2026-09-11T16:40:01Z","designs":[
+{"version":1,"updated":"2026-09-11T16:40:02Z","designs":[
+  {"file":"T06 Composed Input.xml","title":"T06 Composed Input","saved":"2026-09-11T16:40:02Z","by":"DGod","algorithms":1,"models":4,"data":0,"constructs":["ut.comp.Left","ut.comp.Right","ut.comp.Both","ut.comp.Add","ut.comp.Sum"],"thumb":"Thumbs/T06 Composed Input.jpg","tags":[],"incomplete":""},
   {"file":"T05 Collapse Policies.xml","title":"T05 Collapse Policies","saved":"2026-09-11T16:40:01Z","by":"DGod","algorithms":1,"models":2,"data":0,"constructs":["ut.collapse.Row","ut.collapse.Merge","ut.collapse.Merged"],"thumb":"Thumbs/T05 Collapse Policies.jpg","tags":[],"incomplete":""},
   {"file":"T04 Derived Unit.xml","title":"T04 Derived Unit","saved":"2026-09-11T16:40:01Z","by":"DGod","algorithms":1,"models":2,"data":0,"constructs":["ut.rate.Track","ut.rate.Speed","ut.rate.Result"],"thumb":"Thumbs/T04 Derived Unit.jpg","tags":[],"incomplete":""},
   {"file":"T03 Compatible Rule.xml","title":"T03 Compatible Rule","saved":"2026-09-11T16:40:01Z","by":"DGod","algorithms":1,"models":2,"data":0,"constructs":["ut.rule.Span","ut.rule.Check","ut.rule.Verdict"],"thumb":"Thumbs/T03 Compatible Rule.jpg","tags":[],"incomplete":""},
