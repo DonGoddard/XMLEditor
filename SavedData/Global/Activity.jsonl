@@ -888,3 +888,6 @@
 {"ts":"2026-09-12T14:14:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":25923,"detail":"github:PUT","count":2}
 {"ts":"2026-09-12T14:14:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-12T14:14:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":11}
+{"ts":"2026-09-12T14:15:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1065,"detail":"gorp:worker","count":3}
+{"ts":"2026-09-12T14:15:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":122391,"detail":"github:PUT","count":6}
+{"ts":"2026-09-12T14:15:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
