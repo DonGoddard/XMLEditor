@@ -905,28 +905,29 @@
 {"ts":"2026-09-12T14:36:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":22778,"detail":"github:PUT","count":1}
 {"ts":"2026-09-12T14:40:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":113847,"detail":"github:PUT","count":5}
 {"ts":"2026-09-12T14:49:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
-{"ts":"2026-09-12T14:50:01.2134120Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-12T14:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":430,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-12T14:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-12T14:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":9}
 {"ts":"2026-09-12T14:50:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":46181,"detail":"github:PUT","count":2}
+{"ts":"2026-09-12T14:50:01.2134120Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-12T15:13:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":19168,"detail":"github:PUT","count":1}
 {"ts":"2026-09-12T15:13:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":319,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-12T15:13:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
-{"ts":"2026-09-12T15:16:33.9497590Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":847,"detail":"","count":1}
 {"ts":"2026-09-12T15:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":7}
 {"ts":"2026-09-12T15:16:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":59159,"detail":"github:PUT","count":4}
-{"ts":"2026-09-12T15:17:28.2645250Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":1263,"detail":"","count":1}
+{"ts":"2026-09-12T15:16:33.9497590Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":847,"detail":"","count":1}
 {"ts":"2026-09-12T15:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":7}
 {"ts":"2026-09-12T15:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":42151,"detail":"github:PUT","count":3}
-{"ts":"2026-09-12T15:18:04.1558840Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":1462,"detail":"","count":1}
+{"ts":"2026-09-12T15:17:28.2645250Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":1263,"detail":"","count":1}
 {"ts":"2026-09-12T15:18:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":44164,"detail":"github:PUT","count":3}
 {"ts":"2026-09-12T15:18:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":527,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-12T15:18:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":7}
+{"ts":"2026-09-12T15:18:04.1558840Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":1462,"detail":"","count":1}
 {"ts":"2026-09-12T15:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":21352,"detail":"github:PUT","count":1}
-{"ts":"2026-09-12T15:33:22.7492400Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":2353,"detail":"","count":1}
 {"ts":"2026-09-12T15:33:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":7}
 {"ts":"2026-09-12T15:33:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":76305,"detail":"github:PUT","count":4}
 {"ts":"2026-09-12T15:33:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":920,"detail":"gorp:worker","count":1}
+{"ts":"2026-09-12T15:33:22.7492400Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":2353,"detail":"","count":1}
 {"ts":"2026-09-12T15:36:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24650,"detail":"github:PUT","count":1}
 {"ts":"2026-09-12T15:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24650,"detail":"github:PUT","count":1}
+{"ts":"2026-09-12T15:57:44.4065810Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
