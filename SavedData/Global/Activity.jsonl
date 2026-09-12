@@ -944,3 +944,6 @@
 {"ts":"2026-09-12T16:30:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-12T16:30:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24212,"detail":"github:PUT","count":1}
 {"ts":"2026-09-12T16:31:01.9653910Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/Don.4x Copy.gorp","ext":".gorp","bytes":1978,"detail":"","count":1}
+{"ts":"2026-09-12T16:31:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1087,"detail":"gorp:worker","count":1}
+{"ts":"2026-09-12T16:31:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":50708,"detail":"github:PUT","count":3}
+{"ts":"2026-09-12T16:31:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":7}
