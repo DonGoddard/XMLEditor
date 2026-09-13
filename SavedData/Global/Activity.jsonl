@@ -1276,9 +1276,10 @@
 {"ts":"2026-09-13T04:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
 {"ts":"2026-09-13T04:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":145813,"detail":"github:PUT","count":4}
 {"ts":"2026-09-13T04:59:31.4729440Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-13T05:02:09.6070950Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
-{"ts":"2026-09-13T05:02:54.0710500Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-13T05:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":15}
 {"ts":"2026-09-13T05:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-13T05:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":220717,"detail":"github:PUT","count":6}
+{"ts":"2026-09-13T05:02:09.6070950Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-13T05:02:54.0710500Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-13T05:03:02.7681710Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-13T05:03:43.4154010Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
