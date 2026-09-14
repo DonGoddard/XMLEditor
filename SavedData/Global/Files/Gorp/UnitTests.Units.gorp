@@ -1,544 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- gorpEndpoint: default -->
-<gorp>
-  <expect>Unit handling, one case per algorithm. Measured on GORP 3561df2, 2026-09-14: cases 1-26 and 28 answer as listed; 27 is wrong; 29-32 are HTTP 500. The editor declares each result unit on &lt;Math&gt;. 1. AddSameUnit: 8 m. 2. AddKilometerAndMeter: 2.5 km. 3. AddHourAndMinute: 1.5 h. 4. AddLiterAndMilliliter: 1.25 L. 5. SubtractGramFromKilogram: 1.5 kg. 6. AddLiteralToMeasured: 5 m (the 2 takes x's unit). 7. NegateMeasured: -7 m. 8. GlucoseAdd: 120 mg/dL. 9. AreaMeterTimesMeter: 15 m². 10. VolumeThreeLengths: 24 m³. 11. EnergyNewtonTimesMeter: 15 J. 12. PowerJoulePerSecond: 25 W. 13. SpeedMeterPerSecond: 2.5 m/s. 14. SpeedKilometerPerHour: 45 km/h. 15. AccelerationSpeedOverTime: 5 m/s². 16. ForceMassTimesAcceleration: 19.6 N. 17. PressureForceOverArea: 25 Pa. 18. OhmsLawVoltsOverAmps: 4 Ω. 19. FrequencyOneOverPeriod: 2 Hz. 20. ReciprocalLength: 0.5 1/m. 21. RatioSameUnit: 0.5 (a plain fraction). 22. RatioMixedUnits: 4 (a plain fraction; km and m convert). 23. ScaleByLiteral: 6 m. 24. ScaleByPlainVariable: 6 m. 25. SquareByLiteralExponent: 9 m². 26. CubeByLiteralExponent: 27 m³. 27. TemperatureAddCelsius: WRONG TODAY: GORP answers 298.15 °C (both added as absolute kelvin, 293.15 + 278.15, shown back in °C). Expected 25 °C, reading the second value as a difference, as Celsius+Kelvin already does. 28. TemperatureCelsiusPlusKelvin: 25 °C (GORP reads the 5 K as a difference). Compare with TemperatureAddCelsius, which does not. 29. SquareRootOfArea: 4 m. FAILS TODAY (HTTP 500) even with the result unit declared: a fractional power of a measured value. 30. PowerByVariableExponent: EXPECTED TO FAIL (HTTP 500): the result unit depends on y's value, so nothing can declare it. 31. AddPlainVariable: SHOULD REFUSE: meters plus a plain variable. Today a bare HTTP 500, ideally a message. 32. AddMismatchedUnits: MUST REFUSE: meters plus seconds. The editor flags it; GORP should answer with a message, not a bare 500.</expect>
-  <algorithms>
-    <algorithm namespace="UnitTests.Units.AddSameUnit">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-        <y unit="\metre">5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AddKilometerAndMeter">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\kilo\metre">2</x>
-        <y unit="\metre">500</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AddHourAndMinute">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\hour">1</x>
-        <y unit="\minute">30</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AddLiterAndMilliliter">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\litre">1</x>
-        <y unit="\milli\litre">250</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.SubtractGramFromKilogram">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><minus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\kilogram">2</x>
-        <y unit="\gram">500</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AddLiteralToMeasured">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><cn>2</cn></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.NegateMeasured">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><minus/><ci>x</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">7</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.GlucoseAdd">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\milli\gram\deci\litre\tothe{-1}">100</x>
-        <y unit="\milli\gram\deci\litre\tothe{-1}">20</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AreaMeterTimesMeter">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><times/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-        <y unit="\metre">5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.VolumeThreeLengths">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><times/><apply><times/><ci>x</ci><ci>y</ci></apply><ci>z</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">2</x>
-        <y unit="\metre">3</y>
-        <z unit="\metre">4</z>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.EnergyNewtonTimesMeter">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><times/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\newton">3</x>
-        <y unit="\metre">5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.PowerJoulePerSecond">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\joule">100</x>
-        <y unit="\second">4</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.SpeedMeterPerSecond">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">10</x>
-        <y unit="\second">4</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.SpeedKilometerPerHour">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\kilo\metre">90</x>
-        <y unit="\hour">2</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AccelerationSpeedOverTime">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre\second\tothe{-1}">10</x>
-        <y unit="\second">2</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.ForceMassTimesAcceleration">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><times/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\kilogram">2</x>
-        <y unit="\metre\second\tothe{-2}">9.8</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.PressureForceOverArea">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\newton">100</x>
-        <y unit="\metre\tothe{2}">4</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.OhmsLawVoltsOverAmps">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\volt">12</x>
-        <y unit="\ampere">3</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.FrequencyOneOverPeriod">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><cn>1</cn><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <y unit="\second">0.5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.ReciprocalLength">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><cn>2</cn><ci>x</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">4</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.RatioSameUnit">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-        <y unit="\metre">6</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.RatioMixedUnits">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><divide/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\kilo\metre">1</x>
-        <y unit="\metre">250</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.ScaleByLiteral">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><times/><cn>2</cn><ci>x</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.ScaleByPlainVariable">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><times/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-        <y>2</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.SquareByLiteralExponent">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><power/><ci>x</ci><cn>2</cn></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.CubeByLiteralExponent">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><power/><ci>x</ci><cn>3</cn></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.TemperatureAddCelsius">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\degreecelsius">20</x>
-        <y unit="\degreecelsius">5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.TemperatureCelsiusPlusKelvin">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\degreecelsius">20</x>
-        <y unit="\kelvin">5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.SquareRootOfArea">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><root/><ci>x</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre\tothe{2}">16</x>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.PowerByVariableExponent">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><power/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">2</x>
-        <y>3</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AddPlainVariable">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-        <y>5</y>
-      </inputs>
-    </algorithm>
-    <algorithm namespace="UnitTests.Units.AddMismatchedUnits">
-      <function>
-        <expressions>
-          <expression sequence="0">
-            <Math>
-              <math xmlns="http://www.w3.org/1998/Math/MathML">
-                <apply><plus/><ci>x</ci><ci>y</ci></apply>
-              </math>
-            </Math>
-          </expression>
-        </expressions>
-      </function>
-      <inputs>
-        <x unit="\metre">3</x>
-        <y unit="\second">5</y>
-      </inputs>
-    </algorithm>
-  </algorithms>
-</gorp>
+<?xml version="1.0" encoding="utf-8"?><!-- gorpEndpoint: default --><!-- Using Gorp: Values & Variables, Computation, Comparison, Logic, Flow --><gorp><expect>Unit handling, one test per algorithm.
+Measured on GORP 3561df2, 2026-09-14. The editor states each result unit on &lt;Math&gt;.
+
+At a glance
+  •  1–26 and 28 answer correctly
+  •  27 answers wrong (a GORP bug)
+  •  29–32 return HTTP 500
+
+Same quantity, units converted
+  1.  AddSameUnit  →  8 m
+  2.  AddKilometerAndMeter  →  2.5 km
+  3.  AddHourAndMinute  →  1.5 h
+  4.  AddLiterAndMilliliter  →  1.25 L
+  5.  SubtractGramFromKilogram  →  1.5 kg
+  6.  AddLiteralToMeasured  →  5 m
+         the plain 2 takes x&apos;s unit
+  7.  NegateMeasured  →  −7 m
+  8.  GlucoseAdd  →  120 mg/dL
+
+A new quantity
+  9.  AreaMeterTimesMeter  →  15 m²
+  10. VolumeThreeLengths  →  24 m³
+  11. EnergyNewtonTimesMeter  →  15 J
+  12. PowerJoulePerSecond  →  25 W
+  13. SpeedMeterPerSecond  →  2.5 m/s
+  14. SpeedKilometerPerHour  →  45 km/h
+  15. AccelerationSpeedOverTime  →  5 m/s²
+  16. ForceMassTimesAcceleration  →  19.6 N
+  17. PressureForceOverArea  →  25 Pa
+  18. OhmsLawVoltsOverAmps  →  4 Ω
+  19. FrequencyOneOverPeriod  →  2 Hz
+  20. ReciprocalLength  →  0.5 1/m
+
+Plain numbers and exponents
+  21. RatioSameUnit  →  0.5
+         a plain fraction
+  22. RatioMixedUnits  →  4
+         a plain fraction; km and m convert
+  23. ScaleByLiteral  →  6 m
+  24. ScaleByPlainVariable  →  6 m
+  25. SquareByLiteralExponent  →  9 m²
+  26. CubeByLiteralExponent  →  27 m³
+
+Temperature
+  27. TemperatureAddCelsius  →  25 °C
+         WRONG TODAY: GORP answers 298.15 °C
+         it adds both as absolute kelvin (293.15 + 278.15)
+  28. TemperatureCelsiusPlusKelvin  →  25 °C
+         GORP reads the 5 K as a difference, unlike test 27
+
+Known GORP limits (HTTP 500 today)
+  29. SquareRootOfArea  →  4 m
+         fails even with the result unit stated
+  30. PowerByVariableExponent  →  expected to fail
+         the result unit depends on y&apos;s value
+
+Should be refused with a message
+  31. AddPlainVariable  →  refuse
+         meters plus a plain number; today a bare 500
+  32. AddMismatchedUnits  →  refuse
+         meters plus seconds; the editor flags it, GORP gives a bare 500</expect><algorithms><algorithm namespace="UnitTests.Units.AddSameUnit"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x><y unit="\metre">5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AddKilometerAndMeter"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\kilo\metre">2</x><y unit="\metre">500</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AddHourAndMinute"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\hour">1</x><y unit="\minute">30</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AddLiterAndMilliliter"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\litre">1</x><y unit="\milli\litre">250</y></inputs></algorithm><algorithm namespace="UnitTests.Units.SubtractGramFromKilogram"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\kilogram">2</x><y unit="\gram">500</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AddLiteralToMeasured"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><cn>2</cn></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x></inputs></algorithm><algorithm namespace="UnitTests.Units.NegateMeasured"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><ci>x</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">7</x></inputs></algorithm><algorithm namespace="UnitTests.Units.GlucoseAdd"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\milli\gram\deci\litre\tothe{-1}">100</x><y unit="\milli\gram\deci\litre\tothe{-1}">20</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AreaMeterTimesMeter"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x><y unit="\metre">5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.VolumeThreeLengths"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>x</ci><ci>y</ci></apply><ci>z</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">2</x><y unit="\metre">3</y><z unit="\metre">4</z></inputs></algorithm><algorithm namespace="UnitTests.Units.EnergyNewtonTimesMeter"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\newton">3</x><y unit="\metre">5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.PowerJoulePerSecond"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\joule">100</x><y unit="\second">4</y></inputs></algorithm><algorithm namespace="UnitTests.Units.SpeedMeterPerSecond"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">10</x><y unit="\second">4</y></inputs></algorithm><algorithm namespace="UnitTests.Units.SpeedKilometerPerHour"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\kilo\metre">90</x><y unit="\hour">2</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AccelerationSpeedOverTime"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre\second\tothe{-1}">10</x><y unit="\second">2</y></inputs></algorithm><algorithm namespace="UnitTests.Units.ForceMassTimesAcceleration"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\kilogram">2</x><y unit="\metre\second\tothe{-2}">9.8</y></inputs></algorithm><algorithm namespace="UnitTests.Units.PressureForceOverArea"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\newton">100</x><y unit="\metre\tothe{2}">4</y></inputs></algorithm><algorithm namespace="UnitTests.Units.OhmsLawVoltsOverAmps"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\volt">12</x><y unit="\ampere">3</y></inputs></algorithm><algorithm namespace="UnitTests.Units.FrequencyOneOverPeriod"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><cn>1</cn><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><y unit="\second">0.5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.ReciprocalLength"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><cn>2</cn><ci>x</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">4</x></inputs></algorithm><algorithm namespace="UnitTests.Units.RatioSameUnit"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x><y unit="\metre">6</y></inputs></algorithm><algorithm namespace="UnitTests.Units.RatioMixedUnits"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\kilo\metre">1</x><y unit="\metre">250</y></inputs></algorithm><algorithm namespace="UnitTests.Units.ScaleByLiteral"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><cn>2</cn><ci>x</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x></inputs></algorithm><algorithm namespace="UnitTests.Units.ScaleByPlainVariable"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x><y>2</y></inputs></algorithm><algorithm namespace="UnitTests.Units.SquareByLiteralExponent"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><power/><ci>x</ci><cn>2</cn></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x></inputs></algorithm><algorithm namespace="UnitTests.Units.CubeByLiteralExponent"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><power/><ci>x</ci><cn>3</cn></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x></inputs></algorithm><algorithm namespace="UnitTests.Units.TemperatureAddCelsius"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\degreecelsius">20</x><y unit="\degreecelsius">5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.TemperatureCelsiusPlusKelvin"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\degreecelsius">20</x><y unit="\kelvin">5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.SquareRootOfArea"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><root/><ci>x</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre\tothe{2}">16</x></inputs></algorithm><algorithm namespace="UnitTests.Units.PowerByVariableExponent"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><power/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">2</x><y>3</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AddPlainVariable"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x><y>5</y></inputs></algorithm><algorithm namespace="UnitTests.Units.AddMismatchedUnits"><function><expressions><expression sequence="0"><Math><math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>x</ci><ci>y</ci></apply></math></Math></expression></expressions></function><inputs><x unit="\metre">3</x><y unit="\second">5</y></inputs></algorithm></algorithms></gorp>
