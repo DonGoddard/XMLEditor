@@ -1594,19 +1594,19 @@
 {"ts":"2026-09-14T18:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":17988,"detail":"github:PUT","count":1}
 {"ts":"2026-09-14T18:02:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-09-14T18:04:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
-{"ts":"2026-09-14T18:23:11.5490820Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-14T18:23:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":15}
 {"ts":"2026-09-14T18:23:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-14T18:23:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":655937,"detail":"github:PUT","count":12}
 {"ts":"2026-09-14T18:23:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":2149,"detail":"gorp:worker","count":4}
+{"ts":"2026-09-14T18:23:11.5490820Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-14T18:29:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":62015,"detail":"github:PUT","count":1}
 {"ts":"2026-09-14T18:30:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":248073,"detail":"github:PUT","count":4}
 {"ts":"2026-09-14T18:31:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":434991,"detail":"github:PUT","count":7}
 {"ts":"2026-09-14T18:31:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1967,"detail":"gorp:worker","count":4}
-{"ts":"2026-09-14T18:32:52.1334140Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/UnitTests.Units.gorp","ext":".gorp","bytes":12912,"detail":"","count":1}
 {"ts":"2026-09-14T18:32:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":1009689,"detail":"github:PUT","count":17}
 {"ts":"2026-09-14T18:32:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":3999,"detail":"gorp:worker","count":7}
 {"ts":"2026-09-14T18:32:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":8}
+{"ts":"2026-09-14T18:32:52.1334140Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/UnitTests.Units.gorp","ext":".gorp","bytes":12912,"detail":"","count":1}
 {"ts":"2026-09-14T18:33:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":375364,"detail":"github:PUT","count":6}
 {"ts":"2026-09-14T18:33:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-09-14T18:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":62549,"detail":"github:PUT","count":1}
@@ -1620,3 +1620,4 @@
 {"ts":"2026-09-14T18:38:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":3441,"detail":"gorp:worker","count":7}
 {"ts":"2026-09-14T18:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":582,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-14T18:39:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":188103,"detail":"github:PUT","count":3}
+{"ts":"2026-09-14T18:41:15.2942960Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
