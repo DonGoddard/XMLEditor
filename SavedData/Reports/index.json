@@ -1,6 +1,13 @@
 {
   "reports": [
     {
+      "file": "2026-09-14T02-05-38-3981-xmlit-unreachable.json",
+      "signature": "xmlit-unreachable",
+      "utc": "2026-09-14T02:05:38.3981740Z",
+      "version": "0.1.260913.2204",
+      "platform": "OSXEditor"
+    },
+    {
       "file": "2026-09-14T01-52-41-7384-xmlit-unreachable.json",
       "signature": "xmlit-unreachable",
       "utc": "2026-09-14T01:52:41.7384460Z",
