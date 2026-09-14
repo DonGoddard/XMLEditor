@@ -1,0 +1,63 @@
+{
+  "id": "ai-design-basics",
+  "title": "Build and run your first AI design",
+  "version": 1,
+  "window": "AiDesignerWindow",
+  "createsDocument": true,
+  "outro": "That's it — you built a design, fixed what Check found, and ran it.",
+  "steps": [
+    { "caption": "AI Design lives in the dock.",
+      "target": "dock:AiDesignerApp", "action": "press", "until": "window.open:AiDesignerWindow",
+      "fallback": { "open": "AiDesignerApp" } },
+
+    { "caption": "Start a new design from the menu.",
+      "target": "window:AiDesignerWindow #WindowOptionsBtn", "action": "press", "until": "menu.open" },
+    { "target": "menu:\"New AI Design\"", "action": "press" },
+    { "caption": "Anything already on the canvas is set aside.",
+      "target": "confirm:ok", "action": "press", "optional": true, "timeout": 2 },
+    { "action": "wait", "until": "design.empty" },
+
+    { "caption": "A clear canvas: the description and the Log can come back later.",
+      "target": "#AiInfoButton", "action": "ensure-off" },
+    { "target": "#AiLogButton", "action": "ensure-off" },
+
+    { "caption": "A model is the shape your data takes.",
+      "target": "#AiPalette_model", "action": "press", "until": "design.nodeCount:model>=1" },
+    { "target": "node:model", "action": "drag", "by": [320, -150] },
+
+    { "caption": "Data is an instance of a model: real values.",
+      "target": "#AiPalette_data", "action": "press", "until": "design.nodeCount:data>=1" },
+    { "target": "node:data", "action": "drag", "by": [-260, -110] },
+
+    { "caption": "An algorithm reads one model and produces another.",
+      "target": "#AiPalette_algorithm", "action": "press", "until": "design.nodeCount:algorithm>=1" },
+
+    { "caption": "Check finds what is missing — before anything is sent.",
+      "target": "#AiCheckButton", "action": "press", "until": "design.checkPanel:warnings" },
+    { "caption": "Two warnings: nothing feeds the algorithm, and its result goes nowhere.",
+      "target": "window:AiDesignerWindow .ai-check-close", "action": "press", "until": "design.checkPanel:closed", "dwell": 2.5 },
+
+    { "caption": "Open the algorithm's Input port…",
+      "target": "port:algorithm/Input", "action": "press", "until": "menu.open" },
+    { "caption": "…and feed it from the Data.",
+      "target": "menu:\"Data\"", "action": "press", "until": "design.wired:algorithm/Input" },
+
+    { "caption": "Now its Output port…",
+      "target": "port:algorithm/Output", "action": "press", "until": "menu.open" },
+    { "caption": "…produces the Model.",
+      "target": "menu:\"Model\"", "action": "press", "until": "design.wired:algorithm/Output" },
+
+    { "caption": "Check again.",
+      "target": "#AiCheckButton", "action": "press", "until": "design.checkPanel:clean" },
+    { "caption": "Clean — nothing to report, so Run is available.",
+      "target": "window:AiDesignerWindow .ai-check-close", "action": "press", "until": "design.checkPanel:closed" },
+
+    { "caption": "Run sends the design to the server.",
+      "target": "#AiRunButton", "action": "press", "until": "design.sessionReceived", "failIf": "design.runFailed", "timeout": 30 },
+    { "caption": "This is what came back: a session.",
+      "target": "node:session", "action": "point", "dwell": 3, "optional": true, "timeout": 2 },
+
+    { "caption": "The Log keeps what was sent and what came back, for every run.",
+      "target": "#AiLogButton", "action": "press", "until": "runlog.open" }
+  ]
+}

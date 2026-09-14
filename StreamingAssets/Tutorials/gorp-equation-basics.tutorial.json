@@ -1,0 +1,51 @@
+{
+  "id": "gorp-equation-basics",
+  "title": "Build and run your first equation",
+  "version": 1,
+  "window": "GorpEquationWindow",
+  "keeps": "document",
+  "outro": "That's it — you built a condition, gave its input a value and a unit, and sent it to Gorp.",
+  "steps": [
+    { "caption": "The Gorp Equation Editor opens from the dock.",
+      "target": "dock:XAMLCanvasLayoutApp", "action": "press", "until": "window.open:GorpEquationWindow",
+      "fallback": { "open": "XAMLCanvasLayoutApp" } },
+
+    { "caption": "Your equations live in the library.",
+      "target": "#GorpLibraryBtn", "action": "press", "until": "gorp.libraryOpen" },
+    { "caption": "Start a fresh equation with +.",
+      "target": "#GorpLibraryNew", "action": "press" },
+    { "caption": "Unsaved work is set aside — Discard at the end brings it back.",
+      "target": "#ConfirmAlt", "action": "press", "optional": true, "timeout": 1.5 },
+    { "action": "wait", "until": "gorp.empty" },
+
+    { "caption": "Drag a comparison from the palette: is one thing greater than another?",
+      "target": "#GorpTile_gt", "action": "drag", "to": "slot:root", "until": "gorp.rootKind:Compare" },
+    { "caption": "Drop a variable on the left…",
+      "target": "#GorpTile_variable", "action": "drag", "to": "slot:left", "until": "gorp.editing" },
+    { "caption": "…and name it.",
+      "action": "type", "text": "speed", "until": "gorp.variable:speed" },
+    { "caption": "Drop a number on the right: the limit.",
+      "target": "#GorpTile_number", "action": "drag", "to": "slot:right", "until": "gorp.editing" },
+    { "action": "type", "text": "30", "until": "gorp.number:30" },
+
+    { "caption": "Give speed a value to test with.",
+      "target": "#GorpVarValue_speed", "action": "type", "text": "42", "until": "gorp.value:speed" },
+
+    { "caption": "A number means little without its unit: speed is in metres per second.",
+      "target": "#GorpVarUnit_speed", "action": "press", "until": "gorp.unitDialog" },
+    { "target": "text:\"m/s\"", "action": "press" },
+    { "caption": "Click outside the picker to apply the unit.",
+      "target": "#UnitEditorOverlay", "action": "press", "exact": true, "until": "gorp.unit:speed" },
+
+    { "caption": "Every slot is filled and the input has a value: Ready.",
+      "target": "#GorpStatusBadge", "action": "point", "until": "gorp.ready", "dwell": 2 },
+
+    { "caption": "Execute sends it to Gorp on the server.",
+      "target": "#GorpExecuteBtn", "action": "press", "until": "gorp.resultArrived", "failIf": "gorp.runFailed", "timeout": 30 },
+    { "caption": "The answer comes back here.",
+      "target": "#GorpResult", "action": "point", "dwell": 2.5, "optional": true, "timeout": 2 },
+
+    { "caption": "The Log keeps what was sent and what came back, for every run.",
+      "target": "#GorpRunsButton", "action": "press", "until": "runlog.open:GorpEquationWindow" }
+  ]
+}

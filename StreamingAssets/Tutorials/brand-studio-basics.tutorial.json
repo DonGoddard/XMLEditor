@@ -1,0 +1,52 @@
+{
+  "id": "brand-studio-basics",
+  "title": "Try out a brand in Brand Studio",
+  "version": 1,
+  "window": "BrandStudioWindow",
+  "keeps": "changes",
+  "outro": "That's Brand Studio — every edit shows live on your screen, and nothing reaches anyone else until you Publish.",
+  "steps": [
+    { "caption": "Brand Studio sets a brand's words, colours, art and apps.",
+      "target": "dock:BrandStudio", "action": "press", "until": "window.open:BrandStudioWindow", "timeout": 2,
+      "fallback": { "open": "BrandStudio" } },
+
+    { "caption": "Company & Legal: the names and links the OS shows.",
+      "target": "#BrandTab_Company", "action": "press", "until": "brand.tab:Company" },
+    { "caption": "Type an OS name — the desktop changes as you type.",
+      "target": "#BrandField_OSname", "action": "type", "text": "My OS", "enter": false, "until": "brand.identity:osName/My OS" },
+
+    { "caption": "Colors: a preset restyles everything at once.",
+      "target": "#BrandTab_Colors", "action": "press", "until": "brand.tab:Colors" },
+    { "target": "#BrandPreset_Neon", "action": "press", "until": "brand.preset:Neon" },
+    { "caption": "…or another look entirely.",
+      "target": "#BrandPreset_Space", "action": "press", "until": "brand.preset:Space" },
+
+    { "caption": "One colour at a time: override the accent…",
+      "target": "#BrandColor_accent_Override", "action": "press", "until": "brand.overridden:accent" },
+    { "caption": "…and pick it on the wheel.",
+      "target": "#BrandColor_accent_Swatch", "action": "press", "until": "brand.wheel" },
+    { "target": "#WheelImg", "action": "drag", "by": [45, -35] },
+    { "caption": "Click away to close the wheel.",
+      "target": "#BrandTab_Colors", "action": "press", "until": "brand.wheelClosed" },
+
+    { "caption": "Preview off shows the published look — your edits are kept.",
+      "target": "#BrandPreview", "action": "press", "until": "brand.preview:off" },
+    { "caption": "…and on again.",
+      "target": "#BrandPreview", "action": "press", "until": "brand.preview:on" },
+
+    { "caption": "Apps: each box says who sees an app — blank nobody, ✓ everyone, CC creators, A admins.",
+      "target": "#BrandTab_Apps", "action": "press", "until": "brand.tab:Apps" },
+    { "target": "window:BrandStudioWindow .brand-app-access", "action": "press" },
+    { "target": "window:BrandStudioWindow .brand-app-access", "action": "press" },
+    { "target": "window:BrandStudioWindow .brand-app-access", "action": "press" },
+    { "caption": "Four presses and it is back where it started.",
+      "target": "window:BrandStudioWindow .brand-app-access", "action": "press" },
+
+    { "caption": "Skins and fonts upload art and font files from your computer — the tutorial won't pick any.",
+      "target": "#BrandTab_Skins", "action": "press", "until": "brand.tab:Skins" },
+    { "target": "window:BrandStudioWindow text:\"Choose Image…\"", "action": "point", "dwell": 2, "optional": true, "timeout": 2 },
+
+    { "caption": "Publish makes the brand everyone's. The tutorial never presses it.",
+      "target": "#BrandPublish", "action": "point", "dwell": 2.5 }
+  ]
+}

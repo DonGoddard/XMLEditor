@@ -1,0 +1,66 @@
+{
+  "id": "library-basics",
+  "title": "Find your way around the Library",
+  "version": 1,
+  "window": "AiDesignerWindow",
+  "keeps": "nothing",
+  "restoreAtEnd": true,
+  "outro": "That's the Library — shelves to find designs, cards to open them, and nothing shared or moved without your say.",
+  "steps": [
+    { "caption": "The Library lives in the AI Designer.",
+      "target": "dock:AiDesignerApp", "action": "press", "until": "window.open:AiDesignerWindow",
+      "fallback": { "open": "AiDesignerApp" } },
+    { "caption": "Open it from the menu.",
+      "target": "window:AiDesignerWindow #WindowOptionsBtn", "action": "press", "until": "menu.open" },
+    { "target": "menu:\"Library\"", "action": "press", "until": "library.open" },
+    { "action": "wait", "until": "library.loaded:starters", "timeout": 10 },
+
+    { "caption": "Templates: starting points every account can use.",
+      "target": "shelf:starters", "action": "point", "dwell": 2 },
+    { "caption": "Your own designs.",
+      "target": "shelf:mine", "action": "point", "dwell": 1.5, "optional": true, "timeout": 3 },
+    { "caption": "Shared: designs every account can see and open.",
+      "target": "shelf:shared", "action": "point", "dwell": 1.8, "optional": true, "timeout": 5 },
+    { "caption": "Unit Tests: worked examples, locked for everyone.",
+      "target": "shelf:unittests", "action": "point", "dwell": 1.8, "optional": true, "timeout": 5 },
+
+    { "caption": "Fold a shelf you don't need…",
+      "target": "shelf:unittests", "action": "press", "until": "library.collapsed:unittests", "optional": true, "timeout": 3 },
+    { "caption": "…and open it again.",
+      "target": "shelf:unittests", "action": "press", "until": "library.expanded:unittests", "optional": true, "timeout": 3 },
+
+    { "caption": "Search looks through every shelf at once.",
+      "target": "#AiLibrarySearch", "action": "type", "text": "loop", "enter": false, "until": "library.search:loop" },
+    { "caption": "Only what matches stays.",
+      "target": "shelf:starters", "action": "point", "dwell": 1.5 },
+    { "caption": "Clear it to see everything again.",
+      "target": "#AiLibraryClearSearch", "action": "press", "until": "library.searchEmpty" },
+
+    { "caption": "Newest first, or A to Z.",
+      "target": "#AiLibrarySort", "action": "press" },
+    { "target": "#AiLibrarySort", "action": "press" },
+
+    { "caption": "Rest on a card to see the design larger.",
+      "target": "card:starters/first", "action": "point", "dwell": 1.6 },
+
+    { "caption": "Tap a template to look at it — it opens locked, so nothing changes by accident.",
+      "target": "card:starters/first", "action": "press", "until": "library.lockChip", "onlyIf": "design.saved" },
+    { "caption": "The padlock says so. Drag a template onto your shelf to get a copy you can change.",
+      "target": "#AiLockChip", "action": "point", "dwell": 2.5, "onlyIf": "library.lockChip" },
+    { "caption": "Back to the Library.",
+      "target": "window:AiDesignerWindow #WindowOptionsBtn", "action": "press", "until": "menu.open", "onlyIf": "library.lockChip" },
+    { "target": "menu:\"Library\"", "action": "press", "until": "library.open", "onlyIf": "menu.open" },
+
+    { "caption": "Right-click one of your designs for everything you can do with it.",
+      "target": "card:mine/first", "action": "press", "button": "right", "until": "menu.open", "onlyIf": "library.cards:mine>=1" },
+    { "caption": "Share… always asks first.",
+      "target": "menu:\"Share…\"", "action": "press", "until": "confirm.open", "onlyIf": "menu.open" },
+    { "caption": "Cancel — nothing is shared.",
+      "target": "confirm:cancel", "action": "press", "until": "confirm.closed", "onlyIf": "confirm.open" },
+
+    { "caption": "Dragging a card onto Shared offers Copy or Move.",
+      "target": "card:mine/first", "action": "drag", "to": "shelf:shared", "hold": 1.5, "until": "confirm.open", "onlyIf": "library.cards:mine>=1" },
+    { "caption": "Cancel again — your design stays where it was.",
+      "target": "confirm:cancel", "action": "press", "until": "confirm.closed", "onlyIf": "confirm.open" }
+  ]
+}
