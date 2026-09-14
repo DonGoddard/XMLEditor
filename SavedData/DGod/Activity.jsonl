@@ -1227,11 +1227,11 @@
 {"ts":"2026-09-14T02:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":621,"detail":"xmlit:worker","count":1}
 {"ts":"2026-09-14T02:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":109620,"detail":"github:PUT","count":4}
 {"ts":"2026-09-14T02:17:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
-{"ts":"2026-09-14T02:25:18.1016760Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-14T02:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-09-14T02:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-09-14T02:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":54812,"detail":"github:PUT","count":2}
 {"ts":"2026-09-14T02:25:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":621,"detail":"xmlit:worker","count":1}
+{"ts":"2026-09-14T02:25:18.1016760Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-14T02:26:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":621,"detail":"xmlit:worker","count":1}
 {"ts":"2026-09-14T02:26:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":82216,"detail":"github:PUT","count":3}
 {"ts":"2026-09-14T02:26:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
@@ -1239,3 +1239,4 @@
 {"ts":"2026-09-14T02:27:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":621,"detail":"xmlit:worker","count":1}
 {"ts":"2026-09-14T02:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27404,"detail":"github:PUT","count":1}
 {"ts":"2026-09-14T02:28:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-09-14T02:41:45.6646470Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
