@@ -1188,10 +1188,10 @@
 {"ts":"2026-09-14T01:43:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-09-14T01:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":106484,"detail":"github:PUT","count":4}
 {"ts":"2026-09-14T01:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
-{"ts":"2026-09-14T01:51:46.1477290Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-14T01:51:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-09-14T01:51:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-09-14T01:51:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":26621,"detail":"github:PUT","count":1}
+{"ts":"2026-09-14T01:51:46.1477290Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
 {"ts":"2026-09-14T01:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":621,"detail":"xmlit:worker","count":1}
 {"ts":"2026-09-14T01:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":106998,"detail":"github:PUT","count":4}
 {"ts":"2026-09-14T01:52:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
@@ -1199,3 +1199,4 @@
 {"ts":"2026-09-14T01:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":27135,"detail":"github:PUT","count":1}
 {"ts":"2026-09-14T02:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":81434,"detail":"github:PUT","count":3}
 {"ts":"2026-09-14T02:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-09-14T02:05:18.2262260Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
