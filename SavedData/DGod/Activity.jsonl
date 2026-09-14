@@ -1422,3 +1422,4 @@
 {"ts":"2026-09-14T05:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
 {"ts":"2026-09-14T05:42:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":88958,"detail":"github:PUT","count":3}
 {"ts":"2026-09-14T05:47:06.2157500Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-14T05:47:27.1069850Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
