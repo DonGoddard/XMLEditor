@@ -106,5 +106,4 @@
 {"ts":"2026-09-19T13:06:34.6449960Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:06:36.5366640Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:06:38.7190380Z","type":"app_open","appId":"XAMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:06:47.3853410Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:06:50.6660550Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:06:58.3580650Z","type":"app_open","appId":"XAMLInsertTextApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
