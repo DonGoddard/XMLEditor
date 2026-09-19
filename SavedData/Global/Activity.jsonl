@@ -1730,11 +1730,13 @@
 {"ts":"2026-09-19T06:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":308942,"detail":"github:PUT","count":5}
 {"ts":"2026-09-19T06:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":534,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-19T06:44:41.1010000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-19T06:45:18.7870000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-19T06:45:42.2450000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T06:45:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":23}
 {"ts":"2026-09-19T06:45:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-19T06:45:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":429911,"detail":"github:PUT","count":7}
+{"ts":"2026-09-19T06:45:18.7870000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-09-19T06:45:42.2450000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T06:46:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":919088,"detail":"github:PUT","count":15}
+{"ts":"2026-09-19T06:46:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-09-19T06:46:01.7790000Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T06:46:06.8460000Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T06:46:08.4290000Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
@@ -1742,5 +1744,4 @@
 {"ts":"2026-09-19T06:46:22.0620000Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T06:46:39.2130000Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T06:46:49.6460000Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T06:46:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":919088,"detail":"github:PUT","count":15}
-{"ts":"2026-09-19T06:46:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
+{"ts":"2026-09-19T07:28:16.4354830Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
