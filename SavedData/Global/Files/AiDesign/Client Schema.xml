@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="Client Schema">
+  <!-- nos-uml-state {"mode":"ai-design","title":"Client Schema","saved":"2026-09-19T10:02:04Z","by":"Global","layout":{"MainClientFieldSets":{"x":1062.37,"y":992.84,"w":280,"h":120},"RelatedClientFieldSets":{"x":1109.41,"y":427.4,"w":280,"h":120},"ClientDetailsType":{"x":604.13,"y":898.53,"w":280,"h":120},"LegalEntity":{"x":719.27,"y":736.53,"w":260,"h":100},"MainClientDetailsType":{"x":840.49,"y":1232.11,"w":280,"h":120},"RelatedClientDetailsType":{"x":563.37,"y":586.53,"w":280,"h":120},"NameCodePairComplexType":{"x":664.97,"y":106.77,"w":280,"h":120},"MandatoryStringType":{"x":1002.77,"y":1591.68,"w":280,"h":120},"MandatoryDateType":{"x":352.85,"y":1611.23,"w":280,"h":120},"RelationshipDetailsType":{"x":118.61,"y":559.3,"w":280,"h":120},"Role":{"x":189.64,"y":254.79,"w":260,"h":100},"ClientDocumentListType":{"x":410.02,"y":1222.9,"w":280,"h":120},"ClientDocumentType":{"x":60,"y":997.53,"w":280,"h":120},"EntityType":{"x":712.75,"y":370.28,"w":280,"h":120},"RoleType":{"x":344.97,"y":60,"w":280,"h":120},"Client":{"x":1168.68,"y":690.28,"w":280,"h":120}},"rels":[{"from":"MainClientFieldSets","to":"MainClientDetailsType","type":"Composition","name":"MainClientDetails","tgtMult":"0..1"},{"from":"RelatedClientFieldSets","to":"RelatedClientDetailsType","type":"Composition","name":"RelatedClientDetails","tgtMult":"0..1"},{"from":"LegalEntity","to":"EntityType","type":"Generalization"},{"from":"ClientDetailsType","to":"LegalEntity","type":"Composition","name":"LegalEntity","tgtMult":"1"},{"from":"ClientDetailsType","to":"ClientDocumentListType","type":"Composition","name":"ClientDocuments","tgtMult":"0..1"},{"from":"MainClientDetailsType","to":"ClientDetailsType","type":"Generalization"},{"from":"RelatedClientDetailsType","to":"ClientDetailsType","type":"Generalization"},{"from":"RelatedClientDetailsType","to":"RelationshipDetailsType","type":"Composition","name":"RelationshipDetails","tgtMult":"1..*"},{"from":"Role","to":"RoleType","type":"Generalization"},{"from":"RelationshipDetailsType","to":"Role","type":"Composition","name":"Role","tgtMult":"1"},{"from":"ClientDocumentListType","to":"ClientDocumentType","type":"Composition","name":"ClientDocument","tgtMult":"0..*"},{"from":"EntityType","to":"NameCodePairComplexType","type":"Generalization"},{"from":"RoleType","to":"NameCodePairComplexType","type":"Generalization"},{"from":"Client","to":"MainClientFieldSets","type":"Composition","name":"MainClientDetail","tgtMult":"1"},{"from":"Client","to":"RelatedClientFieldSets","type":"Composition","name":"RelatedClientDetail","tgtMult":"0..*"}]} -->
+  <model namespace="MainClientFieldSets">
+    <variables>
+      <variable name="MainClientDetails" type="MainClientDetailsType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="RelatedClientFieldSets">
+    <variables>
+      <variable name="RelatedClientDetails" type="RelatedClientDetailsType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="ClientDetailsType">
+    <variables>
+      <variable name="ClientName" type="MandatoryStringType" />
+      <variable name="IDNumber" type="MandatoryStringType" />
+      <variable name="LegalEntity" type="LegalEntity" />
+      <variable name="ClientDocuments" type="ClientDocumentListType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="LegalEntity">
+    <variables>
+      <variable name="MandatoryField" type="string" xsd="attribute" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="MainClientDetailsType">
+    <variables>
+      <variable name="ReviewDate" type="MandatoryDateType" />
+    </variables>
+  </model>
+  <model namespace="RelatedClientDetailsType">
+    <variables>
+      <variable name="RelationshipDetails" type="[RelationshipDetailsType]" occurs="1..*" />
+    </variables>
+  </model>
+  <model namespace="NameCodePairComplexType">
+    <variables>
+      <variable name="text" type="string" xsd="mixed text" />
+      <variable name="Name" type="string" occurs="0..1" />
+      <variable name="Code" type="string" />
+    </variables>
+  </model>
+  <model namespace="MandatoryStringType">
+    <variables>
+      <variable name="value" type="string" />
+      <variable name="MandatoryField" type="string" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="MandatoryDateType">
+    <variables>
+      <variable name="value" type="date" />
+      <variable name="MandatoryField" type="string" xsd="attribute" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="RelationshipDetailsType">
+    <variables>
+      <variable name="Role" type="Role" />
+      <variable name="ClientParentUniqueID" type="MandatoryStringType" />
+    </variables>
+  </model>
+  <model namespace="Role">
+    <variables>
+      <variable name="MandatoryField" type="string" xsd="attribute" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="ClientDocumentListType">
+    <variables>
+      <variable name="ClientDocument" type="[ClientDocumentType]" occurs="0..*" />
+    </variables>
+  </model>
+  <model namespace="ClientDocumentType">
+    <variables>
+      <variable name="DocRef" type="string" />
+      <variable name="Name" type="string" occurs="0..1" />
+      <variable name="DocType" type="string" />
+    </variables>
+  </model>
+  <model namespace="EntityType">
+    <variables>
+      <variable name="Name" type="enum" occurs="0..1" values="A | B" />
+      <variable name="Code" type="enum" values="1 | 2" />
+    </variables>
+  </model>
+  <model namespace="RoleType">
+    <variables>
+      <variable name="text" type="string" xsd="mixed text" />
+      <variable name="Name" type="enum" occurs="0..1" values="c | d" />
+      <variable name="Code" type="enum" values="3 | 4" />
+    </variables>
+  </model>
+  <model namespace="Client" xsd="root element">
+    <variables>
+      <variable name="MainClientDetail" type="MainClientFieldSets" />
+      <variable name="RelatedClientDetail" type="[RelatedClientFieldSets]" occurs="0..*" />
+    </variables>
+  </model>
+</gorp>
