@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="EPP Domain Schema">
+  <!-- nos-uml-state {"mode":"ai-design","title":"EPP Domain Schema","saved":"2026-09-19T10:34:19Z","by":"Global","layout":{"createType":{"x":20,"y":20,"w":280,"h":120},"periodType":{"x":332.16,"y":20,"w":280,"h":120},"nsType":{"x":644.33,"y":20,"w":280,"h":120},"hostAttrType":{"x":956.49,"y":20,"w":280,"h":120},"contactType":{"x":20,"y":266.72,"w":280,"h":120},"authInfoType":{"x":332.16,"y":266.72,"w":280,"h":120},"sNameType":{"x":644.33,"y":266.72,"w":280,"h":120},"mNameType":{"x":956.49,"y":266.72,"w":280,"h":120},"infoType":{"x":20,"y":415.29,"w":280,"h":120},"infoNameType":{"x":332.16,"y":415.29,"w":280,"h":120},"renewType":{"x":644.33,"y":415.29,"w":280,"h":120},"transferType":{"x":956.49,"y":415.29,"w":280,"h":120},"updateType":{"x":20,"y":588.39,"w":280,"h":120},"addRemType":{"x":332.16,"y":588.39,"w":280,"h":120},"chgType":{"x":644.33,"y":588.39,"w":280,"h":120},"authInfoChgType":{"x":956.49,"y":588.39,"w":280,"h":120},"chkDataType":{"x":20,"y":786.04,"w":280,"h":120},"checkType":{"x":332.16,"y":786.04,"w":280,"h":120},"checkNameType":{"x":644.33,"y":786.04,"w":280,"h":120},"creDataType":{"x":956.49,"y":786.04,"w":280,"h":120},"infDataType":{"x":20,"y":959.14,"w":280,"h":120},"statusType":{"x":332.16,"y":959.14,"w":280,"h":120},"panDataType":{"x":644.33,"y":959.14,"w":280,"h":120},"paNameType":{"x":956.49,"y":959.14,"w":280,"h":120},"renDataType":{"x":20,"y":1426.72,"w":280,"h":120},"trnDataType":{"x":332.16,"y":1426.72,"w":280,"h":120},"addrType":{"x":644.33,"y":1426.72,"w":280,"h":120},"pwAuthInfoType":{"x":956.49,"y":1426.72,"w":280,"h":120},"extAuthInfoType":{"x":20,"y":1697.99,"w":280,"h":120},"reasonType":{"x":332.16,"y":1697.99,"w":280,"h":120},"trIDType":{"x":644.33,"y":1697.99,"w":280,"h":120},"check":{"x":956.49,"y":1697.99,"w":240,"h":80},"create":{"x":20,"y":1846.55,"w":240,"h":80},"delete":{"x":332.16,"y":1846.55,"w":240,"h":80},"info":{"x":644.33,"y":1846.55,"w":240,"h":80},"renew":{"x":956.49,"y":1846.55,"w":240,"h":80},"transfer":{"x":20,"y":1942.97,"w":240,"h":80},"update":{"x":332.16,"y":1942.97,"w":240,"h":80},"chkData":{"x":644.33,"y":1942.97,"w":240,"h":80},"creData":{"x":956.49,"y":1942.97,"w":240,"h":80},"infData":{"x":20,"y":2039.39,"w":240,"h":80},"panData":{"x":332.16,"y":2039.39,"w":240,"h":80},"renData":{"x":644.33,"y":2039.39,"w":240,"h":80},"trnData":{"x":956.49,"y":2039.39,"w":240,"h":80}},"rels":[{"from":"createType","to":"nsType","type":"Composition","name":"ns","tgtMult":"0..1"},{"from":"createType","to":"authInfoType","type":"Composition","name":"authInfo","tgtMult":"1"},{"from":"nsType","to":"hostAttrType","type":"Composition","name":"hostAttr","tgtMult":"0..*"},{"from":"authInfoType","to":"extAuthInfoType","type":"Composition","name":"ext","tgtMult":"0..1"},{"from":"infoType","to":"authInfoType","type":"Composition","name":"authInfo","tgtMult":"0..1"},{"from":"transferType","to":"authInfoType","type":"Composition","name":"authInfo","tgtMult":"0..1"},{"from":"updateType","to":"addRemType","type":"Composition","name":"add","tgtMult":"0..1"},{"from":"updateType","to":"addRemType","type":"Composition","name":"rem","tgtMult":"0..1"},{"from":"updateType","to":"chgType","type":"Composition","name":"chg","tgtMult":"0..1"},{"from":"addRemType","to":"nsType","type":"Composition","name":"ns","tgtMult":"0..1"},{"from":"chgType","to":"authInfoChgType","type":"Composition","name":"authInfo","tgtMult":"0..1"},{"from":"authInfoChgType","to":"extAuthInfoType","type":"Composition","name":"ext","tgtMult":"0..1"},{"from":"chkDataType","to":"checkType","type":"Composition","name":"cd","tgtMult":"1..*"},{"from":"infDataType","to":"nsType","type":"Composition","name":"ns","tgtMult":"0..1"},{"from":"infDataType","to":"authInfoType","type":"Composition","name":"authInfo","tgtMult":"0..1"},{"from":"panDataType","to":"trIDType","type":"Composition","name":"paTRID","tgtMult":"1"},{"from":"check","to":"mNameType","type":"Realization"},{"from":"create","to":"createType","type":"Realization"},{"from":"delete","to":"sNameType","type":"Realization"},{"from":"info","to":"infoType","type":"Realization"},{"from":"renew","to":"renewType","type":"Realization"},{"from":"transfer","to":"transferType","type":"Realization"},{"from":"update","to":"updateType","type":"Realization"},{"from":"chkData","to":"chkDataType","type":"Realization"},{"from":"creData","to":"creDataType","type":"Realization"},{"from":"infData","to":"infDataType","type":"Realization"},{"from":"panData","to":"panDataType","type":"Realization"},{"from":"renData","to":"renDataType","type":"Realization"},{"from":"trnData","to":"trnDataType","type":"Realization"}]} -->
+  <comment view="class">EPP Domain — the domain-name mapping of the Extensible Provisioning Protocol (domain-1.0.xsd, RFC 5731), with the types it borrows from eppcom-1.0.xsd and epp-1.0.xsd, converted into AI Designer models.
+
+EPP is how domain-name registrars talk to registries (the operators behind .com, .org and the rest): every command and response is XML defined by these schemas. This one covers domain objects — create, check, info, renew, transfer and update — with name servers, host attributes, contacts, authorization info, registration periods and status codes. The models marked xsd-file came from the imported schemas: this example shows several schemas that import one another, read as one model.
+
+Source: https://github.com/mganss/XmlSchemaClassGenerator/tree/master/XmlSchemaClassGenerator.Tests/xsd/epp
+Domain mapping (RFC 5731): https://www.rfc-editor.org/rfc/rfc5731
+The protocol (RFC 5730): https://www.rfc-editor.org/rfc/rfc5730
+The schemas are IETF code components, available under the Simplified BSD License.</comment>
+  <model namespace="createType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="period" type="periodType" occurs="0..1" />
+      <variable name="ns" type="nsType" occurs="0..1" />
+      <variable name="registrant" type="string" xsd-type="clIDType" occurs="0..1" minLength="3" maxLength="16" />
+      <variable name="contact" type="[contactType]" occurs="0..*" />
+      <variable name="authInfo" type="authInfoType" />
+    </variables>
+  </model>
+  <model namespace="periodType">
+    <variables>
+      <variable name="value" type="int" collapse="Monotone" xsd-type="pLimitType" minInclusive="1" maxInclusive="99">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+      <variable name="unit" type="enum" xsd-type="pUnitType" values="y | m" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="nsType">
+    <variables>
+      <variable name="hostObj" type="[string]" xsd-type="labelType" occurs="0..*" minLength="1" maxLength="255" />
+      <variable name="hostAttr" type="[hostAttrType]" occurs="0..*" />
+    </variables>
+  </model>
+  <model namespace="hostAttrType">
+    <variables>
+      <variable name="hostName" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="hostAddr" type="[addrType]" occurs="0..*" />
+    </variables>
+  </model>
+  <model namespace="contactType">
+    <variables>
+      <variable name="value" type="string" xsd-type="clIDType" minLength="3" maxLength="16" />
+      <variable name="type" type="enum" xsd-type="contactAttrType" occurs="0..1" values="admin | billing | tech" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="authInfoType">
+    <variables>
+      <variable name="pw" type="pwAuthInfoType" occurs="0..1" />
+      <variable name="ext" type="extAuthInfoType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="sNameType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+    </variables>
+  </model>
+  <model namespace="mNameType">
+    <variables>
+      <variable name="name" type="[string]" xsd-type="labelType" occurs="1..*" minLength="1" maxLength="255" />
+    </variables>
+  </model>
+  <model namespace="infoType">
+    <variables>
+      <variable name="name" type="infoNameType" />
+      <variable name="authInfo" type="authInfoType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="infoNameType">
+    <variables>
+      <variable name="value" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="hosts" type="enum" xsd-type="hostsType" occurs="0..1" values="all | del | none | sub" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="renewType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="curExpDate" type="date" />
+      <variable name="period" type="periodType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="transferType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="period" type="periodType" occurs="0..1" />
+      <variable name="authInfo" type="authInfoType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="updateType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="add" type="addRemType" occurs="0..1" />
+      <variable name="rem" type="addRemType" occurs="0..1" />
+      <variable name="chg" type="chgType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="addRemType">
+    <variables>
+      <variable name="ns" type="nsType" occurs="0..1" />
+      <variable name="contact" type="[contactType]" occurs="0..*" />
+      <variable name="status" type="[statusType]" occurs="0..11" />
+    </variables>
+  </model>
+  <model namespace="chgType">
+    <variables>
+      <variable name="registrant" type="string" xsd-type="clIDChgType" occurs="0..1" minLength="0" maxLength="16" />
+      <variable name="authInfo" type="authInfoChgType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="authInfoChgType">
+    <variables>
+      <variable name="pw" type="pwAuthInfoType" occurs="0..1" />
+      <variable name="ext" type="extAuthInfoType" occurs="0..1" />
+      <variable name="null" type="string" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="chkDataType">
+    <variables>
+      <variable name="cd" type="[checkType]" occurs="1..*" />
+    </variables>
+  </model>
+  <model namespace="checkType">
+    <variables>
+      <variable name="name" type="checkNameType" />
+      <variable name="reason" type="reasonType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="checkNameType">
+    <variables>
+      <variable name="value" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="avail" type="bool" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="creDataType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="crDate" type="utcdatetime" />
+      <variable name="exDate" type="utcdatetime" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="infDataType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="roid" type="string" xsd-type="roidType" pattern="(\w|_){1,80}-\w{1,8}" />
+      <variable name="status" type="[statusType]" occurs="0..11" />
+      <variable name="registrant" type="string" xsd-type="clIDType" occurs="0..1" minLength="3" maxLength="16" />
+      <variable name="contact" type="[contactType]" occurs="0..*" />
+      <variable name="ns" type="nsType" occurs="0..1" />
+      <variable name="host" type="[string]" xsd-type="labelType" occurs="0..*" minLength="1" maxLength="255" />
+      <variable name="clID" type="string" xsd-type="clIDType" minLength="3" maxLength="16" />
+      <variable name="crID" type="string" xsd-type="clIDType" occurs="0..1" minLength="3" maxLength="16" />
+      <variable name="crDate" type="utcdatetime" occurs="0..1" />
+      <variable name="upID" type="string" xsd-type="clIDType" occurs="0..1" minLength="3" maxLength="16" />
+      <variable name="upDate" type="utcdatetime" occurs="0..1" />
+      <variable name="exDate" type="utcdatetime" occurs="0..1" />
+      <variable name="trDate" type="utcdatetime" occurs="0..1" />
+      <variable name="authInfo" type="authInfoType" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="statusType">
+    <variables>
+      <variable name="value" type="string" />
+      <variable name="s" type="enum" xsd-type="statusValueType" values="clientDeleteProhibited | clientHold | clientRenewProhibited | clientTransferProhibited | clientUpdateProhibited | inactive | ok | pendingCreate | pendingDelete | pendingRenew | pendingTransfer | pendingUpdate | serverDeleteProhibited | serverHold | serverRenewProhibited | serverTransferProhibited | serverUpdateProhibited" xsd="attribute" />
+      <variable name="lang" type="string" xsd="attribute" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="panDataType">
+    <variables>
+      <variable name="name" type="paNameType" />
+      <variable name="paTRID" type="trIDType" />
+      <variable name="paDate" type="utcdatetime" />
+    </variables>
+  </model>
+  <model namespace="paNameType">
+    <variables>
+      <variable name="value" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="paResult" type="bool" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="renDataType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="exDate" type="utcdatetime" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="trnDataType">
+    <variables>
+      <variable name="name" type="string" xsd-type="labelType" minLength="1" maxLength="255" />
+      <variable name="trStatus" type="enum" xsd-type="trStatusType" values="clientApproved | clientCancelled | clientRejected | pending | serverApproved | serverCancelled" />
+      <variable name="reID" type="string" xsd-type="clIDType" minLength="3" maxLength="16" />
+      <variable name="reDate" type="utcdatetime" />
+      <variable name="acID" type="string" xsd-type="clIDType" minLength="3" maxLength="16" />
+      <variable name="acDate" type="utcdatetime" />
+      <variable name="exDate" type="utcdatetime" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="addrType" xsd-file="host-1.0.xsd">
+    <variables>
+      <variable name="value" type="string" xsd-type="addrStringType" minLength="3" maxLength="45" />
+      <variable name="ip" type="enum" xsd-type="ipType" occurs="0..1" values="v4 | v6" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="pwAuthInfoType" xsd-file="eppcom-1.0.xsd">
+    <variables>
+      <variable name="value" type="string" />
+      <variable name="roid" type="string" xsd-type="roidType" occurs="0..1" pattern="(\w|_){1,80}-\w{1,8}" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="extAuthInfoType" xsd-file="eppcom-1.0.xsd">
+    <variables>
+      <variable name="any" type="string" xsd="any element" />
+    </variables>
+  </model>
+  <model namespace="reasonType" xsd-file="eppcom-1.0.xsd">
+    <variables>
+      <variable name="value" type="string" xsd-type="reasonBaseType" minLength="1" maxLength="32" />
+      <variable name="lang" type="string" xsd="attribute" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="trIDType" xsd-file="epp-1.0.xsd">
+    <variables>
+      <variable name="clTRID" type="string" xsd-type="trIDStringType" occurs="0..1" minLength="3" maxLength="64" />
+      <variable name="svTRID" type="string" xsd-type="trIDStringType" minLength="3" maxLength="64" />
+    </variables>
+  </model>
+  <model namespace="check" xsd="root element" />
+  <model namespace="create" xsd="root element" />
+  <model namespace="delete" xsd="root element" />
+  <model namespace="info" xsd="root element" />
+  <model namespace="renew" xsd="root element" />
+  <model namespace="transfer" xsd="root element" />
+  <model namespace="update" xsd="root element" />
+  <model namespace="chkData" xsd="root element" />
+  <model namespace="creData" xsd="root element" />
+  <model namespace="infData" xsd="root element" />
+  <model namespace="panData" xsd="root element" />
+  <model namespace="renData" xsd="root element" />
+  <model namespace="trnData" xsd="root element" />
+</gorp>
