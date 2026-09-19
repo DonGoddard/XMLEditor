@@ -8,3 +8,6 @@
 {"ts":"2026-09-19T10:34:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":737511,"detail":"github:PUT","count":12}
 {"ts":"2026-09-19T10:35:00.3360130Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/Client Schema 2.xml","ext":".xml","bytes":6723,"detail":"","count":1}
 {"ts":"2026-09-19T10:35:01.8493680Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T10:35:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":20876,"detail":"github:PUT-bin","count":1}
+{"ts":"2026-09-19T10:35:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":159568,"detail":"github:PUT","count":4}
+{"ts":"2026-09-19T10:35:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
