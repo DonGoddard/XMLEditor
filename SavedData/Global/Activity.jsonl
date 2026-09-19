@@ -1731,3 +1731,4 @@
 {"ts":"2026-09-19T06:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":534,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-19T06:44:41.1010000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-09-19T06:45:18.7870000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-09-19T06:45:42.2450000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
