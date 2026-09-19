@@ -90,3 +90,5 @@
 {"ts":"2026-09-19T13:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":3}
 {"ts":"2026-09-19T13:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-19T13:03:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":72587,"detail":"github:PUT","count":1}
+{"ts":"2026-09-19T13:05:27.6614530Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:05:29.8370790Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
