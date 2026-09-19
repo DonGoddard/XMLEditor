@@ -101,5 +101,5 @@
 {"ts":"2026-09-19T13:06:03.9516160Z","type":"app_open","appId":"LedgerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:06:12.9438420Z","type":"app_open","appId":"UMLApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:06:16.5748470Z","type":"app_open","appId":"UMLGorpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:06:23.6410080Z","type":"app_open","appId":"polynomial_simpleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:06:26.2236320Z","type":"app_open","appId":"finite_diffApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:06:28.8428820Z","type":"app_open","appId":"XmlUrlHttpsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:06:32.3935610Z","type":"app_open","appId":"XmlUrlHttpApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
