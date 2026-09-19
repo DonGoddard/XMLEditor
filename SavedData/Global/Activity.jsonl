@@ -1803,3 +1803,5 @@
 {"ts":"2026-09-19T08:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":4}
 {"ts":"2026-09-19T08:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-19T08:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":65382,"detail":"github:PUT","count":1}
+{"ts":"2026-09-19T09:00:12.3869980Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T09:00:14.4552030Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
