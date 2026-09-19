@@ -1665,10 +1665,11 @@
 {"ts":"2026-09-18T18:44:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31908,"detail":"github:PUT","count":1}
 {"ts":"2026-09-18T18:44:25.5480000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
 {"ts":"2026-09-18T18:44:56.0800000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-18T21:53:13.0180000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-09-18T21:53:41.8010000Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/UnitTests.Units.gorp","ext":".gorp","bytes":9834,"detail":"","count":1}
 {"ts":"2026-09-18T21:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":22}
 {"ts":"2026-09-18T21:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":2}
 {"ts":"2026-09-18T21:53:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":169359,"detail":"github:PUT","count":6}
+{"ts":"2026-09-18T21:53:13.0180000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-09-18T21:53:41.8010000Z","type":"file_save","appId":"XAMLCanvasLayoutApp","filePath":"Global/Files/Gorp/UnitTests.Units.gorp","ext":".gorp","bytes":9834,"detail":"","count":1}
 {"ts":"2026-09-18T21:54:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":387,"detail":"gorp:worker","count":1}
 {"ts":"2026-09-18T21:55:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":31895,"detail":"github:PUT","count":1}
+{"ts":"2026-09-19T05:49:10.4510410Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
