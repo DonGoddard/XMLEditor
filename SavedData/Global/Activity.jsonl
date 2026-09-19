@@ -106,7 +106,7 @@
 {"ts":"2026-09-19T13:06:34.6449960Z","type":"app_open","appId":"XMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:06:36.5366640Z","type":"app_open","appId":"UMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:06:38.7190380Z","type":"app_open","appId":"XAMLFileApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:06:47.3853410Z","type":"app_open","appId":"XAMLSampleApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:06:50.6660550Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:07:10.6147660Z","type":"app_open","appId":"CardsApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
-{"ts":"2026-09-19T13:07:12.3312810Z","type":"app_open","appId":"BugReportApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:06:58.3580650Z","type":"app_open","appId":"XAMLInsertTextApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:07:16.6542620Z","type":"app_open","appId":"CollabVideoTestApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:07:18.3442540Z","type":"app_open","appId":"BrandStudio","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:07:21.2580120Z","type":"app_open","appId":"CgmApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
