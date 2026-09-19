@@ -93,3 +93,5 @@
 {"ts":"2026-09-19T13:05:27.6614530Z","type":"app_open","appId":"AppRegistry","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:05:29.8370790Z","type":"app_open","appId":"AccountActivityApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T13:05:37.0071770Z","type":"app_open","appId":"DebugLogApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:05:42.2940360Z","type":"app_open","appId":"ChatApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T13:05:44.4343920Z","type":"app_open","appId":"GalleryApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
