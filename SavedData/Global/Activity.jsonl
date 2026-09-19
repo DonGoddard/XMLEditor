@@ -1817,3 +1817,4 @@
 {"ts":"2026-09-19T09:04:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":393754,"detail":"github:PUT","count":6}
 {"ts":"2026-09-19T09:05:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":262510,"detail":"github:PUT","count":4}
 {"ts":"2026-09-19T09:06:52.7464260Z","type":"file_save","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/CGM Bolus Advisor.xml","ext":".xml","bytes":8091,"detail":"","count":1}
+{"ts":"2026-09-19T09:06:58.9927780Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
