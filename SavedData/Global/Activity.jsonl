@@ -1773,3 +1773,5 @@
 {"ts":"2026-09-19T08:43:59.0233730Z","type":"file_rename","appId":"AiDesignerApp","filePath":"Global/Files/AiDesign/AI Design Test.xml","ext":".xml","bytes":0,"detail":"Global/Files/AiDesign/AI Design Test.xml","count":1}
 {"ts":"2026-09-19T08:44:20.4430040Z","type":"app_open","appId":"AiDesignerApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-09-19T08:49:31.0672300Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
+{"ts":"2026-09-19T08:49:50.1814480Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-09-19T08:49:50.2242180Z","type":"app_open","appId":"ToDoApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
