@@ -1,0 +1,92 @@
+{
+  "xsd": "bible.xsd",
+  "path": "Schemas/Bible/bible.xsd",
+  "version": 1,
+  "targetNamespace": "",
+  "rootElements": ["bible"],
+  "elements": [
+    {
+      "name": "bible",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "translation", "type": "string", "required": true },
+        { "name": "status", "type": "string", "required": false }
+      ],
+      "children": ["testament"]
+    },
+    {
+      "name": "testament",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["book"]
+    },
+    {
+      "name": "book",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "number", "type": "positiveInteger", "required": true }
+      ],
+      "children": ["chapter"]
+    },
+    {
+      "name": "chapter",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "number", "type": "positiveInteger", "required": true }
+      ],
+      "children": ["verse"]
+    },
+    {
+      "name": "verse",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "number", "type": "positiveInteger", "required": true }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Bible",
+      "kind": "complex",
+      "attrs": [
+        { "name": "translation", "type": "string", "required": true },
+        { "name": "status", "type": "string", "required": false }
+      ],
+      "children": ["testament"]
+    },
+    {
+      "name": "Testament",
+      "kind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ],
+      "children": ["book"]
+    },
+    {
+      "name": "Book",
+      "kind": "complex",
+      "attrs": [
+        { "name": "number", "type": "positiveInteger", "required": true }
+      ],
+      "children": ["chapter"]
+    },
+    {
+      "name": "Chapter",
+      "kind": "complex",
+      "attrs": [
+        { "name": "number", "type": "positiveInteger", "required": true }
+      ],
+      "children": ["verse"]
+    },
+    {
+      "name": "Verse",
+      "kind": "complex",
+      "attrs": [
+        { "name": "number", "type": "positiveInteger", "required": true }
+      ]
+    }
+  ]
+}

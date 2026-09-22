@@ -1,0 +1,496 @@
+{
+  "xsd": "domain-1.0.xsd",
+  "path": "Schemas/EPP/domain-1.0.xsd",
+  "version": 1,
+  "targetNamespace": "urn:ietf:params:xml:ns:domain-1.0",
+  "rootElements": [
+    "check",
+    "create",
+    "delete",
+    "info",
+    "renew",
+    "transfer",
+    "update",
+    "chkData",
+    "creData",
+    "infData",
+    "panData",
+    "renData",
+    "trnData"
+  ],
+  "elements": [
+    {
+      "name": "check",
+      "contentKind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "name",
+      "contentKind": "simple",
+      "textType": "labelType"
+    },
+    {
+      "name": "create",
+      "contentKind": "complex",
+      "children": ["name", "period", "ns", "registrant", "contact", "authInfo"]
+    },
+    {
+      "name": "period",
+      "contentKind": "mixed",
+      "textType": "pLimitType",
+      "attrs": [
+        { "name": "unit", "type": "pUnitType", "required": true }
+      ]
+    },
+    {
+      "name": "ns",
+      "contentKind": "complex",
+      "children": ["hostObj", "hostAttr"]
+    },
+    {
+      "name": "hostObj",
+      "contentKind": "simple",
+      "textType": "labelType"
+    },
+    {
+      "name": "hostAttr",
+      "contentKind": "complex",
+      "children": ["hostName", "hostAddr"]
+    },
+    {
+      "name": "hostName",
+      "contentKind": "simple",
+      "textType": "labelType"
+    },
+    {
+      "name": "hostAddr",
+      "contentKind": "simple",
+      "textType": "addrType"
+    },
+    {
+      "name": "registrant",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "contact",
+      "contentKind": "mixed",
+      "textType": "clIDType",
+      "attrs": [
+        { "name": "type", "type": "contactAttrType", "required": false }
+      ]
+    },
+    {
+      "name": "authInfo",
+      "contentKind": "complex",
+      "children": ["pw", "ext"]
+    },
+    {
+      "name": "pw",
+      "contentKind": "simple",
+      "textType": "pwAuthInfoType"
+    },
+    {
+      "name": "ext",
+      "contentKind": "simple",
+      "textType": "extAuthInfoType"
+    },
+    {
+      "name": "delete",
+      "contentKind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "info",
+      "contentKind": "complex",
+      "children": ["name", "authInfo"]
+    },
+    {
+      "name": "renew",
+      "contentKind": "complex",
+      "children": ["name", "curExpDate", "period"]
+    },
+    {
+      "name": "curExpDate",
+      "contentKind": "simple",
+      "textType": "date"
+    },
+    {
+      "name": "transfer",
+      "contentKind": "complex",
+      "children": ["name", "period", "authInfo"]
+    },
+    {
+      "name": "update",
+      "contentKind": "complex",
+      "children": ["name", "add", "rem", "chg"]
+    },
+    {
+      "name": "add",
+      "contentKind": "complex",
+      "children": ["ns", "contact", "status"]
+    },
+    {
+      "name": "status",
+      "contentKind": "mixed",
+      "textType": "normalizedString",
+      "attrs": [
+        { "name": "s", "type": "statusValueType", "required": true },
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "rem",
+      "contentKind": "complex",
+      "children": ["ns", "contact", "status"]
+    },
+    {
+      "name": "chg",
+      "contentKind": "complex",
+      "children": ["registrant", "authInfo"]
+    },
+    {
+      "name": "chkData",
+      "contentKind": "complex",
+      "children": ["cd"]
+    },
+    {
+      "name": "cd",
+      "contentKind": "complex",
+      "children": ["name", "reason"]
+    },
+    {
+      "name": "reason",
+      "contentKind": "simple",
+      "textType": "reasonType"
+    },
+    {
+      "name": "creData",
+      "contentKind": "complex",
+      "children": ["name", "crDate", "exDate"]
+    },
+    {
+      "name": "crDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "exDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "infData",
+      "contentKind": "complex",
+      "children": [
+        "name",
+        "roid",
+        "status",
+        "registrant",
+        "contact",
+        "ns",
+        "host",
+        "clID",
+        "crID",
+        "crDate",
+        "upID",
+        "upDate",
+        "exDate",
+        "trDate",
+        "authInfo"
+      ]
+    },
+    {
+      "name": "roid",
+      "contentKind": "simple",
+      "textType": "roidType"
+    },
+    {
+      "name": "host",
+      "contentKind": "simple",
+      "textType": "labelType"
+    },
+    {
+      "name": "clID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "crID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "upID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "upDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "trDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "panData",
+      "contentKind": "complex",
+      "children": ["name", "paTRID", "paDate"]
+    },
+    {
+      "name": "paTRID",
+      "contentKind": "simple",
+      "textType": "trIDType"
+    },
+    {
+      "name": "paDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "renData",
+      "contentKind": "complex",
+      "children": ["name", "exDate"]
+    },
+    {
+      "name": "trnData",
+      "contentKind": "complex",
+      "children": [
+        "name",
+        "trStatus",
+        "reID",
+        "reDate",
+        "acID",
+        "acDate",
+        "exDate"
+      ]
+    },
+    {
+      "name": "trStatus",
+      "contentKind": "simple",
+      "textType": "trStatusType"
+    },
+    {
+      "name": "reID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "reDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "acID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "acDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    }
+  ],
+  "types": [
+    {
+      "name": "createType",
+      "kind": "complex",
+      "children": ["name", "period", "ns", "registrant", "contact", "authInfo"]
+    },
+    {
+      "name": "periodType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "unit", "type": "pUnitType", "required": true }
+      ]
+    },
+    {
+      "name": "pLimitType",
+      "kind": "simple",
+      "baseType": "unsignedShort"
+    },
+    {
+      "name": "pUnitType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "nsType",
+      "kind": "complex",
+      "children": ["hostObj", "hostAttr"]
+    },
+    {
+      "name": "hostAttrType",
+      "kind": "complex",
+      "children": ["hostName", "hostAddr"]
+    },
+    {
+      "name": "contactType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "type", "type": "contactAttrType", "required": false }
+      ]
+    },
+    {
+      "name": "contactAttrType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "authInfoType",
+      "kind": "complex",
+      "children": ["pw", "ext"]
+    },
+    {
+      "name": "sNameType",
+      "kind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "mNameType",
+      "kind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "infoType",
+      "kind": "complex",
+      "children": ["name", "authInfo"]
+    },
+    {
+      "name": "infoNameType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "hosts", "type": "hostsType", "required": false }
+      ]
+    },
+    {
+      "name": "hostsType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "renewType",
+      "kind": "complex",
+      "children": ["name", "curExpDate", "period"]
+    },
+    {
+      "name": "transferType",
+      "kind": "complex",
+      "children": ["name", "period", "authInfo"]
+    },
+    {
+      "name": "updateType",
+      "kind": "complex",
+      "children": ["name", "add", "rem", "chg"]
+    },
+    {
+      "name": "addRemType",
+      "kind": "complex",
+      "children": ["ns", "contact", "status"]
+    },
+    {
+      "name": "chgType",
+      "kind": "complex",
+      "children": ["registrant", "authInfo"]
+    },
+    {
+      "name": "clIDChgType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "authInfoChgType",
+      "kind": "complex",
+      "children": ["pw", "ext", "null"]
+    },
+    {
+      "name": "chkDataType",
+      "kind": "complex",
+      "children": ["cd"]
+    },
+    {
+      "name": "checkType",
+      "kind": "complex",
+      "children": ["name", "reason"]
+    },
+    {
+      "name": "checkNameType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "avail", "type": "boolean", "required": true }
+      ]
+    },
+    {
+      "name": "creDataType",
+      "kind": "complex",
+      "children": ["name", "crDate", "exDate"]
+    },
+    {
+      "name": "infDataType",
+      "kind": "complex",
+      "children": [
+        "name",
+        "roid",
+        "status",
+        "registrant",
+        "contact",
+        "ns",
+        "host",
+        "clID",
+        "crID",
+        "crDate",
+        "upID",
+        "upDate",
+        "exDate",
+        "trDate",
+        "authInfo"
+      ]
+    },
+    {
+      "name": "statusType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "s", "type": "statusValueType", "required": true },
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "statusValueType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "panDataType",
+      "kind": "complex",
+      "children": ["name", "paTRID", "paDate"]
+    },
+    {
+      "name": "paNameType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "paResult", "type": "boolean", "required": true }
+      ]
+    },
+    {
+      "name": "renDataType",
+      "kind": "complex",
+      "children": ["name", "exDate"]
+    },
+    {
+      "name": "trnDataType",
+      "kind": "complex",
+      "children": [
+        "name",
+        "trStatus",
+        "reID",
+        "reDate",
+        "acID",
+        "acDate",
+        "exDate"
+      ]
+    }
+  ]
+}

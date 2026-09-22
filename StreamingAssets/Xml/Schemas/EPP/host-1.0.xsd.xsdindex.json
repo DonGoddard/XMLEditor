@@ -1,0 +1,279 @@
+{
+  "xsd": "host-1.0.xsd",
+  "path": "Schemas/EPP/host-1.0.xsd",
+  "version": 1,
+  "targetNamespace": "urn:ietf:params:xml:ns:host-1.0",
+  "rootElements": [
+    "check",
+    "create",
+    "delete",
+    "info",
+    "update",
+    "chkData",
+    "creData",
+    "infData",
+    "panData"
+  ],
+  "elements": [
+    {
+      "name": "check",
+      "contentKind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "name",
+      "contentKind": "simple",
+      "textType": "labelType"
+    },
+    {
+      "name": "create",
+      "contentKind": "complex",
+      "children": ["name", "addr"]
+    },
+    {
+      "name": "addr",
+      "contentKind": "mixed",
+      "textType": "addrStringType",
+      "attrs": [
+        { "name": "ip", "type": "ipType", "required": false }
+      ]
+    },
+    {
+      "name": "delete",
+      "contentKind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "info",
+      "contentKind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "update",
+      "contentKind": "complex",
+      "children": ["name", "add", "rem", "chg"]
+    },
+    {
+      "name": "add",
+      "contentKind": "complex",
+      "children": ["addr", "status"]
+    },
+    {
+      "name": "status",
+      "contentKind": "mixed",
+      "textType": "normalizedString",
+      "attrs": [
+        { "name": "s", "type": "statusValueType", "required": true },
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "rem",
+      "contentKind": "complex",
+      "children": ["addr", "status"]
+    },
+    {
+      "name": "chg",
+      "contentKind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "chkData",
+      "contentKind": "complex",
+      "children": ["cd"]
+    },
+    {
+      "name": "cd",
+      "contentKind": "complex",
+      "children": ["name", "reason"]
+    },
+    {
+      "name": "reason",
+      "contentKind": "simple",
+      "textType": "reasonType"
+    },
+    {
+      "name": "creData",
+      "contentKind": "complex",
+      "children": ["name", "crDate"]
+    },
+    {
+      "name": "crDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "infData",
+      "contentKind": "complex",
+      "children": [
+        "name",
+        "roid",
+        "status",
+        "addr",
+        "clID",
+        "crID",
+        "crDate",
+        "upID",
+        "upDate",
+        "trDate"
+      ]
+    },
+    {
+      "name": "roid",
+      "contentKind": "simple",
+      "textType": "roidType"
+    },
+    {
+      "name": "clID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "crID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "upID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "upDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "trDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "panData",
+      "contentKind": "complex",
+      "children": ["name", "paTRID", "paDate"]
+    },
+    {
+      "name": "paTRID",
+      "contentKind": "simple",
+      "textType": "trIDType"
+    },
+    {
+      "name": "paDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    }
+  ],
+  "types": [
+    {
+      "name": "createType",
+      "kind": "complex",
+      "children": ["name", "addr"]
+    },
+    {
+      "name": "addrType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "ip", "type": "ipType", "required": false }
+      ]
+    },
+    {
+      "name": "addrStringType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "ipType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "sNameType",
+      "kind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "mNameType",
+      "kind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "updateType",
+      "kind": "complex",
+      "children": ["name", "add", "rem", "chg"]
+    },
+    {
+      "name": "addRemType",
+      "kind": "complex",
+      "children": ["addr", "status"]
+    },
+    {
+      "name": "chgType",
+      "kind": "complex",
+      "children": ["name"]
+    },
+    {
+      "name": "chkDataType",
+      "kind": "complex",
+      "children": ["cd"]
+    },
+    {
+      "name": "checkType",
+      "kind": "complex",
+      "children": ["name", "reason"]
+    },
+    {
+      "name": "checkNameType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "avail", "type": "boolean", "required": true }
+      ]
+    },
+    {
+      "name": "creDataType",
+      "kind": "complex",
+      "children": ["name", "crDate"]
+    },
+    {
+      "name": "infDataType",
+      "kind": "complex",
+      "children": [
+        "name",
+        "roid",
+        "status",
+        "addr",
+        "clID",
+        "crID",
+        "crDate",
+        "upID",
+        "upDate",
+        "trDate"
+      ]
+    },
+    {
+      "name": "statusType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "s", "type": "statusValueType", "required": true },
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "statusValueType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "panDataType",
+      "kind": "complex",
+      "children": ["name", "paTRID", "paDate"]
+    },
+    {
+      "name": "paNameType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "paResult", "type": "boolean", "required": true }
+      ]
+    }
+  ]
+}

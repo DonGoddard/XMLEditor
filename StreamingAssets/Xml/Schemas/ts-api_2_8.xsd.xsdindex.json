@@ -1,0 +1,962 @@
+{
+  "xsd": "ts-api_2_8.xsd",
+  "path": "Schemas/ts-api_2_8.xsd",
+  "version": 1,
+  "targetNamespace": "http://tableau.com/api",
+  "rootElements": ["tsRequest", "tsResponse"],
+  "elements": [
+    {
+      "name": "tsRequest",
+      "contentKind": "complex",
+      "children": [
+        "connection",
+        "credentials",
+        "datasource",
+        "favorite",
+        "group",
+        "permissions",
+        "project",
+        "schedule",
+        "site",
+        "tags",
+        "user",
+        "workbook",
+        "subscription",
+        "task"
+      ]
+    },
+    {
+      "name": "connection",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "serverAddress", "type": "string", "required": false },
+        { "name": "serverPort", "type": "nonNegativeInteger", "required": false },
+        { "name": "userName", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false }
+      ],
+      "children": ["datasource"]
+    },
+    {
+      "name": "datasource",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "description", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false },
+        { "name": "isCertified", "type": "boolean", "required": false },
+        { "name": "certificationNote", "type": "string", "required": false }
+      ],
+      "children": ["connectionCredentials", "site", "project", "owner", "tags"]
+    },
+    {
+      "name": "connectionCredentials",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "embed", "type": "boolean", "required": false },
+        { "name": "oAuth", "type": "boolean", "required": false }
+      ]
+    },
+    {
+      "name": "site",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "adminMode", "type": "string", "required": false },
+        { "name": "userQuota", "type": "siteQuotaType", "required": false },
+        { "name": "storageQuota", "type": "siteQuotaType", "required": false },
+        { "name": "tierInteractorCapacity", "type": "siteCapacityType", "required": false },
+        { "name": "tierBasicUserCapacity", "type": "siteCapacityType", "required": false },
+        { "name": "disableSubscriptions", "type": "boolean", "required": false },
+        { "name": "state", "type": "stateType", "required": false },
+        { "name": "revisionHistoryEnabled", "type": "boolean", "required": false },
+        { "name": "revisionLimit", "type": "revisionLimitType", "required": false },
+        { "name": "subscribeOthersEnabled", "type": "boolean", "required": false },
+        { "name": "guestAccessEnabled", "type": "boolean", "required": false },
+        { "name": "cacheWarmupEnabled", "type": "boolean", "required": false },
+        { "name": "commentingEnabled", "type": "boolean", "required": false },
+        { "name": "cacheeWarmupThreshold", "type": "nonNegativeInteger", "required": false }
+      ],
+      "children": ["usage"]
+    },
+    {
+      "name": "usage",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "numUsers", "type": "nonNegativeInteger", "required": true },
+        { "name": "storage", "type": "nonNegativeInteger", "required": true }
+      ]
+    },
+    {
+      "name": "project",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "parentProjectId", "type": "resourceIdType", "required": false },
+        { "name": "topLevelProject", "type": "boolean", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "description", "type": "string", "required": false },
+        { "name": "contentPermissions", "type": "string", "required": false }
+      ],
+      "children": ["owner"]
+    },
+    {
+      "name": "owner",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "fullName", "type": "string", "required": false },
+        { "name": "email", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "siteRole", "type": "siteRoleType", "required": false },
+        { "name": "authSetting", "type": "siteUserAuthSettingType", "required": false },
+        { "name": "lastLogin", "type": "dateTime", "required": false },
+        { "name": "externalAuthUserId", "type": "string", "required": false }
+      ],
+      "children": ["domain"]
+    },
+    {
+      "name": "domain",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "tags",
+      "contentKind": "complex",
+      "children": ["tag"]
+    },
+    {
+      "name": "tag",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "credentials",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "token", "type": "string", "required": false }
+      ],
+      "children": ["site", "user"]
+    },
+    {
+      "name": "user",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "fullName", "type": "string", "required": false },
+        { "name": "email", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "siteRole", "type": "siteRoleType", "required": false },
+        { "name": "authSetting", "type": "siteUserAuthSettingType", "required": false },
+        { "name": "lastLogin", "type": "dateTime", "required": false },
+        { "name": "externalAuthUserId", "type": "string", "required": false }
+      ],
+      "children": ["domain"]
+    },
+    {
+      "name": "favorite",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true }
+      ],
+      "children": ["view", "workbook", "datasource"]
+    },
+    {
+      "name": "view",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false }
+      ],
+      "children": ["workbook", "owner", "tags", "usage"]
+    },
+    {
+      "name": "workbook",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "description", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "showTabs", "type": "boolean", "required": false },
+        { "name": "size", "type": "nonNegativeInteger", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false }
+      ],
+      "children": ["connectionCredentials", "site", "project", "owner", "tags", "views"]
+    },
+    {
+      "name": "views",
+      "contentKind": "complex",
+      "children": ["view"]
+    },
+    {
+      "name": "group",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false }
+      ],
+      "children": ["domain", "import"]
+    },
+    {
+      "name": "import",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "source", "type": "importSourceType", "required": true },
+        { "name": "domainName", "type": "string", "required": true },
+        { "name": "siteRole", "type": "siteRoleType", "required": true }
+      ]
+    },
+    {
+      "name": "permissions",
+      "contentKind": "complex",
+      "children": ["parent", "datasource", "project", "workbook", "granteeCapabilities"]
+    },
+    {
+      "name": "parent",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "name", "type": "", "required": false }
+      ]
+    },
+    {
+      "name": "granteeCapabilities",
+      "contentKind": "complex",
+      "children": ["group", "user", "capabilities"]
+    },
+    {
+      "name": "capabilities",
+      "contentKind": "complex",
+      "children": ["capability"]
+    },
+    {
+      "name": "capability",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "mode", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "schedule",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "state", "type": "stateType", "required": false },
+        { "name": "priority", "type": "nonNegativeInteger", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "frequency", "type": "string", "required": false },
+        { "name": "nextRunAt", "type": "dateTime", "required": false },
+        { "name": "endScheduleAt", "type": "dateTime", "required": false },
+        { "name": "executionOrder", "type": "string", "required": false }
+      ],
+      "children": ["frequencyDetails"]
+    },
+    {
+      "name": "frequencyDetails",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "start", "type": "time", "required": true },
+        { "name": "end", "type": "time", "required": false }
+      ],
+      "children": ["intervals"]
+    },
+    {
+      "name": "intervals",
+      "contentKind": "complex",
+      "children": ["interval"]
+    },
+    {
+      "name": "interval",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "minutes", "type": "nonNegativeInteger", "required": false },
+        { "name": "hours", "type": "nonNegativeInteger", "required": false },
+        { "name": "weekDay", "type": "string", "required": false },
+        { "name": "monthDay", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "subscription",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "subject", "type": "string", "required": true }
+      ],
+      "children": ["content", "schedule", "user"]
+    },
+    {
+      "name": "content",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "name", "type": "", "required": false }
+      ]
+    },
+    {
+      "name": "task",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "runNow", "type": "boolean", "required": false }
+      ],
+      "children": ["extractRefresh"]
+    },
+    {
+      "name": "extractRefresh",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "string", "required": false },
+        { "name": "priority", "type": "nonNegativeInteger", "required": false },
+        { "name": "consecutiveFailedCount", "type": "nonNegativeInteger", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "incremental", "type": "boolean", "required": false }
+      ],
+      "children": ["schedule", "view", "workbook", "datasource"]
+    },
+    {
+      "name": "tsResponse",
+      "contentKind": "complex",
+      "children": [
+        "connection",
+        "connections",
+        "credentials",
+        "datasource",
+        "error",
+        "favorites",
+        "fileUpload",
+        "group",
+        "job",
+        "permissions",
+        "project",
+        "schedule",
+        "serverInfo",
+        "site",
+        "tags",
+        "user",
+        "views",
+        "workbook",
+        "subscription",
+        "task",
+        "tasks"
+      ]
+    },
+    {
+      "name": "connections",
+      "contentKind": "complex",
+      "children": ["connection"]
+    },
+    {
+      "name": "error",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "code", "type": "positiveInteger", "required": true }
+      ],
+      "children": ["summary", "detail"]
+    },
+    {
+      "name": "summary",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "detail",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "favorites",
+      "contentKind": "complex",
+      "children": ["favorite"]
+    },
+    {
+      "name": "fileUpload",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "uploadSessionId", "type": "fileUploadSessionIdType", "required": true },
+        { "name": "fileSize", "type": "nonNegativeInteger", "required": false }
+      ]
+    },
+    {
+      "name": "job",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "mode", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "progress", "type": "nonNegativeInteger", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "startedAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false },
+        { "name": "completedAt", "type": "dateTime", "required": false },
+        { "name": "finishCode", "type": "integer", "required": false }
+      ],
+      "children": ["statusNotes", "extractRefreshJob"]
+    },
+    {
+      "name": "statusNotes",
+      "contentKind": "complex",
+      "children": ["statusNote"]
+    },
+    {
+      "name": "statusNote",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "type", "type": "string", "required": true },
+        { "name": "value", "type": "string", "required": false },
+        { "name": "text", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "extractRefreshJob",
+      "contentKind": "complex",
+      "children": ["notes", "view", "workbook", "datasource"]
+    },
+    {
+      "name": "notes",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "serverInfo",
+      "contentKind": "complex",
+      "children": ["productVersion", "restApiVersion"]
+    },
+    {
+      "name": "productVersion",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "build", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "restApiVersion",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "tasks",
+      "contentKind": "complex",
+      "children": ["task"]
+    }
+  ],
+  "types": [
+    {
+      "name": "errorType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "code", "type": "positiveInteger", "required": true }
+      ],
+      "children": ["summary", "detail"]
+    },
+    {
+      "name": "connectionCredentialsType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "embed", "type": "boolean", "required": false },
+        { "name": "oAuth", "type": "boolean", "required": false }
+      ]
+    },
+    {
+      "name": "connectionListType",
+      "kind": "complex",
+      "children": ["connection"]
+    },
+    {
+      "name": "connectionType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "serverAddress", "type": "string", "required": false },
+        { "name": "serverPort", "type": "nonNegativeInteger", "required": false },
+        { "name": "userName", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false }
+      ],
+      "children": ["datasource"]
+    },
+    {
+      "name": "dataSourceListType",
+      "kind": "complex",
+      "children": ["datasource"]
+    },
+    {
+      "name": "dataSourceType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "description", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false },
+        { "name": "isCertified", "type": "boolean", "required": false },
+        { "name": "certificationNote", "type": "string", "required": false }
+      ],
+      "children": ["connectionCredentials", "site", "project", "owner", "tags"]
+    },
+    {
+      "name": "revisionListType",
+      "kind": "complex",
+      "children": ["revision"]
+    },
+    {
+      "name": "revisionType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "revisionNumber", "type": "nonNegativeInteger", "required": false },
+        { "name": "publishedAt", "type": "dateTime", "required": false },
+        { "name": "deleted", "type": "boolean", "required": false },
+        { "name": "current", "type": "boolean", "required": false },
+        { "name": "sizeInBytes", "type": "long", "required": false }
+      ],
+      "children": ["publisher"]
+    },
+    {
+      "name": "extractListType",
+      "kind": "complex",
+      "children": ["extract"]
+    },
+    {
+      "name": "extractType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "priority", "type": "nonNegativeInteger", "required": false },
+        { "name": "type", "type": "string", "required": false }
+      ],
+      "children": ["datasource", "workbook"]
+    },
+    {
+      "name": "favoriteListType",
+      "kind": "complex",
+      "children": ["favorite"]
+    },
+    {
+      "name": "favoriteType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true }
+      ],
+      "children": ["view", "workbook", "datasource"]
+    },
+    {
+      "name": "fileUploadType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "uploadSessionId", "type": "fileUploadSessionIdType", "required": true },
+        { "name": "fileSize", "type": "nonNegativeInteger", "required": false }
+      ]
+    },
+    {
+      "name": "groupListType",
+      "kind": "complex",
+      "children": ["group"]
+    },
+    {
+      "name": "groupType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false }
+      ],
+      "children": ["domain", "import"]
+    },
+    {
+      "name": "extractRefreshJobType",
+      "kind": "complex",
+      "children": ["notes", "view", "workbook", "datasource"]
+    },
+    {
+      "name": "jobType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "mode", "type": "string", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "progress", "type": "nonNegativeInteger", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "startedAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false },
+        { "name": "completedAt", "type": "dateTime", "required": false },
+        { "name": "finishCode", "type": "integer", "required": false }
+      ],
+      "children": ["statusNotes", "extractRefreshJob"]
+    },
+    {
+      "name": "permissionsType",
+      "kind": "complex",
+      "children": ["parent", "datasource", "project", "workbook", "granteeCapabilities"]
+    },
+    {
+      "name": "projectListType",
+      "kind": "complex",
+      "children": ["project"]
+    },
+    {
+      "name": "projectType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "parentProjectId", "type": "resourceIdType", "required": false },
+        { "name": "topLevelProject", "type": "boolean", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "description", "type": "string", "required": false },
+        { "name": "contentPermissions", "type": "string", "required": false }
+      ],
+      "children": ["owner"]
+    },
+    {
+      "name": "scheduleListType",
+      "kind": "complex",
+      "children": ["schedule"]
+    },
+    {
+      "name": "scheduleType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "state", "type": "stateType", "required": false },
+        { "name": "priority", "type": "nonNegativeInteger", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "frequency", "type": "string", "required": false },
+        { "name": "nextRunAt", "type": "dateTime", "required": false },
+        { "name": "endScheduleAt", "type": "dateTime", "required": false },
+        { "name": "executionOrder", "type": "string", "required": false }
+      ],
+      "children": ["frequencyDetails"]
+    },
+    {
+      "name": "siteListType",
+      "kind": "complex",
+      "children": ["site"]
+    },
+    {
+      "name": "siteType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "adminMode", "type": "string", "required": false },
+        { "name": "userQuota", "type": "siteQuotaType", "required": false },
+        { "name": "storageQuota", "type": "siteQuotaType", "required": false },
+        { "name": "tierInteractorCapacity", "type": "siteCapacityType", "required": false },
+        { "name": "tierBasicUserCapacity", "type": "siteCapacityType", "required": false },
+        { "name": "disableSubscriptions", "type": "boolean", "required": false },
+        { "name": "state", "type": "stateType", "required": false },
+        { "name": "revisionHistoryEnabled", "type": "boolean", "required": false },
+        { "name": "revisionLimit", "type": "revisionLimitType", "required": false },
+        { "name": "subscribeOthersEnabled", "type": "boolean", "required": false },
+        { "name": "guestAccessEnabled", "type": "boolean", "required": false },
+        { "name": "cacheWarmupEnabled", "type": "boolean", "required": false },
+        { "name": "commentingEnabled", "type": "boolean", "required": false },
+        { "name": "cacheeWarmupThreshold", "type": "nonNegativeInteger", "required": false }
+      ],
+      "children": ["usage"]
+    },
+    {
+      "name": "tableauCredentialsType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "token", "type": "string", "required": false }
+      ],
+      "children": ["site", "user"]
+    },
+    {
+      "name": "tagListType",
+      "kind": "complex",
+      "children": ["tag"]
+    },
+    {
+      "name": "tagType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "label", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "userListType",
+      "kind": "complex",
+      "children": ["user"]
+    },
+    {
+      "name": "userType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "fullName", "type": "string", "required": false },
+        { "name": "email", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "siteRole", "type": "siteRoleType", "required": false },
+        { "name": "authSetting", "type": "siteUserAuthSettingType", "required": false },
+        { "name": "lastLogin", "type": "dateTime", "required": false },
+        { "name": "externalAuthUserId", "type": "string", "required": false }
+      ],
+      "children": ["domain"]
+    },
+    {
+      "name": "viewListType",
+      "kind": "complex",
+      "children": ["view"]
+    },
+    {
+      "name": "viewType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false }
+      ],
+      "children": ["workbook", "owner", "tags", "usage"]
+    },
+    {
+      "name": "workbookListType",
+      "kind": "complex",
+      "children": ["workbook"]
+    },
+    {
+      "name": "workbookType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "name", "type": "string", "required": false },
+        { "name": "description", "type": "string", "required": false },
+        { "name": "contentUrl", "type": "string", "required": false },
+        { "name": "showTabs", "type": "boolean", "required": false },
+        { "name": "size", "type": "nonNegativeInteger", "required": false },
+        { "name": "createdAt", "type": "dateTime", "required": false },
+        { "name": "updatedAt", "type": "dateTime", "required": false }
+      ],
+      "children": ["connectionCredentials", "site", "project", "owner", "tags", "views"]
+    },
+    {
+      "name": "capabilityType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "mode", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "fileUploadSessionIdType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "domainDirectiveType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "name", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "importDirectiveType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "source", "type": "importSourceType", "required": true },
+        { "name": "domainName", "type": "string", "required": true },
+        { "name": "siteRole", "type": "siteRoleType", "required": true }
+      ]
+    },
+    {
+      "name": "importSourceType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "granteeCapabilitiesType",
+      "kind": "complex",
+      "children": ["group", "user", "capabilities"]
+    },
+    {
+      "name": "paginationType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "pageNumber", "type": "positiveInteger", "required": true },
+        { "name": "pageSize", "type": "nonNegativeInteger", "required": true },
+        { "name": "totalAvailable", "type": "nonNegativeInteger", "required": true }
+      ]
+    },
+    {
+      "name": "resourceIdType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "siteRoleType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "siteUserAuthSettingType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "stateType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "statusNoteListType",
+      "kind": "complex",
+      "children": ["statusNote"]
+    },
+    {
+      "name": "statusNoteType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "type", "type": "string", "required": true },
+        { "name": "value", "type": "string", "required": false },
+        { "name": "text", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "siteQuotaType",
+      "kind": "simple",
+      "baseType": "integer"
+    },
+    {
+      "name": "siteCapacityType",
+      "kind": "simple",
+      "baseType": "integer"
+    },
+    {
+      "name": "revisionLimitType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "parentType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "name", "type": "", "required": false }
+      ]
+    },
+    {
+      "name": "frequencyDetailsType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "start", "type": "time", "required": true },
+        { "name": "end", "type": "time", "required": false }
+      ],
+      "children": ["intervals"]
+    },
+    {
+      "name": "intervalType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "minutes", "type": "nonNegativeInteger", "required": false },
+        { "name": "hours", "type": "nonNegativeInteger", "required": false },
+        { "name": "weekDay", "type": "string", "required": false },
+        { "name": "monthDay", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "subscriptionListType",
+      "kind": "complex",
+      "children": ["subscription"]
+    },
+    {
+      "name": "subscriptionType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": false },
+        { "name": "subject", "type": "string", "required": true }
+      ],
+      "children": ["content", "schedule", "user"]
+    },
+    {
+      "name": "subscriptionContentType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "resourceIdType", "required": true },
+        { "name": "type", "type": "string", "required": true },
+        { "name": "name", "type": "", "required": false }
+      ]
+    },
+    {
+      "name": "serverInfo",
+      "kind": "complex",
+      "children": ["productVersion", "restApiVersion"]
+    },
+    {
+      "name": "productVersion",
+      "kind": "complex",
+      "attrs": [
+        { "name": "build", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "restApiVersion",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "taskListType",
+      "kind": "complex",
+      "children": ["task"]
+    },
+    {
+      "name": "taskType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "runNow", "type": "boolean", "required": false }
+      ],
+      "children": ["extractRefresh"]
+    },
+    {
+      "name": "taskExtractRefreshType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "id", "type": "string", "required": false },
+        { "name": "priority", "type": "nonNegativeInteger", "required": false },
+        { "name": "consecutiveFailedCount", "type": "nonNegativeInteger", "required": false },
+        { "name": "type", "type": "string", "required": false },
+        { "name": "incremental", "type": "boolean", "required": false }
+      ],
+      "children": ["schedule", "view", "workbook", "datasource"]
+    }
+  ]
+}

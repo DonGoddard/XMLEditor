@@ -1,0 +1,193 @@
+{
+  "xsd": "client.xsd",
+  "path": "Schemas/client.xsd",
+  "version": 1,
+  "targetNamespace": "http://tempuri.org/mySchema.xsd",
+  "rootElements": ["Client"],
+  "elements": [
+    {
+      "name": "Client",
+      "contentKind": "complex",
+      "children": ["MainClientDetail", "RelatedClientDetail"]
+    },
+    {
+      "name": "MainClientDetail",
+      "contentKind": "complex",
+      "children": ["MainClientDetails"]
+    },
+    {
+      "name": "MainClientDetails",
+      "contentKind": "complex",
+      "children": ["ClientName", "IDNumber", "LegalEntity", "ClientDocuments", "ReviewDate"]
+    },
+    {
+      "name": "ClientName",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "IDNumber",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "LegalEntity",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": false }
+      ],
+      "children": ["Name", "Code"]
+    },
+    {
+      "name": "Name",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "Code",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "ClientDocuments",
+      "contentKind": "complex",
+      "children": ["ClientDocument"]
+    },
+    {
+      "name": "ClientDocument",
+      "contentKind": "complex",
+      "children": ["DocRef", "Name", "DocType"]
+    },
+    {
+      "name": "DocRef",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "DocType",
+      "contentKind": "simple",
+      "textType": "string"
+    },
+    {
+      "name": "ReviewDate",
+      "contentKind": "mixed",
+      "textType": "date",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "RelatedClientDetail",
+      "contentKind": "complex",
+      "children": ["RelatedClientDetails"]
+    },
+    {
+      "name": "RelatedClientDetails",
+      "contentKind": "complex",
+      "children": ["ClientName", "IDNumber", "LegalEntity", "ClientDocuments", "RelationshipDetails"]
+    },
+    {
+      "name": "RelationshipDetails",
+      "contentKind": "complex",
+      "children": ["Role", "ClientParentUniqueID"]
+    },
+    {
+      "name": "Role",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": false }
+      ],
+      "children": ["Name", "Code"]
+    },
+    {
+      "name": "ClientParentUniqueID",
+      "contentKind": "mixed",
+      "textType": "string",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": true }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "MainClientFieldSets",
+      "kind": "complex",
+      "children": ["MainClientDetails"]
+    },
+    {
+      "name": "RelatedClientFieldSets",
+      "kind": "complex",
+      "children": ["RelatedClientDetails"]
+    },
+    {
+      "name": "ClientDetailsType",
+      "kind": "complex",
+      "children": ["ClientName", "IDNumber", "LegalEntity", "ClientDocuments"]
+    },
+    {
+      "name": "MainClientDetailsType",
+      "kind": "complex",
+      "children": ["ClientName", "IDNumber", "LegalEntity", "ClientDocuments", "ReviewDate"]
+    },
+    {
+      "name": "RelatedClientDetailsType",
+      "kind": "complex",
+      "children": ["ClientName", "IDNumber", "LegalEntity", "ClientDocuments", "RelationshipDetails"]
+    },
+    {
+      "name": "NameCodePairComplexType",
+      "kind": "complex",
+      "children": ["Name", "Code"]
+    },
+    {
+      "name": "MandatoryStringType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "MandatoryDateType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "MandatoryField", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "RelationshipDetailsType",
+      "kind": "complex",
+      "children": ["Role", "ClientParentUniqueID"]
+    },
+    {
+      "name": "GUIDType",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "ClientDocumentListType",
+      "kind": "complex",
+      "children": ["ClientDocument"]
+    },
+    {
+      "name": "ClientDocumentType",
+      "kind": "complex",
+      "children": ["DocRef", "Name", "DocType"]
+    },
+    {
+      "name": "EntityType",
+      "kind": "complex",
+      "children": ["Name", "Code"]
+    },
+    {
+      "name": "RoleType",
+      "kind": "complex",
+      "children": ["Name", "Code"]
+    }
+  ]
+}

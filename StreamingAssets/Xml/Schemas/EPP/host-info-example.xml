@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  A host's info response data: the example in RFC 5732 (EPP Host Mapping), section 3.1.2, unchanged apart from
+  being lifted out of its <epp><response><resData> envelope so it stands as a document of its own.
+  https://www.rfc-editor.org/rfc/rfc5732#section-3.1.2
+  IETF code component, available under the Simplified BSD License.
+-->
+<host:infData xmlns:host="urn:ietf:params:xml:ns:host-1.0">
+  <host:name>ns1.example.com</host:name>
+  <host:roid>NS1_EXAMPLE1-REP</host:roid>
+  <host:status s="linked"/>
+  <host:status s="clientUpdateProhibited"/>
+  <host:addr ip="v4">192.0.2.2</host:addr>
+  <host:addr ip="v4">192.0.2.29</host:addr>
+  <host:addr ip="v6">1080:0:0:0:8:800:200C:417A</host:addr>
+  <host:clID>ClientY</host:clID>
+  <host:crID>ClientX</host:crID>
+  <host:crDate>1999-04-03T22:00:00.0Z</host:crDate>
+  <host:upID>ClientX</host:upID>
+  <host:upDate>1999-12-03T09:00:00.0Z</host:upDate>
+  <host:trDate>2000-04-08T09:00:00.0Z</host:trDate>
+</host:infData>

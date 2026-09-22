@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  bible.xsd: a schema for the Beblia "Holy Bible XML Format"
+  (https://github.com/Beblia/Holy-Bible-XML-Format), written for UFOS on 2026-09-19.
+  The format ships no schema of its own; this one describes it as the files are written:
+  bible > testament > book > chapter > verse, books and chapters and verses by number.
+  Written by UFOS; free to use.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="bible" elementFormDefault="qualified">
+
+  <xs:element name="bible" type="Bible"/>
+
+  <xs:complexType name="Bible">
+    <xs:sequence>
+      <xs:element name="testament" type="Testament" minOccurs="1" maxOccurs="2"/>
+    </xs:sequence>
+    <xs:attribute name="translation" type="xs:string" use="required"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="Testament">
+    <xs:sequence>
+      <xs:element name="book" type="Book" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Old"/>
+          <xs:enumeration value="New"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Book">
+    <xs:sequence>
+      <xs:element name="chapter" type="Chapter" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <!-- 1 Genesis ... 66 Revelation: the format numbers books and never names them. -->
+    <xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="Chapter">
+    <xs:sequence>
+      <xs:element name="verse" type="Verse" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="Verse">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

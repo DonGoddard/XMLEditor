@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- An excerpt of EnglishKJBible.xml from https://github.com/Beblia/Holy-Bible-XML-Format:
+     Genesis 1:1-5 (book 1), Psalm 23 (book 19) and John 3:16 (book 43), unchanged.
+     The King James Version (1611) is in the public domain. -->
+<bible translation="English KJV" status="Public Domain">
+  <testament name="Old">
+    <book number="1">
+      <chapter number="1">
+        <verse number="1">In the beginning God created the heaven and the earth.</verse>
+        <verse number="2">And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.</verse>
+        <verse number="3">And God said, Let there be light: and there was light.</verse>
+        <verse number="4">And God saw the light, that it was good: and God divided the light from the darkness.</verse>
+        <verse number="5">And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.</verse>
+      </chapter>
+    </book>
+    <book number="19">
+      <chapter number="23">
+        <verse number="1">The LORD is my shepherd; I shall not want.</verse>
+        <verse number="2">He maketh me to lie down in green pastures: he leadeth me beside the still waters.</verse>
+        <verse number="3">He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.</verse>
+        <verse number="4">Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.</verse>
+        <verse number="5">Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.</verse>
+        <verse number="6">Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever.</verse>
+      </chapter>
+    </book>
+  </testament>
+  <testament name="New">
+    <book number="43">
+      <chapter number="3">
+        <verse number="16">For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.</verse>
+      </chapter>
+    </book>
+  </testament>
+</bible>

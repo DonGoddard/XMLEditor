@@ -1,0 +1,256 @@
+{
+  "xsd": "patient.xsd",
+  "path": "Schemas/FHIR/patient.xsd",
+  "version": 1,
+  "targetNamespace": "http://hl7.org/fhir",
+  "rootElements": ["Patient"],
+  "elements": [
+    {
+      "name": "Patient",
+      "doc": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+      "contentKind": "complex",
+      "children": [
+        "identifier",
+        "active",
+        "name",
+        "telecom",
+        "gender",
+        "birthDate",
+        "deceasedBoolean",
+        "deceasedDateTime",
+        "address",
+        "maritalStatus",
+        "multipleBirthBoolean",
+        "multipleBirthInteger",
+        "photo",
+        "contact",
+        "communication",
+        "generalPractitioner",
+        "managingOrganization",
+        "link"
+      ]
+    },
+    {
+      "name": "identifier",
+      "doc": "An identifier for this patient.",
+      "contentKind": "simple",
+      "textType": "Identifier"
+    },
+    {
+      "name": "active",
+      "doc": "Whether this patient record is in active use. Many systems use this property to mark as non-current patients, such as those that have not been seen for a period of time based on an organization's business rules. It is often used to filter patient lists to exclude inactive patients Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.",
+      "contentKind": "simple",
+      "textType": "boolean"
+    },
+    {
+      "name": "name",
+      "doc": "A name associated with the individual.",
+      "contentKind": "simple",
+      "textType": "HumanName"
+    },
+    {
+      "name": "telecom",
+      "doc": "A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.",
+      "contentKind": "simple",
+      "textType": "ContactPoint"
+    },
+    {
+      "name": "gender",
+      "doc": "Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.",
+      "contentKind": "simple",
+      "textType": "AdministrativeGender"
+    },
+    {
+      "name": "birthDate",
+      "doc": "The date of birth for the individual.",
+      "contentKind": "simple",
+      "textType": "date"
+    },
+    {
+      "name": "deceasedBoolean",
+      "contentKind": "simple",
+      "textType": "boolean"
+    },
+    {
+      "name": "deceasedDateTime",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "address",
+      "doc": "An address for the individual.",
+      "contentKind": "simple",
+      "textType": "Address"
+    },
+    {
+      "name": "maritalStatus",
+      "doc": "This field contains a patient's most recent marital (civil) status.",
+      "contentKind": "simple",
+      "textType": "CodeableConcept"
+    },
+    {
+      "name": "multipleBirthBoolean",
+      "contentKind": "simple",
+      "textType": "boolean"
+    },
+    {
+      "name": "multipleBirthInteger",
+      "contentKind": "simple",
+      "textType": "integer"
+    },
+    {
+      "name": "photo",
+      "doc": "Image of the patient.",
+      "contentKind": "simple",
+      "textType": "Attachment"
+    },
+    {
+      "name": "contact",
+      "doc": "A contact party (e.g. guardian, partner, friend) for the patient.",
+      "contentKind": "complex",
+      "children": [
+        "relationship",
+        "name",
+        "telecom",
+        "address",
+        "gender",
+        "organization",
+        "period"
+      ]
+    },
+    {
+      "name": "relationship",
+      "doc": "The nature of the relationship between the patient and the contact person.",
+      "contentKind": "simple",
+      "textType": "CodeableConcept"
+    },
+    {
+      "name": "organization",
+      "doc": "Organization on behalf of which the contact is acting or for which the contact is working.",
+      "contentKind": "simple",
+      "textType": "Reference"
+    },
+    {
+      "name": "period",
+      "doc": "The period during which this contact person or organization is valid to be contacted relating to this patient.",
+      "contentKind": "simple",
+      "textType": "Period"
+    },
+    {
+      "name": "communication",
+      "doc": "A language which may be used to communicate with the patient about his or her health.",
+      "contentKind": "complex",
+      "children": ["language", "preferred"]
+    },
+    {
+      "name": "language",
+      "doc": "The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. \"en\" for English, or \"en-US\" for American English versus \"en-EN\" for England English.",
+      "contentKind": "simple",
+      "textType": "CodeableConcept"
+    },
+    {
+      "name": "preferred",
+      "doc": "Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).",
+      "contentKind": "simple",
+      "textType": "boolean"
+    },
+    {
+      "name": "generalPractitioner",
+      "doc": "Patient's nominated care provider.",
+      "contentKind": "simple",
+      "textType": "Reference"
+    },
+    {
+      "name": "managingOrganization",
+      "doc": "Organization that is the custodian of the patient record.",
+      "contentKind": "simple",
+      "textType": "Reference"
+    },
+    {
+      "name": "link",
+      "doc": "Link to another patient resource that concerns the same actual patient.",
+      "contentKind": "complex",
+      "children": ["other", "type"]
+    },
+    {
+      "name": "other",
+      "doc": "The other patient resource that the link refers to.",
+      "contentKind": "simple",
+      "textType": "Reference"
+    },
+    {
+      "name": "type",
+      "doc": "The type of link between this patient resource and another patient resource.",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "value", "type": "LinkType-list", "required": false }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Patient",
+      "kind": "complex",
+      "doc": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+      "children": [
+        "identifier",
+        "active",
+        "name",
+        "telecom",
+        "gender",
+        "birthDate",
+        "deceasedBoolean",
+        "deceasedDateTime",
+        "address",
+        "maritalStatus",
+        "multipleBirthBoolean",
+        "multipleBirthInteger",
+        "photo",
+        "contact",
+        "communication",
+        "generalPractitioner",
+        "managingOrganization",
+        "link"
+      ]
+    },
+    {
+      "name": "Patient.Contact",
+      "kind": "complex",
+      "doc": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+      "children": [
+        "relationship",
+        "name",
+        "telecom",
+        "address",
+        "gender",
+        "organization",
+        "period"
+      ]
+    },
+    {
+      "name": "Patient.Communication",
+      "kind": "complex",
+      "doc": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+      "children": ["language", "preferred"]
+    },
+    {
+      "name": "Patient.Link",
+      "kind": "complex",
+      "doc": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+      "children": ["other", "type"]
+    },
+    {
+      "name": "LinkType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "LinkType",
+      "kind": "complex",
+      "doc": "The type of link between this patient resource and another patient resource.",
+      "attrs": [
+        { "name": "value", "type": "LinkType-list", "required": false }
+      ]
+    }
+  ]
+}

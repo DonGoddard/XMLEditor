@@ -1,0 +1,1724 @@
+{
+  "xsd": "fhir-base.xsd",
+  "path": "Schemas/FHIR/fhir-base.xsd",
+  "version": 1,
+  "targetNamespace": "http://hl7.org/fhir",
+  "rootElements": [],
+  "elements": [
+  ],
+  "types": [
+    {
+      "name": "date-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "date",
+      "kind": "complex",
+      "doc": "A date or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date. Dates SHALL be valid dates.",
+      "attrs": [
+        { "name": "value", "type": "date-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "dateTime-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "dateTime",
+      "kind": "complex",
+      "doc": "A date, date-time or partial date (e.g. just year or year + month). If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored. Dates SHALL be valid dates.",
+      "attrs": [
+        { "name": "value", "type": "dateTime-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "code-primitive",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "code",
+      "kind": "complex",
+      "doc": "A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents",
+      "attrs": [
+        { "name": "value", "type": "code-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "string-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "string",
+      "kind": "complex",
+      "doc": "A sequence of Unicode characters",
+      "attrs": [
+        { "name": "value", "type": "string-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "integer-primitive",
+      "kind": "simple",
+      "baseType": "int"
+    },
+    {
+      "name": "integer",
+      "kind": "complex",
+      "doc": "A whole number",
+      "attrs": [
+        { "name": "value", "type": "integer-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "oid-primitive",
+      "kind": "simple",
+      "baseType": "anyURI"
+    },
+    {
+      "name": "oid",
+      "kind": "complex",
+      "doc": "An OID represented as a URI",
+      "attrs": [
+        { "name": "value", "type": "oid-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "canonical-primitive",
+      "kind": "simple",
+      "baseType": "anyURI"
+    },
+    {
+      "name": "canonical",
+      "kind": "complex",
+      "doc": "A URI that is a reference to a canonical URL on a FHIR resource",
+      "attrs": [
+        { "name": "value", "type": "canonical-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "uri-primitive",
+      "kind": "simple",
+      "baseType": "anyURI"
+    },
+    {
+      "name": "uri",
+      "kind": "complex",
+      "doc": "String of characters used to identify a name or a resource",
+      "attrs": [
+        { "name": "value", "type": "uri-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "uuid-primitive",
+      "kind": "simple",
+      "baseType": "anyURI"
+    },
+    {
+      "name": "uuid",
+      "kind": "complex",
+      "doc": "A UUID, represented as a URI",
+      "attrs": [
+        { "name": "value", "type": "uuid-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "url-primitive",
+      "kind": "simple",
+      "baseType": "anyURI"
+    },
+    {
+      "name": "url",
+      "kind": "complex",
+      "doc": "A URI that is a literal reference",
+      "attrs": [
+        { "name": "value", "type": "url-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "instant-primitive",
+      "kind": "simple",
+      "baseType": "dateTime"
+    },
+    {
+      "name": "instant",
+      "kind": "complex",
+      "doc": "An instant in time - known at least to the second",
+      "attrs": [
+        { "name": "value", "type": "instant-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "boolean-primitive",
+      "kind": "simple",
+      "baseType": "boolean"
+    },
+    {
+      "name": "boolean",
+      "kind": "complex",
+      "doc": "Value of \"true\" or \"false\"",
+      "attrs": [
+        { "name": "value", "type": "boolean-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "base64Binary-primitive",
+      "kind": "simple",
+      "baseType": "base64Binary"
+    },
+    {
+      "name": "base64Binary",
+      "kind": "complex",
+      "doc": "A stream of bytes",
+      "attrs": [
+        { "name": "value", "type": "base64Binary-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "unsignedInt-primitive",
+      "kind": "simple",
+      "baseType": "nonNegativeInteger"
+    },
+    {
+      "name": "unsignedInt",
+      "kind": "complex",
+      "doc": "An integer with a value that is not negative (e.g. >= 0)",
+      "attrs": [
+        { "name": "value", "type": "unsignedInt-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "markdown-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "markdown",
+      "kind": "complex",
+      "doc": "A string that may contain Github Flavored Markdown syntax for optional processing by a mark down presentation engine",
+      "attrs": [
+        { "name": "value", "type": "markdown-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "time-primitive",
+      "kind": "simple",
+      "baseType": "time"
+    },
+    {
+      "name": "time",
+      "kind": "complex",
+      "doc": "A time during the day, with no date specified",
+      "attrs": [
+        { "name": "value", "type": "time-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "id-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "id",
+      "kind": "complex",
+      "doc": "Any combination of letters, numerals, \"-\" and \".\", with a length limit of 64 characters. (This might be an integer, an unprefixed OID, UUID or any other identifier pattern that meets these constraints.) Ids are case-insensitive.",
+      "attrs": [
+        { "name": "value", "type": "id-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "positiveInt-primitive",
+      "kind": "simple",
+      "baseType": "positiveInteger"
+    },
+    {
+      "name": "positiveInt",
+      "kind": "complex",
+      "doc": "An integer with a value that is positive (e.g. >0)",
+      "attrs": [
+        { "name": "value", "type": "positiveInt-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "decimal-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "decimal",
+      "kind": "complex",
+      "doc": "A rational number with implicit precision",
+      "attrs": [
+        { "name": "value", "type": "decimal-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ResourceContainer",
+      "kind": "complex",
+      "children": [
+        "Account",
+        "ActivityDefinition",
+        "AdverseEvent",
+        "AllergyIntolerance",
+        "Appointment",
+        "AppointmentResponse",
+        "AuditEvent",
+        "Basic",
+        "Binary",
+        "BiologicallyDerivedProduct",
+        "BodyStructure",
+        "Bundle",
+        "CapabilityStatement",
+        "CarePlan",
+        "CareTeam",
+        "CatalogEntry",
+        "ChargeItem",
+        "ChargeItemDefinition",
+        "Claim",
+        "ClaimResponse",
+        "ClinicalImpression",
+        "CodeSystem",
+        "Communication",
+        "CommunicationRequest",
+        "CompartmentDefinition",
+        "Composition",
+        "ConceptMap",
+        "Condition",
+        "Consent",
+        "Contract",
+        "Coverage",
+        "CoverageEligibilityRequest",
+        "CoverageEligibilityResponse",
+        "DetectedIssue",
+        "Device",
+        "DeviceDefinition",
+        "DeviceMetric",
+        "DeviceRequest",
+        "DeviceUseStatement",
+        "DiagnosticReport",
+        "DocumentManifest",
+        "DocumentReference",
+        "EffectEvidenceSynthesis",
+        "Encounter",
+        "Endpoint",
+        "EnrollmentRequest",
+        "EnrollmentResponse",
+        "EpisodeOfCare",
+        "EventDefinition",
+        "Evidence",
+        "EvidenceVariable",
+        "ExampleScenario",
+        "ExplanationOfBenefit",
+        "FamilyMemberHistory",
+        "Flag",
+        "Goal",
+        "GraphDefinition",
+        "Group",
+        "GuidanceResponse",
+        "HealthcareService",
+        "ImagingStudy",
+        "Immunization",
+        "ImmunizationEvaluation",
+        "ImmunizationRecommendation",
+        "ImplementationGuide",
+        "InsurancePlan",
+        "Invoice",
+        "Library",
+        "Linkage",
+        "List",
+        "Location",
+        "Measure",
+        "MeasureReport",
+        "Media",
+        "Medication",
+        "MedicationAdministration",
+        "MedicationDispense",
+        "MedicationKnowledge",
+        "MedicationRequest",
+        "MedicationStatement",
+        "MedicinalProduct",
+        "MedicinalProductAuthorization",
+        "MedicinalProductContraindication",
+        "MedicinalProductIndication",
+        "MedicinalProductIngredient",
+        "MedicinalProductInteraction",
+        "MedicinalProductManufactured",
+        "MedicinalProductPackaged",
+        "MedicinalProductPharmaceutical",
+        "MedicinalProductUndesirableEffect",
+        "MessageDefinition",
+        "MessageHeader",
+        "MolecularSequence",
+        "NamingSystem",
+        "NutritionOrder",
+        "Observation",
+        "ObservationDefinition",
+        "OperationDefinition",
+        "OperationOutcome",
+        "Organization",
+        "OrganizationAffiliation",
+        "Patient",
+        "PaymentNotice",
+        "PaymentReconciliation",
+        "Person",
+        "PlanDefinition",
+        "Practitioner",
+        "PractitionerRole",
+        "Procedure",
+        "Provenance",
+        "Questionnaire",
+        "QuestionnaireResponse",
+        "RelatedPerson",
+        "RequestGroup",
+        "ResearchDefinition",
+        "ResearchElementDefinition",
+        "ResearchStudy",
+        "ResearchSubject",
+        "RiskAssessment",
+        "RiskEvidenceSynthesis",
+        "Schedule",
+        "SearchParameter",
+        "ServiceRequest",
+        "Slot",
+        "Specimen",
+        "SpecimenDefinition",
+        "StructureDefinition",
+        "StructureMap",
+        "Subscription",
+        "Substance",
+        "SubstanceNucleicAcid",
+        "SubstancePolymer",
+        "SubstanceProtein",
+        "SubstanceReferenceInformation",
+        "SubstanceSourceMaterial",
+        "SubstanceSpecification",
+        "SupplyDelivery",
+        "SupplyRequest",
+        "Task",
+        "TerminologyCapabilities",
+        "TestReport",
+        "TestScript",
+        "ValueSet",
+        "VerificationResult",
+        "VisionPrescription",
+        "Parameters"
+      ]
+    },
+    {
+      "name": "Extension",
+      "kind": "complex",
+      "doc": "Optional Extension Element - found in all resources.",
+      "attrs": [
+        { "name": "url", "type": "uri-primitive", "required": true }
+      ],
+      "children": [
+        "extension",
+        "valueBase64Binary",
+        "valueBoolean",
+        "valueCanonical",
+        "valueCode",
+        "valueDate",
+        "valueDateTime",
+        "valueDecimal",
+        "valueId",
+        "valueInstant",
+        "valueInteger",
+        "valueMarkdown",
+        "valueOid",
+        "valuePositiveInt",
+        "valueString",
+        "valueTime",
+        "valueUnsignedInt",
+        "valueUri",
+        "valueUrl",
+        "valueUuid",
+        "valueAddress",
+        "valueAge",
+        "valueAnnotation",
+        "valueAttachment",
+        "valueCodeableConcept",
+        "valueCoding",
+        "valueContactPoint",
+        "valueCount",
+        "valueDistance",
+        "valueDuration",
+        "valueHumanName",
+        "valueIdentifier",
+        "valueMoney",
+        "valuePeriod",
+        "valueQuantity",
+        "valueRange",
+        "valueRatio",
+        "valueReference",
+        "valueSampledData",
+        "valueSignature",
+        "valueTiming",
+        "valueContactDetail",
+        "valueContributor",
+        "valueDataRequirement",
+        "valueExpression",
+        "valueParameterDefinition",
+        "valueRelatedArtifact",
+        "valueTriggerDefinition",
+        "valueUsageContext",
+        "valueDosage",
+        "valueMeta"
+      ]
+    },
+    {
+      "name": "BackboneElement",
+      "kind": "complex",
+      "doc": "Base definition for all elements that are defined inside a resource - but not those in a data type.",
+      "children": ["extension", "modifierExtension"]
+    },
+    {
+      "name": "Narrative",
+      "kind": "complex",
+      "doc": "A human-readable summary of the resource conveying the essential clinical and business information for the resource.",
+      "children": ["extension", "status", "div"]
+    },
+    {
+      "name": "NarrativeStatus-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "NarrativeStatus",
+      "kind": "complex",
+      "doc": "The status of a resource narrative.",
+      "attrs": [
+        { "name": "value", "type": "NarrativeStatus-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Element",
+      "kind": "complex",
+      "doc": "Base definition for all elements in a resource.",
+      "attrs": [
+        { "name": "id", "type": "string-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Meta",
+      "kind": "complex",
+      "doc": "The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
+      "children": [
+        "extension",
+        "versionId",
+        "lastUpdated",
+        "source",
+        "profile",
+        "security",
+        "tag"
+      ]
+    },
+    {
+      "name": "Address",
+      "kind": "complex",
+      "doc": "An address expressed using postal conventions (as opposed to GPS or other location definition formats). This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery. There are a variety of postal address formats defined around the world.",
+      "children": [
+        "extension",
+        "use",
+        "type",
+        "text",
+        "line",
+        "city",
+        "district",
+        "state",
+        "postalCode",
+        "country",
+        "period"
+      ]
+    },
+    {
+      "name": "AddressUse-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "AddressUse",
+      "kind": "complex",
+      "doc": "The use of an address.",
+      "attrs": [
+        { "name": "value", "type": "AddressUse-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "AddressType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "AddressType",
+      "kind": "complex",
+      "doc": "The type of an address (physical / postal).",
+      "attrs": [
+        { "name": "value", "type": "AddressType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Contributor",
+      "kind": "complex",
+      "doc": "A contributor to the content of a knowledge asset, including authors, editors, reviewers, and endorsers.",
+      "children": ["extension", "type", "name", "contact"]
+    },
+    {
+      "name": "ContributorType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ContributorType",
+      "kind": "complex",
+      "doc": "The type of contributor.",
+      "attrs": [
+        { "name": "value", "type": "ContributorType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Attachment",
+      "kind": "complex",
+      "doc": "For referring to data content defined in other formats.",
+      "children": [
+        "extension",
+        "contentType",
+        "language",
+        "data",
+        "url",
+        "size",
+        "hash",
+        "title",
+        "creation"
+      ]
+    },
+    {
+      "name": "Count",
+      "kind": "complex",
+      "doc": "A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.",
+      "children": ["extension", "value", "comparator", "unit", "system", "code"]
+    },
+    {
+      "name": "DataRequirement",
+      "kind": "complex",
+      "doc": "Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.",
+      "children": [
+        "extension",
+        "type",
+        "profile",
+        "subjectCodeableConcept",
+        "subjectReference",
+        "mustSupport",
+        "codeFilter",
+        "dateFilter",
+        "limit",
+        "sort"
+      ]
+    },
+    {
+      "name": "DataRequirement.CodeFilter",
+      "kind": "complex",
+      "doc": "Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.",
+      "children": ["extension", "path", "searchParam", "valueSet", "code"]
+    },
+    {
+      "name": "DataRequirement.DateFilter",
+      "kind": "complex",
+      "doc": "Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.",
+      "children": ["extension", "path", "searchParam", "valueDateTime", "valuePeriod", "valueDuration"]
+    },
+    {
+      "name": "DataRequirement.Sort",
+      "kind": "complex",
+      "doc": "Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.",
+      "children": ["extension", "path", "direction"]
+    },
+    {
+      "name": "SortDirection-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "SortDirection",
+      "kind": "complex",
+      "doc": "The possible sort directions, ascending or descending.",
+      "attrs": [
+        { "name": "value", "type": "SortDirection-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Dosage",
+      "kind": "complex",
+      "doc": "Indicates how the medication is/was taken or should be taken by the patient.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "sequence",
+        "text",
+        "additionalInstruction",
+        "patientInstruction",
+        "timing",
+        "asNeededBoolean",
+        "asNeededCodeableConcept",
+        "site",
+        "route",
+        "method",
+        "doseAndRate",
+        "maxDosePerPeriod",
+        "maxDosePerAdministration",
+        "maxDosePerLifetime"
+      ]
+    },
+    {
+      "name": "Dosage.DoseAndRate",
+      "kind": "complex",
+      "doc": "Indicates how the medication is/was taken or should be taken by the patient.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "type",
+        "doseRange",
+        "doseQuantity",
+        "rateRatio",
+        "rateRange",
+        "rateQuantity"
+      ]
+    },
+    {
+      "name": "Money",
+      "kind": "complex",
+      "doc": "An amount of economic utility in some recognized currency.",
+      "children": ["extension", "value", "currency"]
+    },
+    {
+      "name": "HumanName",
+      "kind": "complex",
+      "doc": "A human's name with the ability to identify parts and usage.",
+      "children": [
+        "extension",
+        "use",
+        "text",
+        "family",
+        "given",
+        "prefix",
+        "suffix",
+        "period"
+      ]
+    },
+    {
+      "name": "NameUse-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "NameUse",
+      "kind": "complex",
+      "doc": "The use of a human name.",
+      "attrs": [
+        { "name": "value", "type": "NameUse-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ContactPoint",
+      "kind": "complex",
+      "doc": "Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.",
+      "children": ["extension", "system", "value", "use", "rank", "period"]
+    },
+    {
+      "name": "ContactPointSystem-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ContactPointSystem",
+      "kind": "complex",
+      "doc": "Telecommunications form for contact point.",
+      "attrs": [
+        { "name": "value", "type": "ContactPointSystem-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ContactPointUse-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ContactPointUse",
+      "kind": "complex",
+      "doc": "Use of contact point.",
+      "attrs": [
+        { "name": "value", "type": "ContactPointUse-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "MarketingStatus",
+      "kind": "complex",
+      "doc": "The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "country",
+        "jurisdiction",
+        "status",
+        "dateRange",
+        "restoreDate"
+      ]
+    },
+    {
+      "name": "Identifier",
+      "kind": "complex",
+      "doc": "An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.",
+      "children": [
+        "extension",
+        "use",
+        "type",
+        "system",
+        "value",
+        "period",
+        "assigner"
+      ]
+    },
+    {
+      "name": "IdentifierUse-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "IdentifierUse",
+      "kind": "complex",
+      "doc": "Identifies the purpose for this identifier, if known .",
+      "attrs": [
+        { "name": "value", "type": "IdentifierUse-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "SubstanceAmount",
+      "kind": "complex",
+      "doc": "Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "amountQuantity",
+        "amountRange",
+        "amountString",
+        "amountType",
+        "amountText",
+        "referenceRange"
+      ]
+    },
+    {
+      "name": "SubstanceAmount.ReferenceRange",
+      "kind": "complex",
+      "doc": "Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID.",
+      "children": ["extension", "modifierExtension", "lowLimit", "highLimit"]
+    },
+    {
+      "name": "Coding",
+      "kind": "complex",
+      "doc": "A reference to a code defined by a terminology system.",
+      "children": ["extension", "system", "version", "code", "display", "userSelected"]
+    },
+    {
+      "name": "SampledData",
+      "kind": "complex",
+      "doc": "A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.",
+      "children": [
+        "extension",
+        "origin",
+        "period",
+        "factor",
+        "lowerLimit",
+        "upperLimit",
+        "dimensions",
+        "data"
+      ]
+    },
+    {
+      "name": "SampledDataDataType-primitive",
+      "kind": "simple",
+      "baseType": "string"
+    },
+    {
+      "name": "SampledDataDataType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "SampledDataDataType-primitive", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Population",
+      "kind": "complex",
+      "doc": "A populatioof people with some set of grouping criteria.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "ageRange",
+        "ageCodeableConcept",
+        "gender",
+        "race",
+        "physiologicalCondition"
+      ]
+    },
+    {
+      "name": "Ratio",
+      "kind": "complex",
+      "doc": "A relationship of two Quantity values - expressed as a numerator and a denominator.",
+      "children": ["extension", "numerator", "denominator"]
+    },
+    {
+      "name": "Distance",
+      "kind": "complex",
+      "doc": "A length - a value with a unit that is a physical distance.",
+      "children": ["extension", "value", "comparator", "unit", "system", "code"]
+    },
+    {
+      "name": "Age",
+      "kind": "complex",
+      "doc": "A duration of time during which an organism (or a process) has existed.",
+      "children": ["extension", "value", "comparator", "unit", "system", "code"]
+    },
+    {
+      "name": "Reference",
+      "kind": "complex",
+      "doc": "A reference from one resource to another.",
+      "children": ["extension", "reference", "type", "identifier", "display"]
+    },
+    {
+      "name": "TriggerDefinition",
+      "kind": "complex",
+      "doc": "A description of a triggering event. Triggering events can be named events, data events, or periodic, as determined by the type element.",
+      "children": [
+        "extension",
+        "type",
+        "name",
+        "timingTiming",
+        "timingReference",
+        "timingDate",
+        "timingDateTime",
+        "data",
+        "condition"
+      ]
+    },
+    {
+      "name": "TriggerType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "TriggerType",
+      "kind": "complex",
+      "doc": "The type of trigger.",
+      "attrs": [
+        { "name": "value", "type": "TriggerType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Quantity",
+      "kind": "complex",
+      "doc": "A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.",
+      "children": ["extension", "value", "comparator", "unit", "system", "code"]
+    },
+    {
+      "name": "QuantityComparator-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "QuantityComparator",
+      "kind": "complex",
+      "doc": "How the Quantity should be understood and represented.",
+      "attrs": [
+        { "name": "value", "type": "QuantityComparator-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Period",
+      "kind": "complex",
+      "doc": "A time period defined by a start and end date and optionally time.",
+      "children": ["extension", "start", "end"]
+    },
+    {
+      "name": "Duration",
+      "kind": "complex",
+      "doc": "A length of time.",
+      "children": ["extension", "value", "comparator", "unit", "system", "code"]
+    },
+    {
+      "name": "Range",
+      "kind": "complex",
+      "doc": "A set of ordered Quantities defined by a low and high limit.",
+      "children": ["extension", "low", "high"]
+    },
+    {
+      "name": "RelatedArtifact",
+      "kind": "complex",
+      "doc": "Related artifacts such as additional documentation, justification, or bibliographic references.",
+      "children": [
+        "extension",
+        "type",
+        "label",
+        "display",
+        "citation",
+        "url",
+        "document",
+        "resource"
+      ]
+    },
+    {
+      "name": "RelatedArtifactType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "RelatedArtifactType",
+      "kind": "complex",
+      "doc": "The type of relationship to the related artifact.",
+      "attrs": [
+        { "name": "value", "type": "RelatedArtifactType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Annotation",
+      "kind": "complex",
+      "doc": "A text note which also contains information about who made the statement and when.",
+      "children": ["extension", "authorReference", "authorString", "time", "text"]
+    },
+    {
+      "name": "ProductShelfLife",
+      "kind": "complex",
+      "doc": "The shelf-life and storage information for a medicinal product item or container can be described using this class.",
+      "children": ["extension", "modifierExtension", "identifier", "type", "period", "specialPrecautionsForStorage"]
+    },
+    {
+      "name": "ContactDetail",
+      "kind": "complex",
+      "doc": "Specifies contact information for a person or organization.",
+      "children": ["extension", "name", "telecom"]
+    },
+    {
+      "name": "UsageContext",
+      "kind": "complex",
+      "doc": "Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).",
+      "children": ["extension", "code", "valueCodeableConcept", "valueQuantity", "valueRange", "valueReference"]
+    },
+    {
+      "name": "Expression",
+      "kind": "complex",
+      "doc": "A expression that is evaluated in a specified context and returns a value. The context of use of the expression must specify the context in which the expression is evaluated, and how the result of the expression is used.",
+      "children": ["extension", "description", "name", "language", "expression", "reference"]
+    },
+    {
+      "name": "ExpressionLanguage-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ExpressionLanguage",
+      "kind": "complex",
+      "doc": "The media type of the expression language.",
+      "attrs": [
+        { "name": "value", "type": "ExpressionLanguage-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "Signature",
+      "kind": "complex",
+      "doc": "A signature along with supporting context. The signature may be a digital signature that is cryptographic in nature, or some other signature acceptable to the domain. This other signature may be as simple as a graphical image representing a hand-written signature, or a signature ceremony Different signature approaches have different utilities.",
+      "children": [
+        "extension",
+        "type",
+        "when",
+        "who",
+        "onBehalfOf",
+        "targetFormat",
+        "sigFormat",
+        "data"
+      ]
+    },
+    {
+      "name": "Timing",
+      "kind": "complex",
+      "doc": "Specifies an event that may occur multiple times. Timing schedules are used to record when things are planned, expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds, and may be used for reporting the schedule to which past regular activities were carried out.",
+      "children": ["extension", "modifierExtension", "event", "repeat", "code"]
+    },
+    {
+      "name": "Timing.Repeat",
+      "kind": "complex",
+      "doc": "Specifies an event that may occur multiple times. Timing schedules are used to record when things are planned, expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds, and may be used for reporting the schedule to which past regular activities were carried out.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "boundsDuration",
+        "boundsRange",
+        "boundsPeriod",
+        "count",
+        "countMax",
+        "duration",
+        "durationMax",
+        "durationUnit",
+        "frequency",
+        "frequencyMax",
+        "period",
+        "periodMax",
+        "periodUnit",
+        "dayOfWeek",
+        "timeOfDay",
+        "when",
+        "offset"
+      ]
+    },
+    {
+      "name": "UnitsOfTime-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "UnitsOfTime",
+      "kind": "complex",
+      "doc": "A unit of time (units from UCUM).",
+      "attrs": [
+        { "name": "value", "type": "UnitsOfTime-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "EventTiming-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "EventTiming",
+      "kind": "complex",
+      "doc": "Real world event relating to the schedule.",
+      "attrs": [
+        { "name": "value", "type": "EventTiming-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ProdCharacteristic",
+      "kind": "complex",
+      "doc": "The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "height",
+        "width",
+        "depth",
+        "weight",
+        "nominalVolume",
+        "externalDiameter",
+        "shape",
+        "color",
+        "imprint",
+        "image",
+        "scoring"
+      ]
+    },
+    {
+      "name": "CodeableConcept",
+      "kind": "complex",
+      "doc": "A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.",
+      "children": ["extension", "coding", "text"]
+    },
+    {
+      "name": "ParameterDefinition",
+      "kind": "complex",
+      "doc": "The parameters to the module. This collection specifies both the input and output parameters. Input parameters are provided by the caller as part of the $evaluate operation. Output parameters are included in the GuidanceResponse.",
+      "children": [
+        "extension",
+        "name",
+        "use",
+        "min",
+        "max",
+        "documentation",
+        "type",
+        "profile"
+      ]
+    },
+    {
+      "name": "ElementDefinition",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "path",
+        "representation",
+        "sliceName",
+        "sliceIsConstraining",
+        "label",
+        "code",
+        "slicing",
+        "short",
+        "definition",
+        "comment",
+        "requirements",
+        "alias",
+        "min",
+        "max",
+        "base",
+        "contentReference",
+        "type",
+        "defaultValueBase64Binary",
+        "defaultValueBoolean",
+        "defaultValueCanonical",
+        "defaultValueCode",
+        "defaultValueDate",
+        "defaultValueDateTime",
+        "defaultValueDecimal",
+        "defaultValueId",
+        "defaultValueInstant",
+        "defaultValueInteger",
+        "defaultValueMarkdown",
+        "defaultValueOid",
+        "defaultValuePositiveInt",
+        "defaultValueString",
+        "defaultValueTime",
+        "defaultValueUnsignedInt",
+        "defaultValueUri",
+        "defaultValueUrl",
+        "defaultValueUuid",
+        "defaultValueAddress",
+        "defaultValueAge",
+        "defaultValueAnnotation",
+        "defaultValueAttachment",
+        "defaultValueCodeableConcept",
+        "defaultValueCoding",
+        "defaultValueContactPoint",
+        "defaultValueCount",
+        "defaultValueDistance",
+        "defaultValueDuration",
+        "defaultValueHumanName",
+        "defaultValueIdentifier",
+        "defaultValueMoney",
+        "defaultValuePeriod",
+        "defaultValueQuantity",
+        "defaultValueRange",
+        "defaultValueRatio",
+        "defaultValueReference",
+        "defaultValueSampledData",
+        "defaultValueSignature",
+        "defaultValueTiming",
+        "defaultValueContactDetail",
+        "defaultValueContributor",
+        "defaultValueDataRequirement",
+        "defaultValueExpression",
+        "defaultValueParameterDefinition",
+        "defaultValueRelatedArtifact",
+        "defaultValueTriggerDefinition",
+        "defaultValueUsageContext",
+        "defaultValueDosage",
+        "defaultValueMeta",
+        "meaningWhenMissing",
+        "orderMeaning",
+        "fixedBase64Binary",
+        "fixedBoolean",
+        "fixedCanonical",
+        "fixedCode",
+        "fixedDate",
+        "fixedDateTime",
+        "fixedDecimal",
+        "fixedId",
+        "fixedInstant",
+        "fixedInteger",
+        "fixedMarkdown",
+        "fixedOid",
+        "fixedPositiveInt",
+        "fixedString",
+        "fixedTime",
+        "fixedUnsignedInt",
+        "fixedUri",
+        "fixedUrl",
+        "fixedUuid",
+        "fixedAddress",
+        "fixedAge",
+        "fixedAnnotation",
+        "fixedAttachment",
+        "fixedCodeableConcept",
+        "fixedCoding",
+        "fixedContactPoint",
+        "fixedCount",
+        "fixedDistance",
+        "fixedDuration",
+        "fixedHumanName",
+        "fixedIdentifier",
+        "fixedMoney",
+        "fixedPeriod",
+        "fixedQuantity",
+        "fixedRange",
+        "fixedRatio",
+        "fixedReference",
+        "fixedSampledData",
+        "fixedSignature",
+        "fixedTiming",
+        "fixedContactDetail",
+        "fixedContributor",
+        "fixedDataRequirement",
+        "fixedExpression",
+        "fixedParameterDefinition",
+        "fixedRelatedArtifact",
+        "fixedTriggerDefinition",
+        "fixedUsageContext",
+        "fixedDosage",
+        "fixedMeta",
+        "patternBase64Binary",
+        "patternBoolean",
+        "patternCanonical",
+        "patternCode",
+        "patternDate",
+        "patternDateTime",
+        "patternDecimal",
+        "patternId",
+        "patternInstant",
+        "patternInteger",
+        "patternMarkdown",
+        "patternOid",
+        "patternPositiveInt",
+        "patternString",
+        "patternTime",
+        "patternUnsignedInt",
+        "patternUri",
+        "patternUrl",
+        "patternUuid",
+        "patternAddress",
+        "patternAge",
+        "patternAnnotation",
+        "patternAttachment",
+        "patternCodeableConcept",
+        "patternCoding",
+        "patternContactPoint",
+        "patternCount",
+        "patternDistance",
+        "patternDuration",
+        "patternHumanName",
+        "patternIdentifier",
+        "patternMoney",
+        "patternPeriod",
+        "patternQuantity",
+        "patternRange",
+        "patternRatio",
+        "patternReference",
+        "patternSampledData",
+        "patternSignature",
+        "patternTiming",
+        "patternContactDetail",
+        "patternContributor",
+        "patternDataRequirement",
+        "patternExpression",
+        "patternParameterDefinition",
+        "patternRelatedArtifact",
+        "patternTriggerDefinition",
+        "patternUsageContext",
+        "patternDosage",
+        "patternMeta",
+        "example",
+        "minValueDate",
+        "minValueDateTime",
+        "minValueInstant",
+        "minValueTime",
+        "minValueDecimal",
+        "minValueInteger",
+        "minValuePositiveInt",
+        "minValueUnsignedInt",
+        "minValueQuantity",
+        "maxValueDate",
+        "maxValueDateTime",
+        "maxValueInstant",
+        "maxValueTime",
+        "maxValueDecimal",
+        "maxValueInteger",
+        "maxValuePositiveInt",
+        "maxValueUnsignedInt",
+        "maxValueQuantity",
+        "maxLength",
+        "condition",
+        "constraint",
+        "mustSupport",
+        "isModifier",
+        "isModifierReason",
+        "isSummary",
+        "binding",
+        "mapping"
+      ]
+    },
+    {
+      "name": "ElementDefinition.Constraint",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "key",
+        "requirements",
+        "severity",
+        "human",
+        "expression",
+        "xpath",
+        "source"
+      ]
+    },
+    {
+      "name": "ElementDefinition.Mapping",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": ["extension", "modifierExtension", "identity", "language", "map", "comment"]
+    },
+    {
+      "name": "ElementDefinition.Base",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": ["extension", "modifierExtension", "path", "min", "max"]
+    },
+    {
+      "name": "ElementDefinition.Type",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "code",
+        "profile",
+        "targetProfile",
+        "aggregation",
+        "versioning"
+      ]
+    },
+    {
+      "name": "ElementDefinition.Example",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": [
+        "extension",
+        "modifierExtension",
+        "label",
+        "valueBase64Binary",
+        "valueBoolean",
+        "valueCanonical",
+        "valueCode",
+        "valueDate",
+        "valueDateTime",
+        "valueDecimal",
+        "valueId",
+        "valueInstant",
+        "valueInteger",
+        "valueMarkdown",
+        "valueOid",
+        "valuePositiveInt",
+        "valueString",
+        "valueTime",
+        "valueUnsignedInt",
+        "valueUri",
+        "valueUrl",
+        "valueUuid",
+        "valueAddress",
+        "valueAge",
+        "valueAnnotation",
+        "valueAttachment",
+        "valueCodeableConcept",
+        "valueCoding",
+        "valueContactPoint",
+        "valueCount",
+        "valueDistance",
+        "valueDuration",
+        "valueHumanName",
+        "valueIdentifier",
+        "valueMoney",
+        "valuePeriod",
+        "valueQuantity",
+        "valueRange",
+        "valueRatio",
+        "valueReference",
+        "valueSampledData",
+        "valueSignature",
+        "valueTiming",
+        "valueContactDetail",
+        "valueContributor",
+        "valueDataRequirement",
+        "valueExpression",
+        "valueParameterDefinition",
+        "valueRelatedArtifact",
+        "valueTriggerDefinition",
+        "valueUsageContext",
+        "valueDosage",
+        "valueMeta"
+      ]
+    },
+    {
+      "name": "ElementDefinition.Slicing",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": ["extension", "modifierExtension", "discriminator", "description", "ordered", "rules"]
+    },
+    {
+      "name": "ElementDefinition.Binding",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": ["extension", "modifierExtension", "strength", "description", "valueSet"]
+    },
+    {
+      "name": "ElementDefinition.Discriminator",
+      "kind": "complex",
+      "doc": "Captures constraints on each element within the resource, profile, or extension.",
+      "children": ["extension", "modifierExtension", "type", "path"]
+    },
+    {
+      "name": "PropertyRepresentation-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "PropertyRepresentation",
+      "kind": "complex",
+      "doc": "How a property is represented when serialized.",
+      "attrs": [
+        { "name": "value", "type": "PropertyRepresentation-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ConstraintSeverity-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ConstraintSeverity",
+      "kind": "complex",
+      "doc": "SHALL applications comply with this constraint?",
+      "attrs": [
+        { "name": "value", "type": "ConstraintSeverity-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "AggregationMode-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "AggregationMode",
+      "kind": "complex",
+      "doc": "How resource references can be aggregated.",
+      "attrs": [
+        { "name": "value", "type": "AggregationMode-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ReferenceVersionRules-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ReferenceVersionRules",
+      "kind": "complex",
+      "doc": "Whether a reference needs to be version specific or version independent, or whether either can be used.",
+      "attrs": [
+        { "name": "value", "type": "ReferenceVersionRules-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "SlicingRules-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "SlicingRules",
+      "kind": "complex",
+      "doc": "How slices are interpreted when evaluating an instance.",
+      "attrs": [
+        { "name": "value", "type": "SlicingRules-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "BindingStrength-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "BindingStrength",
+      "kind": "complex",
+      "doc": "Indication of the degree of conformance expectations associated with a binding.",
+      "attrs": [
+        { "name": "value", "type": "BindingStrength-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "DiscriminatorType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "DiscriminatorType",
+      "kind": "complex",
+      "doc": "How an element value is interpreted when discrimination is evaluated.",
+      "attrs": [
+        { "name": "value", "type": "DiscriminatorType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "DomainResource",
+      "kind": "complex",
+      "doc": "A resource that includes narrative, extensions, and contained resources.",
+      "children": [
+        "id",
+        "meta",
+        "implicitRules",
+        "language",
+        "text",
+        "contained",
+        "extension",
+        "modifierExtension"
+      ]
+    },
+    {
+      "name": "Resource",
+      "kind": "complex",
+      "doc": "This is the base resource type for everything.",
+      "children": ["id", "meta", "implicitRules", "language"]
+    },
+    {
+      "name": "PublicationStatus-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "PublicationStatus",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "PublicationStatus-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "SearchParamType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "SearchParamType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "SearchParamType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "AdministrativeGender-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "AdministrativeGender",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "AdministrativeGender-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "FHIRVersion-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "FHIRVersion",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "FHIRVersion-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "NoteType-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "NoteType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "NoteType-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "RemittanceOutcome-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "RemittanceOutcome",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "RemittanceOutcome-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "ConceptMapEquivalence-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "ConceptMapEquivalence",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "ConceptMapEquivalence-list", "required": false }
+      ],
+      "children": ["extension"]
+    },
+    {
+      "name": "DocumentReferenceStatus-list",
+      "kind": "simple",
+      "baseType": "code-primitive"
+    },
+    {
+      "name": "DocumentReferenceStatus",
+      "kind": "complex",
+      "attrs": [
+        { "name": "value", "type": "DocumentReferenceStatus-list", "required": false }
+      ],
+      "children": ["extension"]
+    }
+  ]
+}

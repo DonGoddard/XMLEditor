@@ -1,0 +1,59 @@
+{
+  "xsd": "eppcom-1.0.xsd",
+  "path": "Schemas/EPP/eppcom-1.0.xsd",
+  "version": 1,
+  "targetNamespace": "urn:ietf:params:xml:ns:eppcom-1.0",
+  "rootElements": [],
+  "elements": [
+  ],
+  "types": [
+    {
+      "name": "pwAuthInfoType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "roid", "type": "roidType", "required": false }
+      ]
+    },
+    {
+      "name": "extAuthInfoType",
+      "kind": "complex"
+    },
+    {
+      "name": "reasonType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "reasonBaseType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "clIDType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "labelType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "minTokenType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "roidType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "trStatusType",
+      "kind": "simple",
+      "baseType": "token"
+    }
+  ]
+}

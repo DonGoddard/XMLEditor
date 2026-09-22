@@ -1,0 +1,538 @@
+{
+  "xsd": "epp-1.0.xsd",
+  "path": "Schemas/EPP/epp-1.0.xsd",
+  "version": 1,
+  "targetNamespace": "urn:ietf:params:xml:ns:epp-1.0",
+  "rootElements": ["epp"],
+  "elements": [
+    {
+      "name": "epp",
+      "contentKind": "complex",
+      "children": ["greeting", "hello", "command", "response", "extension"]
+    },
+    {
+      "name": "greeting",
+      "contentKind": "complex",
+      "children": ["svID", "svDate", "svcMenu", "dcp"]
+    },
+    {
+      "name": "svID",
+      "contentKind": "simple",
+      "textType": "normalizedString"
+    },
+    {
+      "name": "svDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "svcMenu",
+      "contentKind": "complex",
+      "children": ["version", "lang", "objURI", "svcExtension"]
+    },
+    {
+      "name": "version",
+      "contentKind": "simple",
+      "textType": "token"
+    },
+    {
+      "name": "lang",
+      "contentKind": "simple",
+      "textType": "language"
+    },
+    {
+      "name": "objURI",
+      "contentKind": "simple",
+      "textType": "anyURI"
+    },
+    {
+      "name": "svcExtension",
+      "contentKind": "complex",
+      "children": ["extURI"]
+    },
+    {
+      "name": "extURI",
+      "contentKind": "simple",
+      "textType": "anyURI"
+    },
+    {
+      "name": "dcp",
+      "contentKind": "complex",
+      "children": ["access", "statement", "expiry"]
+    },
+    {
+      "name": "access",
+      "contentKind": "complex",
+      "children": ["all", "none", "null", "other", "personal", "personalAndOther"]
+    },
+    {
+      "name": "all"
+    },
+    {
+      "name": "none"
+    },
+    {
+      "name": "null"
+    },
+    {
+      "name": "other"
+    },
+    {
+      "name": "personal"
+    },
+    {
+      "name": "personalAndOther"
+    },
+    {
+      "name": "statement",
+      "contentKind": "complex",
+      "children": ["purpose", "recipient", "retention"]
+    },
+    {
+      "name": "purpose",
+      "contentKind": "complex",
+      "children": ["admin", "contact", "other", "prov"]
+    },
+    {
+      "name": "admin"
+    },
+    {
+      "name": "contact"
+    },
+    {
+      "name": "prov"
+    },
+    {
+      "name": "recipient",
+      "contentKind": "complex",
+      "children": ["other", "ours", "public", "same", "unrelated"]
+    },
+    {
+      "name": "ours",
+      "contentKind": "complex",
+      "children": ["recDesc"]
+    },
+    {
+      "name": "recDesc",
+      "contentKind": "simple",
+      "textType": "token"
+    },
+    {
+      "name": "public"
+    },
+    {
+      "name": "same"
+    },
+    {
+      "name": "unrelated"
+    },
+    {
+      "name": "retention",
+      "contentKind": "complex",
+      "children": ["business", "indefinite", "legal", "none", "stated"]
+    },
+    {
+      "name": "business"
+    },
+    {
+      "name": "indefinite"
+    },
+    {
+      "name": "legal"
+    },
+    {
+      "name": "stated"
+    },
+    {
+      "name": "expiry",
+      "contentKind": "complex",
+      "children": ["absolute", "relative"]
+    },
+    {
+      "name": "absolute",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "relative",
+      "contentKind": "simple",
+      "textType": "duration"
+    },
+    {
+      "name": "hello"
+    },
+    {
+      "name": "command",
+      "contentKind": "complex",
+      "children": [
+        "check",
+        "create",
+        "delete",
+        "info",
+        "login",
+        "logout",
+        "poll",
+        "renew",
+        "transfer",
+        "update",
+        "extension",
+        "clTRID"
+      ]
+    },
+    {
+      "name": "check",
+      "contentKind": "complex"
+    },
+    {
+      "name": "create",
+      "contentKind": "complex"
+    },
+    {
+      "name": "delete",
+      "contentKind": "complex"
+    },
+    {
+      "name": "info",
+      "contentKind": "complex"
+    },
+    {
+      "name": "login",
+      "contentKind": "complex",
+      "children": ["clID", "pw", "newPW", "options", "svcs"]
+    },
+    {
+      "name": "clID",
+      "contentKind": "simple",
+      "textType": "clIDType"
+    },
+    {
+      "name": "pw",
+      "contentKind": "simple",
+      "textType": "token"
+    },
+    {
+      "name": "newPW",
+      "contentKind": "simple",
+      "textType": "token"
+    },
+    {
+      "name": "options",
+      "contentKind": "complex",
+      "children": ["version", "lang"]
+    },
+    {
+      "name": "svcs",
+      "contentKind": "complex",
+      "children": ["objURI", "svcExtension"]
+    },
+    {
+      "name": "logout"
+    },
+    {
+      "name": "poll",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "op", "type": "pollOpType", "required": true },
+        { "name": "msgID", "type": "token", "required": false }
+      ]
+    },
+    {
+      "name": "renew",
+      "contentKind": "complex"
+    },
+    {
+      "name": "transfer",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "op", "type": "transferOpType", "required": true }
+      ]
+    },
+    {
+      "name": "update",
+      "contentKind": "complex"
+    },
+    {
+      "name": "extension",
+      "contentKind": "complex"
+    },
+    {
+      "name": "clTRID",
+      "contentKind": "simple",
+      "textType": "token"
+    },
+    {
+      "name": "response",
+      "contentKind": "complex",
+      "children": ["result", "msgQ", "resData", "extension", "trID"]
+    },
+    {
+      "name": "result",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "code", "type": "resultCodeType", "required": true }
+      ],
+      "children": ["msg", "value", "extValue"]
+    },
+    {
+      "name": "msg",
+      "contentKind": "mixed",
+      "textType": "normalizedString",
+      "attrs": [
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "value",
+      "contentKind": "mixed"
+    },
+    {
+      "name": "extValue",
+      "contentKind": "complex",
+      "children": ["value", "reason"]
+    },
+    {
+      "name": "reason",
+      "contentKind": "mixed",
+      "textType": "normalizedString",
+      "attrs": [
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "msgQ",
+      "contentKind": "complex",
+      "attrs": [
+        { "name": "count", "type": "unsignedLong", "required": true },
+        { "name": "id", "type": "minTokenType", "required": true }
+      ],
+      "children": ["qDate", "msg"]
+    },
+    {
+      "name": "qDate",
+      "contentKind": "simple",
+      "textType": "dateTime"
+    },
+    {
+      "name": "resData",
+      "contentKind": "complex"
+    },
+    {
+      "name": "trID",
+      "contentKind": "complex",
+      "children": ["clTRID", "svTRID"]
+    },
+    {
+      "name": "svTRID",
+      "contentKind": "simple",
+      "textType": "token"
+    }
+  ],
+  "types": [
+    {
+      "name": "eppType",
+      "kind": "complex",
+      "children": ["greeting", "hello", "command", "response", "extension"]
+    },
+    {
+      "name": "greetingType",
+      "kind": "complex",
+      "children": ["svID", "svDate", "svcMenu", "dcp"]
+    },
+    {
+      "name": "sIDType",
+      "kind": "simple",
+      "baseType": "normalizedString"
+    },
+    {
+      "name": "svcMenuType",
+      "kind": "complex",
+      "children": ["version", "lang", "objURI", "svcExtension"]
+    },
+    {
+      "name": "dcpType",
+      "kind": "complex",
+      "children": ["access", "statement", "expiry"]
+    },
+    {
+      "name": "dcpAccessType",
+      "kind": "complex",
+      "children": ["all", "none", "null", "other", "personal", "personalAndOther"]
+    },
+    {
+      "name": "dcpStatementType",
+      "kind": "complex",
+      "children": ["purpose", "recipient", "retention"]
+    },
+    {
+      "name": "dcpPurposeType",
+      "kind": "complex",
+      "children": ["admin", "contact", "other", "prov"]
+    },
+    {
+      "name": "dcpRecipientType",
+      "kind": "complex",
+      "children": ["other", "ours", "public", "same", "unrelated"]
+    },
+    {
+      "name": "dcpOursType",
+      "kind": "complex",
+      "children": ["recDesc"]
+    },
+    {
+      "name": "dcpRecDescType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "dcpRetentionType",
+      "kind": "complex",
+      "children": ["business", "indefinite", "legal", "none", "stated"]
+    },
+    {
+      "name": "dcpExpiryType",
+      "kind": "complex",
+      "children": ["absolute", "relative"]
+    },
+    {
+      "name": "extAnyType",
+      "kind": "complex"
+    },
+    {
+      "name": "extURIType",
+      "kind": "complex",
+      "children": ["extURI"]
+    },
+    {
+      "name": "versionType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "commandType",
+      "kind": "complex",
+      "children": [
+        "check",
+        "create",
+        "delete",
+        "info",
+        "login",
+        "logout",
+        "poll",
+        "renew",
+        "transfer",
+        "update",
+        "extension",
+        "clTRID"
+      ]
+    },
+    {
+      "name": "loginType",
+      "kind": "complex",
+      "children": ["clID", "pw", "newPW", "options", "svcs"]
+    },
+    {
+      "name": "credsOptionsType",
+      "kind": "complex",
+      "children": ["version", "lang"]
+    },
+    {
+      "name": "pwType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "loginSvcType",
+      "kind": "complex",
+      "children": ["objURI", "svcExtension"]
+    },
+    {
+      "name": "pollType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "op", "type": "pollOpType", "required": true },
+        { "name": "msgID", "type": "token", "required": false }
+      ]
+    },
+    {
+      "name": "pollOpType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "transferType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "op", "type": "transferOpType", "required": true }
+      ]
+    },
+    {
+      "name": "transferOpType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "readWriteType",
+      "kind": "complex"
+    },
+    {
+      "name": "trIDType",
+      "kind": "complex",
+      "children": ["clTRID", "svTRID"]
+    },
+    {
+      "name": "trIDStringType",
+      "kind": "simple",
+      "baseType": "token"
+    },
+    {
+      "name": "responseType",
+      "kind": "complex",
+      "children": ["result", "msgQ", "resData", "extension", "trID"]
+    },
+    {
+      "name": "resultType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "code", "type": "resultCodeType", "required": true }
+      ],
+      "children": ["msg", "value", "extValue"]
+    },
+    {
+      "name": "errValueType",
+      "kind": "complex"
+    },
+    {
+      "name": "extErrValueType",
+      "kind": "complex",
+      "children": ["value", "reason"]
+    },
+    {
+      "name": "msgQType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "count", "type": "unsignedLong", "required": true },
+        { "name": "id", "type": "minTokenType", "required": true }
+      ],
+      "children": ["qDate", "msg"]
+    },
+    {
+      "name": "mixedMsgType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "msgType",
+      "kind": "complex",
+      "attrs": [
+        { "name": "lang", "type": "language", "required": false }
+      ]
+    },
+    {
+      "name": "resultCodeType",
+      "kind": "simple",
+      "baseType": "unsignedShort"
+    }
+  ]
+}
