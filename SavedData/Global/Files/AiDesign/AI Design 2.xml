@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="AI Design 2">
+  <!-- nos-uml-state {"mode":"ai-design","title":"AI Design 2","saved":"2026-10-09T17:04:31Z","by":"Global","layout":{"Algorithm":{"x":430.47,"y":27.61,"w":280,"h":110},"Model":{"x":425.36,"y":281.19,"w":280,"h":110},"Data":{"x":16.36,"y":160.53,"w":280,"h":110}},"rels":[{"from":"Data","to":"Algorithm","type":"Input","name":"new [9 Chess](https://9chess.com)"},{"from":"Model","to":"Algorithm","type":"Input"},{"from":"Algorithm","to":"Model","type":"Output"}]} -->
+  <data namespace="Data">
+    <variables>
+      <variable name="id" type="key" />
+      <variable name="value" type="double" collapse="Monotone">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </data>
+  <model namespace="Model">
+    <variables>
+      <variable name="value" type="double" collapse="Monotone">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <algorithm namespace="Algorithm">
+    <input model="Data" />
+    <output model="Model" />
+    <operations>
+      <operation name="run" />
+    </operations>
+  </algorithm>
+</gorp>
