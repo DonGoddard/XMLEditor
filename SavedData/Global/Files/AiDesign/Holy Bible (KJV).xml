@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gorp name="Holy Bible (KJV)">
+  <!-- nos-uml-state {"mode":"ai-design","title":"Holy Bible (KJV)","saved":"2026-10-09T16:44:15Z","by":"Global","layout":{"Bible":{"x":229.04,"y":347.65,"w":280,"h":120},"Testament":{"x":555.1,"y":577.87,"w":280,"h":120},"Book":{"x":380,"y":737.87,"w":280,"h":120},"Chapter":{"x":60,"y":791.55,"w":280,"h":120},"Verse":{"x":75.93,"y":60,"w":280,"h":120},"bible":{"x":800.58,"y":163.95,"w":240,"h":80},"KjvExcerpt":{"x":1200.58,"y":60,"w":280,"h":170},"KjvExcerpt.testament1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book1.chapter1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book1.chapter1.verse1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book1.chapter1.verse2":{"x":340,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book1.chapter1.verse3":{"x":40,"y":240,"w":280,"h":150},"KjvExcerpt.testament1.book1.chapter1.verse4":{"x":340,"y":240,"w":280,"h":150},"KjvExcerpt.testament1.book1.chapter1.verse5":{"x":40,"y":424,"w":280,"h":150},"KjvExcerpt.testament1.book2":{"x":340,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1.verse1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1.verse2":{"x":340,"y":56,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1.verse3":{"x":40,"y":240,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1.verse4":{"x":340,"y":240,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1.verse5":{"x":40,"y":424,"w":280,"h":150},"KjvExcerpt.testament1.book2.chapter1.verse6":{"x":340,"y":424,"w":280,"h":150},"KjvExcerpt.testament2":{"x":340,"y":56,"w":280,"h":150},"KjvExcerpt.testament2.book1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament2.book1.chapter1":{"x":40,"y":56,"w":280,"h":150},"KjvExcerpt.testament2.book1.chapter1.verse1":{"x":40,"y":56,"w":280,"h":150},"EnglishKJBible":{"x":1640.58,"y":60,"w":300,"h":170}},"rels":[{"from":"Bible","to":"Testament","type":"Composition","name":"testament","tgtMult":"1..2"},{"from":"Testament","to":"Book","type":"Composition","name":"book","tgtMult":"1..*"},{"from":"Book","to":"Chapter","type":"Composition","name":"chapter","tgtMult":"1..*"},{"from":"bible","to":"Bible","type":"Realization"},{"from":"KjvExcerpt.testament1.book1.chapter1","to":"KjvExcerpt.testament1.book1.chapter1.verse1","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book1.chapter1","to":"KjvExcerpt.testament1.book1.chapter1.verse2","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book1.chapter1","to":"KjvExcerpt.testament1.book1.chapter1.verse3","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book1.chapter1","to":"KjvExcerpt.testament1.book1.chapter1.verse4","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book1.chapter1","to":"KjvExcerpt.testament1.book1.chapter1.verse5","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book1","to":"KjvExcerpt.testament1.book1.chapter1","type":"Composition","name":"chapter"},{"from":"KjvExcerpt.testament1","to":"KjvExcerpt.testament1.book1","type":"Composition","name":"book"},{"from":"KjvExcerpt.testament1.book2.chapter1","to":"KjvExcerpt.testament1.book2.chapter1.verse1","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book2.chapter1","to":"KjvExcerpt.testament1.book2.chapter1.verse2","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book2.chapter1","to":"KjvExcerpt.testament1.book2.chapter1.verse3","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book2.chapter1","to":"KjvExcerpt.testament1.book2.chapter1.verse4","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book2.chapter1","to":"KjvExcerpt.testament1.book2.chapter1.verse5","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book2.chapter1","to":"KjvExcerpt.testament1.book2.chapter1.verse6","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament1.book2","to":"KjvExcerpt.testament1.book2.chapter1","type":"Composition","name":"chapter"},{"from":"KjvExcerpt.testament1","to":"KjvExcerpt.testament1.book2","type":"Composition","name":"book"},{"from":"KjvExcerpt","to":"KjvExcerpt.testament1","type":"Composition","name":"testament"},{"from":"KjvExcerpt.testament2.book1.chapter1","to":"KjvExcerpt.testament2.book1.chapter1.verse1","type":"Composition","name":"verse"},{"from":"KjvExcerpt.testament2.book1","to":"KjvExcerpt.testament2.book1.chapter1","type":"Composition","name":"chapter"},{"from":"KjvExcerpt.testament2","to":"KjvExcerpt.testament2.book1","type":"Composition","name":"book"},{"from":"KjvExcerpt","to":"KjvExcerpt.testament2","type":"Composition","name":"testament"}]} -->
+  <comment view="class">Holy Bible (KJV) — the Beblia Holy Bible XML Format, with a schema written for it (bible.xsd) and an excerpt of the King James Version as «data».
+
+The Beblia project publishes over a thousand Bible translations in one simple XML shape: a bible holds its two testaments, a testament its books, a book its chapters, a chapter its verses — each by number (the format never names a book: 1 is Genesis, 19 Psalms, 43 John). The format ships no schema, so bible.xsd describes it, and the excerpt validates against it: the schema is the rulebook, the excerpt a document that follows it.
+
+The data is three of the best-known passages — Genesis 1:1–5 (“In the beginning God created the heaven and the earth”), Psalm 23 (“The LORD is my shepherd”) and John 3:16 — from the King James Version of 1611, which is in the public domain. Only public-domain translations are used here, as many in the collection are still under copyright.
+
+Beside it, EnglishKJBible is the WHOLE King James Bible — 66 books, 31,102 verses, 5 MB — LINKED rather than copied: the design keeps one box that names the file, and opening it reads the file a level at a time (testaments, then books, chapters, verses). Right-click a verse's Open line to feed it into an algorithm; a Run then sends that verse and nothing else.
+
+Source of the format and text: https://github.com/Beblia/Holy-Bible-XML-Format
+The full King James file: https://github.com/Beblia/Holy-Bible-XML-Format/blob/master/EnglishKJBible.xml
+About the King James Version: https://en.wikipedia.org/wiki/King_James_Version</comment>
+  <data namespace="KjvExcerpt" of="Bible">
+    <variables>
+      <variable name="testament" type="[Testament]">KjvExcerpt.testament1, KjvExcerpt.testament2</variable>
+      <variable name="translation" type="string">English KJV</variable>
+      <variable name="status" type="string">Public Domain</variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1" of="Testament">
+    <variables>
+      <variable name="book" type="[Book]">KjvExcerpt.testament1.book1, KjvExcerpt.testament1.book2</variable>
+      <variable name="name" type="enum">Old</variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1" of="Book">
+    <variables>
+      <variable name="chapter" type="[Chapter]">KjvExcerpt.testament1.book1.chapter1</variable>
+      <variable name="number" type="int" collapse="Monotone">1<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1.chapter1" of="Chapter">
+    <variables>
+      <variable name="verse" type="[Verse]">KjvExcerpt.testament1.book1.chapter1.verse1, KjvExcerpt.testament1.book1.chapter1.verse2, KjvExcerpt.testament1.book1.chapter1.verse3, KjvExcerpt.testament1.book1.chapter1.verse4, KjvExcerpt.testament1.book1.chapter1.verse5</variable>
+      <variable name="number" type="int" collapse="Monotone">1<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1.chapter1.verse1" of="Verse">
+    <variables>
+      <variable name="value" type="string">In the beginning God created the heaven and the earth.</variable>
+      <variable name="number" type="int" collapse="Monotone">1<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1.chapter1.verse2" of="Verse">
+    <variables>
+      <variable name="value" type="string">And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.</variable>
+      <variable name="number" type="int" collapse="Monotone">2<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1.chapter1.verse3" of="Verse">
+    <variables>
+      <variable name="value" type="string">And God said, Let there be light: and there was light.</variable>
+      <variable name="number" type="int" collapse="Monotone">3<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1.chapter1.verse4" of="Verse">
+    <variables>
+      <variable name="value" type="string">And God saw the light, that it was good: and God divided the light from the darkness.</variable>
+      <variable name="number" type="int" collapse="Monotone">4<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book1.chapter1.verse5" of="Verse">
+    <variables>
+      <variable name="value" type="string">And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.</variable>
+      <variable name="number" type="int" collapse="Monotone">5<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2" of="Book">
+    <variables>
+      <variable name="chapter" type="[Chapter]">KjvExcerpt.testament1.book2.chapter1</variable>
+      <variable name="number" type="int" collapse="Monotone">19<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1" of="Chapter">
+    <variables>
+      <variable name="verse" type="[Verse]">KjvExcerpt.testament1.book2.chapter1.verse1, KjvExcerpt.testament1.book2.chapter1.verse2, KjvExcerpt.testament1.book2.chapter1.verse3, KjvExcerpt.testament1.book2.chapter1.verse4, KjvExcerpt.testament1.book2.chapter1.verse5, KjvExcerpt.testament1.book2.chapter1.verse6</variable>
+      <variable name="number" type="int" collapse="Monotone">23<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1.verse1" of="Verse">
+    <variables>
+      <variable name="value" type="string">The LORD is my shepherd; I shall not want.</variable>
+      <variable name="number" type="int" collapse="Monotone">1<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1.verse2" of="Verse">
+    <variables>
+      <variable name="value" type="string">He maketh me to lie down in green pastures: he leadeth me beside the still waters.</variable>
+      <variable name="number" type="int" collapse="Monotone">2<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1.verse3" of="Verse">
+    <variables>
+      <variable name="value" type="string">He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.</variable>
+      <variable name="number" type="int" collapse="Monotone">3<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1.verse4" of="Verse">
+    <variables>
+      <variable name="value" type="string">Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.</variable>
+      <variable name="number" type="int" collapse="Monotone">4<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1.verse5" of="Verse">
+    <variables>
+      <variable name="value" type="string">Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.</variable>
+      <variable name="number" type="int" collapse="Monotone">5<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament1.book2.chapter1.verse6" of="Verse">
+    <variables>
+      <variable name="value" type="string">Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever.</variable>
+      <variable name="number" type="int" collapse="Monotone">6<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament2" of="Testament">
+    <variables>
+      <variable name="book" type="[Book]">KjvExcerpt.testament2.book1</variable>
+      <variable name="name" type="enum">New</variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament2.book1" of="Book">
+    <variables>
+      <variable name="chapter" type="[Chapter]">KjvExcerpt.testament2.book1.chapter1</variable>
+      <variable name="number" type="int" collapse="Monotone">43<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament2.book1.chapter1" of="Chapter">
+    <variables>
+      <variable name="verse" type="[Verse]">KjvExcerpt.testament2.book1.chapter1.verse1</variable>
+      <variable name="number" type="int" collapse="Monotone">3<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="KjvExcerpt.testament2.book1.chapter1.verse1" of="Verse">
+    <variables>
+      <variable name="value" type="string">For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.</variable>
+      <variable name="number" type="int" collapse="Monotone">16<unit basis="\one" namespace="D-SI" /></variable>
+    </variables>
+  </data>
+  <data namespace="EnglishKJBible" of="Bible" source="https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/EnglishKJBible.xml">
+    <variables>
+      <variable name="testament" type="[Testament]" linked-count="2">2 inside</variable>
+      <variable name="translation" type="string">English KJV</variable>
+      <variable name="status" type="string">Public Domain</variable>
+    </variables>
+  </data>
+  <model namespace="Bible">
+    <variables>
+      <variable name="testament" type="[Testament]" occurs="1..2" />
+      <variable name="translation" type="string" xsd="attribute" />
+      <variable name="status" type="string" xsd="attribute" occurs="0..1" />
+    </variables>
+  </model>
+  <model namespace="Testament">
+    <variables>
+      <variable name="book" type="[Book]" occurs="1..*" />
+      <variable name="name" type="enum" values="Old | New" xsd="attribute" />
+    </variables>
+  </model>
+  <model namespace="Book">
+    <variables>
+      <variable name="chapter" type="[Chapter]" occurs="1..*" />
+      <variable name="number" type="int" collapse="Monotone" xsd="attribute">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <model namespace="Chapter">
+    <variables>
+      <variable name="verse" type="[Verse]" occurs="1..*" />
+      <variable name="number" type="int" collapse="Monotone" xsd="attribute">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <model namespace="Verse">
+    <variables>
+      <variable name="value" type="string" />
+      <variable name="number" type="int" collapse="Monotone" xsd="attribute">
+        <unit basis="\one" namespace="D-SI" />
+      </variable>
+    </variables>
+  </model>
+  <model namespace="bible" xsd="root element" />
+</gorp>
