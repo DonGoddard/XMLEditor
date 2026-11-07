@@ -1528,12 +1528,13 @@
 {"ts":"2026-11-07T05:12:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-api","count":7}
 {"ts":"2026-11-07T05:12:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-img","count":71}
 {"ts":"2026-11-07T05:12:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":13}
-{"ts":"2026-11-07T22:59:21.4330000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
-{"ts":"2026-11-07T22:59:47.5830000Z","type":"wallpaper_set","appId":"","filePath":"gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0","ext":".0","bytes":0,"detail":"","count":1}
 {"ts":"2026-11-07T22:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":4}
 {"ts":"2026-11-07T22:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":47126,"detail":"github:PUT","count":4}
 {"ts":"2026-11-07T22:59:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":2}
-{"ts":"2026-11-07T23:00:37.4330000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
+{"ts":"2026-11-07T22:59:21.4330000Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"webgl","count":1}
+{"ts":"2026-11-07T22:59:47.5830000Z","type":"wallpaper_set","appId":"","filePath":"gradient://0.0500,0.0500,0.1800,0.2200,0.0700,0.3800,135.0","ext":".0","bytes":0,"detail":"","count":1}
 {"ts":"2026-11-07T23:00:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":47315,"detail":"github:PUT","count":4}
 {"ts":"2026-11-07T23:00:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-raw","count":1}
+{"ts":"2026-11-07T23:00:37.4330000Z","type":"app_open","appId":"XAMLCanvasLayoutApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
 {"ts":"2026-11-07T23:01:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":24502,"detail":"github:PUT","count":2}
+{"ts":"2026-11-07T23:04:46.6937810Z","type":"session_start","appId":"","filePath":"","ext":"","bytes":0,"detail":"OSXEditor","count":1}
