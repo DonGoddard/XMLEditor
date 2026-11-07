@@ -31,3 +31,4 @@
 {"ts":"2026-11-07T23:26:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":165417,"detail":"github:PUT","count":2}
 {"ts":"2026-11-07T23:26:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET-bin","count":19}
 {"ts":"2026-11-07T23:26:00.0000000Z","type":"api_call","appId":"","filePath":"","ext":"","bytes":0,"detail":"github:GET","count":1}
+{"ts":"2026-11-07T23:27:35.7497970Z","type":"app_open","appId":"ImageApp","filePath":"","ext":"","bytes":0,"detail":"","count":1}
