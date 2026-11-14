@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Bolus Math
+
+  THE WORKED EXAMPLE OF REAL COMPUTATION (Don, 2026-11-06). Every operation on
+  Advise carries an <expression> and a <test>, so right-click → Test… sends
+  measured values to gorpIT and compares the number that comes back with the
+  answer written here. Run still goes to xmlIT, which computes nothing.
+
+  NOT MEDICAL ADVICE. It is a worked example of the arithmetic every pump and
+  every bolus calculator does; the numbers in the data node are made up.
+-->
+<gorp name="Bolus Math">
+  <!-- nos-uml-state {"mode":"ai-design","title":"Bolus Math","layout":{"bolus.math.Session":{"x":60,"y":60,"w":340,"h":320},"bolus.math.Morning":{"x":60,"y":430,"w":340,"h":320},"bolus.math.Advise":{"x":500,"y":140,"w":320,"h":240},"bolus.math.Dose":{"x":920,"y":140,"w":320,"h":200}}} -->
+
+  <comment view="class">The design that actually computes.
+
+Session holds a glucose reading and the therapy settings it is read against. Morning is one plausible breakfast. Advise has one operation per step of the arithmetic, and each carries its own expression and expected answer.
+
+Right-click an operation on Advise and choose Test…, then press Run test. The values and the expression go to gorpIT, which evaluates them with their units and answers with a number. The Runs panel shows the exact bytes each way.
+
+The Run button is different: it posts the whole design to xmlIT, which reads nothing and returns OK. Test… is what proves the maths.</comment>
+  <expect>Every Test… on Advise passes against gorpIT:
+  correction  = (glucose − target) / sensitivity = 1.9111
+  carbDose    = carbs / carbRatio = 4.5
+  trendAdjust = rise / sensitivity = 0.9333
+  advise      = all three, less activeInsulin = 6.1444
+  belowLow    = glucose &lt; low = false
+
+GORP has no max or min, so advise is the raw sum: it does not floor at zero or cap at maxDose. Change a value in the Test panel and the answer changes with it, because the server worked it out.
+
+The rise is a measured mg/dL rather than a rate in mg/dL per minute, because GORP's units come from UnitsNet, which has no quantity for that rate. A row in that unit reaches the server with no unit on it, and the server refuses the sum.
+
+Check finds nothing. Run comes back OK from xmlIT, and that OK says nothing about these numbers.</expect>
+
+  <model namespace="bolus.math.Session">
+    <variables>
+      <variable name="id"       type="key" />
+      <variable name="taken"    type="utcdatetime" collapse="Latest" />
+      <variable name="glucose"  type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="rise"     type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="target"   type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="low"      type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/>
+        <validate>low &lt; target</validate>
+      </variable>
+      <variable name="sensitivity"   type="double" collapse="Monotone"><unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="carbRatio"     type="double" collapse="Monotone"><unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="carbs"         type="double" collapse="Monotone"><unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="activeInsulin" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+    </variables>
+  </model>
+
+  <data namespace="bolus.math.Morning" of="bolus.math.Session">
+    <variables>
+      <variable name="id"      type="key">BOLUS-DEMO</variable>
+      <variable name="taken"   type="utcdatetime" collapse="Latest">2026-09-11T08:15:00Z</variable>
+      <variable name="glucose" type="double" collapse="Monotone">196<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="rise"    type="double" collapse="Monotone">42<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="target"  type="double" collapse="Monotone">110<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="low"     type="double" collapse="Monotone">70<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="sensitivity"   type="double" collapse="Monotone">45<unit basis="\milli\gram\deci\litre\tothe{-1}" namespace="D-SI"/></variable>
+      <variable name="carbRatio"     type="double" collapse="Monotone">10<unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="carbs"         type="double" collapse="Monotone">45<unit basis="\gram" namespace="D-SI"/></variable>
+      <variable name="activeInsulin" type="double" collapse="Monotone">1.2<unit basis="\one" namespace="D-SI"/></variable>
+    </variables>
+  </data>
+
+  <algorithm namespace="bolus.math.Advise">
+    <input  model="bolus.math.Session" />
+    <output model="bolus.math.Dose" />
+    <operations>
+      <operation name="correction" returns="double">
+        <expression>(glucose - target) / sensitivity</expression>
+        <test name="Morning" expects="1.9111111"><glucose>196</glucose><target>110</target><sensitivity>45</sensitivity></test>
+      </operation>
+      <operation name="carbDose" returns="double">
+        <expression>carbs / carbRatio</expression>
+        <test name="Morning" expects="4.5"><carbs>45</carbs><carbRatio>10</carbRatio></test>
+      </operation>
+      <operation name="trendAdjust" returns="double">
+        <expression>rise / sensitivity</expression>
+        <test name="Morning" expects="0.9333333"><rise>42</rise><sensitivity>45</sensitivity></test>
+      </operation>
+      <operation name="advise" returns="double">
+        <expression>(glucose - target) / sensitivity + carbs / carbRatio + rise / sensitivity - activeInsulin</expression>
+        <test name="Morning" expects="6.1444444"><glucose>196</glucose><target>110</target><sensitivity>45</sensitivity><carbs>45</carbs><carbRatio>10</carbRatio><rise>42</rise><activeInsulin>1.2</activeInsulin></test>
+      </operation>
+      <operation name="belowLow" returns="bool">
+        <expression>glucose &lt; low</expression>
+        <test name="Morning" expects="false"><glucose>196</glucose><low>70</low></test>
+      </operation>
+    </operations>
+  </algorithm>
+
+  <model namespace="bolus.math.Dose">
+    <variables>
+      <variable name="correction"  type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="carbDose"    type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="trendAdjust" type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="units"       type="double" collapse="Monotone"><unit basis="\one" namespace="D-SI"/></variable>
+      <variable name="hold"        type="bool" />
+    </variables>
+  </model>
+</gorp>
